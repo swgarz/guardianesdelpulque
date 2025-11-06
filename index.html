@@ -6,7 +6,6 @@
   <title>Pulque Vivo — Pulque · Tierra · Maguey</title>
   <meta name="description" content="Pulque, tierra y maguey: artículos, guías y proyectos con diseño moderno y animado." />
   <style>
-    /* ===== Reset + tokens ===== */
     *,*::before,*::after{box-sizing:border-box}
     body{
       margin:0;
@@ -25,15 +24,13 @@
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    /* ===== Layout helpers ===== */
     .container{max-width:1180px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){ .container{padding:0 24px} }
     .stack-2{display:grid;gap:.5rem}
     .stack-3{display:grid;gap:.75rem}
     .stack-4{display:grid;gap:1rem}
-    .stack-6{display:grid;gap:1.5rem}
 
-    /* ===== NAV ===== */
+    /* NAV */
     .nav{
       position:sticky;top:0;z-index:50;
       background:transparent;
@@ -59,15 +56,12 @@
       width:auto;
       display:block;
     }
-    @media (min-width:768px){
-      .brand-logo{height:58px;}
-    }
+    @media (min-width:768px){ .brand-logo{height:58px;} }
     .brand-text{
       font-size:1rem;
       color:#111827;
       letter-spacing:.02em;
     }
-
     .links{
       display:flex;
       align-items:center;
@@ -75,7 +69,6 @@
       flex-wrap:wrap;
       justify-content:flex-end;
     }
-
     .chip{
       display:inline-flex;
       align-items:center;
@@ -97,8 +90,6 @@
       color:#020817;
       transform:translateY(-1px);
     }
-
-    /* NAV cuando hay scroll */
     .nav.scrolled{
       background:#020817;
       border-bottom-color:rgba(148,163,253,.18);
@@ -115,7 +106,7 @@
       color:#020817;
     }
 
-    /* ===== HERO ===== */
+    /* HERO */
     .hero{position:relative}
     .hero--compact{padding:44px 0 32px}
     .hero-wrap{display:grid;gap:1.25rem}
@@ -203,7 +194,6 @@
       box-shadow:none;background:rgba(255,255,255,.9);
     }
 
-    /* Backdrop blobs */
     .backdrop{position:absolute;inset:0;overflow:hidden;z-index:-1}
     .blob{position:absolute;border-radius:999px;filter:blur(40px);opacity:.35;transform:translateZ(0);animation:float 18s ease-in-out infinite}
     .b1{width:580px;height:580px;left:-120px;top:-120px;background:radial-gradient(closest-side,#34d399,transparent)}
@@ -211,7 +201,7 @@
     .b3{width:360px;height:360px;left:40%;bottom:-120px;background:radial-gradient(closest-side,#a3e635,transparent);animation-delay:4s}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
 
-    /* ===== POSTS ===== */
+    /* POSTS */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
@@ -227,7 +217,7 @@
       background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));
     }
 
-    /* ===== DONAR ===== */
+    /* DONAR */
     .don-grid{display:grid;gap:1rem}
     @media (min-width:760px){.don-grid{grid-template-columns:1.1fr .9fr}}
     .copy-badge{
@@ -236,18 +226,18 @@
       border-radius:12px;font-weight:700;flex-wrap:wrap;
     }
 
-    /* ===== BIOALKIMIA ===== */
+    /* BIOALKIMIA */
     .bio-card{padding:24px}
     .bio-title{margin:0}
     .bio-text{color:#64748b;margin:.4rem 0 0}
 
-    /* ===== FOOTER & REVEAL ===== */
     footer{
       border-top:1px solid rgba(15,23,42,.08);
       padding:24px 0;
       margin-top:40px;
       color:#64748b;
     }
+
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
   </style>
@@ -383,14 +373,14 @@
     </div>
   </footer>
 
-  <!-- Fallback de posts (solo para abrir como file://) -->
+  <!-- Fallback mínimo -->
   <script type="application/json" id="posts-fallback">[
     {
       "tag":"Pulque",
       "title":"De la penca al jarro: el proceso vivo",
-      "excerpt":"Fermentos, microbiota y tradición del maguey.",
-      "url":"articulos/de-la-penca-al-jarro/de-la-penca-al-jarro.html",
-      "cover":"articulos/de-la-penca-al-jarro/de_la_penca_al_jarro.png"
+      "excerpt":"Fermentos, microbiota y tradición del maguey paso a paso.",
+      "url":"articulos/delapencaaljarro/de-la-penca-al-jarro.html",
+      "cover":"articulos/delapencaaljarro/de_la_penca_al_jarro.png"
     }
   ]</script>
 
@@ -418,65 +408,36 @@
     }, {threshold:.2});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Utils
     function escapeHtml(s){
       return String(s).replace(/[&<>"]/g, m => ({
-        '&':'&amp;',
-        '<':'&lt;',
-        '>':'&gt;',
-        '"':'&quot;'
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
       }[m]));
     }
 
     const HOMEPAGE_LIMIT = 6;
 
-    function candidateUrls(filename){
-      const ts = Date.now();
-      const origin = location.origin;
-      const path = location.pathname;
-      const dir = path.replace(/[^\/]*$/,'');
-      const segs = path.split('/').filter(Boolean);
-      const repoBase = segs.length ? `/${segs[0]}/` : '/';
-      return [
-        `${origin}${dir}${filename}?v=${ts}`,
-        `${origin}${repoBase}${filename}?v=${ts}`,
-        `${origin}/${filename}?v=${ts}`
-      ].filter((v,i,a)=>a.indexOf(v)===i);
-    }
-
-    async function fetchJsonSmart(filename){
-      const tries = candidateUrls(filename);
-      const status = document.getElementById('status');
-      const traces = [];
-      for(const url of tries){
-        try{
-          const r = await fetch(url, {cache:'no-store'});
-          traces.push(`GET ${url} → ${r.status}`);
-          if(r.ok) return await r.json();
-        }catch(e){
-          traces.push(`ERR ${url} → ${e}`);
-        }
-      }
-      if(status){
-        status.textContent = (location.protocol === 'file:'
-          ? 'Abre con Live Server (fetch se bloquea con file://).'
-          : 'No se encontró posts.json. Colócalo junto a index.html en GitHub Pages.');
-      }
-      console.warn('posts.json no encontrado:\n' + traces.join('\n'));
-      throw new Error('posts.json no encontrado');
-    }
-
     async function loadPosts(){
+      const status = document.getElementById('status');
       let posts = [];
       try{
-        const data = await fetchJsonSmart('posts.json');
-        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
-      }catch(_){}
+        const res = await fetch('posts.json?v=' + Date.now(), {cache:'no-store'});
+        if(res.ok){
+          const data = await res.json();
+          posts = Array.isArray(data) ? data : (Array.isArray(data.entries)? data.entries : []);
+        }
+      }catch(e){
+        console.warn(e);
+      }
+
       if(!posts.length){
         try{
           posts = JSON.parse(document.getElementById('posts-fallback').textContent || '[]');
-        }catch{}
+        }catch(e){}
+        if(status && !posts.length){
+          status.textContent = 'No se pudo cargar posts.json.';
+        }
       }
+
       renderPosts(posts.slice(0, HOMEPAGE_LIMIT));
     }
 
@@ -513,7 +474,7 @@
       });
     }
 
-    // Donar: copiar CLABE
+    // Copiar CLABE
     document.getElementById('copyClabe').addEventListener('click', async ()=>{
       const t = document.getElementById('clabeText').textContent.trim();
       try{
@@ -524,7 +485,6 @@
       }
     });
 
-    // Ajusta aquí tu enlace real de PayPal:
     document.getElementById('paypalBtn').href = "#";
 
     loadPosts();
