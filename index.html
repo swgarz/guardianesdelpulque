@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pulque Vivo — Naturaleza & Bioconstrucción</title>
-  <meta name="description" content="Historias vivas de pulque, naturaleza y bioconstrucción: artículos, guías y proyectos con un diseño moderno y animado." />
+  <title>Pulque Vivo — Pulque · Tierra · Maguey</title>
+  <meta name="description" content="Pulque, tierra y maguey: artículos, guías y proyectos con diseño moderno y animado." />
   <style>
     /* ===== Reset + tokens ===== */
     *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';line-height:1.55;color:#0f172a;background:#f6f8fb}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';line-height:1.5;color:#0f172a;background:#f6f8fb}
     :root{
-      --brand:#059669; --brand-2:#16a34a;
+      --brand:#059669; /* emerald-600 */
+      --brand-2:#16a34a; /* green-600 */
       --ink:#0f172a; --muted:#475569; --card:#ffffff; --stroke:#e5e7eb;
-      --shadow:0 20px 50px -12px rgba(0,0,0,.15);
-      --radius:20px;
     }
     html.dark{color-scheme:dark}
     html.dark body{color:#e5e7eb;background:#0b0f17}
@@ -21,17 +20,18 @@
     img{max-width:100%;display:block}
 
     /* ===== Layout ===== */
-    .container{max-width:1180px;margin-inline:auto;padding:0 20px}
+    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    @media (min-width:640px){ .container{padding:0 24px} }
     .stack-2{display:grid;gap:.5rem}
     .stack-3{display:grid;gap:.75rem}
     .stack-4{display:grid;gap:1rem}
     .stack-6{display:grid;gap:1.5rem}
-    .row{display:flex;align-items:center;justify-content:space-between}
 
     /* ===== Top bar ===== */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.65);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
-    html.dark .nav{background:rgba(11,15,23,.55);border-color:rgba(255,255,255,.08)}
-    .nav .brand{display:flex;align-items:center;gap:.5rem;font-weight:700}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.6);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
+    html.dark .nav{background:rgba(11,15,23,.5);border-color:rgba(255,255,255,.08)}
+    .nav .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700}
     .brand-badge{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--brand);color:#fff}
     .nav a.link{color:#334155}
     .nav a.link:hover{color:#0f172a}
@@ -39,99 +39,137 @@
     html.dark .nav a.link:hover{color:#fff}
 
     /* ===== Buttons & cards ===== */
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;padding:.6rem 1rem;font-weight:600;cursor:pointer;transition:transform .15s ease, background .2s ease}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;padding:.65rem 1rem;font-weight:600;cursor:pointer;transition:transform .15s ease, background .2s ease}
     .btn:active{transform:scale(.98)}
     .btn-brand{background:var(--brand);color:#fff}
-    .btn-brand:hover{background:#0a9a6e}
+    .btn-brand:hover{background:#069268}
     .btn-ghost{background:#fff;border:1px solid rgba(15,23,42,.08);color:#0f172a}
-    html.dark .btn-ghost{background:#192131;border-color:rgba(255,255,255,.12);color:#fff}
+    html.dark .btn-ghost{background:#192131;border-color:rgba(255,255,255,.1);color:#fff}
+    .btn-block{width:100%}
 
-    .card{border-radius:var(--radius);background:rgba(255,255,255,.75);border:1px solid rgba(15,23,42,.06);box-shadow:var(--shadow);overflow:hidden}
+    .card{border-radius:24px;background:rgba(255,255,255,.7);border:1px solid rgba(15,23,42,.06);box-shadow:0 20px 50px -12px rgba(0,0,0,.15);overflow:hidden}
     html.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
 
-    /* ===== Hero ===== */
-    .hero{position:relative;padding:56px 0 40px}
-    .hero h1{font-size:clamp(28px,5.8vw,58px);line-height:1.07;background:linear-gradient(135deg,#059669,#65a30d,#065f46);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0}
-    .hero p{max-width:62ch;color:#475569;margin:.5rem 0 0}
-    html.dark .hero p{color:#cbd5e1}
+    /* ===== HERO compacto y respirable en móvil ===== */
+    .hero{position:relative}
+    .hero--compact{padding:44px 0 32px}
+    .hero-wrap{display:grid;gap:1.25rem}
+    @media (min-width:900px){ .hero-wrap{grid-template-columns:1.1fr .9fr;align-items:center} }
 
+    .hero-title{
+      margin:0;
+      font-size:clamp(30px,7vw,64px);
+      line-height:1.06;
+      letter-spacing:-.5px;
+      background:linear-gradient(135deg,#059669,#65a30d,#065f46);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero-subtitle{
+      margin:.35rem 0 0;
+      color:#475569;
+      max-width:60ch;
+      font-size:clamp(15px,3.8vw,18px);
+    }
+    html.dark .hero-subtitle{color:#cbd5e1}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0 0}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .75rem;border-radius:14px;background:rgba(16,185,129,.12);color:#065f46;font-weight:600}
+    html.dark .pill{background:rgba(16,185,129,.14);color:#a7f3d0}
+    .cta-group{display:grid;gap:.6rem;margin-top:.9rem}
+    @media (min-width:520px){ .cta-group{grid-auto-flow:column;justify-content:start} .btn-block{width:auto} }
+    .hero-note{color:#64748b;display:block;margin-top:.25rem}
+
+    /* Lado derecho (oculto en móviles) */
+    .hero-side{display:none}
+    @media (min-width:900px){ .hero-side{display:block} }
+    .hero-card{padding:20px;position:relative;overflow:hidden}
+    .hero-card-bloom{position:absolute;inset:auto -80px auto auto;width:220px;height:220px;border-radius:999px;background:rgba(16,185,129,.15);filter:blur(40px)}
+    .hero-card-text{color:#475569;margin:0}
+    html.dark .hero-card-text{color:#cbd5e1}
+    .hero-mini-cards{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.25rem}
+    .hero-mini-cards .mini{padding:.55rem .9rem;border-radius:12px;box-shadow:none}
+
+    /* Backdrop blobs */
     .backdrop{position:absolute;inset:0;overflow:hidden;z-index:-1}
     .blob{position:absolute;border-radius:999px;filter:blur(40px);opacity:.35;transform:translateZ(0);animation:float 18s ease-in-out infinite}
-    .b1{width:520px;height:520px;left:-120px;top:-120px;background:radial-gradient(closest-side,#34d399,transparent)}
-    .b2{width:420px;height:420px;right:-120px;top:120px;background:radial-gradient(closest-side,#22d3ee,transparent);animation-delay:2s}
-    .b3{width:320px;height:320px;left:40%;bottom:-120px;background:radial-gradient(closest-side,#a3e635,transparent);animation-delay:4s}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+    .b1{width:580px;height:580px;left:-120px;top:-120px;background:radial-gradient(closest-side,#34d399,transparent)}
+    .b2{width:480px;height:480px;right:-120px;top:120px;background:radial-gradient(closest-side,#22d3ee,transparent);animation-delay:2s}
+    .b3{width:360px;height:360px;left:40%;bottom:-120px;background:radial-gradient(closest-side,#a3e635,transparent);animation-delay:4s}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
 
-    /* ===== Grids ===== */
-    .grid-hero{display:grid;gap:1.25rem}
-    @media (min-width:900px){.grid-hero{grid-template-columns:1.1fr .9fr}}
-
+    /* ===== Secciones ===== */
     .grid-3{display:grid;grid-template-columns:1fr;gap:1rem}
-    @media (min-width:640px){.grid-3{grid-template-columns:repeat(2,1fr)}}
-    @media (min-width:980px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+    @media (min-width:860px){.grid-3{grid-template-columns:repeat(3,1fr)}}
 
+    /* ===== Posts ===== */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
-
-    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .7rem;border-radius:14px;background:rgba(16,185,129,.12);color:#065f46;font-weight:600}
-    html.dark .pill{background:rgba(16,185,129,.14);color:#a7f3d0}
-
-    .post-cover{height:160px;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));}
+    .post-cover{height:144px;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));}
     html.dark .post-cover{background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(250,204,21,.12));}
 
-    footer{border-top:1px solid rgba(15,23,42,.08);padding:20px 0;margin-top:36px;color:#64748b}
+    /* ===== Footer ===== */
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:24px 0;margin-top:40px;color:#64748b}
     html.dark footer{border-color:rgba(255,255,255,.1);color:#94a3b8}
 
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease}
+    /* ===== Reveal on scroll ===== */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
   </style>
 </head>
 <body>
   <!-- NAV -->
   <div class="nav">
-    <div class="container row" style="padding:10px 0">
-      <a class="brand" href="./">
+    <div class="container row">
+      <a class="brand" href="index.html">
         <span class="brand-badge" aria-hidden>🍶</span>
         <span>Pulque Vivo</span>
       </a>
       <div class="stack-2" style="grid-auto-flow:column;gap:1rem;align-items:center">
         <a class="link" href="#secciones">Secciones</a>
         <a class="link" href="posts.html">Artículos</a>
+        <a class="link" href="#suscripcion">Suscripción</a>
         <button id="themeBtn" class="btn btn-ghost" type="button">Modo oscuro</button>
       </div>
     </div>
   </div>
 
   <!-- HERO -->
-  <header class="hero container">
+  <header class="hero hero--compact container">
     <div class="backdrop" aria-hidden="true">
       <div class="blob b1"></div>
       <div class="blob b2"></div>
       <div class="blob b3"></div>
     </div>
 
-    <div class="grid-hero">
+    <div class="hero-wrap">
       <div class="stack-4 reveal">
-        <h1>Historias vivas de pulque, naturaleza y bioconstrucción</h1>
-        <p>Un portal con el corazón en el maguey: artículos, guías y proyectos que conectan territorio, oficios y tecnología abierta.</p>
-        <div class="stack-2" style="grid-auto-flow:column;gap:.75rem;align-items:center;justify-content:start">
-          <a class="btn btn-brand" href="#posts">Explorar artículos →</a>
-          <a class="btn btn-ghost" href="posts.html">Ver todo</a>
+        <h1 class="hero-title">Pulque · Tierra · Maguey</h1>
+        <p class="hero-subtitle">Historias, guías y proyectos para cultivar, construir y cuidar el territorio.</p>
+
+        <div class="hero-chips">
+          <span class="pill">🍶 Pulque</span>
+          <span class="pill">🏗️ Tierra</span>
+          <span class="pill">🌵 Maguey</span>
         </div>
-        <small style="color:#64748b">• Actualizado cada semana</small>
+
+        <div class="cta-group">
+          <a class="btn btn-brand btn-block" href="#posts">Explorar artículos →</a>
+          <a class="btn btn-ghost btn-block" href="#suscripcion">Suscribirme</a>
+        </div>
+
+        <small class="hero-note">• Actualizado cada semana</small>
       </div>
 
-      <div class="reveal">
-        <div class="card" style="padding:20px;position:relative;overflow:hidden">
-          <div style="position:absolute;inset:auto -80px auto auto;width:220px;height:220px;border-radius:999px;background:rgba(16,185,129,.15);filter:blur(40px)"></div>
+      <div class="hero-side reveal">
+        <div class="card hero-card">
+          <div class="hero-card-bloom"></div>
           <div class="stack-3">
-            <div class="pill">🍃 <span>Maguey • Fermentos • Oficio</span></div>
-            <p style="color:#475569;margin:0">Infografías interactivas y recetas tradicionales. Aprende sobre la microbiota del pulque, la jima sostenible y la cadena de valor.</p>
-            <div class="stack-2" style="grid-auto-flow:column;gap:.5rem">
-              <div class="card" style="padding:.6rem .9rem">Pulquería</div>
-              <div class="card" style="padding:.6rem .9rem">Humedales</div>
-              <div class="card" style="padding:.6rem .9rem">Tierra</div>
+            <div class="pill">🍃 <strong>Oficio vivo</strong></div>
+            <p class="hero-card-text">Microbiota del pulque, técnicas en tierra y manejo sustentable del maguey.</p>
+            <div class="hero-mini-cards">
+              <div class="card mini">Fermentos</div>
+              <div class="card mini">Adobe</div>
+              <div class="card mini">Humedales</div>
             </div>
           </div>
         </div>
@@ -139,37 +177,58 @@
     </div>
   </header>
 
-  <!-- SECCIONES -->
-  <section id="secciones" class="container stack-6" style="margin-bottom:20px">
+  <!-- SECCIONES (enfoque principal) -->
+  <section id="secciones" class="container stack-6" style="margin-bottom:24px">
     <div class="grid-3">
-      <article class="card reveal" style="padding:20px">
-        <div class="pill">🌵 <strong>Pulque</strong></div>
-        <p style="margin:.5rem 0 0;color:#475569">Ciencia y tradición: cultivo del maguey, microbiota, utensilios y recetas.</p>
+      <article class="card reveal" style="padding:24px">
+        <div class="pill">🍶 <strong>Pulque</strong></div>
+        <p style="margin-top:.5rem;color:#475569">Ciencia y tradición: microbiota, utensilios, recetas y cuidado del tinacal.</p>
       </article>
-      <article class="card reveal" style="padding:20px">
-        <div class="pill">🍂 <strong>Naturaleza</strong></div>
-        <p style="margin:.5rem 0 0;color:#475569">Noticias y herramientas para restauración ecológica y guardianes del territorio.</p>
+      <article class="card reveal" style="padding:24px">
+        <div class="pill">🏗️ <strong>Tierra</strong></div>
+        <p style="margin-top:.5rem;color:#475569">Bioconstrucción accesible: adobe, BTC, bambú y eficiencia térmica.</p>
       </article>
-      <article class="card reveal" style="padding:20px">
-        <div class="pill">🏗️ <strong>Bioconstrucción</strong></div>
-        <p style="margin:.5rem 0 0;color:#475569">Guías prácticas: adobe, bambú, tierra compactada, eficiencia térmica y más.</p>
+      <article class="card reveal" style="padding:24px">
+        <div class="pill">🌵 <strong>Maguey</strong></div>
+        <p style="margin-top:.5rem;color:#475569">Agroecología, restauración de suelos y cadena de valor del maguey.</p>
       </article>
     </div>
   </section>
 
-  <!-- POSTS (6 recientes) -->
-  <section id="posts" class="container" style="margin-bottom:40px">
-    <div class="row" style="align-items:end;margin-bottom:10px">
+  <!-- POSTS (últimos 6) -->
+  <section id="posts" class="container" style="margin-bottom:48px">
+    <div class="stack-2" style="grid-auto-flow:column;justify-content:space-between;align-items:end;margin-bottom:12px">
       <h2 style="margin:0">Artículos recientes</h2>
       <a class="link" href="posts.html">Ver todo</a>
     </div>
     <div class="posts-grid" id="postsGrid"></div>
+    <div id="status" style="margin-top:8px;font-size:12px;color:#64748b"></div>
+  </section>
+
+  <!-- SUSCRIPCIÓN -->
+  <section id="suscripcion" class="container" style="margin-bottom:64px">
+    <div class="card reveal" style="padding:28px;position:relative;overflow:hidden">
+      <div style="position:absolute;left:-80px;top:50%;transform:translateY(-50%);width:220px;height:220px;border-radius:999px;background:rgba(16,185,129,.14);filter:blur(40px)"></div>
+      <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:220px;height:220px;border-radius:999px;background:rgba(132,204,22,.14);filter:blur(40px)"></div>
+      <div class="grid-3" style="grid-template-columns:1fr;gap:1rem">
+        <div class="stack-2">
+          <h3 style="margin:0">Suscríbete al boletín</h3>
+          <p style="color:#64748b;margin:0">Un correo semanal con lo mejor de pulque, tierra y maguey.</p>
+        </div>
+        <form id="formSub" class="stack-2" style="grid-auto-flow:row;gap:.5rem;align-items:stretch">
+          <input id="email" type="email" placeholder="tu@email.com" required
+                 style="flex:1;border:1px solid rgba(15,23,42,.12);background:rgba(255,255,255,.7);color:inherit;border-radius:14px;padding:.6rem .8rem;outline:none"/>
+          <button class="btn btn-brand btn-block" type="submit">Unirme</button>
+        </form>
+      </div>
+      <div id="okMsg" style="margin-top:.5rem;color:#059669;display:none">¡Listo! Revisa tu bandeja de entrada ✉️</div>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="container row">
-      <div class="row" style="gap:.5rem">
+    <div class="container stack-2" style="grid-auto-flow:column;justify-content:space-between;align-items:center">
+      <div class="stack-2" style="grid-auto-flow:column;align-items:center">
         <span class="brand-badge" style="width:28px;height:28px">🍶</span>
         <span>Pulque Vivo</span>
       </div>
@@ -180,22 +239,22 @@
     </div>
   </footer>
 
-  <!-- Fallback embebido (si no existe posts.json) -->
+  <!-- Fallback de posts embebido (si no existe posts.json) -->
   <script type="application/json" id="posts-fallback">[
     {"tag":"Pulque","title":"De la penca al jarro: proceso vivo","excerpt":"Fermentos, microbiota y tradición del maguey.","url":"#","cover":""},
-    {"tag":"Naturaleza","title":"Noticias verdes de la semana","excerpt":"Restauración de suelos, humedales y polinizadores.","url":"#","cover":""},
-    {"tag":"Bioconstrucción","title":"Adobe, bambú y tierra compactada","excerpt":"Técnicas accesibles y térmicas para tu espacio.","url":"#","cover":""}
+    {"tag":"Tierra","title":"Adobe y BTC básicos","excerpt":"Materiales, moldes y curado.","url":"#","cover":""},
+    {"tag":"Maguey","title":"Agave y territorio","excerpt":"Manejo sustentable y biodiversidad.","url":"#","cover":""}
   ]</script>
 
   <script>
     // ===== Tema oscuro persistente =====
-    const htmlEl = document.documentElement;
+    const html = document.documentElement;
     const themeBtn = document.getElementById('themeBtn');
     const saved = localStorage.getItem('pulque.theme');
-    if(saved === 'dark'){ htmlEl.classList.add('dark'); themeBtn.textContent = 'Modo claro'; }
+    if(saved === 'dark'){ html.classList.add('dark'); themeBtn.textContent = 'Modo claro'; }
     themeBtn.addEventListener('click', ()=>{
-      htmlEl.classList.toggle('dark');
-      const dark = htmlEl.classList.contains('dark');
+      html.classList.toggle('dark');
+      const dark = html.classList.contains('dark');
       localStorage.setItem('pulque.theme', dark ? 'dark' : 'light');
       themeBtn.textContent = dark ? 'Modo claro' : 'Modo oscuro';
     });
@@ -206,39 +265,88 @@
     }, {threshold:.2});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+    // ===== Suscripción (demo) =====
+    document.getElementById('formSub').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if(!email) return;
+      try{ localStorage.setItem('pulque.newsletter', email); }catch{}
+      document.getElementById('okMsg').style.display = 'block';
+      e.target.reset();
+    });
+
     // ===== Util =====
     function escapeHtml(s){
       return String(s).replace(/[&<>"]/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[m]));
     }
 
-    // ===== Carga y render (6 recientes) =====
+    // ===== Carga de posts (Home muestra 6) =====
+    const HOMEPAGE_LIMIT = 6;
+
+    function candidateUrls(filename){
+      const ts = Date.now();
+      const origin = location.origin;
+      const path = location.pathname;
+      const dir = path.replace(/[^\/]*$/,'');
+      const segs = path.split('/').filter(Boolean);
+      const repoBase = segs.length ? `/${segs[0]}/` : '/';
+      return [
+        `${origin}${dir}${filename}?v=${ts}`,  // misma carpeta
+        `${origin}${repoBase}${filename}?v=${ts}`, // base repo
+        `${origin}/${filename}?v=${ts}` // raíz dominio
+      ].filter((v,i,a)=>a.indexOf(v)===i);
+    }
+
+    async function fetchJsonSmart(filename){
+      const tries = candidateUrls(filename);
+      const traces = [];
+      for(const url of tries){
+        try{
+          const r = await fetch(url,{cache:'no-store'});
+          traces.push(`GET ${url} → ${r.status}`);
+          if(r.ok) return await r.json();
+        }catch(e){ traces.push(`ERR ${url} → ${e}`); }
+      }
+      const st = document.getElementById('status');
+      if(st){
+        st.textContent = (location.protocol==='file:' ? 'Abre con Live Server (fetch bloquea file://)' : 'No se encontró posts.json. Colócalo junto a index.html.');
+      }
+      throw new Error('posts.json no encontrado\n'+traces.join('\n'));
+    }
+
     async function loadPosts(){
       let posts = [];
       try{
-        const res = await fetch('./posts.json?v=' + Date.now(), { cache: 'no-store' });
-        if(res.ok) posts = await res.json();
+        const data = await fetchJsonSmart('posts.json');
+        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
       }catch(_){}
       if(!posts.length){
-        try{ posts = JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{ posts=[] }
+        try{ posts = JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{}
       }
-      renderRecent(posts);
+      renderPosts(posts.slice(0, HOMEPAGE_LIMIT));
     }
 
-    function renderRecent(items){
+    function renderPosts(items){
       const grid = document.getElementById('postsGrid');
       grid.innerHTML = '';
-      items.slice(0,6).forEach((p)=>{
+      if(!items.length){
+        grid.innerHTML = '<p class="muted">Aún no hay artículos.</p>';
+        return;
+      }
+      items.forEach((p)=>{
         const card = document.createElement('article');
         card.className = 'card reveal';
+        card.style.overflow = 'hidden';
         card.innerHTML = `
-          <a href="${p.url||'#'}" style="display:block">
-            <div class="post-cover" ${p.cover ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"` : ''}></div>
-            <div style="padding:14px">
-              <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
-              <h3 style="margin:.2rem 0 .3rem;font-size:1.05rem">${escapeHtml(p.title||'')}</h3>
-              <p style="color:#475569;margin:0">${escapeHtml(p.excerpt||'')}</p>
+          <div class="post-cover" ${p.cover ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"` : ''}></div>
+          <div style="padding:16px">
+            <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
+            <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
+            <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
+            <div style="padding-top:6px">
+              <a class="link" style="color:var(--brand)" href="${p.url||'#'}">Leer →</a>
             </div>
-          </a>`;
+          </div>`;
         grid.appendChild(card);
         io.observe(card);
       });
