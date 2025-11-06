@@ -46,15 +46,12 @@
       width:auto;
       display:block;
     }
-    @media (min-width:768px){
-      .brand-logo{height:58px;}
-    }
+    @media (min-width:768px){ .brand-logo{height:58px;} }
     .brand-text{
       font-size:1rem;
       color:#111827;
-      letter-spacing:.02em;      
+      letter-spacing:.02em;
     }
-
     .links{
       display:flex;
       align-items:center;
@@ -83,7 +80,6 @@
       color:#020817;
       transform:translateY(-1px);
     }
-
     .nav.scrolled{
       background:#020817;
       border-bottom-color:rgba(148,163,253,.18);
@@ -219,7 +215,7 @@
   <script type="application/json" id="posts-fallback">[]</script>
 
   <script>
-    // Header scroll efecto
+    // NAV scroll
     (function(){
       const nav = document.getElementById('mainNav');
       if(!nav) return;
@@ -233,17 +229,26 @@
 
     // Reveal
     const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
     }, {threshold:.2});
 
     function escapeHtml(s){
-      return String(s).replace(/[&<>"]/g,(m)=>({
-        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
+      return String(s).replace(/[&<>"]/g, m => ({
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;'
       }[m]));
     }
+
     function qsNum(name, def){
-      const v = parseInt(new URL(location.href).searchParams.get(name)||def,10);
-      return Number.isFinite(v)&&v>0 ? v : def;
+      const v = parseInt(new URL(location.href).searchParams.get(name) || def, 10);
+      return Number.isFinite(v) && v > 0 ? v : def;
     }
 
     function candidateUrls(filename){
@@ -266,7 +271,7 @@
       const traces = [];
       for(const url of tries){
         try{
-          const r = await fetch(url,{cache:'no-store'});
+          const r = await fetch(url, {cache:'no-store'});
           traces.push(`GET ${url} → ${r.status}`);
           if(r.ok) return await r.json();
         }catch(e){
@@ -274,77 +279,99 @@
         }
       }
       if(status){
-        status.textContent = (location.protocol==='file:'
+        status.textContent = (location.protocol === 'file:'
           ? 'Abre con Live Server (fetch se bloquea con file://).'
           : 'No se encontró posts.json. Colócalo junto a posts.html en GitHub Pages.');
       }
-      throw new Error('posts.json no encontrado\n'+traces.join('\n'));
+      console.warn('posts.json no encontrado:\n' + traces.join('\n'));
+      throw new Error('posts.json no encontrado');
     }
 
     function makeCard(p){
       const el = document.createElement('article');
       el.className = 'card reveal';
       el.style.overflow = 'hidden';
+
+      const coverStyle = p.cover
+        ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"`
+        : '';
+
       el.innerHTML = `
-        <div class="post-cover" ${p.cover?`style="background-image:url('${p.cover}');background-size:cover;background-position:center"`:''}></div>
+        <div class="post-cover" ${coverStyle}></div>
         <div style="padding:16px">
-          <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
-          <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
-          <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
+          <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag || '')}</div>
+          <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title || '')}</h3>
+          <p style="color:#475569">${escapeHtml(p.excerpt || '')}</p>
           <div style="padding-top:6px">
-            <a class="chip" href="${p.url||'#'}">Leer →</a>
+            <a class="chip" href="${p.url || '#'}">Leer →</a>
           </div>
-        </div>`;
+        </div>
+      `;
       io.observe(el);
       return el;
     }
 
-    function renderPage(items,page,perPage){
-      const grid=document.getElementById('postsGrid');
-      const pager=document.getElementById('pager');
-      grid.innerHTML=''; pager.innerHTML='';
+    function renderPage(items, page, perPage){
+      const grid = document.getElementById('postsGrid');
+      const pager = document.getElementById('pager');
+      grid.innerHTML = '';
+      pager.innerHTML = '';
 
       if(!items.length){
-        grid.innerHTML='<p class="muted">Aún no hay artículos publicados.</p>';
+        grid.innerHTML = '<p class="muted">Aún no hay artículos publicados.</p>';
         return;
       }
 
-      const total=items.length;
-      const pages=Math.max(1,Math.ceil(total/perPage));
-      page=Math.min(Math.max(1,page),pages);
-      const start=(page-1)*perPage;
-      const end=Math.min(start+perPage,total);
+      const total = items.length;
+      const pages = Math.max(1, Math.ceil(total / perPage));
+      page = Math.min(Math.max(1, page), pages);
 
-      items.slice(start,end).forEach(p=>grid.appendChild(makeCard(p)));
+      const start = (page - 1) * perPage;
+      const end = Math.min(start + perPage, total);
 
-      function link(n,label,cls){const a=document.createElement('a');a.href=`?page=${n}`;a.textContent=label; if(cls)a.classList.add(cls);return a;}
-      function span(label,cls){const s=document.createElement('span');s.textContent=label;if(cls)s.classList.add(cls);return s;}
+      items.slice(start, end).forEach(p => grid.appendChild(makeCard(p)));
 
-      pager.appendChild(page>1 ? link(page-1,'‹') : span('‹','disabled'));
-      for(let i=1;i<=pages;i++){
-        pager.appendChild(i===page ? span(String(i),'active') : link(i,String(i)));
+      function link(n, label, cls){
+        const a = document.createElement('a');
+        a.href = `?page=${n}`;
+        a.textContent = label;
+        if(cls) a.classList.add(cls);
+        return a;
       }
-      pager.appendChild(page<pages ? link(page+1,'›') : span('›','disabled'));
+      function span(label, cls){
+        const s = document.createElement('span');
+        s.textContent = label;
+        if(cls) s.classList.add(cls);
+        return s;
+      }
+
+      pager.appendChild(page > 1 ? link(page - 1, '‹') : span('‹','disabled'));
+      for(let i = 1; i <= pages; i++){
+        pager.appendChild(i === page ? span(String(i),'active') : link(i, String(i)));
+      }
+      pager.appendChild(page < pages ? link(page + 1, '›') : span('›','disabled'));
     }
 
     (async function(){
-      const PER_PAGE=9;
-      const page=qsNum('page',1);
-      const status=document.getElementById('status');
-      let posts=[];
+      const PER_PAGE = 9;
+      const page = qsNum('page', 1);
+      const status = document.getElementById('status');
+      let posts = [];
       try{
-        const data=await fetchJsonSmart('posts.json');
+        const data = await fetchJsonSmart('posts.json');
         posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
-        if(status) status.textContent='';
+        if(status) status.textContent = '';
       }catch(_){
-        try{ posts=JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{}
+        try{
+          posts = JSON.parse(document.getElementById('posts-fallback').textContent || '[]');
+        }catch{}
         if(status && !posts.length){
-          status.textContent=(location.protocol==='file:'
+          status.textContent = (location.protocol === 'file:'
             ? 'Abre con Live Server para que fetch funcione.'
             : 'Sube posts.json junto a posts.html en GitHub Pages.');
         }
       }
-      renderPage(posts,page,PER_PAGE);
+      renderPage(posts, page, PER_PAGE);
     })();
   </script>
 </body>
