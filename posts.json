@@ -1,0 +1,72 @@
+[
+  {
+    "tag": "Pulque",
+    "title": "De la penca al jarro: el proceso vivo",
+    "excerpt": "Fermentos, microbiota y tradición del maguey paso a paso.",
+    "url": "articulos/de-la-penca-al-jarro.html",
+    "cover": "images/pulque-01.jpg"
+  },
+  {
+    "tag": "Naturaleza",
+    "title": "Noticias verdes: restauración y polinizadores",
+    "excerpt": "Iniciativas locales para humedales y corredores biológicos.",
+    "url": "articulos/noticias-verdes-01.html",
+    "cover": "images/naturaleza-01.jpg"
+  },
+  {
+    "tag": "Bioconstrucción",
+    "title": "Guía práctica de adobe",
+    "excerpt": "Mezcla, moldes, curado y desempeño térmico.",
+    "url": "articulos/guia-adobe.html",
+    "cover": "images/bio-01.jpg"
+  },
+  {
+    "tag": "Pulque",
+    "title": "Microbiota del pulque: quién es quién",
+    "excerpt": "Levaduras y bacterias lácticas clave en el sabor y la textura.",
+    "url": "articulos/microbiota-del-pulque.html",
+    "cover": "images/pulque-02.jpg"
+  },
+  {
+    "tag": "Naturaleza",
+    "title": "Humedales urbanos: manual de bolsillo",
+    "excerpt": "Captación, filtración y biodiversidad en pequeñas escalas.",
+    "url": "articulos/humedales-urbanos.html",
+    "cover": "images/naturaleza-02.jpg"
+  },
+  {
+    "tag": "Bioconstrucción",
+    "title": "Bambú estructural",
+    "excerpt": "Selección, uniones y tratamientos para larga vida útil.",
+    "url": "articulos/bambu-estructural.html",
+    "cover": "images/bio-02.jpg"
+  },
+  {
+    "tag": "Pulque",
+    "title": "Utensilios tradicionales del tinacal",
+    "excerpt": "Acocote, tinacal y prácticas de higiene para un buen curado.",
+    "url": "articulos/utensilios-tradicionales.html",
+    "cover": "images/pulque-03.jpg"
+  },
+  {
+    "tag": "Naturaleza",
+    "title": "Suelos vivos",
+    "excerpt": "Compost, micorrizas y cobertura para resiliencia hídrica.",
+    "url": "articulos/suelos-vivos.html",
+    "cover": "images/naturaleza-03.jpg"
+  },
+  {
+    "tag": "Bioconstrucción",
+    "title": "Tierra compactada (BTC / Rammed Earth)",
+    "excerpt": "Densidades, encofrados y acabado fino.",
+    "url": "articulos/tierra-compactada.html",
+    "cover": "images/bio-03.jpg"
+  },
+  {
+    "tag": "Pulque",
+    "title": "Cadena de valor del maguey",
+    "excerpt": "Del campo a la pulquería: actores, riesgos y oportunidades.",
+    "url": "articulos/cadena-de-valor-del-maguey.html",
+    "cover": "images/pulque-04.jpg"
+  }
+]
