@@ -17,8 +17,8 @@
     "tag": "Pulque",
     "title": "Microbiota del pulque: quién es quién",
     "excerpt": "Levaduras y bacterias lácticas clave en el sabor y la textura.",
-    "url": "articulos/microbiotadelpulque.html",
-    "cover": "articulos/microbiotadelpulque.png"
+    "url": "articulos/microbiotadelpulque/microbiotadelpulque.html",
+    "cover": "articulos/microbiotadelpulque/microbiotadelpulque.png"
   },
   {
     "tag": "Naturaleza",
@@ -71,6 +71,7 @@
     "cover": "images/pulque-04.jpg"
   }
 ]
+
 
 
 
