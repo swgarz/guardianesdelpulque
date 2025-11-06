@@ -127,10 +127,12 @@
       border:1px solid rgba(34,197,94,.35);
       box-shadow:0 18px 40px rgba(0,0,0,.45);
       display:none;
-      min-width:210px;
+      min-width:220px;
       z-index:60;
     }
-    .chip-dropdown .dropdown a{
+
+    .chip-dropdown .dropdown a,
+    .chip-dropdown .dropdown .item > a{
       display:flex;
       align-items:center;
       gap:.35rem;
@@ -139,13 +141,68 @@
       color:#bbf7d0;
       text-decoration:none;
     }
-    .chip-dropdown .dropdown a span{
+    .chip-dropdown .dropdown a span,
+    .chip-dropdown .dropdown .item > a span{
       font-size:.9rem;
     }
-    .chip-dropdown .dropdown a:hover{
+    .chip-dropdown .dropdown a:hover,
+    .chip-dropdown .dropdown .item > a:hover{
       background:rgba(34,197,94,.16);
       color:#22c55e;
     }
+
+    .chip-dropdown .dropdown .item{
+      position:relative;
+    }
+    .chip-dropdown .dropdown .item-label{
+      display:flex;
+      align-items:center;
+      gap:.35rem;
+      padding:.45rem .9rem;
+      font-size:.78rem;
+      color:#bbf7d0;
+      cursor:pointer;
+    }
+    .chip-dropdown .dropdown .item-label:hover{
+      background:rgba(34,197,94,.16);
+      color:#22c55e;
+    }
+    .chip-dropdown .dropdown .item-label span.icon{
+      font-size:.9rem;
+    }
+    .chip-dropdown .dropdown .item-label span.caret{
+      margin-left:auto;
+      font-size:.6rem;
+      opacity:.8;
+    }
+
+    .chip-dropdown .dropdown .submenu{
+      position:absolute;
+      top:0;
+      left:100%;
+      margin-left:4px;
+      background:#020817;
+      border-radius:14px;
+      padding:.3rem 0;
+      border:1px solid rgba(34,197,94,.35);
+      box-shadow:0 18px 40px rgba(0,0,0,.6);
+      display:none;
+      min-width:170px;
+      z-index:70;
+    }
+    .chip-dropdown .dropdown .submenu a{
+      padding:.4rem .75rem;
+      font-size:.76rem;
+      color:#bbf7d0;
+    }
+    .chip-dropdown .dropdown .submenu a:hover{
+      background:rgba(34,197,94,.18);
+      color:#22c55e;
+    }
+    .chip-dropdown .dropdown .item:hover .submenu{
+      display:block;
+    }
+
     .chip-dropdown:hover .dropdown{
       display:block;
     }
@@ -322,12 +379,15 @@
         <div class="chip chip-dropdown">
           Comunidad
           <div class="dropdown">
-            <a href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">
-              <span>🌿</span> Teomati (Patrocinador)
-            </a>
-            <a href="patrocinadores.html">
-              <span>💼</span> Patrocinadores
-            </a>
+            <div class="item">
+              <div class="item-label">
+                <span class="icon">💼</span> Patrocinadores
+                <span class="caret">▸</span>
+              </div>
+              <div class="submenu">
+                <a href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
+              </div>
+            </div>
             <a href="alianzas.html">
               <span>🤝</span> Aliados
             </a>
@@ -435,7 +495,7 @@
         Proyecto hermano donde convergen bioconstrucción, fermentos y territorio. Visita para conocer más colaboraciones.
       </p>
       <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:flex-start;margin-top:.5rem">
-        <a class="chip" href="https://ejemplo-bioalkimia.com" target="_blank" rel="noopener">Ir a Bioalkimia →</a>
+        <a class="chip" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Ir a Teomati →</a>
       </div>
     </div>
   </section>
@@ -455,7 +515,7 @@
     </div>
   </footer>
 
-  <!-- Fallback de posts (para entorno local sin servidor) -->
+  <!-- Fallback de posts -->
   <script type="application/json" id="posts-fallback">[
     {
       "tag":"Pulque",
@@ -506,7 +566,7 @@
       const ts = Date.now();
       const origin = location.origin;
       const path = location.pathname;
-      const dir = path.replace(/[^\/]*$/,''); // carpeta actual
+      const dir = path.replace(/[^\/]*$/,'');
       const segs = path.split('/').filter(Boolean);
       const repoBase = segs.length ? `/${segs[0]}/` : '/';
       return [
