@@ -25,7 +25,6 @@
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    /* ===== Layout helpers ===== */
     .container{max-width:1180px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){ .container{padding:0 24px} }
     .stack-2{display:grid;gap:.5rem}
@@ -100,10 +99,11 @@
       transform:translateY(-1px);
     }
 
-    /* Dropdown Comunidad */
+    /* ===== Comunidad con dropdown ===== */
     .chip-dropdown{
       padding-right:1.6rem;
       user-select:none;
+      transform:none !important;              /* sin brinco */
     }
     .chip-dropdown::after{
       content:'';
@@ -115,14 +115,14 @@
       border-left:4px solid transparent;
       border-right:4px solid transparent;
       border-top:5px solid var(--brand);
-      transform:translateY(-20%);
+      transform:translateY(-40%);
       pointer-events:none;
     }
     .chip-dropdown .dropdown{
       position:absolute;
       top:100%;
-      right:0;
-      margin-top:4px;              /* pegado al chip */
+      left:0;
+      margin-top:-1px;                        /* se sobrepone 1px: sin hueco */
       background:#020817;
       border-radius:16px;
       padding:.35rem 0;
@@ -181,7 +181,7 @@
       position:absolute;
       top:0;
       left:100%;
-      margin-left:-2px;            /* solapa un poco para quitar el hueco */
+      margin-left:-1px;                       /* se monta: sin hueco lateral */
       background:#020817;
       border-radius:14px;
       padding:.3rem 0;
@@ -201,6 +201,15 @@
       color:#22c55e;
     }
 
+    .chip-dropdown:hover,
+    .chip-dropdown:focus-within{
+      background:var(--brand);
+      color:#020817;
+    }
+    .chip-dropdown:hover::after,
+    .chip-dropdown:focus-within::after{
+      border-top-color:#020817;
+    }
     .chip-dropdown:hover .dropdown,
     .chip-dropdown:focus-within .dropdown{
       display:block;
@@ -221,6 +230,7 @@
       background:transparent;
       border-color:#22c55e;
       color:#bbf7d0;
+      transform:none;
     }
     .nav.scrolled .chip:hover{
       background:#22c55e;
@@ -351,7 +361,7 @@
       border-radius:12px;font-weight:700;flex-wrap:wrap;
     }
 
-    /* ===== BIOALKIMIA / TEOMATI ===== */
+    /* ===== BIO / TEOMATI ===== */
     .bio-card{padding:24px}
     .bio-title{margin:0}
     .bio-text{color:#64748b;margin:.4rem 0 0}
@@ -399,6 +409,7 @@
             </a>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -490,7 +501,7 @@
     </div>
   </section>
 
-  <!-- TEOMATI / BIOALKIMIA -->
+  <!-- TEOMATI -->
   <section id="bioalkimia" class="container" style="margin-bottom:64px">
     <div class="card bio-card reveal">
       <h3 class="bio-title">Teomati</h3>
@@ -518,12 +529,12 @@
     </div>
   </footer>
 
-  <!-- Fallback de posts -->
+  <!-- Fallback posts (para modo file://) -->
   <script type="application/json" id="posts-fallback">[
     {
       "tag":"Pulque",
       "title":"De la penca al jarro: el proceso vivo",
-      "excerpt":"Fermentos, microbiota y tradición del maguey.",
+      "excerpt":"Fermentos, microbiota y tradición del maguey paso a paso.",
       "url":"articulos/delapencaaljarro/de-la-penca-al-jarro.html",
       "cover":"articulos/delapencaaljarro/de_la_penca_al_jarro.png"
     }
@@ -542,7 +553,7 @@
       window.addEventListener('scroll', update, {passive:true});
     })();
 
-    // Reveal on scroll
+    // Reveal
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
@@ -553,13 +564,9 @@
     }, {threshold:.2});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Utils
     function escapeHtml(s){
       return String(s).replace(/[&<>"]/g, m => ({
-        '&':'&amp;',
-        '<':'&lt;',
-        '>':'&gt;',
-        '"':'&quot;'
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
       }[m]));
     }
 
@@ -585,7 +592,7 @@
       const traces = [];
       for(const url of tries){
         try{
-          const r = await fetch(url, {cache:'no-store'});
+          const r = await fetch(url,{cache:'no-store'});
           traces.push(`GET ${url} → ${r.status}`);
           if(r.ok) return await r.json();
         }catch(e){
@@ -597,7 +604,7 @@
           ? 'Abre con Live Server (fetch se bloquea con file://).'
           : 'No se encontró posts.json. Colócalo junto a index.html en GitHub Pages.');
       }
-      console.warn('posts.json no encontrado:\n' + traces.join('\n'));
+      console.warn('posts.json no encontrado:\n'+traces.join('\n'));
       throw new Error('posts.json no encontrado');
     }
 
@@ -658,7 +665,7 @@
       }
     });
 
-    // Ajusta enlace real de PayPal:
+    // Enlace real de PayPal
     document.getElementById('paypalBtn').href = "#";
 
     loadPosts();
