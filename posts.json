@@ -10,7 +10,7 @@
     "tag": "Bioconstrucción",
     "title": "Guía práctica de adobe",
     "excerpt": "Mezcla, moldes, curado y desempeño térmico.",
-    "url": "articulos/guiadeadobe.html",
+    "url": "articulos/guiadeadobe/guiadeadobe.html",
     "cover": "articulos/guiadeadobe/guiadeadobe.png"
   },
   {
@@ -70,6 +70,7 @@
     "cover": "images/pulque-04.jpg"
   }
 ]
+
 
 
 
