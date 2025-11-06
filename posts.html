@@ -20,6 +20,7 @@
     .container{max-width:1180px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){ .container{padding:0 24px} }
 
+    /* NAV */
     .nav{
       position:sticky;top:0;z-index:50;
       background:transparent;
@@ -79,6 +80,59 @@
       color:#020817;
       transform:translateY(-1px);
     }
+
+    /* Dropdown Comunidad */
+    .chip-dropdown{
+      position:relative;
+      padding-right:1.6rem;
+      user-select:none;
+    }
+    .chip-dropdown::after{
+      content:'';
+      position:absolute;
+      right:.6rem;
+      top:50%;
+      width:0;
+      height:0;
+      border-left:4px solid transparent;
+      border-right:4px solid transparent;
+      border-top:5px solid var(--brand);
+      transform:translateY(-30%);
+      pointer-events:none;
+    }
+    .chip-dropdown .dropdown{
+      position:absolute;
+      top:110%;
+      right:0;
+      background:#020817;
+      border-radius:16px;
+      padding:.35rem 0;
+      border:1px solid rgba(34,197,94,.35);
+      box-shadow:0 18px 40px rgba(0,0,0,.45);
+      display:none;
+      min-width:210px;
+      z-index:60;
+    }
+    .chip-dropdown .dropdown a{
+      display:flex;
+      align-items:center;
+      gap:.35rem;
+      padding:.45rem .9rem;
+      font-size:.78rem;
+      color:#bbf7d0;
+      text-decoration:none;
+    }
+    .chip-dropdown .dropdown a span{
+      font-size:.9rem;
+    }
+    .chip-dropdown .dropdown a:hover{
+      background:rgba(34,197,94,.16);
+      color:#22c55e;
+    }
+    .chip-dropdown:hover .dropdown{
+      display:block;
+    }
+
     .nav.scrolled{
       background:#020817;
       border-bottom-color:rgba(148,163,253,.18);
@@ -94,7 +148,11 @@
       background:#22c55e;
       color:#020817;
     }
+    .nav.scrolled .chip-dropdown::after{
+      border-top-color:#22c55e;
+    }
 
+    /* Header */
     .header{padding:36px 0 18px}
     .title{
       margin:0;
@@ -107,6 +165,7 @@
     }
     .subtitle{margin:.35rem 0 0;color:#64748b}
 
+    /* Grid & cards */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
@@ -122,6 +181,7 @@
       background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));
     }
 
+    /* Paginación */
     .pager{
       display:flex;
       flex-wrap:wrap;
@@ -176,7 +236,24 @@
       <div class="links">
         <a class="chip" href="index.html">Inicio</a>
         <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="index.html#bioalkimia">Teomati</a>
+
+        <div class="chip chip-dropdown">
+          Comunidad
+          <div class="dropdown">
+            <a href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">
+              <span>🌿</span> Teomati (Patrocinador)
+            </a>
+            <a href="patrocinadores.html">
+              <span>💼</span> Patrocinadores
+            </a>
+            <a href="alianzas.html">
+              <span>🤝</span> Aliados
+            </a>
+            <a href="colabora.html">
+              <span>✨</span> Quiero colaborar
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -203,11 +280,12 @@
       <div class="links">
         <a class="chip" href="index.html">Inicio</a>
         <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="index.html#bioalkimia">Teomati</a>
+        <a class="chip" href="index.html#bioalkimia">Bioalkimia</a>
       </div>
     </div>
   </footer>
 
+  <!-- Fallback vacío -->
   <script type="application/json" id="posts-fallback">[]</script>
 
   <script>
@@ -235,7 +313,10 @@
 
     function escapeHtml(s){
       return String(s).replace(/[&<>"]/g, m => ({
-        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;'
       }[m]));
     }
 
@@ -244,29 +325,40 @@
       return Number.isFinite(v) && v > 0 ? v : def;
     }
 
-    async function loadPosts(){
+    function candidateUrls(filename){
+      const ts = Date.now();
+      const origin = location.origin;
+      const path = location.pathname;
+      const dir = path.replace(/[^\/]*$/,'');
+      const segs = path.split('/').filter(Boolean);
+      const repoBase = segs.length ? `/${segs[0]}/` : '/';
+      return [
+        `${origin}${dir}${filename}?v=${ts}`,
+        `${origin}${repoBase}${filename}?v=${ts}`,
+        `${origin}/${filename}?v=${ts}`
+      ].filter((v,i,a)=>a.indexOf(v)===i);
+    }
+
+    async function fetchJsonSmart(filename){
+      const tries = candidateUrls(filename);
       const status = document.getElementById('status');
-      let posts = [];
-      try{
-        const res = await fetch('posts.json?v=' + Date.now(), {cache:'no-store'});
-        if(res.ok){
-          const data = await res.json();
-          posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
-        }
-      }catch(e){
-        console.warn(e);
-      }
-
-      if(!posts.length){
+      const traces = [];
+      for(const url of tries){
         try{
-          posts = JSON.parse(document.getElementById('posts-fallback').textContent || '[]');
-        }catch(e){}
-        if(status && !posts.length){
-          status.textContent = 'No se pudo cargar posts.json.';
+          const r = await fetch(url, {cache:'no-store'});
+          traces.push(`GET ${url} → ${r.status}`);
+          if(r.ok) return await r.json();
+        }catch(e){
+          traces.push(`ERR ${url} → ${e}`);
         }
       }
-
-      renderPage(posts, qsNum('page',1), 9);
+      if(status){
+        status.textContent = (location.protocol === 'file:'
+          ? 'Abre con Live Server (fetch se bloquea con file://).'
+          : 'No se encontró posts.json. Colócalo junto a posts.html en GitHub Pages.');
+      }
+      console.warn('posts.json no encontrado:\n' + traces.join('\n'));
+      throw new Error('posts.json no encontrado');
     }
 
     function makeCard(p){
@@ -328,13 +420,33 @@
       }
 
       pager.appendChild(page > 1 ? link(page - 1, '‹') : span('‹','disabled'));
-      for(let i=1;i<=pages;i++){
-        pager.appendChild(i === page ? span(String(i),'active') : link(i,String(i)));
+      for(let i = 1; i <= pages; i++){
+        pager.appendChild(i === page ? span(String(i),'active') : link(i, String(i)));
       }
       pager.appendChild(page < pages ? link(page + 1, '›') : span('›','disabled'));
     }
 
-    loadPosts();
+    (async function(){
+      const PER_PAGE = 9;
+      const page = qsNum('page', 1);
+      const status = document.getElementById('status');
+      let posts = [];
+      try{
+        const data = await fetchJsonSmart('posts.json');
+        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
+        if(status) status.textContent = '';
+      }catch(_){
+        try{
+          posts = JSON.parse(document.getElementById('posts-fallback').textContent || '[]');
+        }catch{}
+        if(status && !posts.length){
+          status.textContent = (location.protocol === 'file:'
+            ? 'Abre con Live Server para que fetch funcione.'
+            : 'Sube posts.json junto a posts.html en GitHub Pages.');
+        }
+      }
+      renderPage(posts, page, PER_PAGE);
+    })();
   </script>
 </body>
 </html>
