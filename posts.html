@@ -6,7 +6,6 @@
   <title>Todos los artículos — Pulque Vivo</title>
   <meta name="description" content="Listado completo de artículos: pulque, tierra y maguey." />
   <style>
-    /* ===== Reset + tokens ===== */
     *,*::before,*::after{box-sizing:border-box}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';line-height:1.5;color:#0f172a;background:#f6f8fb}
     :root{ --brand:#059669; --ink:#0f172a; --muted:#475569; --card:#ffffff; --stroke:#e5e7eb; }
@@ -17,27 +16,29 @@
     .container{max-width:1180px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){ .container{padding:0 24px} }
 
-    /* NAV */
+    /* Nav */
     .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.6);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
     html.dark .nav{background:rgba(11,15,23,.5);border-color:rgba(255,255,255,.08)}
     .nav .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:.5rem;font-weight:700}
     .brand-badge{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--brand);color:#fff}
-    .nav a.link{color:#334155}
+    .links{display:flex;align-items:center;gap:.75rem}
+    .nav a.link{color:#334155;white-space:nowrap}
     .nav a.link:hover{color:#0f172a}
     html.dark .nav a.link{color:#cbd5e1}
     html.dark .nav a.link:hover{color:#fff}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;padding:.65rem 1rem;font-weight:600;cursor:pointer}
     .btn-ghost{background:#fff;border:1px solid rgba(15,23,42,.08);color:#0f172a}
     html.dark .btn-ghost{background:#192131;border-color:rgba(255,255,255,.1);color:#fff}
+    @media (max-width:420px){ .links{gap:.5rem} .btn-ghost{padding:.55rem .8rem} }
 
-    /* HEADER */
+    /* Header */
     .header{padding:36px 0 18px}
     .title{margin:0;font-size:clamp(28px,5.6vw,44px);line-height:1.08;background:linear-gradient(135deg,#059669,#65a30d,#065f46);-webkit-background-clip:text;background-clip:text;color:transparent}
     .subtitle{margin:.35rem 0 0;color:#64748b}
     html.dark .subtitle{color:#94a3b8}
 
-    /* GRID */
+    /* Grid & cards */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
@@ -46,7 +47,7 @@
     .post-cover{height:144px;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));}
     html.dark .post-cover{background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(250,204,21,.12));}
 
-    /* PAGINACIÓN */
+    /* Paginación */
     .pager{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center;margin:20px 0}
     .pager a,.pager span{
       display:inline-flex;min-width:40px;height:40px;align-items:center;justify-content:center;
@@ -59,7 +60,6 @@
     footer{border-top:1px solid rgba(15,23,42,.08);padding:24px 0;margin-top:40px;color:#64748b}
     html.dark footer{border-color:rgba(255,255,255,.1);color:#94a3b8}
 
-    /* Reveal */
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
   </style>
@@ -72,9 +72,9 @@
         <span class="brand-badge" aria-hidden>🍶</span>
         <span>Pulque Vivo</span>
       </a>
-      <div class="stack-2" style="grid-auto-flow:column;gap:1rem;align-items:center">
-        <a class="link" href="index.html#secciones">Secciones</a>
+      <div class="links">
         <a class="link" href="posts.html">Artículos</a>
+        <a class="link" href="index.html#donaciones">Donaciones</a>
         <button id="themeBtn" class="btn btn-ghost" type="button">Modo oscuro</button>
       </div>
     </div>
@@ -99,7 +99,10 @@
         <span class="brand-badge" style="width:28px;height:28px">🍶</span>
         <span>Pulque Vivo</span>
       </div>
-      <a class="link" href="index.html">Inicio</a>
+      <div class="links">
+        <a class="link" href="index.html">Inicio</a>
+        <a class="link" href="index.html#donaciones">Donaciones</a>
+      </div>
     </div>
   </footer>
 
@@ -125,113 +128,76 @@
     }, {threshold:.2});
 
     // Util
-    function escapeHtml(s){
-      return String(s).replace(/[&<>"]/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[m]));
-    }
+    function escapeHtml(s){ return String(s).replace(/[&<>"]/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[m])); }
     function qsNum(name, def){ const v = parseInt(new URL(location.href).searchParams.get(name)||def,10); return Number.isFinite(v)&&v>0? v : def; }
 
     function candidateUrls(filename){
-      const ts = Date.now();
-      const origin = location.origin;
-      const path = location.pathname;
-      const dir = path.replace(/[^\/]*$/,'');
-      const segs = path.split('/').filter(Boolean);
+      const ts = Date.now(), origin = location.origin, path = location.pathname;
+      const dir = path.replace(/[^\/]*$/,''); const segs = path.split('/').filter(Boolean);
       const repoBase = segs.length ? `/${segs[0]}/` : '/';
       return [
-        `${origin}${dir}${filename}?v=${ts}`,   // misma carpeta
-        `${origin}${repoBase}${filename}?v=${ts}`, // base repo
-        `${origin}/${filename}?v=${ts}`         // raíz dominio
+        `${origin}${dir}${filename}?v=${ts}`,
+        `${origin}${repoBase}${filename}?v=${ts}`,
+        `${origin}/${filename}?v=${ts}`
       ].filter((v,i,a)=>a.indexOf(v)===i);
     }
 
     async function fetchJsonSmart(filename){
-      const tries = candidateUrls(filename);
-      const traces = [];
+      const tries = candidateUrls(filename), traces=[];
       for(const url of tries){
-        try{
-          const r = await fetch(url,{cache:'no-store'});
-          traces.push(`GET ${url} → ${r.status}`);
-          if(r.ok) return await r.json();
-        }catch(e){ traces.push(`ERR ${url} → ${e}`); }
+        try{ const r=await fetch(url,{cache:'no-store'}); traces.push(`GET ${url} → ${r.status}`); if(r.ok) return await r.json(); }
+        catch(e){ traces.push(`ERR ${url} → ${e}`); }
       }
-      const st = document.getElementById('status');
-      if(st){
-        st.textContent = (location.protocol==='file:' ? 'Abre con Live Server (fetch se bloquea con file://)' : 'No se encontró posts.json. Colócalo en la raíz del repo.');
-      }
+      const st=document.getElementById('status');
+      if(st){ st.textContent=(location.protocol==='file:'?'Abre con Live Server (fetch se bloquea con file://)':'No se encontró posts.json. Colócalo en la raíz del repo.'); }
       throw new Error('posts.json no encontrado\n'+traces.join('\n'));
     }
 
-    // Render
     function makeCard(p){
-      const el = document.createElement('article');
-      el.className = 'card reveal';
-      el.style.overflow = 'hidden';
-      el.innerHTML = `
-        <div class="post-cover" ${p.cover ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"` : ''}></div>
+      const el=document.createElement('article'); el.className='card reveal'; el.style.overflow='hidden';
+      el.innerHTML=`
+        <div class="post-cover" ${p.cover?`style="background-image:url('${p.cover}');background-size:cover;background-position:center"`:''}></div>
         <div style="padding:16px">
           <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
           <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
           <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
-          <div style="padding-top:6px">
-            <a class="link" style="color:var(--brand)" href="${p.url||'#'}">Leer →</a>
-          </div>
+          <div style="padding-top:6px"><a class="link" style="color:var(--brand)" href="${p.url||'#'}">Leer →</a></div>
         </div>`;
       io.observe(el);
       return el;
     }
 
     function renderPage(items, page, perPage){
-      const grid = document.getElementById('postsGrid');
-      const pager = document.getElementById('pager');
-      grid.innerHTML = ''; pager.innerHTML = '';
+      const grid=document.getElementById('postsGrid');
+      const pager=document.getElementById('pager');
+      grid.innerHTML=''; pager.innerHTML='';
 
-      if(!items.length){
-        grid.innerHTML = '<p class="muted">Aún no hay artículos publicados.</p>';
-        return;
-      }
+      if(!items.length){ grid.innerHTML='<p class="muted">Aún no hay artículos publicados.</p>'; return; }
 
-      const total = items.length;
-      const pages = Math.max(1, Math.ceil(total/perPage));
-      page = Math.min(Math.max(1,page), pages);
-      const start = (page-1)*perPage, end = Math.min(start+perPage, total);
+      const total=items.length, pages=Math.max(1,Math.ceil(total/perPage));
+      page=Math.min(Math.max(1,page),pages);
+      const start=(page-1)*perPage, end=Math.min(start+perPage,total);
 
       items.slice(start,end).forEach(p=> grid.appendChild(makeCard(p)));
 
-      // Paginación
-      function link(n, label, cls=''){
-        const a = document.createElement('a');
-        a.href = `?page=${n}`;
-        a.textContent = label ?? n;
-        if(cls) a.classList.add(cls);
-        return a;
-      }
-      function span(label, cls='disabled'){ const s = document.createElement('span'); s.textContent = label; if(cls) s.classList.add(cls); return s; }
+      function link(n,label,cls=''){ const a=document.createElement('a'); a.href=`?page=${n}`; a.textContent=label??n; if(cls)a.classList.add(cls); return a; }
+      function span(label,cls='disabled'){ const s=document.createElement('span'); s.textContent=label; if(cls)s.classList.add(cls); return s; }
 
       pager.appendChild(page>1 ? link(page-1,'‹') : span('‹'));
-      for(let i=1;i<=pages;i++){
-        if(i===page){ pager.appendChild(span(String(i),'active')); }
-        else { pager.appendChild(link(i,String(i))); }
-      }
+      for(let i=1;i<=pages;i++){ pager.appendChild(i===page? span(String(i),'active') : link(i,String(i))); }
       pager.appendChild(page<pages ? link(page+1,'›') : span('›'));
     }
 
-    // Boot
     (async function(){
-      const PER_PAGE = 9;
-      const page = qsNum('page', 1);
-      const st = document.getElementById('status');
-      let posts = [];
-      try{
-        const data = await fetchJsonSmart('posts.json');
-        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
-        if(st) st.textContent = '';
-      }catch(_){
-        try{ posts = JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{}
-        if(st && !posts.length){
-          st.textContent = (location.protocol==='file:' ? 'Abre con Live Server para que fetch funcione.' : 'Sube posts.json junto a posts.html en GitHub Pages.');
-        }
+      const PER_PAGE=9, page=qsNum('page',1);
+      const st=document.getElementById('status');
+      let posts=[];
+      try{ const data=await fetchJsonSmart('posts.json'); posts=Array.isArray(data)?data:(Array.isArray(data.entries)?data.entries:[]); if(st) st.textContent=''; }
+      catch(_){
+        try{ posts=JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{}
+        if(st && !posts.length){ st.textContent=(location.protocol==='file:'?'Abre con Live Server para que fetch funcione.':'Sube posts.json junto a posts.html en GitHub Pages.'); }
       }
-      renderPage(posts, page, PER_PAGE);
+      renderPage(posts,page,PER_PAGE);
     })();
   </script>
 </body>
