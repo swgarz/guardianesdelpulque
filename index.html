@@ -30,6 +30,7 @@
     .stack-2{display:grid;gap:.5rem}
     .stack-3{display:grid;gap:.75rem}
     .stack-4{display:grid;gap:1rem}
+    .stack-6{display:grid;gap:1.5rem}
 
     /* NAV */
     .nav{
@@ -37,6 +38,7 @@
       background:rgba(255,255,255,.96);
       backdrop-filter:saturate(180%) blur(14px);
       border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
     .nav .row{
       display:flex;
@@ -44,7 +46,6 @@
       justify-content:space-between;
       padding:8px 0;
       gap:.75rem;
-      flex-wrap:wrap;
     }
     .brand{
       display:flex;
@@ -53,22 +54,22 @@
       font-weight:700;
       flex-shrink:0;
     }
-    .brand-logo{height:40px;width:auto}
-    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-logo{
+      height:36px;
+      width:auto;
+    }
+    @media (min-width:768px){.brand-logo{height:44px}}
     .brand-text{
-      font-size:.98rem;
-      color:#111827;
-      letter-spacing:.01em;
+      font-size:.96rem;
+      letter-spacing:.02em;
     }
 
     .links{
       display:flex;
-      align-items:center;
-      gap:.35rem;
       flex-wrap:wrap;
+      gap:.4rem;
+      align-items:center;
       justify-content:flex-end;
-      flex:1;
-      min-width:0;
     }
 
     .chip{
@@ -76,97 +77,124 @@
       align-items:center;
       gap:.35rem;
       padding:.4rem .8rem;
-      border:2px solid var(--brand);
+      border-radius:999px;
+      border:1.5px solid var(--brand);
+      font-size:.75rem;
+      font-weight:600;
       color:var(--brand);
       background:#ffffff;
-      border-radius:999px;
-      font-weight:600;
-      font-size:.75rem;
       cursor:pointer;
-      white-space:nowrap;
       transition:all .16s ease;
+      white-space:nowrap;
     }
     .chip .emoji{font-size:.9rem}
     .chip:hover{
       background:var(--brand);
       color:#020817;
-      transform:translateY(-1px);
       box-shadow:0 8px 18px rgba(15,23,42,.16);
+      transform:translateY(-1px);
     }
 
-    .nav-item{position:relative;display:inline-flex;align-items:center}
-
+    /* NAV dropdowns */
+    .nav-item{
+      position:relative;
+    }
     .nav-trigger{
-      background:#fff;
+      border:none;
+      background:none;
+      padding:0;
+    }
+    .nav-trigger .chip{
+      padding-right:1.1rem;
+    }
+    .nav-trigger .chip::after{
+      content:"▾";
+      font-size:.6rem;
     }
 
-    .submenu{
+    .nav-dropdown{
       position:absolute;
-      top:100%;
+      top:100%; /* pegado, sin hueco */
       left:0;
-      margin-top:4px;
-      padding:8px 8px;
-      border-radius:16px;
-      background:#ffffff;
-      box-shadow:0 14px 32px rgba(15,23,42,.22);
-      display:none;
-      flex-direction:column;
-      gap:2px;
+      margin-top:0;
+      padding:6px 0;
       min-width:170px;
-      z-index:200;
+      background:#ffffff;
+      border-radius:14px;
+      box-shadow:0 14px 40px rgba(15,23,42,.18);
+      border:1px solid rgba(148,163,253,.35);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .16s ease;
+      z-index:90;
     }
-    .submenu-item,
-    .submenu-label{
-      display:block;
-      padding:6px 9px;
-      border-radius:10px;
+    .nav-dropdown-mode{
+      right:0;
+      left:auto;
+      min-width:180px;
+    }
+
+    .nav-link{
+      display:flex;
+      align-items:center;
+      width:100%;
+      gap:.4rem;
+      padding:6px 10px;
       font-size:.78rem;
-      color:#111827;
-      background:transparent;
-      border:none;
-      text-align:left;
+      color:#0f172a;
       cursor:pointer;
+      background:transparent;
+      border:0;
+      text-align:left;
       white-space:nowrap;
     }
-    .submenu-item:hover{
-      background:rgba(5,150,105,.08);
+    .nav-link:hover{
+      background:rgba(5,150,105,.06);
       color:#065f46;
     }
-    .submenu-label{
-      font-weight:700;
-      font-size:.7rem;
-      color:#6b7280;
-      cursor:default;
-    }
 
-    .submenu-group{
+    .nav-item-inline{
       position:relative;
-      margin-top:4px;
-      padding-top:4px;
-      border-top:1px solid rgba(148,163,253,.26);
     }
-    .submenu-nested{
+    .has-children::after{
+      content:"▸";
+      font-size:.65rem;
+      margin-left:auto;
+      color:#9ca3af;
+    }
+    .nav-subdropdown{
       position:absolute;
       top:0;
       left:100%;
-      margin-left:6px;
-      padding:6px;
-      border-radius:14px;
-      background:#ffffff;
-      box-shadow:0 12px 26px rgba(15,23,42,.2);
-      display:none;
-      flex-direction:column;
-      gap:2px;
+      margin-left:4px;
+      padding:6px 0;
       min-width:150px;
-      z-index:210;
-    }
-    .submenu-group:hover .submenu-nested{
-      display:flex;
+      background:#ffffff;
+      border-radius:14px;
+      box-shadow:0 14px 40px rgba(15,23,42,.2);
+      border:1px solid rgba(148,163,253,.35);
+      opacity:0;
+      pointer-events:none;
+      z-index:95;
     }
 
-    .nav-item.open>.submenu{display:flex;}
-    @media (hover:hover){
-      .nav-item:hover>.submenu{display:flex;}
+    /* Hover + click open */
+    .nav-item:hover > .nav-dropdown,
+    .nav-item:focus-within > .nav-dropdown,
+    .nav-item.open > .nav-dropdown{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .nav-item-inline:hover > .nav-subdropdown,
+    .nav-item-inline:focus-within > .nav-subdropdown{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    /* Scroll state */
+    .nav.scrolled{
+      box-shadow:0 14px 40px rgba(15,23,42,.18);
+      border-bottom-color:rgba(148,163,253,.32);
     }
 
     /* HERO */
@@ -207,7 +235,6 @@
       background:rgba(16,185,129,.12);
       color:#065f46;
       font-weight:700;
-      font-size:.78rem;
     }
     .cta-group{
       display:grid;
@@ -250,23 +277,21 @@
       background:rgba(16,185,129,.18);filter:blur(40px)
     }
     .hero-card-text{color:#475569;margin:0}
-    .hero-mini-cards{
-      display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.25rem
-    }
+    .hero-mini-cards{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.25rem}
     .hero-mini-cards .mini{
       padding:.55rem .9rem;border-radius:12px;
-      box-shadow:none;background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.9);
     }
 
-    /* Blobs */
+    /* Backdrop blobs */
     .backdrop{position:absolute;inset:0;overflow:hidden;z-index:-1}
-    .blob{position:absolute;border-radius:999px;filter:blur(40px);opacity:.35;transform:translateZ(0);animation:float 18s ease-in-out infinite}
+    .blob{position:absolute;border-radius:999px;filter:blur(40px);opacity:.35;animation:float 18s ease-in-out infinite}
     .b1{width:580px;height:580px;left:-120px;top:-120px;background:radial-gradient(closest-side,#34d399,transparent)}
     .b2{width:480px;height:480px;right:-120px;top:120px;background:radial-gradient(closest-side,#22d3ee,transparent);animation-delay:2s}
     .b3{width:360px;height:360px;left:40%;bottom:-120px;background:radial-gradient(closest-side,#a3e635,transparent);animation-delay:4s}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
 
-    /* POSTS HOME */
+    /* POSTS GRID */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
@@ -276,11 +301,11 @@
       border:1px solid rgba(15,23,42,.06);
       box-shadow:0 20px 50px -12px rgba(0,0,0,.15);
       overflow:hidden;
-      transition:transform .14s ease,box-shadow .14s ease,background .2s ease,border-color .2s ease;
+      transition:transform .16s ease,box-shadow .16s ease,background .16s ease,border-color .16s ease;
     }
     .card:hover{
-      transform:translateY(-2px);
-      box-shadow:0 24px 60px -18px rgba(15,23,42,.28);
+      transform:translateY(-3px);
+      box-shadow:0 24px 60px -18px rgba(15,23,42,.26);
     }
     .post-cover{
       height:144px;
@@ -299,11 +324,12 @@
       font-size:.8rem;
     }
 
-    /* BIO / COMUNIDAD extra */
+    /* BIOALKIMIA */
     .bio-card{padding:24px}
     .bio-title{margin:0}
     .bio-text{color:#64748b;margin:.4rem 0 0}
 
+    /* FOOTER & REVEAL */
     footer{
       border-top:1px solid rgba(15,23,42,.08);
       padding:24px 0;
@@ -322,104 +348,101 @@
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
 
-    /* ==== THEMES ==== */
-    /* Dark */
-    body[data-theme="oscuro"]{
+    /* ===== MODO LECTURA (usa look psicodélico) ===== */
+    body.mode-reading{
       background:#020817;
       color:#e5e7eb;
     }
-    body[data-theme="oscuro"] .nav{
-      background:rgba(2,8,23,.98);
-      border-bottom-color:rgba(148,163,253,.25);
-      box-shadow:0 14px 40px rgba(0,0,0,.9);
+    body.mode-reading .nav{
+      background:rgba(8,10,24,.98);
+      border-bottom-color:rgba(129,140,248,.6);
+      box-shadow:0 16px 40px rgba(0,0,0,.65);
     }
-    body[data-theme="oscuro"] .brand-text{color:#e5e7eb;}
-    body[data-theme="oscuro"] .card{
-      background:rgba(12,19,38,.98);
-      border-color:rgba(148,163,253,.25);
-      color:#e5e7eb;
+    body.mode-reading .brand-text{color:#e5e7eb;}
+    body.mode-reading .hero-title{
+      background:linear-gradient(120deg,#22c55e,#a855f7,#22d3ee);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
-    body[data-theme="oscuro"] .post-cover{
-      background:linear-gradient(135deg,#020817,#059669);
+    body.mode-reading .hero-subtitle{color:#cbd5e1;}
+    body.mode-reading .card{
+      background:rgba(10,15,30,.98);
+      border-color:rgba(129,140,248,.5);
+      box-shadow:0 22px 60px rgba(15,23,42,.85);
     }
-    body[data-theme="oscuro"] .chip{
-      background:transparent;
+    body.mode-reading .post-cover{
+      background:
+        radial-gradient(circle at 0 0,rgba(34,197,94,.35),transparent),
+        radial-gradient(circle at 100% 0,rgba(236,72,153,.26),transparent);
+    }
+    body.mode-reading .chip{
+      background:rgba(12,10,24,.98);
+      color:#a5b4fc;
       border-color:#22c55e;
-      color:#bbf7d0;
     }
-    body[data-theme="oscuro"] .chip:hover{
+    body.mode-reading .chip:hover{
       background:#22c55e;
       color:#020817;
     }
-    body[data-theme="oscuro"] footer{
-      border-top-color:rgba(148,163,253,.25);
-      color:#9ca3af;
-    }
 
-    /* Psychedelic */
-    body[data-theme="psycho"]{
+    /* ===== MODO COMUNITARIO (mural) ===== */
+    body.mode-community{
+      color:#f9fafb;
+    }
+    body.mode-community::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
       background:
-        radial-gradient(circle at top,#22c55e1f,#020817),
-        radial-gradient(circle at bottom,#a855f71f,transparent),
+        radial-gradient(circle at 0 0,rgba(22,163,74,.32),transparent 60%),
+        radial-gradient(circle at 100% 10%,rgba(8,47,73,.36),transparent 55%),
+        radial-gradient(circle at 15% 100%,rgba(180,83,9,.32),transparent 55%),
+        radial-gradient(circle at 100% 100%,rgba(147,51,234,.26),transparent 55%),
         #020817;
-      color:#e5e7eb;
     }
-    body[data-theme="psycho"] .nav{
-      background:rgba(6,6,20,.98);
-      border-bottom-color:#a855f7;
-      box-shadow:0 16px 50px rgba(0,0,0,.9);
+    body.mode-community .nav{
+      background:rgba(2,6,23,.97);
+      border-bottom-color:rgba(34,197,94,.7);
+      box-shadow:0 24px 80px rgba(0,0,0,.95);
     }
-    body[data-theme="psycho"] .brand-text{color:#f9fafb;}
-    body[data-theme="psycho"] .chip{
-      border-color:#22c55e;
+    body.mode-community .brand-text{color:#bbf7d0;}
+    body.mode-community .chip{
+      border-color:rgba(22,163,74,.95);
       color:#bbf7d0;
-      background:rgba(6,8,24,.98);
+      background:rgba(0,0,0,.32);
+      box-shadow:0 10px 26px rgba(0,0,0,.9);
     }
-    body[data-theme="psycho"] .chip:hover{
-      background:linear-gradient(90deg,#22c55e,#a855f7,#22d3ee);
+    body.mode-community .chip:hover{
+      background:#22c55e;
       color:#020817;
     }
-    body[data-theme="psycho"] .card{
-      background:rgba(6,8,24,.98);
-      border-color:rgba(168,85,247,.4);
-      box-shadow:0 22px 60px rgba(0,0,0,1);
-      color:#e5e7eb;
+    body.mode-community .hero-title{
+      background:linear-gradient(135deg,#bbf7d0,#22c55e,#fde68a);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
-    body[data-theme="psycho"] .post-cover{
-      background:linear-gradient(135deg,#22c55e,#a855f7,#22d3ee);
+    body.mode-community .hero-subtitle{color:#e5e7eb;}
+    body.mode-community .card{
+      background:rgba(5,15,20,.97);
+      border-color:rgba(22,163,74,.85);
+      box-shadow:0 30px 90px rgba(0,0,0,1);
     }
-
-    /* Comunitario (mural) */
-    body[data-theme="comunitario"]{
-      background:
-        radial-gradient(circle at 0 0,rgba(254,252,232,1),transparent),
-        radial-gradient(circle at 100% 0,rgba(220,252,231,.95),transparent),
-        radial-gradient(circle at 0 100%,rgba(254,249,195,.95),transparent),
-        #fefce8;
-      color:#1f2937;
+    body.mode-community .hero-card-bloom{
+      background:radial-gradient(circle,#22c55e,transparent);
+      filter:blur(28px);
     }
-    body[data-theme="comunitario"] .nav{
-      background:rgba(255,255,255,.98);
-      border-bottom-color:rgba(234,179,8,.6);
-      box-shadow:0 14px 40px rgba(180,83,9,.18);
+    body.mode-community .post-cover{
+      background:linear-gradient(135deg,rgba(16,185,129,.6),rgba(245,158,11,.45));
     }
-    body[data-theme="comunitario"] .brand-text{color:#15803d;}
-    body[data-theme="comunitario"] .chip{
-      border-color:#22c55e;
-      color:#166534;
-      background:rgba(255,255,255,.98);
+    body.mode-community .pill{
+      background:rgba(22,163,74,.24);
+      color:#bbf7d0;
     }
-    body[data-theme="comunitario"] .chip:hover{
-      background:linear-gradient(90deg,rgba(22,163,74,.18),rgba(249,115,22,.08));
-      color:#14532d;
-    }
-    body[data-theme="comunitario"] .card{
-      background:rgba(255,255,255,.98);
-      border-color:rgba(22,163,74,.22);
-      box-shadow:0 22px 55px rgba(146,64,14,.16);
-    }
-    body[data-theme="comunitario"] .post-cover{
-      background:linear-gradient(135deg,rgba(22,163,74,.4),rgba(245,158,11,.26));
+    body.mode-community .bio-card{
+      background:rgba(4,7,17,.96);
     }
   </style>
 </head>
@@ -434,34 +457,33 @@
 
       <div class="links">
         <!-- Comunidad -->
-        <div class="nav-item nav-comunidad">
-          <button class="chip nav-trigger" type="button">Comunidad ▾</button>
-          <div class="submenu">
-            <a class="submenu-item" href="#bioalkimia">Quiénes somos</a>
-            <a class="submenu-item" href="#aliados">Aliados</a>
-            <div class="submenu-group">
-              <span class="submenu-label">Patrocinadores ▸</span>
-              <div class="submenu submenu-nested">
-                <a class="submenu-item" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">
+            <span class="chip">Comunidad</span>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-link" href="posts.html">Artículos</a>
+            <a class="nav-link" href="#donar">Donar</a>
+            <a class="nav-link" href="#bioalkimia">Bioalkimia</a>
+            <div class="nav-item-inline">
+              <div class="nav-link has-children" tabindex="0">Patrocinadores</div>
+              <div class="nav-subdropdown">
+                <a class="nav-link" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
               </div>
             </div>
+            <a class="nav-link" href="#aliados">Aliados (próximamente)</a>
           </div>
         </div>
 
-        <!-- Artículos -->
-        <a class="chip" href="posts.html">Artículos</a>
-
-        <!-- Donar -->
-        <a class="chip" href="#donar"><span class="emoji">💚</span> Donar</a>
-
         <!-- Modo -->
-        <div class="nav-item nav-mode">
-          <button class="chip nav-trigger" id="modeToggle" type="button">Modo ▾</button>
-          <div class="submenu submenu-mode" id="modeMenu">
-            <button class="submenu-item" data-theme="default" type="button">Clásico</button>
-            <button class="submenu-item" data-theme="oscuro" type="button">Modo oscuro</button>
-            <button class="submenu-item" data-theme="psycho" type="button">Modo psychodélico</button>
-            <button class="submenu-item" data-theme="comunitario" type="button">Modo comunitario</button>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">
+            <span class="chip">Modo</span>
+          </button>
+          <div class="nav-dropdown nav-dropdown-mode">
+            <button class="nav-link js-mode" data-mode="base" type="button">Modo base</button>
+            <button class="nav-link js-mode" data-mode="reading" type="button">Modo lectura</button>
+            <button class="nav-link js-mode" data-mode="community" type="button">Modo comunitario</button>
           </div>
         </div>
       </div>
@@ -473,7 +495,6 @@
     <div class="backdrop" aria-hidden="true">
       <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
     </div>
-
     <div class="hero-wrap">
       <div class="stack-4 reveal">
         <h1 class="hero-title">Pulque · Tierra · Maguey</h1>
@@ -535,7 +556,9 @@
             <small style="color:#94a3b8">Reemplaza la CLABE por la real en el HTML.</small>
 
             <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:flex-start">
-              <a id="paypalBtn" class="chip" href="#" target="_blank" rel="noopener">
+              <a id="paypalBtn" class="chip"
+                 href="https://paypal.me/delagarzac?locale.x=es_XC&amp;country.x=MX"
+                 target="_blank" rel="noopener">
                 <span class="emoji">💚</span> Donar por PayPal
               </a>
               <a class="chip" href="mailto:donaciones@tusitio.mx">Otra forma de donar</a>
@@ -555,7 +578,7 @@
     </div>
   </section>
 
-  <!-- BIO / COMUNIDAD -->
+  <!-- BIOALKIMIA / TEOMATI -->
   <section id="bioalkimia" class="container" style="margin-bottom:64px">
     <div class="card bio-card reveal">
       <h3 class="bio-title">Teomati</h3>
@@ -571,19 +594,19 @@
   <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
+      <div style="display:flex;align-items:center;gap:.5rem">
         <img src="images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
         <span>Guardianes del Pulque</span>
       </div>
-      <div style="display:flex;gap:.35rem;flex-wrap:wrap">
+      <div class="links">
         <a class="chip" href="posts.html">Artículos</a>
         <a class="chip" href="#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="#bioalkimia">Comunidad</a>
+        <a class="chip" href="#bioalkimia">Bioalkimia</a>
       </div>
     </div>
   </footer>
 
-  <!-- Fallback simple para entorno local sin posts.json -->
+  <!-- Fallback de posts (para pruebas en file://) -->
   <script type="application/json" id="posts-fallback">[
     {
       "tag":"Pulque",
@@ -595,70 +618,19 @@
   ]</script>
 
   <script>
-    // ===== THEME INIT =====
+    // NAV scroll
     (function(){
-      const saved = localStorage.getItem('gp.theme');
-      if(saved && saved !== 'default'){
-        document.body.setAttribute('data-theme', saved);
+      const nav = document.getElementById('mainNav');
+      if(!nav) return;
+      function update(){
+        if(window.scrollY > 10) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
       }
+      update();
+      window.addEventListener('scroll', update, {passive:true});
     })();
 
-    // ===== NAV DROPDOWNS (Comunidad + Modo) =====
-    (function(){
-      const comunidadItem = document.querySelector('.nav-comunidad');
-      const modeItem = document.querySelector('.nav-mode');
-      const modeMenu = document.getElementById('modeMenu');
-
-      function closeAll(){
-        comunidadItem && comunidadItem.classList.remove('open');
-        modeItem && modeItem.classList.remove('open');
-      }
-
-      // Comunidad toggle (click en móvil)
-      if(comunidadItem){
-        const btn = comunidadItem.querySelector('.nav-trigger');
-        btn.addEventListener('click', (e)=>{
-          e.preventDefault();
-          e.stopPropagation();
-          const open = comunidadItem.classList.contains('open');
-          closeAll();
-          if(!open) comunidadItem.classList.add('open');
-        });
-      }
-
-      // Modo toggle
-      if(modeItem && modeMenu){
-        const btn = document.getElementById('modeToggle');
-        btn.addEventListener('click', (e)=>{
-          e.preventDefault();
-          e.stopPropagation();
-          const open = modeItem.classList.contains('open');
-          closeAll();
-          if(!open) modeItem.classList.add('open');
-        });
-
-        modeMenu.querySelectorAll('[data-theme]').forEach(opt=>{
-          opt.addEventListener('click', ()=>{
-            const t = opt.dataset.theme;
-            if(t === 'default'){
-              document.body.removeAttribute('data-theme');
-              localStorage.removeItem('gp.theme');
-            }else{
-              document.body.setAttribute('data-theme', t);
-              localStorage.setItem('gp.theme', t);
-            }
-            closeAll();
-          });
-        });
-      }
-
-      // Cerrar al hacer click fuera
-      document.addEventListener('click', (e)=>{
-        if(!e.target.closest('.nav-item')) closeAll();
-      });
-    })();
-
-    // ===== Reveal on scroll =====
+    // Reveal
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
@@ -669,9 +641,9 @@
     }, {threshold:.2});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // ===== Utils =====
+    // Utils
     function escapeHtml(s){
-      return String(s).replace(/[&<>"]/g, m=>({
+      return String(s).replace(/[&<>"]/g, m => ({
         '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
       }[m]));
     }
@@ -694,17 +666,22 @@
     async function fetchJsonSmart(filename){
       const tries = candidateUrls(filename);
       const status = document.getElementById('status');
+      const traces = [];
       for(const url of tries){
         try{
           const r = await fetch(url,{cache:'no-store'});
+          traces.push(`GET ${url} → ${r.status}`);
           if(r.ok) return await r.json();
-        }catch(e){}
+        }catch(e){
+          traces.push(`ERR ${url} → ${e}`);
+        }
       }
       if(status){
-        status.textContent = (location.protocol==='file:'
+        status.textContent = (location.protocol === 'file:'
           ? 'Abre con Live Server (fetch se bloquea con file://).'
           : 'No se encontró posts.json. Colócalo junto a index.html en GitHub Pages.');
       }
+      console.warn('posts.json no encontrado:\n'+traces.join('\n'));
       throw new Error('posts.json no encontrado');
     }
 
@@ -712,7 +689,7 @@
       let posts = [];
       try{
         const data = await fetchJsonSmart('posts.json');
-        posts = Array.isArray(data) ? data : (Array.isArray(data.entries)? data.entries:[]);
+        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
       }catch(_){}
       if(!posts.length){
         try{
@@ -724,28 +701,29 @@
 
     function renderPosts(items){
       const grid = document.getElementById('postsGrid');
-      grid.innerHTML='';
+      grid.innerHTML = '';
       if(!items.length){
-        grid.innerHTML='<p class="muted">Aún no hay artículos.</p>';
+        grid.innerHTML = '<p class="muted">Aún no hay artículos.</p>';
         return;
       }
       items.forEach(p=>{
-        const card=document.createElement('article');
-        card.className='card reveal';
-        card.style.overflow='hidden';
+        const card = document.createElement('article');
+        card.className = 'card reveal';
+        card.style.overflow = 'hidden';
         const coverStyle = p.cover
           ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"`
           : '';
         card.innerHTML = `
           <div class="post-cover" ${coverStyle}></div>
           <div style="padding:16px">
-            <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
-            <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
-            <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
+            <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag || '')}</div>
+            <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title || '')}</h3>
+            <p style="color:#475569">${escapeHtml(p.excerpt || '')}</p>
             <div style="padding-top:6px">
-              <a class="chip" href="${p.url||'#'}">Leer →</a>
+              <a class="chip" href="${p.url || '#'}">Leer →</a>
             </div>
-          </div>`;
+          </div>
+        `;
         grid.appendChild(card);
         io.observe(card);
       });
@@ -753,7 +731,7 @@
 
     // Donar: copiar CLABE
     document.getElementById('copyClabe').addEventListener('click', async ()=>{
-      const t=document.getElementById('clabeText').textContent.trim();
+      const t = document.getElementById('clabeText').textContent.trim();
       try{
         await navigator.clipboard.writeText(t);
         alert('CLABE copiada');
@@ -761,7 +739,58 @@
         alert('Copia la CLABE manualmente');
       }
     });
-    document.getElementById('paypalBtn').href="#"; // pon aquí tu enlace real
+
+    // Modo visual (base / lectura / comunitario)
+    (function(){
+      const KEY = 'gp.mode';
+      const body = document.body;
+
+      function apply(mode){
+        body.classList.remove('mode-reading','mode-community');
+        if(mode === 'reading') body.classList.add('mode-reading');
+        else if(mode === 'community') body.classList.add('mode-community');
+      }
+
+      // cargar modo guardado
+      try{
+        const saved = localStorage.getItem(KEY);
+        if(saved) apply(saved);
+      }catch{}
+
+      // eventos de menú
+      document.querySelectorAll('.js-mode').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const m = btn.dataset.mode;
+          if(m === 'base'){
+            apply(null);
+            try{localStorage.removeItem(KEY);}catch{}
+          }else{
+            apply(m);
+            try{localStorage.setItem(KEY,m);}catch{}
+          }
+        });
+      });
+    })();
+
+    // Dropdown por click (móvil)
+    (function(){
+      const items = document.querySelectorAll('.nav-item');
+      document.querySelectorAll('.nav-trigger').forEach(btn=>{
+        btn.addEventListener('click',e=>{
+          const item = btn.closest('.nav-item');
+          if(!item) return;
+          const open = !item.classList.contains('open');
+          items.forEach(i=>i.classList.remove('open'));
+          if(open) item.classList.add('open');
+          e.stopPropagation();
+        });
+      });
+      document.addEventListener('click',e=>{
+        if(!e.target.closest('.nav-item')){
+          items.forEach(i=>i.classList.remove('open'));
+        }
+      });
+    })();
 
     loadPosts();
   </script>
