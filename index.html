@@ -10,6 +10,7 @@
     *,*::before,*::after{box-sizing:border-box}
     body{
       margin:0;
+      overflow-x:hidden;
       font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';
       line-height:1.5;
       color:#0f172a;
@@ -103,7 +104,7 @@
     .chip-dropdown{
       padding-right:1.6rem;
       user-select:none;
-      transform:none !important;              /* sin brinco */
+      transform:none !important; /* sin brinco */
     }
     .chip-dropdown::after{
       content:'';
@@ -121,8 +122,9 @@
     .chip-dropdown .dropdown{
       position:absolute;
       top:100%;
-      left:0;
-      margin-top:-1px;                        /* se sobrepone 1px: sin hueco */
+      right:0;           /* abre hacia la izquierda para no salirte */
+      left:auto;
+      margin-top:-1px;   /* se monta 1px, sin hueco */
       background:#020817;
       border-radius:16px;
       padding:.35rem 0;
@@ -130,6 +132,7 @@
       box-shadow:0 18px 40px rgba(0,0,0,.45);
       display:none;
       min-width:220px;
+      max-width:260px;
       z-index:60;
     }
     .chip-dropdown .dropdown a,
@@ -177,11 +180,13 @@
       color:#22c55e;
     }
 
+    /* Submenú abre hacia la izquierda para evitar scroll horizontal */
     .chip-dropdown .dropdown .submenu{
       position:absolute;
       top:0;
-      left:100%;
-      margin-left:-1px;                       /* se monta: sin hueco lateral */
+      right:100%;
+      left:auto;
+      margin-right:-1px;
       background:#020817;
       border-radius:14px;
       padding:.3rem 0;
@@ -386,9 +391,7 @@
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
       <div class="links">
-        <a class="chip" href="posts.html">Artículos</a>
-        <a class="chip" href="#donar"><span class="emoji">💚</span> Donar</a>
-
+        <!-- Comunidad primero -->
         <div class="chip chip-dropdown">
           Comunidad
           <div class="dropdown">
@@ -410,6 +413,8 @@
           </div>
         </div>
 
+        <a class="chip" href="posts.html">Artículos</a>
+        <a class="chip" href="#donar"><span class="emoji">💚</span> Donar</a>
       </div>
     </div>
   </div>
@@ -529,7 +534,7 @@
     </div>
   </footer>
 
-  <!-- Fallback posts (para modo file://) -->
+  <!-- Fallback posts -->
   <script type="application/json" id="posts-fallback">[
     {
       "tag":"Pulque",
@@ -541,7 +546,6 @@
   ]</script>
 
   <script>
-    // NAV scroll
     (function(){
       const nav = document.getElementById('mainNav');
       if(!nav) return;
@@ -553,7 +557,6 @@
       window.addEventListener('scroll', update, {passive:true});
     })();
 
-    // Reveal
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
@@ -654,7 +657,6 @@
       });
     }
 
-    // Donar: copiar CLABE
     document.getElementById('copyClabe').addEventListener('click', async ()=>{
       const t = document.getElementById('clabeText').textContent.trim();
       try{
@@ -665,7 +667,6 @@
       }
     });
 
-    // Enlace real de PayPal
     document.getElementById('paypalBtn').href = "#";
 
     loadPosts();
