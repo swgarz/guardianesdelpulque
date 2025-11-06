@@ -20,7 +20,6 @@
     .container{max-width:1180px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){ .container{padding:0 24px} }
 
-    /* NAV */
     .nav{
       position:sticky;top:0;z-index:50;
       background:transparent;
@@ -96,7 +95,6 @@
       color:#020817;
     }
 
-    /* Header */
     .header{padding:36px 0 18px}
     .title{
       margin:0;
@@ -109,7 +107,6 @@
     }
     .subtitle{margin:.35rem 0 0;color:#64748b}
 
-    /* Grid & cards */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
@@ -125,7 +122,6 @@
       background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));
     }
 
-    /* Paginación */
     .pager{
       display:flex;
       flex-wrap:wrap;
@@ -239,10 +235,7 @@
 
     function escapeHtml(s){
       return String(s).replace(/[&<>"]/g, m => ({
-        '&':'&amp;',
-        '<':'&lt;',
-        '>':'&gt;',
-        '"':'&quot;'
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
       }[m]));
     }
 
@@ -251,40 +244,29 @@
       return Number.isFinite(v) && v > 0 ? v : def;
     }
 
-    function candidateUrls(filename){
-      const ts = Date.now();
-      const origin = location.origin;
-      const path = location.pathname;
-      const dir = path.replace(/[^\/]*$/,'');
-      const segs = path.split('/').filter(Boolean);
-      const repoBase = segs.length ? `/${segs[0]}/` : '/';
-      return [
-        `${origin}${dir}${filename}?v=${ts}`,
-        `${origin}${repoBase}${filename}?v=${ts}`,
-        `${origin}/${filename}?v=${ts}`
-      ].filter((v,i,a)=>a.indexOf(v)===i);
-    }
-
-    async function fetchJsonSmart(filename){
-      const tries = candidateUrls(filename);
+    async function loadPosts(){
       const status = document.getElementById('status');
-      const traces = [];
-      for(const url of tries){
+      let posts = [];
+      try{
+        const res = await fetch('posts.json?v=' + Date.now(), {cache:'no-store'});
+        if(res.ok){
+          const data = await res.json();
+          posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
+        }
+      }catch(e){
+        console.warn(e);
+      }
+
+      if(!posts.length){
         try{
-          const r = await fetch(url, {cache:'no-store'});
-          traces.push(`GET ${url} → ${r.status}`);
-          if(r.ok) return await r.json();
-        }catch(e){
-          traces.push(`ERR ${url} → ${e}`);
+          posts = JSON.parse(document.getElementById('posts-fallback').textContent || '[]');
+        }catch(e){}
+        if(status && !posts.length){
+          status.textContent = 'No se pudo cargar posts.json.';
         }
       }
-      if(status){
-        status.textContent = (location.protocol === 'file:'
-          ? 'Abre con Live Server (fetch se bloquea con file://).'
-          : 'No se encontró posts.json. Colócalo junto a posts.html en GitHub Pages.');
-      }
-      console.warn('posts.json no encontrado:\n' + traces.join('\n'));
-      throw new Error('posts.json no encontrado');
+
+      renderPage(posts, qsNum('page',1), 9);
     }
 
     function makeCard(p){
@@ -346,33 +328,13 @@
       }
 
       pager.appendChild(page > 1 ? link(page - 1, '‹') : span('‹','disabled'));
-      for(let i = 1; i <= pages; i++){
-        pager.appendChild(i === page ? span(String(i),'active') : link(i, String(i)));
+      for(let i=1;i<=pages;i++){
+        pager.appendChild(i === page ? span(String(i),'active') : link(i,String(i)));
       }
       pager.appendChild(page < pages ? link(page + 1, '›') : span('›','disabled'));
     }
 
-    (async function(){
-      const PER_PAGE = 9;
-      const page = qsNum('page', 1);
-      const status = document.getElementById('status');
-      let posts = [];
-      try{
-        const data = await fetchJsonSmart('posts.json');
-        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
-        if(status) status.textContent = '';
-      }catch(_){
-        try{
-          posts = JSON.parse(document.getElementById('posts-fallback').textContent || '[]');
-        }catch{}
-        if(status && !posts.length){
-          status.textContent = (location.protocol === 'file:'
-            ? 'Abre con Live Server para que fetch funcione.'
-            : 'Sube posts.json junto a posts.html en GitHub Pages.');
-        }
-      }
-      renderPage(posts, page, PER_PAGE);
-    })();
+    loadPosts();
   </script>
 </body>
 </html>
