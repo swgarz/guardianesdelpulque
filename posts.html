@@ -15,18 +15,19 @@
       background:#f6f8fb;
       transition:background .25s ease,color .25s ease;
     }
-    :root{ --brand:#059669; --ink:#0f172a; --muted:#475569; --card:#ffffff; --stroke:#e5e7eb; }
+    :root{--brand:#059669;--ink:#0f172a;--muted:#475569;--card:#ffffff;--stroke:#e5e7eb;}
     a{color:inherit;text-decoration:none}
 
     .container{max-width:1180px;margin-inline:auto;padding:0 16px}
-    @media (min-width:640px){ .container{padding:0 24px} }
+    @media (min-width:640px){.container{padding:0 24px}}
 
-    /* NAV (igual que index para consistencia) */
+    /* NAV (igual que index) */
     .nav{
       position:sticky;top:0;z-index:80;
       background:rgba(255,255,255,.96);
       backdrop-filter:saturate(180%) blur(14px);
       border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
     .nav .row{
       display:flex;
@@ -34,7 +35,6 @@
       justify-content:space-between;
       padding:8px 0;
       gap:.75rem;
-      flex-wrap:wrap;
     }
     .brand{
       display:flex;
@@ -43,111 +43,123 @@
       font-weight:700;
       flex-shrink:0;
     }
-    .brand-logo{height:40px;width:auto}
-    @media (min-width:768px){.brand-logo{height:52px}}
-    .brand-text{
-      font-size:.98rem;
-      color:#111827;
-      letter-spacing:.01em;
-    }
+    .brand-logo{height:36px;width:auto}
+    @media (min-width:768px){.brand-logo{height:44px}}
+    .brand-text{font-size:.96rem;letter-spacing:.02em;}
+
     .links{
       display:flex;
-      align-items:center;
-      gap:.35rem;
       flex-wrap:wrap;
+      gap:.4rem;
+      align-items:center;
       justify-content:flex-end;
-      flex:1;
-      min-width:0;
     }
     .chip{
       display:inline-flex;
       align-items:center;
       gap:.35rem;
       padding:.4rem .8rem;
-      border:2px solid var(--brand);
+      border-radius:999px;
+      border:1.5px solid var(--brand);
+      font-size:.75rem;
+      font-weight:600;
       color:var(--brand);
       background:#ffffff;
-      border-radius:999px;
-      font-weight:600;
-      font-size:.75rem;
       cursor:pointer;
-      white-space:nowrap;
       transition:all .16s ease;
+      white-space:nowrap;
     }
-    .chip .emoji{font-size:.9rem}
     .chip:hover{
       background:var(--brand);
       color:#020817;
-      transform:translateY(-1px);
       box-shadow:0 8px 18px rgba(15,23,42,.16);
+      transform:translateY(-1px);
     }
 
-    .nav-item{position:relative;display:inline-flex;align-items:center}
-    .nav-trigger{background:#fff;}
+    .nav-item{position:relative;}
+    .nav-trigger{border:0;background:none;padding:0;}
+    .nav-trigger .chip{padding-right:1.1rem;}
+    .nav-trigger .chip::after{
+      content:"▾";
+      font-size:.6rem;
+    }
 
-    .submenu{
+    .nav-dropdown{
       position:absolute;
       top:100%;
       left:0;
-      margin-top:4px;
-      padding:8px 8px;
-      border-radius:16px;
-      background:#ffffff;
-      box-shadow:0 14px 32px rgba(15,23,42,.22);
-      display:none;
-      flex-direction:column;
-      gap:2px;
+      margin-top:0;
+      padding:6px 0;
       min-width:170px;
-      z-index:200;
+      background:#ffffff;
+      border-radius:14px;
+      box-shadow:0 14px 40px rgba(15,23,42,.18);
+      border:1px solid rgba(148,163,253,.35);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .16s ease;
+      z-index:90;
     }
-    .submenu-item,
-    .submenu-label{
-      display:block;
-      padding:6px 9px;
-      border-radius:10px;
+    .nav-dropdown-mode{
+      right:0;
+      left:auto;
+      min-width:180px;
+    }
+    .nav-link{
+      display:flex;
+      align-items:center;
+      width:100%;
+      gap:.4rem;
+      padding:6px 10px;
       font-size:.78rem;
-      color:#111827;
-      background:transparent;
-      border:none;
-      text-align:left;
+      color:#0f172a;
       cursor:pointer;
+      background:transparent;
+      border:0;
+      text-align:left;
       white-space:nowrap;
     }
-    .submenu-item:hover{
-      background:rgba(5,150,105,.08);
+    .nav-link:hover{
+      background:rgba(5,150,105,.06);
       color:#065f46;
     }
-    .submenu-label{
-      font-weight:700;
-      font-size:.7rem;
-      color:#6b7280;
-      cursor:default;
+    .nav-item-inline{position:relative;}
+    .has-children::after{
+      content:"▸";
+      font-size:.65rem;
+      margin-left:auto;
+      color:#9ca3af;
     }
-    .submenu-group{
-      position:relative;
-      margin-top:4px;
-      padding-top:4px;
-      border-top:1px solid rgba(148,163,253,.26);
-    }
-    .submenu-nested{
+    .nav-subdropdown{
       position:absolute;
       top:0;
       left:100%;
-      margin-left:6px;
-      padding:6px;
-      border-radius:14px;
-      background:#ffffff;
-      box-shadow:0 12px 26px rgba(15,23,42,.2);
-      display:none;
-      flex-direction:column;
-      gap:2px;
+      margin-left:4px;
+      padding:6px 0;
       min-width:150px;
-      z-index:210;
+      background:#ffffff;
+      border-radius:14px;
+      box-shadow:0 14px 40px rgba(15,23,42,.2);
+      border:1px solid rgba(148,163,253,.35);
+      opacity:0;
+      pointer-events:none;
+      z-index:95;
     }
-    .submenu-group:hover .submenu-nested{display:flex;}
-    .nav-item.open>.submenu{display:flex;}
-    @media (hover:hover){
-      .nav-item:hover>.submenu{display:flex;}
+
+    .nav-item:hover>.nav-dropdown,
+    .nav-item:focus-within>.nav-dropdown,
+    .nav-item.open>.nav-dropdown{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .nav-item-inline:hover>.nav-subdropdown,
+    .nav-item-inline:focus-within>.nav-subdropdown{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .nav.scrolled{
+      box-shadow:0 14px 40px rgba(15,23,42,.18);
+      border-bottom-color:rgba(148,163,253,.32);
     }
 
     /* HEADER */
@@ -173,11 +185,11 @@
       border:1px solid rgba(15,23,42,.06);
       box-shadow:0 20px 50px -12px rgba(0,0,0,.15);
       overflow:hidden;
-      transition:transform .14s ease,box-shadow .14s ease;
+      transition:transform .16s ease,box-shadow .16s ease;
     }
     .card:hover{
-      transform:translateY(-2px);
-      box-shadow:0 24px 60px -18px rgba(15,23,42,.28);
+      transform:translateY(-3px);
+      box-shadow:0 24px 60px -18px rgba(15,23,42,.26);
     }
     .post-cover{
       height:144px;
@@ -186,7 +198,7 @@
       background-position:center;
     }
 
-    /* PAGER */
+    /* Paginación */
     .pager{
       display:flex;
       flex-wrap:wrap;
@@ -237,101 +249,88 @@
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
 
-    /* ==== THEMES (igual que index, resumido) ==== */
-    body[data-theme="oscuro"]{
+    /* MODO LECTURA */
+    body.mode-reading{
       background:#020817;
       color:#e5e7eb;
     }
-    body[data-theme="oscuro"] .nav{
-      background:rgba(2,8,23,.98);
-      border-bottom-color:rgba(148,163,253,.25);
-      box-shadow:0 14px 40px rgba(0,0,0,.9);
+    body.mode-reading .nav{
+      background:rgba(8,10,24,.98);
+      border-bottom-color:rgba(129,140,248,.6);
+      box-shadow:0 16px 40px rgba(0,0,0,.65);
     }
-    body[data-theme="oscuro"] .brand-text{color:#e5e7eb;}
-    body[data-theme="oscuro"] .chip{
-      background:transparent;
+    body.mode-reading .brand-text{color:#e5e7eb;}
+    body.mode-reading .title{
+      background:linear-gradient(120deg,#22c55e,#a855f7,#22d3ee);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    body.mode-reading .card{
+      background:rgba(10,15,30,.98);
+      border-color:rgba(129,140,248,.5);
+      box-shadow:0 22px 60px rgba(15,23,42,.85);
+    }
+    body.mode-reading .post-cover{
+      background:
+        radial-gradient(circle at 0 0,rgba(34,197,94,.35),transparent),
+        radial-gradient(circle at 100% 0,rgba(236,72,153,.26),transparent);
+    }
+    body.mode-reading .chip{
+      background:rgba(12,10,24,.98);
+      color:#a5b4fc;
       border-color:#22c55e;
-      color:#bbf7d0;
     }
-    body[data-theme="oscuro"] .chip:hover{
+    body.mode-reading .chip:hover{
       background:#22c55e;
       color:#020817;
     }
-    body[data-theme="oscuro"] .card{
-      background:rgba(12,19,38,.98);
-      border-color:rgba(148,163,253,.25);
-      color:#e5e7eb;
-    }
-    body[data-theme="oscuro"] .post-cover{
-      background:linear-gradient(135deg,#020817,#059669);
-    }
-    body[data-theme="oscuro"] footer{
-      border-top-color:rgba(148,163,253,.25);
-      color:#9ca3af;
-    }
 
-    body[data-theme="psycho"]{
+    /* MODO COMUNITARIO */
+    body.mode-community{
+      color:#f9fafb;
+    }
+    body.mode-community::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
       background:
-        radial-gradient(circle at top,#22c55e1f,#020817),
-        radial-gradient(circle at bottom,#a855f71f,transparent),
+        radial-gradient(circle at 0 0,rgba(22,163,74,.32),transparent 60%),
+        radial-gradient(circle at 100% 10%,rgba(8,47,73,.36),transparent 55%),
+        radial-gradient(circle at 15% 100%,rgba(180,83,9,.32),transparent 55%),
+        radial-gradient(circle at 100% 100%,rgba(147,51,234,.26),transparent 55%),
         #020817;
-      color:#e5e7eb;
     }
-    body[data-theme="psycho"] .nav{
-      background:rgba(6,6,20,.98);
-      border-bottom-color:#a855f7;
-      box-shadow:0 16px 50px rgba(0,0,0,.9);
+    body.mode-community .nav{
+      background:rgba(2,6,23,.97);
+      border-bottom-color:rgba(34,197,94,.7);
+      box-shadow:0 24px 80px rgba(0,0,0,.95);
     }
-    body[data-theme="psycho"] .brand-text{color:#f9fafb;}
-    body[data-theme="psycho"] .chip{
-      border-color:#22c55e;
+    body.mode-community .brand-text{color:#bbf7d0;}
+    body.mode-community .chip{
+      border-color:rgba(22,163,74,.95);
       color:#bbf7d0;
-      background:rgba(6,8,24,.98);
+      background:rgba(0,0,0,.32);
+      box-shadow:0 10px 26px rgba(0,0,0,.9);
     }
-    body[data-theme="psycho"] .chip:hover{
-      background:linear-gradient(90deg,#22c55e,#a855f7,#22d3ee);
+    body.mode-community .chip:hover{
+      background:#22c55e;
       color:#020817;
     }
-    body[data-theme="psycho"] .card{
-      background:rgba(6,8,24,.98);
-      border-color:rgba(168,85,247,.4);
-      box-shadow:0 22px 60px rgba(0,0,0,1);
-      color:#e5e7eb;
+    body.mode-community .title{
+      background:linear-gradient(135deg,#bbf7d0,#22c55e,#fde68a);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
-    body[data-theme="psycho"] .post-cover{
-      background:linear-gradient(135deg,#22c55e,#a855f7,#22d3ee);
+    body.mode-community .card{
+      background:rgba(5,15,20,.97);
+      border-color:rgba(22,163,74,.85);
+      box-shadow:0 30px 90px rgba(0,0,0,1);
     }
-
-    body[data-theme="comunitario"]{
-      background:
-        radial-gradient(circle at 0 0,rgba(254,252,232,1),transparent),
-        radial-gradient(circle at 100% 0,rgba(220,252,231,.95),transparent),
-        radial-gradient(circle at 0 100%,rgba(254,249,195,.95),transparent),
-        #fefce8;
-      color:#1f2937;
-    }
-    body[data-theme="comunitario"] .nav{
-      background:rgba(255,255,255,.98);
-      border-bottom-color:rgba(234,179,8,.6);
-      box-shadow:0 14px 40px rgba(180,83,9,.18);
-    }
-    body[data-theme="comunitario"] .brand-text{color:#15803d;}
-    body[data-theme="comunitario"] .chip{
-      border-color:#22c55e;
-      color:#166534;
-      background:rgba(255,255,255,.98);
-    }
-    body[data-theme="comunitario"] .chip:hover{
-      background:linear-gradient(90deg,rgba(22,163,74,.18),rgba(249,115,22,.08));
-      color:#14532d;
-    }
-    body[data-theme="comunitario"] .card{
-      background:rgba(255,255,255,.98);
-      border-color:rgba(22,163,74,.22);
-      box-shadow:0 22px 55px rgba(146,64,14,.16);
-    }
-    body[data-theme="comunitario"] .post-cover{
-      background:linear-gradient(135deg,rgba(22,163,74,.4),rgba(245,158,11,.26));
+    body.mode-community .post-cover{
+      background:linear-gradient(135deg,rgba(16,185,129,.6),rgba(245,158,11,.45));
     }
   </style>
 </head>
@@ -345,34 +344,32 @@
       </a>
       <div class="links">
         <!-- Comunidad -->
-        <div class="nav-item nav-comunidad">
-          <button class="chip nav-trigger" type="button">Comunidad ▾</button>
-          <div class="submenu">
-            <a class="submenu-item" href="index.html#bioalkimia">Quiénes somos</a>
-            <a class="submenu-item" href="index.html#aliados">Aliados</a>
-            <div class="submenu-group">
-              <span class="submenu-label">Patrocinadores ▸</span>
-              <div class="submenu submenu-nested">
-                <a class="submenu-item" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">
+            <span class="chip">Comunidad</span>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-link" href="posts.html">Artículos</a>
+            <a class="nav-link" href="index.html#donar">Donar</a>
+            <a class="nav-link" href="index.html#bioalkimia">Bioalkimia</a>
+            <div class="nav-item-inline">
+              <div class="nav-link has-children" tabindex="0">Patrocinadores</div>
+              <div class="nav-subdropdown">
+                <a class="nav-link" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
               </div>
             </div>
+            <a class="nav-link" href="index.html#aliados">Aliados (próximamente)</a>
           </div>
         </div>
-
-        <!-- Artículos -->
-        <a class="chip" href="posts.html">Artículos</a>
-
-        <!-- Donar -->
-        <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
-
         <!-- Modo -->
-        <div class="nav-item nav-mode">
-          <button class="chip nav-trigger" id="modeToggle" type="button">Modo ▾</button>
-          <div class="submenu submenu-mode" id="modeMenu">
-            <button class="submenu-item" data-theme="default" type="button">Clásico</button>
-            <button class="submenu-item" data-theme="oscuro" type="button">Modo oscuro</button>
-            <button class="submenu-item" data-theme="psycho" type="button">Modo psychodélico</button>
-            <button class="submenu-item" data-theme="comunitario" type="button">Modo comunitario</button>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">
+            <span class="chip">Modo</span>
+          </button>
+          <div class="nav-dropdown nav-dropdown-mode">
+            <button class="nav-link js-mode" data-mode="base" type="button">Modo base</button>
+            <button class="nav-link js-mode" data-mode="reading" type="button">Modo lectura</button>
+            <button class="nav-link js-mode" data-mode="community" type="button">Modo comunitario</button>
           </div>
         </div>
       </div>
@@ -392,17 +389,16 @@
     <nav class="pager" id="pager"></nav>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
+      <div style="display:flex;align-items:center;gap:.5rem">
         <img src="images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
-        <span>Guardianes del Pulque</span>
+        <span>Pulque Vivo</span>
       </div>
-      <div style="display:flex;gap:.35rem;flex-wrap:wrap">
+      <div class="links">
         <a class="chip" href="index.html">Inicio</a>
         <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="index.html#bioalkimia">Comunidad</a>
+        <a class="chip" href="index.html#bioalkimia">Bioalkimia</a>
       </div>
     </div>
   </footer>
@@ -410,64 +406,16 @@
   <script type="application/json" id="posts-fallback">[]</script>
 
   <script>
-    // THEME init
+    // NAV scroll
     (function(){
-      const saved = localStorage.getItem('gp.theme');
-      if(saved && saved!=='default'){
-        document.body.setAttribute('data-theme', saved);
+      const nav = document.getElementById('mainNav');
+      if(!nav) return;
+      function update(){
+        if(window.scrollY > 10) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
       }
-    })();
-
-    // NAV dropdowns
-    (function(){
-      const comunidadItem = document.querySelector('.nav-comunidad');
-      const modeItem = document.querySelector('.nav-mode');
-      const modeMenu = document.getElementById('modeMenu');
-
-      function closeAll(){
-        comunidadItem && comunidadItem.classList.remove('open');
-        modeItem && modeItem.classList.remove('open');
-      }
-
-      if(comunidadItem){
-        const btn = comunidadItem.querySelector('.nav-trigger');
-        btn.addEventListener('click',(e)=>{
-          e.preventDefault();
-          e.stopPropagation();
-          const open = comunidadItem.classList.contains('open');
-          closeAll();
-          if(!open) comunidadItem.classList.add('open');
-        });
-      }
-
-      if(modeItem && modeMenu){
-        const btn = document.getElementById('modeToggle');
-        btn.addEventListener('click',(e)=>{
-          e.preventDefault();
-          e.stopPropagation();
-          const open = modeItem.classList.contains('open');
-          closeAll();
-          if(!open) modeItem.classList.add('open');
-        });
-
-        modeMenu.querySelectorAll('[data-theme]').forEach(opt=>{
-          opt.addEventListener('click', ()=>{
-            const t = opt.dataset.theme;
-            if(t === 'default'){
-              document.body.removeAttribute('data-theme');
-              localStorage.removeItem('gp.theme');
-            }else{
-              document.body.setAttribute('data-theme', t);
-              localStorage.setItem('gp.theme', t);
-            }
-            closeAll();
-          });
-        });
-      }
-
-      document.addEventListener('click',(e)=>{
-        if(!e.target.closest('.nav-item')) closeAll();
-      });
+      update();
+      window.addEventListener('scroll', update, {passive:true});
     })();
 
     // Reveal
@@ -481,13 +429,14 @@
     }, {threshold:.2});
 
     function escapeHtml(s){
-      return String(s).replace(/[&<>"]/g, m=>({
+      return String(s).replace(/[&<>"]/g, m => ({
         '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
       }[m]));
     }
+
     function qsNum(name, def){
-      const v = parseInt(new URL(location.href).searchParams.get(name)||def,10);
-      return Number.isFinite(v)&&v>0 ? v : def;
+      const v = parseInt(new URL(location.href).searchParams.get(name) || def, 10);
+      return Number.isFinite(v) && v > 0 ? v : def;
     }
 
     function candidateUrls(filename){
@@ -518,91 +467,139 @@
         }
       }
       if(status){
-        status.textContent = (location.protocol==='file:'
+        status.textContent = (location.protocol === 'file:'
           ? 'Abre con Live Server (fetch se bloquea con file://).'
           : 'No se encontró posts.json. Colócalo junto a posts.html en GitHub Pages.');
       }
-      console.warn(traces.join('\n'));
+      console.warn('posts.json no encontrado:\n'+traces.join('\n'));
       throw new Error('posts.json no encontrado');
     }
 
     function makeCard(p){
-      const el=document.createElement('article');
-      el.className='card reveal';
-      el.style.overflow='hidden';
+      const el = document.createElement('article');
+      el.className = 'card reveal';
+      el.style.overflow = 'hidden';
       const coverStyle = p.cover
         ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"`
         : '';
       el.innerHTML = `
         <div class="post-cover" ${coverStyle}></div>
         <div style="padding:16px">
-          <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
-          <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
-          <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
+          <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag || '')}</div>
+          <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title || '')}</h3>
+          <p style="color:#475569">${escapeHtml(p.excerpt || '')}</p>
           <div style="padding-top:6px">
-            <a class="chip" href="${p.url||'#'}">Leer →</a>
+            <a class="chip" href="${p.url || '#'}">Leer →</a>
           </div>
-        </div>`;
+        </div>
+      `;
       io.observe(el);
       return el;
     }
 
     function renderPage(items,page,perPage){
-      const grid=document.getElementById('postsGrid');
-      const pager=document.getElementById('pager');
-      grid.innerHTML=''; pager.innerHTML='';
+      const grid = document.getElementById('postsGrid');
+      const pager = document.getElementById('pager');
+      grid.innerHTML = '';
+      pager.innerHTML = '';
 
       if(!items.length){
-        grid.innerHTML='<p class="muted">Aún no hay artículos publicados.</p>';
+        grid.innerHTML = '<p class="muted">Aún no hay artículos publicados.</p>';
         return;
       }
-      const total=items.length;
-      const pages=Math.max(1,Math.ceil(total/perPage));
-      page=Math.min(Math.max(1,page),pages);
-      const start=(page-1)*perPage;
-      const end=Math.min(start+perPage,total);
 
-      items.slice(start,end).forEach(p=>grid.appendChild(makeCard(p)));
+      const total = items.length;
+      const pages = Math.max(1, Math.ceil(total / perPage));
+      page = Math.min(Math.max(1, page), pages);
+      const start = (page - 1) * perPage;
+      const end = Math.min(start + perPage, total);
+
+      items.slice(start, end).forEach(p => grid.appendChild(makeCard(p)));
 
       function link(n,label,cls){
-        const a=document.createElement('a');
-        a.href=`?page=${n}`;
-        a.textContent=label;
-        if(cls)a.classList.add(cls);
+        const a = document.createElement('a');
+        a.href = `?page=${n}`;
+        a.textContent = label;
+        if(cls) a.classList.add(cls);
         return a;
       }
       function span(label,cls){
-        const s=document.createElement('span');
-        s.textContent=label;
-        if(cls)s.classList.add(cls);
+        const s = document.createElement('span');
+        s.textContent = label;
+        if(cls) s.classList.add(cls);
         return s;
       }
 
-      pager.appendChild(page>1 ? link(page-1,'‹') : span('‹','disabled'));
+      pager.appendChild(page > 1 ? link(page-1,'‹') : span('‹','disabled'));
       for(let i=1;i<=pages;i++){
         pager.appendChild(i===page ? span(String(i),'active') : link(i,String(i)));
       }
-      pager.appendChild(page<pages ? link(page+1,'›') : span('›','disabled'));
+      pager.appendChild(page < pages ? link(page+1,'›') : span('›','disabled'));
     }
 
     (async function(){
-      const PER_PAGE=9;
-      const page=qsNum('page',1);
-      const status=document.getElementById('status');
-      let posts=[];
+      const PER_PAGE = 9;
+      const page = qsNum('page',1);
+      let posts = [];
       try{
-        const data=await fetchJsonSmart('posts.json');
-        posts = Array.isArray(data)?data:(Array.isArray(data.entries)?data.entries:[]);
-        if(status) status.textContent='';
+        const data = await fetchJsonSmart('posts.json');
+        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
+        const status = document.getElementById('status');
+        if(status) status.textContent = '';
       }catch(_){
-        try{ posts=JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{}
-        if(status && !posts.length){
-          status.textContent=(location.protocol==='file:'
-            ? 'Abre con Live Server para que fetch funcione.'
-            : 'Sube posts.json junto a posts.html en GitHub Pages.');
-        }
+        try{
+          posts = JSON.parse(document.getElementById('posts-fallback').textContent || '[]');
+        }catch{}
       }
       renderPage(posts,page,PER_PAGE);
+    })();
+
+    // Modo visual
+    (function(){
+      const KEY = 'gp.mode';
+      const body = document.body;
+      function apply(mode){
+        body.classList.remove('mode-reading','mode-community');
+        if(mode === 'reading') body.classList.add('mode-reading');
+        else if(mode === 'community') body.classList.add('mode-community');
+      }
+      try{
+        const saved = localStorage.getItem(KEY);
+        if(saved) apply(saved);
+      }catch{}
+
+      document.querySelectorAll('.js-mode').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const m = btn.dataset.mode;
+          if(m === 'base'){
+            apply(null);
+            try{localStorage.removeItem(KEY);}catch{}
+          }else{
+            apply(m);
+            try{localStorage.setItem(KEY,m);}catch{}
+          }
+        });
+      });
+    })();
+
+    // Dropdown por click (móvil)
+    (function(){
+      const items = document.querySelectorAll('.nav-item');
+      document.querySelectorAll('.nav-trigger').forEach(btn=>{
+        btn.addEventListener('click',e=>{
+          const item = btn.closest('.nav-item');
+          if(!item) return;
+          const open = !item.classList.contains('open');
+          items.forEach(i=>i.classList.remove('open'));
+          if(open) item.classList.add('open');
+          e.stopPropagation();
+        });
+      });
+      document.addEventListener('click',e=>{
+        if(!e.target.closest('.nav-item')){
+          items.forEach(i=>i.classList.remove('open'));
+        }
+      });
     })();
   </script>
 </body>
