@@ -114,7 +114,7 @@
 
     .nav-dropdown{
       position:absolute;
-      top:100%; /* pegado, sin hueco */
+      top:100%; /* pegado */
       left:0;
       margin-top:0;
       padding:6px 0;
@@ -178,7 +178,6 @@
       z-index:95;
     }
 
-    /* Hover + click open */
     .nav-item:hover > .nav-dropdown,
     .nav-item:focus-within > .nav-dropdown,
     .nav-item.open > .nav-dropdown{
@@ -191,7 +190,6 @@
       pointer-events:auto;
     }
 
-    /* Scroll state */
     .nav.scrolled{
       box-shadow:0 14px 40px rgba(15,23,42,.18);
       border-bottom-color:rgba(148,163,253,.32);
@@ -348,7 +346,7 @@
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
 
-    /* ===== MODO LECTURA (usa look psicodélico) ===== */
+    /* ===== MODO LECTURA (psicodélico) ===== */
     body.mode-reading{
       background:#020817;
       color:#e5e7eb;
@@ -386,9 +384,10 @@
       color:#020817;
     }
 
-    /* ===== MODO COMUNITARIO (mural) ===== */
+    /* ===== MODO COMUNITARIO (verde legible) ===== */
     body.mode-community{
-      color:#f9fafb;
+      color:#e5f9f0;
+      background:#064e3b;
     }
     body.mode-community::before{
       content:"";
@@ -396,53 +395,55 @@
       inset:0;
       z-index:-1;
       background:
-        radial-gradient(circle at 0 0,rgba(22,163,74,.32),transparent 60%),
-        radial-gradient(circle at 100% 10%,rgba(8,47,73,.36),transparent 55%),
-        radial-gradient(circle at 15% 100%,rgba(180,83,9,.32),transparent 55%),
-        radial-gradient(circle at 100% 100%,rgba(147,51,234,.26),transparent 55%),
-        #020817;
+        radial-gradient(circle at 0 0,rgba(22,163,74,.18),transparent 55%),
+        radial-gradient(circle at 100% 100%,rgba(5,150,105,.18),transparent 55%),
+        #064e3b;
     }
     body.mode-community .nav{
-      background:rgba(2,6,23,.97);
-      border-bottom-color:rgba(34,197,94,.7);
-      box-shadow:0 24px 80px rgba(0,0,0,.95);
+      background:rgba(3,33,24,.98);
+      border-bottom-color:rgba(22,163,74,.9);
+      box-shadow:0 24px 80px rgba(0,0,0,.9);
     }
-    body.mode-community .brand-text{color:#bbf7d0;}
+    body.mode-community .brand-text{
+      color:#bbf7d0;
+    }
     body.mode-community .chip{
       border-color:rgba(22,163,74,.95);
       color:#bbf7d0;
-      background:rgba(0,0,0,.32);
-      box-shadow:0 10px 26px rgba(0,0,0,.9);
+      background:rgba(3,33,24,1);
+      box-shadow:0 10px 26px rgba(0,0,0,.85);
     }
     body.mode-community .chip:hover{
       background:#22c55e;
-      color:#020817;
+      color:#022c22;
     }
     body.mode-community .hero-title{
-      background:linear-gradient(135deg,#bbf7d0,#22c55e,#fde68a);
+      background:linear-gradient(135deg,#bbf7d0,#22c55e,#bbf7d0);
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
     }
-    body.mode-community .hero-subtitle{color:#e5e7eb;}
+    body.mode-community .hero-subtitle{
+      color:#d1fae5;
+    }
+    body.mode-community .pill{
+      background:rgba(22,163,74,.26);
+      color:#bbf7d0;
+    }
     body.mode-community .card{
-      background:rgba(5,15,20,.97);
+      background:rgba(3,33,24,.98);
       border-color:rgba(22,163,74,.85);
       box-shadow:0 30px 90px rgba(0,0,0,1);
     }
-    body.mode-community .hero-card-bloom{
-      background:radial-gradient(circle,#22c55e,transparent);
-      filter:blur(28px);
-    }
     body.mode-community .post-cover{
-      background:linear-gradient(135deg,rgba(16,185,129,.6),rgba(245,158,11,.45));
-    }
-    body.mode-community .pill{
-      background:rgba(22,163,74,.24);
-      color:#bbf7d0;
+      background:linear-gradient(135deg,rgba(22,163,74,.9),rgba(16,185,129,.35));
     }
     body.mode-community .bio-card{
-      background:rgba(4,7,17,.96);
+      background:rgba(2,24,20,.98);
+    }
+    body.mode-community footer{
+      border-top-color:rgba(22,163,74,.55);
+      color:#bbf7d0;
     }
   </style>
 </head>
@@ -464,7 +465,7 @@
           <div class="nav-dropdown">
             <a class="nav-link" href="posts.html">Artículos</a>
             <a class="nav-link" href="#donar">Donar</a>
-            <a class="nav-link" href="https://teomatisacredcopal.com/" target="_blank">Teomati</a>
+            <a class="nav-link" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
             <div class="nav-item-inline">
               <div class="nav-link has-children" tabindex="0">Patrocinadores</div>
               <div class="nav-subdropdown">
@@ -606,7 +607,7 @@
     </div>
   </footer>
 
-  <!-- Fallback de posts (para pruebas en file://) -->
+  <!-- Fallback de posts -->
   <script type="application/json" id="posts-fallback">[
     {
       "tag":"Pulque",
@@ -751,13 +752,11 @@
         else if(mode === 'community') body.classList.add('mode-community');
       }
 
-      // cargar modo guardado
       try{
         const saved = localStorage.getItem(KEY);
         if(saved) apply(saved);
       }catch{}
 
-      // eventos de menú
       document.querySelectorAll('.js-mode').forEach(btn=>{
         btn.addEventListener('click',()=>{
           const m = btn.dataset.mode;
