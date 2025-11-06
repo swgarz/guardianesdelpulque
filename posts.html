@@ -37,4 +37,316 @@
     }
     .brand{
       display:flex;
-      align-ite
+      align-items:center;
+      gap:.5rem;
+      font-weight:700;
+    }
+    .brand-logo{
+      height:44px;
+      width:auto;
+      display:block;
+    }
+    @media (min-width:768px){
+      .brand-logo{height:58px;}
+    }
+    .brand-text{
+      font-size:1rem;
+      color:#111827;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
+
+    .links{
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      padding:.5rem .9rem;
+      border:2px solid var(--brand);
+      color:var(--brand);
+      background:rgba(255,255,255,.98);
+      border-radius:999px;
+      font-weight:700;
+      font-size:.8rem;
+      white-space:nowrap;
+      cursor:pointer;
+      transition:background .18s ease,color .18s ease,transform .12s ease,border-color .18s ease;
+    }
+    .chip .emoji{font-size:1rem}
+    .chip:hover{
+      background:var(--brand);
+      color:#020817;
+      transform:translateY(-1px);
+    }
+
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.18);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
+    }
+    .nav.scrolled .brand-text{color:#f9fafb;}
+    .nav.scrolled .chip{
+      background:transparent;
+      border-color:#22c55e;
+      color:#bbf7d0;
+    }
+    .nav.scrolled .chip:hover{
+      background:#22c55e;
+      color:#020817;
+    }
+
+    /* Header */
+    .header{padding:36px 0 18px}
+    .title{
+      margin:0;
+      font-size:clamp(28px,5.6vw,44px);
+      line-height:1.08;
+      background:linear-gradient(135deg,#059669,#65a30d,#065f46);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .subtitle{margin:.35rem 0 0;color:#64748b}
+
+    /* Grid & cards */
+    .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
+    .card{
+      border-radius:24px;
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(15,23,42,.06);
+      box-shadow:0 20px 50px -12px rgba(0,0,0,.15);
+      overflow:hidden;
+    }
+    .post-cover{
+      height:144px;
+      background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));
+    }
+
+    /* Paginación */
+    .pager{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      align-items:center;
+      justify-content:center;
+      margin:20px 0;
+    }
+    .pager a,.pager span{
+      display:inline-flex;
+      min-width:40px;
+      height:40px;
+      align-items:center;
+      justify-content:center;
+      padding:0 .75rem;
+      border-radius:12px;
+      border:1px solid rgba(15,23,42,.08);
+      background:#fff;
+      color:#0f172a;
+      font-weight:700;
+      font-size:.85rem;
+    }
+    .pager .active{
+      background:var(--brand);
+      color:#fff;
+      border-color:transparent;
+    }
+    .pager .disabled{
+      opacity:.45;
+      pointer-events:none;
+    }
+
+    footer{
+      border-top:1px solid rgba(15,23,42,.08);
+      padding:24px 0;
+      margin-top:40px;
+      color:#64748b;
+    }
+
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+    .reveal.in{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <div class="nav" id="mainNav">
+    <div class="container row">
+      <a class="brand" href="index.html">
+        <img src="images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <span class="brand-text">Pulque Vivo</span>
+      </a>
+      <div class="links">
+        <a class="chip" href="index.html">Inicio</a>
+        <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="index.html#bioalkimia">Bioalkimia</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="container header">
+    <h1 class="title">Todos los artículos</h1>
+    <p class="subtitle">Pulque, tierra y maguey — listado completo con paginación.</p>
+  </header>
+
+  <!-- GRID -->
+  <main class="container">
+    <div id="status" style="margin:6px 0 12px;font-size:12px;color:#64748b"></div>
+    <div class="posts-grid" id="postsGrid"></div>
+    <nav class="pager" id="pager"></nav>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="images/logo_transparente.png" alt="Guardianes del Pulque" style="height:26px;width:auto">
+        <span>Pulque Vivo</span>
+      </div>
+      <div class="links">
+        <a class="chip" href="index.html">Inicio</a>
+        <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="index.html#bioalkimia">Bioalkimia</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/json" id="posts-fallback">[]</script>
+
+  <script>
+    // Header scroll efecto
+    (function(){
+      const nav = document.getElementById('mainNav');
+      if(!nav) return;
+      function update(){
+        if(window.scrollY > 10) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      }
+      update();
+      window.addEventListener('scroll', update, {passive:true});
+    })();
+
+    // Reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.2});
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"]/g,(m)=>({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
+      }[m]));
+    }
+    function qsNum(name, def){
+      const v = parseInt(new URL(location.href).searchParams.get(name)||def,10);
+      return Number.isFinite(v)&&v>0 ? v : def;
+    }
+
+    function candidateUrls(filename){
+      const ts = Date.now();
+      const origin = location.origin;
+      const path = location.pathname;
+      const dir = path.replace(/[^\/]*$/,'');
+      const segs = path.split('/').filter(Boolean);
+      const repoBase = segs.length ? `/${segs[0]}/` : '/';
+      return [
+        `${origin}${dir}${filename}?v=${ts}`,
+        `${origin}${repoBase}${filename}?v=${ts}`,
+        `${origin}/${filename}?v=${ts}`
+      ].filter((v,i,a)=>a.indexOf(v)===i);
+    }
+
+    async function fetchJsonSmart(filename){
+      const tries = candidateUrls(filename);
+      const status = document.getElementById('status');
+      const traces = [];
+      for(const url of tries){
+        try{
+          const r = await fetch(url,{cache:'no-store'});
+          traces.push(`GET ${url} → ${r.status}`);
+          if(r.ok) return await r.json();
+        }catch(e){
+          traces.push(`ERR ${url} → ${e}`);
+        }
+      }
+      if(status){
+        status.textContent = (location.protocol==='file:'
+          ? 'Abre con Live Server (fetch se bloquea con file://).'
+          : 'No se encontró posts.json. Colócalo junto a posts.html en GitHub Pages.');
+      }
+      throw new Error('posts.json no encontrado\n'+traces.join('\n'));
+    }
+
+    function makeCard(p){
+      const el = document.createElement('article');
+      el.className = 'card reveal';
+      el.style.overflow = 'hidden';
+      el.innerHTML = `
+        <div class="post-cover" ${p.cover?`style="background-image:url('${p.cover}');background-size:cover;background-position:center"`:''}></div>
+        <div style="padding:16px">
+          <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
+          <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
+          <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
+          <div style="padding-top:6px">
+            <a class="chip" href="${p.url||'#'}">Leer →</a>
+          </div>
+        </div>`;
+      io.observe(el);
+      return el;
+    }
+
+    function renderPage(items,page,perPage){
+      const grid=document.getElementById('postsGrid');
+      const pager=document.getElementById('pager');
+      grid.innerHTML=''; pager.innerHTML='';
+
+      if(!items.length){
+        grid.innerHTML='<p class="muted">Aún no hay artículos publicados.</p>';
+        return;
+      }
+
+      const total=items.length;
+      const pages=Math.max(1,Math.ceil(total/perPage));
+      page=Math.min(Math.max(1,page),pages);
+      const start=(page-1)*perPage;
+      const end=Math.min(start+perPage,total);
+
+      items.slice(start,end).forEach(p=>grid.appendChild(makeCard(p)));
+
+      function link(n,label,cls){const a=document.createElement('a');a.href=`?page=${n}`;a.textContent=label; if(cls)a.classList.add(cls);return a;}
+      function span(label,cls){const s=document.createElement('span');s.textContent=label;if(cls)s.classList.add(cls);return s;}
+
+      pager.appendChild(page>1 ? link(page-1,'‹') : span('‹','disabled'));
+      for(let i=1;i<=pages;i++){
+        pager.appendChild(i===page ? span(String(i),'active') : link(i,String(i)));
+      }
+      pager.appendChild(page<pages ? link(page+1,'›') : span('›','disabled'));
+    }
+
+    (async function(){
+      const PER_PAGE=9;
+      const page=qsNum('page',1);
+      const status=document.getElementById('status');
+      let posts=[];
+      try{
+        const data=await fetchJsonSmart('posts.json');
+        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
+        if(status) status.textContent='';
+      }catch(_){
+        try{ posts=JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{}
+        if(status && !posts.length){
+          status.textContent=(location.protocol==='file:'
+            ? 'Abre con Live Server para que fetch funcione.'
+            : 'Sube posts.json junto a posts.html en GitHub Pages.');
+        }
+      }
+      renderPage(posts,page,PER_PAGE);
+    })();
+  </script>
+</body>
+</html>
