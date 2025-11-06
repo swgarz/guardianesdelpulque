@@ -10,8 +10,7 @@
     *,*::before,*::after{box-sizing:border-box}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';line-height:1.5;color:#0f172a;background:#f6f8fb}
     :root{
-      --brand:#059669; /* emerald-600 */
-      --brand-2:#16a34a; /* green-600 */
+      --brand:#059669; --brand-2:#16a34a;
       --ink:#0f172a; --muted:#475569; --card:#ffffff; --stroke:#e5e7eb;
     }
     html.dark{color-scheme:dark}
@@ -27,49 +26,35 @@
     .stack-4{display:grid;gap:1rem}
     .stack-6{display:grid;gap:1.5rem}
 
-    /* ===== Top bar ===== */
+    /* ===== Nav ===== */
     .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.6);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
     html.dark .nav{background:rgba(11,15,23,.5);border-color:rgba(255,255,255,.08)}
     .nav .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:.5rem;font-weight:700}
     .brand-badge{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--brand);color:#fff}
-    .nav a.link{color:#334155}
+    .links{display:flex;align-items:center;gap:.75rem}
+    .nav a.link{color:#334155;white-space:nowrap}
     .nav a.link:hover{color:#0f172a}
     html.dark .nav a.link{color:#cbd5e1}
     html.dark .nav a.link:hover{color:#fff}
-
-    /* ===== Buttons & cards ===== */
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;padding:.65rem 1rem;font-weight:600;cursor:pointer;transition:transform .15s ease, background .2s ease}
-    .btn:active{transform:scale(.98)}
-    .btn-brand{background:var(--brand);color:#fff}
-    .btn-brand:hover{background:#069268}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;padding:.65rem 1rem;font-weight:600;cursor:pointer}
     .btn-ghost{background:#fff;border:1px solid rgba(15,23,42,.08);color:#0f172a}
     html.dark .btn-ghost{background:#192131;border-color:rgba(255,255,255,.1);color:#fff}
-    .btn-block{width:100%}
+    @media (max-width:420px){ .links{gap:.5rem} .btn-ghost{padding:.55rem .8rem} }
 
     .card{border-radius:24px;background:rgba(255,255,255,.7);border:1px solid rgba(15,23,42,.06);box-shadow:0 20px 50px -12px rgba(0,0,0,.15);overflow:hidden}
     html.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+    .btn-brand{background:var(--brand);color:#fff}
+    .btn-brand:hover{background:#069268}
+    .btn-block{width:100%}
 
-    /* ===== HERO compacto y respirable en móvil ===== */
+    /* ===== Hero ===== */
     .hero{position:relative}
     .hero--compact{padding:44px 0 32px}
     .hero-wrap{display:grid;gap:1.25rem}
     @media (min-width:900px){ .hero-wrap{grid-template-columns:1.1fr .9fr;align-items:center} }
-
-    .hero-title{
-      margin:0;
-      font-size:clamp(30px,7vw,64px);
-      line-height:1.06;
-      letter-spacing:-.5px;
-      background:linear-gradient(135deg,#059669,#65a30d,#065f46);
-      -webkit-background-clip:text;background-clip:text;color:transparent;
-    }
-    .hero-subtitle{
-      margin:.35rem 0 0;
-      color:#475569;
-      max-width:60ch;
-      font-size:clamp(15px,3.8vw,18px);
-    }
+    .hero-title{margin:0;font-size:clamp(30px,7vw,64px);line-height:1.06;letter-spacing:-.5px;background:linear-gradient(135deg,#059669,#65a30d,#065f46);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-subtitle{margin:.35rem 0 0;color:#475569;max-width:60ch;font-size:clamp(15px,3.8vw,18px)}
     html.dark .hero-subtitle{color:#cbd5e1}
     .hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0 0}
     .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .75rem;border-radius:14px;background:rgba(16,185,129,.12);color:#065f46;font-weight:600}
@@ -78,7 +63,6 @@
     @media (min-width:520px){ .cta-group{grid-auto-flow:column;justify-content:start} .btn-block{width:auto} }
     .hero-note{color:#64748b;display:block;margin-top:.25rem}
 
-    /* Lado derecho (oculto en móviles) */
     .hero-side{display:none}
     @media (min-width:900px){ .hero-side{display:block} }
     .hero-card{padding:20px;position:relative;overflow:hidden}
@@ -96,10 +80,6 @@
     .b3{width:360px;height:360px;left:40%;bottom:-120px;background:radial-gradient(closest-side,#a3e635,transparent);animation-delay:4s}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
 
-    /* ===== Secciones ===== */
-    .grid-3{display:grid;grid-template-columns:1fr;gap:1rem}
-    @media (min-width:860px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-
     /* ===== Posts ===== */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
@@ -107,11 +87,15 @@
     .post-cover{height:144px;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));}
     html.dark .post-cover{background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(250,204,21,.12));}
 
-    /* ===== Footer ===== */
+    /* ===== Donaciones ===== */
+    .don-grid{display:grid;gap:1rem}
+    @media (min-width:760px){ .don-grid{grid-template-columns:1.1fr .9fr} }
+    .copy-badge{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .7rem;border:1px dashed rgba(15,23,42,.25);border-radius:12px;font-weight:600}
+    html.dark .copy-badge{border-color:rgba(255,255,255,.25)}
+
+    /* ===== Footer & reveal ===== */
     footer{border-top:1px solid rgba(15,23,42,.08);padding:24px 0;margin-top:40px;color:#64748b}
     html.dark footer{border-color:rgba(255,255,255,.1);color:#94a3b8}
-
-    /* ===== Reveal on scroll ===== */
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
   </style>
@@ -124,9 +108,9 @@
         <span class="brand-badge" aria-hidden>🍶</span>
         <span>Pulque Vivo</span>
       </a>
-      <div class="stack-2" style="grid-auto-flow:column;gap:1rem;align-items:center">
-        <a class="link" href="#secciones">Secciones</a>
+      <div class="links">
         <a class="link" href="posts.html">Artículos</a>
+        <a class="link" href="#donaciones">Donaciones</a>
         <a class="link" href="#suscripcion">Suscripción</a>
         <button id="themeBtn" class="btn btn-ghost" type="button">Modo oscuro</button>
       </div>
@@ -136,9 +120,7 @@
   <!-- HERO -->
   <header class="hero hero--compact container">
     <div class="backdrop" aria-hidden="true">
-      <div class="blob b1"></div>
-      <div class="blob b2"></div>
-      <div class="blob b3"></div>
+      <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
     </div>
 
     <div class="hero-wrap">
@@ -177,24 +159,6 @@
     </div>
   </header>
 
-  <!-- SECCIONES (enfoque principal) -->
-  <section id="secciones" class="container stack-6" style="margin-bottom:24px">
-    <div class="grid-3">
-      <article class="card reveal" style="padding:24px">
-        <div class="pill">🍶 <strong>Pulque</strong></div>
-        <p style="margin-top:.5rem;color:#475569">Ciencia y tradición: microbiota, utensilios, recetas y cuidado del tinacal.</p>
-      </article>
-      <article class="card reveal" style="padding:24px">
-        <div class="pill">🏗️ <strong>Tierra</strong></div>
-        <p style="margin-top:.5rem;color:#475569">Bioconstrucción accesible: adobe, BTC, bambú y eficiencia térmica.</p>
-      </article>
-      <article class="card reveal" style="padding:24px">
-        <div class="pill">🌵 <strong>Maguey</strong></div>
-        <p style="margin-top:.5rem;color:#475569">Agroecología, restauración de suelos y cadena de valor del maguey.</p>
-      </article>
-    </div>
-  </section>
-
   <!-- POSTS (últimos 6) -->
   <section id="posts" class="container" style="margin-bottom:48px">
     <div class="stack-2" style="grid-auto-flow:column;justify-content:space-between;align-items:end;margin-bottom:12px">
@@ -205,16 +169,47 @@
     <div id="status" style="margin-top:8px;font-size:12px;color:#64748b"></div>
   </section>
 
+  <!-- DONACIONES -->
+  <section id="donaciones" class="container" style="margin-bottom:64px">
+    <div class="card reveal" style="padding:24px">
+      <div class="don-grid">
+        <div class="stack-3">
+          <h3 style="margin:0">Apoya el proyecto 💚</h3>
+          <p style="color:#64748b;margin:0">Con tu donación mantenemos contenidos abiertos sobre pulque, tierra y maguey. ¡Gracias por impulsar este trabajo comunitario!</p>
+
+          <div class="stack-2">
+            <div class="copy-badge">
+              <span>CLABE:</span>
+              <code id="clabeText">000000000000000000</code>
+              <button id="copyClabe" class="btn btn-ghost" type="button">Copiar</button>
+            </div>
+            <small style="color:#94a3b8">Reemplaza la CLABE por la real en el HTML.</small>
+          </div>
+
+          <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:start">
+            <a id="paypalBtn" class="btn btn-brand" href="#" target="_blank" rel="noopener">Donar por PayPal</a>
+            <a class="btn btn-ghost" href="mailto:donaciones@tusitio.mx">Otra forma de donar</a>
+          </div>
+        </div>
+
+        <div class="stack-3">
+          <div class="card" style="padding:16px;background:rgba(16,185,129,.08)">
+            <strong>Transparencia</strong>
+            <p style="color:#64748b;margin:.4rem 0 0">Publicaremos un resumen trimestral de ingresos y en qué se invierten (servidores, material didáctico, eventos comunitarios).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SUSCRIPCIÓN -->
   <section id="suscripcion" class="container" style="margin-bottom:64px">
     <div class="card reveal" style="padding:28px;position:relative;overflow:hidden">
       <div style="position:absolute;left:-80px;top:50%;transform:translateY(-50%);width:220px;height:220px;border-radius:999px;background:rgba(16,185,129,.14);filter:blur(40px)"></div>
       <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:220px;height:220px;border-radius:999px;background:rgba(132,204,22,.14);filter:blur(40px)"></div>
-      <div class="grid-3" style="grid-template-columns:1fr;gap:1rem">
-        <div class="stack-2">
-          <h3 style="margin:0">Suscríbete al boletín</h3>
-          <p style="color:#64748b;margin:0">Un correo semanal con lo mejor de pulque, tierra y maguey.</p>
-        </div>
+      <div class="stack-2">
+        <h3 style="margin:0">Suscríbete al boletín</h3>
+        <p style="color:#64748b;margin:0">Un correo semanal con lo mejor de pulque, tierra y maguey.</p>
         <form id="formSub" class="stack-2" style="grid-auto-flow:row;gap:.5rem;align-items:stretch">
           <input id="email" type="email" placeholder="tu@email.com" required
                  style="flex:1;border:1px solid rgba(15,23,42,.12);background:rgba(255,255,255,.7);color:inherit;border-radius:14px;padding:.6rem .8rem;outline:none"/>
@@ -234,12 +229,12 @@
       </div>
       <div class="stack-2" style="grid-auto-flow:column;gap:1rem">
         <a class="link" href="posts.html">Artículos</a>
-        <a class="link" href="#">Contacto</a>
+        <a class="link" href="#donaciones">Donaciones</a>
       </div>
     </div>
   </footer>
 
-  <!-- Fallback de posts embebido (si no existe posts.json) -->
+  <!-- Fallback de posts -->
   <script type="application/json" id="posts-fallback">[
     {"tag":"Pulque","title":"De la penca al jarro: proceso vivo","excerpt":"Fermentos, microbiota y tradición del maguey.","url":"#","cover":""},
     {"tag":"Tierra","title":"Adobe y BTC básicos","excerpt":"Materiales, moldes y curado.","url":"#","cover":""},
@@ -247,7 +242,7 @@
   ]</script>
 
   <script>
-    // ===== Tema oscuro persistente =====
+    // Tema
     const html = document.documentElement;
     const themeBtn = document.getElementById('themeBtn');
     const saved = localStorage.getItem('pulque.theme');
@@ -259,13 +254,13 @@
       themeBtn.textContent = dark ? 'Modo claro' : 'Modo oscuro';
     });
 
-    // ===== Reveal on scroll =====
+    // Reveal
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     }, {threshold:.2});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // ===== Suscripción (demo) =====
+    // Suscripción (demo)
     document.getElementById('formSub').addEventListener('submit', (e)=>{
       e.preventDefault();
       const email = document.getElementById('email').value.trim();
@@ -275,82 +270,65 @@
       e.target.reset();
     });
 
-    // ===== Util =====
-    function escapeHtml(s){
-      return String(s).replace(/[&<>"]/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[m]));
-    }
-
-    // ===== Carga de posts (Home muestra 6) =====
+    // Util
+    function escapeHtml(s){ return String(s).replace(/[&<>"]/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[m])); }
     const HOMEPAGE_LIMIT = 6;
 
     function candidateUrls(filename){
-      const ts = Date.now();
-      const origin = location.origin;
-      const path = location.pathname;
-      const dir = path.replace(/[^\/]*$/,'');
-      const segs = path.split('/').filter(Boolean);
+      const ts = Date.now(), origin = location.origin, path = location.pathname;
+      const dir = path.replace(/[^\/]*$/,''); const segs = path.split('/').filter(Boolean);
       const repoBase = segs.length ? `/${segs[0]}/` : '/';
       return [
-        `${origin}${dir}${filename}?v=${ts}`,  // misma carpeta
-        `${origin}${repoBase}${filename}?v=${ts}`, // base repo
-        `${origin}/${filename}?v=${ts}` // raíz dominio
+        `${origin}${dir}${filename}?v=${ts}`,
+        `${origin}${repoBase}${filename}?v=${ts}`,
+        `${origin}/${filename}?v=${ts}`
       ].filter((v,i,a)=>a.indexOf(v)===i);
     }
 
     async function fetchJsonSmart(filename){
-      const tries = candidateUrls(filename);
-      const traces = [];
+      const tries = candidateUrls(filename), traces=[];
       for(const url of tries){
-        try{
-          const r = await fetch(url,{cache:'no-store'});
-          traces.push(`GET ${url} → ${r.status}`);
-          if(r.ok) return await r.json();
-        }catch(e){ traces.push(`ERR ${url} → ${e}`); }
+        try{ const r=await fetch(url,{cache:'no-store'}); traces.push(`GET ${url} → ${r.status}`); if(r.ok) return await r.json(); }
+        catch(e){ traces.push(`ERR ${url} → ${e}`); }
       }
-      const st = document.getElementById('status');
-      if(st){
-        st.textContent = (location.protocol==='file:' ? 'Abre con Live Server (fetch bloquea file://)' : 'No se encontró posts.json. Colócalo junto a index.html.');
-      }
+      const st=document.getElementById('status');
+      if(st){ st.textContent=(location.protocol==='file:'?'Abre con Live Server (fetch bloquea file://)':'No se encontró posts.json. Colócalo junto a index.html.'); }
       throw new Error('posts.json no encontrado\n'+traces.join('\n'));
     }
 
     async function loadPosts(){
-      let posts = [];
-      try{
-        const data = await fetchJsonSmart('posts.json');
-        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
-      }catch(_){}
-      if(!posts.length){
-        try{ posts = JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{}
-      }
-      renderPosts(posts.slice(0, HOMEPAGE_LIMIT));
+      let posts=[];
+      try{ const data=await fetchJsonSmart('posts.json'); posts=Array.isArray(data)?data:(Array.isArray(data.entries)?data.entries:[]); }
+      catch(_){}
+      if(!posts.length){ try{ posts=JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{} }
+      renderPosts(posts.slice(0,HOMEPAGE_LIMIT));
     }
 
     function renderPosts(items){
-      const grid = document.getElementById('postsGrid');
-      grid.innerHTML = '';
-      if(!items.length){
-        grid.innerHTML = '<p class="muted">Aún no hay artículos.</p>';
-        return;
-      }
+      const grid=document.getElementById('postsGrid'); grid.innerHTML='';
+      if(!items.length){ grid.innerHTML='<p class="muted">Aún no hay artículos.</p>'; return; }
       items.forEach((p)=>{
-        const card = document.createElement('article');
-        card.className = 'card reveal';
-        card.style.overflow = 'hidden';
-        card.innerHTML = `
-          <div class="post-cover" ${p.cover ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"` : ''}></div>
+        const card=document.createElement('article'); card.className='card reveal'; card.style.overflow='hidden';
+        card.innerHTML=`
+          <div class="post-cover" ${p.cover?`style="background-image:url('${p.cover}');background-size:cover;background-position:center"`:''}></div>
           <div style="padding:16px">
             <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
             <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
             <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
-            <div style="padding-top:6px">
-              <a class="link" style="color:var(--brand)" href="${p.url||'#'}">Leer →</a>
-            </div>
+            <div style="padding-top:6px"><a class="link" style="color:var(--brand)" href="${p.url||'#'}">Leer →</a></div>
           </div>`;
-        grid.appendChild(card);
-        io.observe(card);
+        grid.appendChild(card); io.observe(card);
       });
     }
+
+    // Donaciones: copiar CLABE
+    document.getElementById('copyClabe').addEventListener('click', async ()=>{
+      const t=document.getElementById('clabeText').textContent.trim();
+      try{ await navigator.clipboard.writeText(t); alert('CLABE copiada'); }catch{ alert('Copia la CLABE manualmente'); }
+    });
+
+    // Pon tu enlace real de PayPal aquí:
+    document.getElementById('paypalBtn').href = "#"; // e.g. "https://paypal.me/tunombre"
 
     loadPosts();
   </script>
