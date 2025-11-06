@@ -42,13 +42,19 @@
     /* Donar con fondo verde fijo (único) */
     .chip.solid{background:var(--brand);color:#fff;border-color:transparent}
     .chip.solid:hover{filter:brightness(.95);transform:translateY(-1px)}
+    /* Chips invertidos para fondos oscuros/verdes */
+    .chip-invert{border-color:#fff;color:#fff}
+    .chip-invert:hover{background:#fff;color:var(--brand)}
 
     /* ===== Cards y botones ===== */
     .card{border-radius:24px;background:rgba(255,255,255,.7);border:1px solid rgba(15,23,42,.06);box-shadow:0 20px 50px -12px rgba(0,0,0,.15);overflow:hidden}
+    .card-green{background:var(--brand);color:#fff;border-color:transparent}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;padding:.65rem 1rem;font-weight:700;cursor:pointer}
     .btn-brand{background:var(--brand);color:#fff}
     .btn-brand:hover{filter:brightness(.95)}
     .btn-ghost{background:#fff;border:1px solid rgba(15,23,42,.08);color:#0f172a}
+    .btn-ghost.inverse{background:transparent;border:2px solid rgba(255,255,255,.9);color:#fff}
+    .btn-ghost.inverse:hover{background:rgba(255,255,255,.1)}
     .btn-block{width:100%}
     @media (min-width:520px){ .btn-block{width:auto} }
 
@@ -92,6 +98,7 @@
     .don-grid{display:grid;gap:1rem}
     @media (min-width:760px){ .don-grid{grid-template-columns:1.1fr .9fr} }
     .copy-badge{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .7rem;border:1px dashed rgba(15,23,42,.25);border-radius:12px;font-weight:700}
+    .copy-badge.inverse{border-color:rgba(255,255,255,.85);color:#fff}
 
     /* ===== Bioalkimia ===== */
     .bio-card{padding:24px}
@@ -182,32 +189,32 @@
     </div>
   </section>
 
-  <!-- DONAR -->
+  <!-- DONAR (tarjeta verde fija) -->
   <section id="donar" class="container" style="margin-bottom:64px">
-    <div class="card reveal" style="padding:24px">
+    <div class="card card-green reveal" style="padding:24px">
       <div class="stack-3">
         <h3 style="margin:0"><span class="emoji">💚</span> Donar</h3>
-        <p style="color:#64748b;margin:0">Tu apoyo mantiene contenidos abiertos sobre pulque, tierra y maguey. ¡Gracias por impulsar este trabajo comunitario!</p>
+        <p style="margin:0">Tu apoyo mantiene contenidos abiertos sobre pulque, tierra y maguey. ¡Gracias por impulsar este trabajo comunitario!</p>
 
         <div class="don-grid">
           <div class="stack-3">
-            <div class="copy-badge">
+            <div class="copy-badge inverse">
               <span>CLABE:</span>
-              <code id="clabeText">000000000000000000</code>
-              <button id="copyClabe" class="btn btn-ghost" type="button">Copiar</button>
+              <code id="clabeText" style="color:#fff">000000000000000000</code>
+              <button id="copyClabe" class="btn-ghost inverse" type="button">Copiar</button>
             </div>
-            <small style="color:#94a3b8">Reemplaza la CLABE por la real en el HTML.</small>
+            <small style="color:#e6ffef">Reemplaza la CLABE por la real en el HTML.</small>
 
             <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:start">
-              <a id="paypalBtn" class="chip" href="#" target="_blank" rel="noopener"><span class="emoji">💚</span> Donar por PayPal</a>
-              <a class="chip" href="mailto:donaciones@tusitio.mx">Otra forma de donar</a>
+              <a id="paypalBtn" class="chip chip-invert" href="#" target="_blank" rel="noopener"><span class="emoji">💚</span> Donar por PayPal</a>
+              <a class="chip chip-invert" href="mailto:donaciones@tusitio.mx">Otra forma de donar</a>
             </div>
           </div>
 
           <div class="stack-3">
-            <div class="card" style="padding:16px;background:rgba(16,185,129,.08)">
+            <div class="card" style="padding:16px;background:rgba(255,255,255,.12);color:#fff">
               <strong>Transparencia</strong>
-              <p style="color:#64748b;margin:.4rem 0 0">Publicaremos un resumen trimestral de ingresos y en qué se invierten (servidores, material didáctico, eventos comunitarios).</p>
+              <p style="margin:.4rem 0 0">Publicaremos un resumen trimestral de ingresos y en qué se invierten (servidores, material didáctico, eventos comunitarios).</p>
             </div>
           </div>
         </div>
