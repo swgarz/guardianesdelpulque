@@ -4,190 +4,189 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Todos los artículos — Pulque Vivo</title>
-  <meta name="description" content="Listado completo de artículos con paginación." />
+  <meta name="description" content="Listado completo de artículos sobre pulque, naturaleza y bioconstrucción." />
   <style>
     *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial;line-height:1.5;color:#0f172a;background:#f6f8fb}
-    :root{--brand:#059669;--ink:#0f172a;--muted:#475569;--card:#ffffff;--stroke:#e5e7eb}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';line-height:1.55;color:#0f172a;background:#f6f8fb}
+    :root{
+      --brand:#059669; --ink:#0f172a; --muted:#475569; --card:#ffffff;
+      --shadow:0 20px 50px -12px rgba(0,0,0,.15); --radius:20px;
+    }
+    html.dark{color-scheme:dark}
+    html.dark body{color:#e5e7eb;background:#0b0f17}
     a{color:inherit;text-decoration:none}
-    .container{max-width:1180px;margin-inline:auto;padding:0 24px}
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.7);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
-    .nav .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+
+    .container{max-width:1180px;margin-inline:auto;padding:0 20px}
+    .row{display:flex;align-items:center;justify-content:space-between}
+    .stack-2{display:grid;gap:.5rem}
+    .stack-3{display:grid;gap:.75rem}
+    .stack-4{display:grid;gap:1rem}
+
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.65);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
+    html.dark .nav{background:rgba(11,15,23,.55);border-color:rgba(255,255,255,.08)}
     .brand{display:flex;align-items:center;gap:.5rem;font-weight:700}
     .brand-badge{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--brand);color:#fff}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;border:0;border-radius:16px;padding:.6rem 1rem;font-weight:600;cursor:pointer}
-    .btn-brand{background:var(--brand);color:#fff}
-    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
-    @media (min-width:860px){.grid{grid-template-columns:repeat(3,1fr)}}
-    .card{border-radius:22px;background:#fff;border:1px solid rgba(15,23,42,.06);box-shadow:0 20px 50px -12px rgba(0,0,0,.12);overflow:hidden}
-    .post-cover{height:160px;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15))}
-    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.25rem .6rem;border-radius:12px;background:rgba(16,185,129,.12);color:#065f46;font-weight:600;font-size:12px}
-    .top{display:flex;align-items:end;justify-content:space-between;margin:20px 0 12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;padding:.6rem 1rem;font-weight:600;cursor:pointer}
+    .btn-ghost{background:#fff;border:1px solid rgba(15,23,42,.08);color:#0f172a}
+    html.dark .btn-ghost{background:#192131;border-color:rgba(255,255,255,.12);color:#fff}
+
+    .title{font-size:clamp(24px,4.5vw,40px);margin:18px 0}
     .muted{color:#64748b}
-    /* Paginación */
-    .pagination{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center;margin:28px 0 40px}
-    .page-btn{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;padding:0 .75rem;border:1px solid var(--stroke);border-radius:10px;background:#fff;color:#0f172a;font-weight:600}
-    .page-btn[aria-current="page"]{background:var(--brand);color:#fff;border-color:transparent}
-    .page-btn:disabled{opacity:.5;cursor:not-allowed}
-    footer{border-top:1px solid rgba(15,23,42,.08);padding:24px 0;margin-top:40px;color:#64748b}
+
+    .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
+
+    .card{border-radius:var(--radius);background:rgba(255,255,255,.75);border:1px solid rgba(15,23,42,.06);box-shadow:var(--shadow);overflow:hidden}
+    html.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+    .post-cover{height:160px;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));}
+    html.dark .post-cover{background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(250,204,21,.12));}
+
+    .pager{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center;margin:22px 0 30px}
+    .page-link{padding:.5rem .8rem;border-radius:10px;border:1px solid rgba(15,23,42,.12);background:#fff;color:#0f172a}
+    .page-link:hover{border-color:#0f172a}
+    .page-link[aria-current="page"]{background:var(--brand);border-color:var(--brand);color:#fff}
+    html.dark .page-link{background:#192131;border-color:rgba(255,255,255,.12);color:#e5e7eb}
+    html.dark .page-link:hover{border-color:#fff}
   </style>
 </head>
 <body>
   <!-- NAV -->
   <div class="nav">
-    <div class="container row">
+    <div class="container row" style="padding:10px 0">
       <a class="brand" href="index.html">
-        <span class="brand-badge">🍶</span><span>Pulque Vivo</span>
+        <span class="brand-badge" aria-hidden>🍶</span>
+        <span>Pulque Vivo</span>
       </a>
-      <div>
-        <a class="btn btn-brand" href="index.html">Inicio</a>
+      <div class="stack-2" style="grid-auto-flow:column;gap:1rem;align-items:center">
+        <a class="btn btn-ghost" href="index.html">Inicio</a>
+        <button id="themeBtn" class="btn btn-ghost" type="button">Modo oscuro</button>
       </div>
     </div>
   </div>
 
   <!-- HEADER -->
-  <header class="container" style="padding:28px 0 8px">
-    <div class="top">
-      <h1 style="margin:0">Todos los artículos</h1>
-      <small id="totalCount" class="muted"></small>
-    </div>
-    <p class="muted" id="status"></p>
+  <header class="container">
+    <h1 class="title">Todos los artículos</h1>
+    <p class="muted" id="status">Cargando…</p>
   </header>
 
   <!-- LISTADO -->
   <main class="container">
-    <div id="postsGrid" class="grid"></div>
-    <nav id="pagination" class="pagination" aria-label="Paginación"></nav>
+    <section class="posts-grid" id="postsGrid"></section>
+    <nav class="pager" id="pager" aria-label="Paginación"></nav>
   </main>
 
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
-      <div style="display:flex;align-items:center;gap:.5rem">
-        <span class="brand-badge" style="width:28px;height:28px">🍶</span><span>Pulque Vivo</span>
-      </div>
-      <small class="muted">© 2025</small>
-    </div>
+  <footer class="container" style="padding:24px 0;color:#64748b">
+    © Pulque Vivo
   </footer>
 
   <script>
-    const PAGE_SIZE = 9;
+    // ===== Tema oscuro persistente =====
+    const htmlEl = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    const saved = localStorage.getItem('pulque.theme');
+    if(saved === 'dark'){ htmlEl.classList.add('dark'); themeBtn.textContent = 'Modo claro'; }
+    themeBtn.addEventListener('click', ()=>{
+      htmlEl.classList.toggle('dark');
+      const dark = htmlEl.classList.contains('dark');
+      localStorage.setItem('pulque.theme', dark ? 'dark' : 'light');
+      themeBtn.textContent = dark ? 'Modo claro' : 'Modo oscuro';
+    });
 
-    // Utilidad: lee params
-    const params = new URLSearchParams(location.search);
-    const debug  = params.get('debug') === '1';
+    // ===== Util =====
+    const qs = new URLSearchParams(location.search);
+    function getInt(name, def){ const n = parseInt(qs.get(name),10); return Number.isFinite(n) && n>0 ? n : def; }
+    function escapeHtml(s){ return String(s).replace(/[&<>"]/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[m])); }
 
-    // Carga posts.json de la misma carpeta (raíz del repo)
-    async function fetchPosts() {
-      const url = 'posts.json?v=' + Date.now(); // cache-bust
-      const res = await fetch(url, { cache: 'no-store' });
-      if (!res.ok) throw new Error('No se pudo cargar ' + url);
-      const data = await res.json();
-      return Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
+    const PAGE_SIZE = getInt('per', 9);
+
+    async function loadAll(){
+      const status = document.getElementById('status');
+      let posts = [];
+      try{
+        const res = await fetch('./posts.json?v=' + Date.now(), { cache: 'no-store' });
+        if(res.ok){ posts = await res.json(); }
+      }catch(_){}
+      if(!posts.length){
+        status.textContent = (location.protocol === 'file:') 
+          ? 'Abre con Live Server (fetch bloqueado en file://).'
+          : 'No se encontró posts.json en la raíz.';
+        return;
+      }
+      status.textContent = `${posts.length} artículos publicados`;
+      render(posts);
     }
 
-    function escapeHtml(s){
-      return String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-    }
+    function render(items){
+      const page = getInt('page', 1);
+      const total = items.length;
+      const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+      const current = Math.min(page, totalPages);
 
-    function renderPosts(items){
+      const start = (current - 1) * PAGE_SIZE;
+      const slice = items.slice(start, start + PAGE_SIZE);
+
       const grid = document.getElementById('postsGrid');
       grid.innerHTML = '';
-      items.forEach(p=>{
-        const card = document.createElement('article');
-        card.className = 'card';
-        card.innerHTML = `
-          <div class="post-cover" ${p.cover ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"` : ''}></div>
-          <div style="padding:16px">
-            <div class="pill">${escapeHtml(p.tag || '')}</div>
-            <h3 style="margin:.4rem 0 0.25rem">${escapeHtml(p.title || '')}</h3>
-            <p class="muted" style="margin:0 0 .5rem">${escapeHtml(p.excerpt || '')}</p>
-            <a class="btn" style="border:1px solid rgba(15,23,42,.1)" href="${p.url || '#'}" target="_blank" rel="noopener">Leer →</a>
-          </div>`;
-        grid.appendChild(card);
+      slice.forEach(p=>{
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <a href="${p.url||'#'}" style="display:block">
+            <div class="post-cover" ${p.cover ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"` : ''}></div>
+            <div style="padding:14px">
+              <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
+              <h3 style="margin:.25rem 0 .35rem;font-size:1.05rem">${escapeHtml(p.title||'')}</h3>
+              <p class="muted" style="margin:0">${escapeHtml(p.excerpt||'')}</p>
+            </div>
+          </a>`;
+        grid.appendChild(el);
       });
+
+      renderPager(totalPages, current);
     }
 
-    function renderPagination(total, page){
-      const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-      const nav = document.getElementById('pagination');
-      nav.innerHTML = '';
+    function renderPager(totalPages, current){
+      const pager = document.getElementById('pager');
+      pager.innerHTML = '';
+      if(totalPages <= 1) return;
 
-      const makeBtn = (label, targetPage, disabled=false, current=false) => {
+      const makeLink = (n, label = n, isCurrent = false)=>{
         const a = document.createElement('a');
-        a.className = 'page-btn';
+        a.className = 'page-link';
+        a.href = `?page=${n}&per=${PAGE_SIZE}`;
         a.textContent = label;
-        if (current) a.setAttribute('aria-current','page');
-        if (disabled) a.setAttribute('disabled','');
-        else a.href = `?page=${targetPage}${debug ? '&debug=1' : ''}`;
+        if(isCurrent) a.setAttribute('aria-current','page');
         return a;
       };
 
       // Prev
-      nav.appendChild(makeBtn('«', Math.max(1, page-1), page===1));
-      // Números (ventana de 1..totalPages, con compactación simple)
-      const windowSize = 7;
-      let start = Math.max(1, page - 3);
-      let end   = Math.min(totalPages, start + windowSize - 1);
-      if (end - start + 1 < windowSize) start = Math.max(1, end - windowSize + 1);
+      if(current > 1) pager.appendChild(makeLink(current-1,'« Anterior'));
 
-      if (start > 1) {
-        nav.appendChild(makeBtn('1', 1));
-        if (start > 2) {
-          const dots = document.createElement('span');
-          dots.className = 'muted';
-          dots.textContent = '…';
-          nav.appendChild(dots);
-        }
+      // Números (ventana compacta)
+      const windowSize = 5;
+      let start = Math.max(1, current - Math.floor(windowSize/2));
+      let end = Math.min(totalPages, start + windowSize - 1);
+      if(end - start + 1 < windowSize) start = Math.max(1, end - windowSize + 1);
+
+      if(start > 1){
+        pager.appendChild(makeLink(1,'1'));
+        if(start > 2){ const span = document.createElement('span'); span.className='muted'; span.textContent='…'; pager.appendChild(span); }
       }
-      for (let i = start; i <= end; i++) {
-        nav.appendChild(makeBtn(String(i), i, false, i===page));
+      for(let n=start; n<=end; n++){
+        pager.appendChild(makeLink(n, String(n), n===current));
       }
-      if (end < totalPages) {
-        if (end < totalPages - 1) {
-          const dots = document.createElement('span');
-          dots.className = 'muted';
-          dots.textContent = '…';
-          nav.appendChild(dots);
-        }
-        nav.appendChild(makeBtn(String(totalPages), totalPages));
+      if(end < totalPages){
+        if(end < totalPages-1){ const span = document.createElement('span'); span.className='muted'; span.textContent='…'; pager.appendChild(span); }
+        pager.appendChild(makeLink(totalPages,String(totalPages)));
       }
+
       // Next
-      nav.appendChild(makeBtn('»', Math.min(totalPages, page+1), page===totalPages));
+      if(current < totalPages) pager.appendChild(makeLink(current+1,'Siguiente »'));
     }
 
-    async function init(){
-      const status  = document.getElementById('status');
-      const counter = document.getElementById('totalCount');
-      let posts = [];
-      try{
-        posts = await fetchPosts();
-        if (debug && status) status.textContent = 'Cargado posts.json (ok)';
-      }catch(e){
-        if (status) status.textContent = 'No se pudo cargar posts.json. Asegúrate de que esté junto a posts.html.';
-        console.error(e);
-      }
-
-      // Si no hay posts, salimos con mensaje
-      if (!posts.length) {
-        document.getElementById('postsGrid').innerHTML = '<p class="muted">Aún no hay artículos.</p>';
-        counter.textContent = '';
-        return;
-      }
-
-      // Página actual
-      const page = Math.max(1, parseInt(new URLSearchParams(location.search).get('page') || '1', 10));
-      const total = posts.length;
-      counter.textContent = `${total} artículos • Página ${page}`;
-
-      // Slice para la página
-      const start = (page - 1) * PAGE_SIZE;
-      const pageItems = posts.slice(start, start + PAGE_SIZE);
-
-      renderPosts(pageItems);
-      renderPagination(total, page);
-    }
-
-    init();
+    loadAll();
   </script>
 </body>
 </html>
