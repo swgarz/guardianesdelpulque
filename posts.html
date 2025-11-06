@@ -9,8 +9,6 @@
     *,*::before,*::after{box-sizing:border-box}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';line-height:1.5;color:#0f172a;background:#f6f8fb}
     :root{ --brand:#059669; --ink:#0f172a; --muted:#475569; --card:#ffffff; --stroke:#e5e7eb; }
-    html.dark{color-scheme:dark}
-    html.dark body{color:#e5e7eb;background:#0b0f17}
     a{color:inherit;text-decoration:none}
 
     .container{max-width:1180px;margin-inline:auto;padding:0 16px}
@@ -18,47 +16,42 @@
 
     /* Nav */
     .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.6);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
-    html.dark .nav{background:rgba(11,15,23,.5);border-color:rgba(255,255,255,.08)}
     .nav .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:.5rem;font-weight:700}
     .brand-badge{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--brand);color:#fff}
-    .links{display:flex;align-items:center;gap:.75rem}
-    .nav a.link{color:#334155;white-space:nowrap}
-    .nav a.link:hover{color:#0f172a}
-    html.dark .nav a.link{color:#cbd5e1}
-    html.dark .nav a.link:hover{color:#fff}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;padding:.65rem 1rem;font-weight:600;cursor:pointer}
-    .btn-ghost{background:#fff;border:1px solid rgba(15,23,42,.08);color:#0f172a}
-    html.dark .btn-ghost{background:#192131;border-color:rgba(255,255,255,.1);color:#fff}
-    @media (max-width:420px){ .links{gap:.5rem} .btn-ghost{padding:.55rem .8rem} }
+
+    .links{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .chip{
+      display:inline-flex;align-items:center;gap:.45rem;
+      padding:.5rem .9rem;border:2px solid var(--brand);color:var(--brand);
+      border-radius:999px;font-weight:700;transition:background .18s ease, color .18s ease, transform .12s ease;
+      white-space:nowrap
+    }
+    .chip:hover{background:var(--brand);color:#fff;transform:translateY(-1px)}
+    .chip .emoji{font-size:1rem}
 
     /* Header */
     .header{padding:36px 0 18px}
     .title{margin:0;font-size:clamp(28px,5.6vw,44px);line-height:1.08;background:linear-gradient(135deg,#059669,#65a30d,#065f46);-webkit-background-clip:text;background-clip:text;color:transparent}
     .subtitle{margin:.35rem 0 0;color:#64748b}
-    html.dark .subtitle{color:#94a3b8}
 
     /* Grid & cards */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
     .card{border-radius:24px;background:rgba(255,255,255,.7);border:1px solid rgba(15,23,42,.06);box-shadow:0 20px 50px -12px rgba(0,0,0,.15);overflow:hidden}
-    html.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
     .post-cover{height:144px;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));}
-    html.dark .post-cover{background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(250,204,21,.12));}
 
     /* Paginación */
     .pager{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center;margin:20px 0}
     .pager a,.pager span{
       display:inline-flex;min-width:40px;height:40px;align-items:center;justify-content:center;
-      padding:0 .75rem;border-radius:12px;border:1px solid rgba(15,23,42,.08);background:#fff;color:#0f172a;font-weight:600
+      padding:0 .75rem;border-radius:12px;border:1px solid rgba(15,23,42,.08);background:#fff;color:#0f172a;font-weight:700
     }
     .pager .active{background:var(--brand);color:#fff;border-color:transparent}
     .pager .disabled{opacity:.5;pointer-events:none}
-    html.dark .pager a, html.dark .pager span{background:#192131;border-color:rgba(255,255,255,.1);color:#e5e7eb}
 
     footer{border-top:1px solid rgba(15,23,42,.08);padding:24px 0;margin-top:40px;color:#64748b}
-    html.dark footer{border-color:rgba(255,255,255,.1);color:#94a3b8}
 
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
@@ -73,9 +66,9 @@
         <span>Pulque Vivo</span>
       </a>
       <div class="links">
-        <a class="link" href="posts.html">Artículos</a>
-        <a class="link" href="index.html#donaciones">Donaciones</a>
-        <button id="themeBtn" class="btn btn-ghost" type="button">Modo oscuro</button>
+        <a class="chip" href="index.html">Inicio</a>
+        <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="index.html#bioalkimia">Bioalkimia</a>
       </div>
     </div>
   </div>
@@ -100,28 +93,17 @@
         <span>Pulque Vivo</span>
       </div>
       <div class="links">
-        <a class="link" href="index.html">Inicio</a>
-        <a class="link" href="index.html#donaciones">Donaciones</a>
+        <a class="chip" href="index.html">Inicio</a>
+        <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="index.html#bioalkimia">Bioalkimia</a>
       </div>
     </div>
   </footer>
 
-  <!-- Fallback de posts -->
+  <!-- Fallback vacío -->
   <script type="application/json" id="posts-fallback">[]</script>
 
   <script>
-    // Tema
-    const html = document.documentElement;
-    const themeBtn = document.getElementById('themeBtn');
-    const saved = localStorage.getItem('pulque.theme');
-    if(saved === 'dark'){ html.classList.add('dark'); themeBtn.textContent = 'Modo claro'; }
-    themeBtn.addEventListener('click', ()=>{
-      html.classList.toggle('dark');
-      const dark = html.classList.contains('dark');
-      localStorage.setItem('pulque.theme', dark ? 'dark' : 'light');
-      themeBtn.textContent = dark ? 'Modo claro' : 'Modo oscuro';
-    });
-
     // Reveal
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -161,7 +143,7 @@
           <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
           <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
           <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
-          <div style="padding-top:6px"><a class="link" style="color:var(--brand)" href="${p.url||'#'}">Leer →</a></div>
+          <div style="padding-top:6px"><a class="chip" href="${p.url||'#'}">Leer →</a></div>
         </div>`;
       io.observe(el);
       return el;
