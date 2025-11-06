@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía práctica de adobe — Guardianes del Pulque</title>
+  <meta name="description" content="Guía clara para mezclar, moldear y curar adobe con enfoque comunitario y de territorio." />
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';
+      line-height:1.6;
+      color:#0f172a;
+      background:#f6f8fb;
+    }
+    :root{
+      --brand:#059669;
+      --ink:#0f172a;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --stroke:#e5e7eb;
+      --maxw:780px;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    @media (min-width:640px){.container{padding:0 24px}}
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:40;
+      background:rgba(255,255,255,.9);
+      backdrop-filter:saturate(180%) blur(14px);
+      border-bottom:1px solid rgba(15,23,42,.06);
+    }
+    .nav .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:8px 0;
+      gap:.75rem;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.45rem;
+      font-weight:700;
+    }
+    .brand-logo{
+      height:34px;
+      width:auto;
+    }
+    .brand-text{
+      font-size:.98rem;
+      letter-spacing:.01em;
+    }
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.35rem;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      padding:.4rem .8rem;
+      border-radius:999px;
+      border:1px solid var(--brand);
+      font-size:.72rem;
+      font-weight:600;
+      color:var(--brand);
+      background:#ffffff;
+      cursor:pointer;
+      transition:all .16s ease;
+      white-space:nowrap;
+    }
+    .chip .emoji{font-size:.9rem}
+    .chip:hover{
+      background:var(--brand);
+      color:#020817;
+      transform:translateY(-1px);
+      box-shadow:0 8px 18px rgba(15,23,42,.16);
+    }
+
+    /* HERO ARTÍCULO */
+    .hero-article{
+      padding:24px 0 8px;
+    }
+    .hero-inner{
+      max-width:var(--maxw);
+      margin:0 auto;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      padding:.25rem .7rem;
+      border-radius:999px;
+      background:rgba(5,150,105,.08);
+      color:#047857;
+      font-size:.7rem;
+      font-weight:600;
+      margin-bottom:.4rem;
+    }
+    .title{
+      margin:0;
+      font-size:clamp(26px,5.4vw,40px);
+      line-height:1.1;
+      letter-spacing:-.01em;
+    }
+    .subtitle{
+      margin:.4rem 0 0;
+      color:var(--muted);
+      font-size:.9rem;
+      max-width:46rem;
+    }
+    .meta{
+      margin-top:.6rem;
+      font-size:.72rem;
+      color:#9ca3af;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      align-items:center;
+    }
+
+    /* Cover */
+    .cover-wrap{
+      max-width:var(--maxw);
+      margin:16px auto 0;
+      border-radius:24px;
+      background:radial-gradient(circle at top,rgba(5,150,105,.12),transparent),
+                 #020817;
+      padding:14px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .cover-img{
+      max-height:260px;
+      width:auto;
+      object-fit:contain;
+    }
+
+    /* CONTENIDO */
+    .article{
+      max-width:var(--maxw);
+      margin:22px auto 40px;
+      background:var(--card);
+      border-radius:24px;
+      padding:18px 16px 20px;
+      box-shadow:0 18px 45px rgba(15,23,42,.12);
+      border:1px solid rgba(148,163,253,.1);
+    }
+    @media (min-width:700px){
+      .article{padding:26px 26px 24px;}
+    }
+    .article h2{
+      font-size:1.12rem;
+      margin:1.4rem 0 .4rem;
+    }
+    .article p{
+      margin:.45rem 0;
+      color:#374151;
+      font-size:.9rem;
+    }
+    .article ul,.article ol{
+      margin:.35rem 0 .6rem 1.2rem;
+      padding:0;
+      color:#374151;
+      font-size:.88rem;
+    }
+    .note{
+      margin:.7rem 0;
+      padding:.55rem .7rem;
+      border-radius:12px;
+      background:rgba(5,150,105,.04);
+      color:#065f46;
+      font-size:.78rem;
+      border:1px dashed rgba(5,150,105,.25);
+    }
+    .step-label{
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      font-weight:700;
+      font-size:.8rem;
+      color:#065f46;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+    .divider{
+      margin:1.3rem 0;
+      border-top:1px solid rgba(148,163,253,.22);
+    }
+
+    /* Navegación al final */
+    .article-footer{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:1.1rem;
+      font-size:.78rem;
+      color:#6b7280;
+    }
+    .article-footer .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.35rem;
+    }
+
+    footer{
+      border-top:1px solid rgba(15,23,42,.08);
+      padding:18px 0 22px;
+      color:#9ca3af;
+      font-size:.75rem;
+    }
+    footer .row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container row">
+      <a class="brand" href="../index.html">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <span class="brand-text">Guardianes del Pulque</span>
+      </a>
+      <div class="links">
+        <a class="chip" href="../posts.html">Artículos</a>
+        <a class="chip" href="../index.html#donar"><span class="emoji">💚</span> Donar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ARTÍCULO -->
+  <header class="hero-article">
+    <div class="hero-inner">
+      <div class="eyebrow">🏗️ Bioconstrucción • Guía práctica</div>
+      <h1 class="title">Guía práctica de adobe</h1>
+      <p class="subtitle">Mezcla, moldes, curado y desempeño térmico del adobe pensado para comunidades, oficios locales y construcción responsable.</p>
+      <div class="meta">
+        <span>Por Guardianes del Pulque</span>
+        <span>Lectura ~ 8 minutos</span>
+        <span>Actualizado 2025</span>
+      </div>
+    </div>
+
+    <!-- Portada del artículo -->
+    <div class="cover-wrap">
+      <!-- Usa la imagen que generamos, guardada en /images/guia-adobe.png -->
+      <img src="guiaadobe.png" alt="Ilustración de adobes, mezcla y herramientas comunitarias" class="cover-img">
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="article">
+    <!-- NOTA PARA TI:
+         Cada sección está marcada con comentarios.
+         Si quieres agregar más contenido, duplica un bloque <h2> + <p>/<ul> debajo.
+    -->
+
+    <section>
+      <p>
+        El adobe es una tecnología vieja como el sol y tan vigente como cualquier material “moderno”.
+        Bien hecho, regula la temperatura, respira, no envenena a quienes lo habitan y puede construirse
+        con manos de la propia comunidad.
+      </p>
+      <p>
+        Esta guía resume un proceso base para hacer adobes consistentes: desde leer la tierra hasta
+        el curado final. No sustituye acompañamiento técnico en obras grandes, pero sí te da un mapa claro
+        para ensayar en pequeño.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 1. Elegir y probar la tierra -->
+    <section>
+      <h2>1. Elegir la tierra correcta</h2>
+      <p>
+        El adobe necesita una mezcla equilibrada entre arcilla (que pega) y arenas/limos (que dan cuerpo).
+        Como idea general, buscamos una tierra “barrosa” que se compacte fácil pero no se agriete de más.
+      </p>
+      <ul>
+        <li><strong>Evita:</strong> suelos con mucha materia orgánica (raíces, hojas, basura, humus negro).</li>
+        <li><strong>Prefiere:</strong> suelos de tonalidades ocres, rojizas o café claro, sin olor a podrido.</li>
+      </ul>
+      <p>
+        Una buena práctica es pedir permiso a la tierra y acordar con la comunidad de dónde extraer
+        sin dejar cráteres ni escorrentías peligrosas.
+      </p>
+    </section>
+
+    <!-- 2. Pruebas sencillas -->
+    <section>
+      <h2>2. Pruebas rápidas de campo</h2>
+      <p>Antes de producir cientos de adobes, hacemos pruebas con poca mezcla.</p>
+      <p class="step-label">Test del frasco</p>
+      <ol>
+        <li>Llena un frasco transparente con 1/3 de tierra cernida.</li>
+        <li>Añade agua casi hasta el tope y agita fuerte.</li>
+        <li>Deja reposar 12–24 h. Verás capas: arena abajo, limos al centro, arcilla arriba.</li>
+      </ol>
+      <p>
+        Como guía simple: si casi todo es arena, faltará cohesión; si domina la arcilla, habrá muchas grietas.
+        Ajustaremos más adelante con arena limpia.
+      </p>
+    </section>
+
+    <!-- 3. Proporción base -->
+    <section>
+      <h2>3. Proporción base de mezcla</h2>
+      <p>
+        Las recetas cambian según la tierra local, pero una base muy usada (para arrancar pruebas) es:
+      </p>
+      <ul>
+        <li><strong>1 parte</strong> de tierra arcillosa cernida</li>
+        <li><strong>1.5 a 2 partes</strong> de arena gruesa limpia</li>
+        <li><strong>Agua</strong> hasta lograr una pasta plástica, no líquida</li>
+        <li><strong>Opcional:</strong> 0.5 partes de paja picada, fibra de agave o zacate</li>
+      </ul>
+      <div class="note">
+        Ajusta siempre con pruebas: si el ladrillo se desmorona, faltó arcilla; si se agrieta mucho, sobró arcilla o agua.
+      </div>
+    </section>
+
+    <!-- 4. Mezclado comunitario -->
+    <section>
+      <h2>4. Mezcla con ritmo de cuadrilla</h2>
+      <p>
+        En muchos pueblos la mezcla se hace sobre una tarima o en piso limpio:
+      </p>
+      <ol>
+        <li>Forma un volcán con la tierra y la arena.</li>
+        <li>Mezcla en seco con palas hasta ver color uniforme.</li>
+        <li>Haz un cráter al centro, añade agua poco a poco.</li>
+        <li>Pisa con los pies o mezcla con azadón hasta lograr masa homogénea.</li>
+        <li>Integra la fibra (paja, ixtle, bagazo) al final.</li>
+      </ol>
+      <p>
+        Hazlo en equipo: es más rápido, fortalece lazos y permite que varias personas lean la consistencia.
+      </p>
+    </section>
+
+    <!-- 5. Moldes y formado -->
+    <section>
+      <h2>5. Moldes y formado de adobes</h2>
+      <p>
+        Usa moldes de madera robusta. Medidas frecuentes (puedes adaptarlas):
+        10×20×40 cm o 8×14×28 cm.
+      </p>
+      <ul>
+        <li>Humedece el molde y espolvorea un poco de arena para que no se pegue.</li>
+        <li>Rellena con mezcla en capas, apretando con la mano.</li>
+        <li>Empareja con una regla o tabla.</li>
+        <li>Levanta el molde de forma limpia; deja el adobe sobre suelo nivelado y drenante.</li>
+      </ul>
+      <div class="note">
+        Marca algunos adobes con fecha y “lote” para rastrear qué receta funcionó mejor.
+      </div>
+    </section>
+
+    <!-- 6. Curado -->
+    <section>
+      <h2>6. Curado lento y cuidado</h2>
+      <p>
+        Los adobes recién hechos son frágiles. El curado correcto define su resistencia.
+      </p>
+      <ul>
+        <li>Protégelos del sol directo fuerte los primeros días (malla, sombra, techo ligero).</li>
+        <li>Evita lluvia directa. Si se mojan recién hechos, se deshacen.</li>
+        <li>Voltea los adobes después de 2–3 días para secado parejo.</li>
+        <li>Curado mínimo recomendado: 21 a 28 días antes de levantar muros.</li>
+      </ul>
+    </section>
+
+    <!-- 7. Desempeño térmico y recomendaciones -->
+    <section>
+      <h2>7. Desempeño térmico y claves finales</h2>
+      <p>
+        Un muro de adobe bien diseñado ofrece inercia térmica: guarda frescor de día y libera calor por la noche.
+        Funciona mejor cuando:
+      </p>
+      <ul>
+        <li>Se combina con buenos aleros y zoclos que protegen de la lluvia.</li>
+        <li>No se recubre con pinturas plásticas; prefiere enjarres de tierra o cal que permitan respirar.</li>
+        <li>Se diseña con cimentaciones adecuadas para evitar humedad ascendente.</li>
+      </ul>
+      <p>
+        El adobe no es “pobre”: es tecnología de territorio. Documentar procesos, medir mejoras
+        y compartir recetas fortalece a las comunidades frente a materiales caros y dependencias externas.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PIE DEL ARTÍCULO -->
+    <div class="article-footer">
+      <div class="chips">
+        <span class="chip">🏗️ Bioconstrucción</span>
+        <span class="chip">🌍 Comunidad</span>
+        <span class="chip">🧱 Adobe</span>
+      </div>
+      <div>
+        <a href="../posts.html" class="chip">← Volver a artículos</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container row">
+      <div style="display:flex;align-items:center;gap:.4rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:20px;width:auto">
+        <span>Guardianes del Pulque</span>
+      </div>
+      <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+        <a class="chip" href="../index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="../posts.html">Más artículos</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
