@@ -65,7 +65,7 @@
     .brand-text{
       font-size:1rem;
       color:#111827;
-      letter-spacing:.02em;      
+      letter-spacing:.02em;
     }
 
     .links{
@@ -278,17 +278,14 @@
       <div class="stack-4 reveal">
         <h1 class="hero-title">Pulque · Tierra · Maguey</h1>
         <p class="hero-subtitle">Historias, guías y proyectos para cultivar, construir y cuidar el territorio.</p>
-
         <div class="hero-chips">
           <span class="pill">🍶 Pulque vivo</span>
           <span class="pill">🏗️ Tierra que construye</span>
           <span class="pill">🌵 Maguey y paisaje</span>
         </div>
-
         <div class="cta-group">
           <a class="btn btn-brand btn-block" href="#posts">Explorar artículos →</a>
         </div>
-
         <small style="color:#64748b;display:block;margin-top:.25rem">• Actualizado cada semana</small>
       </div>
 
@@ -358,7 +355,7 @@
     </div>
   </section>
 
-  <!-- BIOALKIMIA -->
+  <!-- BIOALKIMIA / TEOMATI -->
   <section id="bioalkimia" class="container" style="margin-bottom:64px">
     <div class="card bio-card reveal">
       <h3 class="bio-title">Teomati</h3>
@@ -366,7 +363,6 @@
         Proyecto hermano donde convergen bioconstrucción, fermentos y territorio. Visita para conocer más colaboraciones.
       </p>
       <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:flex-start;margin-top:.5rem">
-        <!-- Cambia la URL por la real -->
         <a class="chip" href="https://ejemplo-bioalkimia.com" target="_blank" rel="noopener">Ir a Bioalkimia →</a>
       </div>
     </div>
@@ -387,15 +383,19 @@
     </div>
   </footer>
 
-  <!-- Fallback de posts -->
+  <!-- Fallback de posts (solo para abrir como file://) -->
   <script type="application/json" id="posts-fallback">[
-    {"tag":"Pulque","title":"De la penca al jarro: proceso vivo","excerpt":"Fermentos, microbiota y tradición del maguey.","url":"articulos/delapencaaljarro/de-la-penca-al-jarro.html","cover":""},
-    {"tag":"Tierra","title":"Adobe y BTC básicos","excerpt":"Materiales, moldes y curado.","url":"#","cover":""},
-    {"tag":"Maguey","title":"Agave y territorio","excerpt":"Manejo sustentable y biodiversidad.","url":"#","cover":""}
+    {
+      "tag":"Pulque",
+      "title":"De la penca al jarro: el proceso vivo",
+      "excerpt":"Fermentos, microbiota y tradición del maguey.",
+      "url":"articulos/de-la-penca-al-jarro/de-la-penca-al-jarro.html",
+      "cover":"articulos/de-la-penca-al-jarro/de_la_penca_al_jarro.png"
+    }
   ]</script>
 
   <script>
-    // Header: cambia estilo al hacer scroll
+    // NAV scroll
     (function(){
       const nav = document.getElementById('mainNav');
       if(!nav) return;
@@ -409,16 +409,25 @@
 
     // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
     }, {threshold:.2});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
     // Utils
     function escapeHtml(s){
-      return String(s).replace(/[&<>"]/g, (m)=>({
-        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
+      return String(s).replace(/[&<>"]/g, m => ({
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;'
       }[m]));
     }
+
     const HOMEPAGE_LIMIT = 6;
 
     function candidateUrls(filename){
@@ -441,7 +450,7 @@
       const traces = [];
       for(const url of tries){
         try{
-          const r = await fetch(url,{cache:'no-store'});
+          const r = await fetch(url, {cache:'no-store'});
           traces.push(`GET ${url} → ${r.status}`);
           if(r.ok) return await r.json();
         }catch(e){
@@ -449,11 +458,12 @@
         }
       }
       if(status){
-        status.textContent = (location.protocol==='file:'
+        status.textContent = (location.protocol === 'file:'
           ? 'Abre con Live Server (fetch se bloquea con file://).'
           : 'No se encontró posts.json. Colócalo junto a index.html en GitHub Pages.');
       }
-      throw new Error('posts.json no encontrado\n'+traces.join('\n'));
+      console.warn('posts.json no encontrado:\n' + traces.join('\n'));
+      throw new Error('posts.json no encontrado');
     }
 
     async function loadPosts(){
@@ -477,20 +487,27 @@
         grid.innerHTML = '<p class="muted">Aún no hay artículos.</p>';
         return;
       }
+
       items.forEach(p=>{
         const card = document.createElement('article');
         card.className = 'card reveal';
         card.style.overflow = 'hidden';
+
+        const coverStyle = p.cover
+          ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"`
+          : '';
+
         card.innerHTML = `
-          <div class="post-cover" ${p.cover ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"` : ''}></div>
+          <div class="post-cover" ${coverStyle}></div>
           <div style="padding:16px">
-            <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
-            <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
-            <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
+            <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag || '')}</div>
+            <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title || '')}</h3>
+            <p style="color:#475569">${escapeHtml(p.excerpt || '')}</p>
             <div style="padding-top:6px">
-              <a class="chip" href="${p.url||'#'}">Leer →</a>
+              <a class="chip" href="${p.url || '#'}">Leer →</a>
             </div>
-          </div>`;
+          </div>
+        `;
         grid.appendChild(card);
         io.observe(card);
       });
