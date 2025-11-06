@@ -83,10 +83,11 @@
       transform:translateY(-1px);
     }
 
-    /* Dropdown Comunidad */
+    /* Comunidad dropdown (igual que index) */
     .chip-dropdown{
       padding-right:1.6rem;
       user-select:none;
+      transform:none !important;
     }
     .chip-dropdown::after{
       content:'';
@@ -98,14 +99,14 @@
       border-left:4px solid transparent;
       border-right:4px solid transparent;
       border-top:5px solid var(--brand);
-      transform:translateY(-20%);
+      transform:translateY(-40%);
       pointer-events:none;
     }
     .chip-dropdown .dropdown{
       position:absolute;
       top:100%;
-      right:0;
-      margin-top:4px;
+      left:0;
+      margin-top:-1px;
       background:#020817;
       border-radius:16px;
       padding:.35rem 0;
@@ -134,7 +135,6 @@
       background:rgba(34,197,94,.16);
       color:#22c55e;
     }
-
     .chip-dropdown .dropdown .item{
       position:relative;
     }
@@ -159,12 +159,11 @@
       background:rgba(34,197,94,.16);
       color:#22c55e;
     }
-
     .chip-dropdown .dropdown .submenu{
       position:absolute;
       top:0;
       left:100%;
-      margin-left:-2px;
+      margin-left:-1px;
       background:#020817;
       border-radius:14px;
       padding:.3rem 0;
@@ -183,7 +182,15 @@
       background:rgba(34,197,94,.18);
       color:#22c55e;
     }
-
+    .chip-dropdown:hover,
+    .chip-dropdown:focus-within{
+      background:var(--brand);
+      color:#020817;
+    }
+    .chip-dropdown:hover::after,
+    .chip-dropdown:focus-within::after{
+      border-top-color:#020817;
+    }
     .chip-dropdown:hover .dropdown,
     .chip-dropdown:focus-within .dropdown{
       display:block;
@@ -203,6 +210,7 @@
       background:transparent;
       border-color:#22c55e;
       color:#bbf7d0;
+      transform:none;
     }
     .nav.scrolled .chip:hover{
       background:#22c55e;
@@ -374,10 +382,7 @@
 
     function escapeHtml(s){
       return String(s).replace(/[&<>"]/g, m => ({
-        '&':'&amp;',
-        '<':'&lt;',
-        '>':'&gt;',
-        '"':'&quot;'
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
       }[m]));
     }
 
@@ -418,7 +423,7 @@
           ? 'Abre con Live Server (fetch se bloquea con file://).'
           : 'No se encontró posts.json. Colócalo junto a posts.html en GitHub Pages.');
       }
-      console.warn('posts.json no encontrado:\n' + traces.join('\n'));
+      console.warn('posts.json no encontrado:\n'+traces.join('\n'));
       throw new Error('posts.json no encontrado');
     }
 
