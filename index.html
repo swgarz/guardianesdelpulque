@@ -8,15 +8,24 @@
   <style>
     /* ===== Reset + tokens ===== */
     *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';line-height:1.5;color:#0f172a;background:#f6f8fb}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';
+      line-height:1.5;
+      color:#0f172a;
+      background:#f6f8fb;
+    }
     :root{
-      --brand:#059669; /* verde principal */
-      --ink:#0f172a; --muted:#475569; --card:#ffffff; --stroke:#e5e7eb;
+      --brand:#059669;
+      --ink:#0f172a;
+      --muted:#475569;
+      --card:#ffffff;
+      --stroke:#e5e7eb;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    /* ===== Layout ===== */
+    /* ===== Layout helpers ===== */
     .container{max-width:1180px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){ .container{padding:0 24px} }
     .stack-2{display:grid;gap:.5rem}
@@ -24,61 +33,176 @@
     .stack-4{display:grid;gap:1rem}
     .stack-6{display:grid;gap:1.5rem}
 
-    /* ===== Nav ===== */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.6);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
-    .nav .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700}
-    .brand-badge{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--brand);color:#fff}
-
-    .links{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
-    .chip{
-      display:inline-flex;align-items:center;gap:.45rem;
-      padding:.5rem .9rem;border:2px solid var(--brand);color:var(--brand);
-      border-radius:999px;font-weight:700;transition:background .18s ease, color .18s ease, transform .12s ease;
-      white-space:nowrap
+    /* ===== NAV ===== */
+    .nav{
+      position:sticky;top:0;z-index:50;
+      background:transparent;
+      border-bottom:1px solid transparent;
+      backdrop-filter:saturate(180%) blur(14px);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
-    .chip:hover{background:var(--brand);color:#fff;transform:translateY(-1px)}
+    .nav .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 0;
+      gap:1rem;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+      font-weight:700;
+    }
+    .brand-logo{
+      height:44px;
+      width:auto;
+      display:block;
+    }
+    @media (min-width:768px){
+      .brand-logo{height:58px;}
+    }
+    .brand-text{
+      font-size:1rem;
+      color:#111827;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
+
+    .links{
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      padding:.5rem .9rem;
+      border:2px solid var(--brand);
+      color:var(--brand);
+      background:rgba(255,255,255,.98);
+      border-radius:999px;
+      font-weight:700;
+      font-size:.8rem;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:background .18s ease,color .18s ease,transform .12s ease,border-color .18s ease;
+    }
     .chip .emoji{font-size:1rem}
-    /* Donar con fondo verde fijo (único) */
-    .chip.solid{background:var(--brand);color:#fff;border-color:transparent}
-    .chip.solid:hover{filter:brightness(.95);transform:translateY(-1px)}
-    /* Chips invertidos para fondos oscuros/verdes */
-    .chip-invert{border-color:#fff;color:#fff}
-    .chip-invert:hover{background:#fff;color:var(--brand)}
+    .chip:hover{
+      background:var(--brand);
+      color:#020817;
+      transform:translateY(-1px);
+    }
 
-    /* ===== Cards y botones ===== */
-    .card{border-radius:24px;background:rgba(255,255,255,.7);border:1px solid rgba(15,23,42,.06);box-shadow:0 20px 50px -12px rgba(0,0,0,.15);overflow:hidden}
-    .card-green{background:var(--brand);color:#fff;border-color:transparent}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;padding:.65rem 1rem;font-weight:700;cursor:pointer}
-    .btn-brand{background:var(--brand);color:#fff}
-    .btn-brand:hover{filter:brightness(.95)}
-    .btn-ghost{background:#fff;border:1px solid rgba(15,23,42,.08);color:#0f172a}
-    .btn-ghost.inverse{background:transparent;border:2px solid rgba(255,255,255,.9);color:#fff}
-    .btn-ghost.inverse:hover{background:rgba(255,255,255,.1)}
-    .btn-block{width:100%}
-    @media (min-width:520px){ .btn-block{width:auto} }
+    /* NAV cuando hay scroll */
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.18);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
+    }
+    .nav.scrolled .brand-text{color:#f9fafb;}
+    .nav.scrolled .chip{
+      background:transparent;
+      border-color:#22c55e;
+      color:#bbf7d0;
+    }
+    .nav.scrolled .chip:hover{
+      background:#22c55e;
+      color:#020817;
+    }
 
-    /* ===== Hero ===== */
+    /* ===== HERO ===== */
     .hero{position:relative}
     .hero--compact{padding:44px 0 32px}
     .hero-wrap{display:grid;gap:1.25rem}
-    @media (min-width:900px){ .hero-wrap{grid-template-columns:1.1fr .9fr;align-items:center} }
-    .hero-title{margin:0;font-size:clamp(30px,7vw,64px);line-height:1.06;letter-spacing:-.5px;background:linear-gradient(135deg,#059669,#65a30d,#065f46);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero-subtitle{margin:.35rem 0 0;color:#475569;max-width:60ch;font-size:clamp(15px,3.8vw,18px)}
-
-    .hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0 0}
-    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .75rem;border-radius:14px;background:rgba(16,185,129,.12);color:#065f46;font-weight:700}
-
-    .cta-group{display:grid;gap:.6rem;margin-top:.9rem}
-    @media (min-width:520px){ .cta-group{grid-auto-flow:column;justify-content:start} }
+    @media (min-width:900px){
+      .hero-wrap{grid-template-columns:1.1fr .9fr;align-items:center}
+    }
+    .hero-title{
+      margin:0;
+      font-size:clamp(30px,7vw,64px);
+      line-height:1.06;
+      letter-spacing:-.5px;
+      background:linear-gradient(135deg,#059669,#65a30d,#065f46);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .hero-subtitle{
+      margin:.35rem 0 0;
+      color:#475569;
+      max-width:60ch;
+      font-size:clamp(15px,3.8vw,18px);
+    }
+    .hero-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      margin:.8rem 0 0;
+    }
+    .pill{
+      display:inline-flex;
+      gap:.5rem;
+      align-items:center;
+      padding:.45rem .75rem;
+      border-radius:14px;
+      background:rgba(16,185,129,.12);
+      color:#065f46;
+      font-weight:700;
+    }
+    .cta-group{
+      display:grid;
+      gap:.6rem;
+      margin-top:.9rem;
+    }
+    @media (min-width:520px){
+      .cta-group{grid-auto-flow:column;justify-content:start}
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      border:0;
+      border-radius:16px;
+      padding:.65rem 1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .12s ease,filter .18s ease,box-shadow .18s ease;
+    }
+    .btn-brand{
+      background:var(--brand);
+      color:#fff;
+      box-shadow:0 10px 30px rgba(16,185,129,.35);
+    }
+    .btn-brand:hover{
+      filter:brightness(.96);
+      transform:translateY(-1px);
+    }
+    .btn-block{width:100%}
+    @media (min-width:520px){.btn-block{width:auto}}
 
     .hero-side{display:none}
-    @media (min-width:900px){ .hero-side{display:block} }
+    @media (min-width:900px){.hero-side{display:block}}
     .hero-card{padding:20px;position:relative;overflow:hidden}
-    .hero-card-bloom{position:absolute;inset:auto -80px auto auto;width:220px;height:220px;border-radius:999px;background:rgba(16,185,129,.15);filter:blur(40px)}
+    .hero-card-bloom{
+      position:absolute;inset:auto -80px auto auto;
+      width:220px;height:220px;border-radius:999px;
+      background:rgba(16,185,129,.18);filter:blur(40px)
+    }
     .hero-card-text{color:#475569;margin:0}
-    .hero-mini-cards{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.25rem}
-    .hero-mini-cards .mini{padding:.55rem .9rem;border-radius:12px;box-shadow:none}
+    .hero-mini-cards{
+      display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.25rem
+    }
+    .hero-mini-cards .mini{
+      padding:.55rem .9rem;border-radius:12px;
+      box-shadow:none;background:rgba(255,255,255,.9);
+    }
 
     /* Backdrop blobs */
     .backdrop{position:absolute;inset:0;overflow:hidden;z-index:-1}
@@ -88,41 +212,59 @@
     .b3{width:360px;height:360px;left:40%;bottom:-120px;background:radial-gradient(closest-side,#a3e635,transparent);animation-delay:4s}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
 
-    /* ===== Posts ===== */
+    /* ===== POSTS ===== */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
-    .post-cover{height:144px;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));}
+    .card{
+      border-radius:24px;
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(15,23,42,.06);
+      box-shadow:0 20px 50px -12px rgba(0,0,0,.15);
+      overflow:hidden;
+    }
+    .post-cover{
+      height:144px;
+      background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));
+    }
 
-    /* ===== Donar ===== */
+    /* ===== DONAR ===== */
     .don-grid{display:grid;gap:1rem}
-    @media (min-width:760px){ .don-grid{grid-template-columns:1.1fr .9fr} }
-    .copy-badge{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .7rem;border:1px dashed rgba(15,23,42,.25);border-radius:12px;font-weight:700}
-    .copy-badge.inverse{border-color:rgba(255,255,255,.85);color:#fff}
+    @media (min-width:760px){.don-grid{grid-template-columns:1.1fr .9fr}}
+    .copy-badge{
+      display:inline-flex;gap:.5rem;align-items:center;
+      padding:.4rem .7rem;border:1px dashed rgba(15,23,42,.25);
+      border-radius:12px;font-weight:700;flex-wrap:wrap;
+    }
 
-    /* ===== Bioalkimia ===== */
+    /* ===== BIOALKIMIA ===== */
     .bio-card{padding:24px}
     .bio-title{margin:0}
     .bio-text{color:#64748b;margin:.4rem 0 0}
 
-    /* ===== Footer y reveal ===== */
-    footer{border-top:1px solid rgba(15,23,42,.08);padding:24px 0;margin-top:40px;color:#64748b}
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease}
+    /* ===== FOOTER & REVEAL ===== */
+    footer{
+      border-top:1px solid rgba(15,23,42,.08);
+      padding:24px 0;
+      margin-top:40px;
+      color:#64748b;
+    }
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
   </style>
 </head>
 <body>
   <!-- NAV -->
-  <div class="nav">
+  <div class="nav" id="mainNav">
     <div class="container row">
       <a class="brand" href="index.html">
-        <span class="brand-badge" aria-hidden>🍶</span>
-        <span>Guardianes del Pulque</span>
+        <img src="images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <span class="brand-text">Pulque Vivo</span>
       </a>
       <div class="links">
         <a class="chip" href="posts.html">Artículos</a>
-        <a class="chip" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
-        <a class="chip solid" href="#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="#bioalkimia">Bioalkimia</a>
       </div>
     </div>
   </div>
@@ -139,9 +281,9 @@
         <p class="hero-subtitle">Historias, guías y proyectos para cultivar, construir y cuidar el territorio.</p>
 
         <div class="hero-chips">
-          <span class="pill">🍶 Pulque</span>
-          <span class="pill">🏗️ Tierra</span>
-          <span class="pill">🌵 Maguey</span>
+          <span class="pill">🍶 Pulque vivo</span>
+          <span class="pill">🏗️ Tierra que construye</span>
+          <span class="pill">🌵 Maguey y paisaje</span>
         </div>
 
         <div class="cta-group">
@@ -155,12 +297,12 @@
         <div class="card hero-card">
           <div class="hero-card-bloom"></div>
           <div class="stack-3">
-            <div class="pill">🍃 <strong>Oficio vivo</strong></div>
-            <p class="hero-card-text">Microbiota del pulque, técnicas en tierra y manejo sustentable del maguey.</p>
+            <div class="pill">🍃 <strong>Guardianes del pulque</strong></div>
+            <p class="hero-card-text">Microbiota, magueyes, oficios y barro que dialogan con tecnologías abiertas.</p>
             <div class="hero-mini-cards">
-              <div class="card mini">Fermentos</div>
-              <div class="card mini">Adobe</div>
-              <div class="card mini">Humedales</div>
+              <div class="mini card">Fermentos</div>
+              <div class="mini card">Adobe</div>
+              <div class="mini card">Humedales</div>
             </div>
           </div>
         </div>
@@ -168,7 +310,7 @@
     </div>
   </header>
 
-  <!-- POSTS (últimos 6) -->
+  <!-- POSTS HOME -->
   <section id="posts" class="container" style="margin-bottom:48px">
     <div class="stack-2" style="grid-auto-flow:column;justify-content:space-between;align-items:end;margin-bottom:12px">
       <h2 style="margin:0">Artículos recientes</h2>
@@ -178,46 +320,55 @@
     <div id="status" style="margin-top:8px;font-size:12px;color:#64748b"></div>
   </section>
 
-  <!-- BIOALKIMIA -->
-  <section id="bioalkimia" class="container" style="margin-bottom:64px">
-    <div class="card bio-card reveal">
-      <h3 class="bio-title">Bioalkimia</h3>
-      <p class="bio-text">Explora nuestro proyecto hermano inspirado en bioconstrucción, fermentos y territorio.</p>
-      <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:start;margin-top:.5rem">
-        <a class="chip" href="https://bioalkimia.org/" target="_blank" rel="noopener">Ir a Bioalkimia →</a>
+  <!-- DONAR -->
+  <section id="donar" class="container" style="margin-bottom:64px">
+    <div class="card reveal" style="padding:24px">
+      <div class="stack-3">
+        <h3 style="margin:0"><span class="emoji">💚</span> Donar</h3>
+        <p style="color:#64748b;margin:0">
+          Tu apoyo mantiene contenidos abiertos sobre pulque, tierra y maguey. Gracias por impulsar este trabajo comunitario.
+        </p>
+
+        <div class="don-grid">
+          <div class="stack-3">
+            <div class="copy-badge">
+              <span>CLABE:</span>
+              <code id="clabeText">000000000000000000</code>
+              <button id="copyClabe" class="btn" type="button">Copiar</button>
+            </div>
+            <small style="color:#94a3b8">Reemplaza la CLABE por la real en el HTML.</small>
+
+            <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:flex-start">
+              <a id="paypalBtn" class="chip" href="#" target="_blank" rel="noopener">
+                <span class="emoji">💚</span> Donar por PayPal
+              </a>
+              <a class="chip" href="mailto:donaciones@tusitio.mx">Otra forma de donar</a>
+            </div>
+          </div>
+
+          <div class="stack-3">
+            <div class="card" style="padding:16px;background:rgba(16,185,129,.08)">
+              <strong>Transparencia</strong>
+              <p style="color:#64748b;margin:.4rem 0 0">
+                Publicaremos un resumen de en qué se invierte: servidores, materiales, talleres y trabajo comunitario.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- DONAR (tarjeta verde fija) -->
-  <section id="donar" class="container" style="margin-bottom:64px">
-    <div class="card card-green reveal" style="padding:24px">
-      <div class="stack-3">
-        <h3 style="margin:0"><span class="emoji">💚</span> Donar</h3>
-        <p style="margin:0">Tu apoyo mantiene contenidos abiertos sobre pulque, tierra y maguey. ¡Gracias por impulsar este trabajo comunitario!</p>
-
-        <div class="don-grid">
-          <div class="stack-3">
-            <div class="copy-badge inverse">
-              <span>CLABE:</span>
-              <code id="clabeText" style="color:#fff">000000000000000000</code>
-              <button id="copyClabe" class="btn-ghost inverse" type="button">Copiar</button>
-            </div>
-            <small style="color:#e6ffef">Reemplaza la CLABE por la real en el HTML.</small>
-
-            <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:start">
-              <a id="paypalBtn" class="chip chip-invert" href="#" target="_blank" rel="noopener"><span class="emoji">💚</span> Donar por PayPal</a>
-              <a class="chip chip-invert" href="mailto:donaciones@tusitio.mx">Otra forma de donar</a>
-            </div>
-          </div>
-
-          <div class="stack-3">
-            <div class="card" style="padding:16px;background:rgba(255,255,255,.12);color:#fff">
-              <strong>Transparencia</strong>
-              <p style="margin:.4rem 0 0">Publicaremos un resumen trimestral de ingresos y en qué se invierten (servidores, material didáctico, eventos comunitarios).</p>
-            </div>
-          </div>
-        </div>
+  <!-- BIOALKIMIA -->
+  <section id="bioalkimia" class="container" style="margin-bottom:64px">
+    <div class="card bio-card reveal">
+      <h3 class="bio-title">Bioalkimia</h3>
+      <p class="bio-text">
+        Proyecto hermano donde convergen bioconstrucción, fermentos y territorio. Visita para conocer más colaboraciones.
+      </p>
+      <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:flex-start;margin-top:.5rem">
+        <!-- Cambia la URL por la real -->
+        <a class="chip" href="https://ejemplo-bioalkimia.com" target="_blank" rel="noopener">Ir a Bioalkimia →</a>
       </div>
     </div>
   </section>
@@ -226,13 +377,13 @@
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:.5rem">
-        <span class="brand-badge" style="width:28px;height:28px">🍶</span>
+        <img src="images/logo_transparente.png" alt="Guardianes del Pulque" style="height:26px;width:auto">
         <span>Pulque Vivo</span>
       </div>
       <div class="links">
         <a class="chip" href="posts.html">Artículos</a>
-        <a class="chip" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
-        <a class="chip solid" href="#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="#bioalkimia">Bioalkimia</a>
       </div>
     </div>
   </footer>
@@ -245,19 +396,38 @@
   ]</script>
 
   <script>
+    // Header: cambia estilo al hacer scroll
+    (function(){
+      const nav = document.getElementById('mainNav');
+      if(!nav) return;
+      function update(){
+        if(window.scrollY > 10) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      }
+      update();
+      window.addEventListener('scroll', update, {passive:true});
+    })();
+
     // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     }, {threshold:.2});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Util
-    function escapeHtml(s){ return String(s).replace(/[&<>"]/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[m])); }
+    // Utils
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"]/g, (m)=>({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
+      }[m]));
+    }
     const HOMEPAGE_LIMIT = 6;
 
     function candidateUrls(filename){
-      const ts = Date.now(), origin = location.origin, path = location.pathname;
-      const dir = path.replace(/[^\/]*$/,''); const segs = path.split('/').filter(Boolean);
+      const ts = Date.now();
+      const origin = location.origin;
+      const path = location.pathname;
+      const dir = path.replace(/[^\/]*$/,'');
+      const segs = path.split('/').filter(Boolean);
       const repoBase = segs.length ? `/${segs[0]}/` : '/';
       return [
         `${origin}${dir}${filename}?v=${ts}`,
@@ -267,49 +437,79 @@
     }
 
     async function fetchJsonSmart(filename){
-      const tries = candidateUrls(filename), traces=[];
+      const tries = candidateUrls(filename);
+      const status = document.getElementById('status');
+      const traces = [];
       for(const url of tries){
-        try{ const r=await fetch(url,{cache:'no-store'}); traces.push(`GET ${url} → ${r.status}`); if(r.ok) return await r.json(); }
-        catch(e){ traces.push(`ERR ${url} → ${e}`); }
+        try{
+          const r = await fetch(url,{cache:'no-store'});
+          traces.push(`GET ${url} → ${r.status}`);
+          if(r.ok) return await r.json();
+        }catch(e){
+          traces.push(`ERR ${url} → ${e}`);
+        }
       }
-      const st=document.getElementById('status');
-      if(st){ st.textContent=(location.protocol==='file:'?'Abre con Live Server (fetch bloquea file://)':'No se encontró posts.json. Colócalo junto a index.html.'); }
+      if(status){
+        status.textContent = (location.protocol==='file:'
+          ? 'Abre con Live Server (fetch se bloquea con file://).'
+          : 'No se encontró posts.json. Colócalo junto a index.html en GitHub Pages.');
+      }
       throw new Error('posts.json no encontrado\n'+traces.join('\n'));
     }
 
     async function loadPosts(){
-      let posts=[];
-      try{ const data=await fetchJsonSmart('posts.json'); posts=Array.isArray(data)?data:(Array.isArray(data.entries)?data.entries:[]); }
-      catch(_){}
-      if(!posts.length){ try{ posts=JSON.parse(document.getElementById('posts-fallback').textContent||'[]'); }catch{} }
-      renderPosts(posts.slice(0,HOMEPAGE_LIMIT));
+      let posts = [];
+      try{
+        const data = await fetchJsonSmart('posts.json');
+        posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
+      }catch(_){}
+      if(!posts.length){
+        try{
+          posts = JSON.parse(document.getElementById('posts-fallback').textContent || '[]');
+        }catch{}
+      }
+      renderPosts(posts.slice(0, HOMEPAGE_LIMIT));
     }
 
     function renderPosts(items){
-      const grid=document.getElementById('postsGrid'); grid.innerHTML='';
-      if(!items.length){ grid.innerHTML='<p class="muted">Aún no hay artículos.</p>'; return; }
-      items.forEach((p)=>{
-        const card=document.createElement('article'); card.className='card reveal'; card.style.overflow='hidden';
-        card.innerHTML=`
-          <div class="post-cover" ${p.cover?`style="background-image:url('${p.cover}');background-size:cover;background-position:center"`:''}></div>
+      const grid = document.getElementById('postsGrid');
+      grid.innerHTML = '';
+      if(!items.length){
+        grid.innerHTML = '<p class="muted">Aún no hay artículos.</p>';
+        return;
+      }
+      items.forEach(p=>{
+        const card = document.createElement('article');
+        card.className = 'card reveal';
+        card.style.overflow = 'hidden';
+        card.innerHTML = `
+          <div class="post-cover" ${p.cover ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"` : ''}></div>
           <div style="padding:16px">
             <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag||'')}</div>
             <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title||'')}</h3>
             <p style="color:#475569">${escapeHtml(p.excerpt||'')}</p>
-            <div style="padding-top:6px"><a class="chip" href="${p.url||'#'}">Leer →</a></div>
+            <div style="padding-top:6px">
+              <a class="chip" href="${p.url||'#'}">Leer →</a>
+            </div>
           </div>`;
-        grid.appendChild(card); io.observe(card);
+        grid.appendChild(card);
+        io.observe(card);
       });
     }
 
     // Donar: copiar CLABE
     document.getElementById('copyClabe').addEventListener('click', async ()=>{
-      const t=document.getElementById('clabeText').textContent.trim();
-      try{ await navigator.clipboard.writeText(t); alert('CLABE copiada'); }catch{ alert('Copia la CLABE manualmente'); }
+      const t = document.getElementById('clabeText').textContent.trim();
+      try{
+        await navigator.clipboard.writeText(t);
+        alert('CLABE copiada');
+      }catch{
+        alert('Copia la CLABE manualmente');
+      }
     });
 
-    // Enlace real de PayPal aquí:
-    document.getElementById('paypalBtn').href = "#"; // e.g. "https://paypal.me/tunombre"
+    // Ajusta aquí tu enlace real de PayPal:
+    document.getElementById('paypalBtn').href = "#";
 
     loadPosts();
   </script>
