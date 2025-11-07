@@ -38,7 +38,7 @@
       background:rgba(255,255,255,.96);
       backdrop-filter:saturate(180%) blur(14px);
       border-bottom:1px solid rgba(15,23,42,.06);
-      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease,color .25s ease;
     }
     .nav .row{
       display:flex;
@@ -62,6 +62,8 @@
     .brand-text{
       font-size:.96rem;
       letter-spacing:.02em;
+      color:#0f172a;
+      transition:color .25s ease;
     }
 
     .links{
@@ -114,7 +116,7 @@
 
     .nav-dropdown{
       position:absolute;
-      top:100%; /* pegado */
+      top:100%;
       left:0;
       margin-top:0;
       padding:6px 0;
@@ -190,9 +192,29 @@
       pointer-events:auto;
     }
 
+    /* Scroll state base */
     .nav.scrolled{
       box-shadow:0 14px 40px rgba(15,23,42,.18);
-      border-bottom-color:rgba(148,163,253,.32);
+    }
+    /* En modo base/luz: header negro al hacer scroll */
+    body:not(.mode-reading):not(.mode-community) .nav.scrolled{
+      background:#020817;
+      border-bottom-color:transparent;
+      box-shadow:0 14px 40px rgba(0,0,0,.9);
+    }
+    body:not(.mode-reading):not(.mode-community) .nav.scrolled .brand-text{
+      color:#f9fafb;
+    }
+    body:not(.mode-reading):not(.mode-community) .nav.scrolled .chip{
+      background:transparent;
+      color:#bbf7d0;
+      border-color:#22c55e;
+      box-shadow:none;
+    }
+    body:not(.mode-reading):not(.mode-community) .nav.scrolled .chip:hover{
+      background:#22c55e;
+      color:#020817;
+      box-shadow:0 8px 18px rgba(0,0,0,.7);
     }
 
     /* HERO */
@@ -334,6 +356,7 @@
       margin-top:40px;
       color:#64748b;
       font-size:.78rem;
+      transition:color .25s ease,border-color .25s ease,background .25s ease;
     }
     footer .row{
       display:flex;
@@ -752,11 +775,13 @@
         else if(mode === 'community') body.classList.add('mode-community');
       }
 
+      // cargar modo guardado
       try{
         const saved = localStorage.getItem(KEY);
         if(saved) apply(saved);
       }catch{}
 
+      // eventos de menú
       document.querySelectorAll('.js-mode').forEach(btn=>{
         btn.addEventListener('click',()=>{
           const m = btn.dataset.mode;
