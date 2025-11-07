@@ -366,19 +366,22 @@
       flex-wrap:wrap;
     }
 
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-    .reveal.in{
-        opacity:1;
-        transform:translateY(0),
-        margin-left:18px;
+    .reveal{
+      opacity:0;
+      transform:translateY(16px);
+      transition:opacity .5s ease,transform .5s ease;
     }
-    /* En móvil/tablet chica lo regresamos para que no se corte nada */
+    .reveal.in{
+      opacity:1;
+      transform:translateY(0);
+      margin-left:1.125rem; /* ~18px en desktop */
+    }
     @media (max-width:640px){
       .reveal.in{
-        margin-left:3px;
+        margin-left:0.3125rem; /* ~5px en móviles */
       }
     }
-    
+
     /* ===== MODO LECTURA (psicodélico) ===== */
     body.mode-reading{
       background:#020817;
@@ -497,7 +500,7 @@
           </button>
           <div class="nav-dropdown">
             <a class="nav-link" href="posts.html">Artículos</a>
-            <a class="nav-link" href="#donar">Donar</a>            
+            <a class="nav-link" href="#donar">Donar</a>
             <div class="nav-item-inline">
               <div class="nav-link has-children" tabindex="0">Patrocinadores</div>
               <div class="nav-subdropdown">
@@ -506,8 +509,8 @@
             </div>
             <a class="nav-link" href="#aliados">Aliados</a>
             <div class="nav-subdropdown">
-                <a class="nav-link" href="https://maps.app.goo.gl/jLz2oqRnr3uqbGAXA" target="_blank" rel="noopener">CasaAdobe</a>
-              </div>
+              <a class="nav-link" href="https://maps.app.goo.gl/jLz2oqRnr3uqbGAXA" target="_blank" rel="noopener">CasaAdobe</a>
+            </div>
           </div>
         </div>
 
@@ -680,7 +683,7 @@
     // Utils
     function escapeHtml(s){
       return String(s).replace(/[&<>"]/g, m => ({
-        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'
+        '&':'&amp;','<':'&lt;','>':'&quot;'
       }[m]));
     }
     const HOMEPAGE_LIMIT = 6;
@@ -787,13 +790,11 @@
         else if(mode === 'community') body.classList.add('mode-community');
       }
 
-      // cargar modo guardado
       try{
         const saved = localStorage.getItem(KEY);
         if(saved) apply(saved);
       }catch{}
 
-      // eventos de menú
       document.querySelectorAll('.js-mode').forEach(btn=>{
         btn.addEventListener('click',()=>{
           const m = btn.dataset.mode;
