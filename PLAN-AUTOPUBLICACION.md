@@ -12,7 +12,7 @@ El sitio es HTML estático puro servido con GitHub Pages.
 
 Script Node.js (~80 líneas) que:
 
-1. Llama a la API de Claude con un prompt temático (pulque, maguey, bioconstrucción, tierra)
+1. Llama a la API de OpenAI con un prompt temático (pulque, maguey, bioconstrucción, tierra)
 2. Parsea la respuesta: título, tag, excerpt, contenido HTML
 3. Genera slug del título: `"Cadena de valor del maguey"` → `cadena-de-valor-del-maguey`
 4. Llama a la API de OpenAI (DALL·E) para generar thumbnail del artículo
@@ -27,7 +27,7 @@ GitHub Action con cron semanal que:
 
 1. Checkout del repo
 2. Setup Node.js
-3. `npm install @anthropic-ai/sdk openai`
+3. `npm install openai`
 4. Ejecuta `node scripts/generate-post.js`
 5. `git add . && git commit && git push`
 6. GitHub Pages se rebuilds automáticamente
@@ -35,7 +35,7 @@ GitHub Action con cron semanal que:
 ## Flujo
 
 ```
-Cron (lunes 8am) → generate-post.js → Claude API
+Cron (lunes 8am) → generate-post.js → OpenAI API (GPT + DALL·E)
                                           │
                     ┌─────────────────────┘
                     ▼
@@ -56,8 +56,7 @@ Cron (lunes 8am) → generate-post.js → Claude API
 
 ## Requisito
 
-- Agregar `ANTHROPIC_API_KEY` como secreto del repo en GitHub → Settings → Secrets
-- Agregar `OPENAI_API_KEY` como secreto del repo (para generación de thumbnails con DALL·E)
+- Agregar `OPENAI_API_KEY` como secreto del repo en GitHub → Settings → Secrets (texto + thumbnails)
 
 ## Por qué GitHub Actions
 
