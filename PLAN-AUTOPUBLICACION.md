@@ -15,9 +15,11 @@ Script Node.js (~80 líneas) que:
 1. Llama a la API de Claude con un prompt temático (pulque, maguey, bioconstrucción, tierra)
 2. Parsea la respuesta: título, tag, excerpt, contenido HTML
 3. Genera slug del título: `"Cadena de valor del maguey"` → `cadena-de-valor-del-maguey`
-4. Lee `articulos/plantilla` y reemplaza placeholders con el contenido generado
-5. Crea `articulos/{slug}/{slug}.html`
-6. Hace `unshift` de la nueva entrada en `posts.json`
+4. Llama a la API de OpenAI (DALL·E) para generar thumbnail del artículo
+5. Guarda la imagen en `articulos/{slug}/{slug}.png`
+6. Lee `articulos/plantilla` y reemplaza placeholders con el contenido generado
+7. Crea `articulos/{slug}/{slug}.html`
+8. Hace `unshift` de la nueva entrada en `posts.json` (con `cover` apuntando a la imagen)
 
 ### 2. `.github/workflows/weekly-post.yml`
 
@@ -25,7 +27,7 @@ GitHub Action con cron semanal que:
 
 1. Checkout del repo
 2. Setup Node.js
-3. `npm install @anthropic-ai/sdk`
+3. `npm install @anthropic-ai/sdk openai`
 4. Ejecuta `node scripts/generate-post.js`
 5. `git add . && git commit && git push`
 6. GitHub Pages se rebuilds automáticamente
@@ -39,8 +41,9 @@ Cron (lunes 8am) → generate-post.js → Claude API
                     ▼
               título, tag, excerpt, body HTML
                     │
-                    ├── articulos/{slug}/{slug}.html  (nuevo)
-                    ├── posts.json                    (actualizado)
+                    ├── OpenAI DALL·E → articulos/{slug}/{slug}.png  (thumbnail)
+                    ├── articulos/{slug}/{slug}.html                 (nuevo)
+                    ├── posts.json                                   (actualizado)
                     │
                     └── git commit + push → GitHub Pages live
 ```
@@ -54,6 +57,7 @@ Cron (lunes 8am) → generate-post.js → Claude API
 ## Requisito
 
 - Agregar `ANTHROPIC_API_KEY` como secreto del repo en GitHub → Settings → Secrets
+- Agregar `OPENAI_API_KEY` como secreto del repo (para generación de thumbnails con DALL·E)
 
 ## Por qué GitHub Actions
 
@@ -64,6 +68,5 @@ Cron (lunes 8am) → generate-post.js → Claude API
 
 ## Pendientes opcionales
 
-- [ ] Generación de imagen de portada (API de imágenes o placeholder SVG)
 - [ ] Rotación de temas para variedad en el prompt
 - [ ] Límite máximo de artículos en `posts.json` (o archivo por año)
