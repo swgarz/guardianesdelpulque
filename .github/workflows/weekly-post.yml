@@ -2,7 +2,7 @@ name: Weekly auto-publish
 
 on:
   schedule:
-    - cron: "0 8 * * 1" # Lunes 8:00 UTC
+    - cron: "0 13 * * 5" # Viernes 7:00 AM México (UTC-6)
   workflow_dispatch: # Permite ejecución manual
 
 permissions:
