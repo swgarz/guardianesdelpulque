@@ -65,6 +65,23 @@ Cron (lunes 8am) → generate-post.js → OpenAI API (GPT + DALL·E)
 - Git push nativo (no necesita tokens extra)
 - Un solo YAML, sin deploy de nada
 
+## Analytics y observabilidad
+
+### Microsoft Clarity
+
+Herramienta gratuita de analytics de comportamiento (heatmaps, grabaciones de sesión, métricas).
+
+1. Crear proyecto en [clarity.microsoft.com](https://clarity.microsoft.com)
+2. Copiar el snippet de tracking
+3. Pegarlo en `articulos/plantilla`, `index.html` y `posts.html` (dentro de `<head>`)
+4. Los artículos futuros lo heredan automáticamente vía la plantilla
+
+**Qué aporta:**
+- Heatmaps de clics y scroll
+- Grabaciones de sesiones reales
+- Métricas de engagement (dead clicks, rage clicks, quick backs)
+- Dashboard sin costo ni límite de tráfico
+
 ## Pendientes opcionales
 
 - [ ] Rotación de temas para variedad en el prompt
