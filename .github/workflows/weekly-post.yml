@@ -1,11 +1,9 @@
 name: Weekly auto-publish
 
 on:
-  push:
-    branches: [main]
-  # schedule:
-  #   - cron: "0 13 * * 5" # Viernes 7:00 AM México (UTC-6)
-  # workflow_dispatch:
+  schedule:
+    - cron: "0 13 * * 5" # Viernes 7:00 AM México (UTC-6)
+  workflow_dispatch:
 
 permissions:
   contents: write
