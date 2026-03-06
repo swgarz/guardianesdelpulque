@@ -3,6 +3,7 @@ const path = require("path");
 const OpenAI = require("openai");
 
 const openai = new OpenAI();
+const SITE_URL = "https://guardianesdelpulque.com";
 
 // ── Temas ──────────────────────────────────────────────────────────────────
 const TOPICS = [
@@ -115,14 +116,56 @@ function validateTag(tag) {
 }
 
 // ── Template HTML ──────────────────────────────────────────────────────────
-function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr }) {
+function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate }) {
+  const safeExcerpt = excerpt.replace(/"/g, "&quot;");
   return `<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${title} — Guardianes del Pulque</title>
-  <meta name="description" content="${excerpt.replace(/"/g, "&quot;")}" />
+  <meta name="description" content="${safeExcerpt}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="${title}" />
+  <meta property="og:description" content="${safeExcerpt}" />
+  <meta property="og:image" content="${SITE_URL}/articulos/${slug}/${slug}.png" />
+  <meta property="og:url" content="${SITE_URL}/articulos/${slug}/${slug}.html" />
+  <meta property="og:site_name" content="Guardianes del Pulque" />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${title}" />
+  <meta name="twitter:description" content="${safeExcerpt}" />
+  <meta name="twitter:image" content="${SITE_URL}/articulos/${slug}/${slug}.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "${title}",
+    "description": "${safeExcerpt}",
+    "image": "${SITE_URL}/articulos/${slug}/${slug}.png",
+    "datePublished": "${isoDate}",
+    "author": {
+      "@type": "Organization",
+      "name": "Guardianes del Pulque",
+      "url": "${SITE_URL}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Guardianes del Pulque",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "${SITE_URL}/images/logo_transparente.png"
+      }
+    }
+  }
+  </script>
+
   <style>
     *,*::before,*::after{box-sizing:border-box}
     body{
@@ -532,6 +575,7 @@ async function generateArticle() {
     emoji,
     slug,
     dateStr,
+    isoDate: now.toISOString().split("T")[0],
   });
   fs.writeFileSync(path.join(artDir, `${slug}.html`), html);
 
