@@ -1,3 +1,4 @@
+require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const OpenAI = require("openai");
@@ -5,34 +6,65 @@ const OpenAI = require("openai");
 const openai = new OpenAI();
 const SITE_URL = "https://guardianesdelpulque.com";
 
-// ── Temas ──────────────────────────────────────────────────────────────────
-const TOPICS = [
-  "Pulque, aguamiel, fermentacion tradicional, maguey pulquero, tlachiquero",
-  "Bioconstruccion con tierra, adobe, bahareque, tierra compactada, techos verdes",
-  "Naturaleza, restauracion ecologica, polinizadores, humedales, suelos vivos",
-  "Maguey, usos del agave, fibras, ixtle, pencas",
-  "Milpa, agricultura tradicional, policultivo, maiz, frijol, calabaza",
-  "Agua, captacion pluvial, filtracion natural, humedales artificiales",
-  "Defensa del territorio, autonomia comunitaria, derechos indigenas, tierra y agua",
-];
-
-// ── Tags válidos ───────────────────────────────────────────────────────────
-const VALID_TAGS = ["Pulque", "Bioconstruccion", "Naturaleza", "Territorio"];
 const TAG_EMOJI = {
   Pulque: "🍶",
   Bioconstruccion: "🏗️",
   Naturaleza: "🌿",
   Territorio: "✊",
 };
-const DEFAULT_TAG = "Naturaleza";
 
-// ── Perfiles de tono ───────────────────────────────────────────────────────
+// Los 7 posts fantasma que existen en posts.json sin archivos reales
+const MISSING_POSTS = [
+  {
+    tag: "Naturaleza",
+    title: "Noticias verdes: restauración y polinizadores",
+    excerpt: "Iniciativas locales para humedales y corredores biológicos.",
+    topic: "Restauración ecológica, polinizadores nativos, corredores biológicos, humedales, iniciativas comunitarias en México",
+  },
+  {
+    tag: "Naturaleza",
+    title: "Humedales urbanos: manual de bolsillo",
+    excerpt: "Captación, filtración y biodiversidad en pequeñas escalas.",
+    topic: "Humedales artificiales urbanos, captación pluvial, filtración natural, biodiversidad urbana, diseño a pequeña escala",
+  },
+  {
+    tag: "Bioconstruccion",
+    title: "Bambú estructural",
+    excerpt: "Selección, uniones y tratamientos para larga vida útil.",
+    topic: "Bambú como material estructural, selección de cañas, tipos de uniones, tratamientos de preservación, guadua",
+  },
+  {
+    tag: "Pulque",
+    title: "Utensilios tradicionales del tinacal",
+    excerpt: "Acocote, tinacal y prácticas de higiene para un buen curado.",
+    topic: "Utensilios del tinacal, acocote, castañas, tinas de cuero, higiene en la producción de pulque, tradición tlachiquera",
+  },
+  {
+    tag: "Naturaleza",
+    title: "Suelos vivos",
+    excerpt: "Compost, micorrizas y cobertura para resiliencia hídrica.",
+    topic: "Suelos vivos, compostaje, micorrizas, cobertura vegetal, resiliencia hídrica, regeneración de suelos en México",
+  },
+  {
+    tag: "Bioconstruccion",
+    title: "Tierra compactada (BTC / Rammed Earth)",
+    excerpt: "Densidades, encofrados y acabado fino.",
+    topic: "Bloques de tierra comprimida BTC, tapial rammed earth, encofrados, densidades, acabados, bioconstrucción con tierra",
+  },
+  {
+    tag: "Pulque",
+    title: "Cadena de valor del maguey",
+    excerpt: "Del campo a la pulquería: actores, riesgos y oportunidades.",
+    topic: "Cadena de valor del maguey pulquero, tlachiqueros, intermediarios, pulquerías, riesgos y oportunidades económicas",
+  },
+];
+
 const TONE_PROFILES = [
   {
     name: "practico-calido",
     systemPrompt:
-      "Eres un redactor experto en temas rurales, ecologicos y de territorio mexicano. " +
-      "Escribes articulos claros, calidos y practicos para comunidades. " +
+      "Eres un redactor experto en temas rurales, ecológicos y de territorio mexicano. " +
+      "Escribes artículos claros, cálidos y prácticos para comunidades. " +
       "Tu tono es directo, comunitario y respetuoso.",
     sectionRange: [5, 8],
     temperatureRange: [0.7, 0.9],
@@ -40,34 +72,23 @@ const TONE_PROFILES = [
   {
     name: "poetico-con-mesura",
     systemPrompt:
-      "Eres un escritor que combina conocimiento rural y ecologico con un lenguaje lirico pero contenido. " +
-      "Usas metaforas del territorio mexicano sin caer en excesos. " +
-      "Tu prosa respira como la milpa: con ritmo y proposito.",
+      "Eres un escritor que combina conocimiento rural y ecológico con un lenguaje lírico pero contenido. " +
+      "Usas metáforas del territorio mexicano sin caer en excesos. " +
+      "Tu prosa respira como la milpa: con ritmo y propósito.",
     sectionRange: [5, 7],
     temperatureRange: [0.85, 1.0],
-  },
-  {
-    name: "cortito-conciso",
-    systemPrompt:
-      "Eres un redactor que escribe fichas y guias rapidas sobre temas rurales y ecologicos de Mexico. " +
-      "Vas directo al grano. Frases cortas, listas claras, sin rodeos. " +
-      "Cada seccion es breve y util.",
-    sectionRange: [3, 4],
-    temperatureRange: [0.6, 0.8],
   },
   {
     name: "narrativo",
     systemPrompt:
       "Eres un narrador que cuenta historias y escenas del campo mexicano para transmitir saberes. " +
-      "Empiezas con una escena vivida (un tlachiquero al amanecer, una cuadrilla mezclando adobe, " +
-      "una lluvia cayendo en la milpa) y de ahi extraes aprendizajes practicos. " +
-      "Equilibras relato y ensenanza.",
+      "Empiezas con una escena vívida y de ahí extraes aprendizajes prácticos. " +
+      "Equilibras relato y enseñanza.",
     sectionRange: [5, 7],
     temperatureRange: [0.85, 1.0],
   },
 ];
 
-// ── Utilidades ─────────────────────────────────────────────────────────────
 function slugify(text) {
   return text
     .toLowerCase()
@@ -79,8 +100,8 @@ function slugify(text) {
 
 function fechaMx(date) {
   const meses = [
-    "enero", "febrero", "marzo", "abril", "mayo", "junio",
-    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+    "enero","febrero","marzo","abril","mayo","junio",
+    "julio","agosto","septiembre","octubre","noviembre","diciembre",
   ];
   return `${date.getDate()} de ${meses[date.getMonth()]} de ${date.getFullYear()}`;
 }
@@ -88,34 +109,13 @@ function fechaMx(date) {
 function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
 function randFloat(min, max) {
   return Math.random() * (max - min) + min;
 }
-
 function pick(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function uniqueSlug(base) {
-  const articulosDir = path.join(__dirname, "..", "articulos");
-  let slug = base;
-  let n = 2;
-  while (fs.existsSync(path.join(articulosDir, slug))) {
-    slug = `${base}-${n}`;
-    n++;
-  }
-  return slug;
-}
-
-function validateTag(tag) {
-  if (VALID_TAGS.includes(tag)) return tag;
-  // Accept new tags GPT suggests — add emoji fallback
-  if (typeof tag === "string" && tag.length > 0 && tag.length < 40) return tag;
-  return DEFAULT_TAG;
-}
-
-// ── Template HTML ──────────────────────────────────────────────────────────
 function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate }) {
   const safeExcerpt = excerpt.replace(/"/g, "&quot;");
   return `<!DOCTYPE html>
@@ -430,7 +430,7 @@ function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate })
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
       <div class="links">
-        <a class="chip" href="../posts.html">Articulos</a>
+        <a class="chip" href="../../posts.html">Articulos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
       </div>
     </div>
@@ -477,7 +477,7 @@ function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate })
         <span class="chip">${emoji} ${tag}</span>
       </div>
       <div>
-        <a href="../posts.html" class="chip">← Volver a articulos</a>
+        <a href="../../posts.html" class="chip">← Volver a articulos</a>
       </div>
     </div>
   </main>
@@ -491,7 +491,7 @@ function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate })
       </div>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="../posts.html">Mas articulos</a>
+        <a class="chip" href="../../posts.html">Mas articulos</a>
       </div>
     </div>
   </footer>
@@ -499,18 +499,17 @@ function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate })
 </html>`;
 }
 
-// ── Flujo principal ────────────────────────────────────────────────────────
-async function generateArticle() {
-  const topic = pick(TOPICS);
-  const profile = pick(TONE_PROFILES);
+async function generateOne(postInfo, index) {
+  const profile = TONE_PROFILES[index % TONE_PROFILES.length];
   const [minSec, maxSec] = profile.sectionRange;
   const sectionCount = randInt(minSec, maxSec);
   const temperature = randFloat(...profile.temperatureRange);
 
-  console.log(`Tema:  ${topic}`);
-  console.log(`Tono:  ${profile.name} (${sectionCount} secciones, temp ${temperature.toFixed(2)})`);
+  console.log(`\n[${ index + 1}/7] "${postInfo.title}"`);
+  console.log(`  Tono: ${profile.name} | ${sectionCount} secciones | temp ${temperature.toFixed(2)}`);
 
-  // 1. Generar articulo con GPT
+  // 1. Generar contenido con GPT
+  console.log("  Generando texto...");
   const completion = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
@@ -518,41 +517,39 @@ async function generateArticle() {
       {
         role: "user",
         content:
-          `Escribe un articulo original sobre: ${topic}.\n\n` +
-          "Responde SOLO con un JSON valido (sin markdown ni backticks) con esta estructura:\n" +
-          `{"title": "Titulo del articulo", "excerpt": "Resumen de 1 linea (max 120 chars)", "tag": "Etiqueta principal", "body": "<h2>...</h2><p>...</p>..."}\n\n` +
+          `Escribe un artículo original con este título exacto: "${postInfo.title}".\n` +
+          `Tema: ${postInfo.topic}\n\n` +
+          "Responde SOLO con un JSON válido (sin markdown ni backticks) con esta estructura:\n" +
+          `{"body": "<h2>...</h2><p>...</p>..."}\n\n` +
           `El body debe ser HTML con h2, p, ul/li y ol/li. Usa exactamente ${sectionCount} secciones con h2. ` +
-          "No incluyas el titulo principal en el body. No uses etiquetas style ni script. " +
+          "No incluyas el título principal en el body. No uses etiquetas style ni script. " +
           "Sin fuentes ni referencias.\n\n" +
-          `Para el tag, elige el mas apropiado entre: ${VALID_TAGS.join(", ")}. ` +
-          "Si ninguno encaja, puedes sugerir uno nuevo.\n\n" +
-          "Termina el articulo con un parrafo de cierre motivador.",
+          "Termina el artículo con un párrafo de cierre motivador.",
       },
     ],
     temperature,
   });
 
   const raw = completion.choices[0].message.content.trim();
-  const article = JSON.parse(raw);
+  let article;
+  try {
+    article = JSON.parse(raw);
+  } catch (e) {
+    // Try to extract JSON from potential markdown wrapper
+    const match = raw.match(/\{[\s\S]*\}/);
+    if (match) {
+      article = JSON.parse(match[0]);
+    } else {
+      throw new Error(`Failed to parse GPT response for "${postInfo.title}": ${raw.slice(0, 200)}`);
+    }
+  }
 
-  // 2. Validar tag
-  const tag = validateTag(article.tag);
-  const emoji = TAG_EMOJI[tag] || "📝";
-
-  // 3. Generar slug unico
-  const baseSlug = slugify(article.title);
-  const slug = uniqueSlug(baseSlug);
-
-  // 4. Generar imagen con DALL-E
-  console.log("Generando imagen DALL-E...");
-  const IMAGE_STYLES = [
-    `Mural mexicano inspirado en Diego Rivera sobre: "${article.title}". Colores tierra, ocre, verde y rojo oxido. Sin texto ni letras.`,
-    `Pintura impresionista de paisaje rural mexicano sobre: "${article.title}". Pinceladas sueltas, luz calida, colores tierra y verde. Sin texto ni letras.`,
-    `Ilustracion artistica estilo acuarela sobre: "${article.title}". Tonos calidos, verde, ocre y sepia. Sin texto ni letras.`,
-  ];
+  // 2. Generar imagen con DALL-E (con retry y prompt alternativo)
+  console.log("  Generando imagen DALL-E...");
   const prompts = [
-    pick(IMAGE_STYLES),
-    `Paisaje rural mexicano con plantas, tierra y cielo. Colores calidos tierra, ocre y verde. Estilo artistico. Sin texto ni letras.`,
+    `Mural mexicano inspirado en Diego Rivera sobre: "${postInfo.title}". Colores tierra, ocre, verde y rojo oxido. Sin texto ni letras. Paisaje horizontal.`,
+    `Ilustracion artistica de paisaje rural mexicano relacionado con: ${postInfo.topic.split(",")[0]}. Estilo mural con colores tierra y verde. Sin texto.`,
+    `Paisaje rural mexicano con plantas, tierra y cielo. Colores calidos tierra, ocre y verde. Estilo artistico muralista. Sin texto ni letras.`,
   ];
   let imageBuffer;
   for (const prompt of prompts) {
@@ -569,22 +566,29 @@ async function generateArticle() {
       );
       break;
     } catch (e) {
-      console.log("Prompt rechazado, intentando alternativo...");
+      console.log(`  Prompt rechazado, intentando alternativo...`);
     }
   }
-  if (!imageBuffer) throw new Error("No se pudo generar imagen");
+  if (!imageBuffer) throw new Error(`No se pudo generar imagen para "${postInfo.title}"`);
 
-  // 5. Guardar imagen
+  // 3. Slug y directorios
+  const slug = slugify(postInfo.title);
   const artDir = path.join(__dirname, "..", "articulos", slug);
   fs.mkdirSync(artDir, { recursive: true });
-  fs.writeFileSync(path.join(artDir, `${slug}.png`), imageBuffer);
 
-  // 6. Generar y guardar HTML
+  // 4. Guardar imagen
+  fs.writeFileSync(path.join(artDir, `${slug}.png`), imageBuffer);
+  console.log(`  Imagen: articulos/${slug}/${slug}.png`);
+
+  // 5. Guardar HTML
   const now = new Date();
   const dateStr = fechaMx(now);
+  const tag = postInfo.tag;
+  const emoji = TAG_EMOJI[tag] || "📝";
+
   const html = buildHTML({
-    title: article.title,
-    excerpt: article.excerpt,
+    title: postInfo.title,
+    excerpt: postInfo.excerpt,
     body: article.body,
     tag,
     emoji,
@@ -593,29 +597,38 @@ async function generateArticle() {
     isoDate: now.toISOString().split("T")[0],
   });
   fs.writeFileSync(path.join(artDir, `${slug}.html`), html);
+  console.log(`  HTML:   articulos/${slug}/${slug}.html`);
 
-  // 7. Actualizar posts.json
-  const postsPath = path.join(__dirname, "..", "posts.json");
-  const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
-  posts.unshift({
+  return {
     tag,
-    title: article.title,
-    excerpt: article.excerpt,
+    title: postInfo.title,
+    excerpt: postInfo.excerpt,
     date: dateStr,
     url: `articulos/${slug}/${slug}.html`,
     cover: `articulos/${slug}/${slug}.png`,
-  });
-  fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + "\n");
-
-  console.log(`\nCreado: articulos/${slug}/${slug}.html`);
-  console.log(`Cover:  articulos/${slug}/${slug}.png`);
-  console.log(`Tag:    ${emoji} ${tag}`);
-  console.log(`Titulo: ${article.title}`);
-  console.log(`Fecha:  ${dateStr}`);
-  console.log(`Tono:   ${profile.name}`);
+  };
 }
 
-generateArticle().catch((err) => {
+async function main() {
+  const postsPath = path.join(__dirname, "..", "posts.json");
+  const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
+
+  // Keep only the first 3 real posts, discard the 7 phantoms
+  const realPosts = posts.slice(0, 3);
+
+  // Ejecutar los 7 en paralelo
+  const generated = await Promise.all(
+    MISSING_POSTS.map((post, i) => generateOne(post, i))
+  );
+
+  // Rebuild posts.json: 3 originals + 7 newly generated
+  const final = [...realPosts, ...generated];
+  fs.writeFileSync(postsPath, JSON.stringify(final, null, 2) + "\n");
+  console.log(`\npost.json actualizado con ${final.length} entradas.`);
+  console.log("Listo!");
+}
+
+main().catch((err) => {
   console.error(err);
   process.exit(1);
 });

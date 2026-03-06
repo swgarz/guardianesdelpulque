@@ -6,14 +6,14 @@
     "url": "articulos/delapencaaljarro/de-la-penca-al-jarro.html",
     "cover": "articulos/delapencaaljarro/de_la_penca_al_jarro.png"
   },
-   {
+  {
     "tag": "Bioconstrucción",
     "title": "Guía práctica de adobe",
     "excerpt": "Mezcla, moldes, curado y desempeño térmico.",
     "url": "articulos/guiadeadobe/guiadeadobe.html",
     "cover": "articulos/guiadeadobe/guiadeadobe.png"
   },
-   {
+  {
     "tag": "Pulque",
     "title": "Microbiota del pulque: quién es quién",
     "excerpt": "Levaduras y bacterias lácticas clave en el sabor y la textura.",
@@ -24,59 +24,56 @@
     "tag": "Naturaleza",
     "title": "Noticias verdes: restauración y polinizadores",
     "excerpt": "Iniciativas locales para humedales y corredores biológicos.",
-    "url": "articulos/noticias-verdes-01.html",
-    "cover": "images/naturaleza-01.jpg"
+    "date": "5 de marzo de 2026",
+    "url": "articulos/noticias-verdes-restauracion-y-polinizadores/noticias-verdes-restauracion-y-polinizadores.html",
+    "cover": "articulos/noticias-verdes-restauracion-y-polinizadores/noticias-verdes-restauracion-y-polinizadores.png"
   },
- 
   {
     "tag": "Naturaleza",
     "title": "Humedales urbanos: manual de bolsillo",
     "excerpt": "Captación, filtración y biodiversidad en pequeñas escalas.",
-    "url": "articulos/humedales-urbanos.html",
-    "cover": "images/naturaleza-02.jpg"
+    "date": "5 de marzo de 2026",
+    "url": "articulos/humedales-urbanos-manual-de-bolsillo/humedales-urbanos-manual-de-bolsillo.html",
+    "cover": "articulos/humedales-urbanos-manual-de-bolsillo/humedales-urbanos-manual-de-bolsillo.png"
   },
   {
-    "tag": "Bioconstrucción",
+    "tag": "Bioconstruccion",
     "title": "Bambú estructural",
     "excerpt": "Selección, uniones y tratamientos para larga vida útil.",
-    "url": "articulos/bambu-estructural.html",
-    "cover": "images/bio-02.jpg"
+    "date": "5 de marzo de 2026",
+    "url": "articulos/bambu-estructural/bambu-estructural.html",
+    "cover": "articulos/bambu-estructural/bambu-estructural.png"
   },
   {
     "tag": "Pulque",
     "title": "Utensilios tradicionales del tinacal",
     "excerpt": "Acocote, tinacal y prácticas de higiene para un buen curado.",
-    "url": "articulos/utensilios-tradicionales.html",
-    "cover": "images/pulque-03.jpg"
+    "date": "5 de marzo de 2026",
+    "url": "articulos/utensilios-tradicionales-del-tinacal/utensilios-tradicionales-del-tinacal.html",
+    "cover": "articulos/utensilios-tradicionales-del-tinacal/utensilios-tradicionales-del-tinacal.png"
   },
   {
     "tag": "Naturaleza",
     "title": "Suelos vivos",
     "excerpt": "Compost, micorrizas y cobertura para resiliencia hídrica.",
-    "url": "articulos/suelos-vivos.html",
-    "cover": "images/naturaleza-03.jpg"
+    "date": "5 de marzo de 2026",
+    "url": "articulos/suelos-vivos/suelos-vivos.html",
+    "cover": "articulos/suelos-vivos/suelos-vivos.png"
   },
   {
-    "tag": "Bioconstrucción",
+    "tag": "Bioconstruccion",
     "title": "Tierra compactada (BTC / Rammed Earth)",
     "excerpt": "Densidades, encofrados y acabado fino.",
-    "url": "articulos/tierra-compactada.html",
-    "cover": "images/bio-03.jpg"
+    "date": "5 de marzo de 2026",
+    "url": "articulos/tierra-compactada-btc-rammed-earth/tierra-compactada-btc-rammed-earth.html",
+    "cover": "articulos/tierra-compactada-btc-rammed-earth/tierra-compactada-btc-rammed-earth.png"
   },
   {
     "tag": "Pulque",
     "title": "Cadena de valor del maguey",
     "excerpt": "Del campo a la pulquería: actores, riesgos y oportunidades.",
-    "url": "articulos/cadena-de-valor-del-maguey.html",
-    "cover": "images/pulque-04.jpg"
+    "date": "5 de marzo de 2026",
+    "url": "articulos/cadena-de-valor-del-maguey/cadena-de-valor-del-maguey.html",
+    "cover": "articulos/cadena-de-valor-del-maguey/cadena-de-valor-del-maguey.png"
   }
 ]
-
-
-
-
-
-
-
-
-
