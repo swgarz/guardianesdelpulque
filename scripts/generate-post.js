@@ -533,7 +533,14 @@ async function generateArticle() {
   });
 
   const raw = completion.choices[0].message.content.trim();
-  const article = JSON.parse(raw);
+  let article;
+  try {
+    article = JSON.parse(raw);
+  } catch {
+    const match = raw.match(/\{[\s\S]*\}/);
+    if (match) article = JSON.parse(match[0]);
+    else throw new Error("GPT no devolvió JSON válido: " + raw.slice(0, 200));
+  }
 
   // 2. Validar tag
   const tag = validateTag(article.tag);
