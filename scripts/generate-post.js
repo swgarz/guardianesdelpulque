@@ -3,7 +3,7 @@ const path = require("path");
 const OpenAI = require("openai");
 
 const openai = new OpenAI();
-const SITE_URL = "https://guardianesdelpulque.com";
+const SITE_URL = "https://guardianesdelpulque.org";
 
 // ── Temas ──────────────────────────────────────────────────────────────────
 const TOPICS = [

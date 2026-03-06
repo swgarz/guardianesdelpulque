@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://guardianesdelpulque.com">guardianesdelpulque.com</a>
+  <a href="https://guardianesdelpulque.org">guardianesdelpulque.org</a>
 </p>
 
 ---

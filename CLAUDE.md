@@ -44,7 +44,7 @@ Cada artículo vive en `articulos/{slug}/` con:
 
 - `index.html`: usa `images/logo_transparente.png` como og:image (homepage)
 - Cada artículo: usa su propia `articulos/{slug}/{slug}.png` como og:image
-- Base URL: `https://guardianesdelpulque.com`
+- Base URL: `https://guardianesdelpulque.org`
 
 ## Generación de artículos
 
