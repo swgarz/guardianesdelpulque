@@ -1,6 +1,14 @@
 [
   {
     "tag": "Pulque",
+    "title": "El Pulque: Tradición y Sabor del Maguey",
+    "excerpt": "Explora el mundo del pulque y su fermentación tradicional.",
+    "date": "6 de marzo de 2026",
+    "url": "articulos/el-pulque-tradicion-y-sabor-del-maguey/el-pulque-tradicion-y-sabor-del-maguey.html",
+    "cover": "articulos/el-pulque-tradicion-y-sabor-del-maguey/el-pulque-tradicion-y-sabor-del-maguey.png"
+  },
+  {
+    "tag": "Pulque",
     "title": "De la penca al jarro: el proceso vivo",
     "excerpt": "Fermentos, microbiota y tradición del maguey paso a paso.",
     "url": "articulos/delapencaaljarro/de-la-penca-al-jarro.html",
