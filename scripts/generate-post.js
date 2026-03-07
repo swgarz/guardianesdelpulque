@@ -60,6 +60,10 @@ const IMAGE_SUBSTYLES = [
     name: "encaustica",
     desc: "encáustica con cera caliente y pigmentos, superficie translúcida con vetas y burbujas",
   },
+  {
+    name: "pastel-costumbrista",
+    desc: "ilustración costumbrista en lápiz de color y pastel seco sobre papel granulado, trazos suaves visibles, textura arenosa cálida, tonos ocre-dorado y tierra, figuras con volumen sutil y expresiones amables, luz difusa dorada de atardecer",
+  },
 ];
 
 const TAG_PALETTES = {
