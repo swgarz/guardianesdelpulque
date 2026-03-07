@@ -26,6 +26,50 @@ const TAG_EMOJI = {
 };
 const DEFAULT_TAG = "Naturaleza";
 
+// ── Estilos de imagen (muralismo mexicano como base) ─────────────────────
+const IMAGE_SUBSTYLES = [
+  {
+    name: "oleo-empaste",
+    desc: "óleo pesado con empaste grueso, capas densas de pintura, textura tridimensional de espátula",
+  },
+  {
+    name: "fresco-cal",
+    desc: "fresco sobre muro de cal, pigmentos minerales, textura de pared encalada con grietas sutiles",
+  },
+  {
+    name: "tecnica-mixta",
+    desc: "técnica mixta con collage, grabado y serigrafía, capas superpuestas de papel y tinta",
+  },
+  {
+    name: "expresionismo-terroso",
+    desc: "expresionismo con paleta terrosa, trazos gestuales amplios, pigmentos naturales de tierra",
+  },
+  {
+    name: "claroscuro-social",
+    desc: "realismo social con claroscuro dramático, luces fuertes y sombras profundas, volúmenes monumentales",
+  },
+  {
+    name: "temple-antiguo",
+    desc: "temple al huevo sobre tabla, acabado mate, colores saturados planos con bordes definidos",
+  },
+  {
+    name: "litografia-color",
+    desc: "litografía a color estilo Taller de Gráfica Popular, tintas planas, contrastes fuertes",
+  },
+  {
+    name: "encaustica",
+    desc: "encáustica con cera caliente y pigmentos, superficie translúcida con vetas y burbujas",
+  },
+];
+
+const TAG_PALETTES = {
+  Pulque: "tonos ocre, ámbar, dorado, blanco hueso y verde maguey",
+  Bioconstruccion: "tonos rojo arcilla, terracota, adobe, marrón tierra y beige",
+  Naturaleza: "tonos verde bosque, verde musgo, tierra húmeda, azul agua y café corteza",
+  Territorio: "tonos rojo profundo, negro obsidiana, ocre, dorado y verde selva",
+};
+const DEFAULT_PALETTE = "tonos tierra, ocre, verde y rojo óxido";
+
 // ── Perfiles de tono ───────────────────────────────────────────────────────
 const TONE_PROFILES = [
   {
@@ -550,19 +594,33 @@ async function generateArticle() {
   const baseSlug = slugify(article.title);
   const slug = uniqueSlug(baseSlug);
 
-  // 4. Generar imagen con DALL-E
+  // 4. Generar imagen con DALL-E (muralismo mexicano + sub-estilo único)
   console.log("Generando imagen DALL-E...");
-  const IMAGE_STYLES = [
-    `Mural mexicano inspirado en Diego Rivera sobre: "${article.title}". Colores tierra, ocre, verde y rojo oxido. Sin texto ni letras.`,
-    `Pintura impresionista de paisaje rural mexicano sobre: "${article.title}". Pinceladas sueltas, luz calida, colores tierra y verde. Sin texto ni letras.`,
-    `Ilustracion artistica estilo acuarela sobre: "${article.title}". Tonos calidos, verde, ocre y sepia. Sin texto ni letras.`,
-  ];
-  const prompts = [
-    pick(IMAGE_STYLES),
-    `Paisaje rural mexicano con plantas, tierra y cielo. Colores calidos tierra, ocre y verde. Estilo artistico. Sin texto ni letras.`,
-  ];
+
+  // Leer estilos ya usados para evitar repetir
+  const postsPath = path.join(__dirname, "..", "posts.json");
+  const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
+  const usedStyles = new Set(posts.map((p) => p.imageStyle).filter(Boolean));
+  const availableStyles = IMAGE_SUBSTYLES.filter((s) => !usedStyles.has(s.name));
+  const chosenStyle = pick(availableStyles.length > 0 ? availableStyles : IMAGE_SUBSTYLES);
+  const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
+
+  console.log(`Estilo imagen: ${chosenStyle.name}`);
+
+  const basePrompt =
+    `Pintura mural mexicana inspirada en Rivera, Orozco y Siqueiros sobre: "${article.title}". ` +
+    `Sub-estilo: ${chosenStyle.desc}. ` +
+    `Paleta de color: ${palette}. ` +
+    `Textura de óleo visible, pinceladas gruesas, acabado matérico. ` +
+    `NO ilustración digital, NO render 3D, NO texto ni letras.`;
+
+  const fallbackPrompt =
+    `Pintura mural mexicana de paisaje rural con maguey, tierra y cielo. ` +
+    `Sub-estilo: ${chosenStyle.desc}. Paleta: ${palette}. ` +
+    `Textura de óleo, pinceladas gruesas. NO ilustración digital, NO render 3D, NO texto ni letras.`;
+
   let imageBuffer;
-  for (const prompt of prompts) {
+  for (const prompt of [basePrompt, fallbackPrompt]) {
     try {
       const imageResponse = await openai.images.generate({
         model: "dall-e-3",
@@ -602,8 +660,6 @@ async function generateArticle() {
   fs.writeFileSync(path.join(artDir, `${slug}.html`), html);
 
   // 7. Actualizar posts.json
-  const postsPath = path.join(__dirname, "..", "posts.json");
-  const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
   posts.unshift({
     tag,
     title: article.title,
@@ -611,6 +667,7 @@ async function generateArticle() {
     date: dateStr,
     url: `articulos/${slug}/${slug}.html`,
     cover: `articulos/${slug}/${slug}.png`,
+    imageStyle: chosenStyle.name,
   });
   fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + "\n");
 
