@@ -1,6 +1,33 @@
 [
   {
     "tag": "Naturaleza",
+    "title": "Maguey: Usos y Beneficios del Agave",
+    "excerpt": "Descubre los múltiples usos del maguey y sus fibras en la cultura mexicana.",
+    "date": "7 de marzo de 2026",
+    "url": "articulos/maguey-usos-y-beneficios-del-agave/maguey-usos-y-beneficios-del-agave.html",
+    "cover": "articulos/maguey-usos-y-beneficios-del-agave/maguey-usos-y-beneficios-del-agave.png",
+    "imageStyle": "litografia-color"
+  },
+  {
+    "tag": "Bioconstruccion",
+    "title": "Bioconstrucción: Técnicas Sostenibles con Tierra",
+    "excerpt": "Explora técnicas de bioconstrucción con tierra y materiales naturales.",
+    "date": "7 de marzo de 2026",
+    "url": "articulos/bioconstruccion-tecnicas-sostenibles-con-tierra/bioconstruccion-tecnicas-sostenibles-con-tierra.html",
+    "cover": "articulos/bioconstruccion-tecnicas-sostenibles-con-tierra/bioconstruccion-tecnicas-sostenibles-con-tierra.png",
+    "imageStyle": "encaustica"
+  },
+  {
+    "tag": "Territorio",
+    "title": "La Milpa: Agricultura Tradicional Mexicana",
+    "excerpt": "Descubre la milpa, un sistema agrícola sustentable y diverso en México.",
+    "date": "7 de marzo de 2026",
+    "url": "articulos/la-milpa-agricultura-tradicional-mexicana/la-milpa-agricultura-tradicional-mexicana.html",
+    "cover": "articulos/la-milpa-agricultura-tradicional-mexicana/la-milpa-agricultura-tradicional-mexicana.png",
+    "imageStyle": "expresionismo-terroso"
+  },
+  {
+    "tag": "Naturaleza",
     "title": "El Renacer de la Tierra: Polinizadores y Humedales en la Restauración Ecológica",
     "excerpt": "Exploremos la relación entre suelos vivos, polinizadores y humedales en la naturaleza.",
     "date": "6 de marzo de 2026",
