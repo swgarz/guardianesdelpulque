@@ -81,8 +81,10 @@ const TONE_PROFILES = [
     systemPrompt:
       "Eres un redactor experto en temas rurales, ecologicos y de territorio mexicano. " +
       "Escribes articulos claros, calidos y practicos para comunidades. " +
-      "Tu tono es directo, comunitario y respetuoso.",
-    sectionRange: [5, 8],
+      "Tu tono es directo, comunitario y respetuoso. " +
+      "Cada seccion debe ser detallada: incluye ejemplos concretos, datos, pasos practicos o cifras cuando aplique. " +
+      "Los parrafos deben ser sustanciosos, no de una sola linea.",
+    sectionRange: [7, 10],
     temperatureRange: [0.7, 0.9],
   },
   {
@@ -90,17 +92,20 @@ const TONE_PROFILES = [
     systemPrompt:
       "Eres un escritor que combina conocimiento rural y ecologico con un lenguaje lirico pero contenido. " +
       "Usas metaforas del territorio mexicano sin caer en excesos. " +
-      "Tu prosa respira como la milpa: con ritmo y proposito.",
-    sectionRange: [5, 7],
+      "Tu prosa respira como la milpa: con ritmo y proposito. " +
+      "Cada seccion desarrolla ideas con profundidad: no basta nombrar, hay que explicar, describir y contextualizar. " +
+      "Minimo 3 parrafos por seccion.",
+    sectionRange: [6, 9],
     temperatureRange: [0.85, 1.0],
   },
   {
     name: "cortito-conciso",
     systemPrompt:
-      "Eres un redactor que escribe fichas y guias rapidas sobre temas rurales y ecologicos de Mexico. " +
-      "Vas directo al grano. Frases cortas, listas claras, sin rodeos. " +
-      "Cada seccion es breve y util.",
-    sectionRange: [3, 4],
+      "Eres un redactor que escribe guias completas sobre temas rurales y ecologicos de Mexico. " +
+      "Vas directo al grano pero sin omitir informacion importante. " +
+      "Usa listas detalladas, pasos numerados y ejemplos especificos. " +
+      "Cada punto de una lista debe tener al menos una oracion explicativa.",
+    sectionRange: [6, 8],
     temperatureRange: [0.6, 0.8],
   },
   {
@@ -109,8 +114,9 @@ const TONE_PROFILES = [
       "Eres un narrador que cuenta historias y escenas del campo mexicano para transmitir saberes. " +
       "Empiezas con una escena vivida (un tlachiquero al amanecer, una cuadrilla mezclando adobe, " +
       "una lluvia cayendo en la milpa) y de ahi extraes aprendizajes practicos. " +
-      "Equilibras relato y ensenanza.",
-    sectionRange: [5, 7],
+      "Equilibras relato y ensenanza. Cada seccion desarrolla tanto la historia como el conocimiento: " +
+      "no dejes ideas a medias, lleva cada tema hasta sus consecuencias practicas.",
+    sectionRange: [7, 10],
     temperatureRange: [0.85, 1.0],
   },
 ];
@@ -163,9 +169,17 @@ function validateTag(tag) {
   return DEFAULT_TAG;
 }
 
+// ── Utilidad: tiempo de lectura ────────────────────────────────────────────
+function readingTime(body) {
+  const words = body.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().split(" ").filter(Boolean).length;
+  const mins = Math.max(3, Math.round(words / 200));
+  return `${mins}–${mins + 2} min`;
+}
+
 // ── Template HTML ──────────────────────────────────────────────────────────
 function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate }) {
   const safeExcerpt = excerpt.replace(/"/g, "&quot;");
+  const readTime = readingTime(body);
   return `<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -212,7 +226,7 @@ function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate })
       }
     }
   }
-  </script>
+  <\/script>
 
   <style>
     *,*::before,*::after{box-sizing:border-box}
@@ -226,323 +240,182 @@ function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate })
     :root{
       --brand:#059669;
       --ink:#0f172a;
-      --muted:#6b7280;
+      --muted:#64748b;
       --card:#ffffff;
-      --stroke:#e5e7eb;
-      --maxw:780px;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){.container{padding:0 24px}}
 
     /* NAV */
     .nav{
       position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,.9);
+      background:transparent;
+      border-bottom:1px solid transparent;
       backdrop-filter:saturate(180%) blur(14px);
-      border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
-    .nav .row{
-      display:flex;
-      align-items:center;
+    .nav-row{
+      display:flex;align-items:center;
       justify-content:space-between;
-      padding:8px 0;
-      gap:.75rem;
+      padding:10px 0;gap:1rem;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.45rem;
-      font-weight:700;
-    }
-    .brand-logo{
-      height:34px;
-      width:auto;
-    }
-    .brand-text{
-      font-size:.98rem;
-      letter-spacing:.01em;
-    }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.4rem .8rem;
-      border-radius:999px;
-      border:1px solid var(--brand);
-      font-size:.72rem;
-      font-weight:600;
-      color:var(--brand);
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .16s ease;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
     }
-    .chip .emoji{font-size:.9rem}
-    .chip:hover{
-      background:var(--brand);
-      color:#020817;
-      transform:translateY(-1px);
-      box-shadow:0 8px 18px rgba(15,23,42,.16);
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
     }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
 
-    /* HERO */
-    .hero-article{
-      padding:24px 0 8px;
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
     }
-    .hero-inner{
-      max-width:var(--maxw);
-      margin:0 auto;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      padding:.25rem .7rem;
-      border-radius:999px;
-      background:rgba(5,150,105,.08);
-      color:#047857;
-      font-size:.7rem;
-      font-weight:600;
-      margin-bottom:.4rem;
-    }
-    .title{
-      margin:0;
-      font-size:clamp(26px,5.4vw,40px);
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-    .subtitle{
-      margin:.4rem 0 0;
-      color:var(--muted);
-      font-size:.9rem;
-      max-width:46rem;
-    }
-    .meta{
-      margin-top:.6rem;
-      font-size:.72rem;
-      color:#9ca3af;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      align-items:center;
-    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px 0 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);}
 
-    /* Cover */
-    .cover-wrap{
-      max-width:var(--maxw);
-      margin:16px auto 0;
-      border-radius:24px;
-      background:radial-gradient(circle at top,rgba(5,150,105,.12),transparent),
-                 #020817;
-      padding:14px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .cover-img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      border-radius:16px;
-    }
-
-    /* CONTENIDO */
-    .article{
-      max-width:var(--maxw);
-      margin:22px auto 40px;
-      background:var(--card);
-      border-radius:24px;
-      padding:18px 16px 20px;
-      box-shadow:0 18px 45px rgba(15,23,42,.12);
-      border:1px solid rgba(148,163,253,.1);
-    }
-    @media (min-width:700px){
-      .article{padding:26px 26px 24px;}
-    }
-    .article h2{
-      font-size:1.12rem;
-      margin:1.4rem 0 .4rem;
-    }
-    .article p{
-      margin:.45rem 0;
-      color:#374151;
-      font-size:.9rem;
-    }
-    .article ul,.article ol{
-      margin:.35rem 0 .6rem 1.2rem;
-      padding:0;
-      color:#374151;
-      font-size:.88rem;
-    }
-    .divider{
-      margin:1.3rem 0;
-      border-top:1px solid rgba(148,163,253,.22);
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
     }
 
     /* CTA */
     .cta-section{
-      margin:1.5rem 0;
-      padding:1.2rem;
-      border-radius:16px;
-      background:rgba(5,150,105,.04);
-      border:1px dashed rgba(5,150,105,.25);
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
       text-align:center;
     }
-    .cta-section h2{
-      font-size:1rem;
-      margin:0 0 .5rem;
-      color:#065f46;
-    }
-    .cta-section p{
-      font-size:.82rem;
-      color:#374151;
-      margin:0 0 .8rem;
-    }
-    .cta-form{
-      display:flex;
-      gap:.5rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-bottom:.8rem;
-    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
     .cta-form input[type="email"]{
-      padding:.45rem .75rem;
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      font-size:.82rem;
-      width:220px;
-      max-width:100%;
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
     }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
     .cta-form button{
-      padding:.45rem 1rem;
-      border:none;
-      border-radius:999px;
-      background:var(--brand);
-      color:#fff;
-      font-size:.82rem;
-      font-weight:600;
-      cursor:pointer;
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
     }
-    .cta-form button:hover{
-      background:#047857;
-    }
+    .cta-form button:hover{background:#047857;}
 
-    /* Footer articulo */
-    .article-footer{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:1.1rem;
-      font-size:.78rem;
-      color:#6b7280;
-    }
-    .article-footer .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-    }
-
-    footer{
-      border-top:1px solid rgba(15,23,42,.08);
-      padding:18px 0 22px;
-      color:#9ca3af;
-      font-size:.75rem;
-    }
-    footer .row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
   </style>
 </head>
 <body>
   <!-- NAV -->
-  <div class="nav">
-    <div class="container row">
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
       <a class="brand" href="../../index.html">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-      <div class="links">
-        <a class="chip" href="../posts.html">Articulos</a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero-article">
-    <div class="hero-inner">
-      <div class="eyebrow">${emoji} ${tag}</div>
-      <h1 class="title">${title}</h1>
-      <p class="subtitle">${excerpt}</p>
-      <div class="meta">
-        <span>Por Guardianes del Pulque</span>
-        <span>${dateStr}</span>
-      </div>
-    </div>
-    <div class="cover-wrap">
-      <img src="${slug}.png" alt="${title}" class="cover-img">
+      </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO -->
-  <main class="article">
-    ${body}
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      ${title}
+    </div>
 
-    <div class="divider"></div>
+    <header class="article-header">
+      <h1 class="article-title">${title}</h1>
+      <div class="article-meta">
+        <div class="meta-pill">${emoji} <span>${tag}</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: ${readTime}</span></div>
+        <div class="meta-pill">📅 <span>${dateStr}</span></div>
+      </div>
+      <p class="article-lead">${excerpt}</p>
+    </header>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Suscribete al boletin</h2>
-      <p>Recibe articulos sobre pulque, bioconstruccion y defensa del territorio en tu correo.</p>
+    <figure class="hero-img">
+      <img src="${slug}.png" alt="${title}" />
+    </figure>
+
+    <article class="article-body">
+      ${body}
+    </article>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required>
+        <input type="email" placeholder="tu@correo.com" required />
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
-    </section>
+    </div>
 
-    <div class="divider"></div>
-
-    <!-- PIE DEL ARTICULO -->
-    <div class="article-footer">
-      <div class="chips">
-        <span class="chip">${emoji} ${tag}</span>
-      </div>
-      <div>
-        <a href="../posts.html" class="chip">← Volver a articulos</a>
-      </div>
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">${emoji} ${tag}</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:20px;width:auto">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
         <span>Guardianes del Pulque</span>
       </div>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="../posts.html">Mas articulos</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>`;
 }
@@ -566,15 +439,18 @@ async function generateArticle() {
       {
         role: "user",
         content:
-          `Escribe un articulo original sobre: ${topic}.\n\n` +
+          `Escribe un articulo original y detallado sobre: ${topic}.\n\n` +
           "Responde SOLO con un JSON valido (sin markdown ni backticks) con esta estructura:\n" +
           `{"title": "Titulo del articulo", "excerpt": "Resumen de 1 linea (max 120 chars)", "tag": "Etiqueta principal", "body": "<h2>...</h2><p>...</p>..."}\n\n` +
           `El body debe ser HTML con h2, p, ul/li y ol/li. Usa exactamente ${sectionCount} secciones con h2. ` +
+          "Cada seccion debe tener minimo 3 parrafos o un parrafo mas una lista detallada. " +
+          "Los parrafos deben ser sustanciosos (minimo 60 palabras cada uno). " +
+          "Incluye datos concretos, ejemplos especificos, cifras o pasos practicos en al menos la mitad de las secciones. " +
           "No incluyas el titulo principal en el body. No uses etiquetas style ni script. " +
-          "Sin fuentes ni referencias.\n\n" +
+          "Sin fuentes ni referencias. El articulo completo debe tener entre 900 y 1400 palabras.\n\n" +
           `Para el tag, elige el mas apropiado entre: ${VALID_TAGS.join(", ")}. ` +
           "Si ninguno encaja, puedes sugerir uno nuevo.\n\n" +
-          "Termina el articulo con un parrafo de cierre motivador.",
+          "Termina el articulo con un parrafo de cierre motivador de al menos 80 palabras.",
       },
     ],
     temperature,

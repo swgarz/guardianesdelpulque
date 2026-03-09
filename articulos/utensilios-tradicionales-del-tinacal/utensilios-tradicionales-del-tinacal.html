@@ -29,7 +29,7 @@
     "headline": "Utensilios tradicionales del tinacal",
     "description": "Acocote, tinacal y prácticas de higiene para un buen curado.",
     "image": "https://guardianesdelpulque.org/articulos/utensilios-tradicionales-del-tinacal/utensilios-tradicionales-del-tinacal.png",
-    "datePublished": "2026-03-06",
+    "datePublished": "2026-03-05",
     "author": {
       "@type": "Organization",
       "name": "Guardianes del Pulque",
@@ -58,322 +58,217 @@
     :root{
       --brand:#059669;
       --ink:#0f172a;
-      --muted:#6b7280;
+      --muted:#64748b;
       --card:#ffffff;
-      --stroke:#e5e7eb;
-      --maxw:780px;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){.container{padding:0 24px}}
 
     /* NAV */
     .nav{
       position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,.9);
+      background:transparent;
+      border-bottom:1px solid transparent;
       backdrop-filter:saturate(180%) blur(14px);
-      border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
-    .nav .row{
-      display:flex;
-      align-items:center;
+    .nav-row{
+      display:flex;align-items:center;
       justify-content:space-between;
-      padding:8px 0;
-      gap:.75rem;
+      padding:10px 0;gap:1rem;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.45rem;
-      font-weight:700;
-    }
-    .brand-logo{
-      height:34px;
-      width:auto;
-    }
-    .brand-text{
-      font-size:.98rem;
-      letter-spacing:.01em;
-    }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.4rem .8rem;
-      border-radius:999px;
-      border:1px solid var(--brand);
-      font-size:.72rem;
-      font-weight:600;
-      color:var(--brand);
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .16s ease;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
     }
-    .chip .emoji{font-size:.9rem}
-    .chip:hover{
-      background:var(--brand);
-      color:#020817;
-      transform:translateY(-1px);
-      box-shadow:0 8px 18px rgba(15,23,42,.16);
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
     }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
 
-    /* HERO */
-    .hero-article{
-      padding:24px 0 8px;
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
     }
-    .hero-inner{
-      max-width:var(--maxw);
-      margin:0 auto;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      padding:.25rem .7rem;
-      border-radius:999px;
-      background:rgba(5,150,105,.08);
-      color:#047857;
-      font-size:.7rem;
-      font-weight:600;
-      margin-bottom:.4rem;
-    }
-    .title{
-      margin:0;
-      font-size:clamp(26px,5.4vw,40px);
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-    .subtitle{
-      margin:.4rem 0 0;
-      color:var(--muted);
-      font-size:.9rem;
-      max-width:46rem;
-    }
-    .meta{
-      margin-top:.6rem;
-      font-size:.72rem;
-      color:#9ca3af;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      align-items:center;
-    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px 0 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);}
 
-    /* Cover */
-    .cover-wrap{
-      max-width:var(--maxw);
-      margin:16px auto 0;
-      border-radius:24px;
-      background:radial-gradient(circle at top,rgba(5,150,105,.12),transparent),
-                 #020817;
-      padding:14px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .cover-img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      border-radius:16px;
-    }
-
-    /* CONTENIDO */
-    .article{
-      max-width:var(--maxw);
-      margin:22px auto 40px;
-      background:var(--card);
-      border-radius:24px;
-      padding:18px 16px 20px;
-      box-shadow:0 18px 45px rgba(15,23,42,.12);
-      border:1px solid rgba(148,163,253,.1);
-    }
-    @media (min-width:700px){
-      .article{padding:26px 26px 24px;}
-    }
-    .article h2{
-      font-size:1.12rem;
-      margin:1.4rem 0 .4rem;
-    }
-    .article p{
-      margin:.45rem 0;
-      color:#374151;
-      font-size:.9rem;
-    }
-    .article ul,.article ol{
-      margin:.35rem 0 .6rem 1.2rem;
-      padding:0;
-      color:#374151;
-      font-size:.88rem;
-    }
-    .divider{
-      margin:1.3rem 0;
-      border-top:1px solid rgba(148,163,253,.22);
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
     }
 
     /* CTA */
     .cta-section{
-      margin:1.5rem 0;
-      padding:1.2rem;
-      border-radius:16px;
-      background:rgba(5,150,105,.04);
-      border:1px dashed rgba(5,150,105,.25);
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
       text-align:center;
     }
-    .cta-section h2{
-      font-size:1rem;
-      margin:0 0 .5rem;
-      color:#065f46;
-    }
-    .cta-section p{
-      font-size:.82rem;
-      color:#374151;
-      margin:0 0 .8rem;
-    }
-    .cta-form{
-      display:flex;
-      gap:.5rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-bottom:.8rem;
-    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
     .cta-form input[type="email"]{
-      padding:.45rem .75rem;
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      font-size:.82rem;
-      width:220px;
-      max-width:100%;
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
     }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
     .cta-form button{
-      padding:.45rem 1rem;
-      border:none;
-      border-radius:999px;
-      background:var(--brand);
-      color:#fff;
-      font-size:.82rem;
-      font-weight:600;
-      cursor:pointer;
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
     }
-    .cta-form button:hover{
-      background:#047857;
-    }
+    .cta-form button:hover{background:#047857;}
 
-    /* Footer articulo */
-    .article-footer{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:1.1rem;
-      font-size:.78rem;
-      color:#6b7280;
-    }
-    .article-footer .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-    }
-
-    footer{
-      border-top:1px solid rgba(15,23,42,.08);
-      padding:18px 0 22px;
-      color:#9ca3af;
-      font-size:.75rem;
-    }
-    footer .row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
   </style>
 </head>
 <body>
   <!-- NAV -->
-  <div class="nav">
-    <div class="container row">
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
       <a class="brand" href="../../index.html">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-      <div class="links">
-        <a class="chip" href="../../posts.html">Articulos</a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero-article">
-    <div class="hero-inner">
-      <div class="eyebrow">🍶 Pulque</div>
-      <h1 class="title">Utensilios tradicionales del tinacal</h1>
-      <p class="subtitle">Acocote, tinacal y prácticas de higiene para un buen curado.</p>
-      <div class="meta">
-        <span>Por Guardianes del Pulque</span>
-        <span>5 de marzo de 2026</span>
-      </div>
-    </div>
-    <div class="cover-wrap">
-      <img src="utensilios-tradicionales-del-tinacal.png" alt="Utensilios tradicionales del tinacal" class="cover-img">
+      </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO -->
-  <main class="article">
-    <h2>El tinacal: corazón de la tradición tlachiquera</h2><p>El tinacal es el lugar donde se lleva a cabo la mágica transformación del aguamiel en pulque, una bebida reconocida por su valor cultural e histórico en México. En este espacio, los utensilios tradicionales desempeñan un papel fundamental, no solo en la producción, sino también en el mantenimiento de la higiene y la calidad del producto final.</p><h2>Acocote: el maestro de la recolección</h2><p>El acocote es un utensilio esencial en el tinacal, utilizado para extraer el aguamiel del maguey. Hecho generalmente de madera, su forma alargada y curvada facilita el proceso de recolección, permitiendo obtener el líquido dulce con cuidado y precisión.</p><h2>Castañas: el arte de la fermentación</h2><p>Las castañas son recipientes fundamentales en el proceso de fermentación del pulque. Estas pueden ser de barro, madera o metal, y son utilizadas para almacenar el aguamiel mientras inicia su fermentación natural. Su diseño permite que el líquido respire, favoreciendo el desarrollo de las levaduras que transforman el aguamiel en pulque.</p><h2>Tinas de cuero: tradición y funcionalidad</h2><p>Las tinas de cuero representan una tradición milenaria en la producción de pulque. Estas tinas son elaboradas a partir de pieles curtidas, ofreciendo una solución ideal para el almacenamiento del pulque. Su versatilidad y durabilidad las convierten en herramientas indispensables para los tlachiqueros.</p><h2>Higiene en la producción del pulque</h2><p>La higiene es un aspecto crucial en la producción del pulque. Tanto el acocote como las castañas y las tinas de cuero deben ser limpiados y desinfectados adecuadamente para evitar contaminaciones. Las prácticas de higiene, que incluyen el uso de agua hervida y utensilios limpios, son parte de la tradición que garantiza la calidad del pulque.</p><h2>La tradición tlachiquera: un legado cultural</h2><p>La producción de pulque va más allá de un simple proceso agrícola; es una herencia cultural que ha sido transmitida de generación en generación. Los utensilios tradicionales del tinacal son símbolos de esta rica tradición, y cada tlachiquero aporta su conocimiento y experiencia para preservar esta práctica ancestral. A través de ellos, se mantiene viva la conexión con la tierra y la comunidad.</p><p>Sigamos valorando y cuidando nuestras tradiciones, pues en cada utensilio del tinacal se encuentra un pedazo de nuestra historia y una invitación a celebrar la riqueza cultural de México. ¡Juntos, podemos preservar y promover esta herencia invaluable!</p>
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      Utensilios tradicionales del tinacal
+    </div>
 
-    <div class="divider"></div>
+    <header class="article-header">
+      <h1 class="article-title">Utensilios tradicionales del tinacal</h1>
+      <div class="article-meta">
+        <div class="meta-pill">🍶 <span>Pulque</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 10–12 min</span></div>
+        <div class="meta-pill">📅 <span>5 de marzo de 2026</span></div>
+      </div>
+      <p class="article-lead">Acocote, tinacal y prácticas de higiene para un buen curado.</p>
+    </header>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Suscribete al boletin</h2>
-      <p>Recibe articulos sobre pulque, bioconstruccion y defensa del territorio en tu correo.</p>
+    <figure class="hero-img">
+      <img src="utensilios-tradicionales-del-tinacal.png" alt="Utensilios tradicionales del tinacal" />
+    </figure>
+
+    <article class="article-body">
+      <h2>El tinacal: corazón de la tradición tlachiquera</h2>
+<p>El tinacal es el lugar donde se lleva a cabo la mágica transformación del aguamiel en pulque, una bebida emblemática de México que ha sido parte integral de su cultura durante siglos. Este espacio, cargado de historia y tradición, es donde se reúnen elementos naturales y conocimientos ancestrales para crear un producto que no solo es apreciado por su sabor, sino también por su relevancia social y cultural. La producción de pulque en el tinacal es un proceso que requiere dedicación, habilidad y el uso de utensilios tradicionales que aseguran la calidad y autenticidad de la bebida.</p>
+<p>Los utensilios utilizados en el tinacal son más que herramientas; son extensiones de la cultura tlachiquera, un legado que ha sido transmitido de generación en generación. En este artículo, exploraremos los utensilios más significativos que componen esta tradición y cómo cada uno de ellos contribuye a la producción del pulque, un símbolo de identidad y comunidad en México. Al entender su importancia, fomentamos el reconocimiento y la preservación de esta rica cultura.</p>
+<p>Además, es importante destacar que el pulque no solo tiene un valor cultural, sino también nutricional, ya que es rico en vitaminas y minerales. Su producción es un acto que conecta al hombre con la tierra, celebrando la riqueza de los recursos naturales de México. A medida que nos adentramos en el mundo del tinacal, descubramos cómo los utensilios tradicionales fortalecen esta conexión y contribuyen a la vitalidad de las comunidades rurales.</p>
+
+<h2>Acocote: el maestro de la recolección</h2>
+<p>El acocote es uno de los utensilios más emblemáticos del tinacal, fundamental en la recolección del aguamiel. Este instrumento, generalmente hecho de madera, tiene una forma alargada y curvada que permite extraer el líquido dulce de los magueyes de manera eficiente. Su diseño es el resultado de años de práctica y adaptación, donde cada tlachiquero ha perfeccionado la técnica de recolección para maximizar la cantidad de aguamiel obtenido sin dañar la planta.</p>
+<p>La recolección del aguamiel se realiza en las primeras horas de la mañana, cuando el líquido es más abundante. El acocote se introduce en la cavidad del maguey y, con un movimiento suave y controlado, se extrae el aguamiel que fluye de la planta. Este proceso no solo requiere habilidad, sino también un profundo respeto por la naturaleza. Los tlachiqueros conocen la importancia de no sobreexplotar los magueyes, asegurando que las plantas puedan seguir produciendo aguamiel en el futuro. Estudios han demostrado que un maguey puede producir aguamiel durante varios años si se maneja adecuadamente, lo que refuerza la importancia de las prácticas sostenibles en la recolección.</p>
+<p>El acocote, además de ser una herramienta funcional, es un símbolo de la identidad tlachiquera. Cada tlachiquero puede tener su propio acocote, elaborado a mano y adaptado a su estilo de recolección. Esta personalización no solo refleja la conexión del tlachiquero con su herramienta, sino que también es un testimonio de la tradición que continúa viva en las comunidades rurales de México. La práctica de la recolección del aguamiel con un acocote es una manifestación de respeto hacia la tierra y una celebración de la cultura que rodea al pulque.</p>
+
+<h2>Castañas: el arte de la fermentación</h2>
+<p>Las castañas son recipientes esenciales en el proceso de fermentación del pulque, y su elección y uso son fundamentales para asegurar un producto de calidad. Estas castañas pueden estar hechas de barro, madera o metal, dependiendo de la tradición local y los recursos disponibles. Su principal función es almacenar el aguamiel mientras inicia su fermentación natural, un proceso que transforma el dulce líquido en la bebida alcohólica que conocemos como pulque.</p>
+<p>El diseño de las castañas permite que el líquido respire, favoreciendo el desarrollo de las levaduras y bacterias que realizan la fermentación. Este proceso es crucial, ya que la calidad del pulque depende en gran medida de las condiciones en las que se fermenta. Las castañas de barro, por ejemplo, son apreciadas por su capacidad de regular la temperatura y la humedad, creando un ambiente ideal para la fermentación. Por otro lado, las castañas de metal pueden aportar un sabor diferente al producto final. Cada tlachiquero tiene sus preferencias y técnicas, lo que resulta en una diversidad de sabores y aromas en el pulque que se produce en diferentes regiones.</p>
+<p>Además, la higiene en el uso de las castañas es vital para evitar contaminaciones que puedan afectar el proceso de fermentación. Es recomendable que después de cada uso, las castañas sean limpiadas con agua caliente y, en algunos casos, desinfectadas con soluciones naturales. Este cuidado no solo garantiza un pulque de calidad, sino que también refleja la dedicación y el compromiso de los tlachiqueros con su arte. La fermentación del pulque es un arte que combina ciencia y tradición, y las castañas son sus aliadas más importantes.</p>
+
+<h2>Tinas de cuero: tradición y funcionalidad</h2>
+<p>Las tinas de cuero representan una de las tradiciones más antiguas en la producción de pulque. Estas tinas, elaboradas a partir de pieles curtidas, son utilizadas para el almacenamiento y transporte del pulque, y su diseño ha sido perfeccionado con el tiempo para cumplir con las necesidades de los tlachiqueros. La versatilidad y durabilidad de las tinas de cuero las convierten en herramientas indispensables en el tinacal, donde la calidad del pulque es primordial.</p>
+<p>Una de las características más notables de las tinas de cuero es su capacidad para mantener el pulque fresco durante más tiempo. La piel permite cierta transpiración, lo que ayuda a regular la temperatura del líquido y evita que se estropee rápidamente. Esto es especialmente importante en climas cálidos, donde el pulque puede fermentar en exceso si no se almacena adecuadamente. Las tinas de cuero también son aptas para el transporte, permitiendo que el pulque llegue a diferentes mercados y comunidades, lo que contribuye a la circulación de esta bebida tradicional.</p>
+<p>Además, la elaboración de tinas de cuero es un arte en sí mismo. Cada artesano tiene su propia técnica y estilo, lo que resulta en piezas únicas que reflejan la cultura local. Muchas comunidades aún preservan el conocimiento de los curtidores, quienes utilizan métodos tradicionales para trabajar la piel, garantizando así la calidad del producto final. Promover la producción y el uso de tinas de cuero no solo apoya a la economía local, sino que también ayuda a mantener viva una tradición que es parte del patrimonio cultural de México. La combinación de funcionalidad y estética en las tinas de cuero es un testimonio del ingenio y la creatividad de los tlachiqueros.</p>
+
+<h2>Higiene en la producción del pulque</h2>
+<p>La higiene es un aspecto crucial en la producción del pulque, ya que un producto contaminado puede afectar la salud de quienes lo consumen y la reputación del tlachiquero. Desde la recolección del aguamiel hasta el embotellado del pulque, cada paso del proceso debe llevarse a cabo con estrictas normas de limpieza. Tanto el acocote, las castañas como las tinas de cuero deben ser limpiados y desinfectados adecuadamente para evitar contaminaciones.</p>
+<p>Para garantizar la higiene, es recomendable seguir un protocolo que incluye el uso de agua caliente para limpiar todos los utensilios. Además, algunos tlachiqueros optan por utilizar soluciones naturales, como el jugo de limón o el vinagre, que poseen propiedades antibacteriales. La limpieza de los utensilios no solo es una cuestión de salud; también es un reflejo del respeto hacia la bebida y la tradición. Los tlachiqueros comprenden que un pulque de calidad es el resultado de un proceso cuidadoso, donde la higiene juega un papel fundamental.</p>
+<p>Además, es importante señalar que la educación en prácticas de higiene se ha vuelto esencial en las comunidades productoras de pulque. Talleres y capacitaciones sobre la importancia de la limpieza y el manejo higiénico de los alimentos están ayudando a los tlachiqueros a mejorar la calidad de su producto y a aumentar su competitividad en el mercado. Con un enfoque en la higiene, los tlachiqueros no solo protegen su salud y la de sus consumidores, sino que también contribuyen a la valoración de esta bebida tradicional y a la preservación de su cultura.</p>
+
+<h2>La tradición tlachiquera: un legado cultural</h2>
+<p>La producción de pulque trasciende la mera actividad agrícola; es una herencia cultural que ha sido transmitida de generación en generación. Este legado se manifiesta en cada uno de los utensilios tradicionales del tinacal, que son símbolos de la rica tradición tlachiquera. Cada tlachiquero aporta su conocimiento y experiencia, asegurando que esta práctica ancestral no solo se mantenga viva, sino que también evolucione con el tiempo.</p>
+<p>La conexión entre el tlachiquero y su entorno es profunda, ya que la producción de pulque está intrínsecamente ligada a la tierra y a la comunidad. Esta bebida ha sido utilizada en rituales, celebraciones y reuniones sociales, consolidando la identidad cultural de los pueblos donde se produce. En México, el pulque es más que una bebida; es un elemento vital de la vida comunitaria, que refleja las costumbres, valores y tradiciones de sus habitantes.</p>
+<p>Es fundamental que las nuevas generaciones comprendan la importancia de mantener y promover esta tradición. A través de iniciativas comunitarias y programas educativos, se puede fomentar el interés por la producción de pulque y la preservación de sus utensilios tradicionales. Cada vez que un tlachiquero comparte su experiencia y conocimiento, se contribuye a mantener viva la esencia de la cultura tlachiquera y a transmitirla a futuras generaciones. Este legado cultural merece ser valorado y celebrado, pues en él se encuentra una parte significativa de nuestra historia.</p>
+
+<h2>El pulque en la actualidad: un renacer cultural</h2>
+<p>En los últimos años, el pulque ha experimentado un renacer en México, donde cada vez más personas están redescubriendo esta bebida tradicional. A medida que el interés por lo orgánico y lo local crece, el pulque ha encontrado su lugar en los corazones de nuevos consumidores, que valoran su historia y sus propiedades. Las ferias del pulque, los festivales y las exposiciones culturales han contribuido a la promoción de esta bebida, convirtiéndola en un símbolo de orgullo nacional.</p>
+<p>Además, el pulque ha comenzado a ser integrado en la gastronomía contemporánea, siendo utilizado en cócteles y platillos innovadores que resaltan su versatilidad. Restaurantes y bares han empezado a ofrecer pulque en sus menús, presentándolo como una alternativa saludable y exótica. Esta tendencia no solo beneficia a los tlachiqueros, sino que también impulsa la economía rural y promueve el consumo de productos locales.</p>
+<p>Sin embargo, es crucial recordar que el renacer del pulque debe ir acompañado de un compromiso con la sostenibilidad y la preservación de las tradiciones. Al apoyar a los tlachiqueros y reconocer el valor cultural de su trabajo, contribuimos a mantener viva esta herencia que ha formado parte de México durante siglos. Es responsabilidad de todos nosotros valorar y promover el pulque como un símbolo de nuestra identidad y conexión con la tierra.</p>
+
+<h2>Cierre: preservando un legado invaluable</h2>
+<p>La tradición tlachiquera y la producción de pulque son un reflejo de la rica cultura de México, un legado que merece ser cuidado y promovido. A través de los utensilios tradicionales, como el acocote, las castañas y las tinas de cuero, se narra una historia de respeto hacia la naturaleza y la comunidad. Cada tlachiquero, con su dedicación y habilidad, se convierte en un guardián de esta herencia cultural, asegurando que las futuras generaciones puedan disfrutar y celebrar el pulque. Al valorar y reconocer la importancia de estas tradiciones, no solo estamos preservando nuestra historia, sino también fortaleciendo nuestras comunidades y fomentando un futuro más sostenible. ¡Celebremos juntos la riqueza de nuestra cultura y trabajemos para que el pulque siga siendo un símbolo de identidad y unidad en México!</p>
+    </article>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required>
+        <input type="email" placeholder="tu@correo.com" required />
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
-    </section>
+    </div>
 
-    <div class="divider"></div>
-
-    <!-- PIE DEL ARTICULO -->
-    <div class="article-footer">
-      <div class="chips">
-        <span class="chip">🍶 Pulque</span>
-      </div>
-      <div>
-        <a href="../../posts.html" class="chip">← Volver a articulos</a>
-      </div>
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🍶 Pulque</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:20px;width:auto">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
         <span>Guardianes del Pulque</span>
       </div>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="../../posts.html">Mas articulos</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>

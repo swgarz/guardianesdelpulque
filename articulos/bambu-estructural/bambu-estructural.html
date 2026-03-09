@@ -29,7 +29,7 @@
     "headline": "Bambú estructural",
     "description": "Selección, uniones y tratamientos para larga vida útil.",
     "image": "https://guardianesdelpulque.org/articulos/bambu-estructural/bambu-estructural.png",
-    "datePublished": "2026-03-06",
+    "datePublished": "2026-03-05",
     "author": {
       "@type": "Organization",
       "name": "Guardianes del Pulque",
@@ -58,322 +58,213 @@
     :root{
       --brand:#059669;
       --ink:#0f172a;
-      --muted:#6b7280;
+      --muted:#64748b;
       --card:#ffffff;
-      --stroke:#e5e7eb;
-      --maxw:780px;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){.container{padding:0 24px}}
 
     /* NAV */
     .nav{
       position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,.9);
+      background:transparent;
+      border-bottom:1px solid transparent;
       backdrop-filter:saturate(180%) blur(14px);
-      border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
-    .nav .row{
-      display:flex;
-      align-items:center;
+    .nav-row{
+      display:flex;align-items:center;
       justify-content:space-between;
-      padding:8px 0;
-      gap:.75rem;
+      padding:10px 0;gap:1rem;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.45rem;
-      font-weight:700;
-    }
-    .brand-logo{
-      height:34px;
-      width:auto;
-    }
-    .brand-text{
-      font-size:.98rem;
-      letter-spacing:.01em;
-    }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.4rem .8rem;
-      border-radius:999px;
-      border:1px solid var(--brand);
-      font-size:.72rem;
-      font-weight:600;
-      color:var(--brand);
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .16s ease;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
     }
-    .chip .emoji{font-size:.9rem}
-    .chip:hover{
-      background:var(--brand);
-      color:#020817;
-      transform:translateY(-1px);
-      box-shadow:0 8px 18px rgba(15,23,42,.16);
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
     }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
 
-    /* HERO */
-    .hero-article{
-      padding:24px 0 8px;
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
     }
-    .hero-inner{
-      max-width:var(--maxw);
-      margin:0 auto;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      padding:.25rem .7rem;
-      border-radius:999px;
-      background:rgba(5,150,105,.08);
-      color:#047857;
-      font-size:.7rem;
-      font-weight:600;
-      margin-bottom:.4rem;
-    }
-    .title{
-      margin:0;
-      font-size:clamp(26px,5.4vw,40px);
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-    .subtitle{
-      margin:.4rem 0 0;
-      color:var(--muted);
-      font-size:.9rem;
-      max-width:46rem;
-    }
-    .meta{
-      margin-top:.6rem;
-      font-size:.72rem;
-      color:#9ca3af;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      align-items:center;
-    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px 0 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);}
 
-    /* Cover */
-    .cover-wrap{
-      max-width:var(--maxw);
-      margin:16px auto 0;
-      border-radius:24px;
-      background:radial-gradient(circle at top,rgba(5,150,105,.12),transparent),
-                 #020817;
-      padding:14px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .cover-img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      border-radius:16px;
-    }
-
-    /* CONTENIDO */
-    .article{
-      max-width:var(--maxw);
-      margin:22px auto 40px;
-      background:var(--card);
-      border-radius:24px;
-      padding:18px 16px 20px;
-      box-shadow:0 18px 45px rgba(15,23,42,.12);
-      border:1px solid rgba(148,163,253,.1);
-    }
-    @media (min-width:700px){
-      .article{padding:26px 26px 24px;}
-    }
-    .article h2{
-      font-size:1.12rem;
-      margin:1.4rem 0 .4rem;
-    }
-    .article p{
-      margin:.45rem 0;
-      color:#374151;
-      font-size:.9rem;
-    }
-    .article ul,.article ol{
-      margin:.35rem 0 .6rem 1.2rem;
-      padding:0;
-      color:#374151;
-      font-size:.88rem;
-    }
-    .divider{
-      margin:1.3rem 0;
-      border-top:1px solid rgba(148,163,253,.22);
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
     }
 
     /* CTA */
     .cta-section{
-      margin:1.5rem 0;
-      padding:1.2rem;
-      border-radius:16px;
-      background:rgba(5,150,105,.04);
-      border:1px dashed rgba(5,150,105,.25);
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
       text-align:center;
     }
-    .cta-section h2{
-      font-size:1rem;
-      margin:0 0 .5rem;
-      color:#065f46;
-    }
-    .cta-section p{
-      font-size:.82rem;
-      color:#374151;
-      margin:0 0 .8rem;
-    }
-    .cta-form{
-      display:flex;
-      gap:.5rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-bottom:.8rem;
-    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
     .cta-form input[type="email"]{
-      padding:.45rem .75rem;
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      font-size:.82rem;
-      width:220px;
-      max-width:100%;
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
     }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
     .cta-form button{
-      padding:.45rem 1rem;
-      border:none;
-      border-radius:999px;
-      background:var(--brand);
-      color:#fff;
-      font-size:.82rem;
-      font-weight:600;
-      cursor:pointer;
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
     }
-    .cta-form button:hover{
-      background:#047857;
-    }
+    .cta-form button:hover{background:#047857;}
 
-    /* Footer articulo */
-    .article-footer{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:1.1rem;
-      font-size:.78rem;
-      color:#6b7280;
-    }
-    .article-footer .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-    }
-
-    footer{
-      border-top:1px solid rgba(15,23,42,.08);
-      padding:18px 0 22px;
-      color:#9ca3af;
-      font-size:.75rem;
-    }
-    footer .row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
   </style>
 </head>
 <body>
   <!-- NAV -->
-  <div class="nav">
-    <div class="container row">
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
       <a class="brand" href="../../index.html">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-      <div class="links">
-        <a class="chip" href="../../posts.html">Articulos</a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero-article">
-    <div class="hero-inner">
-      <div class="eyebrow">🏗️ Bioconstruccion</div>
-      <h1 class="title">Bambú estructural</h1>
-      <p class="subtitle">Selección, uniones y tratamientos para larga vida útil.</p>
-      <div class="meta">
-        <span>Por Guardianes del Pulque</span>
-        <span>5 de marzo de 2026</span>
-      </div>
-    </div>
-    <div class="cover-wrap">
-      <img src="bambu-estructural.png" alt="Bambú estructural" class="cover-img">
+      </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO -->
-  <main class="article">
-    <h2>Introducción al Bambú Estructural</h2><p>El bambú ha sido utilizado durante siglos como un material de construcción versátil y sostenible en muchas culturas, especialmente en países de Asia y América Latina. Su resistencia, flexibilidad y rapidez de crecimiento lo convierten en una opción atractiva para la construcción moderna.</p><h2>Selección de Cañas de Bambú</h2><p>Elegir la caña de bambú adecuada es crucial para asegurar la integridad estructural de un proyecto. Aquí algunos puntos a considerar:</p><ul><li>Edad de la caña: debe tener al menos 3 años para asegurar su robustez.</li><li>Diámetro: cañas más gruesas ofrecen mayor resistencia.</li><li>Rectitud: seleccionar cañas rectas facilita la construcción.</li><li>Textura: la superficie debe ser uniforme, sin nudos ni imperfecciones mayores.</li></ul><h2>Tipos de Uniones en Estructuras de Bambú</h2><p>Las uniones son puntos críticos en la estructura. Existen varias técnicas de unión que se pueden emplear:</p><ol><li>Uniones mecánicas: uso de tornillos y pernos para asegurar la unión.</li><li>Uniones con cuerda: técnicas tradicionales que utilizan fibras naturales o sintéticas.</li><li>Uniones por mortaja y espiga: ofrecen un gran soporte y son estéticamente agradables.</li></ol><h2>Tratamientos de Preservación del Bambú</h2><p>El tratamiento adecuado del bambú es fundamental para prolongar su vida útil. Existen varios métodos:</p><ul><li>Tratamiento con sales de boro: protege contra insectos y hongos.</li><li>Inmersión en soluciones de preservantes: aumenta la durabilidad.</li><li>Secado al sol: reduce la humedad y evita el desarrollo de plagas.</li></ul><h2>Guadua: Una Especie Especial de Bambú</h2><p>La guadua es una de las especies de bambú más utilizadas en la construcción debido a su robustez. Algunas características distintivas incluyen:</p><ul><li>Altura: puede crecer hasta 30 metros, proporcionando cañas largas.</li><li>Diámetro: sus cañas pueden alcanzar más de 15 cm, lo que las hace ideales para estructuras.</li><li>Flexibilidad: la guadua es conocida por soportar cargas pesadas y resistir movimientos sísmicos.</li></ul><h2>Ejemplos de Aplicación del Bambú Estructural</h2><p>El uso del bambú se ha expandido en proyectos modernos, tales como:</p><ol><li>Edificaciones ecológicas: casas que aprovechan su bajo impacto ambiental.</li><li>Puentes: estructuras ligeras que se adaptan a diferentes terrenos.</li><li>Movilidad: instalaciones temporales en eventos culturales y ferias.</li></ol><p>El bambú estructural no solo representa una opción sostenible, sino que también brinda la oportunidad de redescubrir técnicas tradicionales de construcción. A medida que avanzamos hacia un futuro más consciente del medio ambiente, el bambú podría liderar el camino en la arquitectura sostenible. Con la combinación correcta de conocimiento y habilidad, ¡las posibilidades son infinitas!</p>
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      Bambú estructural
+    </div>
 
-    <div class="divider"></div>
+    <header class="article-header">
+      <h1 class="article-title">Bambú estructural</h1>
+      <div class="article-meta">
+        <div class="meta-pill">🏗️ <span>Bioconstruccion</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 8–10 min</span></div>
+        <div class="meta-pill">📅 <span>5 de marzo de 2026</span></div>
+      </div>
+      <p class="article-lead">Selección, uniones y tratamientos para larga vida útil.</p>
+    </header>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Suscribete al boletin</h2>
-      <p>Recibe articulos sobre pulque, bioconstruccion y defensa del territorio en tu correo.</p>
+    <figure class="hero-img">
+      <img src="bambu-estructural.png" alt="Bambú estructural" />
+    </figure>
+
+    <article class="article-body">
+      <h2>Introducción al Bambú Estructural</h2>
+<p>El bambú ha sido un material fundamental en la construcción de muchas culturas a lo largo de la historia, siendo particularmente valorado en regiones de Asia y América Latina. Este recurso natural, que puede crecer hasta un metro en un solo día, combina características únicas que lo hacen ideal para la bioconstrucción. Su resistencia es comparable a la del acero, mientras que su flexibilidad permite soportar diferentes tipos de carga y movimientos sísmicos. En un mundo donde la sostenibilidad se vuelve cada vez más importante, el bambú emerge como una solución viable y ecológica para abordar nuestras necesidades arquitectónicas modernas.</p>
+<p>Además de ser un recurso renovable, el bambú también contribuye a la reducción de la huella de carbono. Cada hectárea de bambú puede absorber hasta 30 toneladas de dióxido de carbono anualmente, lo que lo convierte en un aliado en la lucha contra el cambio climático. En México, donde la biodiversidad es rica y diversa, el uso del bambú puede ser una oportunidad para fomentar el desarrollo sostenible en comunidades rurales y urbanas. Este artículo explora los aspectos clave del bambú estructural, desde su selección hasta las técnicas de construcción, así como su potencial en proyectos contemporáneos.</p>
+<p>El uso del bambú no se limita a la construcción de viviendas, sino que también se extiende a diversas aplicaciones, incluyendo puentes y estructuras temporales. A medida que se profundiza en este tema, es evidente que el bambú no solo representa una alternativa viable a los materiales de construcción convencionales, sino que también permite la revalorización de técnicas tradicionales de edificación que han perdurado a lo largo del tiempo. Con el conocimiento adecuado y una aproximación innovadora, el bambú tiene el potencial de revolucionar la forma en que construimos.</p>
+
+<h2>Selección de Cañas de Bambú</h2>
+<p>La elección de la caña de bambú adecuada es un paso crítico en cualquier proyecto de construcción. Un aspecto fundamental a considerar es la edad de la caña; se recomienda utilizar cañas que tengan al menos tres años de edad. Esto se debe a que la celulosa y la lignina, componentes que otorgan resistencia, alcanzan su máxima calidad en este periodo. Las cañas más jóvenes tienden a ser más flexibles, pero carecen de la robustez necesaria para soportar cargas estructurales significativas.</p>
+<p>Otro factor a evaluar es el diámetro de la caña. Las cañas más gruesas, que generalmente superan los 8 cm de diámetro, son preferibles para construcciones que requieren mayor resistencia. Por ejemplo, en la construcción de techos o estructuras de soporte, las cañas con un diámetro adecuado proporcionan la estabilidad necesaria frente a diversas condiciones climáticas. Además, es importante evaluar la rectitud de las cañas; aquellas que son rectas son más fáciles de trabajar y permiten un ensamblaje más eficiente de la estructura.</p>
+<p>La textura de la caña también juega un papel crucial en la selección. Es preferible optar por cañas que presenten una superficie uniforme, sin nudos ni imperfecciones significativas. Los nudos son puntos de debilidad que pueden comprometer la integridad de la estructura. En este sentido, es útil realizar una inspección minuciosa antes de la compra y, si es posible, adquirir la caña directamente de productores locales, quienes pueden ofrecer información sobre la calidad y el tratamiento de sus productos.</p>
+
+<h2>Tipos de Uniones en Estructuras de Bambú</h2>
+<p>Las uniones son puntos críticos en la construcción con bambú y su elección puede influir significativamente en la resistencia y durabilidad de la estructura. Existen diversas técnicas de unión que se pueden emplear, cada una con sus características y ventajas. Las uniones mecánicas, por ejemplo, utilizan tornillos y pernos para asegurar partes de la estructura. Este método es especialmente útil en construcciones que requieren un ensamblaje rápido y seguro, facilitando la instalación sin comprometer la estabilidad.</p>
+<p>Por otro lado, las uniones con cuerda son técnicas tradicionales que utilizan fibras naturales o sintéticas. Este método, que puede parecer simple, ofrece una gran flexibilidad y adaptabilidad a las condiciones del entorno. En algunas regiones, se utilizan cuerdas de yute o sisal, que son biodegradables y contribuyen a la sostenibilidad del proyecto. Esta técnica no solo es efectiva, sino que también aporta un toque estético a la construcción, resaltando la belleza del bambú.</p>
+<p>Las uniones por mortaja y espiga son otra opción que ofrece un gran soporte. Este método implica crear un ensamble en el que una parte se inserta en otra, lo que proporciona una resistencia adicional. Es común en estructuras que deben soportar cargas pesadas o en aplicaciones donde se anticipan movimientos sísmicos. La elección del tipo de unión dependerá de las especificaciones del proyecto y de las condiciones climáticas del lugar, por lo que es recomendable consultar con expertos en construcción de bambú antes de tomar una decisión.</p>
+
+<h2>Tratamientos de Preservación del Bambú</h2>
+<p>El tratamiento adecuado del bambú es esencial para garantizar su durabilidad y prolongar su vida útil. Sin un tratamiento eficaz, el bambú puede ser susceptible a insectos, hongos y otros agentes dañinos. Uno de los métodos más comunes es el tratamiento con sales de boro, que actúan como un fungicida e insecticida natural. Este tratamiento no solo protege la caña, sino que también es relativamente fácil de aplicar, lo que lo convierte en una opción accesible para muchas comunidades.</p>
+<p>Otro método efectivo es la inmersión en soluciones de preservantes. Este proceso consiste en sumergir las cañas en una solución química que penetra la fibra y la protege de plagas y humedad. Es importante seguir las instrucciones del fabricante y usar guantes y equipo de protección durante esta aplicación. Además, es recomendable realizar este tratamiento en un espacio bien ventilado para evitar la inhalación de vapores tóxicos.</p>
+<p>El secado al sol es un método natural que se utiliza frecuentemente en regiones donde el clima lo permite. Este procedimiento no solo reduce la humedad de la caña, sino que también ayuda a evitar el desarrollo de plagas. Para llevar a cabo este tratamiento, se deben colocar las cañas en un lugar donde reciban luz directa del sol durante varios días, asegurándose de que estén bien ventiladas. Este método, aunque simple, es altamente efectivo y puede ser realizado por los propios habitantes de la comunidad, fomentando así la autosuficiencia y el conocimiento local.</p>
+
+<h2>Guadua: Una Especie Especial de Bambú</h2>
+<p>La guadua es una de las especies de bambú más reconocidas y utilizadas en la construcción, especialmente en países de América Latina. Se caracteriza por su impresionante altura, que puede alcanzar hasta 30 metros, lo que proporciona cañas largas y versátiles para diversas aplicaciones. Además, su diámetro puede superar los 15 cm, lo que las hace ideales para estructuras que requieren una gran resistencia y estabilidad.</p>
+<p>Una de las propiedades más destacadas de la guadua es su flexibilidad, que permite que las estructuras soporten cargas pesadas sin comprometer su integridad. Esto es especialmente importante en áreas propensas a terremotos, donde la capacidad de flexionarse y adaptarse a las fuerzas sísmicas puede marcar la diferencia entre una edificación segura y una que se vea comprometida. En Colombia, por ejemplo, se han construido edificios enteros utilizando guadua, demostrando su eficacia y versatilidad en la arquitectura contemporánea.</p>
+<p>La guadua también es apreciada por su capacidad de crecimiento rápido y su resistencia a plagas, lo que la convierte en una opción sostenible para la construcción. Con un manejo adecuado, las plantaciones de guadua pueden ser renovadas cada pocos años, asegurando un suministro constante de material. Esto no solo contribuye a la economía local, sino que también promueve prácticas agrícolas sostenibles que benefician al medio ambiente y a las comunidades rurales.</p>
+
+<h2>Ejemplos de Aplicación del Bambú Estructural</h2>
+<p>El uso del bambú estructural se ha expandido en todo el mundo, y hay numerosos ejemplos de su aplicación en proyectos modernos. Uno de los más destacados son las edificaciones ecológicas, que buscan minimizar el impacto ambiental. En México, se han desarrollado casas de bambú que no solo son estéticamente atractivas, sino que también son eficientes energéticamente, utilizando la temperatura natural del bambú para mantener un clima interior adecuado. Estas construcciones son ideales para climas cálidos, donde la ventilación natural puede reducir la necesidad de sistemas de refrigeración artificiales.</p>
+<p>Los puentes de bambú son otra aplicación innovadora. Estos puentes ligeros se adaptan a diferentes terrenos y pueden ser construidos de forma rápida y eficiente. En zonas rurales donde el acceso a materiales de construcción tradicionales puede ser limitado, los puentes de bambú ofrecen una solución viable y económica que conecta comunidades y mejora la infraestructura local. En Colombia, varios proyectos han demostrado que los puentes de guadua son capaces de soportar el paso de vehículos pesados, desafiando la percepción de que el bambú es un material débil.</p>
+<p>Finalmente, el uso de bambú en instalaciones temporales, como en eventos culturales y ferias, ha demostrado su versatilidad. Estas estructuras son fáciles de montar y desmontar, lo que permite la reutilización de materiales en diferentes eventos. En festivales como el Festival Internacional de Cine de Guadalajara, se han utilizado instalaciones de bambú para crear espacios artísticos, impulsando así el uso de este material en contextos creativos y culturales. Esto no solo promueve el bambú como una opción de construcción, sino que también resalta su capacidad de ser parte de expresiones artísticas contemporáneas.</p>
+
+<h2>Conclusión</h2>
+<p>El bambú estructural representa una alternativa innovadora y sostenible en el campo de la construcción. Su combinación de resistencia, flexibilidad y crecimiento rápido lo posiciona como un material clave para abordar los desafíos del futuro en el ámbito arquitectónico. A medida que las comunidades buscan soluciones que respeten el medio ambiente, el bambú se destaca no solo como un recurso renovable, sino también como un puente hacia la revalorización de técnicas tradicionales que han perdurado a lo largo de la historia.</p>
+<p>La adopción del bambú en la construcción no solo puede contribuir a una economía más sostenible, sino que también fomenta la autosuficiencia y el fortalecimiento de las comunidades locales. Con el conocimiento adecuado y la capacitación, las posibilidades de crear estructuras hermosas y funcionales son infinitas. Al integrar el bambú en nuestras prácticas de construcción, estamos no solo construyendo edificaciones, sino también tejiendo un futuro más verde y respetuoso con nuestro entorno. ¡Es hora de considerar el bambú como una opción viable y valiosa para el desarrollo de nuestras comunidades!</p>
+    </article>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required>
+        <input type="email" placeholder="tu@correo.com" required />
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
-    </section>
+    </div>
 
-    <div class="divider"></div>
-
-    <!-- PIE DEL ARTICULO -->
-    <div class="article-footer">
-      <div class="chips">
-        <span class="chip">🏗️ Bioconstruccion</span>
-      </div>
-      <div>
-        <a href="../../posts.html" class="chip">← Volver a articulos</a>
-      </div>
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🏗️ Bioconstruccion</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:20px;width:auto">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
         <span>Guardianes del Pulque</span>
       </div>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="../../posts.html">Mas articulos</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>

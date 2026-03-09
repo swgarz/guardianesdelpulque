@@ -29,7 +29,7 @@
     "headline": "Humedales urbanos: manual de bolsillo",
     "description": "Captación, filtración y biodiversidad en pequeñas escalas.",
     "image": "https://guardianesdelpulque.org/articulos/humedales-urbanos-manual-de-bolsillo/humedales-urbanos-manual-de-bolsillo.png",
-    "datePublished": "2026-03-06",
+    "datePublished": "2026-03-05",
     "author": {
       "@type": "Organization",
       "name": "Guardianes del Pulque",
@@ -58,322 +58,213 @@
     :root{
       --brand:#059669;
       --ink:#0f172a;
-      --muted:#6b7280;
+      --muted:#64748b;
       --card:#ffffff;
-      --stroke:#e5e7eb;
-      --maxw:780px;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){.container{padding:0 24px}}
 
     /* NAV */
     .nav{
       position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,.9);
+      background:transparent;
+      border-bottom:1px solid transparent;
       backdrop-filter:saturate(180%) blur(14px);
-      border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
-    .nav .row{
-      display:flex;
-      align-items:center;
+    .nav-row{
+      display:flex;align-items:center;
       justify-content:space-between;
-      padding:8px 0;
-      gap:.75rem;
+      padding:10px 0;gap:1rem;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.45rem;
-      font-weight:700;
-    }
-    .brand-logo{
-      height:34px;
-      width:auto;
-    }
-    .brand-text{
-      font-size:.98rem;
-      letter-spacing:.01em;
-    }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.4rem .8rem;
-      border-radius:999px;
-      border:1px solid var(--brand);
-      font-size:.72rem;
-      font-weight:600;
-      color:var(--brand);
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .16s ease;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
     }
-    .chip .emoji{font-size:.9rem}
-    .chip:hover{
-      background:var(--brand);
-      color:#020817;
-      transform:translateY(-1px);
-      box-shadow:0 8px 18px rgba(15,23,42,.16);
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
     }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
 
-    /* HERO */
-    .hero-article{
-      padding:24px 0 8px;
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
     }
-    .hero-inner{
-      max-width:var(--maxw);
-      margin:0 auto;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      padding:.25rem .7rem;
-      border-radius:999px;
-      background:rgba(5,150,105,.08);
-      color:#047857;
-      font-size:.7rem;
-      font-weight:600;
-      margin-bottom:.4rem;
-    }
-    .title{
-      margin:0;
-      font-size:clamp(26px,5.4vw,40px);
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-    .subtitle{
-      margin:.4rem 0 0;
-      color:var(--muted);
-      font-size:.9rem;
-      max-width:46rem;
-    }
-    .meta{
-      margin-top:.6rem;
-      font-size:.72rem;
-      color:#9ca3af;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      align-items:center;
-    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px 0 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);}
 
-    /* Cover */
-    .cover-wrap{
-      max-width:var(--maxw);
-      margin:16px auto 0;
-      border-radius:24px;
-      background:radial-gradient(circle at top,rgba(5,150,105,.12),transparent),
-                 #020817;
-      padding:14px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .cover-img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      border-radius:16px;
-    }
-
-    /* CONTENIDO */
-    .article{
-      max-width:var(--maxw);
-      margin:22px auto 40px;
-      background:var(--card);
-      border-radius:24px;
-      padding:18px 16px 20px;
-      box-shadow:0 18px 45px rgba(15,23,42,.12);
-      border:1px solid rgba(148,163,253,.1);
-    }
-    @media (min-width:700px){
-      .article{padding:26px 26px 24px;}
-    }
-    .article h2{
-      font-size:1.12rem;
-      margin:1.4rem 0 .4rem;
-    }
-    .article p{
-      margin:.45rem 0;
-      color:#374151;
-      font-size:.9rem;
-    }
-    .article ul,.article ol{
-      margin:.35rem 0 .6rem 1.2rem;
-      padding:0;
-      color:#374151;
-      font-size:.88rem;
-    }
-    .divider{
-      margin:1.3rem 0;
-      border-top:1px solid rgba(148,163,253,.22);
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
     }
 
     /* CTA */
     .cta-section{
-      margin:1.5rem 0;
-      padding:1.2rem;
-      border-radius:16px;
-      background:rgba(5,150,105,.04);
-      border:1px dashed rgba(5,150,105,.25);
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
       text-align:center;
     }
-    .cta-section h2{
-      font-size:1rem;
-      margin:0 0 .5rem;
-      color:#065f46;
-    }
-    .cta-section p{
-      font-size:.82rem;
-      color:#374151;
-      margin:0 0 .8rem;
-    }
-    .cta-form{
-      display:flex;
-      gap:.5rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-bottom:.8rem;
-    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
     .cta-form input[type="email"]{
-      padding:.45rem .75rem;
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      font-size:.82rem;
-      width:220px;
-      max-width:100%;
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
     }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
     .cta-form button{
-      padding:.45rem 1rem;
-      border:none;
-      border-radius:999px;
-      background:var(--brand);
-      color:#fff;
-      font-size:.82rem;
-      font-weight:600;
-      cursor:pointer;
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
     }
-    .cta-form button:hover{
-      background:#047857;
-    }
+    .cta-form button:hover{background:#047857;}
 
-    /* Footer articulo */
-    .article-footer{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:1.1rem;
-      font-size:.78rem;
-      color:#6b7280;
-    }
-    .article-footer .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-    }
-
-    footer{
-      border-top:1px solid rgba(15,23,42,.08);
-      padding:18px 0 22px;
-      color:#9ca3af;
-      font-size:.75rem;
-    }
-    footer .row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
   </style>
 </head>
 <body>
   <!-- NAV -->
-  <div class="nav">
-    <div class="container row">
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
       <a class="brand" href="../../index.html">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-      <div class="links">
-        <a class="chip" href="../../posts.html">Articulos</a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero-article">
-    <div class="hero-inner">
-      <div class="eyebrow">🌿 Naturaleza</div>
-      <h1 class="title">Humedales urbanos: manual de bolsillo</h1>
-      <p class="subtitle">Captación, filtración y biodiversidad en pequeñas escalas.</p>
-      <div class="meta">
-        <span>Por Guardianes del Pulque</span>
-        <span>5 de marzo de 2026</span>
-      </div>
-    </div>
-    <div class="cover-wrap">
-      <img src="humedales-urbanos-manual-de-bolsillo.png" alt="Humedales urbanos: manual de bolsillo" class="cover-img">
+      </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO -->
-  <main class="article">
-    <h2>Introducción a los Humedales Urbanos</h2><p>Los humedales artificiales en entornos urbanos son como oasis dentro del bullicio de la vida citadina. Estas zonas de captación pluvial no solo ayudan a mitigar el impacto de las lluvias torrenciales, sino que también actúan como filtros naturales que devuelven a la tierra parte de lo que le pertenece. En este manual de bolsillo, exploraremos su importancia y diseño a pequeña escala.</p><h2>Beneficios de los Humedales Artificiales</h2><ul><li><strong>Filtración Natural:</strong> Purifican el agua, eliminando contaminantes y sedimentos.</li><li><strong>Captación Pluvial:</strong> Ayudan a gestionar el agua de lluvia, reduciendo inundaciones.</li><li><strong>Biodiversidad Urbana:</strong> Proveen hábitat para flora y fauna local, enriqueciendo el ecosistema.</li><li><strong>Espacios Verdes:</strong> Embellecen el paisaje urbano y mejoran la calidad de vida.</li></ul><h2>Diseño Efectivo de Humedales Urbanos</h2><p>La creación de humedales urbanos debe considerar factores como el espacio disponible, la calidad del suelo y el tipo de vegetación. Un diseño a pequeña escala puede ser implementado en:</p><ol><li>Jardines comunitarios.</li><li>Parques escolares.</li><li>Techos verdes.</li><li>Áreas recreativas.</li></ol><h2>Involucrando a la Comunidad</h2><p>La participación comunitaria en el diseño y mantenimiento de estos humedales es crucial. Involucrar a los habitantes no solo fomenta la educación ambiental, sino que también promueve un sentido de pertenencia. Talleres y actividades prácticas son una excelente manera de conectar a las personas con su entorno.</p><h2>Conclusión</h2><p>Los humedales urbanos no son solo soluciones técnicas, sino puentes hacia un futuro más sostenible y armonioso con la naturaleza. Al implementar estos sistemas en nuestras ciudades, estamos sembrando semillas de esperanza que florecerán en biodiversidad y bienestar social. Cada gota de agua capturada y cada planta que brota son testimonios de un compromiso colectivo por revitalizar el paisaje urbano en el que habitamos.</p>
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      Humedales urbanos: manual de bolsillo
+    </div>
 
-    <div class="divider"></div>
+    <header class="article-header">
+      <h1 class="article-title">Humedales urbanos: manual de bolsillo</h1>
+      <div class="article-meta">
+        <div class="meta-pill">🌿 <span>Naturaleza</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 8–10 min</span></div>
+        <div class="meta-pill">📅 <span>5 de marzo de 2026</span></div>
+      </div>
+      <p class="article-lead">Captación, filtración y biodiversidad en pequeñas escalas.</p>
+    </header>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Suscribete al boletin</h2>
-      <p>Recibe articulos sobre pulque, bioconstruccion y defensa del territorio en tu correo.</p>
+    <figure class="hero-img">
+      <img src="humedales-urbanos-manual-de-bolsillo.png" alt="Humedales urbanos: manual de bolsillo" />
+    </figure>
+
+    <article class="article-body">
+      <h2>Introducción a los Humedales Urbanos</h2>
+<p>Los humedales urbanos son espacios vitales que actúan como pulmones dentro de las ciudades, ofreciendo un respiro a la biodiversidad y a las comunidades que las habitan. En medio del ajetreo y el bullicio de la vida citadina, estos oasis naturales no solo ayudan a regular el ciclo del agua, sino que también proporcionan una serie de beneficios ecológicos y sociales que son esenciales para el bienestar de los habitantes urbanos. En este manual de bolsillo, exploraremos la importancia de los humedales urbanos, su diseño efectivo y cómo involucrar a la comunidad en su creación y mantenimiento.</p>
+<p>De acuerdo con la Convención de Ramsar, los humedales son áreas de tierras que están cubiertas de agua, ya sea de manera permanente o temporal, y que tienen un gran valor ecológico. En las ciudades, los humedales artificiales se convierten en soluciones innovadoras para enfrentar problemas como la escasez de agua, la contaminación y la pérdida de biodiversidad. Al implementar estos espacios en zonas urbanas, se establece una conexión entre la naturaleza y la vida citadina, contribuyendo a un entorno más sostenible.</p>
+<p>A medida que las ciudades crecen, la presión sobre los recursos naturales aumenta. La construcción de infraestructura y el desarrollo urbano a menudo resultan en la pérdida de áreas verdes y humedales naturales. Sin embargo, al diseñar humedales urbanos, podemos revertir este proceso y crear espacios que beneficien tanto a la naturaleza como a las comunidades. En las siguientes secciones, profundizaremos en los beneficios, diseño y participación comunitaria en la creación de humedales urbanos.</p>
+
+<h2>Beneficios de los Humedales Artificiales</h2>
+<p>Los humedales artificiales ofrecen una variedad de beneficios que pueden transformar el paisaje urbano y mejorar la calidad de vida de sus habitantes. Uno de los beneficios más significativos es la filtración natural del agua. Estos sistemas actúan como filtros biológicos, eliminando contaminantes y sedimentos del agua de lluvia antes de que se infiltren en el suelo o lleguen a los cuerpos de agua cercanos. De acuerdo con estudios, un humedal bien diseñado puede eliminar hasta el 90% de los contaminantes del agua, lo que resulta en una mejora significativa de la calidad del agua local.</p>
+<p>Otro beneficio importante es la captación pluvial. Los humedales urbanos ayudan a gestionar el agua de lluvia, lo que es especialmente crucial en áreas propensas a inundaciones. Durante eventos de lluvia intensa, estos espacios pueden absorber el exceso de agua, reduciendo la carga sobre el sistema de drenaje urbano. Esto no solo previene inundaciones, sino que también recarga los acuíferos locales, contribuyendo a la sostenibilidad del recurso hídrico en la ciudad.</p>
+<p>Además de sus beneficios ecológicos, los humedales urbanos también promueven la biodiversidad. Proveen hábitats para flora y fauna local, atrayendo aves, insectos y otras especies que son esenciales para el equilibrio ecológico. A medida que las ciudades se expanden y los espacios naturales se reducen, los humedales se convierten en refugios vitales para la vida silvestre, ayudando a conservar la biodiversidad urbana. En este sentido, se estima que la creación de humedales puede aumentar la biodiversidad local en un 30% o más.</p>
+
+<h2>Diseño Efectivo de Humedales Urbanos</h2>
+<p>El diseño de un humedal urbano efectivo requiere una planificación cuidadosa y la consideración de varios factores. Primero, es fundamental evaluar el espacio disponible, ya que los humedales pueden ser diseñados en diferentes escalas, desde pequeños jardines comunitarios hasta grandes parques urbanos. La calidad del suelo y el tipo de vegetación también son factores críticos a considerar. Los suelos arcillosos, por ejemplo, son ideales para la retención de agua, mientras que los suelos arenosos permiten un mejor drenaje.</p>
+<p>La elección de la vegetación es clave en el diseño de humedales. Las plantas nativas son ideales, ya que están adaptadas a las condiciones locales y requieren menos mantenimiento. Además, estas plantas ayudan a filtrar el agua y proporcionan hábitats para la fauna. Algunas especies recomendadas incluyen la caña de fleco, la espadaña y el jacinto de agua. La combinación de diferentes tipos de vegetación puede crear un ecosistema más robusto y resiliente.</p>
+<p>En cuanto a la implementación, es recomendable considerar la creación de humedales en espacios que ya están destinados a áreas recreativas o comunitarias, como parques escolares y áreas de juegos. Esto no solo facilita su mantenimiento, sino que también promueve la educación ambiental entre los niños y sus familias. Por ejemplo, en varias ciudades de México, se han implementado humedales en escuelas, donde los estudiantes participan en el cuidado y mantenimiento de estos espacios, aprendiendo sobre la importancia del agua y la biodiversidad.</p>
+
+<h2>Involucrando a la Comunidad</h2>
+<p>La participación comunitaria es un elemento esencial en el éxito de los humedales urbanos. Involucrar a los habitantes no solo en el diseño, sino también en el mantenimiento de estos espacios, fomenta un sentido de pertenencia y responsabilidad hacia el medio ambiente. Organizar talleres y actividades prácticas, como la siembra de plantas nativas o la limpieza de los humedales, puede ser una excelente manera de conectar a las personas con su entorno y educarlas sobre la importancia de estos ecosistemas.</p>
+<p>Además, la creación de grupos de voluntarios puede facilitar la gestión y el mantenimiento continuo de los humedales. Estos grupos pueden estar compuestos por miembros de la comunidad, escuelas y organizaciones locales, trabajando juntos para asegurar la sostenibilidad del humedal. Por ejemplo, en la Ciudad de México, se han formado brigadas comunitarias encargadas de cuidar y preservar los humedales, lo cual ha demostrado ser una estrategia efectiva para mantener estos espacios limpios y funcionales.</p>
+<p>Es importante también crear canales de comunicación abiertos entre las autoridades locales y la comunidad. Fomentar el diálogo sobre las necesidades y preocupaciones de los habitantes puede resultar en un mejor diseño y funcionamiento de los humedales. Las encuestas y reuniones comunitarias son herramientas útiles para recopilar opiniones y sugerencias que pueden enriquecer el proceso de planificación y ejecución de estos espacios verdes.</p>
+
+<h2>Ejemplos de Éxito en México</h2>
+<p>En México, existen varios ejemplos de humedales urbanos que han sido exitosamente implementados y que han demostrado su impacto positivo en las comunidades. Uno de los más destacados es el Humedal de Xochimilco. Este sistema de canales y chinampas no solo es un atractivo turístico, sino que también funciona como un importante ecosistema que regenera la biodiversidad local y contribuye a la regulación del agua en la región. La participación de la comunidad en la conservación de este humedal ha sido fundamental para su preservación.</p>
+<p>Otro ejemplo es el Parque Ecológico de la Ciudad de México, donde se han creado áreas de humedales para gestionar el agua de lluvia y promover la biodiversidad. A través de programas educativos, se han involucrado a escuelas y organizaciones en el cuidado de estos espacios, fomentando la conciencia ambiental entre los jóvenes. Estos programas han resultado en un aumento en la participación de los ciudadanos en actividades de conservación y limpieza.</p>
+<p>Además, el humedal artificial de la Universidad Autónoma de Nuevo León es un claro ejemplo de cómo la educación y la investigación pueden unirse en torno a la conservación del agua y la biodiversidad. Este humedal ha sido diseñado como un laboratorio vivo, donde estudiantes y profesores trabajan en proyectos de investigación, promoviendo la investigación y la formación de futuros líderes en la sostenibilidad.</p>
+
+<h2>Retos en la Implementación de Humedales Urbanos</h2>
+<p>A pesar de sus múltiples beneficios, la implementación de humedales urbanos enfrenta varios retos. Uno de los principales es la falta de espacio en entornos urbanos densamente poblados. Las ciudades suelen estar llenas de edificios y pavimento, lo que dificulta la identificación de lugares adecuados para la creación de humedales. Sin embargo, incluso en espacios pequeños, como patios traseros o áreas de parques, se pueden implementar soluciones efectivas.</p>
+<p>Otro reto importante es la contaminación del agua. En muchas ciudades, las aguas pluviales pueden estar contaminadas por desechos y productos químicos, lo que puede afectar la salud de los ecosistemas de humedales. Por lo tanto, es esencial realizar un monitoreo constante de la calidad del agua y tomar medidas para reducir la contaminación en las áreas circundantes. La implementación de prácticas de manejo sostenible en la comunidad puede ser clave para mitigar este problema.</p>
+<p>Finalmente, la falta de concientización y educación ambiental puede ser un obstáculo. Muchas personas no son conscientes de la importancia de los humedales urbanos y, por lo tanto, no ven la necesidad de participar en su creación y mantenimiento. Es crucial desarrollar campañas de sensibilización que informen a la comunidad sobre los beneficios de estos espacios y cómo pueden involucrarse en su cuidado.</p>
+
+<h2>Conclusión</h2>
+<p>Los humedales urbanos son mucho más que simples soluciones técnicas; son puentes hacia un futuro más sostenible y armonioso con la naturaleza. Al implementar estos sistemas en nuestras ciudades, no solo estamos mejorando la calidad del agua y la biodiversidad, sino que también estamos sembrando semillas de un compromiso colectivo por revitalizar el paisaje urbano en el que habitamos. Cada gota de agua capturada y cada planta que brota son testimonios de nuestra capacidad para trabajar juntos por un entorno más saludable.</p>
+<p>Es hora de que las comunidades se unan en la creación y mantenimiento de humedales urbanos, reconociendo su importancia y aprovechando los beneficios que ofrecen. Juntos, podemos convertir nuestras ciudades en espacios más verdes y sostenibles, donde la naturaleza y la vida urbana coexistan en armonía. La participación activa de cada uno de nosotros es clave en este camino hacia un futuro mejor, donde los humedales urbanos se conviertan en un símbolo de esperanza y resiliencia para las generaciones venideras.</p>
+    </article>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required>
+        <input type="email" placeholder="tu@correo.com" required />
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
-    </section>
+    </div>
 
-    <div class="divider"></div>
-
-    <!-- PIE DEL ARTICULO -->
-    <div class="article-footer">
-      <div class="chips">
-        <span class="chip">🌿 Naturaleza</span>
-      </div>
-      <div>
-        <a href="../../posts.html" class="chip">← Volver a articulos</a>
-      </div>
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🌿 Naturaleza</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:20px;width:auto">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
         <span>Guardianes del Pulque</span>
       </div>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="../../posts.html">Mas articulos</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>

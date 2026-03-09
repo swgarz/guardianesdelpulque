@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Microbiota del pulque: quién es quién — Guardianes del Pulque</title>
-  <meta name="description" content="Levaduras y bacterias lácticas que dan cuerpo, aroma y textura al pulque vivo." />
+  <meta name="description" content="Levaduras y bacterias lácticas clave en el sabor y la textura." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Microbiota del pulque: quién es quién" />
-  <meta property="og:description" content="Levaduras y bacterias lácticas que dan cuerpo, aroma y textura al pulque vivo." />
+  <meta property="og:description" content="Levaduras y bacterias lácticas clave en el sabor y la textura." />
   <meta property="og:image" content="https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.png" />
   <meta property="og:url" content="https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.html" />
   <meta property="og:site_name" content="Guardianes del Pulque" />
@@ -18,7 +18,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Microbiota del pulque: quién es quién" />
-  <meta name="twitter:description" content="Levaduras y bacterias lácticas que dan cuerpo, aroma y textura al pulque vivo." />
+  <meta name="twitter:description" content="Levaduras y bacterias lácticas clave en el sabor y la textura." />
   <meta name="twitter:image" content="https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.png" />
 
   <!-- JSON-LD -->
@@ -27,8 +27,9 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Microbiota del pulque: quién es quién",
-    "description": "Levaduras y bacterias lácticas que dan cuerpo, aroma y textura al pulque vivo.",
+    "description": "Levaduras y bacterias lácticas clave en el sabor y la textura.",
     "image": "https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.png",
+    "datePublished": "2026-03-09",
     "author": {
       "@type": "Organization",
       "name": "Guardianes del Pulque",
@@ -57,425 +58,224 @@
     :root{
       --brand:#059669;
       --ink:#0f172a;
-      --muted:#6b7280;
+      --muted:#64748b;
       --card:#ffffff;
-      --stroke:#e5e7eb;
-      --maxw:780px;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){.container{padding:0 24px}}
 
     /* NAV */
     .nav{
       position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,.9);
+      background:transparent;
+      border-bottom:1px solid transparent;
       backdrop-filter:saturate(180%) blur(14px);
-      border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
-    .nav .row{
-      display:flex;
-      align-items:center;
+    .nav-row{
+      display:flex;align-items:center;
       justify-content:space-between;
-      padding:8px 0;
-      gap:.75rem;
+      padding:10px 0;gap:1rem;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.45rem;
-      font-weight:700;
-    }
-    .brand-logo{
-      height:34px;
-      width:auto;
-    }
-    .brand-text{
-      font-size:.98rem;
-      letter-spacing:.01em;
-    }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.4rem .8rem;
-      border-radius:999px;
-      border:1px solid var(--brand);
-      font-size:.72rem;
-      font-weight:600;
-      color:var(--brand);
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .16s ease;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
     }
-    .chip .emoji{font-size:.9rem}
-    .chip:hover{
-      background:var(--brand);
-      color:#020817;
-      transform:translateY(-1px);
-      box-shadow:0 8px 18px rgba(15,23,42,.16);
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
+    }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
+
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
+    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px 0 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);}
+
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
     }
 
-    /* HERO ARTÍCULO */
-    .hero-article{
-      padding:24px 0 8px;
+    /* CTA */
+    .cta-section{
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
+      text-align:center;
     }
-    .hero-inner{
-      max-width:var(--maxw);
-      margin:0 auto;
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
+    .cta-form input[type="email"]{
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
     }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      padding:.25rem .7rem;
-      border-radius:999px;
-      background:rgba(5,150,105,.08);
-      color:#047857;
-      font-size:.7rem;
-      font-weight:600;
-      margin-bottom:.4rem;
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
+    .cta-form button{
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
     }
-    .title{
-      margin:0;
-      font-size:clamp(26px,5.4vw,40px);
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-    .subtitle{
-      margin:.4rem 0 0;
-      color:var(--muted);
-      font-size:.9rem;
-      max-width:46rem;
-    }
-    .meta{
-      margin-top:.6rem;
-      font-size:.72rem;
-      color:#9ca3af;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      align-items:center;
-    }
+    .cta-form button:hover{background:#047857;}
 
-    /* Cover */
-    .cover-wrap{
-      max-width:var(--maxw);
-      margin:16px auto 0;
-      border-radius:24px;
-      background:radial-gradient(circle at top,rgba(5,150,105,.12),transparent),
-                 #020817;
-      padding:14px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .cover-img{
-      max-height:260px;
-      width:auto;
-      object-fit:contain;
-    }
-
-    /* CONTENIDO */
-    .article{
-      max-width:var(--maxw);
-      margin:22px auto 40px;
-      background:var(--card);
-      border-radius:24px;
-      padding:18px 16px 20px;
-      box-shadow:0 18px 45px rgba(15,23,42,.12);
-      border:1px solid rgba(148,163,253,.1);
-    }
-    @media (min-width:700px){
-      .article{padding:26px 26px 24px;}
-    }
-    .article h2{
-      font-size:1.12rem;
-      margin:1.4rem 0 .4rem;
-    }
-    .article p{
-      margin:.45rem 0;
-      color:#374151;
-      font-size:.9rem;
-    }
-    .article ul,.article ol{
-      margin:.35rem 0 .6rem 1.2rem;
-      padding:0;
-      color:#374151;
-      font-size:.88rem;
-    }
-    .note{
-      margin:.7rem 0;
-      padding:.55rem .7rem;
-      border-radius:12px;
-      background:rgba(5,150,105,.04);
-      color:#065f46;
-      font-size:.78rem;
-      border:1px dashed rgba(5,150,105,.25);
-    }
-    .step-label{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      font-weight:700;
-      font-size:.8rem;
-      color:#065f46;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-    }
-    .divider{
-      margin:1.3rem 0;
-      border-top:1px solid rgba(148,163,253,.22);
-    }
-
-    /* Footer artículo */
-    .article-footer{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:1.1rem;
-      font-size:.78rem;
-      color:#6b7280;
-    }
-    .article-footer .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-    }
-
-    footer{
-      border-top:1px solid rgba(15,23,42,.08);
-      padding:18px 0 22px;
-      color:#9ca3af;
-      font-size:.75rem;
-    }
-    footer .row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
   </style>
 </head>
 <body>
   <!-- NAV -->
-  <div class="nav">
-    <div class="container row">
-      <!-- Ajusta las rutas según dónde guardes este HTML.
-           Si está en /articulos/microbiota-del-pulque.html, ../index.html y ../images/ son correctos. -->
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
       <a class="brand" href="../../index.html">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-      <div class="links">
-        <a class="chip" href="../posts.html">Artículos</a>
-        <a class="chip" href="../index.html#donar"><span class="emoji">💚</span> Donar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO ARTÍCULO -->
-  <header class="hero-article">
-    <div class="hero-inner">
-      <div class="eyebrow">🍶 Pulque vivo • Microbiota</div>
-      <h1 class="title">Microbiota del pulque: quién es quién</h1>
-      <p class="subtitle">
-        Levaduras y bacterias lácticas que construyen el sabor, la espuma y la textura del pulque,
-        desde el maguey hasta el jarro.
-      </p>
-      <div class="meta">
-        <span>Por Guardianes del Pulque</span>
-        <span>Lectura ~ 9 minutos</span>
-        <span>Actualizado 2025</span>
-      </div>
-    </div>
-
-    <!-- Portada del artículo -->
-    <div class="cover-wrap">
-      <!-- NOTA:
-           Coloca aquí tu ilustración sin texto, por ejemplo:
-           /articulos/microbiota-del-pulque.png
-           y ajusta el src si cambias el nombre. -->
-      <img src="microbiotadelpulque.png"
-           alt="Ilustración de microorganismos del pulque alrededor de un jarro tradicional"
-           class="cover-img">
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
+      </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO -->
-  <main class="article">
-    <!-- NOTA PARA TI:
-         Para agregar más texto, duplica bloques <section> con <h2> + <p>/<ul>.
-         Mantén la estructura para que todos los artículos se vean coherentes.
-    -->
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      Microbiota del pulque: quién es quién
+    </div>
 
-    <section>
-      <p>
-        El pulque no es solo una bebida fermentada: es un ecosistema vivo.
-        En cada tinacal habita una comunidad microscópica distinta que responde al maguey,
-        al agua, a los utensilios, a la temperatura y al cuidado de quienes lo trabajan.
-      </p>
-      <p>
-        Entender quiénes son las levaduras y bacterias lácticas que fermentan el aguamiel
-        nos permite mejorar la calidad, evitar defectos y defender el pulque frente al discurso
-        de que es “sucio” o “incontrolable”. Aquí desglosamos, en palabras sencillas,
-        a los protagonistas invisibles.
-      </p>
-    </section>
-
-    <div class="divider"></div>
-
-    <section>
-      <h2>1. Del aguamiel al pulque: la sucesión microbiana</h2>
-      <p>
-        El aguamiel recién colectado es dulce, transparente y con baja acidez.
-        A partir de ahí se activa una danza de microorganismos:
-      </p>
-      <ul>
-        <li><strong>Levaduras osmótolerantes</strong> comienzan a consumir azúcares simples.</li>
-        <li><strong>Levaduras productoras de etanol</strong> y aroma toman fuerza al estabilizarse la mezcla.</li>
-        <li><strong>Bacterias lácticas</strong> bajan el pH, dan acidez agradable y protegen de patógenos.</li>
-      </ul>
-      <p>
-        El resultado equilibrado: una bebida ligeramente ácida, con cuerpo sedoso,
-        aromas a fruta, pan, campo húmedo y una espuma que aguanta el brindis.
-      </p>
-    </section>
-
-    <section>
-      <h2>2. Levaduras clave: aroma, alcohol y espuma</h2>
-      <p>
-        Las levaduras transforman azúcares del aguamiel en alcohol, gas y compuestos aromáticos.
-        Entre las especies documentadas con frecuencia en pulques tradicionales encontramos:
-      </p>
-      <ul>
-        <li><strong>Saccharomyces cerevisiae</strong> — Clásica de panes y cervezas, aporta fermentación robusta y estabilidad.</li>
-        <li><strong>Kluyveromyces spp.</strong> — Buenas para azúcares específicos del aguamiel, contribuyen a aroma suave.</li>
-        <li><strong>Candida y Pichia spp.</strong> — Pueden aportar notas frutales y formar parte de la espuma estable.</li>
-      </ul>
-      <p>
-        Un tinacal sano tiene mezcla de especies; no se busca monocultivo,
-        sino equilibrio entre levaduras que produzcan alcohol moderado, aroma complejo
-        y esa espuma cremosa que anuncia pulque vivo.
-      </p>
-      <div class="note">
-        Si el pulque huele a solvente fuerte, huevo podrido o presenta sabores muy agresivos,
-        suele indicar desequilibrio microbiano, mala higiene o aguamiel almacenado por demasiado tiempo.
+    <header class="article-header">
+      <h1 class="article-title">Microbiota del pulque: quién es quién</h1>
+      <div class="article-meta">
+        <div class="meta-pill">🍶 <span>Pulque</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 10–12 min</span></div>
+        <div class="meta-pill">📅 <span>2026</span></div>
       </div>
-    </section>
+      <p class="article-lead">Levaduras y bacterias lácticas clave en el sabor y la textura.</p>
+    </header>
 
-    <section>
-      <h2>3. Bacterias lácticas: acidez protectora y textura</h2>
-      <p>
-        Las bacterias lácticas (BAL) son las aliadas silenciosas.
-        Consumen azúcares y producen ácido láctico, bajando el pH
-        hasta rangos donde microorganismos indeseables dejan de prosperar.
-      </p>
-      <ul>
-        <li><strong>Lactobacillus spp.</strong> — Generan acidez suave, notas lácticas ligeras y ayudan a la estabilidad.</li>
-        <li><strong>Leuconostoc spp.</strong> — Pueden contribuir a cierta viscosidad y notas frescas.</li>
-        <li><strong>Pediococcus spp.</strong> — En equilibrio, refuerzan la acidez; en exceso pueden endurecer el perfil.</li>
-      </ul>
-      <p>
-        Junto con las levaduras, las BAL construyen la sensación en boca:
-        ni agua simple ni “atole pesado”, sino una textura sedosa que corre bien por el jarro.
-      </p>
-    </section>
+    <figure class="hero-img">
+      <img src="microbiotadelpulque.png" alt="Microbiota del pulque: quién es quién" />
+    </figure>
 
-    <section>
-      <h2>4. Cómo influyen en sabor y textura</h2>
-      <p>Algunas relaciones directas entre microbiota y experiencia en el paladar:</p>
-      <ul>
-        <li><strong>Dulzor vs. acidez:</strong> más actividad de BAL → más ácido láctico → pulque menos dulce pero más fresco.</li>
-        <li><strong>Aromas:</strong> levaduras producen ésteres (fruta), alcoholes superiores (pan, flores) y compuestos que,
-            en armonía, dan complejidad.</li>
-        <li><strong>Espuma:</strong> ciertas levaduras + proteínas del aguamiel → corona estable; si se pierde rápido, algo falla.</li>
-        <li><strong>Cuerpo:</strong> polisacáridos bacterianos y coloides del maguey → sensación cremosa sin ser pesada.</li>
-      </ul>
-    </section>
+    <article class="article-body">
+      <h2>El pulque: más que una bebida, un ecosistema microbiano</h2>
+<p>El pulque es una bebida tradicional de México que ha sido parte de su cultura durante siglos. Sin embargo, lo que muchos no saben es que el pulque no solo es resultado de un proceso de fermentación, sino que también representa un ecosistema vivo compuesto por una diversidad de microorganismos. Cada tinacal alberga una comunidad única de levaduras y bacterias que interactúan de manera compleja, afectando tanto el sabor como la calidad del pulque. Así, el maguey, el agua, los utensilios usados y las condiciones de temperatura son factores que influyen en esta microbiota. Comprender quiénes son estos microorganismos y cómo interactúan nos brinda herramientas para mejorar nuestro pulque y desmitificar su reputación.</p>
+<p>La microbiota del pulque incluye microorganismos que son esenciales en la transformación del aguamiel en pulque, y su conocimiento es vital para cualquier productor. Por ejemplo, las levaduras son responsables de la producción de alcohol y de los aromas que caracterizan a esta bebida, mientras que las bacterias lácticas juegan un papel fundamental en el control del pH y la acidez del producto final. Esta interacción microbiana es lo que permite obtener un pulque equilibrado, con un perfil sensorial enriquecido que se traduce en una experiencia única al degustarlo.</p>
+<p>Desglosar la microbiota del pulque y entender el papel de cada microorganismo no solo es interesante desde un punto de vista científico, sino que también es esencial para preservar la calidad de esta bebida milenaria y defenderla de prejuicios erróneos que la consideren "sucia" o "incontrolable". Las siguientes secciones explorarán la sucesión microbiana que ocurre desde el aguamiel hasta el pulque, la importancia de las levaduras y bacterias lácticas, y las buenas prácticas que todos los productores deberían adoptar.</p>
 
-    <section>
-      <h2>5. Buenas prácticas para un pulque sano</h2>
-      <p>
-        Cuidar la microbiota no significa esterilizar todo, sino respetar la
-        ecología del tinacal. Claves simples que muchas casas pulqueras ya aplican:
-      </p>
-      <ul>
-        <li>Lavar y escurrir bien acocotes, cubetas y tinas; sin detergentes agresivos que dejen residuos.</li>
-        <li>Usar agua limpia para enjuagues y para diluciones cuando se requiera.</li>
-        <li>No mezclar aguamiel “viejo” con fresco si ya huele a vinagre o a podrido.</li>
-        <li>Evitar colillas, envases sucios o manos contaminadas dentro del tinacal.</li>
-        <li>Mantener una madre o semilla activa, vibrante, que se alimente diariamente.</li>
-      </ul>
-      <div class="note">
-        Documentar tus lotes (fecha, clima, proporción de madre, tiempos) ayuda a reconocer patrones
-        y defender tu oficio con evidencia cuando alguien cuestione la calidad del pulque.
-      </div>
-    </section>
+<h2>Del aguamiel al pulque: la danza de los microorganismos</h2>
+<p>La producción de pulque comienza con la recolección del aguamiel, un líquido dulce y transparente que se obtiene al extraer la savia del maguey. Este aguamiel contiene azúcares simples pero tiene una baja acidez. En el momento en que se recolecta, comienza un proceso de fermentación que involucra una sucesión microbiana. Las levaduras osmótolerantes son las primeras en entrar en acción, consumiendo los azúcares del aguamiel. Este proceso da inicio a la transformación del dulce aguamiel en una bebida fermentada.</p>
+<p>A medida que avanza la fermentación, aparecen las levaduras productoras de etanol y aroma, que comienzan a dominar la mezcla. Estas levaduras son claves para la producción del alcohol y los compuestos aromáticos que caracterizan al pulque. Simultáneamente, las bacterias lácticas empiezan a bajar el pH, generando una acidez agradable que no solo mejora el sabor, sino que también actúa como un conservante natural, protegiendo al pulque de patógenos indeseables. Este equilibrio entre levaduras y bacterias es crucial para el desarrollo de un pulque de calidad.</p>
+<p>El resultado de esta danza microbiana es una bebida ligeramente ácida, con una textura sedosa y aromas que evocan a fruta fresca, pan recién horneado y el campo húmedo. La espuma que se forma al servir el pulque es un indicador de su frescura y vitalidad, y su capacidad para sostenerse es signo de un delicado equilibrio en la microbiota del tinacal. En este sentido, entender el proceso de fermentación y la sucesión de microorganismos es fundamental para cualquier productor que aspire a ofrecer un pulque de la mejor calidad.</p>
 
-    <section>
-      <h2>6. Riesgos, mitos y defensa del pulque vivo</h2>
-      <p>
-        Muchos mitos sobre el pulque vienen de casos donde se rompe la cadena de frío,
-        se almacena en plásticos sucios o se manipula sin respeto.
-        Eso no es culpa del pulque, sino de prácticas desconectadas del oficio.
-      </p>
-      <p>
-        Cuando la microbiota está equilibrada:
-      </p>
-      <ul>
-        <li>El pH bajo y la actividad de BAL inhiben patógenos.</li>
-        <li>El aroma es complejo pero agradable, sin notas putrefactas.</li>
-        <li>La vida en el tinacal se vuelve conocimiento, no improvisación a ciegas.</li>
-      </ul>
-      <p>
-        Defender el pulque implica nombrar a sus microorganismos aliados
-        y mostrar que detrás de cada jarro hay ciencia popular, observación y memoria colectiva.
-      </p>
-    </section>
+<h2>Levaduras clave: generadoras de aroma, alcohol y espuma</h2>
+<p>Las levaduras son uno de los componentes más importantes en la elaboración del pulque, ya que transforman los azúcares presentes en el aguamiel en alcohol, gas carbónico y diversos compuestos aromáticos. Entre las especies de levaduras que comúnmente se encuentran en la fermentación del pulque, destacan algunas como Saccharomyces cerevisiae, Kluyveromyces spp., Candida y Pichia spp. Cada una de estas especies aporta características distintas que enriquecen el perfil del pulque.</p>
+<p>La <strong>Saccharomyces cerevisiae</strong> es probablemente la más conocida, utilizada no solo en la producción de pulque, sino también en la elaboración de panes y cervezas. Esta levadura es conocida por su robustez y capacidad para generar un proceso de fermentación estable, lo que es crucial para la producción del pulque. Por otro lado, las levaduras del género <strong>Kluyveromyces</strong> son especialmente efectivas para fermentar azúcares específicos del aguamiel, contribuyendo a un aroma más suave y sutil.</p>
+<p>Las levaduras <strong>Candida</strong> y <strong>Pichia</strong> pueden aportar notas frutales y también son responsables de la formación de una espuma estable en el pulque. Esta espuma no solo es un atractivo visual, sino que también es un indicador de la calidad del pulque. Es fundamental tener una mezcla equilibrada de diferentes especies de levaduras para evitar problemas como olores desagradables a solvente o sabores agresivos, que son signos de un desequilibrio microbiano. Un buen tinacal debe ser un espacio donde coexistan diversas levaduras, que trabajen en sinergia para crear un pulque vibrante y lleno de matices.</p>
 
-    <div class="divider"></div>
+<h2>Bacterias lácticas: el secreto de la acidez y la textura</h2>
+<p>Las bacterias lácticas (BAL) son otro grupo crucial de microorganismos en la elaboración del pulque. Estas bacterias son responsables de consumir azúcares y producir ácido láctico, lo que contribuye a bajar el pH del pulque a niveles donde microorganismos indeseables no pueden prosperar. Entre las principales especies de bacterias lácticas que se encuentran en el pulque están <strong>Lactobacillus spp.</strong>, <strong>Leuconostoc spp.</strong> y <strong>Pediococcus spp.</strong>.</p>
+<p>Las bacterias del género <strong>Lactobacillus</strong> son muy valoradas por su capacidad para generar una acidez suave y proporcionar notas lácticas que enriquecen la experiencia sensorial del pulque. Por su parte, las <strong>Leuconostoc</strong> pueden agregar ciertas características de viscosidad y frescura al pulque, mientras que las <strong>Pediococcus</strong> deben ser mantenidas en equilibrio; su exceso puede endurecer el perfil del sabor.</p>
+<p>Juntas, estas bacterias lácticas y las levaduras forman una sinergia que produce una textura sedosa, evitando que el pulque sea demasiado aguado o denso como un atole. La interacción de los polisacáridos bacterianos y los coloides del maguey contribuyen a esa sensación cremosa en el paladar que muchos disfrutan. Por lo tanto, la correcta gestión de estas bacterias es fundamental para lograr un pulque que no solo sea sabroso, sino que también tenga una textura atractiva.</p>
 
-    <!-- PIE DEL ARTÍCULO -->
-    <div class="article-footer">
-      <div class="chips">
-        <span class="chip">🍶 Pulque vivo</span>
-        <span class="chip">🧫 Microbiota</span>
-        <span class="chip">🧪 Fermentación</span>
-      </div>
-      <div>
-        <a href="../posts.html" class="chip">← Volver a artículos</a>
-      </div>
+<h2>La influencia de la microbiota en el sabor y la textura del pulque</h2>
+<p>La microbiota del pulque tiene un impacto directo en la experiencia organoléptica que se obtiene al consumir esta bebida. Por ejemplo, la relación entre dulzor y acidez es clave: una mayor actividad de las bacterias lácticas se traduce en un aumento en la producción de ácido láctico, lo que hace que el pulque sea menos dulce pero más fresco. Esto puede ser muy atractivo para ciertos consumidores que buscan un perfil más ácido y refrescante en su pulque.</p>
+<p>Los aromas que se perciben en el pulque también son el resultado de la actividad de las levaduras. Estas generan ésteres, que son compuestos responsables de las notas frutales, y alcoholes superiores, que agregan complejidad aromática al producto. La combinación de estos compuestos, en el equilibrio correcto, es lo que hace que el pulque sea tan diverso en términos de sabor y aroma. Cada tinacal puede ofrecer una experiencia única, dependiendo de la mezcla microbiana que allí se encuentre.</p>
+<p>La espuma del pulque es otro aspecto esencial que no debe pasarse por alto. La formación de una corona estable está influenciada por la presencia de ciertas levaduras y las proteínas naturales del aguamiel. Si la espuma se disipa rápidamente, puede ser una señal de que algo no está funcionando correctamente dentro del proceso de fermentación. Por lo tanto, los productores deben prestar atención a la microbiota y al proceso de fermentación para asegurarse de que se obtenga un pulque de calidad.</p>
+
+<h2>Buenas prácticas para mantener una microbiota saludable en el tinacal</h2>
+<p>Cuidar la microbiota del pulque no implica una esterilización total, sino más bien una gestión consciente y respetuosa del ecosistema que se forma en el tinacal. A continuación, se presentan algunas buenas prácticas que pueden ayudar a los productores a mantener una microbiota saludable y, por ende, un pulque de calidad:</p>
+<ul>
+  <li><strong>Limpieza adecuada:</strong> Es fundamental lavar y escurrir bien los utensilios como acocotes, cubetas y tinas. Esto debe hacerse sin detergentes agresivos que puedan dejar residuos dañinos para la microbiota.</li>
+  <li><strong>Uso de agua limpia:</strong> Para enjuagar y diluir el aguamiel cuando sea necesario, siempre se debe utilizar agua limpia. Esto evitará la introducción de contaminantes que puedan alterar el equilibrio microbiano.</li>
+  <li><strong>Separación de aguamiel:</strong> No se debe mezclar aguamiel “viejo” con aguamiel fresco, especialmente si el primero presenta olores a vinagre o descomposición. Esta práctica puede arruinar la fermentación del nuevo aguamiel.</li>
+  <li><strong>Control de contaminantes:</strong> Es esencial evitar la introducción de sustancias extrañas como colillas, envases sucios o manos contaminadas en el tinacal, ya que pueden alterar la microbiota.</li>
+  <li><strong>Mantenimiento de la madre o semilla:</strong> Contar con una madre activa y vibrante es crucial. Esta debe ser alimentada diariamente para que mantenga su capacidad de fermentar adecuadamente.</li>
+  <li><strong>Documentación de lotes:</strong> Registrar información relevante sobre cada lote de pulque —como fechas, clima, proporciones y tiempos— puede ayudar a los productores a identificar patrones y defender la calidad de su producto ante cualquier cuestionamiento.</li>
+</ul>
+<p>Implementar estas prácticas no solo contribuye a la salud del pulque, sino que también ayuda a los productores a entender mejor su oficio y la ciencia que hay detrás de cada tinacal.</p>
+
+<h2>Riesgos, mitos y la defensa del pulque vivo</h2>
+<p>El pulque ha enfrentado numerosos mitos y estigmas a lo largo de los años, muchos de los cuales se originan de prácticas inadecuadas en su manejo y almacenamiento. Por ejemplo, el mal almacenamiento en condiciones inapropiadas, el uso de recipientes sucios o la falta de higiene son factores que pueden afectar negativamente la calidad del pulque. Sin embargo, es importante recordar que estos problemas no son inherentes al pulque en sí, sino más bien resultado de la desconexión entre las prácticas modernas y el respeto por la tradición.</p>
+<p>Un pulque bien elaborado, en el que la microbiota está equilibrada, mostrará un pH bajo y una actividad saludable de las bacterias lácticas, lo que inhibe el crecimiento de patógenos. Además, el aroma será complejo y agradable, sin notas desagradables. En este contexto, defender el pulque implica reconocer a sus microorganismos aliados y mostrar que detrás de cada jarro hay un proceso científico, cultural y una memoria colectiva que respalda esta bebida milenaria.</p>
+<p>Para el productor, es vital ser un embajador del pulque, educando a los consumidores sobre el valor de la microbiota y el cuidado que requiere su producción. La defensa del pulque no solo se traduce en combatir mitos, sino también en promover su consumo consciente y responsable, resaltando su riqueza cultural y su importancia en la identidad mexicana.</p>
+
+<h2>Conclusión: Un llamado a la preservación del pulque y su microbiota</h2>
+<p>En conclusión, el pulque es mucho más que una bebida; es un ecosistema vivo que refleja la riqueza de la microbiota que habita en cada tinacal. Al comprender quiénes son las levaduras y bacterias que intervienen en su producción, los productores pueden mejorar la calidad de su pulque y defenderlo de prejuicios erróneos. Adoptar buenas prácticas y respetar el equilibrio microbiano es clave para garantizar un pulque de excelencia, que honre la tradición y la biodiversidad de México. Al hacerlo, no solo se preserva una bebida que forma parte de nuestra cultura, sino que también se promueve un modelo de producción sostenible y consciente. Así que, la próxima vez que disfrutes de un buen pulque, recuerda que en cada sorbo hay un mundo de microorganismos trabajando en armonía, ¡brindemos por ello!</p>
+    </article>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
+      <form class="cta-form" action="#suscribirse" method="post">
+        <input type="email" placeholder="tu@correo.com" required />
+        <button type="submit">Suscribirme</button>
+      </form>
+      <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
+    </div>
+
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🍶 Pulque</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:20px;width:auto">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
         <span>Guardianes del Pulque</span>
       </div>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
-        <a class="chip" href="../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="../posts.html">Más artículos</a>
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>
-
-

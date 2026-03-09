@@ -3,238 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>De la penca al jarro — Guardianes del Pulque</title>
-  <meta name="description" content="Del maguey al vaso: así viaja el pulque vivo desde el campo, el tinacal y la pulquería hasta tu casa." />
+  <title>De la penca al jarro: el proceso vivo — Guardianes del Pulque</title>
+  <meta name="description" content="Fermentos, microbiota y tradición del maguey paso a paso." />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="De la penca al jarro" />
-  <meta property="og:description" content="Del maguey al vaso: así viaja el pulque vivo desde el campo, el tinacal y la pulquería hasta tu casa." />
+  <meta property="og:title" content="De la penca al jarro: el proceso vivo" />
+  <meta property="og:description" content="Fermentos, microbiota y tradición del maguey paso a paso." />
   <meta property="og:image" content="https://guardianesdelpulque.org/articulos/delapencaaljarro/de_la_penca_al_jarro.png" />
   <meta property="og:url" content="https://guardianesdelpulque.org/articulos/delapencaaljarro/de-la-penca-al-jarro.html" />
   <meta property="og:site_name" content="Guardianes del Pulque" />
   <meta property="og:locale" content="es_MX" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="De la penca al jarro" />
-  <meta name="twitter:description" content="Del maguey al vaso: así viaja el pulque vivo desde el campo, el tinacal y la pulquería hasta tu casa." />
+  <meta name="twitter:title" content="De la penca al jarro: el proceso vivo" />
+  <meta name="twitter:description" content="Fermentos, microbiota y tradición del maguey paso a paso." />
   <meta name="twitter:image" content="https://guardianesdelpulque.org/articulos/delapencaaljarro/de_la_penca_al_jarro.png" />
 
-  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "De la penca al jarro",
-    "description": "Del maguey al vaso: así viaja el pulque vivo desde el campo, el tinacal y la pulquería hasta tu casa.",
+    "headline": "De la penca al jarro: el proceso vivo",
+    "description": "Fermentos, microbiota y tradición del maguey paso a paso.",
     "image": "https://guardianesdelpulque.org/articulos/delapencaaljarro/de_la_penca_al_jarro.png",
-    "author": {
-      "@type": "Organization",
-      "name": "Guardianes del Pulque",
-      "url": "https://guardianesdelpulque.org"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Guardianes del Pulque",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://guardianesdelpulque.org/images/logo_transparente.png"
-      }
-    }
+    "datePublished": "2025-01-01",
+    "author": {"@type": "Organization", "name": "Guardianes del Pulque", "url": "https://guardianesdelpulque.org"},
+    "publisher": {"@type": "Organization", "name": "Guardianes del Pulque", "logo": {"@type": "ImageObject", "url": "https://guardianesdelpulque.org/images/logo_transparente.png"}}
   }
   </script>
 
   <style>
     *,*::before,*::after{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';
-      line-height:1.6;
-      color:#0f172a;
-      background:#f6f8fb;
-    }
-    :root{
-      --brand:#059669;
-      --ink:#0f172a;
-      --muted:#64748b;
-      --card:#ffffff;
-    }
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';line-height:1.6;color:#0f172a;background:#f6f8fb;}
+    :root{--brand:#059669;--ink:#0f172a;--muted:#64748b;--card:#ffffff;}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-
     .container{max-width:960px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){.container{padding:0 24px}}
-
-    /* NAV */
-    .nav{
-      position:sticky;top:0;z-index:40;
-      background:transparent;
-      border-bottom:1px solid transparent;
-      backdrop-filter:saturate(180%) blur(14px);
-      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
-    }
-    .nav-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:10px 0;
-      gap:1rem;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.5rem;
-      font-weight:700;
-    }
-    .brand-logo{
-      height:40px;width:auto;
-    }
+    .nav{position:sticky;top:0;z-index:40;background:transparent;border-bottom:1px solid transparent;backdrop-filter:saturate(180%) blur(14px);transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:1rem;}
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
     @media (min-width:768px){.brand-logo{height:52px}}
-    .brand-text{
-      font-size:1rem;
-      color:#111827;
-      letter-spacing:.02em;
-      /* Respetamos mayúsculas y minúsculas tal cual */
-    }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.4rem;
-      justify-content:flex-end;
-      align-items:center;
-    }
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.4rem .85rem;
-      border-radius:999px;
-      border:2px solid var(--brand);
-      color:var(--brand);
-      background:rgba(255,255,255,.98);
-      font-weight:700;
-      font-size:.75rem;
-      cursor:pointer;
-      transition:all .18s ease;
-      white-space:nowrap;
-    }
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
+    .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .85rem;border-radius:999px;border:2px solid var(--brand);color:var(--brand);background:rgba(255,255,255,.98);font-weight:700;font-size:.75rem;cursor:pointer;transition:all .18s ease;white-space:nowrap;}
     .chip .emoji{font-size:.95rem}
-    .chip:hover{
-      background:var(--brand);
-      color:#020817;
-      transform:translateY(-1px);
-    }
-    .nav.scrolled{
-      background:#020817;
-      border-bottom-color:rgba(148,163,253,.2);
-      box-shadow:0 14px 40px rgba(0,0,0,.55);
-    }
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{background:#020817;border-bottom-color:rgba(148,163,253,.2);box-shadow:0 14px 40px rgba(0,0,0,.55);}
     .nav.scrolled .brand-text{color:#f9fafb}
-    .nav.scrolled .chip{
-      background:transparent;
-      border-color:#22c55e;
-      color:#bbf7d0;
-    }
-    .nav.scrolled .chip:hover{
-      background:#22c55e;
-      color:#020817;
-    }
-
-    /* ARTICLE LAYOUT */
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
     main{padding:32px 0 40px}
-    .breadcrumbs{
-      font-size:.78rem;
-      color:#9ca3af;
-      margin-bottom:8px;
-    }
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
     .breadcrumbs a{color:#6b7280}
     .breadcrumbs a:hover{color:var(--brand)}
-    .article-header{
-      margin-bottom:18px;
-    }
-    .article-title{
-      margin:0 0 6px;
-      font-size:clamp(26px,5.5vw,38px);
-      line-height:1.15;
-      letter-spacing:-.01em;
-      color:#0f172a;
-    }
-    .article-meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.6rem 1.2rem;
-      font-size:.78rem;
-      color:#6b7280;
-    }
-    .meta-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:.3rem;
-    }
+    .article-header{margin-bottom:18px;}
+    .article-title{margin:0 0 6px;font-size:clamp(26px,5.5vw,38px);line-height:1.15;letter-spacing:-.01em;color:#0f172a;}
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
     .meta-pill span{font-size:.82rem}
-    .article-lead{
-      margin:14px 0 18px;
-      font-size:.98rem;
-      color:#4b5563;
-    }
-    .hero-img{
-      margin:14px 0 24px;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 18px 40px rgba(15,23,42,.16);
-    }
-
-    .article-body{
-      font-size:.97rem;
-      color:#111827;
-    }
-    .article-body h2{
-      margin:24px 0 8px;
-      font-size:1.05rem;
-      color:#065f46;
-    }
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px 0 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);}
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
     .article-body p{margin:0 0 12px}
-    .article-body ul{
-      margin:0 0 14px 1.1rem;
-      padding:0;
-      color:#374151;
-    }
-    .highlight{
-      padding:10px 12px;
-      border-left:3px solid var(--brand);
-      background:rgba(5,150,105,.04);
-      border-radius:10px;
-      margin:14px 0;
-      font-size:.86rem;
-      color:#374151;
-    }
-
-    .back-links{
-      margin-top:26px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.6rem;
-      font-size:.8rem;
-    }
-
-    footer{
-      border-top:1px solid rgba(15,23,42,.08);
-      padding:18px 0 22px;
-      font-size:.78rem;
-      color:#9ca3af;
-    }
-    footer .row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:.75rem;
-      flex-wrap:wrap;
-    }
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{padding:10px 12px;border-left:3px solid var(--brand);background:rgba(5,150,105,.04);border-radius:10px;margin:14px 0;font-size:.86rem;color:#374151;}
+    .cta-section{margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);text-align:center;}
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
+    .cta-form input[type="email"]{padding:.45rem .8rem;border:1.5px solid #d1d5db;border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;}
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
+    .cta-form button{padding:.45rem 1.1rem;border:none;border-radius:999px;background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;}
+    .cta-form button:hover{background:#047857;}
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
   </style>
 </head>
 <body>
-  <!-- NAV GLOBAL -->
   <header class="nav" id="mainNav">
     <div class="container nav-row">
       <a class="brand" href="../../index.html">
@@ -242,127 +90,110 @@
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
       <nav class="links">
-        <a class="chip" href="../posts.html">Artículos</a>
-        <a class="chip" href="../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
+        <a class="chip" href="../../posts.html">Artículos</a>
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- MIGAS DE PAN / BREADCRUMBS -->
     <div class="breadcrumbs">
-      <a href="../index.html">Inicio</a> ·
-      <a href="../posts.html">Artículos</a> ·
-      De la penca al jarro
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      De la penca al jarro: el proceso vivo
     </div>
 
-    <!--
-      ===== CONFIGURACIÓN DEL ARTÍCULO =====
-      - Cambia el <h1> para nuevos artículos.
-      - Ajusta la fecha, categoría, lugar, tiempo de lectura.
-      - El resumen inicial va en .article-lead.
-      - Debajo comienzan las secciones del cuerpo.
-    -->
     <header class="article-header">
-      <h1 class="article-title">De la penca al jarro: cómo llega el pulque a tu mesa</h1>
+      <h1 class="article-title">De la penca al jarro: el proceso vivo</h1>
       <div class="article-meta">
-        <div class="meta-pill">🍶 <span>Pulque vivo</span></div>
-        <div class="meta-pill">📍 <span>Altiplano mexicano</span></div>
-        <div class="meta-pill">🕒 <span>Lectura: 7–9 min</span></div>
+        <div class="meta-pill">🍶 <span>Pulque</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 9–11 min</span></div>
         <div class="meta-pill">📅 <span>2025</span></div>
       </div>
-      <p class="article-lead">
-        Detrás de cada vaso de pulque hay años de paciencia del maguey, manos que raspan al amanecer, microbiotas
-        invisibles y una cadena de cuidados para que el fermento llegue vivo, digno y seguro hasta tu casa.
-        Aquí te contamos ese recorrido completo, de la penca al jarro.
-      </p>
+      <p class="article-lead">Fermentos, microbiota y tradición del maguey paso a paso.</p>
     </header>
 
-    <!-- IMAGEN PRINCIPAL (OPCIONAL)
-         Reemplaza pulque-01.jpg por la imagen que tengas.
-         Si no quieres imagen, puedes borrar todo este bloque .hero-img.
-    -->
     <figure class="hero-img">
-      <img src="de_la_penca_al_jarro.png" alt="Magueyes y jarro de pulque listo para servirse" />
+      <img src="de_la_penca_al_jarro.png" alt="De la penca al jarro: el proceso vivo" />
     </figure>
 
-    <!-- ===== CUERPO DEL ARTÍCULO ===== -->
     <article class="article-body">
+      ```html
+<h2>1. Todo empieza con un maguey que sabe esperar</h2>
+<p>El pulque no nace en una fábrica: nace en el maguey. Dependiendo de la variedad —manso, salmiana, mapisca, ayoteco y muchos más— la planta puede tardar entre 7 y 15 años en estar lista para dar aguamiel. Durante todo ese tiempo, ejidatarios y familias pulqueras cuidan el terreno, controlan erosión, poda, plagas y fuego, porque un maguey estresado se refleja después en menor producción y menor calidad. Cuando la planta alcanza su madurez, en lugar de dejarla florecer, se le “castra”: se abre el cogollo central para formar una cavidad. Ese hueco es el corazón del sistema: ahí se juntará el aguamiel.</p>
+<p>La preservación de estas plantas es fundamental no solo para la producción de pulque, sino también para el sustento de muchas familias en las comunidades rurales. Cada maguey se convierte en un símbolo de resistencia y tradición, un recurso que ha sido parte de la identidad cultural mexicana durante siglos. No es solo un cultivo, es un legado, y quienes lo cultivan entienden la importancia de mantener vivas las técnicas ancestrales que han sido transmitidas de generación en generación.</p>
+<p>Los magueyes también son cruciales para el ecosistema. Con sus raíces profundas, ayudan a prevenir la erosión del suelo y proporcionan refugio y alimento a diversas especies. La agricultura sostenible que rodea al maguey refuerza la conexión entre el hombre y la naturaleza, mostrando que el respeto hacia el medio ambiente es clave para el éxito de la producción de pulque y la salud de las comunidades.</p>
 
-      <h2>1. Todo empieza con un maguey que sabe esperar</h2>
-      <p>
-        El pulque no nace en una fábrica: nace en el maguey. Dependiendo de la variedad —manso, salmiana,
-        mapisca, ayoteco y muchos más— la planta puede tardar entre 7 y 15 años en estar lista para dar aguamiel.
-        Durante todo ese tiempo, ejidatarios y familias pulqueras cuidan el terreno, controlan erosión, poda,
-        plagas y fuego, porque un maguey estresado se refleja después en menor producción y menor calidad.
-      </p>
-      <p>
-        Cuando la planta alcanza su madurez, en lugar de dejarla florecer, se le “castra”: se abre el cogollo
-        central para formar una cavidad. Ese hueco es el corazón del sistema: ahí se juntará el aguamiel.
-      </p>
+<h2>2. Raspar: oficio fino al amanecer</h2>
+<p>Dos veces al día, casi siempre al amanecer y al atardecer, la persona tlachiquera llega al maguey con su raspador y su acocote. Primero retira la película cristalina que se forma en el cajete: es tejido vegetal, levaduras y bacterias que se regulan con la mano experta. Luego, con el raspador, estimula suavemente las paredes del corazón para que la planta siga produciendo aguamiel. El aguamiel se extrae con el acocote —tradicionalmente una calabaza alargada— y se vacía en recipientes limpios. En un solo maguey se pueden obtener de 3 a 8 litros diarios durante varios meses, si se cuida bien.</p>
+<p>El raspado no es violencia hacia la planta; es un diálogo. Si se hace con prisa o sin técnica, el maguey se infecta, fermenta mal o muere antes de tiempo. Si se hace bien, se honra un linaje de saberes campesinos. Este proceso requiere una conexión íntima entre el tlachiquero y el maguey, donde la paciencia y el conocimiento se entrelazan. La voz del tlachiquero se vuelve parte del paisaje, un canto que recuerda la importancia de cada rasguño en la penca.</p>
+<p>Es un oficio que no solo implica habilidades físicas, sino también una profunda comprensión del ciclo de vida de la planta. Las condiciones climáticas, la altitud y la calidad del suelo son factores que el tlachiquero debe tener en cuenta. Este conocimiento se transmite a través de relatos y experiencias compartidas, formando una red de sabiduría que respalda cada gota de aguamiel que se extrae.</p>
 
-      <!-- PÁRRAFO OPCIONAL:
-           Si quieres profundizar en variedades de maguey o manejo agroecológico,
-           agrega tus párrafos extra aquí debajo de este comentario. -->
+<h2>3. Del aguamiel al pulque: fermento que sigue vivo</h2>
+<p>El aguamiel recién extraído es dulce, floral y muy delicado. Llega al tinacal —el espacio de fermentación— donde se mezcla con pulque maduro que actúa como “pie de cuba”: ahí viven levaduras y bacterias lácticas que transformarán los azúcares en alcohol, ácidos y compuestos aromáticos. En cuestión de horas comienza la magia: aparece espuma, sube la acidez, baja el dulzor. Un buen pulque suele trabajarse entre 12 y 48 horas, dependiendo del clima y del perfil que busca cada productora. No es un producto estandarizado industrialmente; es un fermento vivo en diálogo con el ambiente.</p>
+<p>Este proceso de fermentación es uno de los elementos más fascinantes del pulque. Las condiciones del tinacal, como la temperatura y la humedad, pueden influir drásticamente en el resultado final. Algunas productoras experimentan con diferentes tipos de pulque maduro para obtener perfiles únicos, mientras que otras se adhieren a recetas tradicionales que han sido perfeccionadas a lo largo de los años. El pulque no se hace solamente con ingredientes, se hace con historia, cultura y pasión.</p>
+<p>En este sentido, el pulque representa una forma de arte efímero que pide ser disfrutado en su frescura. Cada vaso de pulque cuenta una historia: la del maguey, la del tlachiquero y la de la comunidad que lo produce. La experiencia de beber pulque es, por tanto, más que simplemente satisfacer la sed; es un viaje emocional que conecta al consumidor con las raíces de la agricultura mexicana y los sabores de su tierra.</p>
 
-      <h2>2. Raspar: oficio fino al amanecer</h2>
-      <p>
-        Dos veces al día, casi siempre al amanecer y al atardecer, la persona tlachiquera llega al maguey con
-        su raspador y su acocote. Primero retira la película cristalina que se forma en el cajete: es tejido
-        vegetal, levaduras y bacterias que se regulan con la mano experta. Luego, con el raspador, estimula
-        suavemente las paredes del corazón para que la planta siga produciendo aguamiel.
-      </p>
-      <p>
-        El aguamiel se extrae con el acocote —tradicionalmente una calabaza alargada— y se vacía en recipientes
-        limpios. En un solo maguey se pueden obtener de 3 a 8 litros diarios durante varios meses, si se cuida bien.
-      </p>
-      <div class="highlight">
-        El raspado no es violencia hacia la planta; es un diálogo. Si se hace con prisa o sin técnica, el maguey se
-        infecta, fermenta mal o muere antes de tiempo. Si se hace bien, se honra un linaje de saberes campesinos.
+<h2>4. Pulquería, curados y acuerdos de confianza</h2>
+<p>Desde el tinacal, el pulque viaja a pulquerías, cocinas comunitarias o puntos de venta. Ahí pueden suceder dos cosas: Se sirve blanco: pulque joven, fresco, con su acidez ligera y sabor directo. Se preparan curados: se mezcla con fruta, semillas o hierbas. Un curado honesto parte de pulque bueno; el sabor de base no se esconde. En esta etapa entran también los acuerdos de confianza: quién produce, quién transporta, quién vende y cómo se garantiza que no se diluye con agua, azúcar barata o ingredientes de mala calidad.</p>
+<p>Las pulquerías son espacios de encuentro donde se celebra la cultura del pulque. Aquí, la gente comparte historias, risas y, por supuesto, el pulque en sus distintas variedades. Es un lugar donde se fomenta la comunidad y se tejen lazos entre productores y consumidores. La autenticidad es fundamental; por ello, cada pulquería busca ofrecer productos de calidad que resalten la riqueza del pulque en su estado más puro.</p>
+<p>La relación de confianza entre el productor, el transportista y el vendedor asegura que el pulque llegue en su mejor estado. En un mundo donde la industrialización a menudo busca cortar esquinas, el compromiso por la calidad y la tradición representa un soplo de aire fresco. A través de la transparencia en el proceso, se crea un vínculo que fortalece la cultura del pulque y garantiza su continuidad en el tiempo.</p>
+
+<h2>5. Cómo llega a tu casa sin perderse en el camino</h2>
+<p>Cada vez es más común encontrar pulque en ciudades lejanas a las zonas magueyeras. Para que llegue bien, hay buenas prácticas que muchas casas pulqueras ya siguen: Cadena fría básica: mantener el pulque fresco ralentiza la fermentación excesiva. Envases limpios: garrafones o barriles grado alimenticio, nunca botes oxidados. Rotación rápida: producir pensando en vender en uno o dos días, no almacenarlo semanas. Etiquetas claras: quién lo hizo, de qué comunidad, fecha de producción.</p>
+<p>Cuando pides pulque a domicilio o compras en un punto fijo, estás entrando en esta cadena. Preguntar de dónde viene no es molestia: es parte de cuidar el tejido que conecta a todos los involucrados en la producción y venta. Este interés por el origen del pulque también resalta la importancia de apoyar a las comunidades productoras, fomentando un comercio justo y responsable.</p>
+<p>Además, el crecimiento del mercado del pulque en las ciudades ha generado un interés renovado por la cultura del maguey y la producción artesanal. Cada vez más personas se están volviendo conscientes de la riqueza que este producto ofrece, no solo en términos de sabor, sino también de historia, tradición y sostenibilidad. Este movimiento contribuye a revitalizar comunidades rurales y a preservar saberes ancestrales para las futuras generaciones.</p>
+
+<h2>6. Curados: creatividad al servicio del sabor</h2>
+<p>Los curados son una de las formas más creativas de disfrutar el pulque. Al mezclarlo con frutas como fresa, piña o guanábana, o bien con hierbas como el epazote, se logra una explosión de sabores que puede atraer tanto a los conocedores del pulque como a quienes lo prueban por primera vez. Cada curado es una representación de la creatividad del pulquero y un reflejo de los ingredientes locales disponibles. Esta práctica no solo diversifica la oferta, sino que también fomenta la agricultura local.</p>
+<p>La preparación de un curado es un arte que requiere un equilibrio perfecto entre el pulque y los ingredientes adicionales. La elección de la fruta o hierba adecuada puede realzar el sabor natural del pulque, creando una experiencia única. Algunos productores incluso experimentan con hierbas medicinales, aportando beneficios adicionales a la bebida. Así, el curado se convierte en una mezcla de tradición y innovación, uniendo el pasado y el presente en cada vaso.</p>
+<p>Además, la popularidad de los curados está fomentando la creación de nuevas rutas turísticas en las zonas rurales, donde los visitantes pueden aprender sobre el proceso de producción y participar en degustaciones. Esta interacción directa con los productores genera un aprecio más profundo por el trabajo artesanal y promueve un turismo responsable que beneficia a las comunidades locales.</p>
+
+<h2>7. La sostenibilidad del maguey y el pulque en el futuro</h2>
+<p>A medida que el interés por el pulque crece, también lo hace la necesidad de asegurar la sostenibilidad de su producción. La sobreexplotación de los magueyes, la deforestación y el cambio climático son desafíos que enfrentan los productores. Es vital promover prácticas agrícolas sostenibles que no solo protejan la planta, sino que también respeten el entorno. La agroecología se presenta como una opción viable, integrando la biodiversidad y los saberes tradicionales en la producción de maguey.</p>
+<p>Algunas organizaciones y colectivos están trabajando en la reforestación de áreas degradadas y en la recuperación de técnicas agrícolas ancestrales. Iniciativas que combinan la ciencia moderna con el conocimiento indígena están surgiendo para garantizar un futuro saludable para la producción de pulque. Esto no solo beneficia a las comunidades rurales, sino que también contribuye a la conservación de la biodiversidad y la salud de los ecosistemas locales.</p>
+<p>Los consumidores también juegan un papel crucial en este proceso. Al elegir pulque de productores comprometidos con la sostenibilidad, están apoyando una economía que prioriza el bien común. Además, al educarse sobre el impacto de sus elecciones, los consumidores pueden ayudar a crear un mercado que valore la calidad, la autenticidad y la responsabilidad social, asegurando un futuro brillante para el pulque y sus comunidades productoras.</p>
+
+<h2>Cierre: Un viaje por la tradición y el sabor</h2>
+<p>El recorrido del pulque desde el maguey hasta el consumidor es un viaje que abarca no solo la producción de una bebida, sino la creación de lazos comunitarios, la preservación de tradiciones y la conexión con la tierra. Cada paso en este proceso es fundamental y refleja un profundo respeto por la naturaleza y sus ritmos. Al disfrutar de un buen pulque, no solo estás saboreando un producto único, sino que te estás uniendo a una historia que ha perdurado a lo largo del tiempo.</p>
+<p>Invitamos a todos a explorar y aprender sobre el pulque, a conocer a los productores detrás de cada jarro y a apreciar la riqueza de la cultura que lo rodea. Al hacerlo, se contribuye a la sostenibilidad de esta tradición milenaria y se celebra la identidad de un país que encuentra en el maguey no solo un cultivo, sino un símbolo de resistencia y comunidad. ¡Salud y que el pulque siga fluyendo!</p>
+```
+    </article>
+
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
+      <form class="cta-form" action="#suscribirse" method="post">
+        <input type="email" placeholder="tu@correo.com" required />
+        <button type="submit">Suscribirme</button>
+      </form>
+      <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
+    </div>
+
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🍶 Pulque</span>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container row">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
+        <span>Guardianes del Pulque</span>
       </div>
+      <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
+      </div>
+    </div>
+  </footer>
 
-      <h2>3. Del aguamiel al pulque: fermento que sigue vivo</h2>
-      <p>
-        El aguamiel recién extraído es dulce, floral y muy delicado. Llega al tinacal —el espacio de fermentación—
-        donde se mezcla con pulque maduro que actúa como “pie de cuba”: ahí viven levaduras y bacterias lácticas
-        que transformarán los azúcares en alcohol, ácidos y compuestos aromáticos.
-      </p>
-      <p>
-        En cuestión de horas comienza la magia: aparece espuma, sube la acidez, baja el dulzor. Un buen pulque
-        suele trabajarse entre 12 y 48 horas, dependiendo del clima y del perfil que busca cada productora.
-        No es un producto estandarizado industrialmente; es un fermento vivo en diálogo con el ambiente.
-      </p>
-
-      <h2>4. Pulquería, curados y acuerdos de confianza</h2>
-      <p>
-        Desde el tinacal, el pulque viaja a pulquerías, cocinas comunitarias o puntos de venta. Ahí pueden suceder
-        dos cosas:
-      </p>
-      <ul>
-        <li><strong>Se sirve blanco</strong>: pulque joven, fresco, con su acidez ligera y sabor directo.</li>
-        <li><strong>Se preparan curados</strong>: se mezcla con fruta, semillas o hierbas. Un curado honesto parte de pulque bueno; el sabor de base no se esconde.</li>
-      </ul>
-      <p>
-        En esta etapa entran también los acuerdos de confianza: quién produce, quién transporta, quién vende y
-        cómo se garantiza que no se diluye con agua, azúcar barata o ingredientes de mala calidad.
-      </p>
-
-      <h2>5. Cómo llega a tu casa sin perderse en el camino</h2>
-      <p>
-        Cada vez es más común encontrar pulque en ciudades lejanas a las zonas magueyeras. Para que llegue bien,
-        hay buenas prácticas que muchas casas pulqueras ya siguen:
-      </p>
-      <ul>
-        <li><strong>Cadena fría básica</strong>: mantener el pulque fresco ralentiza la fermentación excesiva.</li>
-        <li><strong>Envases limpios</strong>: garrafones o barriles grado alimenticio, nunca botes oxidados.</li>
-        <li><strong>Rotación rápida</strong>: producir pensando en vender en uno o dos días, no almacenarlo semanas.</li>
-        <li><strong>Etiquetas claras</strong>: quién lo hizo, de qué comunidad, fecha de producción.</li>
-      </ul>
-      <p>
-        Cuando pides pulque a domicilio o compras en un punto fijo, estás entrando en esta cadena.
-        Preguntar de dónde viene no es molestia: es parte de cuidar el tejid
-
-
-
-
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>

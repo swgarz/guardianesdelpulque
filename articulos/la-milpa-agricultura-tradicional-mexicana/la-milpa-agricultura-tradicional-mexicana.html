@@ -58,322 +58,214 @@
     :root{
       --brand:#059669;
       --ink:#0f172a;
-      --muted:#6b7280;
+      --muted:#64748b;
       --card:#ffffff;
-      --stroke:#e5e7eb;
-      --maxw:780px;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){.container{padding:0 24px}}
 
     /* NAV */
     .nav{
       position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,.9);
+      background:transparent;
+      border-bottom:1px solid transparent;
       backdrop-filter:saturate(180%) blur(14px);
-      border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
-    .nav .row{
-      display:flex;
-      align-items:center;
+    .nav-row{
+      display:flex;align-items:center;
       justify-content:space-between;
-      padding:8px 0;
-      gap:.75rem;
+      padding:10px 0;gap:1rem;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.45rem;
-      font-weight:700;
-    }
-    .brand-logo{
-      height:34px;
-      width:auto;
-    }
-    .brand-text{
-      font-size:.98rem;
-      letter-spacing:.01em;
-    }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.4rem .8rem;
-      border-radius:999px;
-      border:1px solid var(--brand);
-      font-size:.72rem;
-      font-weight:600;
-      color:var(--brand);
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .16s ease;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
     }
-    .chip .emoji{font-size:.9rem}
-    .chip:hover{
-      background:var(--brand);
-      color:#020817;
-      transform:translateY(-1px);
-      box-shadow:0 8px 18px rgba(15,23,42,.16);
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
     }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
 
-    /* HERO */
-    .hero-article{
-      padding:24px 0 8px;
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
     }
-    .hero-inner{
-      max-width:var(--maxw);
-      margin:0 auto;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      padding:.25rem .7rem;
-      border-radius:999px;
-      background:rgba(5,150,105,.08);
-      color:#047857;
-      font-size:.7rem;
-      font-weight:600;
-      margin-bottom:.4rem;
-    }
-    .title{
-      margin:0;
-      font-size:clamp(26px,5.4vw,40px);
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-    .subtitle{
-      margin:.4rem 0 0;
-      color:var(--muted);
-      font-size:.9rem;
-      max-width:46rem;
-    }
-    .meta{
-      margin-top:.6rem;
-      font-size:.72rem;
-      color:#9ca3af;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      align-items:center;
-    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px 0 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);}
 
-    /* Cover */
-    .cover-wrap{
-      max-width:var(--maxw);
-      margin:16px auto 0;
-      border-radius:24px;
-      background:radial-gradient(circle at top,rgba(5,150,105,.12),transparent),
-                 #020817;
-      padding:14px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .cover-img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      border-radius:16px;
-    }
-
-    /* CONTENIDO */
-    .article{
-      max-width:var(--maxw);
-      margin:22px auto 40px;
-      background:var(--card);
-      border-radius:24px;
-      padding:18px 16px 20px;
-      box-shadow:0 18px 45px rgba(15,23,42,.12);
-      border:1px solid rgba(148,163,253,.1);
-    }
-    @media (min-width:700px){
-      .article{padding:26px 26px 24px;}
-    }
-    .article h2{
-      font-size:1.12rem;
-      margin:1.4rem 0 .4rem;
-    }
-    .article p{
-      margin:.45rem 0;
-      color:#374151;
-      font-size:.9rem;
-    }
-    .article ul,.article ol{
-      margin:.35rem 0 .6rem 1.2rem;
-      padding:0;
-      color:#374151;
-      font-size:.88rem;
-    }
-    .divider{
-      margin:1.3rem 0;
-      border-top:1px solid rgba(148,163,253,.22);
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
     }
 
     /* CTA */
     .cta-section{
-      margin:1.5rem 0;
-      padding:1.2rem;
-      border-radius:16px;
-      background:rgba(5,150,105,.04);
-      border:1px dashed rgba(5,150,105,.25);
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
       text-align:center;
     }
-    .cta-section h2{
-      font-size:1rem;
-      margin:0 0 .5rem;
-      color:#065f46;
-    }
-    .cta-section p{
-      font-size:.82rem;
-      color:#374151;
-      margin:0 0 .8rem;
-    }
-    .cta-form{
-      display:flex;
-      gap:.5rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-bottom:.8rem;
-    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
     .cta-form input[type="email"]{
-      padding:.45rem .75rem;
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      font-size:.82rem;
-      width:220px;
-      max-width:100%;
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
     }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
     .cta-form button{
-      padding:.45rem 1rem;
-      border:none;
-      border-radius:999px;
-      background:var(--brand);
-      color:#fff;
-      font-size:.82rem;
-      font-weight:600;
-      cursor:pointer;
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
     }
-    .cta-form button:hover{
-      background:#047857;
-    }
+    .cta-form button:hover{background:#047857;}
 
-    /* Footer articulo */
-    .article-footer{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:1.1rem;
-      font-size:.78rem;
-      color:#6b7280;
-    }
-    .article-footer .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-    }
-
-    footer{
-      border-top:1px solid rgba(15,23,42,.08);
-      padding:18px 0 22px;
-      color:#9ca3af;
-      font-size:.75rem;
-    }
-    footer .row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
   </style>
 </head>
 <body>
   <!-- NAV -->
-  <div class="nav">
-    <div class="container row">
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
       <a class="brand" href="../../index.html">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-      <div class="links">
-        <a class="chip" href="../posts.html">Articulos</a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero-article">
-    <div class="hero-inner">
-      <div class="eyebrow">✊ Territorio</div>
-      <h1 class="title">La Milpa: Agricultura Tradicional Mexicana</h1>
-      <p class="subtitle">Descubre la milpa, un sistema agrícola sustentable y diverso en México.</p>
-      <div class="meta">
-        <span>Por Guardianes del Pulque</span>
-        <span>7 de marzo de 2026</span>
-      </div>
-    </div>
-    <div class="cover-wrap">
-      <img src="la-milpa-agricultura-tradicional-mexicana.png" alt="La Milpa: Agricultura Tradicional Mexicana" class="cover-img">
+      </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO -->
-  <main class="article">
-    <h2>¿Qué es la Milpa?</h2><p>La milpa es un sistema agrícola tradicional mexicano que combina varios cultivos en una misma parcela.</p><h2>Policultivo en la Milpa</h2><p>Este método se basa en el policultivo, donde se siembran diferentes especies para mejorar la producción.</p><ul><li>Maíz</li><li>Frijol</li><li>Calabaza</li></ul><h2>Beneficios de la Milpa</h2><p>La milpa tiene múltiples ventajas para el medio ambiente y la comunidad:</p><ol><li>Aumenta la biodiversidad.</li><li>Mejora la calidad del suelo.</li><li>Reduce plagas y enfermedades.</li><li>Proporciona alimentos variados.</li></ol><h2>Práctica Sustentable</h2><p>La milpa es un ejemplo de agricultura sustentable que respeta la naturaleza y las tradiciones.</p><p>Fomentar la milpa es asegurar un futuro agrícola diverso y sostenible para las próximas generaciones.</p>
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      La Milpa: Agricultura Tradicional Mexicana
+    </div>
 
-    <div class="divider"></div>
+    <header class="article-header">
+      <h1 class="article-title">La Milpa: Agricultura Tradicional Mexicana</h1>
+      <div class="article-meta">
+        <div class="meta-pill">✊ <span>Territorio</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 8–10 min</span></div>
+        <div class="meta-pill">📅 <span>7 de marzo de 2026</span></div>
+      </div>
+      <p class="article-lead">Descubre la milpa, un sistema agrícola sustentable y diverso en México.</p>
+    </header>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Suscribete al boletin</h2>
-      <p>Recibe articulos sobre pulque, bioconstruccion y defensa del territorio en tu correo.</p>
+    <figure class="hero-img">
+      <img src="la-milpa-agricultura-tradicional-mexicana.png" alt="La Milpa: Agricultura Tradicional Mexicana" />
+    </figure>
+
+    <article class="article-body">
+      <h2>¿Qué es la Milpa?</h2>
+<p>La milpa es un sistema agrícola tradicional que ha sido utilizado por comunidades indígenas y campesinas en México durante miles de años. Este método consiste en el cultivo conjunto de diferentes especies de plantas en la misma parcela, lo que genera un ecosistema agrícola diverso y resiliente. En esencia, la milpa es más que una simple técnica de cultivo; es una forma de vida que refleja la profunda conexión entre la cultura, la agricultura y la naturaleza en el contexto mexicano.</p>
+<p>Históricamente, la milpa ha sido fundamental para la subsistencia de muchas comunidades rurales. Se cree que este sistema se originó hace más de 4,000 años, y se ha transmitido de generación en generación, adaptándose a las condiciones climáticas y del suelo de cada región. El modelo de milpa no solo incluye la siembra de cultivos, sino que también considera la rotación de cultivos y el manejo sostenible de los recursos naturales, asegurando la fertilidad del suelo para futuras cosechas.</p>
+<p>En la actualidad, la milpa sigue siendo un pilar de la agricultura en muchas zonas rurales de México, donde el maíz, el frijol y la calabaza se siembran en armonía. Este sistema no solo proporciona alimentos, sino que también fortalece la identidad cultural y la cohesión social de las comunidades. A través de la milpa, se preservan conocimientos ancestrales y prácticas agrícolas que son esenciales para el bienestar de las generaciones presentes y futuras.</p>
+
+<h2>Policultivo en la Milpa</h2>
+<p>El policultivo es una de las características más distintivas del sistema de milpa. Este enfoque implica sembrar varias especies de plantas al mismo tiempo, aprovechando las sinergias que se generan entre ellas. En la milpa, el maíz, el frijol y la calabaza se cultivan juntos de manera complementaria. El maíz, como planta más alta, proporciona sombra a las otras especies, mientras que los frijoles fijan nitrógeno en el suelo, mejorando su fertilidad.</p>
+<p>Además de los cultivos principales, muchos agricultores también incorporan hierbas y vegetales de hoja verde, como el quelite o la espinaca, y flores comestibles que atraen polinizadores. Este enfoque diversificado no solo maximiza la producción, sino que también ayuda a mantener un equilibrio ecológico, reduciendo la necesidad de insumos químicos y fomentando la conservación de la biodiversidad. Por ejemplo, los estudios han mostrado que las milpas pueden albergar hasta cinco veces más especies de plantas que los monocultivos convencionales.</p>
+<p>La implementación de un sistema de milpa requiere un conocimiento profundo del ecosistema local. Así, los agricultores deben observar las interacciones entre las diferentes especies y el medio ambiente. Para quienes deseen iniciar un cultivo de milpa, es importante elegir variedades de semillas adaptadas a su región y realizar un análisis del suelo para determinar las necesidades específicas de nutrientes y agua. Este enfoque basado en la observación y la adaptación garantiza una producción sostenible y resiliente.</p>
+
+<h2>Beneficios Ambientales de la Milpa</h2>
+<p>El sistema de milpa ofrece múltiples beneficios tanto para el medio ambiente como para las comunidades que lo practican. Uno de los principales beneficios es el aumento de la biodiversidad. Al cultivar diversas especies en una misma parcela, se crea un hábitat favorable para una variedad de organismos, desde insectos polinizadores hasta microorganismos del suelo. Esta biodiversidad es fundamental para mantener el equilibrio ecológico y la salud del ecosistema agrícola.</p>
+<p>Otro beneficio significativo es la mejora de la calidad del suelo. La práctica de rotación de cultivos y la incorporación de materia orgánica, como restos de cosechas y estiércol, ayudan a enriquecer el suelo y prevenir la erosión. Diversos estudios han demostrado que las milpas pueden retener un 30% más de humedad en comparación con los monocultivos, lo que es crucial en épocas de sequía. Por ejemplo, en regiones como la Sierra Norte de Puebla, los agricultores han reportado un aumento en la fertilidad del suelo y una mayor capacidad de retención de agua tras implementar prácticas de milpa.</p>
+<p>Además, la milpa contribuye a la reducción de plagas y enfermedades. La diversidad de cultivos hace que sea menos probable que una plaga ataque a todas las variedades simultáneamente. Esto, sumado al uso de prácticas agroecológicas, como la siembra de plantas repelentes, permite a los agricultores gestionar su producción de manera más efectiva, reduciendo la dependencia de pesticidas químicos. Por ejemplo, el uso de flores como la caléndula en las milpas ha demostrado actuar como repelente natural de ciertos insectos, beneficiando la salud general de las cosechas.</p>
+
+<h2>Producción de Alimentos Variados</h2>
+<p>La milpa no solo es un sistema eficiente para cultivar, sino que también proporciona una variedad de alimentos que sustentan las dietas de las comunidades rurales. Al combinar cultivos como maíz, frijol y calabaza, las familias pueden obtener un espectro amplio de nutrientes esenciales. Esta diversidad alimentaria es crucial para combatir la desnutrición y promover una alimentación equilibrada.</p>
+<p>Por ejemplo, el maíz es una fuente rica en carbohidratos, mientras que el frijol aporta proteínas y fibra, y la calabaza es rica en vitaminas y minerales. Este enfoque integral no solo satisface las necesidades nutricionales de las familias, sino que también promueve la seguridad alimentaria, al reducir la dependencia de alimentos procesados y comprados en el mercado. En muchas comunidades, las cosechas de milpa son suficientes para alimentar a las familias durante todo el año, y cualquier excedente puede ser vendido o intercambiado, generando ingresos adicionales.</p>
+<p>Además, la diversidad de cultivos permite a los agricultores diversificar sus fuentes de ingreso, lo que es esencial en un contexto de cambio climático y fluctuaciones de mercado. Al cultivar diferentes especies, los agricultores pueden adaptarse a las variaciones en la demanda del mercado y mitigar el riesgo de pérdida económica en caso de que un cultivo no resulte viable. Esta resiliencia económica es un aspecto fundamental que fortalece a las comunidades rurales y les permite enfrentar desafíos futuros.</p>
+
+<h2>Práctica Sustentable</h2>
+<p>La milpa es un modelo ejemplar de agricultura sustentable, ya que promueve un uso responsable de los recursos naturales y el respeto por el medio ambiente. En un mundo donde la agricultura industrial ha llevado a la degradación del suelo y la pérdida de biodiversidad, la milpa representa una alternativa viable que se basa en la conservación de la naturaleza y el conocimiento ancestral. A través de prácticas agroecológicas, se preserva la fertilidad del suelo y se garantiza la producción de alimentos de manera sostenible.</p>
+<p>Para fomentar la milpa y asegurar su continuidad, es crucial que las comunidades y los gobiernos apoyen a los agricultores que aún practican este sistema. Esto incluye el acceso a recursos como semillas nativas, capacitación en agroecología y financiamiento para proyectos de producción sostenible. Además, la creación de redes de intercambio entre agricultores puede fortalecer las prácticas de milpa y fomentar la colaboración y el aprendizaje mutuo.</p>
+<p>Iniciativas como la promoción de mercados locales para productos de milpa pueden ser un impulso adicional para los agricultores. Al ofrecer sus productos directamente a los consumidores, no solo obtienen mejores precios, sino que también educan a la población sobre la importancia de consumir alimentos frescos y locales. Esta conexión entre productores y consumidores ayuda a construir comunidades más fuertes y conscientes sobre su alimentación.</p>
+
+<h2>Desafíos de la Milpa en la Actualidad</h2>
+<p>A pesar de sus múltiples beneficios, la práctica de la milpa enfrenta varios desafíos en la actualidad. Uno de los principales obstáculos es la presión de la agricultura industrial y la globalización, que priorizan los cultivos monoculturales y la producción masiva. Esto ha llevado a la pérdida de tierras agrícolas y la disminución de prácticas tradicionales, ya que muchos jóvenes prefieren abandonar el campo en busca de mejores oportunidades en las ciudades.</p>
+<p>Además, el cambio climático está afectando los patrones de lluvia y las temperaturas, lo que representa un reto adicional para los agricultores que dependen de la milpa. Las sequías prolongadas y las inundaciones pueden perjudicar la producción de cultivos, poniendo en riesgo la seguridad alimentaria de las comunidades. En este contexto, es fundamental que se implementen políticas públicas que apoyen la resiliencia de los sistemas agrícolas tradicionales, como la milpa, a través de la investigación y el acceso a tecnología adaptativa.</p>
+<p>Por último, la falta de reconocimiento y apoyo gubernamental hacia los sistemas de milpa también limita su desarrollo. Promover la educación sobre la importancia de la milpa y su impacto en la seguridad alimentaria y la biodiversidad es fundamental para revitalizar esta práctica. Es esencial que se generen espacios de diálogo entre los agricultores y las autoridades, donde se puedan compartir experiencias y proponer soluciones que beneficien a todos.</p>
+
+<h2>Conclusiones y Llamado a la Acción</h2>
+<p>La milpa es un tesoro del patrimonio agrícola de México que no solo asegura la alimentación de las comunidades rurales, sino que también preserva la biodiversidad y fomenta la sostenibilidad. Alentar la práctica de la milpa es una forma de apoyar la agricultura tradicional y fortalecer la identidad cultural de las comunidades. Es vital que tanto los agricultores como los consumidores reconozcan la importancia de este sistema y trabajen juntos para garantizar su continuidad.</p>
+<p>Como individuos, podemos contribuir al fortalecimiento de la milpa al optar por consumir productos locales y apoyar a los agricultores que practican este sistema. Asimismo, es crucial que las políticas públicas reconozcan la importancia de la agricultura tradicional y brinden apoyo a los agricultores que continúan cultivando milpas. Solo a través de un esfuerzo conjunto podemos asegurar que esta práctica ancestral perdure y continúe beneficiando a las generaciones futuras.</p>
+<p>La milpa no es solo un método de cultivo; es un estilo de vida que nos conecta con nuestra historia y nuestro entorno. Al valorar y promover este sistema agrícola, estamos invirtiendo en un futuro sostenible y diverso para México. ¡Es momento de unirnos y trabajar juntos por la milpa y por nuestras tierras!</p>
+    </article>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required>
+        <input type="email" placeholder="tu@correo.com" required />
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
-    </section>
+    </div>
 
-    <div class="divider"></div>
-
-    <!-- PIE DEL ARTICULO -->
-    <div class="article-footer">
-      <div class="chips">
-        <span class="chip">✊ Territorio</span>
-      </div>
-      <div>
-        <a href="../posts.html" class="chip">← Volver a articulos</a>
-      </div>
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">✊ Territorio</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:20px;width:auto">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
         <span>Guardianes del Pulque</span>
       </div>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="../posts.html">Mas articulos</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>

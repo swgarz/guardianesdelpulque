@@ -29,7 +29,7 @@
     "headline": "Suelos vivos",
     "description": "Compost, micorrizas y cobertura para resiliencia hídrica.",
     "image": "https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.png",
-    "datePublished": "2026-03-06",
+    "datePublished": "2026-03-05",
     "author": {
       "@type": "Organization",
       "name": "Guardianes del Pulque",
@@ -58,322 +58,224 @@
     :root{
       --brand:#059669;
       --ink:#0f172a;
-      --muted:#6b7280;
+      --muted:#64748b;
       --card:#ffffff;
-      --stroke:#e5e7eb;
-      --maxw:780px;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){.container{padding:0 24px}}
 
     /* NAV */
     .nav{
       position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,.9);
+      background:transparent;
+      border-bottom:1px solid transparent;
       backdrop-filter:saturate(180%) blur(14px);
-      border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
-    .nav .row{
-      display:flex;
-      align-items:center;
+    .nav-row{
+      display:flex;align-items:center;
       justify-content:space-between;
-      padding:8px 0;
-      gap:.75rem;
+      padding:10px 0;gap:1rem;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.45rem;
-      font-weight:700;
-    }
-    .brand-logo{
-      height:34px;
-      width:auto;
-    }
-    .brand-text{
-      font-size:.98rem;
-      letter-spacing:.01em;
-    }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.4rem .8rem;
-      border-radius:999px;
-      border:1px solid var(--brand);
-      font-size:.72rem;
-      font-weight:600;
-      color:var(--brand);
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .16s ease;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
     }
-    .chip .emoji{font-size:.9rem}
-    .chip:hover{
-      background:var(--brand);
-      color:#020817;
-      transform:translateY(-1px);
-      box-shadow:0 8px 18px rgba(15,23,42,.16);
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
     }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
 
-    /* HERO */
-    .hero-article{
-      padding:24px 0 8px;
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
     }
-    .hero-inner{
-      max-width:var(--maxw);
-      margin:0 auto;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      padding:.25rem .7rem;
-      border-radius:999px;
-      background:rgba(5,150,105,.08);
-      color:#047857;
-      font-size:.7rem;
-      font-weight:600;
-      margin-bottom:.4rem;
-    }
-    .title{
-      margin:0;
-      font-size:clamp(26px,5.4vw,40px);
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-    .subtitle{
-      margin:.4rem 0 0;
-      color:var(--muted);
-      font-size:.9rem;
-      max-width:46rem;
-    }
-    .meta{
-      margin-top:.6rem;
-      font-size:.72rem;
-      color:#9ca3af;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      align-items:center;
-    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px 0 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);}
 
-    /* Cover */
-    .cover-wrap{
-      max-width:var(--maxw);
-      margin:16px auto 0;
-      border-radius:24px;
-      background:radial-gradient(circle at top,rgba(5,150,105,.12),transparent),
-                 #020817;
-      padding:14px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .cover-img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      border-radius:16px;
-    }
-
-    /* CONTENIDO */
-    .article{
-      max-width:var(--maxw);
-      margin:22px auto 40px;
-      background:var(--card);
-      border-radius:24px;
-      padding:18px 16px 20px;
-      box-shadow:0 18px 45px rgba(15,23,42,.12);
-      border:1px solid rgba(148,163,253,.1);
-    }
-    @media (min-width:700px){
-      .article{padding:26px 26px 24px;}
-    }
-    .article h2{
-      font-size:1.12rem;
-      margin:1.4rem 0 .4rem;
-    }
-    .article p{
-      margin:.45rem 0;
-      color:#374151;
-      font-size:.9rem;
-    }
-    .article ul,.article ol{
-      margin:.35rem 0 .6rem 1.2rem;
-      padding:0;
-      color:#374151;
-      font-size:.88rem;
-    }
-    .divider{
-      margin:1.3rem 0;
-      border-top:1px solid rgba(148,163,253,.22);
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
     }
 
     /* CTA */
     .cta-section{
-      margin:1.5rem 0;
-      padding:1.2rem;
-      border-radius:16px;
-      background:rgba(5,150,105,.04);
-      border:1px dashed rgba(5,150,105,.25);
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
       text-align:center;
     }
-    .cta-section h2{
-      font-size:1rem;
-      margin:0 0 .5rem;
-      color:#065f46;
-    }
-    .cta-section p{
-      font-size:.82rem;
-      color:#374151;
-      margin:0 0 .8rem;
-    }
-    .cta-form{
-      display:flex;
-      gap:.5rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-bottom:.8rem;
-    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
     .cta-form input[type="email"]{
-      padding:.45rem .75rem;
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      font-size:.82rem;
-      width:220px;
-      max-width:100%;
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
     }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
     .cta-form button{
-      padding:.45rem 1rem;
-      border:none;
-      border-radius:999px;
-      background:var(--brand);
-      color:#fff;
-      font-size:.82rem;
-      font-weight:600;
-      cursor:pointer;
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
     }
-    .cta-form button:hover{
-      background:#047857;
-    }
+    .cta-form button:hover{background:#047857;}
 
-    /* Footer articulo */
-    .article-footer{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:1.1rem;
-      font-size:.78rem;
-      color:#6b7280;
-    }
-    .article-footer .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-    }
-
-    footer{
-      border-top:1px solid rgba(15,23,42,.08);
-      padding:18px 0 22px;
-      color:#9ca3af;
-      font-size:.75rem;
-    }
-    footer .row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
   </style>
 </head>
 <body>
   <!-- NAV -->
-  <div class="nav">
-    <div class="container row">
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
       <a class="brand" href="../../index.html">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-      <div class="links">
-        <a class="chip" href="../../posts.html">Articulos</a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero-article">
-    <div class="hero-inner">
-      <div class="eyebrow">🌿 Naturaleza</div>
-      <h1 class="title">Suelos vivos</h1>
-      <p class="subtitle">Compost, micorrizas y cobertura para resiliencia hídrica.</p>
-      <div class="meta">
-        <span>Por Guardianes del Pulque</span>
-        <span>5 de marzo de 2026</span>
-      </div>
-    </div>
-    <div class="cover-wrap">
-      <img src="suelos-vivos.png" alt="Suelos vivos" class="cover-img">
+      </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO -->
-  <main class="article">
-    <h2>La esencia del suelo</h2><p>El suelo, en su pureza, es un organismo vivo que respira, siente y nutre. Cada granillo de tierra, cada ráfaga de polvo son narraciones de la historia de nuestro planeta. En México, donde la milpa se dibuja en el paisaje y el maíz se alza con orgullo, los suelos vivos son el corazón palpitante de la agricultura tradicional.</p><h2>Compostaje: un ciclo sin fin</h2><p>La práctica del compostaje no es solo una forma de reciclaje, sino una danza de la vida. Al transformar restos orgánicos en abono, alimentamos el suelo y, por ende, a nosotros mismos. Este proceso no solo reduce desechos, sino que también incrementa la fertilidad y la biodiversidad.</p><h2>El milagro de las micorrizas</h2><p>Las micorrizas, esos hilos invisibles que tejen alianzas bajo la superficie, son un regalo del suelo. Estos hongos establecen simbiosis con las raíces de las plantas, permitiendo un intercambio casi mágico de nutrientes y agua. En regiones áridas de México, su papel es crucial para la adaptación y supervivencia.</p><h2>Cobertura vegetal: un manto protector</h2><p>La vegetación que abraza el suelo es más que una mera decoración; es un escudo que regula la temperatura, retiene la humedad y previene la erosión. La siembra de cultivos de cobertura, como el frijol o la avena, enriquece el terreno y crea un entorno propicio para la vida.</p><h2>Resiliencia hídrica: un desafío vital</h2><p>Frente a los caprichos del clima, los suelos vivos actúan como esponjas. Mantienen la humedad, permitiendo que las plantas sobrevivan en momentos de sequía. Al fomentar prácticas de conservación que mejoran la estructura del suelo, las comunidades se vuelven más resilientes a los cambios climáticos.</p><h2>Regeneración de suelos: un camino hacia la sostenibilidad</h2><p>En un país donde la degradación del suelo es un reto creciente, la regeneración se presenta como una esperanza. Técnicas como la rotación de cultivos y la agroforestería ayudan a restaurar los ecosistemas, revitalizando tierras que antes parecían perdidas. Cada pequeño esfuerzo en esta dirección es un paso hacia un futuro más verde.</p><h2>Construyendo la conexión</h2><p>La educación y la concienciación sobre la importancia de los suelos vivos son fundamentales. Iniciativas comunitarias y proyectos de reforestación, así como el conocimiento ancestral, juegan un papel vital en la formación de una conciencia ecológica. Al trabajar juntos, fortalecemos nuestras raíces y sembramos el futuro.</p><p>Así como cada milpa florece en su tiempo, así también los suelos vivos nos recuerdan que la regeneración es posible. En nuestras manos está el poder de nutrir la tierra, de devolverle la vida. Cultivemos la esperanza y permitamos que nuestros suelos hablen, pues son el eco del amor por la tierra que compartimos.</p>
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      Suelos vivos
+    </div>
 
-    <div class="divider"></div>
+    <header class="article-header">
+      <h1 class="article-title">Suelos vivos</h1>
+      <div class="article-meta">
+        <div class="meta-pill">🌿 <span>Naturaleza</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 9–11 min</span></div>
+        <div class="meta-pill">📅 <span>5 de marzo de 2026</span></div>
+      </div>
+      <p class="article-lead">Compost, micorrizas y cobertura para resiliencia hídrica.</p>
+    </header>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Suscribete al boletin</h2>
-      <p>Recibe articulos sobre pulque, bioconstruccion y defensa del territorio en tu correo.</p>
+    <figure class="hero-img">
+      <img src="suelos-vivos.png" alt="Suelos vivos" />
+    </figure>
+
+    <article class="article-body">
+      <h2>La esencia del suelo: un organismo vivo</h2>
+<p>El suelo es mucho más que un simple soporte para las plantas; es un organismo vivo que respira, siente y nutre. Cada grano de tierra, cada ráfaga de polvo, cuenta una historia profunda sobre la evolución de nuestro planeta. En México, donde la milpa se dibuja en el paisaje y el maíz se alza con orgullo, los suelos vivos son el corazón palpitante de la agricultura tradicional. Según datos del Instituto Nacional de Estadística y Geografía (INEGI), más del 50% de las tierras agrícolas en México son vulnerables a la erosión, lo que subraya la necesidad de cuidar y regenerar nuestros suelos.</p>
+<p>La diversidad de suelos en México, que incluye desde los ricos y fértiles de las áreas tropicales hasta los áridos del norte, ofrece una amplia gama de posibilidades para la agricultura. Sin embargo, esta riqueza se ve amenazada por prácticas inadecuadas de manejo agrícola. La agricultura intensiva, el uso excesivo de agroquímicos y la deforestación son solo algunas de las causas que llevan a la degradación del suelo. Al entender que el suelo es un ser vivo, podemos adoptar una nueva perspectiva que nos impulse a cuidar y regenerar nuestros ecosistemas.</p>
+<p>En la actualidad, es imperativo que las comunidades reconozcan la importancia de los suelos vivos no solo para la producción de alimentos, sino también para la salud del ambiente. La conservación del suelo no solo afecta la agricultura, sino que tiene repercusiones en la calidad del agua, la biodiversidad y el cambio climático. Promover prácticas sostenibles se convierte así en una responsabilidad colectiva que todos debemos asumir.</p>
+
+<h2>Compostaje: un ciclo sin fin</h2>
+<p>La práctica del compostaje es una de las formas más efectivas de reciclar y devolver nutrientes al suelo. Este proceso no solo reduce la cantidad de residuos que generamos, sino que también se convierte en una danza de la vida que enriquece la tierra. Al transformar restos orgánicos, como cáscaras de frutas, verduras, hojas secas y restos de café, en abono, alimentamos el suelo, potenciando su fertilidad y biodiversidad. Según la Secretaría de Medio Ambiente y Recursos Naturales (SEMARNAT), el compostaje puede reducir hasta un 30% los residuos sólidos urbanos.</p>
+<p>Para iniciar un compostaje en casa o en la comunidad, se pueden seguir algunos pasos básicos: 
+<ul>
+    <li>Selecciona un lugar adecuado: Un rincón del jardín o un patio donde pueda permanecer seco y aireado.</li>
+    <li>Reúne materiales: Mezcla restos de cocina (verdes) con materiales secos como hojas, paja o cartón (marrones) en una proporción de 2:1.</li>
+    <li>Revuelve y humedece: Cada 2 a 3 semanas, revuelve la mezcla para airearla y mantenerla húmeda, pero no empapada.</li>
+    <li>Espera: Después de unos meses, tendrás un abono rico en nutrientes que puedes usar para enriquecer tus cultivos.</li>
+</ul>
+</p>
+<p>El compostaje también puede ser una actividad comunitaria. Muchas comunidades han implementado programas de compostaje donde los vecinos se reúnen para trocar conocimientos y materiales. Esto no solo mejora la calidad del suelo, sino que también fomenta un sentido de comunidad y responsabilidad compartida hacia el medio ambiente.</p>
+
+<h2>El milagro de las micorrizas: aliados invisibles</h2>
+<p>Las micorrizas son una red de hongos que forman alianzas esenciales con las raíces de las plantas. Este fenómeno es particularmente notable en regiones áridas de México, donde la disponibilidad de agua es limitada. Estas asociaciones permiten un intercambio casi mágico de nutrientes y agua entre las plantas y los hongos. Estudios han demostrado que las plantas que tienen micorrizas pueden aumentar su absorción de agua hasta en un 90%, lo que es crucial en climas secos.</p>
+<p>Además, las micorrizas ayudan a mejorar la estructura del suelo al formar agregados, lo que permite una mejor aireación y retención de humedad. En muchas comunidades rurales, el entendimiento y uso de micorrizas ha sido parte de la cultura agrícola tradicional. Sin embargo, a menudo se ignora en la agricultura moderna, donde se priorizan métodos más agresivos y menos sostenibles.</p>
+<p>Promover la salud de las micorrizas es una práctica fundamental para mantener suelos vivos. Esto se puede lograr mediante el uso de prácticas de manejo sostenible, como la rotación de cultivos y la reducción del uso de fertilizantes químicos. Además, la educación sobre la biología del suelo y la importancia de estos organismos puede empoderar a las comunidades para adoptar enfoques más holísticos en su agricultura.</p>
+
+<h2>Cobertura vegetal: un manto protector</h2>
+<p>La vegetación que rodea y cubre el suelo no es solo una mera decoración; actúa como un escudo que regula la temperatura, retiene la humedad y previene la erosión. Prácticas como la siembra de cultivos de cobertura, tales como el frijol, la avena o el trébol, no solo enriquecen el suelo, sino que también crean un entorno propicio para la vida. En México, se ha registrado que la siembra de cultivos de cobertura puede aumentar la productividad agrícola en un 20-30% y reducir la erosión del suelo en un 50%.</p>
+<p>Además, los cultivos de cobertura ayudan a controlar las malezas y pueden incluso atraer insectos polinizadores, contribuyendo al equilibrio del ecosistema. Sin embargo, es importante que las comunidades sean conscientes de la selección de especies adecuadas para su región y clima, así como de la rotación de cultivos para maximizar los beneficios de esta práctica.</p>
+<p>El fortalecimiento de la cobertura vegetal no solo beneficia a la producción agrícola, sino que también impacta en el bienestar de la comunidad. Al implementar técnicas de cultivo sostenible y reforestación, las comunidades pueden mejorar la calidad del aire y del agua, y contribuir a la mitigación del cambio climático. La colaboración entre agricultores, ecologistas y educadores es esencial para fomentar estas prácticas en todos los niveles de la sociedad.</p>
+
+<h2>Resiliencia hídrica: un desafío vital</h2>
+<p>Frente a los caprichos del clima, los suelos vivos actúan como esponjas, capaces de retener humedad y permitir que las plantas sobrevivan en momentos de sequía. La crisis del agua es un desafío vital en muchas regiones de México, donde la disponibilidad de agua dulce se ve afectada por la contaminación, la sobreexplotación y el cambio climático. Promover prácticas de conservación del suelo, como la agroecología, no solo mejora la estructura del suelo, sino que también aumenta su capacidad para almacenar y filtrar agua.</p>
+<p>Las técnicas de conservación, como la siembra en contornos y la construcción de terrazas, son ejemplos prácticos que permiten aprovechar al máximo el agua de lluvia y reducir la escorrentía superficial. Estas prácticas no solo ayudan a los agricultores a adaptarse a condiciones climáticas extremas, sino que también contribuyen a la sostenibilidad a largo plazo de los ecosistemas locales.</p>
+<p>Además, la educación sobre la importancia de la gestión del agua y los suelos es fundamental para empoderar a las comunidades a adoptar prácticas más sostenibles. Proyectos como la recolección de agua de lluvia y la construcción de estanques pueden ser implementados en comunidades rurales para fortalecer la resiliencia hídrica y reducir la dependencia de fuentes externas de agua.</p>
+
+<h2>Regeneración de suelos: un camino hacia la sostenibilidad</h2>
+<p>En un país donde la degradación del suelo es un reto creciente, la regeneración se presenta como una esperanza. Técnicas como la rotación de cultivos, la agroforestería y la agricultura sin labranza ayudan a restaurar los ecosistemas, revitalizando tierras que antes parecían perdidas. Según la FAO, se estima que cada año se pierden 24 mil millones de toneladas de suelo fértil, lo que representa una amenaza crítica para la seguridad alimentaria.</p>
+<p>La rotación de cultivos, por ejemplo, no solo ayuda a prevenir plagas y enfermedades, sino que también mejora la fertilidad del suelo al diversificar los nutrientes que se extraen y regresan a la tierra. La agroforestería, que combina árboles y cultivos, proporciona sombra, mejora la retención de agua y ofrece múltiples beneficios económicos y ambientales. En muchas localidades de México, estas prácticas se han convertido en pilares fundamentales de la agricultura sostenible.</p>
+<p>Cada pequeño esfuerzo en esta dirección es un paso hacia un futuro más verde. Las comunidades pueden organizar talleres y capacitaciones para compartir conocimientos sobre técnicas de regeneración de suelos, promoviendo un enfoque colectivo hacia la restauración de sus tierras. La colaboración entre agricultores, científicos y organizaciones no gubernamentales puede facilitar el intercambio de mejores prácticas y fomentar una cultura de sostenibilidad.</p>
+
+<h2>Construyendo la conexión: educación y concienciación</h2>
+<p>La educación y la concienciación sobre la importancia de los suelos vivos son fundamentales para la salud de nuestro planeta. Iniciativas comunitarias y proyectos de reforestación, combinados con el conocimiento ancestral, juegan un papel vital en la formación de una conciencia ecológica. Es esencial que las nuevas generaciones comprendan la conexión entre la salud del suelo y la salud de las comunidades. Esto no solo asegura la preservación de nuestros recursos naturales, sino que también fortalece la identidad cultural y los lazos comunitarios.</p>
+<p>Las escuelas pueden integrar programas educativos que incluyan la importancia de los suelos, el compostaje y la biodiversidad en su currículo. Además, se pueden organizar ferias ambientales y actividades al aire libre que fomenten el respeto y el amor por la naturaleza. A través de la participación activa, los jóvenes pueden convertirse en agentes de cambio que lideren la transición hacia una mayor sostenibilidad.</p>
+<p>Al trabajar juntos, tanto en la educación como en la práctica, fortaleceremos nuestras raíces y sembramos un futuro lleno de esperanza y vitalidad. Así como cada milpa florece en su tiempo, así también los suelos vivos nos recuerdan que la regeneración es posible. La creación de redes entre comunidades, organizaciones y gobiernos puede amplificar estos esfuerzos, creando un movimiento hacia la conservación y el respeto por nuestra tierra.</p>
+
+<h2>Cultivando la esperanza: un llamado a la acción</h2>
+<p>La salud de nuestros suelos es esencial para el bienestar de las futuras generaciones. Cada acción que tomamos, desde el compostaje hasta la reforestación, es un paso hacia un mundo más sostenible. Al aprender sobre suelos vivos y su importancia, no solo estamos cuidando de nuestra tierra, sino también asegurando un futuro mejor para todos. La naturaleza nos ha dado herramientas para regenerar y cuidar, y en nuestras manos está el poder de nutrir la tierra, de devolverle la vida. Cultivemos la esperanza y permitamos que nuestros suelos hablen, pues son el eco del amor por la tierra que compartimos. Juntos, podemos construir un futuro en el que los suelos vivos florezcan y prosperen, creando un entorno saludable para todos.</p>
+    </article>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required>
+        <input type="email" placeholder="tu@correo.com" required />
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
-    </section>
+    </div>
 
-    <div class="divider"></div>
-
-    <!-- PIE DEL ARTICULO -->
-    <div class="article-footer">
-      <div class="chips">
-        <span class="chip">🌿 Naturaleza</span>
-      </div>
-      <div>
-        <a href="../../posts.html" class="chip">← Volver a articulos</a>
-      </div>
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🌿 Naturaleza</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:20px;width:auto">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
         <span>Guardianes del Pulque</span>
       </div>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="../../posts.html">Mas articulos</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>

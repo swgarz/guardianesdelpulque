@@ -58,322 +58,204 @@
     :root{
       --brand:#059669;
       --ink:#0f172a;
-      --muted:#6b7280;
+      --muted:#64748b;
       --card:#ffffff;
-      --stroke:#e5e7eb;
-      --maxw:780px;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
     @media (min-width:640px){.container{padding:0 24px}}
 
     /* NAV */
     .nav{
       position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,.9);
+      background:transparent;
+      border-bottom:1px solid transparent;
       backdrop-filter:saturate(180%) blur(14px);
-      border-bottom:1px solid rgba(15,23,42,.06);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
     }
-    .nav .row{
-      display:flex;
-      align-items:center;
+    .nav-row{
+      display:flex;align-items:center;
       justify-content:space-between;
-      padding:8px 0;
-      gap:.75rem;
+      padding:10px 0;gap:1rem;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.45rem;
-      font-weight:700;
-    }
-    .brand-logo{
-      height:34px;
-      width:auto;
-    }
-    .brand-text{
-      font-size:.98rem;
-      letter-spacing:.01em;
-    }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-      justify-content:flex-end;
-      align-items:center;
-    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.4rem .8rem;
-      border-radius:999px;
-      border:1px solid var(--brand);
-      font-size:.72rem;
-      font-weight:600;
-      color:var(--brand);
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .16s ease;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
     }
-    .chip .emoji{font-size:.9rem}
-    .chip:hover{
-      background:var(--brand);
-      color:#020817;
-      transform:translateY(-1px);
-      box-shadow:0 8px 18px rgba(15,23,42,.16);
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
     }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
 
-    /* HERO */
-    .hero-article{
-      padding:24px 0 8px;
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
     }
-    .hero-inner{
-      max-width:var(--maxw);
-      margin:0 auto;
-    }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      padding:.25rem .7rem;
-      border-radius:999px;
-      background:rgba(5,150,105,.08);
-      color:#047857;
-      font-size:.7rem;
-      font-weight:600;
-      margin-bottom:.4rem;
-    }
-    .title{
-      margin:0;
-      font-size:clamp(26px,5.4vw,40px);
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-    .subtitle{
-      margin:.4rem 0 0;
-      color:var(--muted);
-      font-size:.9rem;
-      max-width:46rem;
-    }
-    .meta{
-      margin-top:.6rem;
-      font-size:.72rem;
-      color:#9ca3af;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      align-items:center;
-    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px 0 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);}
 
-    /* Cover */
-    .cover-wrap{
-      max-width:var(--maxw);
-      margin:16px auto 0;
-      border-radius:24px;
-      background:radial-gradient(circle at top,rgba(5,150,105,.12),transparent),
-                 #020817;
-      padding:14px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .cover-img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      border-radius:16px;
-    }
-
-    /* CONTENIDO */
-    .article{
-      max-width:var(--maxw);
-      margin:22px auto 40px;
-      background:var(--card);
-      border-radius:24px;
-      padding:18px 16px 20px;
-      box-shadow:0 18px 45px rgba(15,23,42,.12);
-      border:1px solid rgba(148,163,253,.1);
-    }
-    @media (min-width:700px){
-      .article{padding:26px 26px 24px;}
-    }
-    .article h2{
-      font-size:1.12rem;
-      margin:1.4rem 0 .4rem;
-    }
-    .article p{
-      margin:.45rem 0;
-      color:#374151;
-      font-size:.9rem;
-    }
-    .article ul,.article ol{
-      margin:.35rem 0 .6rem 1.2rem;
-      padding:0;
-      color:#374151;
-      font-size:.88rem;
-    }
-    .divider{
-      margin:1.3rem 0;
-      border-top:1px solid rgba(148,163,253,.22);
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
     }
 
     /* CTA */
     .cta-section{
-      margin:1.5rem 0;
-      padding:1.2rem;
-      border-radius:16px;
-      background:rgba(5,150,105,.04);
-      border:1px dashed rgba(5,150,105,.25);
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
       text-align:center;
     }
-    .cta-section h2{
-      font-size:1rem;
-      margin:0 0 .5rem;
-      color:#065f46;
-    }
-    .cta-section p{
-      font-size:.82rem;
-      color:#374151;
-      margin:0 0 .8rem;
-    }
-    .cta-form{
-      display:flex;
-      gap:.5rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-bottom:.8rem;
-    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
     .cta-form input[type="email"]{
-      padding:.45rem .75rem;
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      font-size:.82rem;
-      width:220px;
-      max-width:100%;
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
     }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
     .cta-form button{
-      padding:.45rem 1rem;
-      border:none;
-      border-radius:999px;
-      background:var(--brand);
-      color:#fff;
-      font-size:.82rem;
-      font-weight:600;
-      cursor:pointer;
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
     }
-    .cta-form button:hover{
-      background:#047857;
-    }
+    .cta-form button:hover{background:#047857;}
 
-    /* Footer articulo */
-    .article-footer{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:1.1rem;
-      font-size:.78rem;
-      color:#6b7280;
-    }
-    .article-footer .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.35rem;
-    }
-
-    footer{
-      border-top:1px solid rgba(15,23,42,.08);
-      padding:18px 0 22px;
-      color:#9ca3af;
-      font-size:.75rem;
-    }
-    footer .row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
   </style>
 </head>
 <body>
   <!-- NAV -->
-  <div class="nav">
-    <div class="container row">
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
       <a class="brand" href="../../index.html">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-      <div class="links">
-        <a class="chip" href="../posts.html">Articulos</a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero-article">
-    <div class="hero-inner">
-      <div class="eyebrow">🌿 Naturaleza</div>
-      <h1 class="title">El Renacer de la Tierra: Polinizadores y Humedales en la Restauración Ecológica</h1>
-      <p class="subtitle">Exploremos la relación entre suelos vivos, polinizadores y humedales en la naturaleza.</p>
-      <div class="meta">
-        <span>Por Guardianes del Pulque</span>
-        <span>6 de marzo de 2026</span>
-      </div>
-    </div>
-    <div class="cover-wrap">
-      <img src="el-renacer-de-la-tierra-polinizadores-y-humedales-en-la-restauracion-ecologica.png" alt="El Renacer de la Tierra: Polinizadores y Humedales en la Restauración Ecológica" class="cover-img">
+      </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO -->
-  <main class="article">
-    <h2>Los Suelos Vivos: Corazón de la Tierra</h2><p>Los suelos son más que un sustrato; son un organismo vivo que respira y nutre. En su interior, miles de especies coexisten en un delicado equilibrio.</p><ul><li>Microorganismos que descomponen materia orgánica.</li><li>Invertebrados que mejoran la aireación.</li><li>Raíces que sostienen y enriquecen con nutrientes.</li></ul><h2>Humedales: Refugio de Biodiversidad</h2><p>Los humedales actúan como filtros naturales, purificando el agua y ofreciendo un hogar a innumerables especies. Son los vasos comunicantes entre la tierra y el agua, donde la vida florece.</p><ol><li>Proporcionan hábitat para aves migratorias.</li><li>Regulan el ciclo del agua.</li><li>Almacenan carbono, combatiendo el cambio climático.</li></ol><h2>Polinizadores: Los Artífices de la Vida</h2><p>Sin los polinizadores, la danza de la vida se vería truncada. Estos pequeños seres, como abejas y mariposas, son los mensajeros del amor entre las flores y los frutos.</p><ul><li>Son esenciales para la producción de alimentos.</li><li>Contribuyen a la diversidad genética de las plantas.</li><li>Su declive afecta a toda la cadena alimenticia.</li></ul><h2>Restauración Ecológica: Un Compromiso Necesario</h2><p>La restauración ecológica no es solo una acción; es un pacto con la naturaleza. Cada esfuerzo por recuperar un ecosistema es un canto de esperanza.</p><ol><li>Reforestación de áreas degradadas.</li><li>Protección de humedales y sus ecosistemas.</li><li>Promoción de prácticas agrícolas sostenibles.</li></ol><h2>Un Futuro Sostenible: El Llamado de la Tierra</h2><p>La naturaleza, en su sabiduría, nos enseña la importancia de cuidar y restaurar. En nuestras manos está el poder de regenerar la vida en los suelos, los humedales y entre los polinizadores.</p><p>Elegir restaurar es elegir vivir en armonía con nuestro entorno. Cada acción cuenta; juntos, podemos cultivar un futuro donde la naturaleza y la humanidad florezcan en unidad.</p>
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      El Renacer de la Tierra: Polinizadores y Humedales en la Restauración Ecológica
+    </div>
 
-    <div class="divider"></div>
+    <header class="article-header">
+      <h1 class="article-title">El Renacer de la Tierra: Polinizadores y Humedales en la Restauración Ecológica</h1>
+      <div class="article-meta">
+        <div class="meta-pill">🌿 <span>Naturaleza</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 6–8 min</span></div>
+        <div class="meta-pill">📅 <span>6 de marzo de 2026</span></div>
+      </div>
+      <p class="article-lead">Exploremos la relación entre suelos vivos, polinizadores y humedales en la naturaleza.</p>
+    </header>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Suscribete al boletin</h2>
-      <p>Recibe articulos sobre pulque, bioconstruccion y defensa del territorio en tu correo.</p>
+    <figure class="hero-img">
+      <img src="el-renacer-de-la-tierra-polinizadores-y-humedales-en-la-restauracion-ecologica.png" alt="El Renacer de la Tierra: Polinizadores y Humedales en la Restauración Ecológica" />
+    </figure>
+
+    <article class="article-body">
+      <h2>Los Suelos Vivos: Corazón de la Tierra</h2>
+<p>Los suelos son más que un simple sustrato en el que crecen las plantas; son organismos vivos que desempeñan un papel crucial en los ecosistemas terrestres. En su interior, miles de especies, desde microorganismos hasta grandes invertebrados, coexisten en un delicado equilibrio que permite el flujo de nutrientes y la salud del ecosistema. Se estima que un solo gramo de suelo puede contener más de mil millones de microorganismos, todos trabajando en simbiosis para descomponer la materia orgánica y liberar nutrientes esenciales para las plantas.</p>
+<p>La capacidad de los suelos para almacenar carbono es fundamental en la lucha contra el cambio climático. Según el Programa de las Naciones Unidas para el Medio Ambiente, se calcula que los suelos pueden almacenar hasta 3 billones de toneladas de carbono. Las prácticas agrícolas sostenibles, como la agroecología y la reducción del uso de agroquímicos, no solo mantienen la salud del suelo, sino que también mejoran su capacidad para capturar y almacenar carbono, contribuyendo a mitigar el calentamiento global.</p>
+<p>Es esencial fomentar la educación y la conciencia sobre la importancia de los suelos en nuestras comunidades. Organizar talleres y actividades de sensibilización sobre el manejo adecuado del suelo puede ser un primer paso. Implementar prácticas como la rotación de cultivos, el uso de abonos orgánicos y la protección de la cubierta vegetal ayudan a mantener la fertilidad del suelo y su biodiversidad. Así, contribuimos no solo a la salud del ecosistema, sino también a la seguridad alimentaria de nuestras comunidades.</p>
+
+<h2>Humedales: Refugio de Biodiversidad</h2>
+<p>Los humedales son ecosistemas vitales que actúan como filtros naturales, purificando el agua y ofreciendo un hogar a innumerables especies de flora y fauna. Estos ecosistemas acuáticos, que incluyen pantanos, marismas y lagunas, son especialmente ricos en biodiversidad, albergando aproximadamente el 40% de todas las especies de plantas y animales del mundo, a pesar de que ocupan solo el 6% de la superficie terrestre. Los humedales son, en muchos sentidos, los vasos comunicantes entre la tierra y el agua, donde la vida florece en una compleja red de interacciones.</p>
+<p>Además de su papel ecológico, los humedales son cruciales para la regulación del ciclo del agua. Actúan como esponjas naturales, absorbiendo el exceso de agua durante las lluvias y liberándola lentamente, lo que ayuda a prevenir inundaciones. También son esenciales para la recarga de acuíferos, asegurando el suministro de agua dulce para las comunidades. Un estudio de la Universidad de California reveló que los humedales pueden reducir el riesgo de inundaciones en un 30% en áreas adyacentes, lo que subraya su importancia en la gestión del agua.</p>
+<p>La protección de los humedales es un compromiso que debemos asumir. Promover iniciativas locales para restaurar y conservar estos ecosistemas es vital. Podemos comenzar organizando jornadas de limpieza, campañas de reforestación y educando a la comunidad sobre la importancia de los humedales. Además, la implementación de programas de monitoreo y restauración puede ayudar a restaurar humedales degradados, asegurando que sigan siendo refugios para la biodiversidad y recursos vitales para las comunidades cercanas.</p>
+
+<h2>Polinizadores: Los Artífices de la Vida</h2>
+<p>Los polinizadores, como las abejas, mariposas, murciélagos y otros insectos, son fundamentales para la producción de alimentos y la salud de nuestros ecosistemas. Se estima que el 75% de los cultivos alimentarios del mundo dependen de la polinización. Sin estos pequeños seres, la danza de la vida se vería truncada, afectando no solo la producción de frutas y verduras, sino también la diversidad genética de las plantas. Por ejemplo, el almendro, una de las frutas más importantes en la agricultura, depende casi exclusivamente de la polinización por abejas.</p>
+<p>La disminución de las poblaciones de polinizadores es un problema alarmante. Según la Unión Internacional para la Conservación de la Naturaleza (UICN), cerca del 40% de las especies de polinizadores se encuentran en peligro de extinción debido a la pérdida de hábitat, el uso de pesticidas y el cambio climático. Para contrarrestar esta situación, es fundamental fomentar prácticas que apoyen a estos vitales agentes de la naturaleza. Esto incluye la plantación de jardines nativos, la creación de corredores biológicos y la reducción del uso de productos químicos en la agricultura.</p>
+<p>Las comunidades pueden jugar un papel clave en la conservación de los polinizadores. Una acción sencilla y efectiva es organizar talleres sobre la importancia de los polinizadores y cómo promover su bienestar. Establecer zonas de polinización en jardines comunitarios, donde se planten flores nativas que atraigan a estos seres, puede fomentar su presencia. Además, la creación de refugios y hábitats adecuados, como hoteles de insectos, contribuye a proporcionar refugio y alimentación para los polinizadores.</p>
+
+<h2>Restauración Ecológica: Un Compromiso Necesario</h2>
+<p>La restauración ecológica es un proceso vital que implica el retorno de un ecosistema a su estado original o a un estado más saludable. No es solo una acción; es un pacto con la naturaleza que nos invita a reconocer nuestra interdependencia con el entorno. Cada esfuerzo por recuperar un ecosistema es un canto de esperanza, una oportunidad para sanar los daños infligidos por la actividad humana. Iniciativas como la reforestación de áreas degradadas, la protección de humedales y la promoción de prácticas agrícolas sostenibles son pasos cruciales en este camino.</p>
+<p>La reforestación no solo ayuda a restaurar la biodiversidad, sino que también contribuye a la captura de carbono, mitigando el cambio climático. Un estudio del Fondo Mundial para la Naturaleza (WWF) revela que un solo árbol puede absorber aproximadamente 22 kilogramos de dióxido de carbono al año. Organizar campañas de reforestación en comunidades locales no solo mejora el medio ambiente, sino que también crea conciencia y unidad entre los habitantes. Se pueden usar especies nativas para asegurar la adaptación y resiliencia de los bosques restaurados.</p>
+<p>La educación y la participación comunitaria son fundamentales en la restauración ecológica. Fomentar espacios de diálogo donde los miembros de la comunidad puedan compartir sus experiencias y conocimientos sobre la restauración puede generar un impacto significativo. Programas de capacitación en técnicas de restauración y conservación pueden empoderar a los individuos, permitiéndoles convertirse en agentes de cambio en sus comunidades. Cada pequeño esfuerzo cuenta en este compromiso colectivo con la Tierra.</p>
+
+<h2>Un Futuro Sostenible: El Llamado de la Tierra</h2>
+<p>La naturaleza, en su sabiduría, nos enseña la importancia de cuidar y restaurar los ecosistemas que nos sostienen. A medida que enfrentamos los desafíos del cambio climático, la pérdida de biodiversidad y la degradación de nuestros recursos naturales, es fundamental recordar que en nuestras manos está el poder de regenerar la vida en los suelos, los humedales y entre los polinizadores. La sostenibilidad no es solo una opción; es una necesidad imperante para garantizar un futuro viable para las próximas generaciones.</p>
+<p>Elegir restaurar es elegir vivir en armonía con nuestro entorno. Cada acción cuenta; desde la plantación de un árbol hasta la creación de un espacio de polinización en nuestros jardines. Juntos, podemos cultivar un futuro donde la naturaleza y la humanidad florezcan en unidad. Es vital que nos unamos en un esfuerzo colectivo para proteger y restaurar nuestros ecosistemas, porque cada pequeño gesto, cada paso hacia la sostenibilidad, es un ladrillo en la construcción de un mundo más saludable y equilibrado.</p>
+<p>Hagamos un llamado a la acción en nuestras comunidades, promoviendo la creación de redes de apoyo y la colaboración en proyectos de restauración. Juntos podemos ser los guardianes de la Tierra, preservando su belleza y su vitalidad para las generaciones presentes y futuras. En este viaje hacia la sostenibilidad, cada uno de nosotros tiene un papel que desempeñar, y es a través de nuestra acción conjunta que podremos asegurar un legado de amor y respeto por nuestro planeta.</p>
+    </article>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required>
+        <input type="email" placeholder="tu@correo.com" required />
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
-    </section>
+    </div>
 
-    <div class="divider"></div>
-
-    <!-- PIE DEL ARTICULO -->
-    <div class="article-footer">
-      <div class="chips">
-        <span class="chip">🌿 Naturaleza</span>
-      </div>
-      <div>
-        <a href="../posts.html" class="chip">← Volver a articulos</a>
-      </div>
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🌿 Naturaleza</span>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container row">
-      <div style="display:flex;align-items:center;gap:.4rem">
-        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:20px;width:auto">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
         <span>Guardianes del Pulque</span>
       </div>
       <div style="display:flex;gap:.4rem;flex-wrap:wrap">
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="../posts.html">Mas articulos</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>
