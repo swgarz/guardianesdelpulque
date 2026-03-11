@@ -488,16 +488,21 @@ async function generateArticle() {
   console.log(`Estilo imagen: ${chosenStyle.name}`);
 
   const basePrompt =
-    `Pintura mural mexicana inspirada en Rivera, Orozco y Siqueiros sobre: "${article.title}". ` +
-    `Sub-estilo: ${chosenStyle.desc}. ` +
-    `Paleta de color: ${palette}. ` +
-    `Textura de óleo visible, pinceladas gruesas, acabado matérico. ` +
-    `NO ilustración digital, NO render 3D, NO texto ni letras.`;
+    `Infografía vertical de dos paneles, ilustración en acuarela cálida hecha a mano, fondo beige/crema, sobre: "${article.title}". ` +
+    `Estética de manual comunitario rural mexicano, tonos tierra suaves: verdes, cafés, ocres, terracota. ` +
+    `Título grande en negritas centrado arriba en verde oscuro o café, con subtítulo corto describiendo el beneficio principal separado por guiones largos. ` +
+    `Panel superior con franja diagonal amarilla titulada CÓMO HACERLO: manos trabajando paso a paso en la construcción o preparación del tema, con herramientas tradicionales, materiales naturales y medidas señaladas, fondo con paisaje rural mexicano con milpa, magueyes, nopal o comunidad con casas de adobe. ` +
+    `Panel inferior con franja diagonal amarilla titulada CÓMO FUNCIONA: diagrama en corte transversal o vista explicativa del tema ya terminado y en uso, con flechas indicando proceso o beneficio, entorno vivo con raíces, tierra, plantas o personas de la comunidad aprovechando el resultado. ` +
+    `En la parte inferior un diagrama de flujo horizontal simple con flechas: insumo, proceso, resultado, beneficio. ` +
+    `Estilo ilustración editorial artesanal, líneas limpias con texturas de acuarela, educativo y comunitario, estética de manual campesino ilustrado, todo en español. NO fotografía, NO render 3D.`;
 
   const fallbackPrompt =
-    `Pintura mural mexicana de paisaje rural con maguey, tierra y cielo. ` +
-    `Sub-estilo: ${chosenStyle.desc}. Paleta: ${palette}. ` +
-    `Textura de óleo, pinceladas gruesas. NO ilustración digital, NO render 3D, NO texto ni letras.`;
+    `Infografía vertical de dos paneles sobre técnicas rurales mexicanas, ilustración en acuarela cálida hecha a mano, fondo beige/crema. ` +
+    `Tonos tierra suaves: verdes, cafés, ocres, terracota. ` +
+    `Panel superior titulado CÓMO HACERLO con manos trabajando, herramientas tradicionales y paisaje con milpa y magueyes. ` +
+    `Panel inferior titulado CÓMO FUNCIONA con diagrama en corte transversal, flechas explicativas y personas de la comunidad aprovechando el resultado. ` +
+    `Diagrama de flujo horizontal en la parte inferior: insumo, proceso, resultado, beneficio. ` +
+    `Estética de manual campesino ilustrado, todo en español. NO fotografía, NO render 3D.`;
 
   let imageBuffer;
   for (const prompt of [basePrompt, fallbackPrompt]) {
@@ -506,7 +511,7 @@ async function generateArticle() {
         model: "dall-e-3",
         prompt,
         n: 1,
-        size: "1792x1024",
+        size: "1024x1792",
       });
       const imageUrl = imageResponse.data[0].url;
       imageBuffer = Buffer.from(
