@@ -216,9 +216,32 @@
       pointer-events:auto;
     }
     .nav-item-inline:hover > .nav-subdropdown,
-    .nav-item-inline:focus-within > .nav-subdropdown{
+    .nav-item-inline:focus-within > .nav-subdropdown,
+    .nav-item-inline.open > .nav-subdropdown{
       opacity:1;
       pointer-events:auto;
+    }
+
+    /* Subdropdown en móvil: expande hacia abajo, no a la derecha */
+    @media (max-width:639px){
+      .nav-subdropdown{
+        position:static;
+        opacity:1;
+        pointer-events:auto;
+        box-shadow:none;
+        border:none;
+        border-radius:0;
+        padding:0 0 0 12px;
+        min-width:0;
+        display:none;
+        transition:none;
+      }
+      .nav-item-inline:hover > .nav-subdropdown,
+      .nav-item-inline:focus-within > .nav-subdropdown,
+      .nav-item-inline.open > .nav-subdropdown{
+        display:block;
+        opacity:1;
+      }
     }
 
     /* Scroll state base */
@@ -534,11 +557,14 @@
               <div class="nav-link has-children" tabindex="0">Patrocinadores</div>
               <div class="nav-subdropdown">
                 <a class="nav-link" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
+                <a class="nav-link" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
               </div>
             </div>
-            <a class="nav-link" href="#aliados">Aliados</a>
-            <div class="nav-subdropdown">
-              <a class="nav-link" href="https://maps.app.goo.gl/jLz2oqRnr3uqbGAXA" target="_blank" rel="noopener">CasaAdobe</a>
+            <div class="nav-item-inline">
+              <div class="nav-link has-children" tabindex="0">Aliados</div>
+              <div class="nav-subdropdown">
+                <a class="nav-link" href="https://maps.app.goo.gl/jLz2oqRnr3uqbGAXA" target="_blank" rel="noopener">CasaAdobe</a>
+              </div>
             </div>
           </div>
         </div>
@@ -645,15 +671,27 @@
     </div>
   </section>
 
-  <!-- BIOALKIMIA / TEOMATI -->
-  <section id="bioalkimia" class="container" style="margin-bottom:64px">
-    <div class="card bio-card reveal">
-      <h3 class="bio-title">Teomati</h3>
-      <p class="bio-text">
-        Proyecto hermano donde convergen bioconstrucción, fermentos y territorio. Visita para conocer más colaboraciones.
-      </p>
-      <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:flex-start;margin-top:.5rem">
-        <a class="chip" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Ir a Teomati →</a>
+  <!-- ALIADOS -->
+  <section id="aliados" class="container" style="margin-bottom:64px">
+    <h2 style="margin:0 0 16px">Aliados</h2>
+    <div style="display:grid;gap:1rem;grid-template-columns:1fr">
+      <div class="card bio-card reveal">
+        <h3 class="bio-title">Teomati</h3>
+        <p class="bio-text">
+          Proyecto hermano donde convergen bioconstrucción, fermentos y territorio. Visita para conocer más colaboraciones.
+        </p>
+        <div style="margin-top:.75rem">
+          <a class="chip" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Ir a Teomati →</a>
+        </div>
+      </div>
+      <div class="card bio-card reveal">
+        <h3 class="bio-title">Bioalkimia</h3>
+        <p class="bio-text">
+          Espacio de alquimia viva: fermentos, plantas y saberes ancestrales para transformar el cotidiano.
+        </p>
+        <div style="margin-top:.75rem">
+          <a class="chip" href="https://bioalkimia.org/" target="_blank" rel="noopener">Ir a Bioalkimia →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -668,7 +706,7 @@
       <div class="links">
         <a class="chip" href="posts.html">Artículos</a>
         <a class="chip" href="#donar"><span class="emoji">💚</span> Donar</a>
-        <a class="chip" href="#bioalkimia">Bioalkimia</a>
+        <a class="chip" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
       </div>
     </div>
   </footer>
@@ -854,6 +892,21 @@
         if(!e.target.closest('.nav-item')){
           items.forEach(i=>i.classList.remove('open'));
         }
+      });
+    })();
+
+    // Subdropdown toggle en móvil (has-children)
+    (function(){
+      document.querySelectorAll('.nav-item-inline .has-children').forEach(el=>{
+        el.addEventListener('click',e=>{
+          const item = el.closest('.nav-item-inline');
+          // Cerrar otros
+          document.querySelectorAll('.nav-item-inline').forEach(i=>{
+            if(i !== item) i.classList.remove('open');
+          });
+          item.classList.toggle('open');
+          e.stopPropagation();
+        });
       });
     })();
 
