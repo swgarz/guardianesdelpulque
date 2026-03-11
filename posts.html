@@ -615,20 +615,22 @@
     // Dropdown por click (móvil)
     (function(){
       const items = document.querySelectorAll('.nav-item');
+      function closeAll(){ items.forEach(i=>i.classList.remove('open')); }
       document.querySelectorAll('.nav-trigger').forEach(btn=>{
         btn.addEventListener('click',e=>{
           const item = btn.closest('.nav-item');
           if(!item) return;
           const open = !item.classList.contains('open');
-          items.forEach(i=>i.classList.remove('open'));
+          closeAll();
           if(open) item.classList.add('open');
           e.stopPropagation();
         });
       });
+      document.querySelectorAll('.nav-dropdown .nav-link:not(.has-children)').forEach(link=>{
+        link.addEventListener('click', closeAll);
+      });
       document.addEventListener('click',e=>{
-        if(!e.target.closest('.nav-item')){
-          items.forEach(i=>i.classList.remove('open'));
-        }
+        if(!e.target.closest('.nav-item')) closeAll();
       });
     })();
   </script>
