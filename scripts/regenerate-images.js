@@ -28,9 +28,9 @@ const DEFAULT_PALETTE = "tonos tierra, ocre, verde y rojo óxido";
 function buildPrompt(title, tag) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
   return (
-    `Linocut drawing abstract art, style inspired by Pablo Picasso, about: "${title}". ` +
-    `${palette}. Bold black outlines, geometric fragmented forms, cubist composition, ` +
-    `raw woodcut texture, high contrast, flat graphic shapes, expressive and angular lines. ` +
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, about: "${title}". ` +
+    `${palette}. Bold Ben-Day dots, thick black outlines, flat vivid colors, halftone patterns, ` +
+    `graphic comic-book aesthetic, high contrast, screen-print look, vibrant and punchy composition. ` +
     `NO photography, NO 3D render, NO text.`
   );
 }
@@ -38,8 +38,8 @@ function buildPrompt(title, tag) {
 function buildFallback(tag) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
   return (
-    `Linocut drawing abstract art, style inspired by Pablo Picasso, Mexican rural landscape. ` +
-    `${palette}. Bold black outlines, geometric cubist shapes, raw woodcut texture, high contrast. ` +
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, Mexican rural landscape. ` +
+    `${palette}. Bold Ben-Day dots, thick black outlines, flat vivid colors, halftone patterns, high contrast. ` +
     `NO photography, NO 3D render, NO text.`
   );
 }
