@@ -27,8 +27,9 @@ const DEFAULT_PALETTE = "tonos tierra, ocre, verde y rojo óxido";
 // ── Construir prompt ────────────────────────────────────────────────────────
 function buildPrompt(title, tag) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
+  const pulqueNote = tag === "Pulque" ? " Pulque is a white milky traditional Mexican fermented drink — depict it as white and opaque." : "";
   return (
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, about: "${title}". ` +
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, about: "${title}".${pulqueNote} ` +
     `${palette}. Bold Ben-Day dots, thick black outlines, flat vivid colors, halftone patterns, ` +
     `graphic comic-book aesthetic, high contrast, screen-print look, vibrant and punchy composition. ` +
     `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO captions, NO typography, NO writing of any kind.`

@@ -487,8 +487,9 @@ async function generateArticle() {
 
   console.log(`Estilo imagen: ${chosenStyle.name}`);
 
+  const pulqueNote = tag === "Pulque" ? " Pulque is a white milky traditional Mexican fermented drink — depict it as white and opaque." : "";
   const basePrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, about: "${article.title}". ` +
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, about: "${article.title}".${pulqueNote} ` +
     `${palette}. Bold Ben-Day dots, thick black outlines, flat vivid colors, halftone patterns, ` +
     `graphic comic-book aesthetic, high contrast, screen-print look, vibrant and punchy composition. ` +
     `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO captions, NO typography, NO writing of any kind.`;
