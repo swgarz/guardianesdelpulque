@@ -487,17 +487,17 @@ async function generateArticle() {
 
   console.log(`Estilo imagen: ${chosenStyle.name}`);
 
-  const pulqueNote = tag === "Pulque" ? " Pulque is a white milky traditional Mexican fermented drink — depict it as white and opaque." : "";
+  const pulqueNote = tag === "Pulque" ? " El pulque es una bebida fermentada mexicana tradicional de color blanco lechoso — represéntalo blanco y opaco." : "";
   const basePrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, about: "${article.title}".${pulqueNote} ` +
-    `${palette}. Bold Ben-Day dots, thick black outlines, flat vivid colors, halftone patterns, ` +
-    `graphic comic-book aesthetic, high contrast, screen-print look, vibrant and punchy composition. ` +
-    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO captions, NO typography, NO writing of any kind.`;
+    `Ilustración pop art al estilo de Roy Lichtenstein y Andy Warhol, sobre: "${article.title}".${pulqueNote} ` +
+    `${palette}. Puntos Ben-Day gruesos, contornos negros sólidos, colores planos y vivos, tramas de medios tonos, ` +
+    `estética de cómic, alto contraste, aspecto de serigrafía, composición vibrante y expresiva. ` +
+    `SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo.`;
 
   const fallbackPrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, Mexican rural landscape. ` +
-    `${palette}. Bold Ben-Day dots, thick black outlines, flat vivid colors, halftone patterns, high contrast. ` +
-    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO captions, NO typography, NO writing of any kind.`;
+    `Ilustración pop art al estilo de Roy Lichtenstein y Andy Warhol, paisaje rural mexicano. ` +
+    `${palette}. Puntos Ben-Day gruesos, contornos negros sólidos, colores planos y vivos, tramas de medios tonos, alto contraste. ` +
+    `SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo.`;
 
   let imageBuffer;
   for (const prompt of [basePrompt, fallbackPrompt]) {
