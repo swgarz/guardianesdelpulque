@@ -28,24 +28,19 @@ const DEFAULT_PALETTE = "tonos tierra, ocre, verde y rojo óxido";
 function buildPrompt(title, tag) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
   return (
-    `Infografía vertical de dos paneles, ilustración en acuarela cálida hecha a mano, fondo beige/crema, sobre: "${title}". ` +
-    `Estética de manual comunitario rural mexicano, ${palette}. ` +
-    `Título grande en negritas centrado arriba en verde oscuro o café, con subtítulo corto describiendo el beneficio principal separado por guiones largos. ` +
-    `Panel superior con franja diagonal amarilla titulada CÓMO HACERLO: manos trabajando paso a paso en la construcción o preparación del tema, con herramientas tradicionales, materiales naturales y medidas señaladas, fondo con paisaje rural mexicano con milpa, magueyes, nopal o comunidad con casas de adobe. ` +
-    `Panel inferior con franja diagonal amarilla titulada CÓMO FUNCIONA: diagrama en corte transversal o vista explicativa del tema ya terminado y en uso, con flechas indicando proceso o beneficio, entorno vivo con raíces, tierra, plantas o personas de la comunidad aprovechando el resultado. ` +
-    `En la parte inferior un diagrama de flujo horizontal simple con flechas: insumo, proceso, resultado, beneficio. ` +
-    `Estilo ilustración editorial artesanal, líneas limpias con texturas de acuarela, educativo y comunitario, estética de manual campesino ilustrado, todo en español. NO fotografía, NO render 3D.`
+    `Linocut drawing abstract art, style inspired by Pablo Picasso, about: "${title}". ` +
+    `${palette}. Bold black outlines, geometric fragmented forms, cubist composition, ` +
+    `raw woodcut texture, high contrast, flat graphic shapes, expressive and angular lines. ` +
+    `NO photography, NO 3D render, NO text.`
   );
 }
 
 function buildFallback(tag) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
   return (
-    `Infografía vertical de dos paneles sobre técnicas rurales mexicanas, ilustración en acuarela cálida hecha a mano, fondo beige/crema, ${palette}. ` +
-    `Panel superior titulado CÓMO HACERLO con manos trabajando, herramientas tradicionales y paisaje con milpa y magueyes. ` +
-    `Panel inferior titulado CÓMO FUNCIONA con diagrama en corte transversal, flechas explicativas y personas de la comunidad. ` +
-    `Diagrama de flujo horizontal en la parte inferior: insumo, proceso, resultado, beneficio. ` +
-    `Estética de manual campesino ilustrado, todo en español. NO fotografía, NO render 3D.`
+    `Linocut drawing abstract art, style inspired by Pablo Picasso, Mexican rural landscape. ` +
+    `${palette}. Bold black outlines, geometric cubist shapes, raw woodcut texture, high contrast. ` +
+    `NO photography, NO 3D render, NO text.`
   );
 }
 
