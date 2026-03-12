@@ -505,7 +505,7 @@ async function generateArticle() {
         model: "dall-e-3",
         prompt,
         n: 1,
-        size: "1024x1792",
+        size: "1792x1024",
       });
       const imageUrl = imageResponse.data[0].url;
       imageBuffer = Buffer.from(
