@@ -39,7 +39,7 @@ function buildPrompt(title, tag) {
     `Ilustración pop art al estilo de Roy Lichtenstein y Andy Warhol, sobre: "${title}".${pulqueNote} ` +
     `${palette}. Puntos Ben-Day gruesos, contornos negros sólidos, colores planos y vivos, tramas de medios tonos, ` +
     `estética de cómic, alto contraste, aspecto de serigrafía, composición vibrante y expresiva. ` +
-    `UNA SOLA ilustración continua que ocupe toda la imagen, sin divisiones, sin paneles separados, sin cuadrículas, sin secciones, sin recuadros, sin viñetas. SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad, SIN muestras de color, SIN paletas de colores, SIN cuadros de colores, SIN bordes decorativos, SIN marcos.`
+    `UNA SOLA ilustración continua que llene completamente todo el encuadre de borde a borde, sin espacios vacíos, sin márgenes blancos, sin divisiones, sin paneles separados, sin cuadrículas, sin secciones, sin recuadros, sin viñetas. SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad, SIN muestras de color, SIN paletas de colores, SIN cuadros de colores, SIN bordes decorativos, SIN marcos.`
   );
 }
 
@@ -48,7 +48,7 @@ function buildFallback(tag) {
   return (
     `Ilustración pop art al estilo de Roy Lichtenstein y Andy Warhol, paisaje rural mexicano. ` +
     `${palette}. Puntos Ben-Day gruesos, contornos negros sólidos, colores planos y vivos, tramas de medios tonos, alto contraste. ` +
-    `UNA SOLA ilustración continua que ocupe toda la imagen, sin divisiones, sin paneles separados, sin cuadrículas, sin secciones, sin recuadros, sin viñetas. SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad, SIN muestras de color, SIN paletas de colores, SIN cuadros de colores, SIN bordes decorativos, SIN marcos.`
+    `UNA SOLA ilustración continua que llene completamente todo el encuadre de borde a borde, sin espacios vacíos, sin márgenes blancos, sin divisiones, sin paneles separados, sin cuadrículas, sin secciones, sin recuadros, sin viñetas. SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad, SIN muestras de color, SIN paletas de colores, SIN cuadros de colores, SIN bordes decorativos, SIN marcos.`
   );
 }
 
