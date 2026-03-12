@@ -24,10 +24,17 @@ const TAG_PALETTES = {
 };
 const DEFAULT_PALETTE = "tonos tierra, ocre, verde y rojo óxido";
 
+// ── Notas visuales por tag ───────────────────────────────────────────────────
+const TAG_NOTES = {
+  Pulque:    " El pulque es una bebida fermentada mexicana tradicional de color blanco lechoso — represéntalo blanco y opaco. El maguey pulquero es el Agave salmiana: planta enorme con pencas largas, anchas, carnosas y de color verde grisáceo con espinas en los bordes.",
+  Naturaleza:" El maguey pulquero (Agave salmiana) tiene pencas largas, anchas, carnosas y verde grisáceas — úsalo si aparece maguey.",
+  Territorio:" El maguey pulquero (Agave salmiana) tiene pencas largas, anchas, carnosas y verde grisáceas — úsalo si aparece maguey.",
+};
+
 // ── Construir prompt ────────────────────────────────────────────────────────
 function buildPrompt(title, tag) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
-  const pulqueNote = tag === "Pulque" ? " El pulque es una bebida fermentada mexicana tradicional de color blanco lechoso — represéntalo blanco y opaco." : "";
+  const pulqueNote = TAG_NOTES[tag] || "";
   return (
     `Ilustración pop art al estilo de Roy Lichtenstein y Andy Warhol, sobre: "${title}".${pulqueNote} ` +
     `${palette}. Puntos Ben-Day gruesos, contornos negros sólidos, colores planos y vivos, tramas de medios tonos, ` +
