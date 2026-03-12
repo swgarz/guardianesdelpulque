@@ -31,7 +31,7 @@ function buildPrompt(title, tag) {
     `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, about: "${title}". ` +
     `${palette}. Bold Ben-Day dots, thick black outlines, flat vivid colors, halftone patterns, ` +
     `graphic comic-book aesthetic, high contrast, screen-print look, vibrant and punchy composition. ` +
-    `NO photography, NO 3D render, NO text.`
+    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO captions, NO typography, NO writing of any kind.`
   );
 }
 
@@ -40,7 +40,7 @@ function buildFallback(tag) {
   return (
     `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol, Mexican rural landscape. ` +
     `${palette}. Bold Ben-Day dots, thick black outlines, flat vivid colors, halftone patterns, high contrast. ` +
-    `NO photography, NO 3D render, NO text.`
+    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO captions, NO typography, NO writing of any kind.`
   );
 }
 
