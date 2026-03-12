@@ -492,12 +492,12 @@ async function generateArticle() {
     `Ilustración pop art al estilo de Roy Lichtenstein y Andy Warhol, sobre: "${article.title}".${pulqueNote} ` +
     `${palette}. Puntos Ben-Day gruesos, contornos negros sólidos, colores planos y vivos, tramas de medios tonos, ` +
     `estética de cómic, alto contraste, aspecto de serigrafía, composición vibrante y expresiva. ` +
-    `SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad.`;
+    `SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad, SIN muestras de color, SIN paletas de colores, SIN cuadros de colores, SIN bordes decorativos, SIN marcos.`;
 
   const fallbackPrompt =
     `Ilustración pop art al estilo de Roy Lichtenstein y Andy Warhol, paisaje rural mexicano. ` +
     `${palette}. Puntos Ben-Day gruesos, contornos negros sólidos, colores planos y vivos, tramas de medios tonos, alto contraste. ` +
-    `SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad.`;
+    `SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad, SIN muestras de color, SIN paletas de colores, SIN cuadros de colores, SIN bordes decorativos, SIN marcos.`;
 
   let imageBuffer;
   for (const prompt of [basePrompt, fallbackPrompt]) {
