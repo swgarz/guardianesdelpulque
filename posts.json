@@ -88,12 +88,12 @@
     "cover": "articulos/bambu-estructural/bambu-estructural.png"
   },
   {
-    "tag": "Pulque",
-    "title": "Utensilios tradicionales del tinacal",
-    "excerpt": "Acocote, tinacal y prácticas de higiene para un buen curado.",
-    "date": "5 de marzo de 2026",
-    "url": "articulos/utensilios-tradicionales-del-tinacal/utensilios-tradicionales-del-tinacal.html",
-    "cover": "articulos/utensilios-tradicionales-del-tinacal/utensilios-tradicionales-del-tinacal.png"
+    "tag": "Naturaleza",
+    "title": "La polinización del maíz",
+    "excerpt": "Cómo el viento, las variedades criollas y la milpa sostienen la reproducción del maíz mexicano.",
+    "date": "12 de marzo de 2026",
+    "url": "articulos/polinizacion-del-maiz/polinizacion-del-maiz.html",
+    "cover": "articulos/polinizacion-del-maiz/polinizacion-del-maiz.png"
   },
   {
     "tag": "Naturaleza",

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La polinización del maíz — Guardianes del Pulque</title>
+  <meta name="description" content="Cómo el viento, las variedades criollas y la milpa sostienen la reproducción del maíz mexicano." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La polinización del maíz" />
+  <meta property="og:description" content="Cómo el viento, las variedades criollas y la milpa sostienen la reproducción del maíz mexicano." />
+  <meta property="og:image" content="https://guardianesdelpulque.org/articulos/polinizacion-del-maiz/polinizacion-del-maiz.png" />
+  <meta property="og:url" content="https://guardianesdelpulque.org/articulos/polinizacion-del-maiz/polinizacion-del-maiz.html" />
+  <meta property="og:site_name" content="Guardianes del Pulque" />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="La polinización del maíz" />
+  <meta name="twitter:description" content="Cómo el viento, las variedades criollas y la milpa sostienen la reproducción del maíz mexicano." />
+  <meta name="twitter:image" content="https://guardianesdelpulque.org/articulos/polinizacion-del-maiz/polinizacion-del-maiz.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "La polinización del maíz",
+    "description": "Cómo el viento, las variedades criollas y la milpa sostienen la reproducción del maíz mexicano.",
+    "image": "https://guardianesdelpulque.org/articulos/polinizacion-del-maiz/polinizacion-del-maiz.png",
+    "datePublished": "2026-03-12",
+    "author": {
+      "@type": "Organization",
+      "name": "Guardianes del Pulque",
+      "url": "https://guardianesdelpulque.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Guardianes del Pulque",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://guardianesdelpulque.org/images/logo_transparente.png"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';
+      line-height:1.6;
+      color:#0f172a;
+      background:#f6f8fb;
+    }
+    :root{
+      --brand:#059669;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --card:#ffffff;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
+    @media (min-width:640px){.container{padding:0 24px}}
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:40;
+      background:transparent;
+      border-bottom:1px solid transparent;
+      backdrop-filter:saturate(180%) blur(14px);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
+    }
+    .nav-row{
+      display:flex;align-items:center;
+      justify-content:space-between;
+      padding:10px 0;gap:1rem;
+    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
+    .chip{
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
+    }
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
+    }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
+
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
+    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px -16px 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);width:calc(100% + 32px);max-width:912px;height:500px;display:block;} .hero-img img{width:100%;height:100%;object-fit:cover;display:block;} @media(min-width:640px){.hero-img{margin:14px -24px 24px;width:calc(100% + 48px)}} @media(min-width:960px){.hero-img{margin:14px auto 24px;width:100%}}
+
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;text-align:justify}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px;text-align:justify}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
+    }
+
+    /* CTA */
+    .cta-section{
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
+      text-align:center;
+    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
+    .cta-form input[type="email"]{
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
+    }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
+    .cta-form button{
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
+    }
+    .cta-form button:hover{background:#047857;}
+
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
+      <a class="brand" href="../../index.html">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
+        <span class="brand-text">Guardianes del Pulque</span>
+      </a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      La polinización del maíz
+    </div>
+
+    <header class="article-header">
+      <h1 class="article-title">La polinización del maíz</h1>
+      <div class="article-meta">
+        <div class="meta-pill">🌿 <span>Naturaleza</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 8–10 min</span></div>
+        <div class="meta-pill">📅 <span>12 de marzo de 2026</span></div>
+      </div>
+      <p class="article-lead">Cómo el viento, las variedades criollas y la milpa sostienen la reproducción del maíz mexicano.</p>
+    </header>
+
+    <figure class="hero-img">
+      <img src="polinizacion-del-maiz.png" alt="La polinización del maíz" />
+    </figure>
+
+    <article class="article-body">
+      <h2>El maíz no depende de las abejas</h2>
+<p>El maíz (<em>Zea mays</em>) es una planta anemófila: se poliniza por viento, no por insectos. La espiga —estructura masculina en la punta de la planta— libera entre 2 y 25 millones de granos de polen por planta durante un periodo de 5 a 8 días. Cada grano de polen es viable solo 2 a 4 horas tras ser liberado, dependiendo de la humedad y la temperatura; por encima de 35°C su viabilidad cae drásticamente. Los estigmas —los "cabellos" que salen de la mazorca— son receptivos durante 6 a 10 días. Cada cabello corresponde exactamente a un grano de la mazorca: si un cabello no recibe polen, ese grano no se forma, y la mazorca aparece con huecos. Esto explica por qué los milperos tradicionales siembran en cuadro, no en hileras simples: maximizan la densidad de polen en el aire alrededor de cada planta.</p>
+
+      <h2>El origen: teosinte en el río Balsas</h2>
+<p>El antepasado silvestre del maíz es el teosinte (<em>Zea mays</em> subsp. <em>parviglumis</em>), una gramínea de tallos múltiples y mazorcas diminutas de apenas 6–12 granos duros cubiertos por una cáscara pétrea. Los análisis genéticos y arqueobotánicos ubican su domesticación hace 9,000 años en la cuenca del río Balsas, en la sierra de Guerrero y Michoacán. El proceso fue gradual: los agricultores seleccionaron plantas con mazorcas más grandes, granos expuestos y tallos únicos. En 2,000 años de selección dirigida, el teosinte se transformó en el maíz que hoy conocemos —una de las domesticaciones más radicales documentadas en la historia de la agricultura.</p>
+
+      <h2>Variedades criollas: diversidad como seguro de vida</h2>
+<p>México conserva más de 64 razas nativas de maíz reconocidas por el CONABIO —Olotillo, Bolita, Tepecintle, Zapalote Chico, Cacahuazintle, Elotes Occidentales, Jala, entre muchas otras— adaptadas a condiciones de altitud, temperatura, humedad y suelo radicalmente distintas. El maíz Jala de Nayarit, por ejemplo, produce mazorcas de hasta 60 cm de longitud; el Olotillo de Oaxaca prospera en tierras delgadas con menos de 600 mm de lluvia anual. Esta diversidad genética se mantiene viva gracias a que los agricultores tradicionales guardan semilla propia cada ciclo, seleccionando mazorcas de plantas vigorosas. Al hacerlo, también mantienen la polinización cruzada entre individuos: el maíz criollo no es autofértil ni uniforme, es una población dinámica.</p>
+
+      <div class="highlight">En la milpa, el maíz comparte espacio con frijol y calabaza. El frijol, leguminosa, fija nitrógeno atmosférico mediante <em>Rhizobium</em> en sus raíces — entre 40 y 80 kg de N/ha por ciclo — reduciendo la necesidad de fertilizantes externos para el maíz que crece junto a él.</div>
+
+      <h2>Contaminación transgénica: el riesgo del flujo génico</h2>
+<p>Desde 1998, cuando se documentaron por primera vez maíces transgénicos en milpas de Oaxaca (Quist & Chapela, <em>Nature</em>, 2001), el flujo de genes de variedades modificadas genéticamente hacia maíces criollos ha sido una preocupación documentada en los estados de Oaxaca, Chiapas, Puebla y Chihuahua. La polinización por viento actúa sin fronteras: el polen de un maíz transgénico puede recorrer 300 a 800 metros y fecundar estigmas de plantas criollas. CONABIO estimó en 2012 que el 35% de las muestras de maíz criollo analizadas en regiones de alta diversidad presentaban algún evento transgénico. La pérdida de integridad genética de las razas nativas implica la erosión de 9,000 años de selección adaptada a los ecosistemas específicos de México.</p>
+
+      <h2>La sincronía del tinacal y el campo</h2>
+<p>El manejo del tiempo de siembra es en sí mismo una tecnología de polinización. En Tlaxcala y el altiplano central, los tlalmeques —agricultores que también cuidan magueyes— escalonan la siembra del maíz en dos momentos separados por 15 a 20 días. Esto garantiza que haya plantas en floración durante un periodo más largo, reduciendo el riesgo de que una helada tardía o una sequía corta elimine todo el polen disponible en un solo evento. Las plantas en diferentes estadios de desarrollo actúan como respaldo mutuo, ampliando la ventana de fecundación. Esta práctica no requiere conocimiento científico formal —nace de siglos de observación del comportamiento del maíz en el campo.</p>
+
+      <h2>Por qué la milpa protege la polinización</h2>
+<p>Un monocultivo de maíz híbrido siembra variedades genéticamente uniformes para que espiguen y florezcan el mismo día —esto maximiza la polinización en plantaciones industriales pero elimina la resiliencia ante eventos climáticos extremos. En la milpa, la diversidad de razas criollas con distintos ciclos vegetativos garantiza que siempre haya plantas en floración. Además, la cobertura vegetal del frijol y la calabaza reduce la temperatura del suelo, mantiene humedad y crea un microclima más estable que favorece la viabilidad del polen en las horas clave de la mañana, cuando la liberación es máxima. La milpa no es solo tradición: es un sistema funcional de gestión de la polinización.</p>
+    </article>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
+      <form class="cta-form" action="#suscribirse" method="post">
+        <input type="email" placeholder="tu@correo.com" required />
+        <button type="submit">Suscribirme</button>
+      </form>
+      <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
+    </div>
+
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🌿 Naturaleza</span>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container row">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
+        <span>Guardianes del Pulque</span>
+      </div>
+      <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>
