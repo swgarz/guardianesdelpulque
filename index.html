@@ -209,14 +209,22 @@
       z-index:95;
     }
 
-    .nav-item:hover > .nav-dropdown,
-    .nav-item:focus-within > .nav-dropdown,
+    /* Desktop: solo hover */
+    @media (hover:hover) and (pointer:fine){
+      .nav-item:hover > .nav-dropdown{
+        opacity:1;
+        pointer-events:auto;
+      }
+      .nav-item-inline:hover > .nav-subdropdown{
+        opacity:1;
+        pointer-events:auto;
+      }
+    }
+    /* Móvil / touch: solo clase .open añadida por JS */
     .nav-item.open > .nav-dropdown{
       opacity:1;
       pointer-events:auto;
     }
-    .nav-item-inline:hover > .nav-subdropdown,
-    .nav-item-inline:focus-within > .nav-subdropdown,
     .nav-item-inline.open > .nav-subdropdown{
       opacity:1;
       pointer-events:auto;
@@ -880,26 +888,29 @@
       });
     })();
 
-    // Dropdown por click (móvil)
+    // Dropdown por click (solo táctil / móvil)
     (function(){
+      const isTouch = window.matchMedia('(hover:none),(pointer:coarse)').matches;
       const items = document.querySelectorAll('.nav-item');
       function closeAll(){ items.forEach(i=>i.classList.remove('open')); }
-      document.querySelectorAll('.nav-trigger').forEach(btn=>{
-        btn.addEventListener('click',e=>{
-          const item = btn.closest('.nav-item');
-          if(!item) return;
-          const open = !item.classList.contains('open');
-          closeAll();
-          if(open) item.classList.add('open');
-          e.stopPropagation();
+      if(isTouch){
+        document.querySelectorAll('.nav-trigger').forEach(btn=>{
+          btn.addEventListener('click',e=>{
+            const item = btn.closest('.nav-item');
+            if(!item) return;
+            const open = !item.classList.contains('open');
+            closeAll();
+            if(open) item.classList.add('open');
+            e.stopPropagation();
+          });
         });
-      });
-      document.querySelectorAll('.nav-dropdown .nav-link:not(.has-children)').forEach(link=>{
-        link.addEventListener('click', closeAll);
-      });
-      document.addEventListener('click',e=>{
-        if(!e.target.closest('.nav-item')) closeAll();
-      });
+        document.querySelectorAll('.nav-dropdown .nav-link:not(.has-children)').forEach(link=>{
+          link.addEventListener('click', closeAll);
+        });
+        document.addEventListener('click',e=>{
+          if(!e.target.closest('.nav-item')) closeAll();
+        });
+      }
     })();
 
     // Subdropdown toggle en móvil (has-children)
