@@ -287,10 +287,21 @@
     }
     .nav-panel-btn:hover{background:rgba(5,150,105,.07);color:#065f46;}
 
-    /* En móvil: ocultar links desktop, mostrar hamburger */
+    /* Botón de modo — solo móvil */
+    .nav-mode-btn{
+      display:none;flex-shrink:0;
+      background:none;border:1.5px solid var(--brand);border-radius:8px;
+      padding:5px 9px;cursor:pointer;color:var(--brand);
+      font-size:.72rem;font-weight:700;line-height:1.2;
+      transition:background .15s ease;white-space:nowrap;
+    }
+    .nav-mode-btn:hover{background:rgba(5,150,105,.1);}
+
+    /* En móvil: ocultar links desktop, mostrar hamburger y modo */
     @media (max-width:639px){
       .links{display:none !important;}
       .nav-burger{display:flex;align-items:center;justify-content:center;}
+      .nav-mode-btn{display:flex;align-items:center;justify-content:center;}
     }
 
     /* Scroll state base */
@@ -593,7 +604,10 @@
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
 
-      <button class="nav-burger" id="navBurger" aria-label="Abrir menú" type="button">☰</button>
+      <div style="display:flex;gap:.4rem;align-items:center;flex-shrink:0">
+        <button class="nav-mode-btn" id="navModeBtn" type="button">🌿 Modo comunitario</button>
+        <button class="nav-burger" id="navBurger" aria-label="Abrir menú" type="button">☰</button>
+      </div>
 
       <div class="links">
         <!-- Comunidad -->
@@ -644,10 +658,6 @@
       <a class="nav-panel-link nav-panel-sublink" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
       <a class="nav-panel-link nav-panel-sublink" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
       <a class="nav-panel-link nav-panel-sublink" href="https://www.google.com/maps/place/Casa+del+Consejo+Otom%C3%AD+Nghu+Lludadha+%C3%91hanjhu,+Santiago+Yanhuitlalpan/@19.3852977,-99.3044762,69m/data=!3m1!1e3!4m6!3m5!1s0x85d20786d4392b05:0x767fb0f08a813efb!8m2!3d19.3852814!4d-99.304469!16s%2Fg%2F11khqxqkbg!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Casa del Consejo Otomí Nghuy</a>
-      <hr class="nav-panel-divider">
-      <div class="nav-panel-section">Modo visual</div>
-      <button class="nav-panel-btn js-mode" data-mode="base" type="button">☀️ Modo luz</button>
-      <button class="nav-panel-btn js-mode" data-mode="community" type="button">🌿 Modo comunitario</button>
     </div>
   </div>
 
@@ -988,18 +998,37 @@
       });
     })();
 
-    // Hamburger menú móvil
+    // Hamburger menú móvil (toggle)
     (function(){
       const burger  = document.getElementById('navBurger');
       const overlay = document.getElementById('navOverlay');
       const closeBtn= document.getElementById('navClose');
-      function openMenu(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
-      function closeMenu(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
-      burger.addEventListener('click', openMenu);
+      function isOpen(){ return overlay.classList.contains('open'); }
+      function openMenu(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; burger.textContent='✕'; }
+      function closeMenu(){ overlay.classList.remove('open'); document.body.style.overflow=''; burger.textContent='☰'; }
+      burger.addEventListener('click', ()=>{ isOpen() ? closeMenu() : openMenu(); });
       closeBtn.addEventListener('click', closeMenu);
       overlay.addEventListener('click', e=>{ if(e.target===overlay) closeMenu(); });
       overlay.querySelectorAll('.nav-panel-link').forEach(l=>l.addEventListener('click', closeMenu));
-      overlay.querySelectorAll('.nav-panel-btn').forEach(b=>b.addEventListener('click', closeMenu));
+    })();
+
+    // Botón modo comunitario (móvil)
+    (function(){
+      const btn = document.getElementById('navModeBtn');
+      if(!btn) return;
+      function syncLabel(){
+        const isCommunity = document.body.classList.contains('mode-community');
+        btn.textContent = isCommunity ? '☀️ Modo luz' : '🌿 Modo comunitario';
+      }
+      syncLabel();
+      btn.addEventListener('click', ()=>{
+        const isCommunity = document.body.classList.contains('mode-community');
+        const newMode = isCommunity ? 'base' : 'community';
+        document.body.classList.remove('mode-reading','mode-community');
+        if(newMode === 'community') document.body.classList.add('mode-community');
+        try{ newMode === 'base' ? localStorage.removeItem('gp.mode') : localStorage.setItem('gp.mode', newMode); }catch{}
+        syncLabel();
+      });
     })();
 
     loadPosts();
