@@ -1,12 +1,13 @@
 [
   {
     "tag": "Naturaleza",
-    "title": "La Milpa: Un Sistema de Agricultura Tradicional en México",
-    "excerpt": "Exploramos la riqueza y sostenibilidad de la milpa mexicana.",
+    "title": "Fermentos Tradicionales Mexicanos: Sabores que Sanan",
+    "excerpt": "Explora la riqueza de los fermentos mexicanos y sus beneficios probióticos.",
     "date": "12 de marzo de 2026",
-    "url": "articulos/la-milpa-un-sistema-de-agricultura-tradicional-en-mexico/la-milpa-un-sistema-de-agricultura-tradicional-en-mexico.html",
-    "cover": "articulos/la-milpa-un-sistema-de-agricultura-tradicional-en-mexico/la-milpa-un-sistema-de-agricultura-tradicional-en-mexico.png",
-    "imageStyle": "fresco-cal"
+    "url": "articulos/fermentos-tradicionales-mexicanos-sabores-que-sanan/fermentos-tradicionales-mexicanos-sabores-que-sanan.html",
+    "cover": "articulos/fermentos-tradicionales-mexicanos-sabores-que-sanan/fermentos-tradicionales-mexicanos-sabores-que-sanan.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "Fermentos tradicionales mexicanos, tepache, vinagre artesanal, atole agrio, fermentacion lactica, probioticos naturales"
   },
   {
     "tag": "Naturaleza",

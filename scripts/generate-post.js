@@ -14,6 +14,9 @@ const TOPICS = [
   "Milpa, agricultura tradicional, policultivo, maiz, frijol, calabaza",
   "Agua, captacion pluvial, filtracion natural, humedales artificiales",
   "Defensa del territorio, autonomia comunitaria, derechos indigenas, tierra y agua",
+  "Abejas, apicultura tradicional, colmenas nativas, miel, meliponas, polinizacion",
+  "Fermentos tradicionales mexicanos, tepache, vinagre artesanal, atole agrio, fermentacion lactica, probioticos naturales",
+  "Composta, lombricomposta, manejo de residuos organicos, humus, suelo fertil, abono casero",
 ];
 
 // ── Tags válidos ───────────────────────────────────────────────────────────
@@ -422,7 +425,14 @@ function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate })
 
 // ── Flujo principal ────────────────────────────────────────────────────────
 async function generateArticle() {
-  const topic = pick(TOPICS);
+  const postsPath = path.join(__dirname, "..", "posts.json");
+  const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
+
+  // Evitar temas ya usados
+  const usedTopics = new Set(posts.map((p) => p.topic).filter(Boolean));
+  const availableTopics = TOPICS.filter((t) => !usedTopics.has(t));
+  const topic = pick(availableTopics.length > 0 ? availableTopics : TOPICS);
+
   const profile = pick(TONE_PROFILES);
   const [minSec, maxSec] = profile.sectionRange;
   const sectionCount = randInt(minSec, maxSec);
@@ -478,8 +488,6 @@ async function generateArticle() {
   console.log("Generando imagen DALL-E...");
 
   // Leer estilos ya usados para evitar repetir
-  const postsPath = path.join(__dirname, "..", "posts.json");
-  const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
   const usedStyles = new Set(posts.map((p) => p.imageStyle).filter(Boolean));
   const availableStyles = IMAGE_SUBSTYLES.filter((s) => !usedStyles.has(s.name));
   const chosenStyle = pick(availableStyles.length > 0 ? availableStyles : IMAGE_SUBSTYLES);
@@ -553,6 +561,7 @@ async function generateArticle() {
     url: `articulos/${slug}/${slug}.html`,
     cover: `articulos/${slug}/${slug}.png`,
     imageStyle: chosenStyle.name,
+    topic,
   });
   fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + "\n");
 
