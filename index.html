@@ -424,11 +424,20 @@
       width:220px;height:220px;border-radius:999px;
       background:rgba(16,185,129,.18);filter:blur(40px)
     }
-    .hero-card-text{color:#475569;margin:0}
+    .hero-card-text{color:#475569;margin:0;font-size:.88rem;line-height:1.55;}
     .hero-mini-cards{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.25rem}
     .hero-mini-cards .mini{
-      padding:.55rem .9rem;border-radius:12px;
-      background:rgba(255,255,255,.9);
+      display:inline-flex;align-items:center;
+      padding:.45rem .85rem;border-radius:12px;
+      background:rgba(5,150,105,.10);
+      border:1.5px solid rgba(5,150,105,.25);
+      font-size:.78rem;font-weight:700;color:#065f46;
+      transition:background .14s ease,transform .12s ease;
+      cursor:pointer;
+    }
+    .hero-mini-cards .mini:hover{
+      background:rgba(5,150,105,.2);
+      transform:translateY(-1px);
     }
 
     /* Backdrop blobs */
@@ -602,6 +611,15 @@
     body.mode-community .post-cover{
       background:linear-gradient(135deg,rgba(22,163,74,.9),rgba(16,185,129,.35));
     }
+    body.mode-community .hero-card-text{color:#d1fae5;}
+    body.mode-community .hero-mini-cards .mini{
+      background:rgba(22,163,74,.18);
+      border-color:rgba(22,163,74,.5);
+      color:#bbf7d0;
+    }
+    body.mode-community .hero-mini-cards .mini:hover{
+      background:rgba(22,163,74,.35);
+    }
     body.mode-community .bio-card{
       background:rgba(2,24,20,.98);
     }
@@ -701,11 +719,12 @@
           <div class="hero-card-bloom"></div>
           <div class="stack-3">
             <div class="pill">🍃 <strong>Guardianes del pulque</strong></div>
-            <p class="hero-card-text">Artículos y guías sobre <strong>Pulque</strong>, <strong>Naturaleza</strong>, <strong>Bioconstrucción</strong> y <strong>Territorio</strong>, compartidos con código abierto y acceso libre.</p>
+            <p class="hero-card-text">Artículos y guías sobre pulque, maguey, bioconstrucción, naturaleza y defensa del territorio — compartidos con código abierto y acceso libre.</p>
             <div class="hero-mini-cards">
-              <div class="mini card">Artículos</div>
-              <div class="mini card">Saberes</div>
-              <div class="mini card">Aprendizajes</div>
+              <a class="mini" href="posts.html?tag=Pulque">🍶 Pulque</a>
+              <a class="mini" href="posts.html?tag=Naturaleza">🌿 Naturaleza</a>
+              <a class="mini" href="posts.html?tag=Bioconstruccion">🏗️ Bioconstrucción</a>
+              <a class="mini" href="posts.html?tag=Territorio">🗺️ Territorio</a>
             </div>
           </div>
         </div>

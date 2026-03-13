@@ -715,7 +715,12 @@
         }catch{}
       }
 
-      let activeTag = '';
+      // Leer tag desde URL (?tag=Pulque)
+      const urlTag = new URLSearchParams(location.search).get('tag') || '';
+      let activeTag = urlTag;
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.tag === activeTag);
+      });
       renderPage(posts, 1, PER_PAGE, activeTag);
 
       document.getElementById('filters').addEventListener('click', e => {
