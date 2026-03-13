@@ -1,6 +1,15 @@
 [
   {
     "tag": "Naturaleza",
+    "title": "La Milpa: Un Sistema de Agricultura Tradicional en México",
+    "excerpt": "Exploramos la riqueza y sostenibilidad de la milpa mexicana.",
+    "date": "12 de marzo de 2026",
+    "url": "articulos/la-milpa-un-sistema-de-agricultura-tradicional-en-mexico/la-milpa-un-sistema-de-agricultura-tradicional-en-mexico.html",
+    "cover": "articulos/la-milpa-un-sistema-de-agricultura-tradicional-en-mexico/la-milpa-un-sistema-de-agricultura-tradicional-en-mexico.png",
+    "imageStyle": "fresco-cal"
+  },
+  {
+    "tag": "Naturaleza",
     "title": "Aprovechamiento del Agua: Captación Pluvial y Humedales Artificiales",
     "excerpt": "Explora métodos para gestionar el agua en zonas rurales de México.",
     "date": "12 de marzo de 2026",
