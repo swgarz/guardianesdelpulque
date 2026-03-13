@@ -104,7 +104,7 @@
       overflow:hidden;
       text-overflow:ellipsis;
     }
-    @media (max-width:400px){.brand-text{display:none}}
+    @media (max-width:639px){.brand-text{font-size:.72rem;}}
 
     .links{
       display:flex;
@@ -314,6 +314,7 @@
       .links{display:none !important;}
       .nav-burger{display:flex;align-items:center;justify-content:center;}
       .nav-mode-btn{display:flex;align-items:center;justify-content:center;}
+      .brand{flex:1;}
     }
 
     /* Scroll state base */
@@ -614,15 +615,12 @@
   <!-- NAV -->
   <div class="nav" id="mainNav">
     <div class="container row">
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menú" type="button">☰</button>
+
       <a class="brand" href="index.html">
         <img src="images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-
-      <div style="display:flex;gap:.4rem;align-items:center;flex-shrink:0">
-        <button class="nav-mode-btn" id="navModeBtn" type="button">🌿 Modo comunitario</button>
-        <button class="nav-burger" id="navBurger" aria-label="Abrir menú" type="button">☰</button>
-      </div>
 
       <div class="links">
         <!-- Comunidad -->
@@ -655,6 +653,8 @@
           </div>
         </div>
       </div>
+
+      <button class="nav-mode-btn" id="navModeBtn" type="button">🌿 Modo comunitario</button>
     </div>
   </div>
 
