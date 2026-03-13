@@ -180,7 +180,7 @@ function readingTime(body) {
 }
 
 // ── Template HTML ──────────────────────────────────────────────────────────
-function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate }) {
+function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDate }) {
   const safeExcerpt = excerpt.replace(/"/g, "&quot;");
   const readTime = readingTime(body);
   return `<!DOCTYPE html>
@@ -306,6 +306,17 @@ function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate })
     .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
     .hero-img{margin:14px auto 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);width:100%;max-width:912px;height:500px;display:block;} .hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
 
+    /* DIY SECTION */
+    .diy-section{
+      margin:2rem 0;padding:1.4rem 1.6rem;border-radius:16px;
+      background:rgba(5,150,105,.06);border:2px solid rgba(5,150,105,.25);
+    }
+    .diy-section h2{margin:0 0 .8rem;font-size:1.15rem;color:#065f46;}
+    .diy-section h3{margin:.8rem 0 .4rem;font-size:.95rem;color:#0f172a;font-weight:700;}
+    .diy-section p{margin:0 0 .7rem;font-size:.92rem;color:#374151;}
+    .diy-section ul,.diy-section ol{margin:0 0 .8rem 1.2rem;font-size:.92rem;color:#374151;}
+    .diy-section li{margin-bottom:.3rem;}
+
     /* CUERPO */
     .article-body{font-size:.97rem;color:#111827;}
     .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
@@ -381,6 +392,12 @@ function buildHTML({ title, excerpt, body, tag, emoji, slug, dateStr, isoDate })
     <article class="article-body">
       ${body}
     </article>
+
+    <!-- DIY SECTION -->
+    <section class="diy-section" id="hazlo-tu-mismo">
+      <h2>🛠️ Hazlo tú mismo</h2>
+      ${diy}
+    </section>
 
     <!-- CTA SUSCRIPCIÓN -->
     <div class="cta-section">
@@ -476,7 +493,52 @@ async function generateArticle() {
     else throw new Error("GPT no devolvió JSON válido: " + raw.slice(0, 200));
   }
 
-  // 2. Validar tag
+  // 2. Generar sección "Hazlo tú mismo"
+  const diyCompletion = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages: [
+      { role: "system", content: "Eres un instructor práctico de saberes rurales mexicanos. Redactas instrucciones claras, concretas y motivadoras." },
+      {
+        role: "user",
+        content:
+          `El artículo es sobre: "${article.title}".\n\n` +
+          "Escribe una sección 'Hazlo tú mismo' práctica y accesible relacionada con el tema del artículo.\n" +
+          "Responde SOLO con un JSON válido (sin markdown) con esta estructura:\n" +
+          '{"diy_title": "Nombre de la actividad práctica", "intro": "1 párrafo motivador (max 100 palabras)", ' +
+          '"materials": ["material 1", "material 2", ...], "steps": ["paso 1", "paso 2", ...], "tip": "Consejo final útil (max 80 palabras)"}\n\n' +
+          "La actividad debe ser simple, con materiales accesibles, máximo 6 pasos y 7 materiales. " +
+          "Orientada a personas en comunidades rurales o urbanas sin recursos especializados.",
+      },
+    ],
+    temperature: 0.7,
+  });
+
+  let diyData;
+  try {
+    diyData = JSON.parse(diyCompletion.choices[0].message.content.trim());
+  } catch {
+    const m = diyCompletion.choices[0].message.content.match(/\{[\s\S]*\}/);
+    diyData = m ? JSON.parse(m[0]) : null;
+  }
+
+  let diy = "";
+  if (diyData) {
+    const mats = diyData.materials.map((m) => `<li>${m}</li>`).join("\n        ");
+    const stps = diyData.steps.map((s) => `<li>${s}</li>`).join("\n        ");
+    diy = `<h3>${diyData.diy_title}</h3>
+      <p>${diyData.intro}</p>
+      <h3>Materiales</h3>
+      <ul>
+        ${mats}
+      </ul>
+      <h3>Paso a paso</h3>
+      <ol>
+        ${stps}
+      </ol>
+      <div class="highlight">💡 ${diyData.tip}</div>`;
+  }
+
+  // 3. Validar tag
   const tag = validateTag(article.tag);
   const emoji = TAG_EMOJI[tag] || "📝";
 
@@ -544,6 +606,7 @@ async function generateArticle() {
     title: article.title,
     excerpt: article.excerpt,
     body: article.body,
+    diy,
     tag,
     emoji,
     slug,
