@@ -507,7 +507,7 @@
             <span class="chip">Modo</span>
           </button>
           <div class="nav-dropdown nav-dropdown-mode">
-            <button class="nav-link js-mode" data-mode="base" type="button">Modo luz</button>
+            <button class="nav-link js-mode" data-mode="base" type="button">Modo pulque</button>
             <button class="nav-link js-mode" data-mode="community" type="button">Modo comunitario</button>
           </div>
         </div>
@@ -798,7 +798,7 @@
       if(!btn) return;
       function syncLabel(){
         const isCommunity = document.body.classList.contains('mode-community');
-        btn.textContent = isCommunity ? '☀️ Modo luz' : '🌿 Modo comunitario';
+        btn.textContent = isCommunity ? '🍶 Modo pulque' : '🌿 Modo comunitario';
       }
       syncLabel();
       btn.addEventListener('click', ()=>{
