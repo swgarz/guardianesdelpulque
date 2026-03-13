@@ -230,26 +230,67 @@
       pointer-events:auto;
     }
 
-    /* Subdropdown en móvil: expande hacia abajo, no a la derecha */
+    /* Hamburger (solo móvil) */
+    .nav-burger{
+      display:none;flex-shrink:0;
+      background:none;border:1.5px solid var(--brand);border-radius:8px;
+      padding:6px 10px;cursor:pointer;color:var(--brand);
+      font-size:1.15rem;line-height:1;transition:background .15s ease;
+    }
+    .nav-burger:hover{background:rgba(5,150,105,.1);}
+
+    /* Overlay + panel deslizante */
+    .nav-overlay{
+      display:none;position:fixed;inset:0;
+      background:rgba(2,8,23,.5);z-index:79;
+      backdrop-filter:blur(2px);
+    }
+    .nav-overlay.open{display:block;}
+    .nav-panel{
+      position:fixed;top:0;right:0;
+      width:min(280px,84vw);height:100%;
+      background:#fff;z-index:81;
+      padding:0;overflow-y:auto;
+      transform:translateX(100%);
+      transition:transform .25s ease;
+      box-shadow:-8px 0 40px rgba(0,0,0,.18);
+    }
+    .nav-overlay.open .nav-panel{transform:translateX(0);}
+    .nav-panel-head{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 16px;border-bottom:1px solid #e5e7eb;
+    }
+    .nav-panel-brand{font-weight:700;font-size:.9rem;color:#0f172a;}
+    .nav-panel-close{
+      background:none;border:none;font-size:1.2rem;
+      cursor:pointer;color:#6b7280;padding:4px 6px;line-height:1;
+    }
+    .nav-panel-section{
+      padding:10px 16px 3px;font-size:.68rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:.08em;color:#9ca3af;
+    }
+    .nav-panel-link{
+      display:block;padding:10px 16px;
+      font-size:.88rem;font-weight:600;color:#0f172a;
+      transition:background .12s ease;
+    }
+    .nav-panel-link:hover,.nav-panel-link:active{
+      background:rgba(5,150,105,.07);color:#065f46;
+    }
+    .nav-panel-sublink{padding-left:28px;font-weight:400;color:#374151;font-size:.84rem;}
+    .nav-panel-divider{border:none;border-top:1px solid #f3f4f6;margin:4px 0;}
+    .nav-panel-btn{
+      display:block;width:100%;text-align:left;
+      background:none;border:none;padding:10px 16px;
+      font-size:.88rem;font-weight:600;color:#0f172a;
+      cursor:pointer;transition:background .12s ease;
+    }
+    .nav-panel-btn:hover{background:rgba(5,150,105,.07);color:#065f46;}
+
+    /* En móvil: ocultar links desktop, mostrar hamburger */
     @media (max-width:639px){
-      .nav-subdropdown{
-        position:static;
-        opacity:1;
-        pointer-events:auto;
-        box-shadow:none;
-        border:none;
-        border-radius:0;
-        padding:0 0 0 12px;
-        min-width:0;
-        display:none;
-        transition:none;
-      }
-      .nav-item-inline:hover > .nav-subdropdown,
-      .nav-item-inline:focus-within > .nav-subdropdown,
-      .nav-item-inline.open > .nav-subdropdown{
-        display:block;
-        opacity:1;
-      }
+      .links{display:none !important;}
+      .nav-burger{display:flex;align-items:center;justify-content:center;}
     }
 
     /* Scroll state base */
@@ -552,6 +593,8 @@
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
 
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menú" type="button">☰</button>
+
       <div class="links">
         <!-- Comunidad -->
         <div class="nav-item">
@@ -583,6 +626,28 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Panel móvil -->
+  <div class="nav-overlay" id="navOverlay">
+    <div class="nav-panel" id="navPanel">
+      <div class="nav-panel-head">
+        <span class="nav-panel-brand">Guardianes del Pulque</span>
+        <button class="nav-panel-close" id="navClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="nav-panel-section">Navegar</div>
+      <a class="nav-panel-link" href="posts.html">📰 Artículos</a>
+      <a class="nav-panel-link" href="#donar">💚 Donar</a>
+      <hr class="nav-panel-divider">
+      <div class="nav-panel-section">Aliados</div>
+      <a class="nav-panel-link nav-panel-sublink" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
+      <a class="nav-panel-link nav-panel-sublink" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
+      <a class="nav-panel-link nav-panel-sublink" href="https://www.google.com/maps/place/Casa+del+Consejo+Otom%C3%AD+Nghu+Lludadha+%C3%91hanjhu,+Santiago+Yanhuitlalpan/@19.3852977,-99.3044762,69m/data=!3m1!1e3!4m6!3m5!1s0x85d20786d4392b05:0x767fb0f08a813efb!8m2!3d19.3852814!4d-99.304469!16s%2Fg%2F11khqxqkbg!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Casa del Consejo Otomí Nghuy</a>
+      <hr class="nav-panel-divider">
+      <div class="nav-panel-section">Modo visual</div>
+      <button class="nav-panel-btn js-mode" data-mode="base" type="button">☀️ Modo luz</button>
+      <button class="nav-panel-btn js-mode" data-mode="community" type="button">🌿 Modo comunitario</button>
     </div>
   </div>
 
@@ -921,6 +986,20 @@
           e.stopPropagation();
         });
       });
+    })();
+
+    // Hamburger menú móvil
+    (function(){
+      const burger  = document.getElementById('navBurger');
+      const overlay = document.getElementById('navOverlay');
+      const closeBtn= document.getElementById('navClose');
+      function openMenu(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+      function closeMenu(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+      burger.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', e=>{ if(e.target===overlay) closeMenu(); });
+      overlay.querySelectorAll('.nav-panel-link').forEach(l=>l.addEventListener('click', closeMenu));
+      overlay.querySelectorAll('.nav-panel-btn').forEach(b=>b.addEventListener('click', closeMenu));
     })();
 
     loadPosts();
