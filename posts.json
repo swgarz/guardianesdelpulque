@@ -1,5 +1,135 @@
 [
   {
+    "tag": "Psicodelicos",
+    "title": "Psicodélicos Sagrados en la Medicina Ancestral",
+    "excerpt": "Explora el uso de psicodélicos sagrados en tradiciones mexicanas.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/psicodelicos-sagrados-en-la-medicina-ancestral/psicodelicos-sagrados-en-la-medicina-ancestral.html",
+    "cover": "articulos/psicodelicos-sagrados-en-la-medicina-ancestral/psicodelicos-sagrados-en-la-medicina-ancestral.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Psicodelicos sagrados, peyote, hongos sagrados, temazcal, plantas de poder, medicina ancestral visionaria"
+  },
+  {
+    "tag": "Musica",
+    "title": "Voces de la Tierra: La Música Tradicional Mexicana",
+    "excerpt": "Explora los ritmos y melodías que dan vida a la cultura mexicana.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/voces-de-la-tierra-la-musica-tradicional-mexicana/voces-de-la-tierra-la-musica-tradicional-mexicana.html",
+    "cover": "articulos/voces-de-la-tierra-la-musica-tradicional-mexicana/voces-de-la-tierra-la-musica-tradicional-mexicana.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Musica tradicional mexicana, sones, jarana, teponaztle, cantos de trabajo, musica ritual"
+  },
+  {
+    "tag": "Mujeres",
+    "title": "Mujeres en el Campo: Guardianas de Saberes y Vida",
+    "excerpt": "Explorando el invaluable papel de las mujeres en el campo mexicano.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/mujeres-en-el-campo-guardianas-de-saberes-y-vida/mujeres-en-el-campo-guardianas-de-saberes-y-vida.html",
+    "cover": "articulos/mujeres-en-el-campo-guardianas-de-saberes-y-vida/mujeres-en-el-campo-guardianas-de-saberes-y-vida.png",
+    "imageStyle": "litografia-color",
+    "topic": "Mujeres en el campo, saberes femeninos, parteria, huertos familiares, liderazgo comunitario femenino"
+  },
+  {
+    "tag": "Lenguas",
+    "title": "Revitalización de las Lenguas Indígenas en México",
+    "excerpt": "Explora la importancia y el proceso de revitalización de lenguas indígenas.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/revitalizacion-de-las-lenguas-indigenas-en-mexico/revitalizacion-de-las-lenguas-indigenas-en-mexico.html",
+    "cover": "articulos/revitalizacion-de-las-lenguas-indigenas-en-mexico/revitalizacion-de-las-lenguas-indigenas-en-mexico.png",
+    "imageStyle": "encaustica",
+    "topic": "Lenguas indigenas, nahuatl, otomi, mazateco, revitalizacion linguistica, lenguas originarias de Mexico"
+  },
+  {
+    "tag": "Energia",
+    "title": "Energías Alternativas: Caminos hacia la Autonomía Energética en Comunidades Rurales",
+    "excerpt": "Explora energías alternativas que transforman comunidades rurales hacia la autonomía energética.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales.html",
+    "cover": "articulos/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Energia alternativa, energia solar comunitaria, biogas, lena sostenible, autonomia energetica"
+  },
+  {
+    "tag": "Insectos",
+    "title": "La Sabiduría de los Insectos Comestibles en la Cultura Mexicana",
+    "excerpt": "Exploramos la riqueza nutricional y cultural de los insectos comestibles en México.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana.html",
+    "cover": "articulos/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana.png",
+    "imageStyle": "encaustica",
+    "topic": "Insectos comestibles, chapulines, gusanos de maguey, ahuautle, entomofagia, proteina de insectos"
+  },
+  {
+    "tag": "Madera",
+    "title": "La Madera en la Tradición Mexicana: Construcción y Sabiduría",
+    "excerpt": "Explorando el uso de maderas locales en carpintería tradicional.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria.html",
+    "cover": "articulos/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "Madera, carpinteria tradicional, maderas locales, construccion en madera, manejo forestal"
+  },
+  {
+    "tag": "Aves",
+    "title": "La Diversidad de Aves en Nuestros Territorios",
+    "excerpt": "Explora la interconexión de aves silvestres y de corral en México.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/la-diversidad-de-aves-en-nuestros-territorios/la-diversidad-de-aves-en-nuestros-territorios.html",
+    "cover": "articulos/la-diversidad-de-aves-en-nuestros-territorios/la-diversidad-de-aves-en-nuestros-territorios.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Aves silvestres, aves de corral criollas, corredores biologicos, ornitologia, biodiversidad aviar"
+  },
+  {
+    "tag": "Hongos",
+    "title": "El Fascinante Mundo de los Hongos y su Cultivo",
+    "excerpt": "Descubre el cultivo de setas, micorrizas y hongos medicinales.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/el-fascinante-mundo-de-los-hongos-y-su-cultivo/el-fascinante-mundo-de-los-hongos-y-su-cultivo.html",
+    "cover": "articulos/el-fascinante-mundo-de-los-hongos-y-su-cultivo/el-fascinante-mundo-de-los-hongos-y-su-cultivo.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Hongos, cultivo de setas, micorrizas, fungi medicinales, recoleccion de hongos silvestres"
+  },
+  {
+    "tag": "Cosmologia",
+    "title": "Cosmología Indígena y su Relevancia en la Espiritualidad Nahua",
+    "excerpt": "Explora la conexión entre la cosmología indígena y la espiritualidad nahua.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua.html",
+    "cover": "articulos/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua.png",
+    "imageStyle": "claroscuro-social",
+    "topic": "Cosmologia indigena, calendario ritual, tonalpohualli, cosmovision nahua, saberes ancestrales, espiritualidad"
+  },
+  {
+    "tag": "Economia",
+    "title": "Economía Solidaria y el Poder del Trueque en Comunidades Rurales",
+    "excerpt": "Explora cómo la economía solidaria y el trueque transforman comunidades.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales.html",
+    "cover": "articulos/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Economia solidaria, trueque, mercados locales, autogestion comunitaria, finanzas rurales"
+  },
+  {
+    "tag": "Arte",
+    "title": "El Arte Tradicional Mexicano: Un Legado Cultural Vivo",
+    "excerpt": "Explora el rico patrimonio del arte tradicional mexicano y su diversidad.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/el-arte-tradicional-mexicano-un-legado-cultural-vivo/el-arte-tradicional-mexicano-un-legado-cultural-vivo.html",
+    "cover": "articulos/el-arte-tradicional-mexicano-un-legado-cultural-vivo/el-arte-tradicional-mexicano-un-legado-cultural-vivo.png",
+    "imageStyle": "claroscuro-social",
+    "topic": "Arte tradicional mexicano, muralismo, artesanias, ceramica, textiles, papel amate, expresion cultural"
+  },
+  {
+    "tag": "Fuego",
+    "title": "El Fuego en la Cocina Tradicional Mexicana",
+    "excerpt": "Explorando la importancia del fuego y los fogones en la cocina mexicana.",
+    "date": "13 de marzo de 2026",
+    "url": "articulos/el-fuego-en-la-cocina-tradicional-mexicana/el-fuego-en-la-cocina-tradicional-mexicana.html",
+    "cover": "articulos/el-fuego-en-la-cocina-tradicional-mexicana/el-fuego-en-la-cocina-tradicional-mexicana.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Fuego, fogones de lena, cocina tradicional, carbon vegetal, manejo del fuego en el campo"
+  },
+  {
     "tag": "Territorio",
     "title": "Defensa del Territorio: Estrategias Comunitarias Frente al Despojo",
     "excerpt": "Herramientas legales, organizativas y culturales para que las comunidades defiendan su tierra, agua y autonomía frente al extractivismo.",
@@ -29,7 +159,7 @@
     "topic": "Fermentos tradicionales mexicanos, tepache, vinagre artesanal, atole agrio, fermentacion lactica, probioticos naturales"
   },
   {
-    "tag": "Naturaleza",
+    "tag": "Agua",
     "title": "Aprovechamiento del Agua: Captación Pluvial y Humedales Artificiales",
     "excerpt": "Explora métodos para gestionar el agua en zonas rurales de México.",
     "date": "12 de marzo de 2026",
@@ -56,7 +186,7 @@
     "imageStyle": "encaustica"
   },
   {
-    "tag": "Territorio",
+    "tag": "Semillas",
     "title": "La Milpa: Agricultura Tradicional Mexicana",
     "excerpt": "Descubre la milpa, un sistema agrícola sustentable y diverso en México.",
     "date": "7 de marzo de 2026",
@@ -110,7 +240,7 @@
     "cover": "articulos/noticias-verdes-restauracion-y-polinizadores/noticias-verdes-restauracion-y-polinizadores.png"
   },
   {
-    "tag": "Naturaleza",
+    "tag": "Agua",
     "title": "Humedales urbanos: manual de bolsillo",
     "excerpt": "Captación, filtración y biodiversidad en pequeñas escalas.",
     "date": "5 de marzo de 2026",
@@ -126,7 +256,7 @@
     "cover": "articulos/bambu-estructural/bambu-estructural.png"
   },
   {
-    "tag": "Naturaleza",
+    "tag": "Semillas",
     "title": "La polinización del maíz",
     "excerpt": "Cómo el viento, las variedades criollas y la milpa sostienen la reproducción del maíz mexicano.",
     "date": "12 de marzo de 2026",
@@ -134,7 +264,7 @@
     "cover": "articulos/polinizacion-del-maiz/polinizacion-del-maiz.png"
   },
   {
-    "tag": "Naturaleza",
+    "tag": "Suelo",
     "title": "Suelos vivos",
     "excerpt": "Compost, micorrizas y cobertura para resiliencia hídrica.",
     "date": "5 de marzo de 2026",

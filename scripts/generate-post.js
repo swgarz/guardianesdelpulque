@@ -516,9 +516,26 @@ async function generateArticle() {
   const postsPath = path.join(__dirname, "..", "posts.json");
   const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
 
+  // Leer --tag opcional desde CLI
+  const tagArg = process.argv.find((a) => a.startsWith("--tag="))?.split("=")[1]
+    || process.argv[process.argv.indexOf("--tag") + 1];
+
   // Evitar temas ya usados
   const usedTopics = new Set(posts.map((p) => p.topic).filter(Boolean));
-  const availableTopics = TOPICS.filter((t) => !usedTopics.has(t));
+  let availableTopics = TOPICS.filter((t) => !usedTopics.has(t));
+
+  // Si se especificó --tag, filtrar temas que empiecen con ese tag
+  if (tagArg) {
+    const norm = tagArg.toLowerCase();
+    const tagged = availableTopics.filter((t) => t.toLowerCase().startsWith(norm));
+    if (tagged.length > 0) availableTopics = tagged;
+    else {
+      // Buscar en todos los topics (aunque ya usados) como fallback
+      const fallback = TOPICS.filter((t) => t.toLowerCase().startsWith(norm));
+      if (fallback.length > 0) availableTopics = fallback;
+    }
+  }
+
   const topic = pick(availableTopics.length > 0 ? availableTopics : TOPICS);
 
   const profile = pick(TONE_PROFILES);
@@ -554,15 +571,48 @@ async function generateArticle() {
     temperature,
   });
 
-  const raw = completion.choices[0].message.content.trim();
-  let article;
-  try {
-    article = JSON.parse(raw);
-  } catch {
+  function tryParseJson(raw) {
+    try { return JSON.parse(raw); } catch {}
     const match = raw.match(/\{[\s\S]*\}/);
-    if (match) article = JSON.parse(match[0]);
-    else throw new Error("GPT no devolvió JSON válido: " + raw.slice(0, 200));
+    if (!match) return null;
+    try { return JSON.parse(match[0]); } catch {}
+    // Intentar reparar: escapar saltos de línea dentro de strings
+    try {
+      const repaired = match[0].replace(/("body"\s*:\s*")([\s\S]*?)("(?:\s*,|\s*\}))/g,
+        (_, pre, content, suf) => pre + content.replace(/\n/g, "\\n").replace(/\r/g, "") + suf);
+      return JSON.parse(repaired);
+    } catch {}
+    return null;
   }
+
+  let raw = completion.choices[0].message.content.trim();
+  let article = tryParseJson(raw);
+
+  // Retry hasta 2 veces si el JSON es inválido
+  for (let retry = 0; !article && retry < 2; retry++) {
+    console.log(`JSON inválido, reintentando GPT (intento ${retry + 2})...`);
+    const retryCompletion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: profile.systemPrompt },
+        {
+          role: "user",
+          content:
+            `Escribe un articulo original y detallado sobre: ${topic}.\n\n` +
+            "Responde SOLO con un JSON valido (sin markdown ni backticks) con esta estructura EXACTA:\n" +
+            `{"title":"Titulo","excerpt":"Resumen max 120 chars","tag":"Tag","body":"<h2>...</h2><p>...</p>"}\n\n` +
+            `IMPORTANTE: El body debe ser una sola linea de texto sin saltos de linea. ` +
+            `Usa exactamente ${sectionCount} secciones con h2. ` +
+            "Cada seccion minimo 3 parrafos sustanciosos. Sin style ni script. Entre 900 y 1400 palabras.\n\n" +
+            `Tag entre: ${VALID_TAGS.join(", ")}.`,
+        },
+      ],
+      temperature: 0.5,
+    });
+    raw = retryCompletion.choices[0].message.content.trim();
+    article = tryParseJson(raw);
+  }
+  if (!article) throw new Error("GPT no devolvió JSON válido tras 3 intentos");
 
   // 2. Generar sección "Hazlo tú mismo"
   const diyCompletion = await openai.chat.completions.create({
@@ -609,8 +659,8 @@ async function generateArticle() {
       <div class="highlight">💡 ${diyData.tip}</div>`;
   }
 
-  // 3. Validar tag
-  const tag = validateTag(article.tag);
+  // 3. Validar tag (si se pasó --tag, forzarlo)
+  const tag = tagArg && VALID_TAGS.includes(tagArg) ? tagArg : validateTag(article.tag);
   const emoji = TAG_EMOJI[tag] || "📝";
 
   // 3. Generar slug unico

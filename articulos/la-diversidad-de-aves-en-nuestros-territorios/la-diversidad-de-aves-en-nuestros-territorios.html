@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Diversidad de Aves en Nuestros Territorios — Guardianes del Pulque</title>
+  <meta name="description" content="Explora la interconexión de aves silvestres y de corral en México." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="La Diversidad de Aves en Nuestros Territorios" />
+  <meta property="og:description" content="Explora la interconexión de aves silvestres y de corral en México." />
+  <meta property="og:image" content="https://guardianesdelpulque.org/articulos/la-diversidad-de-aves-en-nuestros-territorios/la-diversidad-de-aves-en-nuestros-territorios.png" />
+  <meta property="og:url" content="https://guardianesdelpulque.org/articulos/la-diversidad-de-aves-en-nuestros-territorios/la-diversidad-de-aves-en-nuestros-territorios.html" />
+  <meta property="og:site_name" content="Guardianes del Pulque" />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="La Diversidad de Aves en Nuestros Territorios" />
+  <meta name="twitter:description" content="Explora la interconexión de aves silvestres y de corral en México." />
+  <meta name="twitter:image" content="https://guardianesdelpulque.org/articulos/la-diversidad-de-aves-en-nuestros-territorios/la-diversidad-de-aves-en-nuestros-territorios.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "La Diversidad de Aves en Nuestros Territorios",
+    "description": "Explora la interconexión de aves silvestres y de corral en México.",
+    "image": "https://guardianesdelpulque.org/articulos/la-diversidad-de-aves-en-nuestros-territorios/la-diversidad-de-aves-en-nuestros-territorios.png",
+    "datePublished": "2026-03-13",
+    "author": {
+      "@type": "Organization",
+      "name": "Guardianes del Pulque",
+      "url": "https://guardianesdelpulque.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Guardianes del Pulque",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://guardianesdelpulque.org/images/logo_transparente.png"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';
+      line-height:1.6;
+      color:#0f172a;
+      background:#f6f8fb;
+    }
+    :root{
+      --brand:#059669;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --card:#ffffff;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
+    @media (min-width:640px){.container{padding:0 24px}}
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:40;
+      background:transparent;
+      border-bottom:1px solid transparent;
+      backdrop-filter:saturate(180%) blur(14px);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
+    }
+    .nav-row{
+      display:flex;align-items:center;
+      justify-content:space-between;
+      padding:10px 0;gap:1rem;
+    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
+    .chip{
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
+    }
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
+    }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
+
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
+    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px auto 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);width:100%;max-width:912px;height:500px;display:block;} .hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    /* DIY SECTION */
+    .diy-section{
+      margin:2rem 0;padding:1.4rem 1.6rem;border-radius:16px;
+      background:rgba(5,150,105,.06);border:2px solid rgba(5,150,105,.25);
+    }
+    .diy-section h2{margin:0 0 .8rem;font-size:1.15rem;color:#065f46;}
+    .diy-section h3{margin:.8rem 0 .4rem;font-size:.95rem;color:#0f172a;font-weight:700;}
+    .diy-section p{margin:0 0 .7rem;font-size:.92rem;color:#374151;}
+    .diy-section ul,.diy-section ol{margin:0 0 .8rem 1.2rem;font-size:.92rem;color:#374151;}
+    .diy-section li{margin-bottom:.3rem;}
+
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:24px 0 8px;font-size:1.05rem;color:#065f46;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
+    }
+
+    /* CTA */
+    .cta-section{
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
+      text-align:center;
+    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
+    .cta-form input[type="email"]{
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
+    }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);}
+    .cta-form button{
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
+    }
+    .cta-form button:hover{background:#047857;}
+
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
+      <a class="brand" href="../../index.html">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
+        <span class="brand-text">Guardianes del Pulque</span>
+      </a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">Artículos</a>
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      La Diversidad de Aves en Nuestros Territorios
+    </div>
+
+    <header class="article-header">
+      <h1 class="article-title">La Diversidad de Aves en Nuestros Territorios</h1>
+      <div class="article-meta">
+        <div class="meta-pill">🦅 <span>Aves</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 7–9 min</span></div>
+        <div class="meta-pill">📅 <span>13 de marzo de 2026</span></div>
+      </div>
+      <p class="article-lead">Explora la interconexión de aves silvestres y de corral en México.</p>
+    </header>
+
+    <figure class="hero-img">
+      <img src="la-diversidad-de-aves-en-nuestros-territorios.png" alt="La Diversidad de Aves en Nuestros Territorios" />
+    </figure>
+
+    <article class="article-body">
+      <h2>Aves Silvestres en México</h2><p>Las aves silvestres son un componente esencial de nuestros ecosistemas. En México, se han registrado más de 1,000 especies de aves, que se distribuyen en diversos hábitats, desde los desiertos del norte hasta las selvas tropicales del sur. Estas aves no solo desempeñan un papel crucial en la polinización y la dispersión de semillas, sino que también son indicadores de la salud ambiental. Entre las especies más emblemáticas se encuentran el quetzal, el águila real y el colibrí.</p><p>La diversidad aviar en México es asombrosa, y el país se ubica entre los 10 países más biodiversos en el mundo. Esta riqueza biológica está amenazada por la deforestación, el cambio climático y la urbanización. Un ejemplo de la importancia de la conservación es la población de aves migratorias que atraviesan México en su camino hacia el sur. Estas aves, como el flamenco rosa y el halcón peregrino, son vitales para el equilibrio de los ecosistemas.</p><p>Para fomentar la conservación de aves silvestres, es fundamental involucrar a las comunidades locales. La educación ambiental y la creación de áreas protegidas son pasos cruciales. Programas como el monitoreo de aves en áreas rurales ayudan a las comunidades a comprender la importancia de estos seres alados y su papel en el entorno.</p><h2>Aves de Corral Criollas</h2><p>Las aves de corral criollas, como las gallinas, patos y guajolotes, son parte fundamental de la cultura y la economía rural de México. Estas aves no solo proporcionan carne y huevos, sino que también son un símbolo de autosuficiencia y tradición. A diferencia de las razas comerciales, las aves criollas están mejor adaptadas a las condiciones locales, lo que las hace más resistentes a enfermedades y cambios climáticos.</p><p>Por ejemplo, la gallina criolla es valorada por su capacidad de adaptación y su resistencia, lo que la convierte en una opción ideal para pequeños agricultores. Se estima que la producción de huevos de aves criollas puede ser un 30% más alta en comparación con las razas comerciales bajo condiciones locales. Además, estas gallinas son excelentes para la recuperación de suelos, ya que su forrajeo ayuda a controlar plagas y a mejorar la estructura del suelo.</p><p>Para promover la crianza de aves de corral criollas, es importante establecer redes de apoyo entre los agricultores. Talleres de capacitación sobre manejo y cría sostenible pueden resultar útiles para mejorar la productividad y la salud de las aves, así como para preservar las tradiciones locales.</p><h2>Corredores Biológicos: Conectando Hábitats</h2><p>Los corredores biológicos son áreas que conectan distintos hábitats, permitiendo el movimiento de especies de un lugar a otro. En el contexto de la biodiversidad aviar, estos corredores son cruciales para la migración y la reproducción de muchas especies. En México, se han establecido corredores en regiones como la Sierra Madre Oriental y la Selva Lacandona, facilitando el paso de aves silvestres y su acceso a recursos.</p><p>Un ejemplo de la importancia de los corredores biológicos es el Corredor Biológico Mesoamericano, que se extiende desde México hasta Panamá. Este corredor permite la migración de aves y otros animales, ayudando a mantener poblaciones saludables y diversas. Además, contribuye a la conservación de especies en peligro de extinción, como el guacamayo rojo, que depende de grandes extensiones de bosque para sobrevivir.</p><p>La implementación de corredores biológicos requiere la colaboración entre comunidades, gobiernos y organizaciones no gubernamentales. Iniciativas de reforestación y conservación del hábitat son fundamentales para asegurar que estos corredores sean efectivos y sostenibles a largo plazo.</p><h2>La Ornitorrinco y su Papel en la Ornitología</h2><p>La ornitología es la rama de la zoología que estudia las aves. Este campo es vital para comprender el comportamiento, la ecología y la conservación de las aves. En México, la ornitología ha cobrado importancia, no solo por la diversidad aviar, sino también por el impacto de las actividades humanas en sus hábitats. La investigación ornitológica permite identificar especies en peligro y desarrollar estrategias efectivas de conservación.</p><p>Un área de estudio interesante es el comportamiento migratorio de las aves. Muchas especies, como la golondrina, viajan miles de kilómetros desde sus áreas de reproducción hasta sus zonas invernales. La ornitología ayuda a comprender estas migraciones y a identificar las amenazas que enfrentan las aves durante su trayecto. Por ejemplo, la pérdida de humedales en su ruta migratoria puede afectar drásticamente su población.</p><p>Para fomentar el interés por la ornitología, las comunidades pueden organizar eventos como el conteo de aves, donde los participantes pueden observar, registrar y aprender sobre las aves locales. Estas actividades no solo promueven la conservación, sino que también fortalecen el sentido de comunidad y la conexión con el entorno.</p><h2>Biodiversidad Aviar y su Conservación</h2><p>La biodiversidad aviar es un indicador clave de la salud de los ecosistemas. La pérdida de hábitat y la contaminación son las principales amenazas que enfrentan las aves en México. Se estima que el 30% de las especies de aves en el país están en riesgo de extinción, lo que resalta la urgencia de implementar medidas de conservación efectivas. La protección de áreas naturales, como parques y reservas, es una estrategia fundamental para preservar la biodiversidad aviar.</p><p>Ejemplos de iniciativas exitosas incluyen la creación de reservas naturales que han permitido la recuperación de especies en peligro. La Reserva de la Biosfera de los Tuxtlas, por ejemplo, ha sido crucial para la conservación del pájaro carpintero de pico de marfil. A través de esfuerzos comunitarios y educativos, se ha logrado aumentar la población de esta especie emblemática, así como la de otras aves locales.</p><p>La participación de la comunidad en estos esfuerzos es esencial. La educación ambiental, la promoción de prácticas agrícolas sostenibles y la creación de espacios para la observación de aves son algunas de las acciones que pueden tener un gran impacto en la conservación de la biodiversidad aviar.</p><h2>Iniciativas Locales para el Cuidado de Aves</h2><p>Existen numerosas iniciativas locales en México que buscan promover el cuidado y la conservación de las aves. Estas iniciativas, que van desde talleres de educación ambiental hasta proyectos de reforestación, tienen como objetivo involucrar a la comunidad en la protección de su entorno. Un ejemplo notable es el Programa de Conservación de Aves Urbanas, que se lleva a cabo en varias ciudades, donde se enseña a los residentes sobre la importancia de las aves en el ecosistema urbano.</p><p>Las comunidades pueden participar en la construcción de refugios para aves, así como en la creación de jardines amigables con la fauna, que proporcionen recursos esenciales como alimento y espacio para anidar. Por ejemplo, la siembra de plantas nativas en jardines urbanos puede atraer a especies de aves locales, promoviendo así una mayor diversidad en áreas habitadas por humanos.</p><p>Además, la formación de grupos de observación de aves puede ser un camino excelente para fomentar la conciencia sobre la biodiversidad aviar y la importancia de su conservación. A través de estas actividades, las comunidades no solo aprenden sobre las aves, sino que también desarrollan un mayor aprecio por su entorno natural.</p><h2>El Futuro de Nuestras Aves</h2><p>El futuro de las aves en México depende de nuestro compromiso con la conservación y la educación ambiental. A medida que enfrentamos desafíos como el cambio climático, es crucial que tomemos medidas para proteger nuestros ecosistemas y las especies que habitan en ellos. La colaboración entre comunidades, gobiernos y organizaciones no gubernamentales es esencial para implementar acciones efectivas.</p><p>Iniciar proyectos de restauración de hábitats y promover el uso sostenible de los recursos naturales son pasos importantes. La integración de la población local en estas iniciativas no solo aumenta su efectividad, sino que también fortalece el sentido de pertenencia y responsabilidad hacia el medio ambiente.</p><p>Cada acción cuenta, desde pequeños esfuerzos en los hogares hasta grandes proyectos comunitarios. Una mayor conciencia y aprecio por la biodiversidad aviar puede contribuir a un futuro donde hombres y aves coexistan en armonía, garantizando la riqueza natural de nuestro país para las generaciones venideras.</p><p>Conocer y proteger nuestras aves es un legado que podemos dejar a las futuras generaciones. La diversidad aviar no solo enriquece nuestros ecosistemas, sino que también nos conecta con nuestras tradiciones y nuestra identidad cultural. Juntos, como comunidad, podemos ser agentes de cambio, promoviendo la conservación y el respeto por todas las formas de vida que habitan nuestro hermoso país. ¡La tarea es grande, pero juntos podemos lograrlo!</p>
+    </article>
+
+    <!-- DIY SECTION -->
+    <section class="diy-section" id="hazlo-tu-mismo">
+      <h2>🛠️ Hazlo tú mismo</h2>
+      <h3>Construye un Comedero para Aves</h3>
+      <p>¡Observa la belleza de las aves en tu propio hogar! Construir un comedero para aves es una actividad sencilla que no solo embellecerá tu espacio, sino que también atraerá a diversas especies a tu jardín o balcón. Además, es una excelente manera de conectar con la naturaleza y contribuir a la conservación de estas maravillosas criaturas. ¡Manos a la obra!</p>
+      <h3>Materiales</h3>
+      <ul>
+        <li>botella de plástico vacía</li>
+        <li>cuchillo o tijeras</li>
+        <li>cuerda o hilo resistente</li>
+        <li>semillas para aves</li>
+        <li>piedras pequeñas</li>
+        <li>tapa de la botella</li>
+        <li>pintura o marcadores (opcional)</li>
+      </ul>
+      <h3>Paso a paso</h3>
+      <ol>
+        <li>Lava y seca bien la botella de plástico.</li>
+        <li>Con el cuchillo o tijeras, corta aberturas en los lados de la botella, lo suficientemente grandes para que las aves entren y salgan.</li>
+        <li>Coloca algunas piedras pequeñas en el fondo para dar estabilidad.</li>
+        <li>Llena la botella con semillas para aves.</li>
+        <li>Cierra la botella con su tapa y haz un agujero en la parte superior para pasar la cuerda.</li>
+        <li>Cuelga el comedero en un lugar visible y seguro.</li>
+      </ol>
+      <div class="highlight">💡 Ubica el comedero cerca de un árbol o arbusto para que las aves tengan un lugar donde refugiarse.</div>
+    </section>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
+      <form class="cta-form" action="#suscribirse" method="post">
+        <input type="email" placeholder="tu@correo.com" required />
+        <button type="submit">Suscribirme</button>
+      </form>
+      <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
+    </div>
+
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🦅 Aves</span>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container row">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
+        <span>Guardianes del Pulque</span>
+      </div>
+      <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>
