@@ -541,43 +541,7 @@
 
   <!-- GRID -->
   <main class="container">
-    <div class="filters" id="filters">
-      <button class="filter-btn active" data-tag="">Todos</button>
-      <button class="filter-btn" data-tag="Pulque">🍶 Pulque</button>
-      <button class="filter-btn" data-tag="Naturaleza">🌿 Naturaleza</button>
-      <button class="filter-btn" data-tag="Bioconstruccion">🏗️ Bioconstrucción</button>
-      <button class="filter-btn" data-tag="Territorio">✊ Territorio</button>
-      <button class="filter-btn" data-tag="Semillas">🌱 Semillas</button>
-      <button class="filter-btn" data-tag="Agroforesteria">🌳 Agroforestería</button>
-      <button class="filter-btn" data-tag="Medicina">🪴 Medicina</button>
-      <button class="filter-btn" data-tag="Agua">💧 Agua</button>
-      <button class="filter-btn" data-tag="Fuego">🔥 Fuego</button>
-      <button class="filter-btn" data-tag="Comunidad">🤝 Comunidad</button>
-      <button class="filter-btn" data-tag="Arte">🎨 Arte</button>
-      <button class="filter-btn" data-tag="Economia">🤲 Economía</button>
-      <button class="filter-btn" data-tag="Ganaderia">🐄 Ganadería</button>
-      <button class="filter-btn" data-tag="Cosmologia">⭐ Cosmología</button>
-      <button class="filter-btn" data-tag="Permacultura">♻️ Permacultura</button>
-      <button class="filter-btn" data-tag="Hongos">🍄 Hongos</button>
-      <button class="filter-btn" data-tag="Aves">🦅 Aves</button>
-      <button class="filter-btn" data-tag="Pesca">🎣 Pesca</button>
-      <button class="filter-btn" data-tag="Barro">🏺 Barro</button>
-      <button class="filter-btn" data-tag="Madera">🪵 Madera</button>
-      <button class="filter-btn" data-tag="Fibras">🧵 Fibras</button>
-      <button class="filter-btn" data-tag="Colorantes">🖌️ Colorantes</button>
-      <button class="filter-btn" data-tag="Sal">🧂 Sal</button>
-      <button class="filter-btn" data-tag="Cacao">🍫 Cacao</button>
-      <button class="filter-btn" data-tag="Pan">🍞 Pan</button>
-      <button class="filter-btn" data-tag="Insectos">🦗 Insectos</button>
-      <button class="filter-btn" data-tag="Suelo">🌍 Suelo</button>
-      <button class="filter-btn" data-tag="Energia">⚡ Energía</button>
-      <button class="filter-btn" data-tag="Migracion">🚶 Migración</button>
-      <button class="filter-btn" data-tag="Lenguas">🗣️ Lenguas</button>
-      <button class="filter-btn" data-tag="Infancia">👧 Infancia</button>
-      <button class="filter-btn" data-tag="Mujeres">👩 Mujeres</button>
-      <button class="filter-btn" data-tag="Musica">🎶 Música</button>
-      <button class="filter-btn" data-tag="Psicodelicos">🌀 Psicodélicos</button>
-    </div>
+    <div class="filters" id="filters"></div>
     <div id="status" style="margin:6px 0 12px;font-size:12px;color:#64748b"></div>
     <div class="posts-grid" id="postsGrid"></div>
     <nav class="pager" id="pager"></nav>
@@ -745,12 +709,58 @@
         }catch{}
       }
 
+      // Todos los tags disponibles
+      const ALL_TAGS = [
+        {tag:'Pulque',label:'🍶 Pulque'},{tag:'Naturaleza',label:'🌿 Naturaleza'},
+        {tag:'Bioconstruccion',label:'🏗️ Bioconstrucción'},{tag:'Territorio',label:'✊ Territorio'},
+        {tag:'Semillas',label:'🌱 Semillas'},{tag:'Agroforesteria',label:'🌳 Agroforestería'},
+        {tag:'Medicina',label:'🪴 Medicina'},{tag:'Agua',label:'💧 Agua'},
+        {tag:'Fuego',label:'🔥 Fuego'},{tag:'Comunidad',label:'🤝 Comunidad'},
+        {tag:'Arte',label:'🎨 Arte'},{tag:'Economia',label:'🤲 Economía'},
+        {tag:'Ganaderia',label:'🐄 Ganadería'},{tag:'Cosmologia',label:'⭐ Cosmología'},
+        {tag:'Permacultura',label:'♻️ Permacultura'},{tag:'Hongos',label:'🍄 Hongos'},
+        {tag:'Aves',label:'🦅 Aves'},{tag:'Pesca',label:'🎣 Pesca'},
+        {tag:'Barro',label:'🏺 Barro'},{tag:'Madera',label:'🪵 Madera'},
+        {tag:'Fibras',label:'🧵 Fibras'},{tag:'Colorantes',label:'🖌️ Colorantes'},
+        {tag:'Sal',label:'🧂 Sal'},{tag:'Cacao',label:'🍫 Cacao'},
+        {tag:'Pan',label:'🍞 Pan'},{tag:'Insectos',label:'🦗 Insectos'},
+        {tag:'Suelo',label:'🌍 Suelo'},{tag:'Energia',label:'⚡ Energía'},
+        {tag:'Migracion',label:'🚶 Migración'},{tag:'Lenguas',label:'🗣️ Lenguas'},
+        {tag:'Infancia',label:'👧 Infancia'},{tag:'Mujeres',label:'👩 Mujeres'},
+        {tag:'Musica',label:'🎶 Música'},{tag:'Psicodelicos',label:'🌀 Psicodélicos'},
+      ];
+
       // Leer tag desde URL (?tag=Pulque)
       const urlTag = new URLSearchParams(location.search).get('tag') || '';
       let activeTag = urlTag;
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.tag === activeTag);
-      });
+
+      // Mezclar y elegir 7 tags al azar (+ Todos = 8 total)
+      function buildFilters(){
+        const shuffled = ALL_TAGS.slice().sort(() => Math.random() - 0.5);
+        // Si hay urlTag, asegurarse de incluirlo
+        let picked = shuffled.filter(t => t.tag !== urlTag).slice(0, urlTag ? 6 : 7);
+        if(urlTag){
+          const forced = ALL_TAGS.find(t => t.tag === urlTag);
+          if(forced) picked = [forced, ...picked];
+        }
+        const filtersEl = document.getElementById('filters');
+        filtersEl.innerHTML = '';
+        // Botón "Todos"
+        const allBtn = document.createElement('button');
+        allBtn.className = 'filter-btn' + (activeTag === '' ? ' active' : '');
+        allBtn.dataset.tag = '';
+        allBtn.textContent = 'Todos';
+        filtersEl.appendChild(allBtn);
+        // Botones de tags
+        picked.forEach(({tag, label}) => {
+          const b = document.createElement('button');
+          b.className = 'filter-btn' + (activeTag === tag ? ' active' : '');
+          b.dataset.tag = tag;
+          b.textContent = label;
+          filtersEl.appendChild(b);
+        });
+      }
+      buildFilters();
       renderPage(posts, 1, PER_PAGE, activeTag);
 
       document.getElementById('filters').addEventListener('click', e => {
