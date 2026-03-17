@@ -703,7 +703,6 @@
       <div class="stack-4 reveal">
         <h1 class="hero-title">Maguey · Tierra · Pulque</h1>
         <p class="hero-subtitle">Historias, guías y proyectos para cultivar, construir y cuidar el territorio.</p>
-        <div class="hero-chips" id="hero-chips"></div>
         <div class="cta-group">
           <a class="btn btn-brand btn-block" href="posts.html">Explorar artículos →</a>
         </div>
@@ -716,12 +715,7 @@
           <div class="stack-3">
             <div class="pill">🍃 <strong>Guardianes del pulque</strong></div>
             <p class="hero-card-text">Artículos y guías sobre pulque, maguey, bioconstrucción, naturaleza y defensa del territorio — compartidos con código abierto y acceso libre.</p>
-            <div class="hero-mini-cards">
-              <a class="mini" href="posts.html?tag=Pulque">🍶 Pulque</a>
-              <a class="mini" href="posts.html?tag=Naturaleza">🌿 Naturaleza</a>
-              <a class="mini" href="posts.html?tag=Bioconstruccion">🏗️ Bioconstrucción</a>
-              <a class="mini" href="posts.html?tag=Territorio">🗺️ Territorio</a>
-            </div>
+            <div class="hero-mini-cards" id="hero-tag-pills"></div>
           </div>
         </div>
       </div>
@@ -1063,33 +1057,29 @@
 
     loadPosts();
 
-    // Pills rotatorias en el hero
+    // Tags rotatorios en la tarjeta del hero
     (function(){
-      const ALL_PILLS = [
-        '🍶 Pulque',
-        '🌿 Naturaleza',
-        '🏗️ Bioconstrucción',
-        '🌍 Territorio',
-        '🌵 Maguey',
-        '🪨 Tierra viva',
-        '🌾 Semillas',
-        '🍄 Hongos',
-        '🐝 Polinizadores',
-        '💧 Agua',
-        '🔥 Fuego',
-        '🎨 Arte popular',
-        '🪶 Cosmovisión',
-        '🌱 Suelos vivos',
-        '🏺 Tinacal',
+      const ALL_TAGS = [
+        {tag:'Pulque',label:'🍶 Pulque'},{tag:'Naturaleza',label:'🌿 Naturaleza'},
+        {tag:'Bioconstruccion',label:'🏗️ Bioconstrucción'},{tag:'Territorio',label:'✊ Territorio'},
+        {tag:'Semillas',label:'🌱 Semillas'},{tag:'Agua',label:'💧 Agua'},
+        {tag:'Fuego',label:'🔥 Fuego'},{tag:'Arte',label:'🎨 Arte'},
+        {tag:'Economia',label:'🤲 Economía'},{tag:'Cosmologia',label:'⭐ Cosmología'},
+        {tag:'Hongos',label:'🍄 Hongos'},{tag:'Aves',label:'🦅 Aves'},
+        {tag:'Madera',label:'🪵 Madera'},{tag:'Insectos',label:'🦗 Insectos'},
+        {tag:'Energia',label:'⚡ Energía'},{tag:'Lenguas',label:'🗣️ Lenguas'},
+        {tag:'Mujeres',label:'👩 Mujeres'},{tag:'Musica',label:'🎶 Música'},
+        {tag:'Psicodelicos',label:'🌀 Psicodélicos'},{tag:'Suelo',label:'🌍 Suelo'},
       ];
-      const chips = document.getElementById('hero-chips');
-      if (!chips) return;
-      const shuffled = ALL_PILLS.slice().sort(() => Math.random() - 0.5);
-      shuffled.slice(0, 6).forEach(label => {
-        const s = document.createElement('span');
-        s.className = 'pill';
-        s.textContent = label;
-        chips.appendChild(s);
+      const container = document.getElementById('hero-tag-pills');
+      if (!container) return;
+      const shuffled = ALL_TAGS.slice().sort(() => Math.random() - 0.5);
+      shuffled.slice(0, 6).forEach(({tag, label}) => {
+        const a = document.createElement('a');
+        a.className = 'mini';
+        a.href = 'posts.html?tag=' + encodeURIComponent(tag);
+        a.textContent = label;
+        container.appendChild(a);
       });
     })();
   </script>
