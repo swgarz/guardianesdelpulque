@@ -475,11 +475,12 @@
     .don-grid{display:grid;gap:1rem}
     @media (min-width:760px){.don-grid{grid-template-columns:1.1fr .9fr}}
     .copy-badge{
-      display:inline-flex;gap:.5rem;align-items:center;
+      display:flex;gap:.5rem;align-items:center;
       padding:.4rem .7rem;border:1px dashed rgba(15,23,42,.25);
       border-radius:12px;font-weight:700;flex-wrap:wrap;
-      font-size:.8rem;
+      font-size:.8rem;max-width:100%;box-sizing:border-box;
     }
+    .copy-badge code{word-break:break-all;}
 
     /* BIOALKIMIA */
     .bio-card{padding:24px}
@@ -755,7 +756,7 @@
             </div>
             <small style="color:#94a3b8">BBVA</small>
 
-            <div class="stack-2" style="grid-auto-flow:column;gap:.5rem;align-items:center;justify-content:flex-start">
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;">
               <a id="paypalBtn" class="chip"
                  href="https://paypal.me/delagarzac?locale.x=es_XC&amp;country.x=MX"
                  target="_blank" rel="noopener">
