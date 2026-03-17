@@ -703,11 +703,7 @@
       <div class="stack-4 reveal">
         <h1 class="hero-title">Maguey · Tierra · Pulque</h1>
         <p class="hero-subtitle">Historias, guías y proyectos para cultivar, construir y cuidar el territorio.</p>
-        <div class="hero-chips">
-          <span class="pill">🌍 Territorio</span>
-          <span class="pill">🏗️ Tierra que construye</span>
-          <span class="pill">🌵 Maguey y paisaje</span>
-        </div>
+        <div class="hero-chips" id="hero-chips"></div>
         <div class="cta-group">
           <a class="btn btn-brand btn-block" href="posts.html">Explorar artículos →</a>
         </div>
@@ -1066,6 +1062,36 @@
     })();
 
     loadPosts();
+
+    // Pills rotatorias en el hero
+    (function(){
+      const ALL_PILLS = [
+        '🍶 Pulque',
+        '🌿 Naturaleza',
+        '🏗️ Bioconstrucción',
+        '🌍 Territorio',
+        '🌵 Maguey',
+        '🪨 Tierra viva',
+        '🌾 Semillas',
+        '🍄 Hongos',
+        '🐝 Polinizadores',
+        '💧 Agua',
+        '🔥 Fuego',
+        '🎨 Arte popular',
+        '🪶 Cosmovisión',
+        '🌱 Suelos vivos',
+        '🏺 Tinacal',
+      ];
+      const chips = document.getElementById('hero-chips');
+      if (!chips) return;
+      const shuffled = ALL_PILLS.slice().sort(() => Math.random() - 0.5);
+      shuffled.slice(0, 6).forEach(label => {
+        const s = document.createElement('span');
+        s.className = 'pill';
+        s.textContent = label;
+        chips.appendChild(s);
+      });
+    })();
   </script>
 </body>
 </html>
