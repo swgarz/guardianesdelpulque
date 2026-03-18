@@ -45,6 +45,12 @@ const images = [
     palette: "tonos azul profundo, rojo vivo, ocre dorado y negro",
     subjects: "jarana siendo tocada, teponaztle percutido, violin en manos campesinas, grupo de sones jarochos, cantos al atardecer, tambor ritual",
   },
+  {
+    slug: "el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios",
+    title: "Fermento de Chucrut: el poder ancestral para tu salud",
+    palette: "tonos verde col, blanco sal, amarillo mostaza y terracota",
+    subjects: "col siendo cortada en tiras, manos masajeando col con sal, frasco de vidrio con chucrut fermentando, burbujas de fermentacion, chucrut terminado sobre taco, frasco en refrigerador",
+  },
 ];
 
 async function generateImage(img) {
