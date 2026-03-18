@@ -632,7 +632,7 @@
         if(e.isIntersecting){
           e.target.classList.add('in');
           const cover = e.target.querySelector('[data-bg]');
-          if(cover){ cover.style.backgroundImage=`url(${cover.dataset.bg})`; cover.removeAttribute('data-bg'); }
+          if(cover){ cover.style.cssText+=`;background-image:url(${cover.dataset.bg});background-size:cover;background-position:center;background-repeat:no-repeat`; cover.removeAttribute('data-bg'); }
           io.unobserve(e.target);
         }
       });
