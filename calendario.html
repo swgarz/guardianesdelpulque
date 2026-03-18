@@ -388,6 +388,13 @@
             line-height: 1.4;
         }
 
+        .event-card__subtitle {
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            margin-top: 0.1rem;
+            font-style: italic;
+        }
+
         .event-card__lugar {
             font-size: 0.7rem;
             color: var(--text-dim);
@@ -530,7 +537,7 @@
         const events = [
             { title: 'Taller de composta orgánica', date: '2026-03-15', time: '10:00', cat: 'taller', desc: 'Aprende a hacer composta con materiales locales' },
             { title: '2da Feria del Maíz Milpa, Saberes y Cultura 2026', date: '2026-03-21', time: '12:00', cat: 'evento', desc: 'Feria comunitaria en torno al maíz nativo, milpa y saberes tradicionales', lugar: 'San Juan Yutepec' },
-            { title: 'Taller de fermentos', date: '2026-03-22', time: '10:00', cat: 'taller', desc: '', lugar: 'Pulquería, Col. Morada' },
+            { title: 'Taller de fermentos', subtitle: 'Col morada', date: '2026-03-22', time: '10:00', cat: 'taller', desc: '', lugar: 'Pulquería' },
             // Para agregar más eventos, copia esta línea y cambia los datos:
             // { title: 'Nombre', date: '2026-MM-DD', cat: 'taller', desc: 'Descripción', lugar: 'Lugar (opcional)' },
             // Categorías: taller, evento, cultivo, reunion, defensa
@@ -609,6 +616,7 @@
                     <div class="event-card event-card--${ev.cat}">
                         <div class="event-card__date">${d.getDate()} ${MONTHS[d.getMonth()]}${ev.time ? ' · ' + ev.time + 'h' : ''}</div>
                         <div class="event-card__title">${ev.title}</div>
+                        ${ev.subtitle ? `<div class="event-card__subtitle">${ev.subtitle}</div>` : ''}
                         <div class="event-card__desc">${ev.desc}</div>
                         ${ev.lugar ? `<div class="event-card__lugar">📍 ${ev.lugar}</div>` : ''}
                         <span class="event-card__tag">${CAT_LABELS[ev.cat]}</span>
