@@ -203,12 +203,32 @@
             border-color: transparent;
         }
 
-        .filter-tag[data-cat="taller"] { --fc: var(--teal); }
-        .filter-tag[data-cat="evento"] { --fc: var(--amber); }
-        .filter-tag[data-cat="reunion"] { --fc: var(--blue); }
-        .filter-tag[data-cat="cultivo"] { --fc: var(--green); }
-        .filter-tag[data-cat="defensa"] { --fc: var(--red); }
-        .filter-tag[data-cat="all"] { --fc: var(--guinda-light); }
+        .filter-tag[data-cat="taller"]    { --fc: var(--teal); }
+        .filter-tag[data-cat="evento"]    { --fc: var(--amber); }
+        .filter-tag[data-cat="reunion"]   { --fc: var(--blue); }
+        .filter-tag[data-cat="cultivo"]   { --fc: var(--green); }
+        .filter-tag[data-cat="defensa"]   { --fc: var(--red); }
+        .filter-tag[data-cat="all"]       { --fc: var(--guinda-light); }
+        .filter-tag[data-cat="fermentos"] { --fc: #c4b5fd; }
+
+        .filter-subtag {
+            font-size: 0.6rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 100px;
+            border: 1px dashed rgba(196,181,253,0.45);
+            background: transparent;
+            color: #c4b5fd;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+            margin-left: -0.2rem;
+        }
+        .filter-subtag:hover, .filter-subtag.active {
+            background: #c4b5fd;
+            color: #1e1040;
+            border-color: #c4b5fd;
+            border-style: solid;
+        }
 
         .filter-tag:hover, .filter-tag.active {
             background: var(--fc);
@@ -300,8 +320,9 @@
         .cal-event--reunion { background: rgba(59,130,246,0.2);  color: var(--blue);   border-left: 2px solid var(--blue); }
         .cal-event--cultivo { background: rgba(16,185,129,0.2);  color: var(--green);  border-left: 2px solid var(--green); }
         .cal-event--defensa { background: rgba(239,68,68,0.2);   color: var(--red);    border-left: 2px solid var(--red); }
-        .cal-event--purple  { background: rgba(139,92,246,0.2);  color: var(--purple); border-left: 2px solid var(--purple); }
-        .cal-event--pink    { background: rgba(236,72,153,0.2);  color: var(--pink);   border-left: 2px solid var(--pink); }
+        .cal-event--purple   { background: rgba(139,92,246,0.2);  color: var(--purple); border-left: 2px solid var(--purple); }
+        .cal-event--pink     { background: rgba(236,72,153,0.2);  color: var(--pink);   border-left: 2px solid var(--pink); }
+        .cal-event--fermentos{ background: rgba(196,181,253,0.2); color: #c4b5fd;       border-left: 2px solid #c4b5fd; }
 
         /* === SIDEBAR === */
         .sidebar {
@@ -405,6 +426,19 @@
         }
         .event-card--defensa::after { background: radial-gradient(circle, rgba(239,68,68,0.12) 0%, transparent 70%); }
         .event-card--defensa:hover { background: linear-gradient(135deg, rgba(239,68,68,0.25) 0%, rgba(239,68,68,0.12) 100%); border-left-color: #ef4444; border-top-color: rgba(239,68,68,0.5); border-right-color: rgba(239,68,68,0.5); border-bottom-color: rgba(239,68,68,0.5); box-shadow: 0 8px 24px rgba(239,68,68,0.2); }
+
+        /* Fermentos — morado claro */
+        .event-card--fermentos {
+            background: linear-gradient(135deg, rgba(196,181,253,0.15) 0%, rgba(196,181,253,0.05) 100%);
+            border-left-color: #c4b5fd;
+            border-top-color: rgba(196,181,253,0.25);
+            border-right-color: rgba(196,181,253,0.25);
+            border-bottom-color: rgba(196,181,253,0.25);
+        }
+        .event-card--fermentos::after { background: radial-gradient(circle, rgba(196,181,253,0.12) 0%, transparent 70%); }
+        .event-card--fermentos:hover { background: linear-gradient(135deg, rgba(196,181,253,0.25) 0%, rgba(196,181,253,0.12) 100%); border-left-color: #c4b5fd; border-top-color: rgba(196,181,253,0.5); border-right-color: rgba(196,181,253,0.5); border-bottom-color: rgba(196,181,253,0.5); box-shadow: 0 8px 24px rgba(196,181,253,0.2); }
+        .event-card--fermentos .event-card__date { color: #c4b5fd; }
+        .event-card--fermentos .event-card__tag { background: rgba(196,181,253,0.15); color: #c4b5fd; border: 1px solid rgba(196,181,253,0.35); }
 
         /* Purple */
         .event-card--purple {
@@ -580,6 +614,7 @@
                 <div class="cal-filters">
                     <button class="filter-tag active" data-cat="all" onclick="filterCat('all', this)">Todos</button>
                     <button class="filter-tag" data-cat="taller" onclick="filterCat('taller', this)">Talleres</button>
+                    <button class="filter-subtag" data-cat="fermentos" onclick="filterCat('fermentos', this)">↳ Fermentos</button>
                     <button class="filter-tag" data-cat="evento" onclick="filterCat('evento', this)">Eventos</button>
                     <button class="filter-tag" data-cat="cultivo" onclick="filterCat('cultivo', this)">Cultivo</button>
                     <button class="filter-tag" data-cat="reunion" onclick="filterCat('reunion', this)">Reuniones</button>
@@ -600,7 +635,7 @@
     <script>
         const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
         const DAYS = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
-        const CAT_LABELS = { taller:'Taller', evento:'Evento', cultivo:'Cultivo', reunion:'Reunión', defensa:'Defensa' };
+        const CAT_LABELS = { taller:'Taller', evento:'Evento', cultivo:'Cultivo', reunion:'Reunión', defensa:'Defensa', fermentos:'Fermentos' };
 
         let currentDate = new Date();
         let currentMonth = currentDate.getMonth();
@@ -611,9 +646,8 @@
         // EVENTOS — Agrega tus actividades aquí
         // ==========================================
         const events = [
-            { title: 'Taller de composta orgánica', date: '2026-03-15', time: '10:00', cat: 'taller', color: 'taller', desc: 'Aprende a hacer composta con materiales locales' },
             { title: '2da Feria del Maíz Milpa, Saberes y Cultura 2026', date: '2026-03-21', time: '12:00', cat: 'evento', color: 'evento', desc: 'Feria comunitaria en torno al maíz nativo, milpa y saberes tradicionales', lugar: 'San Juan Yutepec' },
-            { title: 'Taller de fermentos', subtitle: 'Col morada', date: '2026-03-22', time: '10:00', cat: 'taller', color: 'purple', desc: '', lugar: 'Pulquería' },
+            { title: 'Taller de fermentos', subtitle: 'Col morada', date: '2026-03-22', time: '10:00', cat: 'taller', subtag: 'fermentos', color: 'fermentos', desc: '', lugar: 'Pulquería' },
             // Para agregar más eventos, copia esta línea y cambia los datos:
             // { title: 'Nombre', date: '2026-MM-DD', cat: 'taller', desc: 'Descripción', lugar: 'Lugar (opcional)' },
             // Categorías: taller, evento, cultivo, reunion, defensa
@@ -640,7 +674,7 @@
             for (let d = 1; d <= daysInMonth; d++) {
                 const dateStr = `${currentYear}-${String(currentMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
                 const isToday = (d === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear());
-                const dayEvents = events.filter(e => e.date === dateStr && (activeFilter === 'all' || e.cat === activeFilter));
+                const dayEvents = events.filter(e => e.date === dateStr && (activeFilter === 'all' || e.cat === activeFilter || e.subtag === activeFilter));
                 const hasEvent = dayEvents.length > 0;
 
                 html += `<div class="cal-cell ${isToday ? 'cal-cell--today' : ''} ${hasEvent ? 'cal-cell--has-event' : ''}" onclick="selectDate('${dateStr}')">`;
@@ -669,13 +703,13 @@
 
             let filtered;
             if (dateStr) {
-                filtered = events.filter(e => e.date === dateStr && (activeFilter === 'all' || e.cat === activeFilter));
+                filtered = events.filter(e => e.date === dateStr && (activeFilter === 'all' || e.cat === activeFilter || e.subtag === activeFilter));
                 const d = new Date(dateStr + 'T12:00:00');
                 titleEl.textContent = `${d.getDate()} de ${MONTHS[d.getMonth()]}`;
                 subEl.textContent = filtered.length ? `${filtered.length} actividad(es)` : 'Sin actividades';
             } else {
                 const monthStr = `${currentYear}-${String(currentMonth+1).padStart(2,'0')}`;
-                filtered = events.filter(e => e.date.startsWith(monthStr) && (activeFilter === 'all' || e.cat === activeFilter));
+                filtered = events.filter(e => e.date.startsWith(monthStr) && (activeFilter === 'all' || e.cat === activeFilter || e.subtag === activeFilter));
                 filtered.sort((a,b) => a.date.localeCompare(b.date));
                 titleEl.textContent = 'Próximas actividades';
                 subEl.textContent = `${MONTHS[currentMonth]} ${currentYear}`;
@@ -721,7 +755,7 @@
 
         function filterCat(cat, el) {
             activeFilter = cat;
-            document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.filter-tag, .filter-subtag').forEach(t => t.classList.remove('active'));
             el.classList.add('active');
             renderCalendar();
         }
