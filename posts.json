@@ -10,16 +10,6 @@
     "topic": "Fermentos, fermento de col morada, fermentacion lactica de col morada mexicana, probioticos caseros con col morada, receta tradicional paso a paso, beneficios del fermento de col morada"
   },
   {
-    "tag": "Fermentos",
-    "title": "Fermento de Chucrut: el poder ancestral para tu salud",
-    "excerpt": "Descubre cómo hacer chucrut mexicano con col morada y sus propiedades probióticas.",
-    "date": "18 de marzo de 2026",
-    "url": "articulos/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios.html",
-    "cover": "articulos/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios.png",
-    "imageStyle": "claroscuro-social",
-    "topic": "Fermentos, fermento de col morada, chucrut mexicano, fermentacion lactica, probioticos caseros, col morada fermentada, paso a paso"
-  },
-  {
     "tag": "Colorantes",
     "title": "El Arte de los Colorantes Naturales en México",
     "excerpt": "Descubre la rica tradición de los colorantes naturales en la cultura mexicana.",
@@ -58,6 +48,16 @@
     "cover": "articulos/mujeres-en-el-campo-guardianas-de-saberes-y-vida/mujeres-en-el-campo-guardianas-de-saberes-y-vida.png",
     "imageStyle": "litografia-color",
     "topic": "Mujeres en el campo, saberes femeninos, parteria, huertos familiares, liderazgo comunitario femenino"
+  },
+  {
+    "tag": "Fermentos",
+    "title": "Fermento de Chucrut: el poder ancestral para tu salud",
+    "excerpt": "Descubre cómo hacer chucrut mexicano con col morada y sus propiedades probióticas.",
+    "date": "18 de marzo de 2026",
+    "url": "articulos/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios.html",
+    "cover": "articulos/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios.png",
+    "imageStyle": "claroscuro-social",
+    "topic": "Fermentos, fermento de col morada, chucrut mexicano, fermentacion lactica, probioticos caseros, col morada fermentada, paso a paso"
   },
   {
     "tag": "Lenguas",
