@@ -721,11 +721,12 @@
         : items;
 
       if(searchQuery){
-        const q = searchQuery;
+        const q = searchQuery.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+        const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
         filtered = filtered.filter(p =>
-          (p.title||'').toLowerCase().includes(q) ||
-          (p.excerpt||'').toLowerCase().includes(q) ||
-          (p.tag||'').toLowerCase().includes(q)
+          norm(p.title).includes(q) ||
+          norm(p.excerpt).includes(q) ||
+          norm(p.tag).includes(q)
         );
       }
 
