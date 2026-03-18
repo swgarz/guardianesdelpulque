@@ -46,6 +46,7 @@ const TOPICS = [
   "Mujeres en el campo, saberes femeninos, parteria, huertos familiares, liderazgo comunitario femenino",
   "Musica tradicional mexicana, sones, jarana, teponaztle, cantos de trabajo, musica ritual",
   "Psicodelicos sagrados, peyote, hongos sagrados, temazcal, plantas de poder, medicina ancestral visionaria",
+  "Fermentos, fermento de col morada, chucrut mexicano, fermentacion lactica, probioticos caseros, col morada fermentada, paso a paso",
 ];
 
 // ── Tags válidos ───────────────────────────────────────────────────────────
@@ -55,7 +56,7 @@ const VALID_TAGS = [
   "Arte", "Economia", "Ganaderia", "Cosmologia", "Permacultura", "Hongos",
   "Aves", "Pesca", "Barro", "Madera", "Fibras", "Colorantes", "Sal",
   "Cacao", "Pan", "Insectos", "Suelo", "Energia", "Migracion",
-  "Lenguas", "Infancia", "Mujeres", "Musica", "Psicodelicos",
+  "Lenguas", "Infancia", "Mujeres", "Musica", "Psicodelicos", "Fermentos",
 ];
 const TAG_EMOJI = {
   Pulque: "🍶", Bioconstruccion: "🏗️", Naturaleza: "🌿", Territorio: "✊",
@@ -66,7 +67,7 @@ const TAG_EMOJI = {
   Fibras: "🧵", Colorantes: "🖌️", Sal: "🧂", Cacao: "🍫",
   Pan: "🍞", Insectos: "🦗", Suelo: "🌍", Energia: "⚡",
   Migracion: "🚶", Lenguas: "🗣️", Infancia: "👧", Mujeres: "👩",
-  Musica: "🎶", Psicodelicos: "🌀",
+  Musica: "🎶", Psicodelicos: "🌀", Fermentos: "🫙",
 };
 const DEFAULT_TAG = "Naturaleza";
 
@@ -145,6 +146,7 @@ const TAG_PALETTES = {
   Mujeres: "tonos rojo flor, morado, verde jade y dorado",
   Musica: "tonos azul profundo, rojo vivo, ocre dorado y negro",
   Psicodelicos: "tonos morado visionario, azul profundo, verde sagrado, dorado y negro",
+  Fermentos: "tonos morado col, magenta, verde lima y blanco sal",
 };
 const DEFAULT_PALETTE = "tonos tierra, ocre, verde y rojo óxido";
 

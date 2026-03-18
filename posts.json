@@ -1,5 +1,25 @@
 [
   {
+    "tag": "Fermentos",
+    "title": "El Arte de Fermentar: Chucrut Mexicano y sus Beneficios",
+    "excerpt": "Descubre cómo hacer chucrut mexicano con col morada y sus propiedades probióticas.",
+    "date": "18 de marzo de 2026",
+    "url": "articulos/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios.html",
+    "cover": "articulos/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios/el-arte-de-fermentar-chucrut-mexicano-y-sus-beneficios.png",
+    "imageStyle": "claroscuro-social",
+    "topic": "Fermentos, fermento de col morada, chucrut mexicano, fermentacion lactica, probioticos caseros, col morada fermentada, paso a paso"
+  },
+  {
+    "tag": "Colorantes",
+    "title": "El Arte de los Colorantes Naturales en México",
+    "excerpt": "Descubre la rica tradición de los colorantes naturales en la cultura mexicana.",
+    "date": "18 de marzo de 2026",
+    "url": "articulos/el-arte-de-los-colorantes-naturales-en-mexico/el-arte-de-los-colorantes-naturales-en-mexico.html",
+    "cover": "articulos/el-arte-de-los-colorantes-naturales-en-mexico/el-arte-de-los-colorantes-naturales-en-mexico.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Colorantes naturales, anil, cochinilla, palo de brasil, tintes vegetales, tintoreria tradicional"
+  },
+  {
     "tag": "Psicodelicos",
     "title": "Psicodélicos Sagrados en la Medicina Ancestral",
     "excerpt": "Explora el uso de psicodélicos sagrados en tradiciones mexicanas.",
@@ -149,7 +169,7 @@
     "topic": "Abejas, apicultura tradicional, colmenas nativas, miel, meliponas, polinizacion"
   },
   {
-    "tag": "Naturaleza",
+    "tag": "Fermentos",
     "title": "Fermentos Tradicionales Mexicanos: Sabores que Sanan",
     "excerpt": "Explora la riqueza de los fermentos mexicanos y sus beneficios probióticos.",
     "date": "12 de marzo de 2026",
