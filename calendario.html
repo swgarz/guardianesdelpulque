@@ -514,6 +514,16 @@
             gap: 0.3rem;
         }
 
+        .event-card__aportacion {
+            font-size: 0.7rem;
+            margin-top: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 700;
+            color: #6ee7b7;
+        }
+
         .event-card__tag {
             display: inline-block;
             padding: 0.15rem 0.5rem;
@@ -634,7 +644,7 @@
     <script>
         const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
         const DAYS = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
-        const CAT_LABELS = { taller:'Taller', evento:'Evento', cultivo:'Cultivo', reunion:'Reunión', defensa:'Defensa', fermentos:'Fermentos' };
+        const CAT_LABELS = { taller:'Taller', evento:'Evento', cultivo:'Cultivo', reunion:'Reunión', defensa:'Defensa', fermentos:'Fermentos', alebrijes:'Alebrijes' };
 
         let currentDate = new Date();
         let currentMonth = currentDate.getMonth();
@@ -647,6 +657,7 @@
         const events = [
             { title: '2da Feria del Maíz Milpa, Saberes y Cultura 2026', date: '2026-03-21', time: '12:00', cat: 'evento', color: 'evento', desc: 'Feria comunitaria en torno al maíz nativo, milpa y saberes tradicionales', lugar: 'San Juan Yutepec' },
             { title: 'Taller de fermentos', subtitle: 'Col morada', date: '2026-03-22', time: '10:00', cat: 'taller', subtag: 'fermentos', color: 'fermentos', desc: '', lugar: 'Pulquería' },
+            { title: 'Creación de Alebrijes', date: '2026-04-18', time: '10:00', cat: 'taller', subtag: 'alebrijes', color: 'pink', desc: '', aportacion: '$600' },
             // Para agregar más eventos, copia esta línea y cambia los datos:
             // { title: 'Nombre', date: '2026-MM-DD', cat: 'taller', desc: 'Descripción', lugar: 'Lugar (opcional)' },
             // Categorías: taller, evento, cultivo, reunion, defensa
@@ -728,6 +739,7 @@
                         ${ev.subtitle ? `<div class="event-card__subtitle">${ev.subtitle}</div>` : ''}
                         <div class="event-card__desc">${ev.desc}</div>
                         ${ev.lugar ? `<div class="event-card__lugar">📍 ${ev.lugar}</div>` : ''}
+                        ${ev.aportacion ? `<div class="event-card__aportacion">💰 Aportación: ${ev.aportacion}</div>` : ''}
                         <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.5rem">
                             <span class="event-card__tag" style="margin-top:0">${CAT_LABELS[ev.cat]}</span>
                             ${ev.subtag ? `<span class="event-card__tag event-card__tag--subtag" style="margin-top:0;background:rgba(196,181,253,0.15);color:#c4b5fd;border:1px solid rgba(196,181,253,0.35)">${CAT_LABELS[ev.subtag] || ev.subtag}</span>` : ''}
