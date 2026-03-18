@@ -350,6 +350,34 @@
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
 
+    /* BUSCADOR */
+    .search-wrap{margin:0 0 14px}
+    .search-input{
+      width:100%;max-width:420px;
+      padding:.5rem 1rem;
+      border-radius:999px;
+      border:1.5px solid rgba(15,23,42,.15);
+      background:#fff;
+      font-size:.88rem;
+      color:#0f172a;
+      outline:none;
+      transition:border-color .16s;
+    }
+    .search-input:focus{border-color:#059669}
+    body.mode-reading .search-input{background:#1e293b;color:#e2e8f0;border-color:rgba(129,140,248,.3)}
+    body.mode-community .search-input{background:rgba(3,33,24,.9);color:#bbf7d0;border-color:rgba(22,163,74,.4)}
+
+    /* SKELETON */
+    .skeleton-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+    .skeleton-cover{height:180px;background:linear-gradient(90deg,#e5e7eb 25%,#f3f4f6 50%,#e5e7eb 75%);background-size:200%;animation:shimmer 1.4s infinite}
+    .skeleton-line{height:12px;border-radius:6px;margin:8px 16px;background:linear-gradient(90deg,#e5e7eb 25%,#f3f4f6 50%,#e5e7eb 75%);background-size:200%;animation:shimmer 1.4s infinite}
+    .skeleton-line.short{width:40%;margin-top:6px}
+    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+    body.mode-reading .skeleton-card{background:#1e293b}
+    body.mode-reading .skeleton-cover,.body.mode-reading .skeleton-line{background:linear-gradient(90deg,#334155 25%,#475569 50%,#334155 75%);background-size:200%;animation:shimmer 1.4s infinite}
+    body.mode-community .skeleton-card{background:#0f2318}
+    body.mode-community .skeleton-cover,.body.mode-community .skeleton-line{background:linear-gradient(90deg,#112d1f 25%,#163d28 50%,#112d1f 75%);background-size:200%;animation:shimmer 1.4s infinite}
+
     /* FILTROS */
     .filters{
       display:flex;
@@ -547,6 +575,9 @@
 
   <!-- GRID -->
   <main class="container">
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="search" placeholder="🔍 Buscar artículos..." autocomplete="off" />
+    </div>
     <div class="filters" id="filters"></div>
     <div id="status" style="margin:6px 0 12px;font-size:12px;color:#64748b"></div>
     <div class="posts-grid" id="postsGrid"></div>
@@ -595,11 +626,13 @@
       window.addEventListener('scroll', update, {passive:true});
     })();
 
-    // Reveal
+    // Reveal + lazy load
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
           e.target.classList.add('in');
+          const cover = e.target.querySelector('[data-bg]');
+          if(cover){ cover.style.backgroundImage=`url(${cover.dataset.bg})`; cover.removeAttribute('data-bg'); }
           io.unobserve(e.target);
         }
       });
@@ -656,13 +689,12 @@
       const el = document.createElement('article');
       el.className = 'card reveal';
       el.style.overflow = 'hidden';
-      const coverStyle = p.cover
-        ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"`
-        : '';
+      const coverAttr = p.cover ? `data-bg="${p.cover}"` : '';
+      const readTime = p.readTime ? `<span style="color:#94a3b8;margin-left:.5rem">🕒 ${p.readTime}</span>` : '';
       el.innerHTML = `
-        <div class="post-cover" ${coverStyle}></div>
+        <div class="post-cover" ${coverAttr}></div>
         <div style="padding:16px">
-          <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag || '')}</div>
+          <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag || '')}${readTime}</div>
           <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title || '')}</h3>
           <p style="color:#475569">${escapeHtml(p.excerpt || '')}</p>
           <div style="padding-top:6px">
@@ -676,18 +708,29 @@
 
     function normalizeTag(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
 
+    let searchQuery = '';
+
     function renderPage(items, page, perPage, activeTag){
       const grid = document.getElementById('postsGrid');
       const pager = document.getElementById('pager');
       grid.innerHTML = '';
       pager.innerHTML = '';
 
-      const filtered = activeTag
+      let filtered = activeTag
         ? items.filter(p => normalizeTag(p.tag) === normalizeTag(activeTag))
         : items;
 
+      if(searchQuery){
+        const q = searchQuery;
+        filtered = filtered.filter(p =>
+          (p.title||'').toLowerCase().includes(q) ||
+          (p.excerpt||'').toLowerCase().includes(q) ||
+          (p.tag||'').toLowerCase().includes(q)
+        );
+      }
+
       if(!filtered.length){
-        grid.innerHTML = '<p style="color:#64748b;padding:12px 0">No hay artículos en esta categoría.</p>';
+        grid.innerHTML = '<p style="color:#64748b;padding:12px 0">No hay artículos.</p>';
         return;
       }
 
@@ -717,6 +760,13 @@
     (async function(){
       const PER_PAGE = 9;
       let posts = [];
+
+      // Skeletons while loading
+      (function(){
+        const g = document.getElementById('postsGrid');
+        g.innerHTML = Array(9).fill(0).map(()=>`<div class="skeleton-card"><div class="skeleton-cover"></div><div style="padding:16px"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div></div>`).join('');
+      })();
+
       try{
         const data = await fetchJsonSmart('posts.json');
         posts = Array.isArray(data) ? data : (Array.isArray(data.entries) ? data.entries : []);
@@ -790,6 +840,16 @@
         btn.classList.add('active');
         activeTag = btn.dataset.tag;
         renderPage(posts, 1, PER_PAGE, activeTag);
+      });
+
+      // Search
+      let searchTimer;
+      document.getElementById('searchInput').addEventListener('input', e => {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => {
+          searchQuery = e.target.value.trim().toLowerCase();
+          renderPage(posts, 1, PER_PAGE, activeTag);
+        }, 250);
       });
     })();
 
