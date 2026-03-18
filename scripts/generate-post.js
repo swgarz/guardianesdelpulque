@@ -46,7 +46,7 @@ const TOPICS = [
   "Mujeres en el campo, saberes femeninos, parteria, huertos familiares, liderazgo comunitario femenino",
   "Musica tradicional mexicana, sones, jarana, teponaztle, cantos de trabajo, musica ritual",
   "Psicodelicos sagrados, peyote, hongos sagrados, temazcal, plantas de poder, medicina ancestral visionaria",
-  "Fermentos, fermento de col morada, chucrut mexicano, fermentacion lactica, probioticos caseros, col morada fermentada, paso a paso",
+  "Fermentos, fermento de col morada, fermentacion lactica de col morada mexicana, probioticos caseros con col morada, receta tradicional paso a paso, beneficios del fermento de col morada",
 ];
 
 // ── Tags válidos ───────────────────────────────────────────────────────────
