@@ -614,7 +614,6 @@
                 <div class="cal-filters">
                     <button class="filter-tag active" data-cat="all" onclick="filterCat('all', this)">Todos</button>
                     <button class="filter-tag" data-cat="taller" onclick="filterCat('taller', this)">Talleres</button>
-                    <button class="filter-subtag" data-cat="fermentos" onclick="filterCat('fermentos', this)">↳ Fermentos</button>
                     <button class="filter-tag" data-cat="evento" onclick="filterCat('evento', this)">Eventos</button>
                     <button class="filter-tag" data-cat="cultivo" onclick="filterCat('cultivo', this)">Cultivo</button>
                     <button class="filter-tag" data-cat="reunion" onclick="filterCat('reunion', this)">Reuniones</button>
@@ -729,7 +728,10 @@
                         ${ev.subtitle ? `<div class="event-card__subtitle">${ev.subtitle}</div>` : ''}
                         <div class="event-card__desc">${ev.desc}</div>
                         ${ev.lugar ? `<div class="event-card__lugar">📍 ${ev.lugar}</div>` : ''}
-                        <span class="event-card__tag">${CAT_LABELS[ev.cat]}</span>
+                        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.5rem">
+                            <span class="event-card__tag" style="margin-top:0">${CAT_LABELS[ev.cat]}</span>
+                            ${ev.subtag ? `<span class="event-card__tag event-card__tag--subtag" style="margin-top:0;background:rgba(196,181,253,0.15);color:#c4b5fd;border:1px solid rgba(196,181,253,0.35)">${CAT_LABELS[ev.subtag] || ev.subtag}</span>` : ''}
+                        </div>
                     </div>
                 `;
             }).join('');
