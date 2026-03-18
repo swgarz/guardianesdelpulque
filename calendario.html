@@ -330,13 +330,13 @@
         }
 
         .event-card {
-            background: var(--bg-card-alt);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
+            background: linear-gradient(135deg, rgba(5,150,105,0.18) 0%, rgba(6,95,70,0.28) 100%);
+            border: 1px solid rgba(5,150,105,0.35);
+            border-radius: 14px;
+            padding: 1.1rem 1rem 1rem;
             margin-bottom: 0.8rem;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.22s ease;
             position: relative;
             overflow: hidden;
         }
@@ -347,38 +347,53 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 3px;
+            width: 4px;
+            border-radius: 4px 0 0 4px;
         }
 
-        .event-card--taller::before { background: var(--teal); }
-        .event-card--evento::before { background: var(--amber); }
-        .event-card--reunion::before { background: var(--blue); }
-        .event-card--cultivo::before { background: var(--green); }
-        .event-card--defensa::before { background: var(--red); }
+        .event-card::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(5,150,105,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .event-card--taller::before { background: linear-gradient(180deg, #14b8a6, #059669); }
+        .event-card--evento::before { background: linear-gradient(180deg, #f59e0b, #059669); }
+        .event-card--reunion::before { background: linear-gradient(180deg, #3b82f6, #059669); }
+        .event-card--cultivo::before { background: linear-gradient(180deg, #10b981, #065f46); }
+        .event-card--defensa::before { background: linear-gradient(180deg, #ef4444, #059669); }
 
         .event-card:hover {
-            border-color: rgba(255,255,255,0.12);
-            transform: translateX(-2px);
+            background: linear-gradient(135deg, rgba(5,150,105,0.28) 0%, rgba(6,95,70,0.4) 100%);
+            border-color: rgba(5,150,105,0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(5,150,105,0.2);
         }
 
         .event-card__date {
             font-size: 0.65rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.4rem;
+            letter-spacing: 1.2px;
+            margin-bottom: 0.45rem;
+            color: #6ee7b7;
         }
 
-        .event-card--taller .event-card__date { color: var(--teal); }
-        .event-card--evento .event-card__date { color: var(--amber); }
-        .event-card--reunion .event-card__date { color: var(--blue); }
-        .event-card--cultivo .event-card__date { color: var(--green); }
-        .event-card--defensa .event-card__date { color: var(--red); }
-
         .event-card__title {
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.25;
+            background: linear-gradient(135deg, #ffffff 0%, #6ee7b7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             margin-bottom: 0.2rem;
         }
 
@@ -415,11 +430,11 @@
             margin-top: 0.5rem;
         }
 
-        .event-card--taller .event-card__tag { background: rgba(20,184,166,0.15); color: var(--teal); }
-        .event-card--evento .event-card__tag { background: rgba(245,158,11,0.15); color: var(--amber); }
-        .event-card--reunion .event-card__tag { background: rgba(59,130,246,0.15); color: var(--blue); }
-        .event-card--cultivo .event-card__tag { background: rgba(16,185,129,0.15); color: var(--green); }
-        .event-card--defensa .event-card__tag { background: rgba(239,68,68,0.15); color: var(--red); }
+        .event-card--taller .event-card__tag { background: rgba(5,150,105,0.25); color: #6ee7b7; border: 1px solid rgba(5,150,105,0.4); }
+        .event-card--evento .event-card__tag { background: rgba(5,150,105,0.25); color: #6ee7b7; border: 1px solid rgba(5,150,105,0.4); }
+        .event-card--reunion .event-card__tag { background: rgba(5,150,105,0.25); color: #6ee7b7; border: 1px solid rgba(5,150,105,0.4); }
+        .event-card--cultivo .event-card__tag { background: rgba(5,150,105,0.25); color: #6ee7b7; border: 1px solid rgba(5,150,105,0.4); }
+        .event-card--defensa .event-card__tag { background: rgba(5,150,105,0.25); color: #6ee7b7; border: 1px solid rgba(5,150,105,0.4); }
 
         .no-events {
             text-align: center;
