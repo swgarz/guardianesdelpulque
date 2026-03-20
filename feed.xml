@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 20 Mar 2026 16:06:21 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 16:08:46 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>La Sal: Un Tesoro del Territorio Mexicano</title>
+      <link>https://guardianesdelpulque.org/articulos/la-sal-un-tesoro-del-territorio-mexicano/la-sal-un-tesoro-del-territorio-mexicano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-sal-un-tesoro-del-territorio-mexicano/la-sal-un-tesoro-del-territorio-mexicano.html</guid>
+      <description>Explora la tradición y el valor de la sal en la cultura mexicana.</description>
+      <category>Sal</category>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-sal-un-tesoro-del-territorio-mexicano/la-sal-un-tesoro-del-territorio-mexicano.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Fermento de Col Morada: el poder ancestral para tu salud</title>
@@ -269,7 +279,7 @@
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/delapencaaljarro/de-la-penca-al-jarro.html</guid>
       <description>Fermentos, microbiota y tradición del maguey paso a paso.</description>
       <category>Pulque</category>
-      <pubDate>Fri, 20 Mar 2026 16:06:21 GMT</pubDate>
+      <pubDate>Fri, 20 Mar 2026 16:08:46 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/delapencaaljarro/de_la_penca_al_jarro.png" type="image/png" length="0"/>
     </item>
 
@@ -279,7 +289,7 @@
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/guiadeadobe/guiadeadobe.html</guid>
       <description>Mezcla, moldes, curado y desempeño térmico.</description>
       <category>Bioconstrucción</category>
-      <pubDate>Fri, 20 Mar 2026 16:06:21 GMT</pubDate>
+      <pubDate>Fri, 20 Mar 2026 16:08:46 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/guiadeadobe/guiadeadobe.png" type="image/png" length="0"/>
     </item>
 
@@ -289,7 +299,7 @@
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.html</guid>
       <description>Levaduras y bacterias lácticas clave en el sabor y la textura.</description>
       <category>Pulque</category>
-      <pubDate>Fri, 20 Mar 2026 16:06:21 GMT</pubDate>
+      <pubDate>Fri, 20 Mar 2026 16:08:46 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.png" type="image/png" length="0"/>
     </item>
 
