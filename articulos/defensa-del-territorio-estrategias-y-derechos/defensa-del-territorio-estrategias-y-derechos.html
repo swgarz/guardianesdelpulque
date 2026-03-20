@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
+  <meta name="theme-color" content="#059669" />
   <link rel="icon" href="../../images/logo_transparente.png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Defensa del Territorio: Estrategias Comunitarias Frente al Despojo — Guardianes del Pulque</title>
@@ -13,6 +14,7 @@
   <meta property="og:description" content="Herramientas legales, organizativas y culturales para que las comunidades defiendan su tierra, agua y autonomía frente al extractivismo." />
   <meta property="og:image" content="https://guardianesdelpulque.org/articulos/defensa-del-territorio-estrategias-y-derechos/defensa-del-territorio-estrategias-y-derechos.png" />
   <meta property="og:url" content="https://guardianesdelpulque.org/articulos/defensa-del-territorio-estrategias-y-derechos/defensa-del-territorio-estrategias-y-derechos.html" />
+  <link rel="canonical" href="https://guardianesdelpulque.org/articulos/defensa-del-territorio-estrategias-y-derechos/defensa-del-territorio-estrategias-y-derechos.html" />
   <meta property="og:site_name" content="Guardianes del Pulque" />
   <meta property="og:locale" content="es_MX" />
 
@@ -201,6 +203,7 @@
         <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
+      <button id="articleModeBtn" style="display:inline-flex;align-items:center;gap:.3rem;padding:.38rem .7rem;border-radius:8px;border:1.5px solid #059669;color:#059669;background:transparent;font-size:.72rem;font-weight:700;cursor:pointer;transition:background .15s;white-space:nowrap" type="button">🌿</button>
       <nav class="links">
         <a class="chip" href="../../posts.html">Artículos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
@@ -226,7 +229,7 @@
     </header>
 
     <figure class="hero-img">
-      <img src="defensa-del-territorio-estrategias-y-derechos.png" alt="Defensa del Territorio: Estrategias Comunitarias Frente al Despojo" />
+      <img loading="lazy" src="defensa-del-territorio-estrategias-y-derechos.png" alt="Defensa del Territorio: Estrategias Comunitarias Frente al Despojo" />
     </figure>
 
     <article class="article-body">
@@ -305,6 +308,25 @@
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
     </div>
+    <!-- COMPARTIR -->
+    <div id="share-buttons" style="margin:1.2rem 0;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center">
+      <span style="font-size:.8rem;font-weight:700;color:#64748b">Compartir:</span>
+      <a id="share-whatsapp" href="#" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border-radius:999px;border:1.5px solid #25d366;color:#25d366;font-size:.78rem;font-weight:700;background:#fff;text-decoration:none;transition:all .15s"
+         onmouseover="this.style.background='#25d366';this.style.color='#fff'"
+         onmouseout="this.style.background='#fff';this.style.color='#25d366'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.304A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+        WhatsApp
+      </a>
+      <button id="share-copy"
+         style="display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border-radius:999px;border:1.5px solid #059669;color:#059669;font-size:.78rem;font-weight:700;background:#fff;cursor:pointer;transition:all .15s"
+         onmouseover="this.style.background='#059669';this.style.color='#fff'"
+         onmouseout="this.style.background='#fff';this.style.color='#059669'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span id="share-copy-label">Copiar link</span>
+      </button>
+    </div>
+
 
         <!-- ARTÍCULOS RELACIONADOS -->
     <div id="related-articles" style="margin:1.5rem 0"></div>
@@ -374,6 +396,41 @@
           }).join('')+
           '</div>';
       }catch(e){}
+    })();
+  </script>
+
+  <script>
+    // Compartir
+    (function(){
+      var wa = document.getElementById('share-whatsapp');
+      var cp = document.getElementById('share-copy');
+      var lbl = document.getElementById('share-copy-label');
+      if(wa) wa.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(document.title + ' — ' + location.href);
+      if(cp) cp.addEventListener('click', function(){
+        navigator.clipboard.writeText(location.href).then(function(){
+          if(lbl){ lbl.textContent = '¡Copiado!'; setTimeout(function(){ lbl.textContent = 'Copiar link'; }, 2000); }
+        }).catch(function(){
+          if(lbl){ lbl.textContent = 'Copia la URL'; setTimeout(function(){ lbl.textContent = 'Copiar link'; }, 2000); }
+        });
+      });
+    })();
+    // Botón modo artículo
+    (function(){
+      var btn = document.getElementById('articleModeBtn');
+      if(!btn) return;
+      function syncLabel(){
+        var isCom = document.body.classList.contains('mode-community');
+        btn.textContent = isCom ? '🍶' : '🌿';
+        btn.title = isCom ? 'Modo pulque' : 'Modo comunitario';
+      }
+      syncLabel();
+      btn.addEventListener('click', function(){
+        var isCom = document.body.classList.contains('mode-community');
+        document.body.classList.remove('mode-reading','mode-community');
+        if(!isCom){ document.body.classList.add('mode-community'); try{ localStorage.setItem('gp.mode','community'); }catch(e){} }
+        else { try{ localStorage.removeItem('gp.mode'); }catch(e){} }
+        syncLabel();
+      });
     })();
   </script>
 </body>

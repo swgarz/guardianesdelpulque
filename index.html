@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
+  <meta name="theme-color" content="#059669" />
+  <link rel="alternate" type="application/rss+xml" title="Guardianes del Pulque" href="https://guardianesdelpulque.org/feed.xml" />
   <link rel="icon" href="images/logo_transparente.png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Guardianes del Pulque</title>
@@ -788,7 +790,6 @@
                  target="_blank" rel="noopener">
                 <span class="emoji">💚</span> Donar por PayPal
               </a>
-              <a class="chip" href="mailto:donaciones@tusitio.mx">Otra forma de donar</a>
             </div>
           </div>
 
@@ -967,10 +968,12 @@
         const coverStyle = p.cover
           ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"`
           : '';
+        const readTime = p.readTime ? `<span style="color:#94a3b8;margin-left:.5rem">🕒 ${escapeHtml(p.readTime)}</span>` : '';
+        const tagUrl = `posts.html?tag=${encodeURIComponent(p.tag || '')}`;
         card.innerHTML = `
           <div class="post-cover" ${coverStyle}></div>
           <div style="padding:16px">
-            <div style="font-size:12px;color:var(--brand)">${escapeHtml(p.tag || '')}</div>
+            <div style="font-size:12px;color:var(--brand)"><a href="${tagUrl}" style="color:var(--brand)">${escapeHtml(p.tag || '')}</a>${readTime}</div>
             <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title || '')}</h3>
             <p style="color:#475569">${escapeHtml(p.excerpt || '')}</p>
             <div style="padding-top:6px">

@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
+  <meta name="theme-color" content="#059669" />
   <link rel="icon" href="images/logo_transparente.png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Todos los artículos — Guardianes del Pulque</title>
@@ -716,6 +717,15 @@
       grid.innerHTML = '';
       pager.innerHTML = '';
 
+      // Actualizar URL para que sea compartible
+      (function(){
+        const sp = new URLSearchParams();
+        if(activeTag) sp.set('tag', activeTag);
+        if(page > 1) sp.set('page', page);
+        const qs = sp.toString();
+        history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+      })();
+
       let filtered = activeTag
         ? items.filter(p => normalizeTag(p.tag) === normalizeTag(activeTag))
         : items;
@@ -832,7 +842,8 @@
         });
       }
       buildFilters();
-      renderPage(posts, 1, PER_PAGE, activeTag);
+      const urlPage = qsNum('page', 1);
+      renderPage(posts, urlPage, PER_PAGE, activeTag);
 
       document.getElementById('filters').addEventListener('click', e => {
         const btn = e.target.closest('.filter-btn');
