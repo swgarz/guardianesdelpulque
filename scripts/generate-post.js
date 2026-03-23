@@ -522,9 +522,16 @@ async function generateArticle() {
   const tagArg = process.argv.find((a) => a.startsWith("--tag="))?.split("=")[1]
     || process.argv[process.argv.indexOf("--tag") + 1];
 
-  // Evitar temas ya usados
+  // Evitar temas ya usados (por topic exacto O por tag ya cubierto)
   const usedTopics = new Set(posts.map((p) => p.topic).filter(Boolean));
-  let availableTopics = TOPICS.filter((t) => !usedTopics.has(t));
+  const usedTags = new Set(posts.map((p) => p.tag).filter(Boolean));
+  let availableTopics = TOPICS.filter((t) => {
+    if (usedTopics.has(t)) return false;
+    // Inferir el tag del tema: buscar si alguna palabra del tema coincide con un tag ya usado
+    const firstWord = t.split(",")[0].trim().toLowerCase();
+    const matchedTag = Array.from(usedTags).find((tag) => firstWord.includes(tag.toLowerCase()) || tag.toLowerCase().includes(firstWord));
+    return !matchedTag;
+  });
 
   // Si se especificó --tag, filtrar temas que empiecen con ese tag
   if (tagArg) {

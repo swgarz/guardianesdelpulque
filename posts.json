@@ -1,5 +1,35 @@
 [
   {
+    "tag": "Fibras",
+    "title": "El Maguey: Tesoro de Usos y Saberes del Agave",
+    "excerpt": "Explora el maguey y sus múltiples aplicaciones en la cultura mexicana.",
+    "date": "23 de marzo de 2026",
+    "url": "articulos/el-maguey-tesoro-de-usos-y-saberes-del-agave/el-maguey-tesoro-de-usos-y-saberes-del-agave.html",
+    "cover": "articulos/el-maguey-tesoro-de-usos-y-saberes-del-agave/el-maguey-tesoro-de-usos-y-saberes-del-agave.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Maguey, usos del agave, fibras, ixtle, pencas"
+  },
+  {
+    "tag": "Arte",
+    "title": "El Arte del Barro: Tradición y Futuro de la Alfarería Mexicana",
+    "excerpt": "Descubre la riqueza cultural y técnica de la alfarería en México.",
+    "date": "20 de marzo de 2026",
+    "url": "articulos/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana.html",
+    "cover": "articulos/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana.png",
+    "imageStyle": "litografia-color",
+    "topic": "Barro, ceramica tradicional, alfareria, arcilla, hornos de barro, tradicion alfarera mexicana"
+  },
+  {
+    "tag": "Pesca",
+    "title": "La Pesca Artesanal y Sustentable en Ríos y Lagos de México",
+    "excerpt": "Explora la rica tradición de la pesca artesanal en México y su impacto sustentable.",
+    "date": "20 de marzo de 2026",
+    "url": "articulos/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico.html",
+    "cover": "articulos/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico.png",
+    "imageStyle": "encaustica",
+    "topic": "Pesca artesanal, pesca tradicional, lagos y rios, artes de pesca, pesca sustentable"
+  },
+  {
     "tag": "Sal",
     "title": "La Sal: Un Tesoro del Territorio Mexicano",
     "excerpt": "Explora la tradición y el valor de la sal en la cultura mexicana.",
