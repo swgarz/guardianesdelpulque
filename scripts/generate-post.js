@@ -1,8 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 const OpenAI = require("openai");
+const sharp = require("sharp");
 
 const openai = new OpenAI();
+const IMAGE_WIDTH = 912;
 const SITE_URL = "https://guardianesdelpulque.org";
 
 // ── Temas ──────────────────────────────────────────────────────────────────
@@ -726,6 +728,9 @@ async function generateArticle() {
     }
   }
   if (!imageBuffer) throw new Error("No se pudo generar imagen");
+
+  // Redimensionar a 912px de ancho manteniendo proporción
+  imageBuffer = await sharp(imageBuffer).resize(IMAGE_WIDTH).toBuffer();
 
   // 5. Guardar imagen
   const artDir = path.join(__dirname, "..", "articulos", slug);
