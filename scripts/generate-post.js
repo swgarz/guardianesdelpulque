@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
 const OpenAI = require("openai");
 const sharp = require("sharp");
 
@@ -520,34 +521,42 @@ async function generateArticle() {
   const postsPath = path.join(__dirname, "..", "posts.json");
   const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
 
-  // Leer --tag opcional desde CLI
+  // Leer --tag y --topic opcionales desde CLI
   const tagArg = process.argv.find((a) => a.startsWith("--tag="))?.split("=")[1]
     || process.argv[process.argv.indexOf("--tag") + 1];
+  const topicArg = process.argv.find((a) => a.startsWith("--topic="))?.split("=")[1]
+    || (process.argv.includes("--topic") ? process.argv[process.argv.indexOf("--topic") + 1] : null);
 
-  // Evitar temas ya usados (por topic exacto O por tag ya cubierto)
-  const usedTopics = new Set(posts.map((p) => p.topic).filter(Boolean));
-  const usedTags = new Set(posts.map((p) => p.tag).filter(Boolean));
-  let availableTopics = TOPICS.filter((t) => {
-    if (usedTopics.has(t)) return false;
-    // Inferir el tag del tema: buscar si alguna palabra del tema coincide con un tag ya usado
-    const firstWord = t.split(",")[0].trim().toLowerCase();
-    const matchedTag = Array.from(usedTags).find((tag) => firstWord.includes(tag.toLowerCase()) || tag.toLowerCase().includes(firstWord));
-    return !matchedTag;
-  });
+  // Si se especificó --topic, usarlo directamente
+  let topic;
+  if (topicArg) {
+    topic = topicArg;
+  } else {
+    // Evitar temas ya usados (por topic exacto O por tag ya cubierto)
+    const usedTopics = new Set(posts.map((p) => p.topic).filter(Boolean));
+    const usedTags = new Set(posts.map((p) => p.tag).filter(Boolean));
+    let availableTopics = TOPICS.filter((t) => {
+      if (usedTopics.has(t)) return false;
+      // Inferir el tag del tema: buscar si alguna palabra del tema coincide con un tag ya usado
+      const firstWord = t.split(",")[0].trim().toLowerCase();
+      const matchedTag = Array.from(usedTags).find((tag) => firstWord.includes(tag.toLowerCase()) || tag.toLowerCase().includes(firstWord));
+      return !matchedTag;
+    });
 
-  // Si se especificó --tag, filtrar temas que empiecen con ese tag
-  if (tagArg) {
-    const norm = tagArg.toLowerCase();
-    const tagged = availableTopics.filter((t) => t.toLowerCase().startsWith(norm));
-    if (tagged.length > 0) availableTopics = tagged;
-    else {
-      // Buscar en todos los topics (aunque ya usados) como fallback
-      const fallback = TOPICS.filter((t) => t.toLowerCase().startsWith(norm));
-      if (fallback.length > 0) availableTopics = fallback;
+    // Si se especificó --tag, filtrar temas que empiecen con ese tag
+    if (tagArg) {
+      const norm = tagArg.toLowerCase();
+      const tagged = availableTopics.filter((t) => t.toLowerCase().startsWith(norm));
+      if (tagged.length > 0) availableTopics = tagged;
+      else {
+        // Buscar en todos los topics (aunque ya usados) como fallback
+        const fallback = TOPICS.filter((t) => t.toLowerCase().startsWith(norm));
+        if (fallback.length > 0) availableTopics = fallback;
+      }
     }
-  }
 
-  const topic = pick(availableTopics.length > 0 ? availableTopics : TOPICS);
+    topic = pick(availableTopics.length > 0 ? availableTopics : TOPICS);
+  }
 
   const profile = pick(TONE_PROFILES);
   const [minSec, maxSec] = profile.sectionRange;
