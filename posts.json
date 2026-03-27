@@ -1,5 +1,15 @@
 [
   {
+    "tag": "Pan",
+    "title": "El Arte del Pan: De la Masa Madre al Pan de Muerto",
+    "excerpt": "Conoce la tradición del pan mexicano desde su elaboración hasta su significado.",
+    "date": "27 de marzo de 2026",
+    "url": "articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.html",
+    "cover": "articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.png",
+    "imageStyle": "encaustica",
+    "topic": "Pan, pan de horno de lena, masa madre, pan de muerto, panaderia tradicional mexicana"
+  },
+  {
     "tag": "Fibras",
     "title": "El Maguey: Tesoro de Usos y Saberes del Agave",
     "excerpt": "Explora el maguey y sus múltiples aplicaciones en la cultura mexicana.",
