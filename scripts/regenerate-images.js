@@ -1,7 +1,7 @@
 /**
  * regenerate-images.js
  * Regenera las imágenes de todos los artículos en posts.json
- * usando el nuevo prompt de infografía vertical en acuarela.
+ * con el estilo pop art validado (prompts en inglés).
  *
  * Uso: node scripts/regenerate-images.js
  *      node scripts/regenerate-images.js --slug bambu-estructural   (solo uno)
@@ -9,6 +9,7 @@
 
 const fs = require("fs");
 const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
 const OpenAI = require("openai");
 
 const openai = new OpenAI();
@@ -16,39 +17,73 @@ const ROOT = path.join(__dirname, "..");
 
 // ── Paletas por tag ─────────────────────────────────────────────────────────
 const TAG_PALETTES = {
-  Pulque:         "tonos ocre, ámbar, dorado, blanco hueso y verde maguey",
-  Bioconstruccion:"tonos rojo arcilla, terracota, adobe, marrón tierra y beige",
-  "Bioconstrucción":"tonos rojo arcilla, terracota, adobe, marrón tierra y beige",
-  Naturaleza:     "tonos verde bosque, verde musgo, tierra húmeda, azul agua y café corteza",
-  Territorio:     "tonos rojo profundo, negro obsidiana, ocre, dorado y verde selva",
+  Pulque:          "ochre, amber, gold, bone white and maguey green",
+  Bioconstruccion: "red clay, terracotta, adobe, earth brown and beige",
+  "Bioconstrucción":"red clay, terracotta, adobe, earth brown and beige",
+  Naturaleza:      "forest green, moss green, damp earth, water blue and bark brown",
+  Territorio:      "deep red, obsidian black, ochre, gold and jungle green",
+  Semillas:        "light green, golden yellow, earth brown and milk white",
+  Agroforesteria:  "deep green, bark brown, moss, sky blue and earth",
+  Medicina:        "medicinal green, flower purple, white and golden ochre",
+  Agua:            "turquoise blue, water green, stone grey and foam white",
+  Fuego:           "flame red, ember orange, charcoal black and spark yellow",
+  Comunidad:       "ochre, brick red, olive green and sky blue",
+  Arte:            "vivid multicolor, crimson red, indigo blue and bright yellow",
+  Economia:        "jade green, gold, coffee brown and ochre",
+  Ganaderia:       "meadow green, leather brown, cream and sky blue",
+  Cosmologia:      "night black, indigo blue, star gold and cosmic purple",
+  Permacultura:    "leaf green, damp earth, sky blue and sun yellow",
+  Hongos:          "ivory, mushroom brown, moss green and dark purple",
+  Aves:            "sky blue, forest green, feather brown and ochre",
+  Pesca:           "lake blue, water green, stone grey and sand ochre",
+  Barro:           "red clay, terracotta, ochre and ash grey",
+  Madera:          "mahogany brown, ochre, pine yellow and forest green",
+  Fibras:          "natural cream, golden henequen, indigo purple and red grana",
+  Colorantes:      "indigo blue, red grana, cempasuchil yellow and leaf green",
+  Sal:             "white salt, stone grey, sky blue and desert ochre",
+  Cacao:           "dark chocolate brown, cacao brown, gold and jungle green",
+  Pan:             "golden bread, wheat ochre, burnt crust brown and red ember",
+  Insectos:        "leaf green, ochre, crimson red and black",
+  Suelo:           "humus black, earth brown, ochre and vibrant green",
+  Energia:         "solar yellow, sky blue, green and orange",
+  Migracion:       "path ochre, brick red, indigo blue and hope green",
+  Lenguas:         "parchment ochre, ink black, red and gold",
+  Infancia:        "sunflower yellow, tender green, sky blue and ochre",
+  Mujeres:         "flower red, purple, jade green and gold",
+  Musica:          "deep blue, vivid red, golden ochre and black",
+  Psicodelicos:    "visionary purple, deep blue, sacred green, gold and black",
+  Fermentos:       "purple cabbage, magenta, lime green and salt white",
 };
-const DEFAULT_PALETTE = "tonos tierra, ocre, verde y rojo óxido";
+const DEFAULT_PALETTE = "earth tones, ochre, green and oxide red";
 
 // ── Notas visuales por tag ───────────────────────────────────────────────────
 const TAG_NOTES = {
-  Pulque:    " El pulque es una bebida fermentada mexicana tradicional de color blanco lechoso — represéntalo blanco y opaco. El maguey pulquero es el Agave salmiana: planta enorme con pencas largas, anchas, carnosas y de color verde grisáceo con espinas en los bordes.",
-  Naturaleza:" El maguey pulquero (Agave salmiana) tiene pencas largas, anchas, carnosas y verde grisáceas — úsalo si aparece maguey.",
-  Territorio:" El maguey pulquero (Agave salmiana) tiene pencas largas, anchas, carnosas y verde grisáceas — úsalo si aparece maguey.",
+  Pulque:    " Pulque is a traditional Mexican fermented drink, milky white and opaque — depict it white and cloudy. The maguey pulquero is Agave salmiana: a massive plant with long, wide, fleshy, blue-grey-green leaves with spines along the edges.",
+  Naturaleza:" The maguey pulquero (Agave salmiana) has long, wide, fleshy, blue-grey-green leaves — use it if maguey appears.",
+  Territorio:" The maguey pulquero (Agave salmiana) has long, wide, fleshy, blue-grey-green leaves — use it if maguey appears.",
 };
 
 // ── Construir prompt ────────────────────────────────────────────────────────
 function buildPrompt(title, tag) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
-  const pulqueNote = TAG_NOTES[tag] || "";
+  const tagNote = TAG_NOTES[tag] || "";
   return (
-    `Ilustración pop art al estilo de Roy Lichtenstein y Andy Warhol, sobre: "${title}".${pulqueNote} ` +
-    `${palette}. Puntos Ben-Day gruesos, contornos negros sólidos, colores planos y vivos, tramas de medios tonos, ` +
-    `estética de cómic, alto contraste, aspecto de serigrafía, composición vibrante y expresiva. ` +
-    `UNA SOLA ilustración continua que llene completamente todo el encuadre de borde a borde, sin espacios vacíos, sin márgenes blancos, sin divisiones, sin paneles separados, sin cuadrículas, sin secciones, sin recuadros, sin viñetas. SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad, SIN muestras de color, SIN paletas de colores, SIN cuadros de colores, SIN bordes decorativos, SIN marcos.`
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${title}" — Mexican rural landscape scene related to this topic.${tagNote} ` +
+    `Color palette: ${palette}. ` +
+    `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. ` +
+    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames, no vignettes. ` +
+    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind, NO urban buildings, NO city, NO color swatches, NO color palettes, NO decorative borders.`
   );
 }
 
 function buildFallback(tag) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
   return (
-    `Ilustración pop art al estilo de Roy Lichtenstein y Andy Warhol, paisaje rural mexicano. ` +
-    `${palette}. Puntos Ben-Day gruesos, contornos negros sólidos, colores planos y vivos, tramas de medios tonos, alto contraste. ` +
-    `UNA SOLA ilustración continua que llene completamente todo el encuadre de borde a borde, sin espacios vacíos, sin márgenes blancos, sin divisiones, sin paneles separados, sin cuadrículas, sin secciones, sin recuadros, sin viñetas. SIN fotografía, SIN render 3D, SIN texto, SIN letras, SIN palabras, SIN etiquetas, SIN tipografía, SIN escritura de ningún tipo, SIN edificios, SIN construcciones urbanas, SIN ciudad, SIN muestras de color, SIN paletas de colores, SIN cuadros de colores, SIN bordes decorativos, SIN marcos.`
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide Mexican rural landscape. ` +
+    `Color palette: ${palette}. ` +
+    `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, high contrast, screen-print look. ` +
+    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames. ` +
+    `NO text, NO letters, NO words, NO typography, NO writing of any kind, NO urban buildings, NO color swatches.`
   );
 }
 
@@ -133,7 +168,7 @@ async function main() {
   console.log(`Completado: ${ok} generadas, ${fail} fallidas`);
   console.log(`─────────────────────────────────`);
   console.log(`\nAhora ejecuta:`);
-  console.log(`  git add articulos/ && git commit -m "feat: regenerar imágenes con nuevo estilo infografía" && git push`);
+  console.log(`  git add articulos/ && git commit -m "feat: regenerar imágenes con estilo pop art" && git push`);
 }
 
 main().catch((err) => {
