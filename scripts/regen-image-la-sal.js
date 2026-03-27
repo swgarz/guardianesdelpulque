@@ -6,6 +6,9 @@ const fs = require("fs");
 const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
 const OpenAI = require("openai");
+const sharp = require("sharp");
+
+const IMAGE_WIDTH = 912;
 
 const openai = new OpenAI();
 
@@ -36,7 +39,8 @@ async function run() {
       const url = resp.data[0].url;
       console.log("URL generada:", url);
 
-      const buf = Buffer.from(await fetch(url).then((r) => r.arrayBuffer()));
+      let buf = Buffer.from(await fetch(url).then((r) => r.arrayBuffer()));
+      buf = await sharp(buf).resize(IMAGE_WIDTH).toBuffer();
       fs.writeFileSync(OUT_PATH, buf);
       console.log("Imagen guardada en:", OUT_PATH);
       return;

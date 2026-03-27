@@ -11,6 +11,9 @@ const fs = require("fs");
 const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
 const OpenAI = require("openai");
+const sharp = require("sharp");
+
+const IMAGE_WIDTH = 912;
 
 const openai = new OpenAI();
 const ROOT = path.join(__dirname, "..");
@@ -113,6 +116,7 @@ async function regenerateImage(post, index, total) {
       imageBuffer = Buffer.from(
         await fetch(imageUrl).then((r) => r.arrayBuffer())
       );
+      imageBuffer = await sharp(imageBuffer).resize(IMAGE_WIDTH).toBuffer();
       break;
     } catch (e) {
       console.log(`  Prompt rechazado: ${e.message?.slice(0, 80)}`);
