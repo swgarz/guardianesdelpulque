@@ -69,7 +69,7 @@ const TAG_NOTES = {
 // ── Notas visuales específicas por slug ────────────────────────────────────
 const SLUG_NOTES = {
   "raramuri-cultura-y-resistencia-en-la-sierra-tarahumara":
-    " Depict Rarámuri (Tarahumara) indigenous people of the Sierra Tarahumara, Chihuahua, Mexico: men and women wearing traditional colorful clothing — women in bright wide skirts (nahua) with ribbons and blouses, men in loincloths (tagora) and headbands. Show the rugged canyon landscape of the Copper Canyon (Barrancas del Cobre) with pine forests, dramatic cliffs and deep ravines. Include details like hand-crafted pottery, corn fields, and long-distance running motifs.",
+    " Depict a traditional Rarámuri rarajípari ball race: several Rarámuri men running barefoot or in huarache sandals through the dramatic canyon landscape of the Barrancas del Cobre (Copper Canyon), Chihuahua, Mexico, kicking a small wooden ball (bola) along a mountain trail. Men wear white loincloths (tagora) and colorful headbands. The background shows towering canyon walls, pine trees and a vast deep ravine under a vivid sky. Foreground details include the wooden ball mid-kick and the runners' powerful stride. Energy, movement and endurance are the mood.",
 };
 
 // ── Construir prompt ────────────────────────────────────────────────────────
