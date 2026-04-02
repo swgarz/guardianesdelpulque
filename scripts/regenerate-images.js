@@ -66,10 +66,16 @@ const TAG_NOTES = {
   Territorio:" The maguey pulquero (Agave salmiana) has long, wide, fleshy, blue-grey-green leaves — use it if maguey appears.",
 };
 
+// ── Notas visuales específicas por slug ────────────────────────────────────
+const SLUG_NOTES = {
+  "raramuri-cultura-y-resistencia-en-la-sierra-tarahumara":
+    " Depict Rarámuri (Tarahumara) indigenous people of the Sierra Tarahumara, Chihuahua, Mexico: men and women wearing traditional colorful clothing — women in bright wide skirts (nahua) with ribbons and blouses, men in loincloths (tagora) and headbands. Show the rugged canyon landscape of the Copper Canyon (Barrancas del Cobre) with pine forests, dramatic cliffs and deep ravines. Include details like hand-crafted pottery, corn fields, and long-distance running motifs.",
+};
+
 // ── Construir prompt ────────────────────────────────────────────────────────
-function buildPrompt(title, tag) {
+function buildPrompt(title, tag, slug) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
-  const tagNote = TAG_NOTES[tag] || "";
+  const tagNote = SLUG_NOTES[slug] || TAG_NOTES[tag] || "";
   return (
     `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${title}" — Mexican rural landscape scene related to this topic.${tagNote} ` +
     `Color palette: ${palette}. ` +
@@ -99,7 +105,8 @@ async function regenerateImage(post, index, total) {
   console.log(`\n${label}`);
   console.log(`  Cover: ${post.cover}`);
 
-  const basePrompt = buildPrompt(post.title, post.tag);
+  const slug = post.cover.split("/")[1];
+  const basePrompt = buildPrompt(post.title, post.tag, slug);
   const fallbackPrompt = buildFallback(post.tag);
 
   let imageBuffer;
