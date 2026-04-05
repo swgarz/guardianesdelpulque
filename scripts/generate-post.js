@@ -532,15 +532,22 @@ async function generateArticle() {
   if (topicArg) {
     topic = topicArg;
   } else {
-    // Evitar temas ya usados (por topic exacto O por tag ya cubierto)
+    // Evitar temas ya usados (por topic exacto O por keywords de títulos existentes)
+    const STOPWORDS = new Set(["el","la","los","las","de","del","en","y","a","un","una","por","con","su","sus","al","que","se","es","son","como","para","más","un","o","e","i","u","lo","le","les","hay","sin","no","si","fue"]);
     const usedTopics = new Set(posts.map((p) => p.topic).filter(Boolean));
-    const usedTags = new Set(posts.map((p) => p.tag).filter(Boolean));
+    // Extraer palabras clave de todos los títulos existentes
+    const titleKeywords = new Set(
+      posts.flatMap((p) =>
+        (p.title || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+          .replace(/[^a-z0-9\s]/g," ").split(/\s+/).filter((w) => w.length > 3 && !STOPWORDS.has(w))
+      )
+    );
     let availableTopics = TOPICS.filter((t) => {
       if (usedTopics.has(t)) return false;
-      // Inferir el tag del tema: buscar si alguna palabra del tema coincide con un tag ya usado
-      const firstWord = t.split(",")[0].trim().toLowerCase();
-      const matchedTag = Array.from(usedTags).find((tag) => firstWord.includes(tag.toLowerCase()) || tag.toLowerCase().includes(firstWord));
-      return !matchedTag;
+      // Bloquear si alguna palabra clave del topic ya aparece en títulos existentes
+      const topicWords = t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+        .replace(/[^a-z0-9\s]/g," ").split(/\s+/).filter((w) => w.length > 3 && !STOPWORDS.has(w));
+      return !topicWords.some((w) => titleKeywords.has(w));
     });
 
     // Si se especificó --tag, filtrar temas que empiecen con ese tag
