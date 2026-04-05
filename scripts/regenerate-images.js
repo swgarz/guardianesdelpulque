@@ -68,6 +68,8 @@ const TAG_NOTES = {
 
 // ── Notas visuales específicas por slug ────────────────────────────────────
 const SLUG_NOTES = {
+  "diego-rivera-maestro-del-muralismo-mexicano":
+    " Depict a close-up fragment of a Diego Rivera-style mural: monumental indigenous Mexican figures with broad faces, strong hands and colorful traditional clothing fill the entire frame. Show workers, farmers and women carrying corn and flowers, painted in Rivera's signature fresco style — flat earthy tones of ochre, terracota, cobalt blue, deep red and maguey green, bold black outlines, simplified volumetric forms. Include a visible rough plaster (fresco) wall texture behind the figures. No scaffolding, no artist portrait — only the mural itself as if you are standing in front of the Palacio Nacional in Mexico City.",
   "raramuri-cultura-y-resistencia-en-la-sierra-tarahumara":
     " Depict a traditional Rarámuri rarajípari ball race: several Rarámuri men running barefoot or in huarache sandals through the dramatic canyon landscape of the Barrancas del Cobre (Copper Canyon), Chihuahua, Mexico, kicking a small wooden ball (bola) along a mountain trail. Men wear white loincloths (tagora) and colorful headbands. The background shows towering canyon walls, pine trees and a vast deep ravine under a vivid sky. Foreground details include the wooden ball mid-kick and the runners' powerful stride. Energy, movement and endurance are the mood.",
 };
