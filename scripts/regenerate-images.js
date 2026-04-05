@@ -125,7 +125,7 @@ async function regenerateImage(post, index, total) {
       imageBuffer = Buffer.from(
         await fetch(imageUrl).then((r) => r.arrayBuffer())
       );
-      imageBuffer = await sharp(imageBuffer).resize(IMAGE_WIDTH).toBuffer();
+      imageBuffer = await sharp(imageBuffer).trim({ threshold: 30 }).resize(IMAGE_WIDTH).toBuffer();
       break;
     } catch (e) {
       console.log(`  Prompt rechazado: ${e.message?.slice(0, 80)}`);

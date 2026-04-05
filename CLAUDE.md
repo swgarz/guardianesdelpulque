@@ -55,6 +55,13 @@ Cada artículo vive en `articulos/{slug}/` con:
 - Tags válidos: Pulque, Bioconstruccion, Naturaleza, Territorio
 - Tonos: practico-calido, poetico-con-mesura, cortito-conciso, narrativo
 
+## Imágenes de portada
+
+- **Ancho obligatorio: 912px** — toda imagen de artículo debe guardarse a exactamente 912px de ancho
+- **Sin márgenes**: siempre aplicar `.trim({ threshold: 30 })` antes del `.resize(912)` con sharp para eliminar bordes blancos/beige que DALL-E agrega
+- Ambos scripts (`generate-post.js` y `regenerate-images.js`) ya incluyen trim automático
+- Si una imagen existente tiene márgenes: `sharp(file).trim({ threshold: 30 }).resize(912).toBuffer()` y sobreescribir
+
 ## Notas
 
 - Los artículos referencian nav con rutas relativas `../../index.html`, `../../posts.html`
