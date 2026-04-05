@@ -264,6 +264,7 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../../images/logo_transparente.png">
   <title>${title} — Guardianes del Pulque</title>
   <meta name="description" content="${safeExcerpt}" />
 
