@@ -55,9 +55,7 @@ const images = [
   },
   {
     slug: "diego-rivera-maestro-del-muralismo-mexicano",
-    title: "El Muralismo Mexicano: Técnica, Historia y Legado",
-    palette: "tonos ocre dorado, rojo óxido, azul índigo, negro carbón y blanco cal",
-    subjects: "muralista sobre andamio pintando fresco monumental, manos mezclando pigmentos minerales en mortero, mural con obreros y campesinos en movimiento, pared de cal con boceto trazado, paleta de colores terrosos sobre tabla, detalle de pincel sobre muro encalado con figuras épicas",
+    prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de un muralista sobre andamio pintando una pared de cal con figuras de obreros y campesinos, pigmentos minerales visibles en la textura del muro, paleta de ocre dorado, rojo óxido, azul índigo, negro carbón y blanco cal, trazos amplios y volúmenes monumentales, luz dramática desde arriba, sin texto, sin letras, sin palabras.",
   },
   {
     slug: "el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano",
@@ -74,9 +72,8 @@ const images = [
 ];
 
 async function generateImage(img) {
-  const prompt =
-    PANEL_STYLE +
-    ` Tema: "${img.title}". Escenas en las 6 vinetas: ${img.subjects}. Paleta de color: ${img.palette}.`;
+  const prompt = img.prompt ||
+    (PANEL_STYLE + ` Tema: "${img.title}". Escenas en las 6 vinetas: ${img.subjects}. Paleta de color: ${img.palette}.`);
   console.log("Generando:", img.slug);
   try {
     const res = await openai.images.generate({
