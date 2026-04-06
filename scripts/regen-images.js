@@ -1,6 +1,8 @@
 const OpenAI = require("openai");
 const fs = require("fs");
 const path = require("path");
+const sharp = require("sharp");
+require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
 const openai = new OpenAI();
 
 const PANEL_STYLE =
@@ -51,6 +53,12 @@ const images = [
     palette: "tonos verde col, blanco sal, amarillo mostaza y terracota",
     subjects: "col siendo cortada en tiras, manos masajeando col con sal, frasco de vidrio con chucrut fermentando, burbujas de fermentacion, chucrut terminado sobre taco, frasco en refrigerador",
   },
+  {
+    slug: "composta-y-lombricomposta-transformando-residuos-en-suelo-fertil",
+    title: "Composta y Lombricomposta: Transformando Residuos en Suelo Fértil",
+    palette: "tonos negro humus, café tierra oscura, ocre dorado, verde hoja y rojo lombriz",
+    subjects: "manos mezclando composta húmeda, lombriz roja sobre tierra fértil, pila de composta con capas de residuos, caja de madera con lombricomposta, puñado de tierra negra esponjosa, plantas creciendo en suelo abonado",
+  },
 ];
 
 async function generateImage(img) {
@@ -65,9 +73,10 @@ async function generateImage(img) {
       n: 1,
       size: "1024x1024",
     });
-    const buf = Buffer.from(
+    const raw = Buffer.from(
       await fetch(res.data[0].url).then((r) => r.arrayBuffer())
     );
+    const buf = await sharp(raw).trim({ threshold: 30 }).resize(912).png().toBuffer();
     const dest = path.join(__dirname, "..", "articulos", img.slug, img.slug + ".png");
     fs.writeFileSync(dest, buf);
     console.log("OK:", img.slug);
@@ -77,6 +86,12 @@ async function generateImage(img) {
 }
 
 (async () => {
-  for (const img of images) await generateImage(img);
+  const slugFilter = process.argv[2];
+  const toRun = slugFilter ? images.filter(i => i.slug === slugFilter) : images;
+  if (slugFilter && !toRun.length) {
+    console.error("Slug no encontrado:", slugFilter);
+    process.exit(1);
+  }
+  for (const img of toRun) await generateImage(img);
   console.log("Listo.");
 })();
