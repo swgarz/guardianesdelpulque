@@ -62,6 +62,10 @@ const images = [
     prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de un paisaje agroforestal mexicano: árboles grandes cobijando milpa y ganado, campesinos plantando árboles junto a cercas vivas, raíces profundas visibles bajo la tierra fértil, comunidad cosechando frutos del sistema, paleta de verde profundo, café corteza, musgo, cielo azul y tierra ocre, trazos amplios y volúmenes monumentales, luz cálida de mediodía, sin texto, sin letras, sin palabras.",
   },
   {
+    slug: "raramuri-cultura-y-resistencia-en-la-sierra-tarahumara",
+    prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de la vida Rarámuri en la Sierra Tarahumara: corredor descalzo sobre sendero de barranca, mujeres con faldas de colores vivos tejiendo y cargando ollas, hombres en asamblea comunitaria bajo pino serrano, niños jugando con pelota de madera en rarajípari, milpa en ladera escarpada con maíz criollo, montañas y barrancas profundas al fondo, paleta de rojo vivo, azul cielo, ocre barranca, verde pino y blanco nube, trazos amplios y volúmenes monumentales, luz de sierra a mediodía, sin texto, sin letras, sin palabras.",
+  },
+  {
     slug: "las-fibras-naturales-en-mexico-henequen-palma-y-mimbre",
     prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de artesanos mexicanos trabajando fibras naturales: manos tejiendo henequén en telar tradicional, mujer trenzando palma bajo el sol, cestos de mimbre siendo formados, maguey con pencas fibrosas en el campo, textiles naturales tendidos al aire, paleta de crema natural, dorado henequén, morado añil y rojo grana, trazos amplios y volúmenes monumentales, luz cálida de mediodía, sin texto, sin letras, sin palabras.",
   },
