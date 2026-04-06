@@ -54,6 +54,12 @@ const images = [
     subjects: "col siendo cortada en tiras, manos masajeando col con sal, frasco de vidrio con chucrut fermentando, burbujas de fermentacion, chucrut terminado sobre taco, frasco en refrigerador",
   },
   {
+    slug: "diego-rivera-maestro-del-muralismo-mexicano",
+    title: "El Muralismo Mexicano: Técnica, Historia y Legado",
+    palette: "tonos ocre dorado, rojo óxido, azul índigo, negro carbón y blanco cal",
+    subjects: "muralista sobre andamio pintando fresco monumental, manos mezclando pigmentos minerales en mortero, mural con obreros y campesinos en movimiento, pared de cal con boceto trazado, paleta de colores terrosos sobre tabla, detalle de pincel sobre muro encalado con figuras épicas",
+  },
+  {
     slug: "el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano",
     title: "El Abrazo Verde: Agroforestería y sus Beneficios en el Territorio Mexicano",
     palette: "tonos verde profundo, café corteza, musgo, cielo azul y tierra ocre",
