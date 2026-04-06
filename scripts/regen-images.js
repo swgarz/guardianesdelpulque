@@ -62,6 +62,10 @@ const images = [
     prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de un paisaje agroforestal mexicano: árboles grandes cobijando milpa y ganado, campesinos plantando árboles junto a cercas vivas, raíces profundas visibles bajo la tierra fértil, comunidad cosechando frutos del sistema, paleta de verde profundo, café corteza, musgo, cielo azul y tierra ocre, trazos amplios y volúmenes monumentales, luz cálida de mediodía, sin texto, sin letras, sin palabras.",
   },
   {
+    slug: "las-fibras-naturales-en-mexico-henequen-palma-y-mimbre",
+    prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de artesanos mexicanos trabajando fibras naturales: manos tejiendo henequén en telar tradicional, mujer trenzando palma bajo el sol, cestos de mimbre siendo formados, maguey con pencas fibrosas en el campo, textiles naturales tendidos al aire, paleta de crema natural, dorado henequén, morado añil y rojo grana, trazos amplios y volúmenes monumentales, luz cálida de mediodía, sin texto, sin letras, sin palabras.",
+  },
+  {
     slug: "composta-y-lombricomposta-transformando-residuos-en-suelo-fertil",
     prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de campesinos trabajando la tierra: manos mezclando composta húmeda en capas, lombrices rojas en tierra negra fértil, pila de composta junto a caja de lombricomposta, plantas vigorosas brotando del suelo abonado, ciclo vivo de residuos que se transforman en vida, paleta de negro humus, café tierra oscura, ocre dorado, verde hoja y rojo lombriz, trazos amplios y volúmenes monumentales, luz cálida desde arriba, sin texto, sin letras, sin palabras.",
   },
