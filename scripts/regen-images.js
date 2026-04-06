@@ -63,9 +63,7 @@ const images = [
   },
   {
     slug: "composta-y-lombricomposta-transformando-residuos-en-suelo-fertil",
-    title: "Composta y Lombricomposta: Transformando Residuos en Suelo Fértil",
-    palette: "tonos negro humus, café tierra oscura, ocre dorado, verde hoja y rojo lombriz",
-    subjects: "manos mezclando composta húmeda, lombriz roja sobre tierra fértil, pila de composta con capas de residuos, caja de madera con lombricomposta, puñado de tierra negra esponjosa, plantas creciendo en suelo abonado",
+    prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de campesinos trabajando la tierra: manos mezclando composta húmeda en capas, lombrices rojas en tierra negra fértil, pila de composta junto a caja de lombricomposta, plantas vigorosas brotando del suelo abonado, ciclo vivo de residuos que se transforman en vida, paleta de negro humus, café tierra oscura, ocre dorado, verde hoja y rojo lombriz, trazos amplios y volúmenes monumentales, luz cálida desde arriba, sin texto, sin letras, sin palabras.",
   },
 ];
 
