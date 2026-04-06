@@ -59,9 +59,7 @@ const images = [
   },
   {
     slug: "el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano",
-    title: "El Abrazo Verde: Agroforestería y sus Beneficios en el Territorio Mexicano",
-    palette: "tonos verde profundo, café corteza, musgo, cielo azul y tierra ocre",
-    subjects: "árbol grande con milpa bajo su sombra, cerca viva de árboles en parcela, vaca pastando entre árboles, manos plantando árbol joven, raíces profundas bajo tierra fértil, comunidad cosechando frutos de sistema agroforestal",
+    prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de un paisaje agroforestal mexicano: árboles grandes cobijando milpa y ganado, campesinos plantando árboles junto a cercas vivas, raíces profundas visibles bajo la tierra fértil, comunidad cosechando frutos del sistema, paleta de verde profundo, café corteza, musgo, cielo azul y tierra ocre, trazos amplios y volúmenes monumentales, luz cálida de mediodía, sin texto, sin letras, sin palabras.",
   },
   {
     slug: "composta-y-lombricomposta-transformando-residuos-en-suelo-fertil",
