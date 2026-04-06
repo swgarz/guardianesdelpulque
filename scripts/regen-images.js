@@ -54,6 +54,12 @@ const images = [
     subjects: "col siendo cortada en tiras, manos masajeando col con sal, frasco de vidrio con chucrut fermentando, burbujas de fermentacion, chucrut terminado sobre taco, frasco en refrigerador",
   },
   {
+    slug: "el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano",
+    title: "El Abrazo Verde: Agroforestería y sus Beneficios en el Territorio Mexicano",
+    palette: "tonos verde profundo, café corteza, musgo, cielo azul y tierra ocre",
+    subjects: "árbol grande con milpa bajo su sombra, cerca viva de árboles en parcela, vaca pastando entre árboles, manos plantando árbol joven, raíces profundas bajo tierra fértil, comunidad cosechando frutos de sistema agroforestal",
+  },
+  {
     slug: "composta-y-lombricomposta-transformando-residuos-en-suelo-fertil",
     title: "Composta y Lombricomposta: Transformando Residuos en Suelo Fértil",
     palette: "tonos negro humus, café tierra oscura, ocre dorado, verde hoja y rojo lombriz",
