@@ -17,7 +17,8 @@
     "url": "articulos/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano.html",
     "cover": "articulos/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano.png",
     "imageStyle": "fresco-cal",
-    "topic": "Agroforesteria, sistemas silvopastoriles, cercas vivas, arboles en parcelas, manejo forestal comunitario"
+    "topic": "Agroforesteria, sistemas silvopastoriles, cercas vivas, arboles en parcelas, manejo forestal comunitario",
+    "readTime": "8 min"
   },
   {
     "tag": "Arte",
@@ -26,7 +27,8 @@
     "date": "4 de abril de 2026",
     "url": "articulos/diego-rivera-maestro-del-muralismo-mexicano/diego-rivera-maestro-del-muralismo-mexicano.html",
     "cover": "articulos/diego-rivera-maestro-del-muralismo-mexicano/diego-rivera-maestro-del-muralismo-mexicano.png",
-    "topic": "Diego Rivera, muralismo mexicano, fresco, técnicas pictóricas, pigmentos, arte mexicano"
+    "topic": "Diego Rivera, muralismo mexicano, fresco, técnicas pictóricas, pigmentos, arte mexicano",
+    "readTime": "62 min"
   },
   {
     "tag": "Fibras",
@@ -36,7 +38,8 @@
     "url": "articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.html",
     "cover": "articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.png",
     "imageStyle": "tecnica-mixta",
-    "topic": "Fibras naturales, henequen, palma, mimbre, telar tradicional, textiles naturales mexicanos"
+    "topic": "Fibras naturales, henequen, palma, mimbre, telar tradicional, textiles naturales mexicanos",
+    "readTime": "8 min"
   },
   {
     "tag": "Territorio",
@@ -358,6 +361,7 @@
     "tag": "Pulque",
     "title": "De la penca al jarro: el proceso vivo",
     "excerpt": "Fermentos, microbiota y tradición del maguey paso a paso.",
+    "date": "1 de enero de 2025",
     "url": "articulos/delapencaaljarro/de-la-penca-al-jarro.html",
     "cover": "articulos/delapencaaljarro/de_la_penca_al_jarro.png",
     "readTime": "9 min"
@@ -366,6 +370,7 @@
     "tag": "Bioconstrucción",
     "title": "Guía práctica de adobe",
     "excerpt": "Mezcla, moldes, curado y desempeño térmico.",
+    "date": "1 de enero de 2025",
     "url": "articulos/guiadeadobe/guiadeadobe.html",
     "cover": "articulos/guiadeadobe/guiadeadobe.png",
     "readTime": "7 min"
@@ -374,6 +379,7 @@
     "tag": "Pulque",
     "title": "Microbiota del pulque: quién es quién",
     "excerpt": "Levaduras y bacterias lácticas clave en el sabor y la textura.",
+    "date": "1 de enero de 2025",
     "url": "articulos/microbiotadelpulque/microbiotadelpulque.html",
     "cover": "articulos/microbiotadelpulque/microbiotadelpulque.png",
     "readTime": "9 min"

@@ -5,13 +5,93 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 20 Mar 2026 16:08:46 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El Abrazo Verde: Agroforestería y sus Beneficios en el Territorio Mexicano</title>
+      <link>https://guardianesdelpulque.org/articulos/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano.html</guid>
+      <description>Explora el impacto de la agroforestería en la sostenibilidad y el desarrollo rural.</description>
+      <category>Agroforesteria</category>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Diego Rivera: Guía Completa sobre su Vida y Obra</title>
+      <link>https://guardianesdelpulque.org/articulos/diego-rivera-maestro-del-muralismo-mexicano/diego-rivera-maestro-del-muralismo-mexicano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/diego-rivera-maestro-del-muralismo-mexicano/diego-rivera-maestro-del-muralismo-mexicano.html</guid>
+      <description>Explora la vida, técnica y legado de Diego Rivera, un ícono del muralismo mexicano.</description>
+      <category>Arte</category>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/diego-rivera-maestro-del-muralismo-mexicano/diego-rivera-maestro-del-muralismo-mexicano.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Las Fibras Naturales en México: Henequén, Palma, Mimbre y Hempcrete</title>
+      <link>https://guardianesdelpulque.org/articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.html</guid>
+      <description>Explora las fibras naturales mexicanas y su impacto en la cultura y economía.</description>
+      <category>Fibras</category>
+      <pubDate>Thu, 03 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Rarámuri: Cultura y Resistencia en la Sierra Tarahumara</title>
+      <link>https://guardianesdelpulque.org/articulos/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara.html</guid>
+      <description>Explora la riqueza cultural y la autonomía del pueblo Rarámuri.</description>
+      <category>Territorio</category>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La Cultura Otomí: Saberes y Tradiciones de un Pueblo Ancestral</title>
+      <link>https://guardianesdelpulque.org/articulos/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral.html</guid>
+      <description>Explora la rica cultura y tradiciones del pueblo otomí en México.</description>
+      <category>Comunidad</category>
+      <pubDate>Thu, 27 Mar 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El Arte del Pan: De la Masa Madre al Pan de Muerto</title>
+      <link>https://guardianesdelpulque.org/articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.html</guid>
+      <description>Conoce la tradición del pan mexicano desde su elaboración hasta su significado.</description>
+      <category>Pan</category>
+      <pubDate>Thu, 27 Mar 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El Arte del Barro: Tradición y Futuro de la Alfarería Mexicana</title>
+      <link>https://guardianesdelpulque.org/articulos/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana.html</guid>
+      <description>Descubre la riqueza cultural y técnica de la alfarería en México.</description>
+      <category>Arte</category>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La Pesca Artesanal y Sustentable en Ríos y Lagos de México</title>
+      <link>https://guardianesdelpulque.org/articulos/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico.html</guid>
+      <description>Explora la rica tradición de la pesca artesanal en México y su impacto sustentable.</description>
+      <category>Pesca</category>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>La Sal: Un Tesoro del Territorio Mexicano</title>
@@ -221,16 +301,6 @@
       <category>Agua</category>
       <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/aprovechamiento-del-agua-captacion-pluvial-y-humedales-artificiales/aprovechamiento-del-agua-captacion-pluvial-y-humedales-artificiales.png" type="image/png" length="0"/>
-    </item>
-
-    <item>
-      <title>Maguey: Usos y Beneficios del Agave</title>
-      <link>https://guardianesdelpulque.org/articulos/maguey-usos-y-beneficios-del-agave/maguey-usos-y-beneficios-del-agave.html</link>
-      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/maguey-usos-y-beneficios-del-agave/maguey-usos-y-beneficios-del-agave.html</guid>
-      <description>Descubre los múltiples usos del maguey y sus fibras en la cultura mexicana.</description>
-      <category>Naturaleza</category>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-      <enclosure url="https://guardianesdelpulque.org/articulos/maguey-usos-y-beneficios-del-agave/maguey-usos-y-beneficios-del-agave.png" type="image/png" length="0"/>
     </item>
 
     <item>
