@@ -5,10 +5,18 @@ const sharp = require("sharp");
 require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
 const openai = new OpenAI();
 
+// ESTILO ANTERIOR (pop art con 6 viñetas):
+// const PANEL_STYLE =
+//   "Pop art al estilo Roy Lichtenstein y Andy Warhol, cuadricula de 6 vinetas rectangulares con bordes negros gruesos, " +
+//   "cada vineta muestra una escena diferente sobre el tema, puntos Ben-Day gruesos, colores planos vivos, " +
+//   "alto contraste, serigrafía, estetica de comic vintage. SIN texto, SIN letras, SIN palabras, SIN numeros.";
+
+// ESTILO ACTUAL (fresco monumental continuo):
 const PANEL_STYLE =
-  "Pop art al estilo Roy Lichtenstein y Andy Warhol, cuadricula de 6 vinetas rectangulares con bordes negros gruesos, " +
-  "cada vineta muestra una escena diferente sobre el tema, puntos Ben-Day gruesos, colores planos vivos, " +
-  "alto contraste, serigrafía, estetica de comic vintage. SIN texto, SIN letras, SIN palabras, SIN numeros.";
+  "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, " +
+  "escena épica relacionada con el tema, trazos amplios y volúmenes monumentales, " +
+  "paleta de pigmentos naturales, luz dramática, profundidad y movimiento en la composición, " +
+  "sin texto, sin letras, sin palabras.";
 
 const images = [
   {

@@ -713,19 +713,36 @@ async function generateArticle() {
     Territorio:" The maguey pulquero (Agave salmiana) has long, wide, fleshy, blue-grey-green leaves — use it if maguey appears.",
   };
   const pulqueNote = TAG_NOTES[tag] || "";
+  // ESTILO ANTERIOR (pop art Roy Lichtenstein / Andy Warhol):
+  // const basePrompt =
+  //   `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${article.title}" — Mexican rural landscape scene related to this topic.${pulqueNote} ` +
+  //   `Color palette: ${palette}. ` +
+  //   `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. ` +
+  //   `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames, no vignettes. ` +
+  //   `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind, NO urban buildings, NO city, NO color swatches, NO color palettes, NO decorative borders.`;
+  // const fallbackPrompt =
+  //   `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide Mexican rural landscape. ` +
+  //   `Color palette: ${palette}. ` +
+  //   `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, high contrast, screen-print look. ` +
+  //   `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames. ` +
+  //   `NO text, NO letters, NO words, NO typography, NO writing of any kind, NO urban buildings, NO color swatches.`;
+
+  // ESTILO ACTUAL (fresco monumental muralismo mexicano):
   const basePrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${article.title}" — Mexican rural landscape scene related to this topic.${pulqueNote} ` +
+    `Monumental fresco in the style of Mexican muralism, continuous composition without panels or divisions. ` +
+    `Subject: "${article.title}" — epic scene of Mexican rural life related to this topic.${pulqueNote} ` +
     `Color palette: ${palette}. ` +
-    `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. ` +
-    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames, no vignettes. ` +
-    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind, NO urban buildings, NO city, NO color swatches, NO color palettes, NO decorative borders.`;
+    `Broad brushstrokes, monumental volumes, natural mineral pigments visible in texture, dramatic light, ` +
+    `depth and movement in the composition, figures with weight and dignity, landscape and people intertwined. ` +
+    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no panels, no grids, no borders. ` +
+    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind.`;
 
   const fallbackPrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide Mexican rural landscape. ` +
+    `Monumental fresco in the style of Mexican muralism, wide continuous scene of Mexican rural landscape. ` +
     `Color palette: ${palette}. ` +
-    `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, high contrast, screen-print look. ` +
-    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames. ` +
-    `NO text, NO letters, NO words, NO typography, NO writing of any kind, NO urban buildings, NO color swatches.`;
+    `Broad brushstrokes, monumental volumes, dramatic light, no panels, no divisions. ` +
+    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins. ` +
+    `NO text, NO letters, NO words, NO typography, NO writing of any kind.`;
 
   let imageBuffer;
   for (const prompt of [basePrompt, fallbackPrompt]) {
