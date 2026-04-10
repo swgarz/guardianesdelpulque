@@ -5,13 +5,43 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 20:44:48 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Banco de Semillas de Svalbard y su Relevancia para México</title>
+      <link>https://guardianesdelpulque.org/articulos/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico.html</guid>
+      <description>Explora la conexión entre el Banco de Svalbard y la biodiversidad agrícola en México.</description>
+      <category>Semillas</category>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El Valor de las Semillas Criollas en la Conservación del Territorio Mexicano</title>
+      <link>https://guardianesdelpulque.org/articulos/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano.html</guid>
+      <description>Explora la importancia de las semillas criollas y su conservación en comunidades rurales.</description>
+      <category>Semillas</category>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Composta y Lombricomposta: Transformando Residuos en Suelo Fértil</title>
+      <link>https://guardianesdelpulque.org/articulos/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil.html</guid>
+      <description>Aprende a manejar tus residuos orgánicos y crear abono casero de calidad.</description>
+      <category>Suelo</category>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El Abrazo Verde: Agroforestería y sus Beneficios en el Territorio Mexicano</title>
@@ -39,7 +69,7 @@
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.html</guid>
       <description>Explora las fibras naturales mexicanas y su impacto en la cultura y economía.</description>
       <category>Fibras</category>
-      <pubDate>Thu, 03 Apr 2026 00:00:00 GMT</pubDate>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.png" type="image/png" length="0"/>
     </item>
 
@@ -59,7 +89,7 @@
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral.html</guid>
       <description>Explora la rica cultura y tradiciones del pueblo otomí en México.</description>
       <category>Comunidad</category>
-      <pubDate>Thu, 27 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral.png" type="image/png" length="0"/>
     </item>
 
@@ -69,7 +99,7 @@
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.html</guid>
       <description>Conoce la tradición del pan mexicano desde su elaboración hasta su significado.</description>
       <category>Pan</category>
-      <pubDate>Thu, 27 Mar 2026 00:00:00 GMT</pubDate>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.png" type="image/png" length="0"/>
     </item>
 
@@ -349,7 +379,7 @@
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/delapencaaljarro/de-la-penca-al-jarro.html</guid>
       <description>Fermentos, microbiota y tradición del maguey paso a paso.</description>
       <category>Pulque</category>
-      <pubDate>Fri, 20 Mar 2026 16:08:46 GMT</pubDate>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/delapencaaljarro/de_la_penca_al_jarro.png" type="image/png" length="0"/>
     </item>
 
@@ -359,7 +389,7 @@
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/guiadeadobe/guiadeadobe.html</guid>
       <description>Mezcla, moldes, curado y desempeño térmico.</description>
       <category>Bioconstrucción</category>
-      <pubDate>Fri, 20 Mar 2026 16:08:46 GMT</pubDate>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/guiadeadobe/guiadeadobe.png" type="image/png" length="0"/>
     </item>
 
@@ -369,7 +399,7 @@
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.html</guid>
       <description>Levaduras y bacterias lácticas clave en el sabor y la textura.</description>
       <category>Pulque</category>
-      <pubDate>Fri, 20 Mar 2026 16:08:46 GMT</pubDate>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.png" type="image/png" length="0"/>
     </item>
 
