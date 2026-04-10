@@ -40,6 +40,8 @@
     .nav-trigger .chip::after{content:"▾";font-size:.6rem;}
     .nav-dropdown{position:absolute;top:100%;left:0;margin-top:0;padding:6px 0;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.12);min-width:160px;z-index:100;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .15s,transform .15s;}
     .nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown,.nav-item.open .nav-dropdown{opacity:1;pointer-events:auto;transform:translateY(0);}
+    .chip-donar{background:var(--brand);color:#fff;border-color:var(--brand);}
+    .chip-donar:hover{background:#047857;border-color:#047857;color:#fff;box-shadow:0 8px 22px rgba(5,150,105,.35);}
     .nav-link{display:block;padding:8px 16px;font-size:.84rem;color:#374151;transition:background .12s,color .12s;}
     .nav-link:hover{background:rgba(5,150,105,.06);color:var(--brand);}
     .nav-item-inline{position:relative;}
@@ -195,9 +197,6 @@
           </div>
         </div>
 
-        <!-- Donar -->
-        <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
-
         <!-- Aliados -->
         <div class="nav-item">
           <button class="nav-trigger" type="button">
@@ -212,6 +211,9 @@
 
         <!-- Calendario -->
         <a class="chip" href="calendario.html">📅 Calendario</a>
+
+        <!-- Donar (CTA principal) -->
+        <a class="chip chip-donar" href="index.html#donar">💚 Donar</a>
 
         <!-- Modo -->
         <div class="nav-item">
