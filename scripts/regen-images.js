@@ -84,6 +84,12 @@ const images = [
     subjects: "hands mixing moist compost in layers, red worms in dark fertile soil, compost pile beside worm bin, vigorous plants sprouting from fertilized earth, organic scraps transforming into rich humus",
   },
   {
+    slug: "banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico",
+    title: "Banco de Semillas de Svalbard",
+    palette: "arctic white snow, teal blue glowing light, deep navy sky, silver metal, golden corn yellow",
+    subjects: "iconic wedge-shaped concrete vault entrance jutting from a snowy arctic mountain with teal glowing facade, northern lights above, long underground corridor lined with aluminum seed packets on shelves, hands placing colorful native Mexican corn and bean seeds into metal containers",
+  },
+  {
     slug: "el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano",
     title: "El Valor de las Semillas Criollas en la Conservación del Territorio Mexicano",
     palette: "vivid yellow corn, deep red bean, cream white squash, earth brown, leaf green",
