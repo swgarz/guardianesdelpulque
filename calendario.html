@@ -807,8 +807,8 @@
             const todayStr = new Date().toISOString().split('T')[0];
             list.innerHTML = filtered.map((ev, i) => {
                 const d = new Date(ev.date + 'T12:00:00');
-                const vigente = (ev.cat === 'taller' || ev.cat === 'curso') && ev.date >= todayStr;
-                const finalizado = (ev.cat === 'taller' || ev.cat === 'curso') && ev.date < todayStr;
+                const vigente = ev.date >= todayStr;
+                const finalizado = ev.date < todayStr;
                 return `
                     <div class="event-card event-card--${ev.color || ev.cat}">
                         <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.35rem">
@@ -887,8 +887,8 @@
                 const todayStr2 = new Date().toISOString().split('T')[0];
                 list.innerHTML = sorted.map((ev) => {
                     const d = new Date(ev.date + 'T12:00:00');
-                    const vigente = (ev.cat === 'taller' || ev.cat === 'curso') && ev.date >= todayStr2;
-                    const finalizado = (ev.cat === 'taller' || ev.cat === 'curso') && ev.date < todayStr2;
+                    const vigente = ev.date >= todayStr2;
+                    const finalizado = ev.date < todayStr2;
                     return `
                         <div class="event-card event-card--${ev.color || ev.cat}">
                             <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.35rem">
