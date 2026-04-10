@@ -482,6 +482,18 @@
       background-position:center;
     }
 
+    /* CARD META */
+    .tag-pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(5,150,105,.1);color:var(--brand);border:1px solid rgba(5,150,105,.28);text-decoration:none;white-space:nowrap;transition:background .15s}
+    .tag-pill:hover{background:rgba(5,150,105,.2)}
+    .new-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;background:#fef9c3;color:#854d0e;border:1px solid #fde68a;white-space:nowrap;letter-spacing:.03em}
+    .post-date{font-size:11px;color:#94a3b8}
+    .share-btn{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:none;background:transparent;color:#94a3b8;cursor:pointer;border-radius:8px;transition:color .15s,background .15s;padding:0;flex-shrink:0}
+    .share-btn:hover{color:var(--brand);background:rgba(5,150,105,.1)}
+    body.mode-reading .tag-pill{background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.35)}
+    body.mode-reading .post-date{color:#64748b}
+    body.mode-community .tag-pill{background:rgba(16,185,129,.2);border-color:rgba(16,185,129,.4);color:#34d399}
+    body.mode-community .post-date{color:#6b9e7e}
+
     /* DONAR */
     .don-grid{display:grid;gap:1rem}
     @media (min-width:760px){.don-grid{grid-template-columns:1.1fr .9fr}}
@@ -962,6 +974,18 @@
       renderPosts(posts.slice(0,HOMEPAGE_LIMIT));
     }
 
+    function parseSpanishDate(str){
+      const months={enero:0,febrero:1,marzo:2,abril:3,mayo:4,junio:5,julio:6,agosto:7,septiembre:8,octubre:9,noviembre:10,diciembre:11};
+      const m=(str||'').toLowerCase().match(/(\d+)\s+de\s+(\w+)\s+de\s+(\d{4})/);
+      if(!m) return null;
+      return new Date(+m[3],months[m[2]],+m[1]);
+    }
+    function isNew(dateStr){
+      const d=parseSpanishDate(dateStr);
+      if(!d) return false;
+      return (Date.now()-d.getTime())<7*24*60*60*1000;
+    }
+
     function renderPosts(items){
       const grid = document.getElementById('postsGrid');
       grid.innerHTML = '';
@@ -976,19 +1000,44 @@
         const coverStyle = p.cover
           ? `style="background-image:url('${p.cover}');background-size:cover;background-position:center"`
           : '';
-        const readTime = p.readTime ? `<span style="color:#94a3b8;margin-left:.5rem">🕒 ${escapeHtml(p.readTime)}</span>` : '';
         const tagUrl = `posts.html?tag=${encodeURIComponent(p.tag || '')}`;
+        const readTime = p.readTime ? `<span class="post-date">· ${escapeHtml(p.readTime)}</span>` : '';
+        const date = p.date ? `<span class="post-date">${escapeHtml(p.date)}</span>` : '';
+        const newBadge = isNew(p.date) ? `<span class="new-badge">✨ Nuevo</span>` : '';
+        const fullUrl = 'https://guardianesdelpulque.org/' + (p.url || '');
         card.innerHTML = `
           <div class="post-cover" ${coverStyle}></div>
           <div style="padding:16px">
-            <div style="font-size:12px;color:var(--brand)"><a href="${tagUrl}" style="color:var(--brand)">${escapeHtml(p.tag || '')}</a>${readTime}</div>
-            <h3 style="margin:.2rem 0;font-size:1rem">${escapeHtml(p.title || '')}</h3>
-            <p style="color:#475569">${escapeHtml(p.excerpt || '')}</p>
-            <div style="padding-top:6px">
-              <a class="chip" href="${p.url || '#'}">Leer →</a>
+            <div style="display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin-bottom:.35rem">
+              ${newBadge}
+              <a href="${tagUrl}" class="tag-pill">${escapeHtml(p.tag || '')}</a>
+            </div>
+            <h3 style="margin:0 0 .3rem;font-size:1rem">${escapeHtml(p.title || '')}</h3>
+            <p style="color:#475569;margin:0 0 .5rem">${escapeHtml(p.excerpt || '')}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap">
+                <a class="chip" href="${p.url || '#'}">Leer →</a>
+                ${date}
+                ${readTime}
+              </div>
+              <button class="share-btn" title="Compartir" data-share-url="${escapeHtml(fullUrl)}" data-share-title="${escapeHtml(p.title || '')}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              </button>
             </div>
           </div>
         `;
+        card.querySelector('.share-btn').addEventListener('click', function(e){
+          e.preventDefault();
+          const url = this.dataset.shareUrl;
+          const title = this.dataset.shareTitle;
+          if(navigator.share){
+            navigator.share({title, url}).catch(()=>{});
+          } else {
+            navigator.clipboard.writeText(url)
+              .then(()=>{ this.style.color='var(--brand)'; setTimeout(()=>{ this.style.color=''; },1500); })
+              .catch(()=>{ alert('Copia el enlace:\n'+url); });
+          }
+        });
         grid.appendChild(card);
         io.observe(card);
       });
