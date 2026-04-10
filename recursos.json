@@ -1,0 +1,101 @@
+[
+  {
+    "type": "guia",
+    "tag": "Bioconstruccion",
+    "title": "Cómo hacer adobe con tierra de tu parcela",
+    "excerpt": "Guía para fabricar adobe de manera sencilla y efectiva",
+    "steps": 8,
+    "date": "10 de abril de 2026",
+    "url": "recursos/guias/como-hacer-adobe-con-tierra-de-tu-parcela/como-hacer-adobe-con-tierra-de-tu-parcela.html",
+    "cover": "recursos/guias/como-hacer-adobe-con-tierra-de-tu-parcela/como-hacer-adobe-con-tierra-de-tu-parcela.png",
+    "topic": "Cómo hacer adobe con tierra de tu parcela paso a paso"
+  },
+  {
+    "type": "guia",
+    "tag": "Agua",
+    "title": "Construcción de captación de agua pluvial",
+    "excerpt": "Aprende a recolectar agua de lluvia con materiales locales",
+    "steps": 7,
+    "date": "10 de abril de 2026",
+    "url": "recursos/guias/construccion-de-captacion-de-agua-pluvial/construccion-de-captacion-de-agua-pluvial.html",
+    "cover": "recursos/guias/construccion-de-captacion-de-agua-pluvial/construccion-de-captacion-de-agua-pluvial.png",
+    "topic": "Cómo construir una captación de agua pluvial con materiales locales"
+  },
+  {
+    "type": "guia",
+    "tag": "Fuego",
+    "title": "Cómo construir un fogón eficiente de leña con adobe y barro",
+    "excerpt": "Guía para hacer un fogón de leña duradero y eficiente.",
+    "steps": 9,
+    "date": "10 de abril de 2026",
+    "url": "recursos/guias/como-construir-un-fogon-eficiente-de-lena-con-adobe-y-barro/como-construir-un-fogon-eficiente-de-lena-con-adobe-y-barro.html",
+    "cover": "recursos/guias/como-construir-un-fogon-eficiente-de-lena-con-adobe-y-barro/como-construir-un-fogon-eficiente-de-lena-con-adobe-y-barro.png",
+    "topic": "Cómo construir un fogón eficiente de leña con adobe y barro"
+  },
+  {
+    "type": "guia",
+    "tag": "Bioconstruccion",
+    "title": "Cómo hacer adobe con tierra de tu parcela",
+    "excerpt": "Aprende a hacer adobe con tierra local para construir.",
+    "steps": 7,
+    "date": "10 de abril de 2026",
+    "url": "recursos/guias/como-hacer-adobe-con-tierra-de-tu-parcela/como-hacer-adobe-con-tierra-de-tu-parcela.html",
+    "cover": "recursos/guias/como-hacer-adobe-con-tierra-de-tu-parcela/como-hacer-adobe-con-tierra-de-tu-parcela.png",
+    "topic": "Cómo hacer adobe con tierra de tu parcela paso a paso"
+  },
+  {
+    "type": "guia",
+    "tag": "Pulque",
+    "title": "Cómo raspar un maguey y obtener aguamiel para hacer pulque",
+    "excerpt": "Guía práctica para extraer aguamiel del maguey y hacer pulque.",
+    "steps": 9,
+    "date": "10 de abril de 2026",
+    "url": "recursos/guias/como-raspar-un-maguey-y-obtener-aguamiel-para-hacer-pulque/como-raspar-un-maguey-y-obtener-aguamiel-para-hacer-pulque.html",
+    "cover": "recursos/guias/como-raspar-un-maguey-y-obtener-aguamiel-para-hacer-pulque/como-raspar-un-maguey-y-obtener-aguamiel-para-hacer-pulque.png",
+    "topic": "Cómo raspar un maguey y obtener aguamiel para hacer pulque"
+  },
+  {
+    "type": "guia",
+    "tag": "Suelo",
+    "title": "Cómo preparar lombricomposta en casa con lombriz roja californiana",
+    "excerpt": "Aprende a hacer lombricomposta fácil y efectiva en casa.",
+    "steps": 9,
+    "date": "10 de abril de 2026",
+    "url": "recursos/guias/como-preparar-lombricomposta-en-casa-con-lombriz-roja-californiana/como-preparar-lombricomposta-en-casa-con-lombriz-roja-californiana.html",
+    "cover": "recursos/guias/como-preparar-lombricomposta-en-casa-con-lombriz-roja-californiana/como-preparar-lombricomposta-en-casa-con-lombriz-roja-californiana.png",
+    "topic": "Cómo preparar lombricomposta en casa con lombriz roja californiana"
+  },
+  {
+    "type": "guia",
+    "tag": "Comunidad",
+    "title": "Cómo hacer pinole y sus usos tradicionales en la cocina mexicana",
+    "excerpt": "Aprende a hacer pinole, un alimento nutritivo y versátil.",
+    "steps": 6,
+    "date": "10 de abril de 2026",
+    "url": "recursos/guias/como-hacer-pinole-y-sus-usos-tradicionales-en-la-cocina-mexicana/como-hacer-pinole-y-sus-usos-tradicionales-en-la-cocina-mexicana.html",
+    "cover": "recursos/guias/como-hacer-pinole-y-sus-usos-tradicionales-en-la-cocina-mexicana/como-hacer-pinole-y-sus-usos-tradicionales-en-la-cocina-mexicana.png",
+    "topic": "Cómo hacer pinole y sus usos tradicionales en la cocina mexicana"
+  },
+  {
+    "type": "guia",
+    "tag": "Suelo",
+    "title": "Cómo hacer biofertilizante de estiércol fermentado para la milpa",
+    "excerpt": "Aprende a hacer biofertilizante natural con estiércol.",
+    "steps": 9,
+    "date": "10 de abril de 2026",
+    "url": "recursos/guias/como-hacer-biofertilizante-de-estiercol-fermentado-para-la-milpa/como-hacer-biofertilizante-de-estiercol-fermentado-para-la-milpa.html",
+    "cover": "recursos/guias/como-hacer-biofertilizante-de-estiercol-fermentado-para-la-milpa/como-hacer-biofertilizante-de-estiercol-fermentado-para-la-milpa.png",
+    "topic": "Cómo hacer biofertilizante de estiércol fermentado para la milpa"
+  },
+  {
+    "type": "guia",
+    "tag": "Fermentos",
+    "title": "Cómo hacer tepache casero de piña",
+    "excerpt": "Prepara un delicioso tepache de piña en casa fácil y rápido.",
+    "steps": 8,
+    "date": "10 de abril de 2026",
+    "url": "recursos/guias/como-hacer-tepache-casero-de-pina/como-hacer-tepache-casero-de-pina.html",
+    "cover": "recursos/guias/como-hacer-tepache-casero-de-pina/como-hacer-tepache-casero-de-pina.png",
+    "topic": "Cómo hacer tepache casero de piña o frutas de temporada"
+  }
+]

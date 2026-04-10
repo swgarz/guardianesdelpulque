@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="theme-color" content="#059669" />
+  <link rel="icon" href="images/logo_transparente.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recursos — Guardianes del Pulque</title>
+  <meta name="description" content="Guías técnicas paso a paso, recetarios y documentos legales para comunidades rurales de México." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Recursos — Guardianes del Pulque" />
+  <meta property="og:description" content="Guías técnicas, recetarios y documentos para comunidades rurales de México." />
+  <meta property="og:image" content="https://guardianesdelpulque.org/images/logo_transparente.png" />
+  <meta property="og:url" content="https://guardianesdelpulque.org/recursos.html" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';line-height:1.5;color:#0f172a;background:#f6f8fb;transition:background .25s ease,color .25s ease;}
+    :root{--brand:#059669;--ink:#0f172a;--muted:#475569;--card:#ffffff;--stroke:#e5e7eb;}
+    a{color:inherit;text-decoration:none}
+
+    .container{max-width:1180px;margin-inline:auto;padding:0 16px}
+    @media (min-width:640px){.container{padding:0 24px}}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:80;background:rgba(255,255,255,.96);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid rgba(15,23,42,.06);transition:background .25s ease,border-color .25s ease,box-shadow .25s ease,color .25s ease;}
+    body{padding-top:58px;}
+    .nav .row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;gap:.75rem;}
+    .brand{display:flex;align-items:center;gap:.45rem;font-weight:700;flex-shrink:0;}
+    .brand-logo{height:36px;width:auto}
+    @media (min-width:768px){.brand-logo{height:44px}}
+    .brand-text{font-size:.96rem;letter-spacing:.02em;color:#0f172a;transition:color .25s ease;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;justify-content:flex-end;}
+    .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .8rem;border-radius:999px;border:1.5px solid var(--brand);font-size:.75rem;font-weight:600;color:var(--brand);background:#ffffff;cursor:pointer;transition:all .16s ease;white-space:nowrap;}
+    .chip:hover{background:var(--brand);color:#020817;box-shadow:0 8px 18px rgba(15,23,42,.16);transform:translateY(-1px);}
+    .chip.active-page{background:var(--brand);color:#fff;}
+
+    .nav-item{position:relative;}
+    .nav-trigger{border:0;background:none;padding:0;}
+    .nav-trigger .chip{padding-right:1.1rem;}
+    .nav-trigger .chip::after{content:"▾";font-size:.6rem;}
+    .nav-dropdown{position:absolute;top:100%;left:0;margin-top:0;padding:6px 0;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.12);min-width:160px;z-index:100;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .15s,transform .15s;}
+    .nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;pointer-events:auto;transform:translateY(0);}
+    .nav-link{display:block;padding:8px 16px;font-size:.84rem;color:#374151;transition:background .12s,color .12s;}
+    .nav-link:hover{background:rgba(5,150,105,.06);color:var(--brand);}
+    .nav-item-inline{position:relative;}
+    .nav-link.has-children{cursor:pointer;}
+    .nav-link.has-children::after{content:" ▸";font-size:.65rem;}
+    .nav-subdropdown{position:absolute;left:100%;top:0;padding:6px 0;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.1);min-width:200px;z-index:110;opacity:0;pointer-events:none;transform:translateX(4px);transition:opacity .15s,transform .15s;}
+    .nav-item-inline:hover .nav-subdropdown,.nav-item-inline:focus-within .nav-subdropdown{opacity:1;pointer-events:auto;transform:translateX(0);}
+
+    .nav-mode-btn{display:none;font-size:.7rem;font-weight:700;padding:.35rem .7rem;border-radius:999px;border:1.5px solid var(--brand);color:var(--brand);background:#fff;cursor:pointer;white-space:nowrap;}
+    .nav-burger{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#374151;padding:4px;}
+    @media (max-width:767px){.nav-mode-btn{display:inline-flex}.nav-burger{display:block}.links{display:none}}
+    .nav.scrolled{background:rgba(2,8,23,.97);border-bottom-color:rgba(148,163,253,.25);box-shadow:0 14px 40px rgba(0,0,0,.55);}
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover,.nav.scrolled .chip.active-page{background:#22c55e;color:#020817;}
+    .nav.scrolled .nav-mode-btn{border-color:#22c55e;color:#bbf7d0;background:transparent;}
+
+    /* MOBILE PANEL */
+    .nav-overlay{position:fixed;inset:0;z-index:200;pointer-events:none;}
+    .nav-overlay.open{pointer-events:auto;}
+    .nav-overlay::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.4);opacity:0;transition:opacity .25s;}
+    .nav-overlay.open::before{opacity:1;}
+    .nav-panel{position:absolute;top:0;right:0;width:min(320px,90vw);height:100%;background:#fff;box-shadow:-8px 0 30px rgba(0,0,0,.18);transform:translateX(100%);transition:transform .28s ease;overflow-y:auto;padding-bottom:40px;}
+    .nav-overlay.open .nav-panel{transform:translateX(0);}
+    .nav-panel-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #f1f5f9;}
+    .nav-panel-brand{font-weight:700;font-size:.9rem;color:#0f172a;}
+    .nav-panel-close{background:none;border:none;font-size:1.2rem;cursor:pointer;color:#64748b;}
+    .nav-panel-section{padding:12px 20px 4px;font-size:.72rem;font-weight:700;letter-spacing:.08em;color:#94a3b8;text-transform:uppercase;}
+    .nav-panel-link{display:block;padding:11px 20px;font-size:.9rem;color:#374151;transition:background .12s;}
+    .nav-panel-link:hover{background:#f8fafc;color:var(--brand);}
+    .nav-panel-sublink{padding-left:28px;font-weight:400;color:#374151;font-size:.84rem;}
+    .nav-panel-divider{border:none;border-top:1px solid #f3f4f6;margin:4px 0;}
+
+    /* HEADER */
+    .page-header{padding:28px 0 20px;}
+    .page-title{font-size:clamp(22px,5vw,32px);font-weight:800;margin:0 0 6px;color:#0f172a;letter-spacing:-.01em;}
+    .page-subtitle{color:#64748b;margin:0;font-size:.9rem;}
+
+    /* GRID & CARDS */
+    .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
+    .card{border-radius:24px;background:rgba(255,255,255,.9);border:1px solid rgba(15,23,42,.06);box-shadow:0 20px 50px -12px rgba(0,0,0,.15);overflow:hidden;transition:transform .16s ease,box-shadow .16s ease;}
+    .card:hover{transform:translateY(-3px);box-shadow:0 24px 60px -18px rgba(15,23,42,.26);}
+    .post-cover{aspect-ratio:16/9;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(250,204,21,.15));background-size:cover;background-position:center;}
+
+    /* CARD META */
+    .tag-pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(5,150,105,.1);color:var(--brand);border:1px solid rgba(5,150,105,.28);text-decoration:none;white-space:nowrap;transition:background .15s}
+    .tag-pill:hover{background:rgba(5,150,105,.2)}
+    .type-badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;white-space:nowrap;}
+    .type-badge.guia{background:rgba(245,158,11,.12);color:#b45309;border:1px solid rgba(245,158,11,.3);}
+    .type-badge.recetario{background:rgba(239,68,68,.1);color:#b91c1c;border:1px solid rgba(239,68,68,.25);}
+    .type-badge.documento{background:rgba(99,102,241,.1);color:#4338ca;border:1px solid rgba(99,102,241,.25);}
+    .new-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;background:#fef9c3;color:#854d0e;border:1px solid #fde68a;white-space:nowrap;letter-spacing:.03em}
+    .post-date{font-size:11px;color:#94a3b8}
+    .share-btn{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:none;background:transparent;color:#94a3b8;cursor:pointer;border-radius:8px;transition:color .15s,background .15s;padding:0;flex-shrink:0}
+    .share-btn:hover{color:var(--brand);background:rgba(5,150,105,.1)}
+
+    /* PAGINACIÓN */
+    .pager{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center;margin:20px 0;}
+    .pager-btn{display:inline-flex;min-width:40px;height:40px;align-items:center;justify-content:center;padding:0 .75rem;border-radius:12px;border:1px solid rgba(15,23,42,.08);background:#fff;color:#0f172a;font-weight:700;font-size:.85rem;cursor:pointer;}
+    .pager-btn.active{background:var(--brand);color:#fff;border-color:transparent;cursor:default;}
+    .pager-btn.disabled{opacity:.45;pointer-events:none;}
+
+    /* FILTROS */
+    .type-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 12px;}
+    .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 20px;}
+    .filter-btn{display:inline-flex;align-items:center;padding:.38rem .9rem;border-radius:999px;border:1.5px solid rgba(15,23,42,.15);background:#fff;color:#475569;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s ease;white-space:nowrap;}
+    .filter-btn:hover{border-color:var(--brand);color:var(--brand);}
+    .filter-btn.active{background:var(--brand);border-color:var(--brand);color:#fff;}
+
+    /* BUSCADOR */
+    .search-wrap{margin:0 0 14px}
+    .search-input{width:100%;max-width:420px;padding:.5rem 1rem;border-radius:999px;border:1.5px solid rgba(15,23,42,.15);background:#fff;font-size:.88rem;color:#0f172a;outline:none;transition:border-color .16s;}
+    .search-input:focus{border-color:#059669}
+
+    /* SKELETON */
+    .skeleton-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+    .skeleton-cover{height:180px;background:linear-gradient(90deg,#e5e7eb 25%,#f3f4f6 50%,#e5e7eb 75%);background-size:200%;animation:shimmer 1.4s infinite}
+    .skeleton-line{height:12px;border-radius:6px;margin:8px 16px;background:linear-gradient(90deg,#e5e7eb 25%,#f3f4f6 50%,#e5e7eb 75%);background-size:200%;animation:shimmer 1.4s infinite}
+    .skeleton-line.short{width:40%;margin-top:6px}
+    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+    .reveal.in{opacity:1;transform:translateY(0)}
+
+    /* EMPTY STATE */
+    .empty-state{text-align:center;padding:40px 20px;color:#94a3b8;}
+    .empty-state .icon{font-size:3rem;margin-bottom:12px;}
+
+    /* SOCIAL */
+    .social-icons{display:flex;align-items:center;gap:.6rem}
+    .social-icon{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;color:#64748b;transition:color .15s,background .15s}
+    .social-icon:hover{color:#059669;background:rgba(5,150,105,.1)}
+    .social-icon svg{width:18px;height:18px;flex-shrink:0}
+
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:24px 0;margin-top:40px;color:#64748b;font-size:.78rem;transition:color .25s ease,border-color .25s ease,background .25s ease;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
+
+    /* MODOS */
+    body.mode-reading{background:#020817;color:#e5e7eb;}
+    body.mode-reading .nav{background:rgba(8,10,24,.98);border-bottom-color:rgba(129,140,248,.6);box-shadow:0 16px 40px rgba(0,0,0,.65);}
+    body.mode-reading .brand-text{color:#e5e7eb;}
+    body.mode-reading .card{background:rgba(10,15,30,.98);border-color:rgba(129,140,248,.5);box-shadow:0 22px 60px rgba(15,23,42,.85);}
+    body.mode-reading .chip{background:rgba(12,10,24,.98);color:#a5b4fc;border-color:#22c55e;}
+    body.mode-reading .chip:hover,.nav.scrolled .chip.active-page{background:#22c55e;color:#020817;}
+    body.mode-reading .filter-btn{background:rgba(10,15,30,.9);color:#94a3b8;border-color:rgba(129,140,248,.3);}
+    body.mode-reading .filter-btn.active{background:#059669;border-color:#059669;color:#fff;}
+    body.mode-reading .tag-pill{background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.35);}
+    body.mode-reading .post-date{color:#64748b}
+    body.mode-reading .search-input{background:#1e293b;color:#e2e8f0;border-color:rgba(129,140,248,.3)}
+    body.mode-community{color:#e5f9f0;background:#064e3b;}
+    body.mode-community::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 0 0,rgba(22,163,74,.18),transparent 55%),radial-gradient(circle at 100% 100%,rgba(5,150,105,.18),transparent 55%),#064e3b;}
+    body.mode-community .nav{background:rgba(3,33,24,.98);border-bottom-color:rgba(22,163,74,.9);box-shadow:0 24px 80px rgba(0,0,0,.9);}
+    body.mode-community .brand-text{color:#bbf7d0;}
+    body.mode-community .chip{border-color:rgba(22,163,74,.95);color:#bbf7d0;background:rgba(3,33,24,1);box-shadow:0 10px 26px rgba(0,0,0,.85);}
+    body.mode-community .chip:hover{background:#22c55e;color:#022c22;}
+    body.mode-community .card{background:rgba(3,33,24,.98);border-color:rgba(22,163,74,.85);box-shadow:0 30px 90px rgba(0,0,0,1);}
+    body.mode-community footer{border-top-color:rgba(22,163,74,.55);color:#bbf7d0;}
+    body.mode-community .tag-pill{background:rgba(16,185,129,.2);border-color:rgba(16,185,129,.4);color:#34d399;}
+    body.mode-community .post-date{color:#6b9e7e}
+    body.mode-community .filter-btn{background:rgba(3,33,24,.9);color:#bbf7d0;border-color:rgba(22,163,74,.4);}
+    body.mode-community .filter-btn.active{background:#22c55e;border-color:#22c55e;color:#022c22;}
+    body.mode-community .search-input{background:rgba(3,33,24,.9);color:#bbf7d0;border-color:rgba(22,163,74,.4)}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <div class="nav" id="mainNav">
+    <div class="container row">
+      <a class="brand" href="index.html">
+        <img src="images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo">
+        <span class="brand-text">Guardianes del Pulque</span>
+      </a>
+      <div style="display:flex;gap:.4rem;align-items:center;flex-shrink:0">
+        <button class="nav-mode-btn" id="navModeBtn" type="button">🌿 Modo comunitario</button>
+        <button class="nav-burger" id="navBurger" aria-label="Abrir menú" type="button">☰</button>
+      </div>
+      <div class="links">
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">
+            <span class="chip">Comunidad</span>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-link" href="posts.html">Artículos</a>
+            <a class="nav-link" href="recursos.html">🛠️ Recursos</a>
+            <a class="nav-link" href="index.html#donar">Donar</a>
+            <div class="nav-item-inline">
+              <div class="nav-link has-children" tabindex="0">Aliados</div>
+              <div class="nav-subdropdown">
+                <a class="nav-link" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
+                <a class="nav-link" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
+                <a class="nav-link" href="https://www.google.com/maps/place/Casa+del+Consejo+Otom%C3%AD+Nghu+Lludadha+%C3%91hanjhu,+Santiago+Yanhuitlalpan/@19.3852977,-99.3044762,69m/data=!3m1!1e3!4m6!3m5!1s0x85d20786d4392b05:0x767fb0f08a813efb!8m2!3d19.3852814!4d-99.304469!16s%2Fg%2F11khqxqkbg!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Casa del Consejo Otomí Nghuy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="chip active-page" href="recursos.html">🛠️ Recursos</a>
+        <a class="chip" href="calendario.html">📅 Calendario</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">
+            <span class="chip">Modo</span>
+          </button>
+          <div class="nav-dropdown nav-dropdown-mode">
+            <button class="nav-link js-mode" data-mode="base" type="button">Modo pulque</button>
+            <button class="nav-link js-mode" data-mode="community" type="button">Modo comunitario</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel móvil -->
+  <div class="nav-overlay" id="navOverlay">
+    <div class="nav-panel" id="navPanel">
+      <div class="nav-panel-head">
+        <span class="nav-panel-brand">Guardianes del Pulque</span>
+        <button class="nav-panel-close" id="navClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="nav-panel-section">Navegar</div>
+      <a class="nav-panel-link" href="posts.html">📰 Artículos</a>
+      <a class="nav-panel-link" href="recursos.html">🛠️ Recursos</a>
+      <a class="nav-panel-link" href="calendario.html">📅 Calendario</a>
+      <a class="nav-panel-link" href="index.html#donar">💚 Donar</a>
+      <hr class="nav-panel-divider">
+      <div class="nav-panel-section">Aliados</div>
+      <a class="nav-panel-link nav-panel-sublink" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
+      <a class="nav-panel-link nav-panel-sublink" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
+      <a class="nav-panel-link nav-panel-sublink" href="https://www.google.com/maps/place/Casa+del+Consejo+Otom%C3%AD+Nghu+Lludadha+%C3%91hanjhu,+Santiago+Yanhuitlalpan/@19.3852977,-99.3044762,69m/data=!3m1!1e3!4m6!3m5!1s0x85d20786d4392b05:0x767fb0f08a813efb!8m2!3d19.3852814!4d-99.304469!16s%2Fg%2F11khqxqkbg!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Casa del Consejo Otomí Nghuy</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="container page-header">
+    <h1 class="page-title">🛠️ Recursos</h1>
+    <p class="page-subtitle">Guías técnicas paso a paso, recetarios y documentos legales para comunidades rurales.</p>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="search" placeholder="🔍 Buscar recursos..." autocomplete="off" />
+    </div>
+    <!-- Filtros por tipo -->
+    <div class="type-filters" id="typeFilters"></div>
+    <!-- Filtros por tag -->
+    <div class="filters" id="filters"></div>
+    <div id="status" style="margin:6px 0 12px;font-size:12px;color:#64748b"></div>
+    <div class="posts-grid" id="postsGrid"></div>
+    <nav class="pager" id="pager"></nav>
+  </main>
+
+  <footer>
+    <div class="container row">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
+        <span>© 2026 Guardianes del Pulque</span>
+      </div>
+      <div class="social-icons">
+        <a class="social-icon" href="https://www.instagram.com/guardianesdelpulque/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.facebook.com/GuardianesdelPulque" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.tiktok.com/@guardianesdelpulque" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.74a4.85 4.85 0 0 1-1.01-.05z"/></svg>
+        </a>
+      </div>
+      <div class="links">
+        <a class="chip" href="index.html">Inicio</a>
+        <a class="chip" href="posts.html">Artículos</a>
+        <a class="chip" href="index.html#donar"><span>💚</span> Donar</a>
+        <a class="chip" href="terminos.html">Términos</a>
+        <a class="chip" href="aviso-privacidad.html">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // NAV scroll
+    (function(){
+      const nav = document.getElementById('mainNav');
+      if(!nav) return;
+      function update(){ nav.classList.toggle('scrolled', window.scrollY > 10); }
+      update();
+      window.addEventListener('scroll', update, {passive:true});
+    })();
+
+    // NAV burger
+    (function(){
+      const burger = document.getElementById('navBurger');
+      const overlay = document.getElementById('navOverlay');
+      const close = document.getElementById('navClose');
+      if(!burger) return;
+      burger.addEventListener('click', () => overlay.classList.add('open'));
+      close.addEventListener('click', () => overlay.classList.remove('open'));
+      overlay.addEventListener('click', e => { if(e.target === overlay) overlay.classList.remove('open'); });
+    })();
+
+    // Modo visual
+    (function(){
+      const KEY = 'gp.mode';
+      const body = document.body;
+      const modeBtn = document.getElementById('navModeBtn');
+      function apply(mode){
+        body.classList.remove('mode-reading','mode-community');
+        if(mode === 'reading') body.classList.add('mode-reading');
+        else if(mode === 'community') body.classList.add('mode-community');
+        if(modeBtn) modeBtn.textContent = mode === 'community' ? '🍶 Modo pulque' : '🌿 Modo comunitario';
+      }
+      try{ apply(localStorage.getItem(KEY) || 'base'); }catch{}
+      document.querySelectorAll('.js-mode').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const m = btn.dataset.mode;
+          try{ localStorage.setItem(KEY, m); }catch{}
+          apply(m);
+        });
+      });
+      if(modeBtn){
+        modeBtn.addEventListener('click', () => {
+          const current = body.classList.contains('mode-community') ? 'community' : 'base';
+          const next = current === 'community' ? 'base' : 'community';
+          try{ localStorage.setItem(KEY, next); }catch{}
+          apply(next);
+        });
+      }
+    })();
+
+    // Reveal + lazy load
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          const cover = e.target.querySelector('[data-bg]');
+          if(cover){ cover.style.cssText+=`;background-image:url(${cover.dataset.bg});background-size:cover;background-position:center;background-repeat:no-repeat`; cover.removeAttribute('data-bg'); }
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:.2});
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+    }
+
+    function parseSpanishDate(str){
+      const months={enero:0,febrero:1,marzo:2,abril:3,mayo:4,junio:5,julio:6,agosto:7,septiembre:8,octubre:9,noviembre:10,diciembre:11};
+      const m=(str||'').toLowerCase().match(/(\d+)\s+de\s+(\w+)\s+de\s+(\d{4})/);
+      if(!m) return null;
+      return new Date(+m[3],months[m[2]],+m[1]);
+    }
+    function isNew(dateStr){
+      const d=parseSpanishDate(dateStr);
+      if(!d) return false;
+      return (Date.now()-d.getTime())<7*24*60*60*1000;
+    }
+
+    const TYPE_LABELS = {
+      guia:      { label: '🛠️ Guía técnica',  cls: 'guia' },
+      recetario: { label: '🍳 Recetario',      cls: 'recetario' },
+      documento: { label: '📄 Documento',       cls: 'documento' },
+    };
+
+    function makeCard(p){
+      const el = document.createElement('article');
+      el.className = 'card reveal';
+      el.style.overflow = 'hidden';
+      const coverAttr = p.cover ? `data-bg="${p.cover}"` : '';
+      const tagUrl = `recursos.html?tag=${encodeURIComponent(p.tag || '')}`;
+      const typeInfo = TYPE_LABELS[p.type] || { label: p.type, cls: 'guia' };
+      const stepsLabel = p.steps ? `<span class="post-date">· ${p.steps} pasos</span>` : '';
+      const readTime = p.readTime ? `<span class="post-date">· ${escapeHtml(p.readTime)}</span>` : '';
+      const date = p.date ? `<span class="post-date">${escapeHtml(p.date)}</span>` : '';
+      const newBadge = isNew(p.date) ? `<span class="new-badge">✨ Nuevo</span>` : '';
+      const fullUrl = 'https://guardianesdelpulque.org/' + (p.url || '');
+      el.innerHTML = `
+        <div class="post-cover" ${coverAttr}></div>
+        <div style="padding:16px">
+          <div style="display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin-bottom:.35rem">
+            ${newBadge}
+            <span class="type-badge ${typeInfo.cls}">${typeInfo.label}</span>
+            <a href="${tagUrl}" class="tag-pill">${escapeHtml(p.tag || '')}</a>
+          </div>
+          <h3 style="margin:0 0 .3rem;font-size:1rem">${escapeHtml(p.title || '')}</h3>
+          <p style="color:#475569;margin:0 0 .5rem">${escapeHtml(p.excerpt || '')}</p>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap">
+              <a class="chip" href="${p.url || '#'}">Ver →</a>
+              ${date}
+              ${stepsLabel}
+              ${readTime}
+            </div>
+            <button class="share-btn" title="Compartir" data-share-url="${escapeHtml(fullUrl)}" data-share-title="${escapeHtml(p.title || '')}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </button>
+          </div>
+        </div>
+      `;
+      el.querySelector('.share-btn').addEventListener('click', function(e){
+        e.preventDefault();
+        const url = this.dataset.shareUrl;
+        const title = this.dataset.shareTitle;
+        if(navigator.share){ navigator.share({title, url}).catch(()=>{}); }
+        else { navigator.clipboard.writeText(url).then(()=>{ this.style.color='var(--brand)'; setTimeout(()=>{ this.style.color=''; },1500); }).catch(()=>{ alert('Copia el enlace:\n'+url); }); }
+      });
+      io.observe(el);
+      return el;
+    }
+
+    function normalizeStr(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+    let searchQuery = '';
+    let activeType = '';
+
+    function renderPage(items, page, perPage, activeTag){
+      const grid = document.getElementById('postsGrid');
+      const pager = document.getElementById('pager');
+      grid.innerHTML = '';
+      pager.innerHTML = '';
+
+      (function(){
+        const sp = new URLSearchParams();
+        if(activeTag) sp.set('tag', activeTag);
+        if(activeType) sp.set('type', activeType);
+        if(page > 1) sp.set('page', page);
+        const qs = sp.toString();
+        history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+      })();
+
+      let filtered = activeType ? items.filter(p => p.type === activeType) : items;
+      if(activeTag) filtered = filtered.filter(p => normalizeStr(p.tag) === normalizeStr(activeTag));
+      if(searchQuery){
+        const q = searchQuery.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+        filtered = filtered.filter(p =>
+          normalizeStr(p.title).includes(q) || normalizeStr(p.excerpt).includes(q) || normalizeStr(p.tag).includes(q)
+        );
+      }
+
+      if(!filtered.length){
+        grid.innerHTML = '<div class="empty-state"><div class="icon">🔍</div><p>No hay recursos con esos filtros.</p></div>';
+        return;
+      }
+
+      const total = filtered.length;
+      const pages = Math.max(1, Math.ceil(total / perPage));
+      page = Math.min(Math.max(1, page), pages);
+      const start = (page - 1) * perPage;
+      const end = Math.min(start + perPage, total);
+
+      filtered.slice(start, end).forEach(p => grid.appendChild(makeCard(p)));
+
+      function btn(n, label, cls){
+        const el = document.createElement(cls === 'active' ? 'span' : 'button');
+        el.textContent = label;
+        el.className = 'pager-btn' + (cls ? ' ' + cls : '');
+        if(cls !== 'active' && cls !== 'disabled') el.addEventListener('click', () => renderPage(items, n, perPage, activeTag));
+        return el;
+      }
+      if(pages > 1){
+        if(page > 1) pager.appendChild(btn(page-1,'←'));
+        for(let i=1;i<=pages;i++){
+          if(i===1||i===pages||Math.abs(i-page)<=1) pager.appendChild(btn(i,i,i===page?'active':''));
+          else if(Math.abs(i-page)===2){ const d=document.createElement('span'); d.textContent='…'; d.className='pager-btn disabled'; pager.appendChild(d); }
+        }
+        if(page < pages) pager.appendChild(btn(page+1,'→'));
+      }
+    }
+
+    // Fetch recursos.json
+    const PER_PAGE = 9;
+    const urlParams = new URLSearchParams(location.search);
+    const urlTag = urlParams.get('tag') || '';
+    const urlType = urlParams.get('type') || '';
+    const urlPage = parseInt(urlParams.get('page')) || 1;
+
+    async function loadResources(){
+      const grid = document.getElementById('postsGrid');
+      grid.innerHTML = Array(6).fill(0).map(()=>`<div class="skeleton-card"><div class="skeleton-cover"></div><div style="padding:16px"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div></div>`).join('');
+
+      const candidates = ['recursos.json','../recursos.json'];
+      let items = [];
+      for(const url of candidates){
+        try{
+          const r = await fetch(url);
+          if(r.ok){ items = await r.json(); break; }
+        }catch{}
+      }
+
+      activeType = urlType;
+
+      // Type filter buttons
+      const typeContainer = document.getElementById('typeFilters');
+      const allTypes = [...new Set(items.map(p => p.type).filter(Boolean))];
+      const typeAll = document.createElement('button');
+      typeAll.className = 'filter-btn' + (!activeType ? ' active' : '');
+      typeAll.textContent = '📋 Todos';
+      typeAll.addEventListener('click', () => { activeType = ''; renderTypeButtons(); renderPage(items, 1, PER_PAGE, activeTagValue()); });
+      typeContainer.appendChild(typeAll);
+
+      const TYPE_NAMES = { guia:'🛠️ Guías técnicas', recetario:'🍳 Recetarios', documento:'📄 Documentos' };
+      allTypes.forEach(type => {
+        const b = document.createElement('button');
+        b.className = 'filter-btn' + (activeType === type ? ' active' : '');
+        b.textContent = TYPE_NAMES[type] || type;
+        b.dataset.type = type;
+        b.addEventListener('click', () => { activeType = type; renderTypeButtons(); renderPage(items, 1, PER_PAGE, activeTagValue()); });
+        typeContainer.appendChild(b);
+      });
+
+      function renderTypeButtons(){
+        typeContainer.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.toggle('active', (b.dataset.type||'') === activeType);
+        });
+      }
+
+      // Tag filter buttons
+      const ALL_TAGS = [
+        {tag:'Suelo',label:'🌍 Suelo'},{tag:'Agua',label:'💧 Agua'},{tag:'Semillas',label:'🌱 Semillas'},
+        {tag:'Bioconstruccion',label:'🏗️ Bioconstrucción'},{tag:'Pulque',label:'🍶 Pulque'},
+        {tag:'Fermentos',label:'🫙 Fermentos'},{tag:'Fuego',label:'🔥 Fuego'},
+        {tag:'Naturaleza',label:'🌿 Naturaleza'},{tag:'Territorio',label:'✊ Territorio'},
+        {tag:'Agroforesteria',label:'🌳 Agroforestería'},{tag:'Comunidad',label:'🤝 Comunidad'},
+        {tag:'Medicina',label:'🪴 Medicina'},{tag:'Madera',label:'🪵 Madera'},
+        {tag:'Pan',label:'🍞 Pan'},{tag:'Hongos',label:'🍄 Hongos'},
+      ];
+      let activeTag = urlTag;
+
+      const tagContainer = document.getElementById('filters');
+      function activeTagValue(){ return activeTag; }
+
+      const shuffled = ALL_TAGS.slice().sort(()=>Math.random()-.5);
+      let picked = shuffled.filter(t => t.tag !== activeTag).slice(0, activeTag ? 6 : 7);
+      if(activeTag){ const f = ALL_TAGS.find(t => t.tag === activeTag); if(f) picked = [f, ...picked]; }
+
+      const allBtn = document.createElement('button');
+      allBtn.className = 'filter-btn' + (!activeTag ? ' active' : '');
+      allBtn.textContent = 'Todos los temas';
+      allBtn.dataset.tag = '';
+      tagContainer.appendChild(allBtn);
+      picked.forEach(({tag, label}) => {
+        const b = document.createElement('button');
+        b.className = 'filter-btn' + (activeTag === tag ? ' active' : '');
+        b.textContent = label;
+        b.dataset.tag = tag;
+        tagContainer.appendChild(b);
+      });
+
+      tagContainer.addEventListener('click', e => {
+        const btn = e.target.closest('.filter-btn');
+        if(!btn) return;
+        activeTag = btn.dataset.tag;
+        tagContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.tag === activeTag));
+        renderPage(items, 1, PER_PAGE, activeTag);
+      });
+
+      document.getElementById('searchInput').addEventListener('input', e => {
+        searchQuery = normalizeStr(e.target.value.trim());
+        renderPage(items, 1, PER_PAGE, activeTag);
+      });
+
+      renderPage(items, urlPage, PER_PAGE, activeTag);
+    }
+
+    loadResources();
+  </script>
+</body>
+</html>
