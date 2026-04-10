@@ -594,6 +594,21 @@
             0%,100%{ box-shadow: 0 0 0 0 rgba(52,211,153,0); }
             50%{ box-shadow: 0 0 6px 2px rgba(52,211,153,0.25); }
         }
+        .badge-finalizado {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 100px;
+            font-size: 0.58rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            background: rgba(100,116,139,0.15);
+            color: #94a3b8;
+            border: 1px solid rgba(100,116,139,0.3);
+            margin-top: 0;
+        }
 
         /* === LIST VIEW === */
         body.view-list .calendar-section { display: none; }
@@ -793,11 +808,13 @@
             list.innerHTML = filtered.map((ev, i) => {
                 const d = new Date(ev.date + 'T12:00:00');
                 const vigente = (ev.cat === 'taller' || ev.cat === 'curso') && ev.date >= todayStr;
+                const finalizado = (ev.cat === 'taller' || ev.cat === 'curso') && ev.date < todayStr;
                 return `
                     <div class="event-card event-card--${ev.color || ev.cat}">
                         <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.35rem">
                             <div class="event-card__date" style="margin-bottom:0">${d.getDate()} ${MONTHS[d.getMonth()]}${ev.time ? ' · ' + ev.time + 'h' : ''}</div>
                             ${vigente ? '<span class="badge-vigente">● Vigente</span>' : ''}
+                            ${finalizado ? '<span class="badge-finalizado">✓ Finalizado</span>' : ''}
                         </div>
                         <div class="event-card__title">${ev.title}</div>
                         ${ev.subtitle ? `<div class="event-card__subtitle">${ev.subtitle}</div>` : ''}
@@ -871,11 +888,13 @@
                 list.innerHTML = sorted.map((ev) => {
                     const d = new Date(ev.date + 'T12:00:00');
                     const vigente = (ev.cat === 'taller' || ev.cat === 'curso') && ev.date >= todayStr2;
+                    const finalizado = (ev.cat === 'taller' || ev.cat === 'curso') && ev.date < todayStr2;
                     return `
                         <div class="event-card event-card--${ev.color || ev.cat}">
                             <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.35rem">
                                 <div class="event-card__date" style="margin-bottom:0">${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}${ev.time ? ' · ' + ev.time + 'h' : ''}</div>
                                 ${vigente ? '<span class="badge-vigente">● Vigente</span>' : ''}
+                                ${finalizado ? '<span class="badge-finalizado">✓ Finalizado</span>' : ''}
                             </div>
                             <div class="event-card__title">${ev.title}</div>
                             ${ev.subtitle ? `<div class="event-card__subtitle">${ev.subtitle}</div>` : ''}
