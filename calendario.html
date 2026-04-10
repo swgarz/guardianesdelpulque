@@ -733,6 +733,9 @@
             { title: 'Taller de fermentos', subtitle: 'Col morada', date: '2026-03-22', time: '10:00', cat: 'taller', subtag: 'fermentos', color: 'fermentos', desc: '', lugar: 'Pulquería' },
             { title: 'Reunión de productores locales', date: '2026-04-11', cat: 'reunion', color: 'reunion', desc: '' },
             { title: 'Creación de Alebrijes', date: '2026-04-18', time: '10:00', cat: 'taller', subtag: 'alebrijes', color: 'pink', desc: '', aportacion: '$600' },
+            { title: 'Creación de Alebrijes', date: '2026-04-25', time: '10:00', cat: 'taller', subtag: 'alebrijes', color: 'pink', desc: '', aportacion: '$600' },
+            { title: 'Creación de Alebrijes', date: '2026-05-02', time: '10:00', cat: 'taller', subtag: 'alebrijes', color: 'pink', desc: '', aportacion: '$600' },
+            { title: 'Creación de Alebrijes', date: '2026-05-09', time: '10:00', cat: 'taller', subtag: 'alebrijes', color: 'pink', desc: '', aportacion: '$600' },
             // Para agregar más eventos, copia esta línea y cambia los datos:
             // { title: 'Nombre', date: '2026-MM-DD', cat: 'taller', desc: 'Descripción', lugar: 'Lugar (opcional)' },
             // Categorías: taller, evento, cultivo, reunion, defensa
@@ -829,6 +832,7 @@
                         <div class="event-card__actions">
                             <button class="event-action-btn" onclick="shareWhatsApp(events[${events.indexOf(ev)}])">📲 WhatsApp</button>
                             <button class="event-action-btn" onclick="copyEventLink(this)">🔗 Copiar enlace</button>
+                            <button class="event-action-btn" onclick="shareEventStory(events[${events.indexOf(ev)}])">📸 Historia</button>
                         </div>
                     </div>
                 `;
@@ -909,6 +913,7 @@
                             <div class="event-card__actions">
                                 <button class="event-action-btn" onclick="shareWhatsApp(events[${events.indexOf(ev)}])">📲 WhatsApp</button>
                                 <button class="event-action-btn" onclick="copyEventLink(this)">🔗 Copiar enlace</button>
+                                <button class="event-action-btn" onclick="shareEventStory(events[${events.indexOf(ev)}])">📸 Historia</button>
                             </div>
                         </div>
                     `;
@@ -921,6 +926,96 @@
         // ==========================================
         // COMPARTIR / DESCARGAR
         // ==========================================
+        const CAT_EMOJI = { taller:'🛠️', evento:'🌽', cultivo:'🌱', reunion:'🤝', defensa:'✊', fermentos:'🍶', alebrijes:'🦋' };
+
+        async function shareEventStory(ev) {
+            const btn = event.currentTarget;
+            const orig = btn.textContent;
+            btn.textContent = '⏳'; btn.disabled = true;
+            try {
+                const d = new Date(ev.date + 'T12:00:00');
+                const dateStr = `${d.getDate()} de ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+                const emoji = CAT_EMOJI[ev.cat] || '📅';
+                const W = 1080, H = 1920;
+                const canvas = document.createElement('canvas');
+                canvas.width = W; canvas.height = H;
+                const ctx = canvas.getContext('2d');
+
+                // Fondo gradiente
+                const bg = ctx.createLinearGradient(0, 0, 0, H);
+                bg.addColorStop(0, '#011a10'); bg.addColorStop(1, '#000c06');
+                ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+
+                // Círculo decorativo central
+                const glow = ctx.createRadialGradient(W/2, 680, 0, W/2, 680, 520);
+                glow.addColorStop(0, 'rgba(5,150,105,0.18)'); glow.addColorStop(1, 'rgba(5,150,105,0)');
+                ctx.fillStyle = glow; ctx.fillRect(0, 0, W, H);
+
+                // Línea superior
+                ctx.strokeStyle = 'rgba(52,211,153,.4)'; ctx.lineWidth = 2;
+                ctx.beginPath(); ctx.moveTo(100, 200); ctx.lineTo(W-100, 200); ctx.stroke();
+
+                // Emoji categoría
+                ctx.font = '180px serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(emoji, W/2, 520);
+
+                // Línea separadora
+                ctx.strokeStyle = 'rgba(52,211,153,.25)'; ctx.lineWidth = 1.5;
+                ctx.beginPath(); ctx.moveTo(120, 620); ctx.lineTo(W-120, 620); ctx.stroke();
+
+                // Título evento
+                ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center';
+                ctx.font = 'bold 80px system-ui,ui-sans-serif,sans-serif';
+                const words = (ev.title + (ev.subtitle ? ' — ' + ev.subtitle : '')).split(' ');
+                let line = '', lines = [], maxW = W - 160;
+                for (const w of words) {
+                    const t = line ? line + ' ' + w : w;
+                    if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t;
+                }
+                if (line) lines.push(line);
+                let y = 760 - (lines.length - 1) * 50;
+                for (const l of lines) { ctx.fillText(l, W/2, y); y += 100; }
+
+                // Fecha
+                ctx.fillStyle = '#34d399';
+                ctx.font = 'bold 56px system-ui,ui-sans-serif,sans-serif';
+                ctx.fillText('📅 ' + dateStr + (ev.time ? '  ·  ' + ev.time + 'h' : ''), W/2, y + 60);
+
+                // Lugar
+                if (ev.lugar) {
+                    ctx.fillStyle = 'rgba(255,255,255,.6)';
+                    ctx.font = '46px system-ui,ui-sans-serif,sans-serif';
+                    ctx.fillText('📍 ' + ev.lugar, W/2, y + 140);
+                }
+
+                // Aportación
+                if (ev.aportacion) {
+                    ctx.fillStyle = 'rgba(255,255,255,.5)';
+                    ctx.font = '42px system-ui,ui-sans-serif,sans-serif';
+                    ctx.fillText('💰 Aportación: ' + ev.aportacion, W/2, y + (ev.lugar ? 210 : 140));
+                }
+
+                // Branding
+                ctx.fillStyle = '#34d399';
+                ctx.font = 'bold 50px system-ui,ui-sans-serif,sans-serif';
+                ctx.fillText('Guardianes del Pulque', W/2, 1760);
+                ctx.fillStyle = 'rgba(255,255,255,.4)';
+                ctx.font = '38px system-ui,ui-sans-serif,sans-serif';
+                ctx.fillText('guardianesdelpulque.org', W/2, 1828);
+
+                const blob = await new Promise(r => canvas.toBlob(r, 'image/png'));
+                const file = new File([blob], 'evento-guardianesdelpulque.png', { type: 'image/png' });
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({ files: [file], title: ev.title });
+                } else {
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob); a.download = 'evento-guardianesdelpulque.png'; a.click();
+                }
+            } catch(e) { console.error(e); }
+            finally { btn.textContent = orig; btn.disabled = false; }
+        }
+
         function shareWhatsApp(ev) {
             const d = new Date(ev.date + 'T12:00:00');
             const dateStr = `${d.getDate()} de ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
