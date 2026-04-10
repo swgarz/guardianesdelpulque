@@ -9,21 +9,21 @@ const path = require("path");
 const sharp = require("sharp");
 
 const ROOT = path.join(__dirname, "..");
-const MAX_WIDTH = 600;
-const MAX_HEIGHT = 1050;
-const QUALITY = 72; // reducción ~4x del tamaño original
+const MAX_WIDTH = 912;
+const JPEG_QUALITY = 82; // JPEG ~200-350KB vs PNG ~1.8MB
 
 async function compressImage(imgPath) {
   const before = fs.statSync(imgPath).size;
 
   // Usar path relativo para evitar límite de 260 chars en Windows
   const relPath = path.relative(process.cwd(), imgPath);
+  // Guardar como JPEG con extensión .png — los navegadores y WhatsApp
+  // leen el formato real del archivo, no la extensión.
   const buffer = await sharp(relPath)
-    .resize(MAX_WIDTH, MAX_HEIGHT, {
-      fit: "inside",         // mantiene proporción, no recorta
+    .resize(MAX_WIDTH, null, {
       withoutEnlargement: true,
     })
-    .png({ quality: QUALITY, compressionLevel: 9 })
+    .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
     .toBuffer();
 
   fs.writeFileSync(imgPath, buffer);
@@ -39,7 +39,7 @@ async function main() {
   const postsPath = path.join(ROOT, "posts.json");
   const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
 
-  console.log(`Comprimiendo ${posts.length} imágenes (máx ${MAX_WIDTH}x${MAX_HEIGHT}, calidad ${QUALITY})...\n`);
+  console.log(`Comprimiendo ${posts.length} imágenes a JPEG (${MAX_WIDTH}px, calidad ${JPEG_QUALITY})...\n`);
 
   let totalBefore = 0;
   let totalAfter = 0;
@@ -51,10 +51,14 @@ async function main() {
       continue;
     }
 
-    const { beforeKB, afterKB, saved } = await compressImage(imgPath);
-    totalBefore += parseInt(beforeKB);
-    totalAfter += parseInt(afterKB);
-    console.log(`  ✓ ${post.title.slice(0, 40).padEnd(40)} ${beforeKB.padStart(5)}KB → ${afterKB.padStart(5)}KB  (-${saved}%)`);
+    try {
+      const { beforeKB, afterKB, saved } = await compressImage(imgPath);
+      totalBefore += parseInt(beforeKB);
+      totalAfter += parseInt(afterKB);
+      console.log(`  ✓ ${post.title.slice(0, 40).padEnd(40)} ${beforeKB.padStart(5)}KB → ${afterKB.padStart(5)}KB  (-${saved}%)`);
+    } catch (e) {
+      console.log(`  ✗ ERROR ${post.title.slice(0, 40).padEnd(40)} ${e.message.slice(0, 50)}`);
+    }
   }
 
   console.log(`\n${"─".repeat(60)}`);
