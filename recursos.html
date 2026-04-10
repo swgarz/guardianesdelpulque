@@ -39,7 +39,7 @@
     .nav-trigger .chip{padding-right:1.1rem;}
     .nav-trigger .chip::after{content:"▾";font-size:.6rem;}
     .nav-dropdown{position:absolute;top:100%;left:0;margin-top:0;padding:6px 0;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.12);min-width:160px;z-index:100;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .15s,transform .15s;}
-    .nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;pointer-events:auto;transform:translateY(0);}
+    .nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown,.nav-item.open .nav-dropdown{opacity:1;pointer-events:auto;transform:translateY(0);}
     .nav-link{display:block;padding:8px 16px;font-size:.84rem;color:#374151;transition:background .12s,color .12s;}
     .nav-link:hover{background:rgba(5,150,105,.06);color:var(--brand);}
     .nav-item-inline{position:relative;}
@@ -179,26 +179,41 @@
         <button class="nav-burger" id="navBurger" aria-label="Abrir menú" type="button">☰</button>
       </div>
       <div class="links">
+        <!-- Artículos -->
+        <a class="chip" href="posts.html">📰 Artículos</a>
+
+        <!-- Recursos (active) -->
         <div class="nav-item">
           <button class="nav-trigger" type="button">
-            <span class="chip">Comunidad</span>
+            <span class="chip active-page">🛠️ Recursos</span>
           </button>
           <div class="nav-dropdown">
-            <a class="nav-link" href="posts.html">Artículos</a>
-            <a class="nav-link" href="recursos.html">🛠️ Recursos</a>
-            <a class="nav-link" href="index.html#donar">Donar</a>
-            <div class="nav-item-inline">
-              <div class="nav-link has-children" tabindex="0">Aliados</div>
-              <div class="nav-subdropdown">
-                <a class="nav-link" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
-                <a class="nav-link" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
-                <a class="nav-link" href="https://www.google.com/maps/place/Casa+del+Consejo+Otom%C3%AD+Nghu+Lludadha+%C3%91hanjhu,+Santiago+Yanhuitlalpan/@19.3852977,-99.3044762,69m/data=!3m1!1e3!4m6!3m5!1s0x85d20786d4392b05:0x767fb0f08a813efb!8m2!3d19.3852814!4d-99.304469!16s%2Fg%2F11khqxqkbg!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Casa del Consejo Otomí Nghuy</a>
-              </div>
-            </div>
+            <a class="nav-link" href="recursos.html">Ver todos</a>
+            <a class="nav-link" href="recursos.html?type=guia">🛠️ Guías técnicas</a>
+            <a class="nav-link" href="recursos.html?type=recetario">🍳 Recetarios</a>
+            <a class="nav-link" href="recursos.html?type=documento">📄 Documentos legales</a>
           </div>
         </div>
-        <a class="chip active-page" href="recursos.html">🛠️ Recursos</a>
+
+        <!-- Donar -->
+        <a class="chip" href="index.html#donar"><span class="emoji">💚</span> Donar</a>
+
+        <!-- Aliados -->
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">
+            <span class="chip">Aliados</span>
+          </button>
+          <div class="nav-dropdown">
+            <a class="nav-link" href="https://teomatisacredcopal.com/" target="_blank" rel="noopener">Teomati</a>
+            <a class="nav-link" href="https://bioalkimia.org/" target="_blank" rel="noopener">Bioalkimia</a>
+            <a class="nav-link" href="https://www.google.com/maps/place/Casa+del+Consejo+Otom%C3%AD+Nghu+Lludadha+%C3%91hanjhu,+Santiago+Yanhuitlalpan/@19.3852977,-99.3044762,69m/data=!3m1!1e3!4m6!3m5!1s0x85d20786d4392b05:0x767fb0f08a813efb!8m2!3d19.3852814!4d-99.304469!16s%2Fg%2F11khqxqkbg!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Casa del Consejo Otomí Nghuy</a>
+          </div>
+        </div>
+
+        <!-- Calendario -->
         <a class="chip" href="calendario.html">📅 Calendario</a>
+
+        <!-- Modo -->
         <div class="nav-item">
           <button class="nav-trigger" type="button">
             <span class="chip">Modo</span>
@@ -327,6 +342,28 @@
           apply(next);
         });
       }
+    })();
+
+    // Dropdown por click (móvil/táctil)
+    (function(){
+      const items = document.querySelectorAll('.nav-item');
+      function closeAll(){ items.forEach(i=>i.classList.remove('open')); }
+      document.querySelectorAll('.nav-trigger').forEach(btn=>{
+        btn.addEventListener('click',e=>{
+          const item = btn.closest('.nav-item');
+          if(!item) return;
+          const open = !item.classList.contains('open');
+          closeAll();
+          if(open) item.classList.add('open');
+          e.stopPropagation();
+        });
+      });
+      document.querySelectorAll('.nav-dropdown .nav-link').forEach(link=>{
+        link.addEventListener('click', closeAll);
+      });
+      document.addEventListener('click', e=>{
+        if(!e.target.closest('.nav-item')) closeAll();
+      });
     })();
 
     // Reveal + lazy load

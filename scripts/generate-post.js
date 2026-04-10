@@ -440,7 +440,8 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
       <nav class="links">
-        <a class="chip" href="../../posts.html">Artículos</a>
+        <a class="chip" href="../../posts.html">📰 Artículos</a>
+        <a class="chip" href="../../recursos.html">🛠️ Recursos</a>
         <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
       </nav>
     </div>
