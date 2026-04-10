@@ -157,6 +157,7 @@
     }
     .cta-form button:hover{background:#047857;}
 
+    button.chip{font-family:inherit;}
     .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
     footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
     footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
@@ -315,6 +316,7 @@
     <div class="back-links">
       <a href="../../posts.html" class="chip">← Todos los artículos</a>
       <span class="chip">🌿 Naturaleza</span>
+      <button class="chip" id="btnStory" type="button">📲 Historia</button>
     </div>
   </main>
 
@@ -414,6 +416,57 @@
         syncLabel();
       });
     })();
+  </script>
+  <script>
+  // COMPARTIR COMO HISTORIA
+  (function(){
+    const btn=document.getElementById('btnStory');
+    if(!btn)return;
+    function wrapText(ctx,text,x,y,maxW,lineH){
+      const words=text.split(' ');let line='',lines=[];
+      for(const w of words){const t=line?line+' '+w:w;if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w;}else line=t;}
+      if(line)lines.push(line);
+      let yy=y-(lines.length-1)*lineH/2;
+      for(const l of lines){ctx.fillText(l,x,yy);yy+=lineH;}
+    }
+    btn.addEventListener('click',async()=>{
+      const orig=btn.textContent;btn.textContent='⏳';btn.disabled=true;
+      try{
+        const coverUrl=document.querySelector('meta[property="og:image"]')?.content||'';
+        const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/s*—s*Guardianes del Pulque/,'');
+        const W=1080,H=1920,IMGSLICE=1150;
+        const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;
+        const ctx=canvas.getContext('2d');
+        const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#011a10');bg.addColorStop(1,'#000c06');
+        ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+        try{
+          const img=new Image();img.crossOrigin='anonymous';
+          await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src=coverUrl;});
+          const ir=img.naturalWidth/img.naturalHeight,tr=W/IMGSLICE;
+          let sx=0,sy=0,sw=img.naturalWidth,sh=img.naturalHeight;
+          if(ir>tr){sw=sh*tr;sx=(img.naturalWidth-sw)/2;}else{sh=sw/tr;sy=(img.naturalHeight-sh)/2;}
+          ctx.drawImage(img,sx,sy,sw,sh,0,0,W,IMGSLICE);
+        }catch{}
+        const fade=ctx.createLinearGradient(0,IMGSLICE-350,0,IMGSLICE+50);
+        fade.addColorStop(0,'rgba(1,26,16,0)');fade.addColorStop(1,'rgba(1,26,16,1)');
+        ctx.fillStyle=fade;ctx.fillRect(0,IMGSLICE-350,W,400);
+        ctx.strokeStyle='rgba(52,211,153,.35)';ctx.lineWidth=2;
+        ctx.beginPath();ctx.moveTo(100,IMGSLICE+30);ctx.lineTo(W-100,IMGSLICE+30);ctx.stroke();
+        ctx.fillStyle='#ffffff';ctx.textAlign='center';
+        ctx.font='bold 76px system-ui,ui-sans-serif,sans-serif';
+        wrapText(ctx,title,W/2,IMGSLICE+280,W-160,98);
+        ctx.fillStyle='#34d399';ctx.font='bold 50px system-ui,ui-sans-serif,sans-serif';
+        ctx.fillText('Guardianes del Pulque',W/2,1760);
+        ctx.fillStyle='rgba(255,255,255,.45)';ctx.font='38px system-ui,ui-sans-serif,sans-serif';
+        ctx.fillText('guardianesdelpulque.org',W/2,1828);
+        const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));
+        const file=new File([blob],'historia-guardianesdelpulque.png',{type:'image/png'});
+        if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title});}
+        else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='historia-guardianesdelpulque.png';a.click();}
+      }catch(e){console.error(e);}
+      finally{btn.textContent=orig;btn.disabled=false;}
+    });
+  })();
   </script>
 </body>
 </html>
