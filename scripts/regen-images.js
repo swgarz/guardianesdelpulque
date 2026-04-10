@@ -5,18 +5,12 @@ const sharp = require("sharp");
 require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
 const openai = new OpenAI();
 
-// ESTILO ANTERIOR (pop art con 6 viñetas):
-// const PANEL_STYLE =
-//   "Pop art al estilo Roy Lichtenstein y Andy Warhol, cuadricula de 6 vinetas rectangulares con bordes negros gruesos, " +
-//   "cada vineta muestra una escena diferente sobre el tema, puntos Ben-Day gruesos, colores planos vivos, " +
-//   "alto contraste, serigrafía, estetica de comic vintage. SIN texto, SIN letras, SIN palabras, SIN numeros.";
-
-// ESTILO ACTUAL (fresco monumental continuo):
+// ESTILO POP ART (continuo, sin paneles):
 const PANEL_STYLE =
-  "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, " +
-  "escena épica relacionada con el tema, trazos amplios y volúmenes monumentales, " +
-  "paleta de pigmentos naturales, luz dramática, profundidad y movimiento en la composición, " +
-  "sin texto, sin letras, sin palabras.";
+  "Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. " +
+  "Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. " +
+  "SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames, no vignettes. " +
+  "NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind, NO urban buildings, NO city, NO color swatches, NO color palettes, NO decorative borders.";
 
 const images = [
   {
@@ -67,25 +61,39 @@ const images = [
   },
   {
     slug: "el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano",
-    prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de un paisaje agroforestal mexicano: árboles grandes cobijando milpa y ganado, campesinos plantando árboles junto a cercas vivas, raíces profundas visibles bajo la tierra fértil, comunidad cosechando frutos del sistema, paleta de verde profundo, café corteza, musgo, cielo azul y tierra ocre, trazos amplios y volúmenes monumentales, luz cálida de mediodía, sin texto, sin letras, sin palabras.",
+    title: "El Abrazo Verde: Agroforestería en el Territorio Mexicano",
+    palette: "deep green, bark brown, moss green, sky blue, golden ochre",
+    subjects: "large trees sheltering milpa and cattle, campesinos planting trees beside living fences, deep roots visible under fertile soil, community harvesting agroforestry fruits, birds nesting in canopy",
   },
   {
     slug: "raramuri-cultura-y-resistencia-en-la-sierra-tarahumara",
-    prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de la vida Rarámuri en la Sierra Tarahumara: corredor descalzo sobre sendero de barranca, mujeres con faldas de colores vivos tejiendo y cargando ollas, hombres en asamblea comunitaria bajo pino serrano, niños jugando con pelota de madera en rarajípari, milpa en ladera escarpada con maíz criollo, montañas y barrancas profundas al fondo, paleta de rojo vivo, azul cielo, ocre barranca, verde pino y blanco nube, trazos amplios y volúmenes monumentales, luz de sierra a mediodía, sin texto, sin letras, sin palabras.",
+    title: "Rarámuri: Cultura y Resistencia en la Sierra Tarahumara",
+    palette: "vivid red, sky blue, canyon ochre, pine green, white cloud",
+    subjects: "barefoot runner on canyon trail, women in colorful skirts weaving and carrying pottery, men in community assembly under pine trees, children playing rarajipari with wooden ball, steep hillside milpa with native corn",
   },
   {
     slug: "las-fibras-naturales-en-mexico-henequen-palma-y-mimbre",
-    prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de artesanos mexicanos trabajando fibras naturales: manos tejiendo henequén en telar tradicional, mujer trenzando palma bajo el sol, cestos de mimbre siendo formados, maguey con pencas fibrosas en el campo, textiles naturales tendidos al aire, paleta de crema natural, dorado henequén, morado añil y rojo grana, trazos amplios y volúmenes monumentales, luz cálida de mediodía, sin texto, sin letras, sin palabras.",
+    title: "Las Fibras Naturales en México: Henequén, Palma y Mimbre",
+    palette: "natural cream, golden henequen, indigo purple, crimson red, warm ochre",
+    subjects: "hands weaving henequen on traditional loom, woman braiding palm under the sun, wicker baskets being shaped, maguey with fibrous leaves in the field, natural textiles hanging to dry",
   },
   {
     slug: "composta-y-lombricomposta-transformando-residuos-en-suelo-fertil",
-    prompt: "Fresco monumental al estilo del muralismo mexicano, composición continua sin paneles ni divisiones, escena épica de campesinos trabajando la tierra: manos mezclando composta húmeda en capas, lombrices rojas en tierra negra fértil, pila de composta junto a caja de lombricomposta, plantas vigorosas brotando del suelo abonado, ciclo vivo de residuos que se transforman en vida, paleta de negro humus, café tierra oscura, ocre dorado, verde hoja y rojo lombriz, trazos amplios y volúmenes monumentales, luz cálida desde arriba, sin texto, sin letras, sin palabras.",
+    title: "Composta y Lombricomposta: Transformando Residuos en Suelo Fértil",
+    palette: "deep black humus, dark earth brown, golden ochre, leaf green, worm red",
+    subjects: "hands mixing moist compost in layers, red worms in dark fertile soil, compost pile beside worm bin, vigorous plants sprouting from fertilized earth, organic scraps transforming into rich humus",
+  },
+  {
+    slug: "el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano",
+    title: "El Valor de las Semillas Criollas en la Conservación del Territorio Mexicano",
+    palette: "vivid yellow corn, deep red bean, cream white squash, earth brown, leaf green",
+    subjects: "hands selecting native corn seeds, colorful criollo seed varieties spread out, woman storing seeds in clay pot, traditional milpa with corn beans and squash, community seed bank gathering",
   },
 ];
 
 async function generateImage(img) {
   const prompt = img.prompt ||
-    (PANEL_STYLE + ` Tema: "${img.title}". Escenas en las 6 vinetas: ${img.subjects}. Paleta de color: ${img.palette}.`);
+    (PANEL_STYLE + ` Subject: "${img.title}" — Mexican rural scene related to this topic. Depicted elements: ${img.subjects}. Color palette: ${img.palette}.`);
   console.log("Generando:", img.slug);
   try {
     const res = await openai.images.generate({
