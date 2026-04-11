@@ -23,7 +23,8 @@
   <meta name="twitter:title" content="Guardianes del Pulque" />
   <meta name="twitter:description" content="Pulque, tierra y maguey: artículos, guías y proyectos." />
   <meta name="twitter:image" content="https://guardianesdelpulque.org/images/logo_transparente.png" />
- 
+  <link rel="canonical" href="https://guardianesdelpulque.org/" />
+
   <!--Clarity, seguimiento de Tráfico -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -45,6 +46,8 @@
   </script>
 
   <style>
+    .skip-link{position:absolute;top:-44px;left:6px;z-index:9999;background:#059669;color:#fff;padding:8px 16px;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:top .15s ease;}
+    .skip-link:focus{top:0;}
     *,*::before,*::after{box-sizing:border-box}
     html{overflow-x:hidden}
     body{
@@ -690,6 +693,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
   <!-- NAV -->
   <div class="nav" id="mainNav">
     <div class="container row">
@@ -704,7 +708,7 @@
 
         <!-- Recursos -->
         <div class="nav-item">
-          <button class="nav-trigger" type="button">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-haspopup="true">
             <span class="chip">🛠️ Recursos</span>
           </button>
           <div class="nav-dropdown">
@@ -717,7 +721,7 @@
 
         <!-- Aliados -->
         <div class="nav-item">
-          <button class="nav-trigger" type="button">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-haspopup="true">
             <span class="chip">Aliados</span>
           </button>
           <div class="nav-dropdown">
@@ -735,7 +739,7 @@
 
         <!-- Modo -->
         <div class="nav-item">
-          <button class="nav-trigger" type="button">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-haspopup="true">
             <span class="chip">Modo</span>
           </button>
           <div class="nav-dropdown nav-dropdown-mode">
@@ -782,7 +786,7 @@
   </div>
 
   <!-- HERO -->
-  <header class="hero hero--compact container">
+  <header class="hero hero--compact container" id="main-content">
     <div class="backdrop" aria-hidden="true">
       <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
     </div>
@@ -1124,7 +1128,13 @@
     (function(){
       const isTouch = window.matchMedia('(hover:none),(pointer:coarse)').matches;
       const items = document.querySelectorAll('.nav-item');
-      function closeAll(){ items.forEach(i=>i.classList.remove('open')); }
+      function closeAll(){
+        items.forEach(i=>{
+          i.classList.remove('open');
+          const btn = i.querySelector('.nav-trigger');
+          if(btn) btn.setAttribute('aria-expanded','false');
+        });
+      }
       if(isTouch){
         document.querySelectorAll('.nav-trigger').forEach(btn=>{
           btn.addEventListener('click',e=>{
@@ -1132,7 +1142,7 @@
             if(!item) return;
             const open = !item.classList.contains('open');
             closeAll();
-            if(open) item.classList.add('open');
+            if(open){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
             e.stopPropagation();
           });
         });
@@ -1143,6 +1153,9 @@
           if(!e.target.closest('.nav-item')) closeAll();
         });
       }
+      document.addEventListener('keydown',e=>{
+        if(e.key==='Escape') closeAll();
+      });
     })();
 
     // Subdropdown toggle en móvil (has-children)

@@ -282,6 +282,7 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${safeExcerpt}" />
   <meta name="twitter:image" content="${SITE_URL}/articulos/${slug}/${slug}.png" />
+  <link rel="canonical" href="${SITE_URL}/articulos/${slug}/${slug}.html" />
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -415,17 +416,20 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
     .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
     .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
     .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
+    .cta-form label{font-size:.8rem;color:#4b5563;margin-bottom:.25rem;display:block;text-align:center;}
     .cta-form input[type="email"]{
       padding:.45rem .8rem;border:1.5px solid #d1d5db;
-      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;
     }
-    .cta-form input[type="email"]:focus{border-color:var(--brand);}
+    .cta-form input[type="email"]:focus{border-color:var(--brand);outline:2px solid var(--brand);outline-offset:2px;}
     .cta-form button{
       padding:.45rem 1.1rem;border:none;border-radius:999px;
       background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
     }
     .cta-form button:hover{background:#047857;}
 
+    .skip-link{position:absolute;top:-44px;left:6px;z-index:9999;background:#059669;color:#fff;padding:8px 16px;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:top .15s ease;}
+    .skip-link:focus{top:0;}
     .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
     button.chip{font-family:inherit;}
     footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
@@ -433,6 +437,7 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
   <!-- NAV -->
   <header class="nav" id="mainNav">
     <div class="container nav-row">
@@ -448,7 +453,7 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main-content">
     <div class="breadcrumbs">
       <a href="../../index.html">Inicio</a> ·
       <a href="../../posts.html">Artículos</a> ·
@@ -484,7 +489,10 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
       <h3>Recibe más artículos como este</h3>
       <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required />
+        <div>
+          <label for="ctaEmail">Tu correo electrónico</label>
+          <input id="ctaEmail" type="email" placeholder="tu@correo.com" required />
+        </div>
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>

@@ -51,6 +51,9 @@
   </script>
 
   <style>
+    .skip-link{position:absolute;top:-44px;left:6px;z-index:9999;background:#059669;color:#fff;padding:8px 16px;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:top .15s ease;}
+    .skip-link:focus{top:0;}
+
     *,*::before,*::after{box-sizing:border-box}
     body{
       margin:0;
@@ -148,9 +151,9 @@
     .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
     .cta-form input[type="email"]{
       padding:.45rem .8rem;border:1.5px solid #d1d5db;
-      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;
     }
-    .cta-form input[type="email"]:focus{border-color:var(--brand);}
+    .cta-form input[type="email"]:focus{border-color:var(--brand);outline:2px solid var(--brand);outline-offset:2px;}
     .cta-form button{
       padding:.45rem 1.1rem;border:none;border-radius:999px;
       background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
@@ -198,6 +201,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
   <!-- NAV -->
   <header class="nav" id="mainNav">
     <div class="container nav-row">
@@ -214,7 +218,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main-content">
     <div class="breadcrumbs">
       <a href="../../index.html">Inicio</a> ·
       <a href="../../posts.html">Artículos</a> ·
@@ -270,7 +274,8 @@
       <h3>Recibe más artículos como este</h3>
       <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required />
+        <label for="ctaEmail" style="font-size:.8rem;color:#4b5563;display:block;text-align:center;margin-bottom:.25rem">Tu correo electrónico</label>
+        <input id="ctaEmail" type="email" placeholder="tu@correo.com" required />
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>

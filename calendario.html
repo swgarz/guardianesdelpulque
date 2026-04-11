@@ -5,6 +5,21 @@
   <link rel="icon" href="images/logo_transparente.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guardianes del Pulque — Calendario de Actividades</title>
+    <meta name="description" content="Calendario de talleres, eventos y actividades de Guardianes del Pulque: pulque, bioconstrucción, semillas y territorio." />
+    <link rel="canonical" href="https://guardianesdelpulque.org/calendario.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Calendario de Actividades — Guardianes del Pulque" />
+    <meta property="og:description" content="Talleres, eventos y actividades de Guardianes del Pulque: pulque, bioconstrucción, semillas y territorio." />
+    <meta property="og:image" content="https://guardianesdelpulque.org/images/logo_transparente.png" />
+    <meta property="og:url" content="https://guardianesdelpulque.org/calendario.html" />
+    <meta property="og:site_name" content="Guardianes del Pulque" />
+    <meta property="og:locale" content="es_MX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Calendario de Actividades — Guardianes del Pulque" />
+    <meta name="twitter:description" content="Talleres, eventos y actividades de Guardianes del Pulque." />
+    <meta name="twitter:image" content="https://guardianesdelpulque.org/images/logo_transparente.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -46,6 +61,9 @@
             pointer-events: none;
             z-index: 999;
         }
+
+        .skip-link{position:absolute;top:-44px;left:6px;z-index:9999;background:#059669;color:#fff;padding:8px 16px;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:top .15s ease;}
+        .skip-link:focus{top:0;}
 
         /* === HEADER === */
         .header {
@@ -667,6 +685,7 @@
     </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
     <!-- HEADER -->
     <header class="header">
@@ -685,7 +704,7 @@
     </header>
 
     <!-- MAIN -->
-    <div class="main">
+    <div class="main" id="main-content">
 
         <!-- CALENDAR -->
         <div class="calendar-section animate-in">

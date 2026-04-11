@@ -21,6 +21,9 @@
   {"@context":"https://schema.org","@type":"Article","headline":"Diego Rivera: técnicas, pigmentos y la voz de un pueblo que habla desde la cal","description":"Explora la vida, técnica y legado de Diego Rivera, un ícono del muralismo mexicano.","image":"https://guardianesdelpulque.org/articulos/diego-rivera-maestro-del-muralismo-mexicano/diego-rivera-maestro-del-muralismo-mexicano.png","datePublished":"2026-04-05","author":{"@type":"Organization","name":"Guardianes del Pulque","url":"https://guardianesdelpulque.org"},"publisher":{"@type":"Organization","name":"Guardianes del Pulque","logo":{"@type":"ImageObject","url":"https://guardianesdelpulque.org/images/logo_transparente.png"}}}
   </script>
   <style>
+    .skip-link{position:absolute;top:-44px;left:6px;z-index:9999;background:#059669;color:#fff;padding:8px 16px;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:top .15s ease;}
+    .skip-link:focus{top:0;}
+
     *,*::before,*::after{box-sizing:border-box}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial;line-height:1.6;color:#0f172a;background:#f6f8fb;}
     :root{--brand:#059669;--ink:#0f172a;--muted:#64748b;--card:#ffffff;}
@@ -62,8 +65,8 @@
     .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
     .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
     .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
-    .cta-form input[type="email"]{padding:.45rem .8rem;border:1.5px solid #d1d5db;border-radius:999px;font-size:.82rem;width:220px;max-width:100%;outline:none;}
-    .cta-form input[type="email"]:focus{border-color:var(--brand);}
+    .cta-form input[type="email"]{padding:.45rem .8rem;border:1.5px solid #d1d5db;border-radius:999px;font-size:.82rem;width:220px;max-width:100%;}
+    .cta-form input[type="email"]:focus{border-color:var(--brand);outline:2px solid var(--brand);outline-offset:2px;}
     .cta-form button{padding:.45rem 1.1rem;border:none;border-radius:999px;background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;}
     .cta-form button:hover{background:#047857;}
     button.chip{font-family:inherit;}
@@ -73,6 +76,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
   <header class="nav" id="mainNav">
     <div class="container nav-row">
       <a class="brand" href="../../index.html">
@@ -87,7 +91,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main-content">
     <div class="breadcrumbs">
       <a href="../../index.html">Inicio</a> ·
       <a href="../../posts.html">Artículos</a> ·
@@ -939,7 +943,8 @@
       <h3>Recibe más artículos como este</h3>
       <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <input type="email" placeholder="tu@correo.com" required />
+        <label for="ctaEmail" style="font-size:.8rem;color:#4b5563;display:block;text-align:center;margin-bottom:.25rem">Tu correo electrónico</label>
+        <input id="ctaEmail" type="email" placeholder="tu@correo.com" required />
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
