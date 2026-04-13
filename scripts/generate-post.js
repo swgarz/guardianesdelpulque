@@ -838,7 +838,7 @@ async function generateArticle() {
   if (!imageBuffer) throw new Error("No se pudo generar imagen");
 
   // Recortar márgenes y redimensionar a 912px de ancho
-  imageBuffer = await sharp(imageBuffer).trim({ threshold: 30 }).resize(IMAGE_WIDTH).toBuffer();
+  imageBuffer = await sharp(imageBuffer).trim({ threshold: 80 }).resize(IMAGE_WIDTH).toBuffer();
 
   // 5. Guardar imagen
   const artDir = path.join(__dirname, "..", "articulos", slug);

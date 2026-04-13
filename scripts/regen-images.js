@@ -111,7 +111,7 @@ async function generateImage(img) {
     const raw = Buffer.from(
       await fetch(res.data[0].url).then((r) => r.arrayBuffer())
     );
-    const buf = await sharp(raw).trim({ threshold: 30 }).resize(912).png().toBuffer();
+    const buf = await sharp(raw).trim({ threshold: 80 }).resize(912).png().toBuffer();
     const dest = path.join(__dirname, "..", "articulos", img.slug, img.slug + ".png");
     fs.writeFileSync(dest, buf);
     console.log("OK:", img.slug);
