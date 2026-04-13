@@ -540,15 +540,16 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
     btn.addEventListener('click',async()=>{
       const orig=btn.textContent;btn.textContent='⏳';btn.disabled=true;
       try{
-        const coverUrl=document.querySelector('meta[property="og:image"]')?.content||'';
-        const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/\\s*—\\s*Guardianes del Pulque/,'');
+        const slug=location.pathname.split('/').slice(-2,-1)[0]||'';
+        const coverUrl=slug?(slug+'.png'):(document.querySelector('meta[property="og:image"]')?.content||'');
+        const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/\\s*[—\\-]\\s*Guardianes del Pulque/,'');
         const W=1080,H=1920,IMGSLICE=1150;
         const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;
         const ctx=canvas.getContext('2d');
         const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#011a10');bg.addColorStop(1,'#000c06');
         ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
         try{
-          const img=new Image();img.crossOrigin='anonymous';
+          const img=new Image();
           await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src=coverUrl;});
           const ir=img.naturalWidth/img.naturalHeight,tr=W/IMGSLICE;
           let sx=0,sy=0,sw=img.naturalWidth,sh=img.naturalHeight;
@@ -570,7 +571,7 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
         const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));
         const file=new File([blob],'historia-guardianesdelpulque.png',{type:'image/png'});
         if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title});}
-        else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='historia-guardianesdelpulque.png';a.click();}
+        else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='historia-guardianesdelpulque.png';document.body.appendChild(a);a.click();document.body.removeChild(a);}
       }catch(e){console.error(e);}
       finally{btn.textContent=orig;btn.disabled=false;}
     });
