@@ -1,6 +1,26 @@
 [
   {
     "tag": "Fermentos",
+    "title": "Pozol — El Fermento Sagrado de los Mayas",
+    "excerpt": "Descubre el pozol, la ancestral bebida fermentada de cacao y maíz que los mayas preparaban como alimento sagrado y sustento en los largos viajes por la selva.",
+    "date": "13 de abril de 2026",
+    "url": "articulos/pozol-el-fermento-sagrado-de-los-mayas/pozol-el-fermento-sagrado-de-los-mayas.html",
+    "cover": "articulos/pozol-el-fermento-sagrado-de-los-mayas/pozol-el-fermento-sagrado-de-los-mayas.png",
+    "imageStyle": "litografia-color",
+    "topic": "Pozol, bebida fermentada maya, cacao y maiz, fermentacion ancestral, Chiapas, Tabasco, microbiota del pozol, bebidas prehispanicas, soberania alimentaria mesoamericana"
+  },
+  {
+    "tag": "Fermentos",
+    "title": "Tejuino — La Bebida Fermentada de Masa de Maíz",
+    "excerpt": "Conoce el tejuino, la refrescante bebida fermentada de masa de maíz nixtamalizado que los pueblos del occidente de México han preparado por siglos para hidratarse y nutrirse.",
+    "date": "13 de abril de 2026",
+    "url": "articulos/tejuino-bebida-fermentada-de-masa-de-maiz/tejuino-bebida-fermentada-de-masa-de-maiz.html",
+    "cover": "articulos/tejuino-bebida-fermentada-de-masa-de-maiz/tejuino-bebida-fermentada-de-masa-de-maiz.png",
+    "imageStyle": "litografia-color",
+    "topic": "Tejuino, bebida fermentada, masa de maiz nixtamalizado, Jalisco, Nayarit, Colima, tepache de maiz, bebidas prehispanicas, fermentacion lactica, microbiota, calor y hidratacion"
+  },
+  {
+    "tag": "Fermentos",
     "title": "Fermentos de Nopal y Xoconostle: Probióticos Nativos de México",
     "excerpt": "Descubre cómo fermentar nopal y xoconostle en casa: probióticos nativos mexicanos con siglos de tradición y enormes beneficios para la salud intestinal.",
     "date": "12 de abril de 2026",
