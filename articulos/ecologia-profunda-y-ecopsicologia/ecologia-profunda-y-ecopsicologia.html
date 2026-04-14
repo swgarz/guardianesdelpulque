@@ -495,10 +495,10 @@
         wrapText(ctx,title,W/2,IMGSLICE+200,W-100,68);
         ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='34px ui-sans-serif,system-ui,sans-serif';
         ctx.fillText('guardianesdelpulque.org',W/2,H-80);
-        const link=document.createElement('a');
-        link.download='historia-guardianesdelpulque.png';
-        link.href=canvas.toDataURL('image/png');
-        link.click();
+        const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));
+        const file=new File([blob],'historia-guardianesdelpulque.png',{type:'image/png'});
+        if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title});}
+        else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='historia-guardianesdelpulque.png';document.body.appendChild(a);a.click();document.body.removeChild(a);}
       }catch(e){alert('No se pudo generar la imagen.');}
       finally{btn.textContent=orig;btn.disabled=false;}
     });
