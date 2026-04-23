@@ -40,7 +40,11 @@ const TOPICS = [
   "Sal, salineras tradicionales, sal de grano, preservacion de alimentos, comercio de sal",
   "Cacao, cacao criollo, pinole, tejate, ceremonias del cacao, chocolate artesanal",
   "Pan, pan de horno de lena, masa madre, pan de muerto, panaderia tradicional mexicana",
-  "Insectos comestibles, chapulines, gusanos de maguey, ahuautle, entomofagia, proteina de insectos",
+  "Escamoles, caviar azteca, hormigas Liometopum, recoleccion estacional en raices de maguey y mezquite",
+  "Chinicuil y meocuil, gusanos rojo y blanco del maguey, biologia de los gusanos del mezcal",
+  "Ahuautle, caviar mexicano, huevos de mosca axayacatl del Lago de Texcoco, platillo casi perdido",
+  "Hormigas chicatanas, vuelo nupcial de una noche al ano tras las primeras lluvias, recoleccion en Oaxaca",
+  "Jumiles de Taxco, Atizies taxcoensis, insecto que se come vivo, festival y cosmovision nahua",
   "Suelo vivo, erosion del suelo, microvida del suelo, restauracion edafica, analisis de tierra",
   "Energia alternativa, energia solar comunitaria, biogas, lena sostenible, autonomia energetica",
   "Migracion rural, comunidades en diaspora, retorno al campo, identidad comunitaria, remesas culturales",
@@ -1196,13 +1200,9 @@ async function generateArticle() {
   };
   const pulqueNote = TAG_NOTES[tag] || "";
 
-  // ── Selección automática de estilo por tag ─────────────────────────────────
-  const POP_ART_TAGS = new Set([
-    "Pan", "Insectos", "Fermentos", "Cacao", "Fuego",
-    "Arte", "Musica", "Pesca", "Barro", "Sal", "Hongos", "Aves",
-  ]);
-  const useFresco = !POP_ART_TAGS.has(tag);
-  console.log(`Estilo imagen: ${useFresco ? "fresco-monumental" : "pop-art"}`);
+  // ── Estilo de imagen: pop-art por defecto para todos los artículos ────────
+  const useFresco = false;
+  console.log(`Estilo imagen: pop-art`);
 
   // ESTILO FRESCO MONUMENTAL (temas serios: territorio, cultura, saberes...):
   const frescoBasePrompt =

@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 23 Apr 2026 04:58:35 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 05:11:33 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Patrones de Turing en Pieles: La Magia de las Manchas del Jaguar y Rayas de Cebra</title>
+      <link>https://guardianesdelpulque.org/articulos/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra.html</guid>
+      <description>Explora cómo los patrones de Turing dan forma a la belleza animal.</description>
+      <category>Biologia</category>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>La Polinización del Maguey por Murciélagos Magueyeros: Un Ejemplo de Coevolución</title>
@@ -41,16 +51,6 @@
       <category>Psicodelicos</category>
       <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales.png" type="image/png" length="0"/>
-    </item>
-
-    <item>
-      <title>La riqueza de los insectos comestibles en la gastronomía mexicana</title>
-      <link>https://guardianesdelpulque.org/articulos/la-riqueza-de-los-insectos-comestibles-en-la-gastronomia-mexicana/la-riqueza-de-los-insectos-comestibles-en-la-gastronomia-mexicana.html</link>
-      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-riqueza-de-los-insectos-comestibles-en-la-gastronomia-mexicana/la-riqueza-de-los-insectos-comestibles-en-la-gastronomia-mexicana.html</guid>
-      <description>Explora el valor nutricional y cultural de los insectos comestibles en México.</description>
-      <category>Insectos</category>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
-      <enclosure url="https://guardianesdelpulque.org/articulos/la-riqueza-de-los-insectos-comestibles-en-la-gastronomia-mexicana/la-riqueza-de-los-insectos-comestibles-en-la-gastronomia-mexicana.png" type="image/png" length="0"/>
     </item>
 
     <item>
