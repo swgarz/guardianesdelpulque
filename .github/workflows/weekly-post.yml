@@ -2,6 +2,7 @@ name: Weekly auto-publish
 
 on:
   schedule:
+    - cron: "0 13 * * 4" # Jueves 7:00 AM México (UTC-6)
     - cron: "0 13 * * 5" # Viernes 7:00 AM México (UTC-6)
     - cron: "0 13 * * 6" # Sábado 7:00 AM México (UTC-6)
     - cron: "0 13 * * 0" # Domingo 7:00 AM México (UTC-6)

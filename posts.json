@@ -1,5 +1,55 @@
 [
   {
+    "tag": "Arte",
+    "title": "El Fascinante Origen de los Alebrijes: Un Viaje Onírico y Artístico",
+    "excerpt": "Descubre cómo los alebrijes de Pedro Linares transformaron un sueño febril en una artesanía emblemática.",
+    "date": "23 de abril de 2026",
+    "url": "articulos/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico.html",
+    "cover": "articulos/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico.png",
+    "imageStyle": "encaustica",
+    "topic": "Alebrijes de Pedro Linares, arte nacido de un sueno febril en 1936"
+  },
+  {
+    "tag": "Territorio",
+    "title": "Teotihuacan: Un Ejemplo Magistral de Urbanismo Planificado en la Antigüedad",
+    "excerpt": "Explorando la planificación urbana de Teotihuacan, una metrópolis mesoamericana de 250,000 habitantes.",
+    "date": "23 de abril de 2026",
+    "url": "articulos/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad.html",
+    "cover": "articulos/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad.png",
+    "imageStyle": "encaustica",
+    "topic": "Teotihuacan como ciudad planificada, urbanismo mesoamericano de 250000 habitantes"
+  },
+  {
+    "tag": "Polinizacion",
+    "title": "La Vainilla de Papantla: Historia, Ciencia y Polinización",
+    "excerpt": "Exploramos la historia, cultivo y polinización de la vainilla de Papantla, un tesoro mexicano.",
+    "date": "23 de abril de 2026",
+    "url": "articulos/la-vainilla-de-papantla-historia-ciencia-y-polinizacion/la-vainilla-de-papantla-historia-ciencia-y-polinizacion.html",
+    "cover": "articulos/la-vainilla-de-papantla-historia-ciencia-y-polinizacion/la-vainilla-de-papantla-historia-ciencia-y-polinizacion.png",
+    "imageStyle": "claroscuro-social",
+    "topic": "Vainilla de Papantla, Vanilla planifolia y su polinizacion obligada"
+  },
+  {
+    "tag": "Mamiferos",
+    "title": "Xoloitzcuintle: Compañero Prehispánico y Guardián del Mictlán",
+    "excerpt": "Explora la rica historia y el simbolismo del Xoloitzcuintle, el perro sin pelo que conecta culturas y épocas.",
+    "date": "23 de abril de 2026",
+    "url": "articulos/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan.html",
+    "cover": "articulos/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Xoloitzcuintle, perro prehispanico sin pelo y companero al Mictlan"
+  },
+  {
+    "tag": "Evolucion",
+    "title": "El impacto cósmico de Chicxulub: Fin de los dinosaurios",
+    "excerpt": "El meteorito de Chicxulub marcó el fin de los dinosaurios hace 66 millones de años, transformando el rumbo del planeta.",
+    "date": "23 de abril de 2026",
+    "url": "articulos/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios.html",
+    "cover": "articulos/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios.png",
+    "imageStyle": "litografia-color",
+    "topic": "Impacto del meteorito de Chicxulub en Yucatan, extincion de los dinosaurios hace 66 millones de anos"
+  },
+  {
     "tag": "Hongos",
     "title": "El Intrincado mundo de la 'Wood Wide Web': Comunicaciones Subterráneas de los Bosques",
     "excerpt": "Explora las asombrosas redes miceliales que conectan los árboles en los bosques.",
