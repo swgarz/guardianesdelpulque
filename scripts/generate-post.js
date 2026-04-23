@@ -1252,16 +1252,18 @@ async function generateArticle() {
   // ESTILO POP ART (temas ligeros: recetas, música, insectos, arte, cocina...):
   const popArtBasePrompt =
     `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${article.title}" — Mexican scene related to this topic.${pulqueNote} ` +
-    `Color palette: ${palette}. ` +
+    `Use these color families in the illustration: ${palette}. ` +
     `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. ` +
-    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no borders. ` +
-    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind, NO urban buildings, NO color swatches.`;
+    `The ENTIRE 1792x1024 canvas must be a SINGLE continuous illustrated scene from edge to edge. The scene itself fills 100% of the canvas. No portion of the canvas may be blank, empty, or occupied by abstract color fields. ` +
+    `ABSOLUTELY FORBIDDEN elements (these must NOT appear anywhere in the image): color palette strips, color swatches, color sample bars, vertical color columns, horizontal color bands, reference color charts, side panels showing colors, isolated rectangles of solid color, color chips, Pantone-style blocks, any design-reference element showing the palette. ` +
+    `Also forbidden: divisions, panels, grids, borders, frames, vignettes, margins, white space, empty bands, comic panel separators, before/after splits, diptychs, triptychs. ` +
+    `Forbidden content: photography, 3D render, text, letters, words, labels, typography, writing, signatures, watermarks, urban buildings, cityscape skyline.`;
   const popArtFallbackPrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide Mexican scene. ` +
-    `Color palette: ${palette}. ` +
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide Mexican rural scene filling the entire canvas. ` +
+    `Use these color families within the illustration: ${palette}. ` +
     `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, high contrast, screen-print look. ` +
-    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no panels. ` +
-    `NO text, NO letters, NO words, NO typography, NO writing of any kind.`;
+    `SINGLE continuous illustrated scene from edge to edge filling 100% of the canvas. ` +
+    `ABSOLUTELY FORBIDDEN: color palette strips, color swatches, color bars, vertical color columns, side panels with color samples, reference color charts, isolated color blocks, divisions, grids, panels, borders, frames, margins, text, letters, typography.`;
 
   const basePrompt    = useFresco ? frescoBasePrompt    : popArtBasePrompt;
   const fallbackPrompt = useFresco ? frescoFallbackPrompt : popArtFallbackPrompt;

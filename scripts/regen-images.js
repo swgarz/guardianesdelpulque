@@ -9,8 +9,10 @@ const openai = new OpenAI();
 const PANEL_STYLE =
   "Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. " +
   "Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. " +
-  "SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames, no vignettes. " +
-  "NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind, NO urban buildings, NO city, NO color swatches, NO color palettes, NO decorative borders.";
+  "The ENTIRE canvas must be a SINGLE continuous illustrated scene from edge to edge. The scene itself fills 100% of the canvas. No portion of the canvas may be blank, empty, or occupied by abstract color fields. " +
+  "ABSOLUTELY FORBIDDEN elements (these must NOT appear anywhere in the image): color palette strips, color swatches, color sample bars, vertical color columns, horizontal color bands, reference color charts, side panels showing colors, isolated rectangles of solid color, color chips, Pantone-style blocks, any design-reference element showing the palette. " +
+  "Also forbidden: divisions, panels, grids, borders, frames, vignettes, margins, white space, empty bands, comic panel separators, before/after splits, diptychs, triptychs. " +
+  "Forbidden content: photography, 3D render, text, letters, words, labels, typography, writing, signatures, watermarks, urban buildings, cityscape skyline.";
 
 const images = [
   {
@@ -118,6 +120,18 @@ const images = [
     title: "Patrones de Turing en Pieles: La Magia de las Manchas del Jaguar y Rayas de Cebra",
     palette: "cellular green, water blue, pollen yellow, nucleus violet, jaguar gold and deep black",
     subjects: "majestic Mexican jaguar with rosette spot patterns stepping through jungle, zebra beside with bold black-and-white stripes, overlapping waves of reaction-diffusion patterns emerging across both animal skins, spiral and dotted halftone patterns rippling in the background, Turing morphogenesis patterns forming organically on the fur, tropical Mexican foliage, harmony between pure mathematics and living biology",
+  },
+  {
+    slug: "la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota",
+    title: "La Endosimbiosis: Puerta a la Complejidad de la Vida Eucariota",
+    palette: "cellular green, water blue, pollen yellow, nucleus violet, bacterial red, bone white",
+    subjects: "giant cross-section of a eukaryotic cell filling the entire scene with a huge purple nucleus in the center, elongated magenta mitochondria shaped like ancient bacteria pulsing inside the cytoplasm, emerald-green chloroplasts floating nearby with visible thylakoid stacks, tiny bacterial ancestors merging into larger primitive cells in the background, curved membrane outlines everywhere, depictions of Lynn Margulis's endosymbiosis theory happening across one unified illustration, organic flowing composition edge to edge, absolutely no color swatches or side palette bars",
+  },
+  {
+    slug: "la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca",
+    title: "La Danza de la Vida: Coevolución entre la Yuca y la Polilla Yucca",
+    palette: "pollen yellow, flower pink, stem green, bee gold, deep night blue, desert cream",
+    subjects: "giant blooming yucca plant with tall stalk of cream-white bell-shaped flowers at the center of the composition, a small Tegeticula moth hovering inside one open flower collecting pollen on her proboscis, another moth laying eggs inside a developing seed pod, sharp spiky leaves radiating outward, moonlit Mexican desert landscape with saguaros and organ pipe cacti, night sky with stars above, the entire scene is one continuous painting with no empty areas",
   },
 ];
 
