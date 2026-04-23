@@ -61,6 +61,8 @@
     .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
     .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
     .meta-pill span{font-size:.82rem}
+    .meta-pill-views{padding:.2rem .55rem;border-radius:999px;background:rgba(5,150,105,.09);color:#065f46;font-weight:600;transition:opacity .3s;}
+    .meta-pill-views[data-state="loading"]{opacity:.55}
     .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
     .hero-img{margin:14px auto 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);width:100%;max-width:912px;height:500px;display:block;}
     .hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -139,6 +141,7 @@
         <div class="meta-pill">🫙 <span>Fermentos</span></div>
         <div class="meta-pill">🕒 <span>Lectura: 6–8 min</span></div>
         <div class="meta-pill">📅 <span>12 de abril de 2026</span></div>
+        <div class="meta-pill meta-pill-views" id="viewCounter" aria-label="Visitas"><span aria-hidden="true">👁️</span> <span id="viewCount">—</span></div>
       </div>
       <p class="article-lead">Descubre el tejuino, la bebida fermentada prehispánica de Jalisco y Nayarit hecha de masa de maíz con piloncillo, servida con limón y sal de grano.</p>
     </header>
@@ -266,5 +269,20 @@
   (function(){const btn=document.getElementById('btnStory');if(!btn)return;function wrapText(ctx,text,x,y,maxW,lineH){const words=text.split(' ');let line='',lines=[];for(const w of words){const t=line?line+' '+w:w;if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w;}else line=t;}if(line)lines.push(line);let yy=y-(lines.length-1)*lineH/2;for(const l of lines){ctx.fillText(l,x,yy);yy+=lineH;}}
   btn.addEventListener('click',async()=>{const orig=btn.textContent;btn.textContent='⏳';btn.disabled=true;try{const slug=location.pathname.split('/').slice(-2,-1)[0]||'';const coverUrl=slug?(slug+'.png'):(document.querySelector('meta[property="og:image"]')?.content||'');const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/\s*[—\-]\s*Guardianes del Pulque/,'');const W=1080,H=1920,IMGSLICE=1150;const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;const ctx=canvas.getContext('2d');const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#011a10');bg.addColorStop(1,'#000c06');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);try{const img=new Image();await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src=coverUrl;});const ir=img.naturalWidth/img.naturalHeight,tr=W/IMGSLICE;let sx=0,sy=0,sw=img.naturalWidth,sh=img.naturalHeight;if(ir>tr){sw=sh*tr;sx=(img.naturalWidth-sw)/2;}else{sh=sw/tr;sy=(img.naturalHeight-sh)/2;}ctx.drawImage(img,sx,sy,sw,sh,0,0,W,IMGSLICE);}catch(e){}const grad2=ctx.createLinearGradient(0,IMGSLICE-180,0,IMGSLICE+60);grad2.addColorStop(0,'rgba(1,26,16,0)');grad2.addColorStop(1,'rgba(1,26,16,1)');ctx.fillStyle=grad2;ctx.fillRect(0,IMGSLICE-180,W,240);ctx.fillStyle='#6ee7b7';ctx.font='bold 38px ui-sans-serif,system-ui,sans-serif';ctx.textAlign='center';ctx.fillText('Guardianes del Pulque',W/2,IMGSLICE+70);ctx.fillStyle='#ffffff';ctx.font='bold 52px ui-sans-serif,system-ui,sans-serif';wrapText(ctx,title,W/2,IMGSLICE+200,W-100,68);ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='34px ui-sans-serif,system-ui,sans-serif';ctx.fillText('guardianesdelpulque.org',W/2,H-80);const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));const file=new File([blob],'historia-guardianesdelpulque.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title});}else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='historia-guardianesdelpulque.png';document.body.appendChild(a);a.click();document.body.removeChild(a);}}catch(e){alert('No se pudo generar la imagen.');}finally{btn.textContent=orig;btn.disabled=false;}});})();
   </script>
+  <script>
+  // CONTADOR DE VISITAS (abacus.jasoncameron.dev — sin DB propia)
+  (function(){
+    const el=document.getElementById('viewCount');
+    const wrap=document.getElementById('viewCounter');
+    if(!el||!wrap)return;
+    wrap.setAttribute('data-state','loading');
+    const slug=location.pathname.split('/').filter(Boolean).slice(-2,-1)[0]||'home';
+    fetch('https://abacus.jasoncameron.dev/hit/guardianesdelpulque/'+encodeURIComponent(slug))
+      .then(r=>r.ok?r.json():Promise.reject(r.status))
+      .then(d=>{const n=typeof d.value==='number'?d.value:0;el.textContent=n.toLocaleString('es-MX');wrap.removeAttribute('data-state');})
+      .catch(()=>{wrap.style.display='none';});
+  })();
+  </script>
+
 </body>
 </html>

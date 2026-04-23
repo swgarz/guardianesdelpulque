@@ -125,6 +125,8 @@
     .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
     .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
     .meta-pill span{font-size:.82rem}
+    .meta-pill-views{padding:.2rem .55rem;border-radius:999px;background:rgba(5,150,105,.09);color:#065f46;font-weight:600;transition:opacity .3s;}
+    .meta-pill-views[data-state="loading"]{opacity:.55}
     .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
     .hero-img{margin:14px auto 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);width:100%;max-width:912px;height:500px;display:block;} .hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
 
@@ -231,6 +233,7 @@
         <div class="meta-pill">📝 <span>Fuego</span></div>
         <div class="meta-pill">🕒 <span>Lectura: 7–9 min</span></div>
         <div class="meta-pill">📅 <span>13 de marzo de 2026</span></div>
+        <div class="meta-pill meta-pill-views" id="viewCounter" aria-label="Visitas"><span aria-hidden="true">👁️</span> <span id="viewCount">—</span></div>
       </div>
       <p class="article-lead">Explorando la importancia del fuego y los fogones en la cocina mexicana.</p>
     </header>
@@ -458,5 +461,20 @@
     });
   })();
   </script>
+  <script>
+  // CONTADOR DE VISITAS (abacus.jasoncameron.dev — sin DB propia)
+  (function(){
+    const el=document.getElementById('viewCount');
+    const wrap=document.getElementById('viewCounter');
+    if(!el||!wrap)return;
+    wrap.setAttribute('data-state','loading');
+    const slug=location.pathname.split('/').filter(Boolean).slice(-2,-1)[0]||'home';
+    fetch('https://abacus.jasoncameron.dev/hit/guardianesdelpulque/'+encodeURIComponent(slug))
+      .then(r=>r.ok?r.json():Promise.reject(r.status))
+      .then(d=>{const n=typeof d.value==='number'?d.value:0;el.textContent=n.toLocaleString('es-MX');wrap.removeAttribute('data-state');})
+      .catch(()=>{wrap.style.display='none';});
+  })();
+  </script>
+
 </body>
 </html>
