@@ -489,6 +489,20 @@
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
+
+    /* TOP VIEWS CARD */
+    .top-views-card{padding:24px;border-radius:24px;background:linear-gradient(135deg,rgba(5,150,105,.05),rgba(13,148,136,.03));border:1px solid rgba(5,150,105,.15);}
+    .top-views-card h2{margin:0 0 16px;display:flex;align-items:center;gap:.5rem;font-size:1.15rem;color:#065f46;}
+    .top-views-list{list-style:none;padding:0;margin:0;display:grid;gap:.4rem;}
+    .top-views-list li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.75rem;padding:.55rem .75rem;border-radius:12px;background:rgba(255,255,255,.6);border:1px solid rgba(15,23,42,.05);transition:background .16s ease,transform .16s ease;}
+    .top-views-list li:hover{background:rgba(255,255,255,.95);transform:translateX(2px);}
+    .top-views-list .rank{font-weight:800;color:#059669;font-size:.95rem;min-width:1.5rem;text-align:center;font-variant-numeric:tabular-nums;}
+    .top-views-list .top-views-title{font-size:.92rem;color:#0f172a;text-decoration:none;line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+    .top-views-list .top-views-title:hover{color:#059669;}
+    .top-views-list .top-views-count{font-size:.78rem;color:#065f46;background:rgba(5,150,105,.1);padding:.22rem .55rem;border-radius:999px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums;}
+    .top-views-skeleton li{height:40px;background:linear-gradient(90deg,rgba(15,23,42,.04),rgba(15,23,42,.08),rgba(15,23,42,.04));background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:12px;}
+    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+    .top-views-empty{padding:.8rem;text-align:center;color:#64748b;font-size:.88rem;}
     .card{
       border-radius:24px;
       background:rgba(255,255,255,.9);
@@ -823,6 +837,17 @@
     <div id="status" style="margin-top:8px;font-size:12px;color:#64748b"></div>
     <div style="text-align:center;margin-top:24px">
       <a class="btn btn-brand" href="posts.html">Ver todos los artículos →</a>
+    </div>
+  </section>
+
+  <!-- MÁS VISTOS -->
+  <section id="mas-vistos" class="container" style="margin-bottom:48px">
+    <div class="top-views-card reveal">
+      <h2>🔥 <span>Los más vistos</span></h2>
+      <ol class="top-views-list top-views-skeleton" id="topViewsList" aria-live="polite">
+        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li>
+      </ol>
     </div>
   </section>
 
@@ -1207,6 +1232,61 @@
     })();
 
     loadPosts();
+    loadTopViews();
+
+    // TOP 10 MÁS VISTOS
+    async function hashKey(slug){
+      try{
+        const buf=await crypto.subtle.digest('SHA-256', new TextEncoder().encode(slug));
+        return 'gdp-'+Array.from(new Uint8Array(buf)).slice(0,12).map(b=>b.toString(16).padStart(2,'0')).join('');
+      }catch{return 'gdp-'+slug.slice(0,55);}
+    }
+    function slugFromUrl(url){
+      const parts=(url||'').split('/').filter(Boolean);
+      return parts.length>=2?parts[parts.length-2]:'';
+    }
+    function shuffleInPlace(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+    async function loadTopViews(){
+      const list=document.getElementById('topViewsList');
+      if(!list) return;
+      let posts=[];
+      try{
+        const data=await fetchJsonSmart('posts.json');
+        posts=Array.isArray(data)?data:(Array.isArray(data.entries)?data.entries:[]);
+      }catch{}
+      if(!posts.length){list.innerHTML='<li class="top-views-empty">No hay artículos todavía.</li>';list.classList.remove('top-views-skeleton');return;}
+
+      // Fetch counts in parallel (no increment)
+      const withKeys=await Promise.all(posts.map(async p=>({post:p,key:await hashKey(slugFromUrl(p.url))})));
+      const settled=await Promise.all(withKeys.map(async ({post,key})=>{
+        try{
+          const r=await fetch('https://abacus.jasoncameron.dev/get/guardianesdelpulque/'+key);
+          if(!r.ok) return {post,count:0};
+          const d=await r.json();
+          return {post,count:typeof d.value==='number'?d.value:0};
+        }catch{return {post,count:0};}
+      }));
+
+      // Shuffle first so ties (e.g. all zeros) resolve randomly
+      shuffleInPlace(settled);
+      // Stable sort by count desc (shuffle preserves within-tie randomness)
+      settled.sort((a,b)=>b.count-a.count);
+      const top=settled.slice(0,10);
+
+      list.classList.remove('top-views-skeleton');
+      list.innerHTML='';
+      top.forEach((item,i)=>{
+        const li=document.createElement('li');
+        const p=item.post;
+        const countLabel=item.count>0?item.count.toLocaleString('es-MX'):'—';
+        li.innerHTML=`
+          <span class="rank">${i+1}</span>
+          <a class="top-views-title" href="${p.url||'#'}">${escapeHtml(p.title||'')}</a>
+          <span class="top-views-count" title="Vistas">👁️ ${countLabel}</span>
+        `;
+        list.appendChild(li);
+      });
+    }
 
     // Tags rotatorios en la tarjeta del hero
     (function(){
