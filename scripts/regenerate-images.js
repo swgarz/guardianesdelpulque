@@ -56,6 +56,10 @@ const TAG_PALETTES = {
   Musica:          "deep blue, vivid red, golden ochre and black",
   Psicodelicos:    "visionary purple, deep blue, sacred green, gold and black",
   Fermentos:       "purple cabbage, magenta, lime green and salt white",
+  Mamiferos:       "fur brown, savanna ochre, mountain green and stone grey",
+  Evolucion:       "deep red, ember orange, charcoal black, ochre and bone white",
+  Polinizacion:    "cempasuchil orange, flower yellow, leaf green and sky blue",
+  Ciencia:         "indigo blue, lab white, vivid red and gold",
 };
 const DEFAULT_PALETTE = "earth tones, ochre, green and oxide red";
 
@@ -72,6 +76,8 @@ const SLUG_NOTES = {
     " Mexican fresco mural style illustration: a dense crowd scene on a rough lime-plaster wall texture — a tall elegant female skeleton (La Catrina) wearing a wide feathered hat and dress stands at the center, surrounded by indigenous Mexicans in huipiles, mestizo workers in overalls, children, and a mustachioed painter in overalls holding brushes. Earthy fresco palette: ochre, raw sienna, burnt umber, cobalt blue, deep red oxide, olive green. Flat simplified monumental figures with bold black outlines, no shading gradients, rough plaster surface texture visible throughout. Dense packed composition filling the entire frame edge to edge, panoramic format.",
   "raramuri-cultura-y-resistencia-en-la-sierra-tarahumara":
     " Depict a traditional Rarámuri rarajípari ball race: several Rarámuri men running barefoot or in huarache sandals through the dramatic canyon landscape of the Barrancas del Cobre (Copper Canyon), Chihuahua, Mexico, kicking a small wooden ball (bola) along a mountain trail. Men wear white loincloths (tagora) and colorful headbands. The background shows towering canyon walls, pine trees and a vast deep ravine under a vivid sky. Foreground details include the wooden ball mid-kick and the runners' powerful stride. Energy, movement and endurance are the mood.",
+  "xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan":
+    " Depict a Xoloitzcuintle dog (Mexican hairless dog): completely HAIRLESS smooth dark grey-black skin (no fur, no mane, no tufts anywhere), slender athletic body, long thin legs, narrow elongated muzzle, large erect bat-like pointed ears standing straight up, slim whip-like tail, calm noble expression. The xolo stands at the entrance of Mictlán (the Aztec underworld) on rocky volcanic terrain at dusk, with stylized prehispanic motifs and a glowing river behind. Absolutely NO fur, NO feathered headdress, NO collar, NO mane — the dog is bald and sleek.",
 };
 
 // ── Construir prompt ────────────────────────────────────────────────────────
