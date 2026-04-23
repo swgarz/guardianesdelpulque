@@ -490,21 +490,13 @@
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:980px){.posts-grid{grid-template-columns:repeat(3,1fr)}}
 
-    /* TOP VIEWS CARD */
-    .top-views-card{padding:24px;border-radius:24px;background:linear-gradient(135deg,rgba(5,150,105,.05),rgba(13,148,136,.03));border:1px solid rgba(5,150,105,.15);}
-    .top-views-title-row{display:flex;align-items:center;gap:.6rem;margin:0 0 16px;font-size:1.35rem;font-weight:800;color:#065f46;letter-spacing:-.01em;}
-    .top-views-title-row .emoji{font-size:1.5rem;line-height:1;}
-    .top-views-title-row .label{color:#065f46;}
-    .top-views-list{list-style:none;padding:0;margin:0;display:grid;gap:.4rem;}
-    .top-views-list li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.75rem;padding:.55rem .75rem;border-radius:12px;background:rgba(255,255,255,.6);border:1px solid rgba(15,23,42,.05);transition:background .16s ease,transform .16s ease;}
-    .top-views-list li:hover{background:rgba(255,255,255,.95);transform:translateX(2px);}
-    .top-views-list .rank{font-weight:800;color:#059669;font-size:.95rem;min-width:1.5rem;text-align:center;font-variant-numeric:tabular-nums;}
-    .top-views-list .top-views-title{font-size:.92rem;color:#0f172a;text-decoration:none;line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
-    .top-views-list .top-views-title:hover{color:#059669;}
-    .top-views-list .top-views-count{font-size:.78rem;color:#065f46;background:rgba(5,150,105,.1);padding:.22rem .55rem;border-radius:999px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums;}
-    .top-views-skeleton li{height:40px;background:linear-gradient(90deg,rgba(15,23,42,.04),rgba(15,23,42,.08),rgba(15,23,42,.04));background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:12px;}
-    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-    .top-views-empty{padding:.8rem;text-align:center;color:#64748b;font-size:.88rem;}
+    /* RECOMENDACIONES */
+    .recom-list{list-style:none;padding:0;margin:0;display:grid;gap:.5rem;}
+    .recom-list li{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:.85rem;padding:.7rem .9rem;border-radius:12px;background:rgba(255,255,255,.72);border:1px solid rgba(15,23,42,.06);transition:background .16s ease,transform .16s ease;}
+    .recom-list li:hover{background:rgba(255,255,255,.98);transform:translateX(2px);}
+    .recom-list .rank{font-weight:800;color:#059669;font-size:.95rem;min-width:1.5rem;text-align:center;font-variant-numeric:tabular-nums;}
+    .recom-list .recom-title{font-size:.95rem;color:#0f172a;text-decoration:none;line-height:1.35;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-weight:500;}
+    .recom-list .recom-title:hover{color:#059669;}
     .card{
       border-radius:24px;
       background:rgba(255,255,255,.9);
@@ -842,14 +834,14 @@
     </div>
   </section>
 
-  <!-- MÁS VISTOS -->
-  <section id="mas-vistos" class="container" style="margin-bottom:48px">
-    <div class="top-views-card reveal">
-      <div class="top-views-title-row"><span class="emoji">🔥</span><span class="label">Los más vistos</span></div>
-      <ol class="top-views-list top-views-skeleton" id="topViewsList" aria-live="polite">
-        <li></li><li></li><li></li><li></li><li></li>
-        <li></li><li></li><li></li><li></li><li></li>
-      </ol>
+  <!-- RECOMENDACIONES -->
+  <section id="recomendaciones" class="container" style="margin-bottom:48px">
+    <div class="reveal" style="padding:24px;border-radius:24px;background:linear-gradient(135deg,rgba(5,150,105,.06),rgba(13,148,136,.03));border:1px solid rgba(5,150,105,.15)">
+      <div style="display:flex;align-items:center;gap:.6rem;margin:0 0 16px">
+        <span style="font-size:1.5rem;line-height:1" aria-hidden="true">✨</span>
+        <span style="font-size:1.35rem;font-weight:800;color:#065f46;letter-spacing:-.01em">Recomendaciones</span>
+      </div>
+      <ol class="recom-list" id="recomList" aria-label="Artículos recomendados"></ol>
     </div>
   </section>
 
@@ -1234,91 +1226,33 @@
     })();
 
     loadPosts();
-    loadTopViews();
+    loadRecomendaciones();
 
-    // TOP 10 MÁS VISTOS
-    async function hashKey(slug){
-      try{
-        const buf=await crypto.subtle.digest('SHA-256', new TextEncoder().encode(slug));
-        return 'gdp-'+Array.from(new Uint8Array(buf)).slice(0,12).map(b=>b.toString(16).padStart(2,'0')).join('');
-      }catch{return 'gdp-'+slug.slice(0,55);}
-    }
-    function slugFromUrl(url){
-      const parts=(url||'').split('/').filter(Boolean);
-      return parts.length>=2?parts[parts.length-2]:'';
-    }
-    const VIEWS_CACHE_KEY='gdp-view-counts-v1';
-    function loadCountsCache(){
-      try{return JSON.parse(localStorage.getItem(VIEWS_CACHE_KEY)||'{}')||{};}catch{return {};}
-    }
-    function saveCountsCache(map){
-      try{localStorage.setItem(VIEWS_CACHE_KEY,JSON.stringify(map));}catch{}
-    }
-    function renderTop(list,top){
-      list.classList.remove('top-views-skeleton');
-      list.innerHTML='';
-      if(!top.length){list.innerHTML='<li class="top-views-empty">Aún no hay visitas registradas.</li>';return;}
-      top.forEach((item,i)=>{
-        const li=document.createElement('li');
-        const p=item.post;
-        const countLabel=item.count>0?item.count.toLocaleString('es-MX'):'—';
-        li.innerHTML='<span class="rank">'+(i+1)+'</span>'+
-          '<a class="top-views-title" href="'+(p.url||'#')+'">'+escapeHtml(p.title||'')+'</a>'+
-          '<span class="top-views-count" title="Vistas">👁️ '+countLabel+'</span>';
-        list.appendChild(li);
-      });
-    }
-    function buildTop(posts,cache){
-      // Each post gets its best known count (from cache, default 0)
-      const settled=posts.map(p=>{
-        const slug=slugFromUrl(p.url);
-        const key=cache.__keys&&cache.__keys[slug];
-        const count=(key&&cache[key]&&typeof cache[key].count==='number')?cache[key].count:0;
-        return {post:p,count,slug};
-      });
-      // Sort: count desc, then title asc (stable, no randomness — evita "jumping")
-      settled.sort((a,b)=>{
-        if(b.count!==a.count)return b.count-a.count;
-        return (a.post.title||'').localeCompare(b.post.title||'','es');
-      });
-      return settled.slice(0,10);
-    }
-    async function loadTopViews(){
-      const list=document.getElementById('topViewsList');
+    // RECOMENDACIONES: 5 artículos aleatorios, se renuevan en cada visita
+    async function loadRecomendaciones(){
+      const list=document.getElementById('recomList');
       if(!list) return;
       let posts=[];
       try{
         const data=await fetchJsonSmart('posts.json');
         posts=Array.isArray(data)?data:(Array.isArray(data.entries)?data.entries:[]);
       }catch{}
-      if(!posts.length){list.innerHTML='<li class="top-views-empty">No hay artículos todavía.</li>';list.classList.remove('top-views-skeleton');return;}
+      if(!posts.length){list.innerHTML='<li style="padding:.8rem;color:#64748b;text-align:center">Aún no hay artículos.</li>';return;}
 
-      // 1. Compute keys (and map slug→key)
-      const cache=loadCountsCache();
-      if(!cache.__keys)cache.__keys={};
-      for(const p of posts){
-        const slug=slugFromUrl(p.url);
-        if(!cache.__keys[slug])cache.__keys[slug]=await hashKey(slug);
+      // Fisher-Yates para random sin repetición
+      const pool=posts.slice();
+      for(let i=pool.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [pool[i],pool[j]]=[pool[j],pool[i]];
       }
-      // 2. Render immediately from cache (so list shows instantly and stable)
-      renderTop(list,buildTop(posts,cache));
-
-      // 3. Fetch fresh counts in parallel; update cache only on success
-      const now=Date.now();
-      await Promise.all(posts.map(async p=>{
-        const slug=slugFromUrl(p.url);
-        const key=cache.__keys[slug];
-        try{
-          const r=await fetch('https://abacus.jasoncameron.dev/get/guardianesdelpulque/'+key);
-          if(!r.ok)return;
-          const d=await r.json();
-          if(typeof d.value==='number'){cache[key]={count:d.value,ts:now};}
-        }catch{}
-      }));
-      saveCountsCache(cache);
-
-      // 4. Re-render with fresh counts
-      renderTop(list,buildTop(posts,cache));
+      const picks=pool.slice(0,5);
+      list.innerHTML='';
+      picks.forEach((p,i)=>{
+        const li=document.createElement('li');
+        li.innerHTML='<span class="rank">'+(i+1)+'</span>'+
+          '<a class="recom-title" href="'+(p.url||'#')+'">'+escapeHtml(p.title||'')+'</a>';
+        list.appendChild(li);
+      });
     }
 
     // Tags rotatorios en la tarjeta del hero
