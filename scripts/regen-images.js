@@ -133,6 +133,18 @@ const images = [
     palette: "pollen yellow, flower pink, stem green, bee gold, deep night blue, desert cream",
     subjects: "giant blooming yucca plant with tall stalk of cream-white bell-shaped flowers at the center of the composition, a small Tegeticula moth hovering inside one open flower collecting pollen on her proboscis, another moth laying eggs inside a developing seed pod, sharp spiky leaves radiating outward, moonlit Mexican desert landscape with saguaros and organ pipe cacti, night sky with stars above, the entire scene is one continuous painting with no empty areas",
   },
+  {
+    slug: "el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa",
+    title: "El Ajolote de Xochimilco: Un Tesoro Biológico y Medicina Regenerativa",
+    palette: "water turquoise, salamander pink, chinampa green, axolotl cream, deep lake blue, pollen yellow",
+    subjects: "majestic pink axolotl (Ambystoma mexicanum) smiling in the foreground with external feathery pink gills spread wide, swimming underwater through the canals of Xochimilco, one of its legs actively regenerating with tiny new cells emerging visibly, water lilies and lirios floating above, chinampa agricultural islands with corn and vegetables at the top edge, a trajinera boat silhouetted above the water line, small fish and dragonflies, continuous flowing scene from dark lake depths to bright surface",
+  },
+  {
+    slug: "el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques",
+    title: "El Intrincado mundo de la Wood Wide Web: Comunicaciones Subterráneas de los Bosques",
+    palette: "moss green, mushroom cream, deep purple, earth brown, amber glow, root white",
+    subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
+  },
 ];
 
 async function generateImage(img) {
