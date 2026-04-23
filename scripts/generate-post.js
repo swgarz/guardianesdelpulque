@@ -579,44 +579,47 @@ const TONE_PROFILES = [
   {
     name: "practico-calido",
     systemPrompt:
-      "Eres un redactor experto en temas rurales, ecologicos y de territorio mexicano. " +
-      "Escribes articulos claros, calidos y practicos para comunidades. " +
-      "Tu tono es directo, comunitario y respetuoso. " +
-      "Cada seccion debe ser detallada: incluye ejemplos concretos, datos, pasos practicos o cifras cuando aplique. " +
-      "Los parrafos deben ser sustanciosos, no de una sola linea.",
-    sectionRange: [7, 10],
+      "Eres un redactor experto en temas rurales, ecologicos, cientificos y de territorio mexicano. " +
+      "Escribes articulos profundos, claros, calidos y practicos para comunidades. " +
+      "Tu tono es directo, comunitario y respetuoso, pero con rigor cientifico cuando el tema lo pide. " +
+      "Cada seccion es densa en contenido: incluye ejemplos concretos, datos verificables, pasos practicos y cifras. " +
+      "Los parrafos son sustanciosos y reflexivos, nunca de una sola linea. " +
+      "Integras nombres cientificos, fechas historicas, cifras concretas y menciones a investigadores reales.",
+    sectionRange: [9, 12],
     temperatureRange: [0.7, 0.9],
   },
   {
     name: "poetico-con-mesura",
     systemPrompt:
-      "Eres un escritor que combina conocimiento rural y ecologico con un lenguaje lirico pero contenido. " +
+      "Eres un escritor que combina conocimiento rural, ecologico y cientifico con un lenguaje lirico pero contenido. " +
       "Usas metaforas del territorio mexicano sin caer en excesos. " +
       "Tu prosa respira como la milpa: con ritmo y proposito. " +
-      "Cada seccion desarrolla ideas con profundidad: no basta nombrar, hay que explicar, describir y contextualizar. " +
-      "Minimo 3 parrafos por seccion.",
-    sectionRange: [6, 9],
+      "Cada seccion desarrolla ideas con profundidad: no basta nombrar, hay que explicar, describir, contextualizar y mostrar conexiones. " +
+      "Minimo 3 parrafos sustanciosos por seccion, con datos concretos, fechas y nombres reales cuando aplique.",
+    sectionRange: [9, 12],
     temperatureRange: [0.85, 1.0],
   },
   {
     name: "cortito-conciso",
     systemPrompt:
-      "Eres un redactor que escribe guias completas sobre temas rurales y ecologicos de Mexico. " +
-      "Vas directo al grano pero sin omitir informacion importante. " +
+      "Eres un redactor que escribe guias completas, densas y bien documentadas sobre temas rurales, ecologicos y cientificos de Mexico. " +
+      "Vas directo al grano sin perder profundidad: cada idea esta sustentada con datos, fechas, cifras o nombres reales. " +
       "Usa listas detalladas, pasos numerados y ejemplos especificos. " +
-      "Cada punto de una lista debe tener al menos una oracion explicativa.",
-    sectionRange: [6, 8],
+      "Cada punto de una lista debe tener al menos una oracion explicativa con contenido concreto. " +
+      "Integras nombres cientificos, fechas y cifras con naturalidad.",
+    sectionRange: [9, 12],
     temperatureRange: [0.6, 0.8],
   },
   {
     name: "narrativo",
     systemPrompt:
-      "Eres un narrador que cuenta historias y escenas del campo mexicano para transmitir saberes. " +
+      "Eres un narrador que cuenta historias y escenas del campo mexicano para transmitir saberes cientificos y culturales. " +
       "Empiezas con una escena vivida (un tlachiquero al amanecer, una cuadrilla mezclando adobe, " +
-      "una lluvia cayendo en la milpa) y de ahi extraes aprendizajes practicos. " +
-      "Equilibras relato y ensenanza. Cada seccion desarrolla tanto la historia como el conocimiento: " +
-      "no dejes ideas a medias, lleva cada tema hasta sus consecuencias practicas.",
-    sectionRange: [7, 10],
+      "una lluvia cayendo en la milpa, un murcielago cruzando la noche) y de ahi extraes aprendizajes profundos. " +
+      "Equilibras relato y ensenanza. Cada seccion desarrolla tanto la historia como el conocimiento cientifico: " +
+      "no dejes ideas a medias, lleva cada tema hasta sus consecuencias practicas. " +
+      "Integras nombres cientificos, fechas historicas precisas, cifras verificables y menciones a investigadores reales.",
+    sectionRange: [9, 12],
     temperatureRange: [0.85, 1.0],
   },
 ];
@@ -827,6 +830,18 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
       background:rgba(5,150,105,.04);border-radius:10px;
       margin:14px 0;font-size:.86rem;color:#374151;
     }
+    .aside-fact{
+      display:block;margin:20px 0;padding:16px 20px;
+      background:linear-gradient(135deg,rgba(5,150,105,.08),rgba(13,148,136,.06));
+      border-left:4px solid var(--brand);border-radius:14px;
+      font-size:.95rem;color:#0f172a;
+    }
+    .aside-fact strong{display:block;color:#065f46;margin-bottom:.35rem;font-size:.95rem;letter-spacing:.01em;}
+    .glossary{margin:16px 0 0;padding:18px 22px;background:rgba(15,23,42,.03);border-radius:14px;}
+    .glossary dt{font-weight:800;color:#065f46;margin-top:10px;font-size:.98rem;}
+    .glossary dt:first-child{margin-top:0}
+    .glossary dd{margin:4px 0 0 0;color:#374151;font-size:.92rem;line-height:1.55;}
+    .article-body em{font-style:italic;color:#065f46;}
 
     /* CTA */
     .cta-section{
@@ -1063,24 +1078,37 @@ async function generateArticle() {
 
   // 1. Generar articulo con GPT
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: "gpt-4o",
     messages: [
       { role: "system", content: profile.systemPrompt },
       {
         role: "user",
         content:
-          `Escribe un articulo original y detallado sobre: ${topic}.\n\n` +
+          `Escribe un articulo original, profundo y ricamente documentado sobre: ${topic}.\n\n` +
           "Responde SOLO con un JSON valido (sin markdown ni backticks) con esta estructura:\n" +
           `{"title": "Titulo del articulo", "excerpt": "Resumen de 1 linea (max 120 chars)", "tag": "Etiqueta principal", "body": "<h2>...</h2><p>...</p>..."}\n\n` +
-          `El body debe ser HTML con h2, p, ul/li y ol/li. Usa exactamente ${sectionCount} secciones con h2. ` +
-          "Cada seccion debe tener minimo 3 parrafos o un parrafo mas una lista detallada. " +
-          "Los parrafos deben ser sustanciosos (minimo 60 palabras cada uno). " +
-          "Incluye datos concretos, ejemplos especificos, cifras o pasos practicos en al menos la mitad de las secciones. " +
-          "No incluyas el titulo principal en el body. No uses etiquetas style ni script. " +
-          "Sin fuentes ni referencias. El articulo completo debe tener entre 900 y 1400 palabras.\n\n" +
-          `Para el tag, elige el mas apropiado entre: ${VALID_TAGS.join(", ")}. ` +
-          "Si ninguno encaja, puedes sugerir uno nuevo.\n\n" +
-          "Termina el articulo con un parrafo de cierre motivador de al menos 80 palabras.",
+          `EXTENSION Y ESTRUCTURA:\n` +
+          `- El body debe ser HTML con h2, p, ul/li, ol/li y elementos enriquecidos descritos abajo.\n` +
+          `- Usa exactamente ${sectionCount} secciones con h2.\n` +
+          `- Cada seccion con minimo 3 parrafos sustanciosos de al menos 100 palabras cada uno, o un parrafo profundo mas una lista detallada.\n` +
+          `- El articulo completo entre 1800 y 2800 palabras.\n` +
+          `- No incluyas el titulo principal en el body. No uses etiquetas style ni script.\n\n` +
+          `RIQUEZA OBLIGATORIA (estos elementos deben aparecer en el body):\n` +
+          `1. AL MENOS 3 fechas historicas especificas (ej. "en 1952", "desde el siglo XVI", "hasta 1810").\n` +
+          `2. AL MENOS 2 nombres reales de cientificos, investigadores, historiadores o autores relevantes (ej. "Alan Turing", "Luz Maria del Razo", "Miguel Leon-Portilla"). Integralos naturalmente.\n` +
+          `3. Nombres cientificos binomiales cuando se mencionen especies (ej. "Agave salmiana", "Leptonycteris nivalis") en cursiva con <em>.\n` +
+          `4. AL MENOS 5 cifras concretas (porcentajes, medidas, distancias, cantidades, anos, poblaciones).\n` +
+          `5. AL MENOS 1 cuadro destacado con datos sorprendentes usando este formato exacto:\n` +
+          `   <aside class="aside-fact"><strong>¿Sabias que?</strong> [dato fascinante de 1-2 oraciones]</aside>\n` +
+          `6. Al FINAL del body, una seccion h2 "Glosario" con entre 5 y 8 terminos tecnicos definidos asi:\n` +
+          `   <h2>Glosario</h2><dl class="glossary"><dt>Termino</dt><dd>Definicion clara de 1-2 oraciones.</dd><dt>...</dt><dd>...</dd></dl>\n` +
+          `7. Cierra el articulo (antes del glosario) con un parrafo motivador de al menos 100 palabras que invite a la accion.\n\n` +
+          `ESTILO:\n` +
+          `- Integra ciencia, cultura mexicana, historia y saberes tradicionales cuando aplique.\n` +
+          `- Evita frases vacias o generalidades. Cada parrafo debe contener informacion sustancial.\n` +
+          `- No inventes datos: si no estas seguro de una cifra o nombre, omitelo en lugar de inventar.\n` +
+          `- Sin fuentes ni bibliografia al final (la integracion es organica).\n\n` +
+          `TAG: elige el mas apropiado entre: ${VALID_TAGS.join(", ")}. Si ninguno encaja, puedes sugerir uno nuevo.`,
       },
     ],
     temperature,
@@ -1107,18 +1135,19 @@ async function generateArticle() {
   for (let retry = 0; !article && retry < 2; retry++) {
     console.log(`JSON inválido, reintentando GPT (intento ${retry + 2})...`);
     const retryCompletion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-4o",
       messages: [
         { role: "system", content: profile.systemPrompt },
         {
           role: "user",
           content:
-            `Escribe un articulo original y detallado sobre: ${topic}.\n\n` +
+            `Escribe un articulo original, profundo y documentado sobre: ${topic}.\n\n` +
             "Responde SOLO con un JSON valido (sin markdown ni backticks) con esta estructura EXACTA:\n" +
             `{"title":"Titulo","excerpt":"Resumen max 120 chars","tag":"Tag","body":"<h2>...</h2><p>...</p>"}\n\n` +
-            `IMPORTANTE: El body debe ser una sola linea de texto sin saltos de linea. ` +
+            `IMPORTANTE: El body debe ser una sola linea de texto sin saltos de linea literales (usa espacios). ` +
             `Usa exactamente ${sectionCount} secciones con h2. ` +
-            "Cada seccion minimo 3 parrafos sustanciosos. Sin style ni script. Entre 900 y 1400 palabras.\n\n" +
+            "Cada seccion minimo 3 parrafos de 100+ palabras. Sin style ni script. Entre 1800 y 2800 palabras. " +
+            "Incluye 3+ fechas, 2+ nombres de cientificos/autores reales, 5+ cifras, 1+ <aside class=\"aside-fact\"> y un glosario final con <dl class=\"glossary\">.\n\n" +
             `Tag entre: ${VALID_TAGS.join(", ")}.`,
         },
       ],

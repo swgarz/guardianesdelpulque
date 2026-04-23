@@ -5,13 +5,63 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 23 Apr 2026 05:11:33 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 05:39:50 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El Intrincado mundo de la 'Wood Wide Web': Comunicaciones Subterráneas de los Bosques</title>
+      <link>https://guardianesdelpulque.org/articulos/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques.html</guid>
+      <description>Explora las asombrosas redes miceliales que conectan los árboles en los bosques.</description>
+      <category>Hongos</category>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La Danza de la Vida: Coevolución entre la Yuca y la Polilla Yucca</title>
+      <link>https://guardianesdelpulque.org/articulos/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca.html</guid>
+      <description>El sutil y complejo mutualismo obligado entre la yuca y la polilla yucca revela los misterios de la coevolución.</description>
+      <category>Polinizacion</category>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La magia de la nixtamalización: un legado mesoamericano de 3500 años</title>
+      <link>https://guardianesdelpulque.org/articulos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos.html</guid>
+      <description>Descubre cómo la nixtamalización revolucionó la nutrición y la cultura mesoamericana.</description>
+      <category>Sabiduria</category>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La Endosimbiosis: Puerta a la Complejidad de la Vida Eucariota</title>
+      <link>https://guardianesdelpulque.org/articulos/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota.html</guid>
+      <description>Explora el fascinante origen bacteriano de mitocondrias y cloroplastos.</description>
+      <category>Evolucion</category>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El Ajolote de Xochimilco: Un Tesoro Biológico y Medicina Regenerativa</title>
+      <link>https://guardianesdelpulque.org/articulos/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa.html</guid>
+      <description>El ajolote, símbolo de la regeneración, enfrenta un crítico peligro de extinción.</description>
+      <category>Ciencia</category>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Patrones de Turing en Pieles: La Magia de las Manchas del Jaguar y Rayas de Cebra</title>

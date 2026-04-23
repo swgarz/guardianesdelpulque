@@ -1,5 +1,55 @@
 [
   {
+    "tag": "Hongos",
+    "title": "El Intrincado mundo de la 'Wood Wide Web': Comunicaciones Subterráneas de los Bosques",
+    "excerpt": "Explora las asombrosas redes miceliales que conectan los árboles en los bosques.",
+    "date": "22 de abril de 2026",
+    "url": "articulos/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques.html",
+    "cover": "articulos/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Redes miceliales, wood wide web, comunicacion entre arboles a traves de hongos, Suzanne Simard, intercambio de nutrientes y senales"
+  },
+  {
+    "tag": "Polinizacion",
+    "title": "La Danza de la Vida: Coevolución entre la Yuca y la Polilla Yucca",
+    "excerpt": "El sutil y complejo mutualismo obligado entre la yuca y la polilla yucca revela los misterios de la coevolución.",
+    "date": "22 de abril de 2026",
+    "url": "articulos/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca.html",
+    "cover": "articulos/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca.png",
+    "imageStyle": "encaustica",
+    "topic": "Coevolucion yuca y polilla yucca, Tegeticula, mutualismo obligado entre planta e insecto, polinizacion unica"
+  },
+  {
+    "tag": "Sabiduria",
+    "title": "La magia de la nixtamalización: un legado mesoamericano de 3500 años",
+    "excerpt": "Descubre cómo la nixtamalización revolucionó la nutrición y la cultura mesoamericana.",
+    "date": "22 de abril de 2026",
+    "url": "articulos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos.html",
+    "cover": "articulos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Nixtamalizacion, alcali libera niacina del maiz, prevencion de pelagra, saber mesoamericano de 3500 anos, quimica ancestral"
+  },
+  {
+    "tag": "Evolucion",
+    "title": "La Endosimbiosis: Puerta a la Complejidad de la Vida Eucariota",
+    "excerpt": "Explora el fascinante origen bacteriano de mitocondrias y cloroplastos.",
+    "date": "22 de abril de 2026",
+    "url": "articulos/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota.html",
+    "cover": "articulos/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Endosimbiosis, mitocondrias y cloroplastos, origen bacteriano de los organelos, Lynn Margulis, celulas eucariotas"
+  },
+  {
+    "tag": "Ciencia",
+    "title": "El Ajolote de Xochimilco: Un Tesoro Biológico y Medicina Regenerativa",
+    "excerpt": "El ajolote, símbolo de la regeneración, enfrenta un crítico peligro de extinción.",
+    "date": "22 de abril de 2026",
+    "url": "articulos/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa.html",
+    "cover": "articulos/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Ajolote de Xochimilco, regeneracion de extremidades y cerebro, Ambystoma mexicanum, especie en peligro critico, frontera de la medicina regenerativa"
+  },
+  {
     "tag": "Biologia",
     "title": "Patrones de Turing en Pieles: La Magia de las Manchas del Jaguar y Rayas de Cebra",
     "excerpt": "Explora cómo los patrones de Turing dan forma a la belleza animal.",
