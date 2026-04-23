@@ -95,6 +95,24 @@ const images = [
     palette: "vivid yellow corn, deep red bean, cream white squash, earth brown, leaf green",
     subjects: "hands selecting native corn seeds, colorful criollo seed varieties spread out, woman storing seeds in clay pot, traditional milpa with corn beans and squash, community seed bank gathering",
   },
+  {
+    slug: "la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion",
+    title: "La Polinización del Maguey por Murciélagos Magueyeros",
+    palette: "pollen yellow, flower pink, stem green, bee gold, deep night blue",
+    subjects: "long-nosed bat Leptonycteris flying at night toward a flowering maguey salmiana, tall quiote stalk with open white-yellow blossoms, blue-grey-green fleshy spiky leaves of the agave, pollen dust on bat's fur, full moon and stars, desert landscape with other magueyes, nocturnal Mexican highland scene",
+  },
+  {
+    slug: "migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora",
+    title: "Migración Rural: Retornos y Renovaciones en Comunidades en Diáspora",
+    palette: "road ochre, brick red, indigo blue, hope green, warm cream",
+    subjects: "campesino family walking with bundled belongings along a dirt road, rural Mexican village with adobe houses in the distance, milpa with corn in the foreground, elderly grandparents waving welcome at a doorway, hands exchanging a photograph, suitcase beside a bus stop, cross-generational embrace",
+  },
+  {
+    slug: "psicodelicos-sagrados-conexiones-ancestrales-y-espirituales",
+    title: "Psicodélicos Sagrados: Conexiones Ancestrales y Espirituales",
+    palette: "visionary purple, deep cobalt blue, sacred green, ritual gold, night black",
+    subjects: "indigenous wixárika shaman sitting in ceremony beside peyote cacti, hongos sagrados growing from forest floor, temazcal steaming under a starry sky, circle of candles and copal smoke, visionary geometric patterns emerging from the background, sacred plants of power, eyes closed in meditation, Mexican night landscape",
+  },
 ];
 
 async function generateImage(img) {
