@@ -5,7 +5,7 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 23 Apr 2026 04:52:29 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 04:58:35 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
@@ -21,6 +21,26 @@
       <category>Polinizacion</category>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Migración Rural: Retornos y Renovaciones en Comunidades en Diáspora</title>
+      <link>https://guardianesdelpulque.org/articulos/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora.html</guid>
+      <description>Exploramos la migración rural y su impacto en la identidad comunitaria y las remesas culturales.</description>
+      <category>Migracion</category>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Psicodélicos Sagrados: Conexiones Ancestrales y Espirituales</title>
+      <link>https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales.html</guid>
+      <description>Explora el poder de los psicodélicos sagrados en la cultura mexicana.</description>
+      <category>Psicodelicos</category>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales.png" type="image/png" length="0"/>
     </item>
 
     <item>
