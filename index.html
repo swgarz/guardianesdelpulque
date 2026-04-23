@@ -492,7 +492,9 @@
 
     /* TOP VIEWS CARD */
     .top-views-card{padding:24px;border-radius:24px;background:linear-gradient(135deg,rgba(5,150,105,.05),rgba(13,148,136,.03));border:1px solid rgba(5,150,105,.15);}
-    .top-views-card h2{margin:0 0 16px;display:flex;align-items:center;gap:.5rem;font-size:1.15rem;color:#065f46;}
+    .top-views-title-row{display:flex;align-items:center;gap:.6rem;margin:0 0 16px;font-size:1.35rem;font-weight:800;color:#065f46;letter-spacing:-.01em;}
+    .top-views-title-row .emoji{font-size:1.5rem;line-height:1;}
+    .top-views-title-row .label{color:#065f46;}
     .top-views-list{list-style:none;padding:0;margin:0;display:grid;gap:.4rem;}
     .top-views-list li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.75rem;padding:.55rem .75rem;border-radius:12px;background:rgba(255,255,255,.6);border:1px solid rgba(15,23,42,.05);transition:background .16s ease,transform .16s ease;}
     .top-views-list li:hover{background:rgba(255,255,255,.95);transform:translateX(2px);}
@@ -843,7 +845,7 @@
   <!-- MÁS VISTOS -->
   <section id="mas-vistos" class="container" style="margin-bottom:48px">
     <div class="top-views-card reveal">
-      <h2>🔥 <span>Los más vistos</span></h2>
+      <div class="top-views-title-row"><span class="emoji">🔥</span><span class="label">Los más vistos</span></div>
       <ol class="top-views-list top-views-skeleton" id="topViewsList" aria-live="polite">
         <li></li><li></li><li></li><li></li><li></li>
         <li></li><li></li><li></li><li></li><li></li>
@@ -1245,7 +1247,42 @@
       const parts=(url||'').split('/').filter(Boolean);
       return parts.length>=2?parts[parts.length-2]:'';
     }
-    function shuffleInPlace(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+    const VIEWS_CACHE_KEY='gdp-view-counts-v1';
+    function loadCountsCache(){
+      try{return JSON.parse(localStorage.getItem(VIEWS_CACHE_KEY)||'{}')||{};}catch{return {};}
+    }
+    function saveCountsCache(map){
+      try{localStorage.setItem(VIEWS_CACHE_KEY,JSON.stringify(map));}catch{}
+    }
+    function renderTop(list,top){
+      list.classList.remove('top-views-skeleton');
+      list.innerHTML='';
+      if(!top.length){list.innerHTML='<li class="top-views-empty">Aún no hay visitas registradas.</li>';return;}
+      top.forEach((item,i)=>{
+        const li=document.createElement('li');
+        const p=item.post;
+        const countLabel=item.count>0?item.count.toLocaleString('es-MX'):'—';
+        li.innerHTML='<span class="rank">'+(i+1)+'</span>'+
+          '<a class="top-views-title" href="'+(p.url||'#')+'">'+escapeHtml(p.title||'')+'</a>'+
+          '<span class="top-views-count" title="Vistas">👁️ '+countLabel+'</span>';
+        list.appendChild(li);
+      });
+    }
+    function buildTop(posts,cache){
+      // Each post gets its best known count (from cache, default 0)
+      const settled=posts.map(p=>{
+        const slug=slugFromUrl(p.url);
+        const key=cache.__keys&&cache.__keys[slug];
+        const count=(key&&cache[key]&&typeof cache[key].count==='number')?cache[key].count:0;
+        return {post:p,count,slug};
+      });
+      // Sort: count desc, then title asc (stable, no randomness — evita "jumping")
+      settled.sort((a,b)=>{
+        if(b.count!==a.count)return b.count-a.count;
+        return (a.post.title||'').localeCompare(b.post.title||'','es');
+      });
+      return settled.slice(0,10);
+    }
     async function loadTopViews(){
       const list=document.getElementById('topViewsList');
       if(!list) return;
@@ -1256,36 +1293,32 @@
       }catch{}
       if(!posts.length){list.innerHTML='<li class="top-views-empty">No hay artículos todavía.</li>';list.classList.remove('top-views-skeleton');return;}
 
-      // Fetch counts in parallel (no increment)
-      const withKeys=await Promise.all(posts.map(async p=>({post:p,key:await hashKey(slugFromUrl(p.url))})));
-      const settled=await Promise.all(withKeys.map(async ({post,key})=>{
+      // 1. Compute keys (and map slug→key)
+      const cache=loadCountsCache();
+      if(!cache.__keys)cache.__keys={};
+      for(const p of posts){
+        const slug=slugFromUrl(p.url);
+        if(!cache.__keys[slug])cache.__keys[slug]=await hashKey(slug);
+      }
+      // 2. Render immediately from cache (so list shows instantly and stable)
+      renderTop(list,buildTop(posts,cache));
+
+      // 3. Fetch fresh counts in parallel; update cache only on success
+      const now=Date.now();
+      await Promise.all(posts.map(async p=>{
+        const slug=slugFromUrl(p.url);
+        const key=cache.__keys[slug];
         try{
           const r=await fetch('https://abacus.jasoncameron.dev/get/guardianesdelpulque/'+key);
-          if(!r.ok) return {post,count:0};
+          if(!r.ok)return;
           const d=await r.json();
-          return {post,count:typeof d.value==='number'?d.value:0};
-        }catch{return {post,count:0};}
+          if(typeof d.value==='number'){cache[key]={count:d.value,ts:now};}
+        }catch{}
       }));
+      saveCountsCache(cache);
 
-      // Shuffle first so ties (e.g. all zeros) resolve randomly
-      shuffleInPlace(settled);
-      // Stable sort by count desc (shuffle preserves within-tie randomness)
-      settled.sort((a,b)=>b.count-a.count);
-      const top=settled.slice(0,10);
-
-      list.classList.remove('top-views-skeleton');
-      list.innerHTML='';
-      top.forEach((item,i)=>{
-        const li=document.createElement('li');
-        const p=item.post;
-        const countLabel=item.count>0?item.count.toLocaleString('es-MX'):'—';
-        li.innerHTML=`
-          <span class="rank">${i+1}</span>
-          <a class="top-views-title" href="${p.url||'#'}">${escapeHtml(p.title||'')}</a>
-          <span class="top-views-count" title="Vistas">👁️ ${countLabel}</span>
-        `;
-        list.appendChild(li);
-      });
+      // 4. Re-render with fresh counts
+      renderTop(list,buildTop(posts,cache));
     }
 
     // Tags rotatorios en la tarjeta del hero
