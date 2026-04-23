@@ -1,5 +1,15 @@
 [
   {
+    "tag": "Polinizacion",
+    "title": "La Polinización del Maguey por Murciélagos Magueyeros: Un Ejemplo de Coevolución",
+    "excerpt": "Explora la fascinante relación entre magueyes y murciélagos en México.",
+    "date": "22 de abril de 2026",
+    "url": "articulos/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion.html",
+    "cover": "articulos/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion.png",
+    "imageStyle": "expresionismo-terroso",
+    "topic": "Polinizacion del maguey por murcielagos magueyeros, Leptonycteris, vuelo nocturno, coevolucion agave-quiroptero"
+  },
+  {
     "tag": "Migracion",
     "title": "Migración Rural: Retornos y Renovaciones en Comunidades en Diáspora",
     "excerpt": "Exploramos la migración rural y su impacto en la identidad comunitaria y las remesas culturales.",
@@ -18,16 +28,6 @@
     "cover": "articulos/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales.png",
     "imageStyle": "pastel-costumbrista",
     "topic": "Psicodelicos sagrados, peyote, hongos sagrados, temazcal, plantas de poder, medicina ancestral visionaria"
-  },
-  {
-    "tag": "Territorio",
-    "title": "La Milpa: Un Legado Vivo de Agricultura Tradicional",
-    "excerpt": "La milpa representa la sinergia del maíz, frijol y calabaza en el campo mexicano.",
-    "date": "18 de abril de 2026",
-    "url": "articulos/la-milpa-un-legado-vivo-de-agricultura-tradicional/la-milpa-un-legado-vivo-de-agricultura-tradicional.html",
-    "cover": "articulos/la-milpa-un-legado-vivo-de-agricultura-tradicional/la-milpa-un-legado-vivo-de-agricultura-tradicional.png",
-    "imageStyle": "expresionismo-terroso",
-    "topic": "Milpa, agricultura tradicional, policultivo, maiz, frijol, calabaza"
   },
   {
     "tag": "Insectos",
@@ -437,16 +437,6 @@
     "cover": "articulos/bioconstruccion-tecnicas-sostenibles-con-tierra/bioconstruccion-tecnicas-sostenibles-con-tierra.png",
     "imageStyle": "encaustica",
     "readTime": "8 min"
-  },
-  {
-    "tag": "Semillas",
-    "title": "La Milpa: Agricultura Tradicional Mexicana",
-    "excerpt": "Descubre la milpa, un sistema agrícola sustentable y diverso en México.",
-    "date": "7 de marzo de 2026",
-    "url": "articulos/la-milpa-agricultura-tradicional-mexicana/la-milpa-agricultura-tradicional-mexicana.html",
-    "cover": "articulos/la-milpa-agricultura-tradicional-mexicana/la-milpa-agricultura-tradicional-mexicana.png",
-    "imageStyle": "expresionismo-terroso",
-    "readTime": "6 min"
   },
   {
     "tag": "Naturaleza",
