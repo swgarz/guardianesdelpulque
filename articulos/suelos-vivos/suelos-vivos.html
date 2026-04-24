@@ -2,28 +2,26 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="../../images/logo_transparente.png">
-  <meta name="theme-color" content="#059669" />
-  <link rel="icon" href="../../images/logo_transparente.png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../../images/logo_transparente.png">
   <title>Suelos vivos — Guardianes del Pulque</title>
-  <meta name="description" content="Compost, micorrizas y cobertura para resiliencia hídrica." />
+  <meta name="description" content="Cómo una cucharada de tierra puede contener más seres vivos que toda la población humana junta." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Suelos vivos" />
-  <meta property="og:description" content="Compost, micorrizas y cobertura para resiliencia hídrica." />
+  <meta property="og:description" content="Cómo una cucharada de tierra puede contener más seres vivos que toda la población humana junta." />
   <meta property="og:image" content="https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.png" />
   <meta property="og:url" content="https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.html" />
-  <link rel="canonical" href="https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.html" />
   <meta property="og:site_name" content="Guardianes del Pulque" />
   <meta property="og:locale" content="es_MX" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Suelos vivos" />
-  <meta name="twitter:description" content="Compost, micorrizas y cobertura para resiliencia hídrica." />
+  <meta name="twitter:description" content="Cómo una cucharada de tierra puede contener más seres vivos que toda la población humana junta." />
   <meta name="twitter:image" content="https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.png" />
+  <link rel="canonical" href="https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.html" />
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -31,7 +29,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Suelos vivos",
-    "description": "Compost, micorrizas y cobertura para resiliencia hídrica.",
+    "description": "Cómo una cucharada de tierra puede contener más seres vivos que toda la población humana junta.",
     "image": "https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.png",
     "datePublished": "2026-03-05",
     "author": {
@@ -51,9 +49,6 @@
   </script>
 
   <style>
-    .skip-link{position:absolute;top:-44px;left:6px;z-index:9999;background:#059669;color:#fff;padding:8px 16px;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:top .15s ease;}
-    .skip-link:focus{top:0;}
-
     *,*::before,*::after{box-sizing:border-box}
     body{
       margin:0;
@@ -128,19 +123,42 @@
     .meta-pill-views{padding:.2rem .55rem;border-radius:999px;background:rgba(5,150,105,.09);color:#065f46;font-weight:600;transition:opacity .3s;}
     .meta-pill-views[data-state="loading"]{opacity:.55}
     .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
-    .hero-img{display:block;width:calc(100% + 32px);max-width:912px;height:500px;margin:14px -16px 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);} .hero-img img{width:100%;height:100%;object-fit:cover;display:block;} @media(min-width:640px){.hero-img{width:calc(100% + 48px);margin:14px -24px 24px;}}
+    .hero-img{margin:14px auto 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);width:100%;max-width:912px;height:500px;display:block;} .hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    /* DIY SECTION */
+    .diy-section{
+      margin:2rem 0;padding:1.4rem 1.6rem;border-radius:16px;
+      background:rgba(5,150,105,.06);border:2px solid rgba(5,150,105,.25);
+    }
+    .diy-section h2{margin:0 0 .8rem;font-size:1.15rem;color:#065f46;}
+    .diy-section h3{margin:.8rem 0 .4rem;font-size:.95rem;color:#0f172a;font-weight:700;}
+    .diy-section p{margin:0 0 .7rem;font-size:.92rem;color:#374151;}
+    .diy-section ul,.diy-section ol{margin:0 0 .8rem 1.2rem;font-size:.92rem;color:#374151;}
+    .diy-section li{margin-bottom:.3rem;}
 
     /* CUERPO */
-    .article-body{font-size:.97rem;color:#111827;text-align:justify}
-        .article-body h2{margin:36px 0 10px;font-size:1.35rem;color:#065f46;font-weight:800;letter-spacing:-.01em;border-bottom:2px solid rgba(5,150,105,.18);padding-bottom:6px;}
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:36px 0 10px;font-size:1.35rem;color:#065f46;font-weight:800;letter-spacing:-.01em;border-bottom:2px solid rgba(5,150,105,.18);padding-bottom:6px;}
     .article-body h3{margin:22px 0 8px;font-size:1.05rem;color:#0d9488;font-weight:700;}
-    .article-body p{margin:0 0 12px;text-align:justify}
+    .article-body p{margin:0 0 12px}
     .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
     .highlight{
       padding:10px 12px;border-left:3px solid var(--brand);
       background:rgba(5,150,105,.04);border-radius:10px;
       margin:14px 0;font-size:.86rem;color:#374151;
     }
+    .aside-fact{
+      display:block;margin:20px 0;padding:16px 20px;
+      background:linear-gradient(135deg,rgba(5,150,105,.08),rgba(13,148,136,.06));
+      border-left:4px solid var(--brand);border-radius:14px;
+      font-size:.95rem;color:#0f172a;
+    }
+    .aside-fact strong{display:block;color:#065f46;margin-bottom:.35rem;font-size:.95rem;letter-spacing:.01em;}
+    .glossary{margin:16px 0 0;padding:18px 22px;background:rgba(15,23,42,.03);border-radius:14px;}
+    .glossary dt{font-weight:800;color:#065f46;margin-top:10px;font-size:.98rem;}
+    .glossary dt:first-child{margin-top:0}
+    .glossary dd{margin:4px 0 0 0;color:#374151;font-size:.92rem;line-height:1.55;}
+    .article-body em{font-style:italic;color:#065f46;}
 
     /* CTA */
     .cta-section{
@@ -151,6 +169,7 @@
     .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
     .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
     .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
+    .cta-form label{font-size:.8rem;color:#4b5563;margin-bottom:.25rem;display:block;text-align:center;}
     .cta-form input[type="email"]{
       padding:.45rem .8rem;border:1.5px solid #d1d5db;
       border-radius:999px;font-size:.82rem;width:220px;max-width:100%;
@@ -162,44 +181,12 @@
     }
     .cta-form button:hover{background:#047857;}
 
-    button.chip{font-family:inherit;}
+    .skip-link{position:absolute;top:-44px;left:6px;z-index:9999;background:#059669;color:#fff;padding:8px 16px;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:top .15s ease;}
+    .skip-link:focus{top:0;}
     .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    button.chip{font-family:inherit;}
     footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
     footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
-  
-    /* DIY SECTION */
-    .diy-section{
-      margin:2rem 0;padding:1.4rem 1.6rem;border-radius:16px;
-      background:rgba(5,150,105,.06);border:2px solid rgba(5,150,105,.25);
-    }
-    .diy-section h2{margin:0 0 .8rem;font-size:1.15rem;color:#065f46;}
-    .diy-section h3{margin:.8rem 0 .4rem;font-size:.95rem;color:#0f172a;font-weight:700;}
-    .diy-section p{margin:0 0 .7rem;font-size:.92rem;color:#374151;}
-    .diy-section ul,.diy-section ol{margin:0 0 .8rem 1.2rem;font-size:.92rem;color:#374151;}
-    .diy-section li{margin-bottom:.3rem;}
-  </style>
-  <style>
-    /* DARK MODE PERSISTENTE */
-    body.mode-reading,body.mode-community{background:#020817;color:#e5e7eb}
-    body.mode-reading .nav,body.mode-community .nav{background:rgba(8,10,24,.97)}
-    body.mode-reading .brand-text,body.mode-community .brand-text{color:#e5e7eb}
-    body.mode-reading .article-title,body.mode-community .article-title{color:#f1f5f9}
-    body.mode-reading .article-body,body.mode-community .article-body{color:#d1d5db}
-    body.mode-reading .article-body h2,body.mode-community .article-body h2{color:#6ee7b7}
-    body.mode-reading .article-lead,body.mode-community .article-lead{color:#94a3b8}
-    body.mode-reading .diy-section,body.mode-community .diy-section{background:rgba(5,150,105,.1);border-color:rgba(5,150,105,.4)}
-    body.mode-reading .diy-section h2,body.mode-reading .diy-section h3,body.mode-community .diy-section h2,body.mode-community .diy-section h3{color:#e5e7eb}
-    body.mode-reading .diy-section p,body.mode-reading .diy-section li,body.mode-community .diy-section p,body.mode-community .diy-section li{color:#94a3b8}
-    body.mode-reading .highlight,body.mode-community .highlight{background:rgba(5,150,105,.08);color:#94a3b8}
-    body.mode-reading .cta-section,body.mode-community .cta-section{background:rgba(5,150,105,.08);border-color:rgba(5,150,105,.35)}
-    body.mode-reading .cta-section h3,body.mode-community .cta-section h3{color:#6ee7b7}
-    body.mode-reading .cta-section p,body.mode-community .cta-section p{color:#94a3b8}
-    body.mode-reading footer,body.mode-community footer{border-top-color:rgba(255,255,255,.08);color:#94a3b8}
-    body.mode-reading .breadcrumbs,body.mode-community .breadcrumbs{color:#64748b}
-    body.mode-reading .article-meta,body.mode-community .article-meta{color:#64748b}
-    body.mode-reading #related-articles a,body.mode-community #related-articles a{background:rgba(5,150,105,.1);border-color:rgba(5,150,105,.3)}
-    body.mode-reading #related-articles a div:nth-child(2),body.mode-community #related-articles a div:nth-child(2){color:#e2e8f0}
-    body.mode-reading #related-articles a div:nth-child(3),body.mode-community #related-articles a div:nth-child(3){color:#64748b}
   </style>
 </head>
 <body>
@@ -211,7 +198,6 @@
         <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
         <span class="brand-text">Guardianes del Pulque</span>
       </a>
-      <button id="articleModeBtn" style="display:inline-flex;align-items:center;gap:.3rem;padding:.38rem .7rem;border-radius:8px;border:1.5px solid #059669;color:#059669;background:transparent;font-size:.72rem;font-weight:700;cursor:pointer;transition:background .15s;white-space:nowrap" type="button">🌿</button>
       <nav class="links">
         <a class="chip" href="../../posts.html">📰 Artículos</a>
         <a class="chip" href="../../recursos.html">🛠️ Recursos</a>
@@ -230,64 +216,47 @@
     <header class="article-header">
       <h1 class="article-title">Suelos vivos</h1>
       <div class="article-meta">
-        <div class="meta-pill">🌿 <span>Naturaleza</span></div>
-        <div class="meta-pill">🕒 <span>Lectura: 9–11 min</span></div>
+        <div class="meta-pill">🌍 <span>Suelo</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 12–14 min</span></div>
         <div class="meta-pill">📅 <span>5 de marzo de 2026</span></div>
         <div class="meta-pill meta-pill-views" id="viewCounter" aria-label="Visitas"><span aria-hidden="true">👁️</span> <span id="viewCount">—</span></div>
       </div>
-      <p class="article-lead">Compost, micorrizas y cobertura para resiliencia hídrica.</p>
+      <p class="article-lead">Cómo una cucharada de tierra puede contener más seres vivos que toda la población humana junta.</p>
     </header>
 
     <figure class="hero-img">
-      <img loading="lazy" src="suelos-vivos.png" alt="Suelos vivos" />
+      <img src="suelos-vivos.png" alt="Suelos vivos" />
     </figure>
 
     <article class="article-body">
-      <h2>Un gramo de tierra</h2>
-<p>Un gramo de suelo agrícola en buen estado contiene entre 1,000 y 10,000 millones de bacterias, 100,000 a un millón de hongos filamentosos, y entre 1,000 y 10,000 nematodos. Pseudomonas fluorescens solubiliza fósforo; Bacillus subtilis produce antibióticos naturales que frenan hongos patógenos; Streptomyces spp. —el género que da al suelo húmedo su olor característico (geosmina)— descompone quitina y celulosa. Esta diversidad microbiana es lo que convierte la tierra en algo más que roca pulverizada. El 45% de los suelos en México presentan algún grado de degradación biológica, según datos de SEMARNAT 2022, principalmente por labranza excesiva y monocultivos que homogenizan y empobrecen esta comunidad.</p>
-
-<h2>Micorrizas: la red que mueve el fósforo</h2>
-<p>El 80–90% de las plantas terrestres forman asociaciones micorrícicas con hongos del suelo. Las micorrizas arbusculares (familia Glomeraceae, géneros <em>Glomus</em>, <em>Rhizophagus</em>) penetran las células de la raíz formando arbúsculos donde intercambian carbono por fósforo y micronutrientes. Las hifas del hongo se extienden 5–15 cm más allá de la zona de raíces, llegando a partículas de suelo inaccesibles para la planta. En milpas de Oaxaca y la Mixteca, <em>Rhizophagus irregularis</em> (antes <em>Glomus intraradices</em>) aumenta la absorción de fósforo 2–3 veces respecto a plantas no inoculadas. El problema: el fósforo soluble de los fertilizantes químicos inhibe la formación de nuevas micorrizas —las plantas no "contratan" ayuda cuando el nutriente abunda—, dejando el suelo dependiente de insumos externos ciclo tras ciclo.</p>
-
-<h2>Lombrices y estructura del suelo</h2>
-<p><em>Lumbricus terrestris</em> procesa entre 6 y 10 toneladas de suelo por año por individuo. Sus galerías verticales mejoran la infiltración de agua: un suelo con densidad lombricícola de 100–300 individuos/m² puede absorber lluvia 4–6 veces más rápido que un suelo compactado. El vermicompost tiene 5 veces más nitrógeno disponible, 7 veces más fósforo y 11 veces más potasio que el suelo circundante. En parcelas de Tlaxcala con historia de labranza mínima, el Centro Internacional de Mejoramiento de Maíz y Trigo (CIMMYT) documentó densidades de 250–400 lombrices/m², correlacionadas con rendimientos de maíz 18% superiores a parcelas labradas convencionalmente.</p>
-
-<h2>Compostaje: temperatura, relación C:N y tiempo</h2>
-<p>El compostaje en caliente requiere una relación carbono:nitrógeno de 25–30:1 en la mezcla inicial —una razón más alta desacelera la descomposición; más baja produce amoniaco. Materiales nitrogenados (restos de cocina, hierba fresca, estiércol): relación C:N de 15–25:1. Materiales carbonosos (hojas secas, aserrín, cartón): relación C:N de 50–200:1. La mezcla correcta alcanza 55–65°C en 3–5 días, temperatura que elimina patógenos como <em>Salmonella</em> y semillas de maleza. A los 21–28 días, si el olor es a tierra de bosque y la temperatura ya no sube al voltear, el compost está maduro. El pH final debe estar entre 6.5 y 7.5. Un compost mal manejado, con exceso de humedad y sin volteo, produce metano y sulfuro de hidrógeno —exactamente lo contrario de lo que se busca.</p>
-
-<div class="highlight">Azospirillum brasilense: rizobacterio inoculante que fija 15–30% de los requerimientos de nitrógeno del maíz. Aprobado por SENASICA México como biofertilizante. Reduce la necesidad de urea en 30–50 kg N/ha, con rendimientos equivalentes o superiores en parcelas de temporal en Jalisco y Guanajuato (INIFAP, 2021).</div>
-
-<h2>Cobertura muerta: por qué no barrer el suelo</h2>
-<p>Dejar una capa de 5–10 cm de material vegetal seco sobre la superficie —paja, rastrojo, hojas caídas— reduce la temperatura del suelo hasta 8°C en verano, mantiene humedad 3–4 semanas adicionales tras una lluvia, y evita el impacto directo de las gotas que desintegra los agregados del suelo (efecto "splash erosion"). El rastrojo de maíz es el mulch más abundante en México: 23–27 millones de toneladas por año, de las cuales apenas el 15% se mantiene en campo. Los restantes se queman, liberando CO₂, NOx y material particulado, y dejando el suelo desnudo y expuesto.</p>
-
-<h2>Sin labranza: ganancias medibles</h2>
-<p>Bajo labranza mínima o siembra directa, el carbono orgánico del suelo aumenta en promedio 0.4% por año (FAO, 2015), acumulando entre 0.5 y 1.5 toneladas de CO₂ equivalente por hectárea anualmente. En Hidalgo y Tlaxcala —corazón de la región pulquera y maicera del altiplano— el CIMMYT demostró que después de cinco años de cero labranza, la biomasa microbiana del suelo se duplica, la porosidad aumenta 12%, y los costos de combustible para el productor caen 40%. El suelo no necesita ser "revuelto" para funcionar; necesita ser cubierto, habitado y perturbado lo menos posible.</p>
+      <h2>En las faldas de Coatepec: la tierra bajo las uñas</h2><p>Doña Hortensia, milpera de Coatepec, Veracruz, se agacha entre los surcos húmedos al amanecer. Clava los dedos en la tierra negra, bajo la sombra de los cafetos, y saca un puñado: lo huele, lo aprieta, le queda pegado el aroma terroso y una humedad que se mete en las grietas de la piel. Son las 6:10 de la mañana, la niebla baja envuelve el camino. Hortensia no piensa en microorganismos ni en ciclos de carbono, pero cada movimiento suyo activa un universo invisible: un solo gramo de esa tierra —según el Instituto de Ecología de la UNAM— puede albergar hasta 7,000 millones de bacterias, más que todos los habitantes del planeta en 2024.</p><p>En las parcelas de 1,100 metros de altitud, los suelos respiran junto con quienes los trabajan. Cada paso hunde ligeramente la suela de las botas en la textura blanda, dejando atrás el olor a hojas en descomposición. La tierra, aquí, no es solo fondo: es un organismo que crece, digiere y conversa con todo lo que toca.</p><p>Pero no todos los suelos cuentan la misma historia. En solo 20 kilómetros, la diferencia entre una parcela labrada y otra cubierta de hojarasca puede traducirse en 5°C de diferencia de temperatura superficial al mediodía, medidos por sensores del Colegio de Postgraduados en 2022. Esa variación define qué puede sembrarse y cuánto rendirá la milpa.</p><p>La pregunta que inquieta a las y los campesinos: ¿cómo se mantiene viva la tierra, y qué pasa cuando deja de respirar?</p><h2>Bajo el microscopio en Morelia: la vida secreta del suelo</h2><p>En los laboratorios del Centro de Investigaciones en Ecosistemas (CIEco-UNAM), al sur de Morelia, Michoacán, la doctora Leticia Vega observa al microscopio muestras de suelo tomadas a 2 kilómetros del lago de Cuitzeo. Una sola gota diluida revela filamentos de hongos <em>(Ascomycota)</em>, esporas de actinomicetos, nematodos de menos de 0.5 mm y protozoarios en movimiento. El silencio del laboratorio contrasta con el zumbido de los ventiladores y el olor a alcohol etílico junto a la mesa de disección.</p><p>Un estudio publicado por el equipo de Vega en 2021 identificó al menos 1,400 especies microbianas distintas en una sección de 10 gramos de suelo agrícola, usando secuenciación de ADN del Instituto de Biotecnología de la UNAM. Cada especie cumple un rol específico: unas degradan celulosa, otras fijan nitrógeno, otras compiten con patógenos.</p><ul><li>Actinobacterias: responsables del característico olor a tierra mojada (geosmina)</li><li>Hongos micorrízicos: forman redes subterráneas que expanden hasta 50 veces la capacidad de una raíz para absorber agua y nutrientes</li><li>Bacterias rizobiales: fijan hasta 100 kg de nitrógeno por hectárea y ciclo en milpas intercaladas con frijol</li></ul><p>El reto, dice Vega, es que cada vez menos suelos mantienen esa complejidad: “El uso intensivo de fertilizantes sintéticos ha reducido la diversidad fúngica en un 60% en menos de veinte años”.</p><p>¿Por qué un suelo vivo puede resistir la sequía y el ataque de plagas mejor que uno esterilizado por los agroquímicos?</p><h2>Milpas policultivo en Milpa Alta: ingeniería tradicional y biodiversidad</h2><p>En San Antonio Tecomitl, alcaldía Milpa Alta (CDMX), don Facundo limpia la hojarasca de una milpa de 2.4 hectáreas intercalada con magueyes <em>(Agave salmiana)</em>, nopales y frijol criollo. El aire huele a humedad y una brisa fría baja del Ajusco. A diferencia de un monocultivo, aquí cada especie cumple una función: el frijol trepa los tallos de maíz, las raíces del maguey fijan suelo y evitan erosión, la sombra de los nopales mantiene la temperatura del suelo 3°C más baja comparada con parcelas sin cobertura, según datos de INIFAP en 2019.</p><p>Milpa Alta sigue patrones que la ciencia agronómica comenzó a entender apenas en los años 80: las raíces de diferentes plantas cooperan y compiten para repartir fósforo, nitrógeno y potasio a diferentes profundidades (de 10 hasta 60 cm), lo que permite aprovechar la luz, el agua y los nutrientes con una eficiencia que difícilmente iguala un solo cultivo.</p><p>Un estudio de la Universidad Autónoma Metropolitana en 2020 halló que milpas diversificadas producen hasta 1.8 veces más calorías por metro cuadrado que el maíz solo, pese a sembrar menos densidad de cada especie.</p><aside class="aside-fact"><strong>Dato que rompe el molde:</strong> Una milpa mixta produce más alimento neto por hectárea que un campo de maíz solo, aunque a simple vista parezca más desordenada.</aside><p>¿Pero qué ocurre bajo la superficie cuando se pierde esa diversidad y se arranca todo menos el maíz?</p><h2>La trampa de los fertilizantes sintéticos: lo que no se ve desde arriba</h2><p>En 1943, en el Bajío guanajuatense, se aplicaron por primera vez fertilizantes nitrogenados a gran escala — 120 kg por hectárea, según la Secretaría de Agricultura. Al principio, las cosechas subieron: maíz de 1.1 pasaron a 2.2 toneladas por hectárea en menos de una década. Pero el suelo cambió de olor: la tierra olía más ácida, más compacta, menos rica que las parcelas que seguían usando composta casera y rotación de cultivos.</p><p>La promesa del nitrógeno barato esconde una consecuencia: en menos de 20 años, el conteo de lombrices bajó de 320 a menos de 70 por metro cuadrado, medido por biólogos del Cinvestav en 2015. El color de la tierra pasó de café oscuro a un gris claro, y la textura se volvió más dura, costando más trabajo meter la pala.</p><p>El ciclo se repite: a mayor fertilizante, menos microvida, menos materia orgánica, mayor erosión. Una parcela cerca de Irapuato perdió 4.3 cm de capa fértil en 25 años, según un estudio de la Universidad de Guanajuato (2018).</p><p>¿Hay manera de revertir ese daño, o toda la región está condenada a suelos exhaustos?</p><h2>Composta caliente en el Altiplano: el método Berkeley explicado</h2><p>En San Salvador El Seco, Puebla (2,400 msnm), un taller de agroecología reúne a 17 personas en la parcela de la familia Méndez. El aire huele a estiércol fresco y paja. Son las 8:35 de la mañana, temperatura de 18°C. El método que enseñan se llama Berkeley, desarrollado en California en 1956 y adaptado por el Colectivo Tlalli. Permite convertir desechos en suelo fértil en apenas 18 días si se siguen los pasos exactos.</p><ol><li>Materiales: 1 m<sup>3</sup> de paja o rastrojo, 50 kg de estiércol de borrego o vaca, 20 kg de restos de cocina, 10 litros de agua (la suficiente para que todo esté húmedo pero no empapado)</li><li>Montaje: Se forma una pila de 1.2 m de alto, alternando capas (paja–estiércol–verdes–paja). La temperatura interna debe alcanzar 60°C en 2-3 días.</li><li>Volteo: Cada 2 días, con pala o trinche, volteando toda la pila para oxigenar. Ojo: si la pila huele a podrido (azufre), falta oxígeno o hay exceso de humedad.</li><li>Terminado: A los 18-20 días, la composta huele a tierra húmeda, se siente tibia y tiene color café oscuro uniforme.</li></ol><p>El riesgo más común, explica el promotor Rubén Alarcón, es dejar la pila sin voltear: “Se enfría, se pudre o no se descompone”. Un termómetro de sonda (se consigue en ferreterías desde $250) ayuda a saber si hay que intervenir.</p><p>¿Cómo se traduce ese abono en más vida bajo los pies?</p><h2>Lombricomposta en Xochimilco: fábricas de suelo en miniatura</h2><p>En el borde de la chinampa de San Gregorio Atlapulco, Xochimilco, doña Macrina raspa una caja de madera de 1 x 2 metros. Adentro, cientos de lombrices rojas californianas (<em>Eisenia fetida</em>) se retuercen en la penumbra, bajo una capa de composta semidescompuesta. El olor es dulce, entre café y humedad. Una vez por semana, recolecta cerca de 2.5 kg de lombricomposta lista: oscura, esponjosa, fría al tacto.</p><p>Las lombrices procesan hasta su propio peso en materia orgánica cada día. En estudios de la UNAM (2017), este método aumenta en un 40% la densidad de bacterias benéficas y triplica la presencia de micorrizas en los suelos adonde se aplica. El abono líquido (lixiviado) se diluye 1:10 en agua y se usa para regar trasplantes.</p><p>En la zona chinampera, colectivos como Chinampayolo ofrecen talleres mensuales (costo de $200 a $350) donde enseñan a construir y manejar lombricomposteras caseras. Los errores más comunes, según Macrina: exceso de humedad, mezclar cítricos o carnes, y dejar que entren hormigas.</p><p>El resultado no es solo más tierra: la estructura del suelo se vuelve más esponjosa, más capaz de retener agua durante las sequías que ya se sienten cada vez más largas.</p><p>¿Puede la suma de pequeñas cajas de lombrices cambiar la suerte de una región?</p><h2>Micorrizas: la red oculta que conecta el campo</h2><p>En la Reserva de la Biósfera Montes Azules, Chiapas, técnicos de la Conabio instalaron en 2022 sensores de humedad y cámaras trampa a 150 cm bajo tierra. Detectaron que raíces de ceibas (<em>Ceiba pentandra</em>) y cedros (<em>Cedrela odorata</em>), separados por hasta 12 metros de distancia, compartían agua y nutrientes a través de hilos de hongos micorrízicos (<em>Glomeromycota</em>), invisibles a simple vista pero medibles por tinción y microscopía de fluorescencia.</p><p>Las micorrizas pueden expandir el alcance de una raíz en 50-200 veces, según el Instituto de Biología de la UNAM. Absorben fósforo, movilizan minerales y hasta protegen a las plantas de patógenos del suelo. Su presencia se traduce en una humedad más estable, menos estrés por sequía y mejor crecimiento de plántulas nativas.</p><p>El color del suelo donde hay micorrizas es más oscuro, la textura más suelta, y al excavar se perciben filamentos brillantes bajo luz directa. Sin ellas, los árboles jóvenes tienen un 60% menos de probabilidades de sobrevivir el primer año, según datos publicados en Forest Ecology and Management en 2021.</p><aside class="aside-fact"><strong>Dato que rompe el molde:</strong> Un tronco caído en la selva puede alimentar árboles vivos a varios metros de distancia, sin mover un solo centímetro sus raíces: la red de micorrizas hace circular nutrientes entre lo muerto y lo vivo.</aside><p>¿Es posible restaurar suelos degradados reintroduciendo estas redes ocultas?</p><h2>Cómo regenerar un suelo: guía práctica desde Tlaxcala</h2><p>En Ixtenco, Tlaxcala, a 2,600 metros de altitud, el colectivo Semillas del Mañana trabaja parcelas degradadas por décadas de arado. El objetivo: en tres años, transformar un suelo compacto y pobre en materia orgánica (<3%) en una tierra suelta, con 5% de carbono activo y buena retención de agua.</p><ol><li>Cubierta: No dejar nunca el suelo desnudo. Usar paja, rastrojo o cultivos de cobertura (vicia, trébol, chícharo)</li><li>Rotación: Alternar familias de cultivos cada ciclo (maíz–frijol–calabaza–amaranto)</li><li>Siembra directa: No voltear el suelo, solo hacer surcos o agujeros donde irá la semilla. Esto preserva las redes de hongos y lombrices</li><li>Abono: Aplicar composta madura a razón de 1.5 kg por metro cuadrado, de preferencia antes de lluvias</li><li>Micorrizas: Inocular semillas con polvo comercial (de marcas como Myco-Mex o TerraM, de venta en viveros de Puebla y CDMX, $80–$180 por sobre de 100 g)</li></ol><p>La medición de avance se hace con pruebas sencillas: clavar una varilla de acero (de 8 mm) y medir cuántos centímetros entra sin fuerza; comparar el color y el olor tras 12 meses. Si la tierra es más oscura y huele a bosque húmedo, vas en buen camino.</p><p>El error más común es arar por costumbre: rompe la estructura y mata la microvida. La paciencia (y no el arado) es la herramienta principal.</p><p>¿Hasta dónde puede llegar la restauración cuando los suelos vivos se entienden como aliados y no como simples sustratos?</p><h2>El futuro bajo nuestros pies: sensores, ciencia y campesinas</h2><p>En 2024, el Laboratorio Nacional de Observación de la Tierra (LANOT) de la UNAM instaló una red de sensores a 5, 15 y 30 cm de profundidad en parcelas de Amecameca, Estado de México. Cada sensor mide humedad, temperatura y contenido de carbono cada hora. Los datos, accesibles en tiempo real, permiten ver en pantalla cómo un riego, una tormenta o una sequía afectan al suelo desde abajo, no solo en la superficie.</p><p>La doctora Julia Martínez, parte del equipo LANOT, explica: “Por mucho tiempo, la ciencia ignoró al suelo como algo vivo. Hoy sabemos que un suelo sano absorbe más carbono que un bosque degradado, y que su manejo puede decidir la cosecha o la sequía”.</p><p>Pero la tecnología no suplanta el conocimiento campesino. En la comunidad, las mujeres revisan la tierra con las manos, miden la humedad apretando un puñado, comparan el color con la memoria de años previos. La ciencia empieza a colaborar en vez de dictar.</p><p>Algunas preguntas quedan abiertas: ¿qué pasa con los suelos urbanos, los de maceta y azotea? ¿Pueden volverse también refugio para la vida microbiana?</p><h2>Hazlo tú mismo: una pizca de suelo vivo en casa</h2><p>Materiales:</p><ul><li>1 maceta de al menos 25 cm de diámetro</li><li>2 kg de tierra negra o de hoja (de vivero o recolectada con permiso en zona arbolada)</li><li>1 puñado de composta madura (ver método Berkeley arriba)</li><li>50 g de micorrizas comerciales o tomadas de tierra de bosque (sin dañar el entorno, solo una pizca)</li><li>Restos de vegetales frescos (sin aceites ni sal)</li></ul><p>Procedimiento:</p><ol><li>Coloca una capa de piedras pequeñas o grava al fondo de la maceta.</li><li>Mezcla la tierra negra con la composta y las micorrizas.</li><li>Agrega una capa de restos vegetales, cúbrela con la mezcla anterior.</li><li>Riega hasta sentir la superficie húmeda (sin encharcar).</li><li>Coloca la maceta bajo sombra parcial. Cada vez que tires restos vegetales, cúbrelos con tierra.</li></ol><p>En dos semanas, la mezcla olerá a bosque después de la lluvia. Si se seca, añade agua; si huele a podrido, destapa y revuelve. Así, una pizca de suelo vivo puede empezar desde una ventana.</p><p>La vida del suelo no solo ocurre en hectáreas: cabe en la palma de una mano, si se cuida el equilibrio.</p><h2>Glosario</h2><dl class="glossary"><dt>Micorriza</dt><dd>Asociación simbiótica entre hongos del suelo y raíces de plantas, que incrementa la absorción de agua y nutrientes.</dd><dt>Lombricomposta</dt><dd>Abono producido por lombrices al digerir materia orgánica, rico en nutrientes y microorganismos benéficos.</dd><dt>Método Berkeley</dt><dd>Técnica acelerada de composta que permite obtener abono en 18–21 días mediante volteos frecuentes y control de humedad.</dd><dt>Materia orgánica</dt><dd>Restos de plantas y animales en descomposición que aportan nutrientes y mejoran la estructura del suelo.</dd><dt>Siembra directa</dt><dd>Práctica de cultivar sin voltear el suelo, preservando su estructura y vida microbiana.</dd><dt>Hojarasca</dt><dd>Capa de hojas secas que cubren el suelo, protegiéndolo de la erosión y conservando la humedad.</dd></dl>
     </article>
 
-
-    <section class="diy-section">
+    <!-- DIY SECTION -->
+    <section class="diy-section" id="hazlo-tu-mismo">
       <h2>🛠️ Hazlo tú mismo</h2>
-      <h3>Haz tu propia composta en casa y convierte basura en tierra dorada</h3>
-      <p>La composta es el abono más poderoso y nutritivo que existe, y lo mejor de todo es que se hace casi solo con la basura orgánica que produces en casa. Cuando echas al suelo cáscaras de fruta, restos de verdura, cartón y hojas secas, millones de microorganismos (bacterias, hongos) y pequeños animales (lombrices, cochinillas, milpiés) empiezan a descomponer esos materiales y los transforman en humus: una tierra oscura, esponjosa y llena de nutrientes que hace que cualquier planta crezca fuerte y sana. Es como si la naturaleza tuviera su propia fábrica de fertilizante que funciona gratis con tus desechos. Hacer composta también reduce a la mitad la basura que generas en casa.</p>
+      <h3>Crea tu propio compostaje en casa</h3>
+      <p>Aprende a elaborar un compostaje simple para enriquecer tus suelos. Este proceso toma alrededor de 3 a 6 meses y te permitirá obtener un abono natural para tus plantas.</p>
       <h3>Materiales</h3>
       <ul>
-        <li>Un cajón de madera de al menos 50×50×50 centímetros, o una cubeta grande de 100 litros con agujeros en los lados, o simplemente un rincón de tierra en tu patio</li>
-        <li>Materiales VERDES (húmedos y ricos en nitrógeno): cáscaras de frutas y verduras, restos de cocina, posos de café con su filtro de papel, cáscaras de huevo trituradas</li>
-        <li>Materiales CAFÉS (secos y ricos en carbono): cartón corrugado picado, papel periódico arrugado, hojas secas del jardín, tallos secos</li>
-        <li>Un puñado de tierra de jardín o composta ya hecha (para agregar cada semana)</li>
-        <li>Un palo grueso o varilla de metal para revolver</li>
-        <li>Una regadera o botella con agujeros para humedecer</li>
+        <li>1 contenedor de plástico de 50 litros</li>
+        <li>5 kg de restos de frutas y verduras</li>
+        <li>3 kg de hojas secas o pasto seco</li>
+        <li>2 kg de tierra de jardín</li>
+        <li>1 pala pequeña</li>
+        <li>1 tapa para el contenedor</li>
+        <li>Agua, cantidad necesaria</li>
       </ul>
       <h3>Paso a paso</h3>
       <ol>
-        <li>Coloca tu compostera en un lugar semi-sombrado, con contacto directo con la tierra si es posible (para que las lombrices del suelo puedan entrar). Empieza poniendo una capa de 10 centímetros de material café en el fondo: cartón picado, hojas secas o papel.</li>
-        <li>Encima agrega una capa de 5 centímetros de material verde: las cáscaras del día, los posos de café, las cáscaras de huevo. La proporción ideal es siempre 2 partes de material café por 1 parte de material verde. Si pones demasiado verde sin café, la composta se pone fea y huele mal.</li>
-        <li>Encima de los materiales agrega un puñado de tierra de jardín. Esta tierra trae consigo millones de microorganismos que son los trabajadores de tu compostera.</li>
-        <li>Revisa la humedad: aprieta un puñado de la mezcla en tu mano. Debe sentirse húmedo pero no soltar agua, como una esponja exprimida. Si está muy seco, riégalo un poco. Si está muy mojado, agrega más material seco.</li>
-        <li>Cada semana agrega los nuevos materiales siguiendo siempre la proporción 2 cafés:1 verde, y revuelve toda la pila con el palo para oxigenarla. El oxígeno es el combustible de los microorganismos: sin aire se asfixian y la composta deja de funcionar.</li>
-        <li>En 4 a 6 semanas verás que el fondo de la pila empieza a oscurecerse y a verse diferente al material que pusiste: ya no reconocerás las cáscaras originales. Ese material oscuro de abajo es composta joven. En 2 a 3 meses tendrás composta completamente lista: oscura, esponjosa, con olor a tierra de bosque después de la lluvia.</li>
+        <li>Perfora el contenedor de plástico con 10-12 agujeros pequeños en los lados y en la base para ventilación.</li>
+        <li>Coloca una capa de 1 kg de hojas secas en el fondo del contenedor.</li>
+        <li>Añade una capa de 1 kg de restos de frutas y verduras encima de las hojas secas.</li>
+        <li>Espolvorea 500 g de tierra de jardín sobre los restos de frutas y verduras.</li>
+        <li>Repite el proceso de capas hasta llenar el contenedor, alternando hojas secas, restos de comida y tierra.</li>
+        <li>Riega ligeramente el contenido cada semana para mantenerlo húmedo, pero no empapado, y revuelve con la pala cada dos semanas.</li>
       </ol>
-      <div class="highlight">💡 ¡Nunca metas a la compostera carnes, huesos, pescado, lácteos, aceites ni excrementos de perros y gatos! Estos materiales atraen animales, generan malos olores y traen bacterias dañinas. Las cáscaras de naranja, limón y otros cítricos se pueden usar pero en pequeñas cantidades porque contienen aceites que ralentizan la descomposición. Una compostera bien manejada nunca huele mal: si huele feo, le falta material café o le falta oxígeno.</div>
+      <div class="highlight">💡 Evita agregar restos de carne o productos lácteos, ya que pueden atraer plagas y ralentizar el proceso de compostaje.</div>
     </section>
 
     <!-- CTA SUSCRIPCIÓN -->
@@ -295,37 +264,18 @@
       <h3>Recibe más artículos como este</h3>
       <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
       <form class="cta-form" action="#suscribirse" method="post">
-        <label for="ctaEmail" style="font-size:.8rem;color:#4b5563;display:block;text-align:center;margin-bottom:.25rem">Tu correo electrónico</label>
-        <input id="ctaEmail" type="email" placeholder="tu@correo.com" required />
+        <div>
+          <label for="ctaEmail">Tu correo electrónico</label>
+          <input id="ctaEmail" type="email" placeholder="tu@correo.com" required />
+        </div>
         <button type="submit">Suscribirme</button>
       </form>
       <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
     </div>
-    <!-- COMPARTIR -->
-    <div id="share-buttons" style="margin:1.2rem 0;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center">
-      <span style="font-size:.8rem;font-weight:700;color:#64748b">Compartir:</span>
-      <a id="share-whatsapp" href="#" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border-radius:999px;border:1.5px solid #25d366;color:#25d366;font-size:.78rem;font-weight:700;background:#fff;text-decoration:none;transition:all .15s"
-         onmouseover="this.style.background='#25d366';this.style.color='#fff'"
-         onmouseout="this.style.background='#fff';this.style.color='#25d366'">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.304A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-        WhatsApp
-      </a>
-      <button id="share-copy"
-         style="display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border-radius:999px;border:1.5px solid #059669;color:#059669;font-size:.78rem;font-weight:700;background:#fff;cursor:pointer;transition:all .15s"
-         onmouseover="this.style.background='#059669';this.style.color='#fff'"
-         onmouseout="this.style.background='#fff';this.style.color='#059669'">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        <span id="share-copy-label">Copiar link</span>
-      </button>
-    </div>
 
-
-        <!-- ARTÍCULOS RELACIONADOS -->
-    <div id="related-articles" style="margin:1.5rem 0"></div>
     <div class="back-links">
       <a href="../../posts.html" class="chip">← Todos los artículos</a>
-      <span class="chip">🌿 Naturaleza</span>
+      <span class="chip">🌍 Suelo</span>
       <button class="chip" id="btnStory" type="button">📲 Historia</button>
     </div>
   </main>
@@ -349,134 +299,6 @@
     window.addEventListener("scroll", () => {
       nav.classList.toggle("scrolled", window.scrollY > 40);
     }, { passive: true });
-  </script>
-  <button id="backToTop" title="Volver arriba" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;width:44px;height:44px;border-radius:50%;border:none;background:#059669;color:#fff;font-size:1.3rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s ease;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(5,150,105,.4);line-height:1">↑</button>
-  <script>
-    // Back to top
-    (function(){
-      var btn=document.getElementById('backToTop');
-      if(!btn)return;
-      window.addEventListener('scroll',function(){
-        btn.style.opacity=window.scrollY>300?'1':'0';
-        btn.style.pointerEvents=window.scrollY>300?'auto':'none';
-      },{passive:true});
-      btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-    })();
-    // Modo persistente
-    (function(){
-      try{
-        var m=localStorage.getItem('gp.mode');
-        if(m==='reading')document.body.classList.add('mode-reading');
-        else if(m==='community')document.body.classList.add('mode-community');
-      }catch(e){}
-    })();
-    // Artículos relacionados
-    (async function(){
-      var tagEl=document.querySelector('.meta-pill span');
-      var tag=tagEl?tagEl.textContent.trim():'';
-      if(!tag)return;
-      var currentFile=location.pathname.split('/').pop();
-      try{
-        var r=await fetch('../../posts.json');
-        if(!r.ok)return;
-        var posts=await r.json();
-        var related=posts.filter(function(p){return p.tag===tag&&!p.url.endsWith(currentFile);}).slice(0,3);
-        if(!related.length)return;
-        var section=document.getElementById('related-articles');
-        if(!section)return;
-        section.innerHTML='<h2 style="font-size:1rem;font-weight:700;margin:0 0 .8rem;color:#065f46">📚 Artículos relacionados</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.8rem">'+
-          related.map(function(p){
-            return '<a href="../../'+p.url+'" style="display:block;padding:12px;border-radius:12px;border:1px solid rgba(5,150,105,.2);background:rgba(5,150,105,.04);transition:transform .15s;text-decoration:none"><div style="font-size:11px;color:#059669;font-weight:600">'+p.tag+'</div><div style="font-weight:700;font-size:.88rem;color:#0f172a;margin:.2rem 0;line-height:1.25">'+p.title+'</div><div style="font-size:.75rem;color:#64748b">'+(p.excerpt||'')+'</div></a>';
-          }).join('')+
-          '</div>';
-      }catch(e){}
-    })();
-  </script>
-
-  <script>
-    // Compartir
-    (function(){
-      var wa = document.getElementById('share-whatsapp');
-      var cp = document.getElementById('share-copy');
-      var lbl = document.getElementById('share-copy-label');
-      if(wa) wa.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(document.title + ' — ' + location.href);
-      if(cp) cp.addEventListener('click', function(){
-        navigator.clipboard.writeText(location.href).then(function(){
-          if(lbl){ lbl.textContent = '¡Copiado!'; setTimeout(function(){ lbl.textContent = 'Copiar link'; }, 2000); }
-        }).catch(function(){
-          if(lbl){ lbl.textContent = 'Copia la URL'; setTimeout(function(){ lbl.textContent = 'Copiar link'; }, 2000); }
-        });
-      });
-    })();
-    // Botón modo artículo
-    (function(){
-      var btn = document.getElementById('articleModeBtn');
-      if(!btn) return;
-      function syncLabel(){
-        var isCom = document.body.classList.contains('mode-community');
-        btn.textContent = isCom ? '🍶' : '🌿';
-        btn.title = isCom ? 'Modo pulque' : 'Modo comunitario';
-      }
-      syncLabel();
-      btn.addEventListener('click', function(){
-        var isCom = document.body.classList.contains('mode-community');
-        document.body.classList.remove('mode-reading','mode-community');
-        if(!isCom){ document.body.classList.add('mode-community'); try{ localStorage.setItem('gp.mode','community'); }catch(e){} }
-        else { try{ localStorage.removeItem('gp.mode'); }catch(e){} }
-        syncLabel();
-      });
-    })();
-  </script>
-  <script>
-  // COMPARTIR COMO HISTORIA
-  (function(){
-    const btn=document.getElementById('btnStory');
-    if(!btn)return;
-    function wrapText(ctx,text,x,y,maxW,lineH){
-      const words=text.split(' ');let line='',lines=[];
-      for(const w of words){const t=line?line+' '+w:w;if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w;}else line=t;}
-      if(line)lines.push(line);
-      let yy=y-(lines.length-1)*lineH/2;
-      for(const l of lines){ctx.fillText(l,x,yy);yy+=lineH;}
-    }
-    btn.addEventListener('click',async()=>{
-      const orig=btn.textContent;btn.textContent='⏳';btn.disabled=true;
-      try{
-        const coverUrl=document.querySelector('meta[property="og:image"]')?.content||'';
-        const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/s*—s*Guardianes del Pulque/,'');
-        const W=1080,H=1920,IMGSLICE=1150;
-        const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;
-        const ctx=canvas.getContext('2d');
-        const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#011a10');bg.addColorStop(1,'#000c06');
-        ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
-        try{
-          const img=new Image();img.crossOrigin='anonymous';
-          await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src=coverUrl;});
-          const ir=img.naturalWidth/img.naturalHeight,tr=W/IMGSLICE;
-          let sx=0,sy=0,sw=img.naturalWidth,sh=img.naturalHeight;
-          if(ir>tr){sw=sh*tr;sx=(img.naturalWidth-sw)/2;}else{sh=sw/tr;sy=(img.naturalHeight-sh)/2;}
-          ctx.drawImage(img,sx,sy,sw,sh,0,0,W,IMGSLICE);
-        }catch{}
-        const fade=ctx.createLinearGradient(0,IMGSLICE-350,0,IMGSLICE+50);
-        fade.addColorStop(0,'rgba(1,26,16,0)');fade.addColorStop(1,'rgba(1,26,16,1)');
-        ctx.fillStyle=fade;ctx.fillRect(0,IMGSLICE-350,W,400);
-        ctx.strokeStyle='rgba(52,211,153,.35)';ctx.lineWidth=2;
-        ctx.beginPath();ctx.moveTo(100,IMGSLICE+30);ctx.lineTo(W-100,IMGSLICE+30);ctx.stroke();
-        ctx.fillStyle='#ffffff';ctx.textAlign='center';
-        ctx.font='bold 76px system-ui,ui-sans-serif,sans-serif';
-        wrapText(ctx,title,W/2,IMGSLICE+280,W-160,98);
-        ctx.fillStyle='#34d399';ctx.font='bold 50px system-ui,ui-sans-serif,sans-serif';
-        ctx.fillText('Guardianes del Pulque',W/2,1760);
-        ctx.fillStyle='rgba(255,255,255,.45)';ctx.font='38px system-ui,ui-sans-serif,sans-serif';
-        ctx.fillText('guardianesdelpulque.org',W/2,1828);
-        const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));
-        const file=new File([blob],'historia-guardianesdelpulque.png',{type:'image/png'});
-        if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title});}
-        else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='historia-guardianesdelpulque.png';a.click();}
-      }catch(e){console.error(e);}
-      finally{btn.textContent=orig;btn.disabled=false;}
-    });
-  })();
   </script>
   <script>
   // CONTADOR DE VISITAS (abacus.jasoncameron.dev — sin DB propia)
@@ -502,6 +324,57 @@
     }catch{wrap.style.display='none';}
   })();
   </script>
-
+  <script>
+  // COMPARTIR COMO HISTORIA
+  (function(){
+    const btn=document.getElementById('btnStory');
+    if(!btn)return;
+    function wrapText(ctx,text,x,y,maxW,lineH){
+      const words=text.split(' ');let line='',lines=[];
+      for(const w of words){const t=line?line+' '+w:w;if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w;}else line=t;}
+      if(line)lines.push(line);
+      let yy=y-(lines.length-1)*lineH/2;
+      for(const l of lines){ctx.fillText(l,x,yy);yy+=lineH;}
+    }
+    btn.addEventListener('click',async()=>{
+      const orig=btn.textContent;btn.textContent='⏳';btn.disabled=true;
+      try{
+        const slug=location.pathname.split('/').slice(-2,-1)[0]||'';
+        const coverUrl=slug?(slug+'.png'):(document.querySelector('meta[property="og:image"]')?.content||'');
+        const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/\s*[—\-]\s*Guardianes del Pulque/,'');
+        const W=1080,H=1920,IMGSLICE=1150;
+        const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;
+        const ctx=canvas.getContext('2d');
+        const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#011a10');bg.addColorStop(1,'#000c06');
+        ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+        try{
+          const img=new Image();
+          await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src=coverUrl;});
+          const ir=img.naturalWidth/img.naturalHeight,tr=W/IMGSLICE;
+          let sx=0,sy=0,sw=img.naturalWidth,sh=img.naturalHeight;
+          if(ir>tr){sw=sh*tr;sx=(img.naturalWidth-sw)/2;}else{sh=sw/tr;sy=(img.naturalHeight-sh)/2;}
+          ctx.drawImage(img,sx,sy,sw,sh,0,0,W,IMGSLICE);
+        }catch{}
+        const fade=ctx.createLinearGradient(0,IMGSLICE-350,0,IMGSLICE+50);
+        fade.addColorStop(0,'rgba(1,26,16,0)');fade.addColorStop(1,'rgba(1,26,16,1)');
+        ctx.fillStyle=fade;ctx.fillRect(0,IMGSLICE-350,W,400);
+        ctx.strokeStyle='rgba(52,211,153,.35)';ctx.lineWidth=2;
+        ctx.beginPath();ctx.moveTo(100,IMGSLICE+30);ctx.lineTo(W-100,IMGSLICE+30);ctx.stroke();
+        ctx.fillStyle='#ffffff';ctx.textAlign='center';
+        ctx.font='bold 76px system-ui,ui-sans-serif,sans-serif';
+        wrapText(ctx,title,W/2,IMGSLICE+280,W-160,98);
+        ctx.fillStyle='#34d399';ctx.font='bold 50px system-ui,ui-sans-serif,sans-serif';
+        ctx.fillText('Guardianes del Pulque',W/2,1760);
+        ctx.fillStyle='rgba(255,255,255,.45)';ctx.font='38px system-ui,ui-sans-serif,sans-serif';
+        ctx.fillText('guardianesdelpulque.org',W/2,1828);
+        const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));
+        const file=new File([blob],'historia-guardianesdelpulque.png',{type:'image/png'});
+        if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title});}
+        else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='historia-guardianesdelpulque.png';document.body.appendChild(a);a.click();document.body.removeChild(a);}
+      }catch(e){console.error(e);}
+      finally{btn.textContent=orig;btn.disabled=false;}
+    });
+  })();
+  </script>
 </body>
 </html>

@@ -8,6 +8,10 @@ const openai = new OpenAI();
 const IMAGE_WIDTH = 912;
 const SITE_URL = "https://guardianesdelpulque.org";
 
+// Modelos: si la API rechaza gpt-4.1 en tu cuenta, cambia a "gpt-4o".
+const MODEL = process.env.OPENAI_MODEL || "gpt-4.1";
+const DIY_MODEL = process.env.OPENAI_DIY_MODEL || "gpt-4o";
+
 // ── Temas ──────────────────────────────────────────────────────────────────
 const TOPICS = [
   // TOPICS shuffled intentionally: picking is random, but the source order is also randomized so no category grouping is visible.
@@ -637,52 +641,97 @@ const TAG_PALETTES = {
 const DEFAULT_PALETTE = "tonos tierra, ocre, verde y rojo óxido";
 
 // ── Perfiles de tono ───────────────────────────────────────────────────────
+// Base narrativa compartida: reglas duras para evitar prosa genérica de LLM.
+const NARRATIVE_BASE = `Eres redactor veterano de periodismo narrativo y divulgación científica en español mexicano, formado en la tradición de Juan Villoro, Elena Poniatowska en crónica, Gatopardo, Pie de Página y Ojalá. Escribes artículos que la gente TERMINA de leer — no por obligación, sino porque cada párrafo la jala al siguiente.
+
+REGLAS DE ESCRITURA (no negociables, son la diferencia entre lectura adictiva y prosa de IA genérica):
+
+1. APERTURA: escena, no tesis.
+   Abre SIEMPRE con una escena concreta: un lugar con referencia geográfica real (estado, pueblo, altitud, coordenada), un gesto físico, un sonido u olor. La persona de la escena debe ser un composite anónimo arquetípico ("don X, campesino de…", "doña Y, partera de…") — NUNCA una figura histórica/académica nombrada (ver regla 10). JAMÁS abras con "X es un proceso que", "X se erige como", "X representa una alternativa", "X juega un papel fundamental". El primer párrafo debe leerse como la primera escena de una crónica: lector puede visualizar algo.
+
+2. ESPECIFICIDAD OBLIGATORIA por sección (h2).
+   Cada sección incluye, no negociable:
+   - 1+ nombre propio real: persona, comunidad, lugar con estado o coordenada, instituto, universidad.
+   - 1+ dato numérico concreto: año exacto, porcentaje, distancia, temperatura, profundidad, peso, cantidad.
+   - 1+ detalle sensorial: olor, textura, sonido, color específico, temperatura corporal, gesto físico.
+
+3. UN GIRO CONTRAINTUITIVO por artículo.
+   Incluye AL MENOS un dato o idea que sorprenda al lector educado — un "espera, ¿en serio?". Va siempre en <aside class="aside-fact"><strong>Dato que rompe el molde:</strong> ...</aside>.
+
+4. CIERRES DE SECCIÓN = GANCHO, no resumen.
+   Termina cada sección (excepto la última) con una oración que abra una pregunta, tensión o misterio hacia la siguiente. Nada de "así vemos que", "en resumen", "por lo tanto". Micro-cliffhangers suaves.
+
+5. FRASES ABSOLUTAMENTE PROHIBIDAS (si usas cualquiera, el artículo se considera fallido):
+   - "se erige como", "se presenta como", "se convierte en", "se perfila como", "representa una alternativa", "juega un papel fundamental"
+   - "puente hacia", "tapiz", "tejer", "reverberando", "reverbera", "en armonía con", "sinergia", "sinérgico", "holístico"
+   - "es fundamental destacar", "cabe mencionar", "en este sentido", "resulta imperativo", "no podemos dejar de mencionar"
+   - "múltiples beneficios", "gran variedad de", "el alma de", "el corazón de"
+   - "madre tierra", "reconciliarse con la naturaleza", "legado de vida", "tapiz de vida", "desencadena un efecto"
+   - "no solo X sino también Y" (muletilla estructural — varía la construcción)
+   - "cada acción cuenta", "juntos podemos", "el futuro depende de nosotros", "sembrar el cambio"
+   - "a menudo olvidadas", "a menudo olvidados"
+   - Cualquier frase intercambiable: si la oración cabría idéntica en un artículo sobre cualquier otro tema, no va.
+
+6. CADENCIA VARIADA.
+   Alterna oraciones cortas (5-12 palabras) con largas (20-35). Nunca dos párrafos seguidos con apertura igual. Varía verbos: no abuses de "es", "son", "tiene", "representa", "constituye". Prefiere verbos concretos: raspa, hierve, migra, cuaja, prende, destila, mide, carga, guarda.
+
+7. MOSTRAR > DECIR.
+   "Una milpa de 3 hectáreas rinde más calorías por metro cuadrado que una hectárea del mismo maíz solo" > "Las milpas son más productivas". Si citas, atribuye a alguien real verificable (investigador, institución, publicación). Nunca inventes citas.
+
+8. CONCLUSIÓN que NO resume.
+   Último párrafo: una imagen, una escena futura, una pregunta abierta, un llamado concreto con acción específica (nombre del taller, dirección, colectivo, fecha). Nada de "en definitiva", "en conclusión", "para finalizar", ni repetir ideas ya dichas.
+
+9. HONESTIDAD EPISTÉMICA.
+   Si no sabes un dato con certeza, OMÍTELO. Prefiero omisión a invención. Las fechas, cifras e instituciones deben existir en la realidad: usa conocimiento que tengas, no fabriques.
+
+10. REGLA DURA SOBRE PERSONAS CON NOMBRE (muy importante):
+   Hay DOS tipos de personas en el texto y cada una tiene reglas distintas:
+
+   (a) FIGURAS PÚBLICAS / HISTÓRICAS / ACADÉMICAS con nombre propio verificable (ej. Luis Álvarez, Lynn Margulis, Suzanne Simard, Miguel León-Portilla, Mario Molina, Elena Poniatowska, Pedro Linares, Luis Ernesto Miramontes, Diego Rivera, José Clemente Orozco, investigadores citados por institución, autores publicados):
+       - PROHIBIDO inventar escenas específicas, diálogos, gestos, estados de ánimo, micro-ubicaciones, fechas-momento que no sean verificables.
+       - Ejemplo PROHIBIDO: "Luis Álvarez se agachó en la arena de Chicxulub en febrero de 1981 con el ceño fruncido".
+       - Ejemplo PROHIBIDO: "Diego Rivera, con el pincel en la mano, contempló el muro vacío del Palacio Nacional un martes de 1929".
+       - PERMITIDO — y de hecho ESPERADO para que el artículo sea informativo de verdad — todo lo que esté DOCUMENTADO públicamente: técnicas que usaron, métodos, materiales, pigmentos, obras, fechas de publicación/obra, instituciones, teorías, citas publicadas verificables, colaboradores conocidos, conceptos que acuñaron, temas recurrentes en su obra.
+       - Ejemplo PERMITIDO: "En 1980, Luis y Walter Álvarez publicaron en Science la hipótesis del impacto: una capa de iridio de 1 cm en el límite K-Pg revelaba una firma extraterrestre."
+       - Ejemplo PERMITIDO: "Rivera pintó los murales de la Secretaría de Educación Pública entre 1922 y 1928 con técnica de buon fresco — aplicando pigmentos minerales sobre mortero de cal fresca en paneles llamados giornate, cada uno del tamaño que podía terminar antes de que el mortero secara."
+       - La distinción clave: ¿estás contando lo que HICIERON, PUBLICARON, USARON, CONCIBIERON? Adelante. ¿Estás narrando un momento específico de su vida como si fueras testigo? No.
+
+   (b) PERSONAS ANÓNIMAS arquetípicas del campo/comunidad (ej. "don Gervasio, campesino de Acaxochitlán", "doña Remedios, partera de la Sierra", "Benito, ejidatario tzeltal"):
+       - SÍ puedes construir escenas con ellos para anclar la explicación al territorio.
+       - Son composites representativos del oficio/región, el lector entiende que son voz y no dossier biográfico.
+       - Úsalos para la apertura y transiciones. Son la licencia narrativa honesta.
+
+   Si un párrafo cita a una persona real nombrada, debe estar basado en algo que esa persona efectivamente dijo, escribió o hizo, no en una reconstrucción imaginativa.
+
+EJEMPLO de apertura que SÍ cumple (tema: pulque):
+"Antes de las seis de la mañana, don Eulalio Hernández ya subió al maguey. Cuarenta y siete años clavando el acocote en la misma variedad de Agave salmiana en las laderas de Epazoyucan, Hidalgo. Succiona, escupe, vuelve a succionar. Lo que sale es aguamiel: un líquido dulce, tibio, que en doce horas — sin que él intervenga — se convertirá en pulque. Lo que ocurre entre medias es una de las fermentaciones más extrañas del planeta."
+
+(Nombre propio, años exactos, ubicación, acción física, término técnico, nombre científico en contexto, gancho al final.)`;
+
 const TONE_PROFILES = [
   {
-    name: "practico-calido",
-    systemPrompt:
-      "Eres un redactor experto en temas rurales, ecologicos, cientificos y de territorio mexicano. " +
-      "Escribes articulos profundos, claros, calidos y practicos para comunidades. " +
-      "Tu tono es directo, comunitario y respetuoso, pero con rigor cientifico cuando el tema lo pide. " +
-      "Cada seccion es densa en contenido: incluye ejemplos concretos, datos verificables, pasos practicos y cifras. " +
-      "Los parrafos son sustanciosos y reflexivos, nunca de una sola linea. " +
-      "Integras nombres cientificos, fechas historicas, cifras concretas y menciones a investigadores reales.",
-    sectionRange: [9, 12],
-    temperatureRange: [0.7, 0.9],
+    name: "cronica-rural",
+    systemPrompt: NARRATIVE_BASE + "\n\nTONO ESPECÍFICO: crónica rural. Cuentas escenas del campo mexicano con nombres, pueblos, oficios reales. El saber científico entra a través de las historias, no al revés. Usa verbos de acción concreta.",
+    sectionRange: [7, 9],
+    temperatureRange: [0.75, 0.9],
   },
   {
-    name: "poetico-con-mesura",
-    systemPrompt:
-      "Eres un escritor que combina conocimiento rural, ecologico y cientifico con un lenguaje lirico pero contenido. " +
-      "Usas metaforas del territorio mexicano sin caer en excesos. " +
-      "Tu prosa respira como la milpa: con ritmo y proposito. " +
-      "Cada seccion desarrolla ideas con profundidad: no basta nombrar, hay que explicar, describir, contextualizar y mostrar conexiones. " +
-      "Minimo 3 parrafos sustanciosos por seccion, con datos concretos, fechas y nombres reales cuando aplique.",
-    sectionRange: [9, 12],
-    temperatureRange: [0.85, 1.0],
+    name: "reportaje-ciencia",
+    systemPrompt: NARRATIVE_BASE + "\n\nTONO ESPECÍFICO: reportaje de divulgación científica. Arrancas con escena humana, después explicas mecanismo biológico/químico/físico con precisión. Cita investigadores reales, instituciones (UNAM, Cinvestav, INAH, IPN, Conabio), estudios con año. Cada sección desarrolla UN concepto científico a profundidad.",
+    sectionRange: [7, 9],
+    temperatureRange: [0.65, 0.8],
   },
   {
-    name: "cortito-conciso",
-    systemPrompt:
-      "Eres un redactor que escribe guias completas, densas y bien documentadas sobre temas rurales, ecologicos y cientificos de Mexico. " +
-      "Vas directo al grano sin perder profundidad: cada idea esta sustentada con datos, fechas, cifras o nombres reales. " +
-      "Usa listas detalladas, pasos numerados y ejemplos especificos. " +
-      "Cada punto de una lista debe tener al menos una oracion explicativa con contenido concreto. " +
-      "Integras nombres cientificos, fechas y cifras con naturalidad.",
-    sectionRange: [9, 12],
-    temperatureRange: [0.6, 0.8],
+    name: "ensayo-cortito",
+    systemPrompt: NARRATIVE_BASE + "\n\nTONO ESPECÍFICO: ensayo breve y filoso. Párrafos cortos (60-100 palabras), ritmo rápido, una idea por párrafo, transiciones tensas. Sin meandros, pero con especificidad absoluta. Piensa en columna de Alma Guillermoprieto o Carlos Monsiváis.",
+    sectionRange: [6, 8],
+    temperatureRange: [0.7, 0.85],
   },
   {
-    name: "narrativo",
-    systemPrompt:
-      "Eres un narrador que cuenta historias y escenas del campo mexicano para transmitir saberes cientificos y culturales. " +
-      "Empiezas con una escena vivida (un tlachiquero al amanecer, una cuadrilla mezclando adobe, " +
-      "una lluvia cayendo en la milpa, un murcielago cruzando la noche) y de ahi extraes aprendizajes profundos. " +
-      "Equilibras relato y ensenanza. Cada seccion desarrolla tanto la historia como el conocimiento cientifico: " +
-      "no dejes ideas a medias, lleva cada tema hasta sus consecuencias practicas. " +
-      "Integras nombres cientificos, fechas historicas precisas, cifras verificables y menciones a investigadores reales.",
-    sectionRange: [9, 12],
-    temperatureRange: [0.85, 1.0],
+    name: "cronica-lirica",
+    systemPrompt: NARRATIVE_BASE + "\n\nTONO ESPECÍFICO: prosa con aliento lírico pero anclada en lo físico. Metáforas del territorio mexicano (no genéricas). El lirismo viene de observación, no de adjetivos. Evita lo abstracto; una metáfora vale solo si se puede tocar.",
+    sectionRange: [7, 9],
+    temperatureRange: [0.8, 0.95],
   },
 ];
 
@@ -1106,6 +1155,47 @@ function buildHTML({ title, excerpt, body, diy, tag, emoji, slug, dateStr, isoDa
 </html>`;
 }
 
+// ── Prompt de usuario (construye el brief concreto por artículo) ───────────
+function buildUserPrompt({ topic, sectionCount, forceTitle }) {
+  const titleRule = forceTitle
+    ? `TÍTULO FIJO (no lo cambies, úsalo tal cual en el campo "title"): "${forceTitle}"`
+    : `TÍTULO: sé específico y con gancho. NO descriptivo plano ("Guía de X"), NO con dos puntos academicistas. Un titular que da ganas de clic: una promesa concreta, un dato sorpresivo, una pregunta. Ejemplos buenos: "Por qué cinco árboles plantados dentro de una milpa producen más que la milpa sola", "El día que un químico mexicano inventó la píldora anticonceptiva sin saberlo". Ejemplos malos: "La Importancia de X", "X: Un Análisis Completo".`;
+
+  return [
+    `TEMA: ${topic}`,
+    ``,
+    `Escribe el artículo siguiendo TODAS las reglas del system prompt. Responde SOLO con JSON válido (sin markdown, sin backticks) con esta estructura exacta:`,
+    ``,
+    `{"title":"...", "excerpt":"...", "tag":"...", "body":"<h2>...</h2><p>...</p>..."}`,
+    ``,
+    titleRule,
+    ``,
+    `EXCERPT: es GANCHO, no resumen descriptivo. Máximo 140 caracteres. Debe dar curiosidad, no anunciar el tema.`,
+    `  MAL: "Explora el impacto de la agroforestería en la sostenibilidad y el desarrollo rural."`,
+    `  BIEN: "Por qué cinco árboles plantados dentro de una milpa pueden producir más que la misma milpa sola."`,
+    ``,
+    `BODY (HTML, sin <style> ni <script>, sin incluir el título principal):`,
+    `- Exactamente ${sectionCount} secciones con <h2>. Los h2 deben ser específicos y cargados, no genéricos ("La importancia de…").`,
+    `- Cada sección: 3-4 párrafos <p> de 70-130 palabras cada uno. Alterna con listas <ul>/<ol> cuando el contenido lo pida (no siempre).`,
+    `- Artículo completo: 1900-2600 palabras.`,
+    `- Primer párrafo (dentro de la primera sección): ESCENA CONCRETA — persona con nombre, lugar, gesto físico. Regla #1 del system.`,
+    ``,
+    `ELEMENTOS OBLIGATORIOS (si falta uno, el artículo está mal):`,
+    `1. Por cada sección h2: 1+ nombre propio real, 1+ dato numérico, 1+ detalle sensorial. No negociable.`,
+    `2. Nombres científicos binomiales en <em> cuando aparezcan especies (ej. <em>Agave salmiana</em>).`,
+    `3. 1 o 2 <aside class="aside-fact"><strong>Dato que rompe el molde:</strong> ...</aside> con el giro contraintuitivo del artículo — algo genuinamente sorprendente, no un dato trivial.`,
+    `4. 1 cita directa entre comillas ATRIBUIBLE a una persona real verificable (investigador, autor, cronista). Si no hay una que conozcas con certeza, parafrasea SIN poner comillas — nunca inventes la cita.`,
+    `5. SECCIÓN PRÁCTICA OBLIGATORIA: AL MENOS UNA de las secciones h2 debe ser APLICABLE — con información que permita a un lector intentar hacer el proyecto en la vida real. Debe incluir elementos concretos como: especies o materiales específicos con nombre, cantidades o medidas, temporadas o tiempos, espaciamientos, temperaturas, costos aproximados en pesos mexicanos, dónde conseguir insumos (viveros regionales, tianguis, colectivos), errores comunes que se deben evitar. Esta sección NO reemplaza al "Hazlo tú mismo" final — es contenido técnico-práctico dentro del cuerpo del artículo, con detalle que el DIY (por su brevedad) no puede cubrir.`,
+    `6. DESCRIPCIÓN TÉCNICA DE MÉTODOS: si el tema involucra una técnica, oficio, proceso científico, práctica tradicional o metodología (bioconstrucción, fermentación, muralismo, nixtamalización, curtido, destilación, cultivo, etc.), DEDICA espacio a explicar CÓMO se hace paso a paso, con materiales, proporciones, tiempos, temperaturas, herramientas. El artículo debe dejar al lector con capacidad de entender la técnica, no solo admirarla desde lejos. Si el tema es una persona histórica con una técnica propia (Diego Rivera y el fresco, Mario Molina y la química atmosférica), describe esa técnica con precisión documentada.`,
+    `7. Al FINAL del body, sección <h2>Glosario</h2> con <dl class="glossary"> y 5-7 términos técnicos del artículo (dt/dd). Las definiciones son de 1-2 oraciones, concretas, no circulares.`,
+    `8. Penúltima sección (antes del glosario): cierra con una escena, imagen o llamado específico — nunca "en conclusión", nunca resumiendo.`,
+    ``,
+    `TAG: elige UNO de: ${VALID_TAGS.join(", ")}. Si ninguno encaja, propone uno nuevo de 1 palabra.`,
+    ``,
+    `AUTOCHEQUEO antes de responder: ¿alguna frase de tu borrador podría caber idéntica en un artículo sobre otro tema? Si sí, reescríbela. ¿Usaste alguna frase prohibida del system? Si sí, reescríbela. ¿Cada h2 tiene nombre propio + número + detalle sensorial? Si no, corrige.`,
+  ].join("\n");
+}
+
 // ── Flujo principal ────────────────────────────────────────────────────────
 async function generateArticle() {
   const postsPath = path.join(__dirname, "..", "posts.json");
@@ -1167,40 +1257,16 @@ async function generateArticle() {
 
   // 1. Generar articulo con GPT
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o",
+    model: MODEL,
     messages: [
       { role: "system", content: profile.systemPrompt },
       {
         role: "user",
-        content:
-          `Escribe un articulo original, profundo y ricamente documentado sobre: ${topic}.\n\n` +
-          "Responde SOLO con un JSON valido (sin markdown ni backticks) con esta estructura:\n" +
-          `{"title": "Titulo del articulo", "excerpt": "Resumen de 1 linea (max 120 chars)", "tag": "Etiqueta principal", "body": "<h2>...</h2><p>...</p>..."}\n\n` +
-          `EXTENSION Y ESTRUCTURA:\n` +
-          `- El body debe ser HTML con h2, p, ul/li, ol/li y elementos enriquecidos descritos abajo.\n` +
-          `- Usa exactamente ${sectionCount} secciones con h2.\n` +
-          `- Cada seccion con minimo 3 parrafos sustanciosos de al menos 100 palabras cada uno, o un parrafo profundo mas una lista detallada.\n` +
-          `- El articulo completo entre 1800 y 2800 palabras.\n` +
-          `- No incluyas el titulo principal en el body. No uses etiquetas style ni script.\n\n` +
-          `RIQUEZA OBLIGATORIA (estos elementos deben aparecer en el body):\n` +
-          `1. AL MENOS 3 fechas historicas especificas (ej. "en 1952", "desde el siglo XVI", "hasta 1810").\n` +
-          `2. AL MENOS 2 nombres reales de cientificos, investigadores, historiadores o autores relevantes (ej. "Alan Turing", "Luz Maria del Razo", "Miguel Leon-Portilla"). Integralos naturalmente.\n` +
-          `3. Nombres cientificos binomiales cuando se mencionen especies (ej. "Agave salmiana", "Leptonycteris nivalis") en cursiva con <em>.\n` +
-          `4. AL MENOS 5 cifras concretas (porcentajes, medidas, distancias, cantidades, anos, poblaciones).\n` +
-          `5. AL MENOS 1 cuadro destacado con datos sorprendentes usando este formato exacto:\n` +
-          `   <aside class="aside-fact"><strong>¿Sabias que?</strong> [dato fascinante de 1-2 oraciones]</aside>\n` +
-          `6. Al FINAL del body, una seccion h2 "Glosario" con entre 5 y 8 terminos tecnicos definidos asi:\n` +
-          `   <h2>Glosario</h2><dl class="glossary"><dt>Termino</dt><dd>Definicion clara de 1-2 oraciones.</dd><dt>...</dt><dd>...</dd></dl>\n` +
-          `7. Cierra el articulo (antes del glosario) con un parrafo motivador de al menos 100 palabras que invite a la accion.\n\n` +
-          `ESTILO:\n` +
-          `- Integra ciencia, cultura mexicana, historia y saberes tradicionales cuando aplique.\n` +
-          `- Evita frases vacias o generalidades. Cada parrafo debe contener informacion sustancial.\n` +
-          `- No inventes datos: si no estas seguro de una cifra o nombre, omitelo en lugar de inventar.\n` +
-          `- Sin fuentes ni bibliografia al final (la integracion es organica).\n\n` +
-          `TAG: elige el mas apropiado entre: ${VALID_TAGS.join(", ")}. Si ninguno encaja, puedes sugerir uno nuevo.`,
+        content: buildUserPrompt({ topic, sectionCount, forceTitle: null }),
       },
     ],
     temperature,
+    response_format: { type: "json_object" },
   });
 
   function tryParseJson(raw) {
@@ -1224,23 +1290,18 @@ async function generateArticle() {
   for (let retry = 0; !article && retry < 2; retry++) {
     console.log(`JSON inválido, reintentando GPT (intento ${retry + 2})...`);
     const retryCompletion = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: MODEL,
       messages: [
         { role: "system", content: profile.systemPrompt },
         {
           role: "user",
           content:
-            `Escribe un articulo original, profundo y documentado sobre: ${topic}.\n\n` +
-            "Responde SOLO con un JSON valido (sin markdown ni backticks) con esta estructura EXACTA:\n" +
-            `{"title":"Titulo","excerpt":"Resumen max 120 chars","tag":"Tag","body":"<h2>...</h2><p>...</p>"}\n\n` +
-            `IMPORTANTE: El body debe ser una sola linea de texto sin saltos de linea literales (usa espacios). ` +
-            `Usa exactamente ${sectionCount} secciones con h2. ` +
-            "Cada seccion minimo 3 parrafos de 100+ palabras. Sin style ni script. Entre 1800 y 2800 palabras. " +
-            "Incluye 3+ fechas, 2+ nombres de cientificos/autores reales, 5+ cifras, 1+ <aside class=\"aside-fact\"> y un glosario final con <dl class=\"glossary\">.\n\n" +
-            `Tag entre: ${VALID_TAGS.join(", ")}.`,
+            buildUserPrompt({ topic, sectionCount, forceTitle: null }) +
+            `\n\nCRÍTICO: Responde JSON válido en una sola línea para el body (usa espacios, no saltos de línea literales dentro de los strings JSON).`,
         },
       ],
       temperature: 0.5,
+      response_format: { type: "json_object" },
     });
     raw = retryCompletion.choices[0].message.content.trim();
     article = tryParseJson(raw);
@@ -1249,22 +1310,32 @@ async function generateArticle() {
 
   // 2. Generar sección "Hazlo tú mismo"
   const diyCompletion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: DIY_MODEL,
     messages: [
-      { role: "system", content: "Eres un instructor práctico de saberes rurales mexicanos. Redactas instrucciones claras, concretas y motivadoras." },
+      {
+        role: "system",
+        content:
+          "Eres instructor de saberes rurales mexicanos. Instrucciones claras, físicas, que funcionan. " +
+          "Nada de prosa motivacional vacía: materiales reales con cantidades exactas, pasos con tiempos y temperaturas, " +
+          "errores comunes señalados. Nunca digas 'disfruta del proceso' ni 'siente la magia'. El lector va a hacer algo, " +
+          "no a leer autoayuda. Idioma: español mexicano.",
+      },
       {
         role: "user",
         content:
           `El artículo es sobre: "${article.title}".\n\n` +
-          "Escribe una sección 'Hazlo tú mismo' práctica y accesible relacionada con el tema del artículo.\n" +
-          "Responde SOLO con un JSON válido (sin markdown) con esta estructura:\n" +
-          '{"diy_title": "Nombre de la actividad práctica", "intro": "1 párrafo motivador (max 100 palabras)", ' +
-          '"materials": ["material 1", "material 2", ...], "steps": ["paso 1", "paso 2", ...], "tip": "Consejo final útil (max 80 palabras)"}\n\n' +
-          "La actividad debe ser simple, con materiales accesibles, máximo 6 pasos y 7 materiales. " +
-          "Orientada a personas en comunidades rurales o urbanas sin recursos especializados.",
+          "Escribe la sección 'Hazlo tú mismo' con una actividad SIMPLE, física, que alguien en casa pueda hacer con materiales accesibles en México.\n\n" +
+          "Responde SOLO con JSON válido (sin markdown):\n" +
+          '{"diy_title": "Nombre concreto de la actividad (no genérico)", ' +
+          '"intro": "2-3 oraciones que dicen qué vas a hacer, cuánto tarda y qué vas a obtener — sin motivación vacía", ' +
+          '"materials": ["material con cantidad exacta, ej: \'2 kg de adobe fresco\'", ...], ' +
+          '"steps": ["paso con tiempo/temperatura/medida cuando aplique, ej: \'Deja reposar 4 horas a la sombra, hasta que la superficie cristalice\'", ...], ' +
+          '"tip": "Un error común que la gente comete o un truco específico — no generalidades"}\n\n' +
+          "Máximo 6 pasos, máximo 7 materiales. Lo que obtienes al final debe ser tangible y medible.",
       },
     ],
-    temperature: 0.7,
+    temperature: 0.6,
+    response_format: { type: "json_object" },
   });
 
   let diyData;
@@ -1422,7 +1493,30 @@ async function generateArticle() {
   console.log(`Tono:   ${profile.name}`);
 }
 
-generateArticle().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+// Exponer helpers para que otros scripts (regen-all-articles.js) puedan reusar
+// la misma lógica de prompts/plantilla sin duplicar código.
+module.exports = {
+  openai,
+  MODEL,
+  DIY_MODEL,
+  TONE_PROFILES,
+  VALID_TAGS,
+  TAG_EMOJI,
+  DEFAULT_TAG,
+  buildHTML,
+  buildUserPrompt,
+  slugify,
+  validateTag,
+  fechaMx,
+  pick,
+  randInt,
+  randFloat,
+  readingTime,
+};
+
+if (require.main === module) {
+  generateArticle().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
