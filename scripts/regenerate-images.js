@@ -80,6 +80,8 @@ const SLUG_NOTES = {
     " Depict ALEBRIJES: fantastical hybrid creatures from Mexican folk art, invented by Pedro Linares in 1936 from a fever dream. Each alebrije combines parts of multiple animals (e.g. dragon body with eagle wings, lizard tail, donkey ears, jaguar legs, fish scales, goat horns) painted in extremely vivid contrasting colors with intricate dotted and striped patterns covering their skin. Show 2 or 3 large alebrijes in the foreground with elaborate impossible animal anatomy — NOT buildings, NOT churches, NOT colonial architecture. Setting: a workshop in Mexico City with an artisan painting one of the creatures. Single continuous scene, no panels, no divisions.",
   "xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan":
     " Depict a Xoloitzcuintle dog (Mexican hairless dog): completely HAIRLESS smooth dark grey-black skin (no fur, no mane, no tufts anywhere), slender athletic body, long thin legs, narrow elongated muzzle, large erect bat-like pointed ears standing straight up, slim whip-like tail, calm noble expression. The xolo stands at the entrance of Mictlán (the Aztec underworld) on rocky volcanic terrain at dusk, with stylized prehispanic motifs and a glowing river behind. Absolutely NO fur, NO feathered headdress, NO collar, NO mane — the dog is bald and sleek.",
+  "cuando-la-selva-alimenta-la-cosecha-oculta-de-los-frutos-mayas":
+    " Depict the Maya jungle (selva maya) in Calakmul, Campeche: a tall lush tropical canopy of ramón trees (Brosimum alicastrum) with broad oval leaves, chicozapote trees with round brown sapodilla fruits, mamey trees with reddish-brown rough fruits hanging, clusters of small yellow guaya fruits, pitahaya cactus climbing a trunk, and zapote negro fruits on branches. In the foreground a young Tzeltal Maya boy in white cotton clothes carries a hand-woven palm-leaf basket overflowing with ramón seeds, guaya bunches and chicozapotes; he reaches up to pick fruit. Howler monkeys, a keel-billed toucan and a quetzal perch on branches. Limestone karst boulders and ancient Maya stone steps emerge from the green undergrowth. ABSOLUTELY NO magueys, NO agaves, NO cacti other than the climbing pitahaya, NO desert plants — this is dense humid tropical Yucatán/Petén jungle, not arid highlands. The entire canvas is one continuous illustrated jungle scene from edge to edge.",
 };
 
 // ── Construir prompt ────────────────────────────────────────────────────────
@@ -87,22 +89,24 @@ function buildPrompt(title, tag, slug) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
   const tagNote = SLUG_NOTES[slug] || TAG_NOTES[tag] || "";
   return (
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${title}" — Mexican rural landscape scene related to this topic.${tagNote} ` +
-    `Color palette: ${palette}. ` +
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${title}" — Mexican scene related to this topic.${tagNote} ` +
+    `Use these color families in the illustration: ${palette}. ` +
     `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. ` +
-    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames, no vignettes. ` +
-    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind, NO urban buildings, NO city, NO color swatches, NO color palettes, NO decorative borders.`
+    `The ENTIRE 1792x1024 canvas must be a SINGLE continuous illustrated scene from edge to edge. The scene itself fills 100% of the canvas. No portion of the canvas may be blank, empty, or occupied by abstract color fields. ` +
+    `ABSOLUTELY FORBIDDEN elements (these must NOT appear anywhere in the image): color palette strips, color swatches, color sample bars, vertical color columns, horizontal color bands, reference color charts, side panels showing colors, isolated rectangles of solid color, color chips, Pantone-style blocks, any design-reference element showing the palette. ` +
+    `Also forbidden: divisions, panels, grids, borders, frames, vignettes, margins, white space, empty bands, comic panel separators, before/after splits, diptychs, triptychs. ` +
+    `Forbidden content: photography, 3D render, text, letters, words, labels, typography, writing, signatures, watermarks, urban buildings, cityscape skyline.`
   );
 }
 
 function buildFallback(tag) {
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
   return (
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide Mexican rural landscape. ` +
-    `Color palette: ${palette}. ` +
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide Mexican rural scene filling the entire canvas. ` +
+    `Use these color families within the illustration: ${palette}. ` +
     `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, high contrast, screen-print look. ` +
-    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no divisions, no separate panels, no grids, no sections, no borders, no frames. ` +
-    `NO text, NO letters, NO words, NO typography, NO writing of any kind, NO urban buildings, NO color swatches.`
+    `SINGLE continuous illustrated scene from edge to edge filling 100% of the canvas. ` +
+    `ABSOLUTELY FORBIDDEN: color palette strips, color swatches, color bars, vertical color columns, side panels with color samples, reference color charts, isolated color blocks, divisions, grids, panels, borders, frames, margins, text, letters, typography.`
   );
 }
 
