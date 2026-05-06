@@ -1,5 +1,25 @@
 [
   {
+    "tag": "Ciencia",
+    "title": "El químico de la UNAM que olía a laboratorio y salvó el cielo",
+    "excerpt": "¿Cómo un estudiante de la UNAM convirtió aerosoles cotidianos en una alarma global sobre el futuro del aire?",
+    "date": "5 de mayo de 2026",
+    "url": "articulos/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo.html",
+    "cover": "articulos/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Mario Molina, Nobel mexicano que descubrio el agujero de ozono"
+  },
+  {
+    "tag": "Medicina",
+    "title": "¿Por qué los curanderos siguen curando el susto en pleno 2024?",
+    "excerpt": "En una clínica de Morelos, una limpia tradicional puede cambiar más que el ánimo: ¿qué hay detrás del mal de ojo?",
+    "date": "5 de mayo de 2026",
+    "url": "articulos/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024.html",
+    "cover": "articulos/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Curanderos, susto, mal de ojo y limpias tradicionales"
+  },
+  {
     "tag": "Cacao",
     "title": "Lo que un chocolate amargo puede hacerle a tus arterias (y por qué no es magia)",
     "excerpt": "Un cacao real y amargo en la mesa puede mover tu corazón — literalmente — más de lo que imaginas.",
