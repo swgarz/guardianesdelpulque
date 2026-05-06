@@ -18,6 +18,43 @@ const IMAGE_WIDTH = 912;
 const openai = new OpenAI();
 const ROOT = path.join(__dirname, "..");
 
+// Detecta y recorta franjas planas de color sólido en los bordes (paletas, marcos
+// monocromáticos) que DALL-E inserta a veces y que sharp.trim() no quita porque
+// no rodean toda la imagen. Una columna/fila se considera "plana" si su
+// desviación estándar de color es muy baja (< stdThreshold). Se permite recortar
+// hasta maxFraction del lado.
+async function cropFlatBorders(buffer, { stdThreshold = 10, maxFraction = 0.18 } = {}) {
+  const { data, info } = await sharp(buffer).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const { width, height, channels } = info;
+  const colStd = (x) => {
+    let sR=0,sG=0,sB=0;
+    for (let y=0;y<height;y++){const i=(y*width+x)*channels;sR+=data[i];sG+=data[i+1];sB+=data[i+2];}
+    const mR=sR/height,mG=sG/height,mB=sB/height;
+    let v=0;
+    for (let y=0;y<height;y++){const i=(y*width+x)*channels;const dR=data[i]-mR,dG=data[i+1]-mG,dB=data[i+2]-mB;v+=dR*dR+dG*dG+dB*dB;}
+    return Math.sqrt(v/height);
+  };
+  const rowStd = (y) => {
+    let sR=0,sG=0,sB=0;
+    for (let x=0;x<width;x++){const i=(y*width+x)*channels;sR+=data[i];sG+=data[i+1];sB+=data[i+2];}
+    const mR=sR/width,mG=sG/width,mB=sB/width;
+    let v=0;
+    for (let x=0;x<width;x++){const i=(y*width+x)*channels;const dR=data[i]-mR,dG=data[i+1]-mG,dB=data[i+2]-mB;v+=dR*dR+dG*dG+dB*dB;}
+    return Math.sqrt(v/width);
+  };
+  const maxXTrim = Math.floor(width * maxFraction);
+  const maxYTrim = Math.floor(height * maxFraction);
+  let left=0;       while (left < maxXTrim && colStd(left) < stdThreshold) left++;
+  let right=width-1; while (width-1-right < maxXTrim && colStd(right) < stdThreshold) right--;
+  let top=0;        while (top < maxYTrim && rowStd(top) < stdThreshold) top++;
+  let bottom=height-1; while (height-1-bottom < maxYTrim && rowStd(bottom) < stdThreshold) bottom--;
+  const cropW = right - left + 1;
+  const cropH = bottom - top + 1;
+  if (cropW === width && cropH === height) return buffer;
+  console.log(`  cropFlatBorders: L=${left} R=${width-1-right} T=${top} B=${height-1-bottom} -> ${cropW}x${cropH}`);
+  return sharp(buffer).extract({ left, top, width: cropW, height: cropH }).toBuffer();
+}
+
 // ── Paletas por tag ─────────────────────────────────────────────────────────
 const TAG_PALETTES = {
   Pulque:          "ochre, amber, gold, bone white and maguey green",
@@ -137,7 +174,9 @@ async function regenerateImage(post, index, total) {
       imageBuffer = Buffer.from(
         await fetch(imageUrl).then((r) => r.arrayBuffer())
       );
-      imageBuffer = await sharp(imageBuffer).trim({ threshold: 30 }).resize(IMAGE_WIDTH).toBuffer();
+      let buf = await sharp(imageBuffer).trim({ threshold: 30 }).toBuffer();
+      buf = await cropFlatBorders(buf);
+      imageBuffer = await sharp(buf).resize(IMAGE_WIDTH).toBuffer();
       break;
     } catch (e) {
       console.log(`  Prompt rechazado: ${e.message?.slice(0, 80)}`);
