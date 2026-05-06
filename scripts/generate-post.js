@@ -8,12 +8,16 @@ const openai = new OpenAI();
 const IMAGE_WIDTH = 912;
 const SITE_URL = "https://guardianesdelpulque.org";
 
-// Detecta y recorta franjas planas de color sólido en los bordes (paletas, marcos
-// monocromáticos) que DALL-E inserta a veces y que sharp.trim() no quita porque
-// no rodean toda la imagen. Una columna/fila se considera "plana" si su
-// desviación estándar de color es muy baja (< stdThreshold). Se permite recortar
-// hasta maxFraction del lado.
-async function cropFlatBorders(buffer, { stdThreshold = 10, maxFraction = 0.18 } = {}) {
+// Detecta y recorta franjas planas de color sólido EN LOS BORDES (paletas, marcos
+// monocromáticos, columnas/filas de bloques apilados de color) que DALL-E inserta
+// a veces y que sharp.trim() no quita porque no rodean toda la imagen.
+//
+// Dos heurísticas combinadas — una columna/fila es "borde a recortar" si:
+//   (a) su desviación estándar de color es muy baja (< stdThreshold) — banda monocroma, o
+//   (b) es "piecewise-constant": al recorrerla, la mayoría de píxeles tienen un
+//       vecindario lateral pequeño (5px) muy plano (std local < localStdThreshold).
+//       Esto detecta paletas verticales/horizontales de bloques de color apilados.
+async function cropFlatBorders(buffer, { stdThreshold = 10, maxFraction = 0.18, localStdThreshold = 6, localFlatFrac = 0.85, localWin = 2 } = {}) {
   const { data, info } = await sharp(buffer).removeAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width, height, channels } = info;
   const colStd = (x) => {
@@ -32,12 +36,42 @@ async function cropFlatBorders(buffer, { stdThreshold = 10, maxFraction = 0.18 }
     for (let x=0;x<width;x++){const i=(y*width+x)*channels;const dR=data[i]-mR,dG=data[i+1]-mG,dB=data[i+2]-mB;v+=dR*dR+dG*dG+dB*dB;}
     return Math.sqrt(v/width);
   };
+  const colLocalFlat = (x) => {
+    const lo = Math.max(0, x - localWin), hi = Math.min(width - 1, x + localWin);
+    const n = hi - lo + 1;
+    let flat = 0;
+    for (let y=0; y<height; y++) {
+      let sR=0,sG=0,sB=0;
+      for (let xi=lo; xi<=hi; xi++) { const i=(y*width+xi)*channels; sR+=data[i]; sG+=data[i+1]; sB+=data[i+2]; }
+      const mR=sR/n, mG=sG/n, mB=sB/n;
+      let v=0;
+      for (let xi=lo; xi<=hi; xi++) { const i=(y*width+xi)*channels; const dR=data[i]-mR,dG=data[i+1]-mG,dB=data[i+2]-mB; v+=dR*dR+dG*dG+dB*dB; }
+      if (Math.sqrt(v/n) < localStdThreshold) flat++;
+    }
+    return flat / height;
+  };
+  const rowLocalFlat = (y) => {
+    const lo = Math.max(0, y - localWin), hi = Math.min(height - 1, y + localWin);
+    const n = hi - lo + 1;
+    let flat = 0;
+    for (let x=0; x<width; x++) {
+      let sR=0,sG=0,sB=0;
+      for (let yi=lo; yi<=hi; yi++) { const i=(yi*width+x)*channels; sR+=data[i]; sG+=data[i+1]; sB+=data[i+2]; }
+      const mR=sR/n, mG=sG/n, mB=sB/n;
+      let v=0;
+      for (let yi=lo; yi<=hi; yi++) { const i=(yi*width+x)*channels; const dR=data[i]-mR,dG=data[i+1]-mG,dB=data[i+2]-mB; v+=dR*dR+dG*dG+dB*dB; }
+      if (Math.sqrt(v/n) < localStdThreshold) flat++;
+    }
+    return flat / width;
+  };
+  const isBandCol = (x) => colStd(x) < stdThreshold || colLocalFlat(x) > localFlatFrac;
+  const isBandRow = (y) => rowStd(y) < stdThreshold || rowLocalFlat(y) > localFlatFrac;
   const maxXTrim = Math.floor(width * maxFraction);
   const maxYTrim = Math.floor(height * maxFraction);
-  let left=0;       while (left < maxXTrim && colStd(left) < stdThreshold) left++;
-  let right=width-1; while (width-1-right < maxXTrim && colStd(right) < stdThreshold) right--;
-  let top=0;        while (top < maxYTrim && rowStd(top) < stdThreshold) top++;
-  let bottom=height-1; while (height-1-bottom < maxYTrim && rowStd(bottom) < stdThreshold) bottom--;
+  let left=0;       while (left < maxXTrim && isBandCol(left)) left++;
+  let right=width-1; while (width-1-right < maxXTrim && isBandCol(right)) right--;
+  let top=0;        while (top < maxYTrim && isBandRow(top)) top++;
+  let bottom=height-1; while (height-1-bottom < maxYTrim && isBandRow(bottom)) bottom--;
   const cropW = right - left + 1;
   const cropH = bottom - top + 1;
   if (cropW === width && cropH === height) return buffer;
