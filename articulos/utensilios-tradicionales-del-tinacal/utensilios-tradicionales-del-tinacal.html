@@ -409,18 +409,21 @@
   (function(){
     const btn=document.getElementById('btnStory');
     if(!btn)return;
-    function wrapText(ctx,text,x,y,maxW,lineH){
+    function wrapText(ctx,text,x,topY,maxW,lineH,maxLines){
       const words=text.split(' ');let line='',lines=[];
       for(const w of words){const t=line?line+' '+w:w;if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w;}else line=t;}
       if(line)lines.push(line);
-      let yy=y-(lines.length-1)*lineH/2;
+      if(maxLines&&lines.length>maxLines){lines=lines.slice(0,maxLines);let last=lines[maxLines-1];while(last.length&&ctx.measureText(last+'…').width>maxW)last=last.slice(0,-1);lines[maxLines-1]=last.replace(/[\s,;:.]+$/,'')+'…';}
+      let yy=topY;
       for(const l of lines){ctx.fillText(l,x,yy);yy+=lineH;}
+      return yy;
     }
     btn.addEventListener('click',async()=>{
       const orig=btn.textContent;btn.textContent='⏳';btn.disabled=true;
       try{
         const coverUrl=document.querySelector('meta[property="og:image"]')?.content||'';
         const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/s*—s*Guardianes del Pulque/,'');
+        const excerpt=(document.querySelector('meta[property="og:description"]')?.content||document.querySelector('meta[name="description"]')?.content||'').trim();
         const W=1080,H=1920,IMGSLICE=1150;
         const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;
         const ctx=canvas.getContext('2d');
@@ -439,9 +442,17 @@
         ctx.fillStyle=fade;ctx.fillRect(0,IMGSLICE-350,W,400);
         ctx.strokeStyle='rgba(52,211,153,.35)';ctx.lineWidth=2;
         ctx.beginPath();ctx.moveTo(100,IMGSLICE+30);ctx.lineTo(W-100,IMGSLICE+30);ctx.stroke();
+        ctx.textBaseline='top';
         ctx.fillStyle='#ffffff';ctx.textAlign='center';
-        ctx.font='bold 76px system-ui,ui-sans-serif,sans-serif';
-        wrapText(ctx,title,W/2,IMGSLICE+280,W-160,98);
+        ctx.font='bold 70px system-ui,ui-sans-serif,sans-serif';
+        let ny=wrapText(ctx,title,W/2,IMGSLICE+90,W-160,86,4);
+        if(excerpt){
+          ny+=30;
+          ctx.fillStyle='rgba(255,255,255,.82)';
+          ctx.font='400 38px system-ui,ui-sans-serif,sans-serif';
+          wrapText(ctx,excerpt,W/2,ny,W-200,52,4);
+        }
+        ctx.textBaseline='alphabetic';
         ctx.fillStyle='#34d399';ctx.font='bold 50px system-ui,ui-sans-serif,sans-serif';
         ctx.fillText('Guardianes del Pulque',W/2,1760);
         ctx.fillStyle='rgba(255,255,255,.45)';ctx.font='38px system-ui,ui-sans-serif,sans-serif';
