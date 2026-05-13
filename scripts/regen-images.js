@@ -7,8 +7,10 @@ const openai = new OpenAI();
 
 // ESTILO POP ART (continuo, sin paneles):
 const PANEL_STYLE =
-  "Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. " +
-  "Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. " +
+  "Vintage pop art screen-print illustration in the style of Roy Lichtenstein and Andy Warhol, with the look of a 1960s comic-book splash page. " +
+  "DENSE Ben-Day halftone dots must saturate EVERY surface of the image — not only the subjects but also the sky, mountains, ground, shadows, water and clouds. Dots vary in size and density to suggest gradients (for example a sunset sky should transition from large orange dots into smaller yellow dots). Halftone is the dominant visual texture. " +
+  "Thick solid black outlines on every figure and object, flat saturated comic-book colors with no soft shading, high contrast, vibrant screen-print aesthetic with a slight off-register vintage feel. " +
+  "Multi-plane composition with strong depth: a bold close-up element in the foreground, mid-ground figures or action, and a distant background of mountains, sky or horizon — all rendered with halftone dots. Include extra motion elements such as flying birds, drifting clouds, swirling dust or ripples to enliven the scene. " +
   "The ENTIRE canvas must be a SINGLE continuous illustrated scene from edge to edge. The scene itself fills 100% of the canvas. No portion of the canvas may be blank, empty, or occupied by abstract color fields. " +
   "ABSOLUTELY FORBIDDEN elements (these must NOT appear anywhere in the image): color palette strips, color swatches, color sample bars, vertical color columns, horizontal color bands, reference color charts, side panels showing colors, isolated rectangles of solid color, color chips, Pantone-style blocks, any design-reference element showing the palette. " +
   "Also forbidden: divisions, panels, grids, borders, frames, vignettes, margins, white space, empty bands, comic panel separators, before/after splits, diptychs, triptychs. " +
