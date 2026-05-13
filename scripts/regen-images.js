@@ -146,6 +146,12 @@ const images = [
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
   {
+    slug: "xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan",
+    title: "Xoloitzcuintle: guardian del Mictlan",
+    palette: "deep obsidian black, ash grey skin, ember orange, cempasuchil marigold yellow, jade green, blood red, moonlight cream, indigo night blue",
+    subjects: "elegant hairless Xoloitzcuintle dog at the center with smooth dark grey skin and alert pointed ears, standing on the bank of a wide river of black water — the threshold between worlds — about to lead a small barefoot indigenous figure across, glowing cempasuchil marigold petals scattered like a path on the ground, prehispanic stepped pyramid silhouette and starry Mictlan underworld sky behind, a calaca skull and clay funerary urn at the foot of the path, codex-style glyphs of Xolotl the dog-god floating like halftone motifs around the scene, no urban modern elements",
+  },
+  {
     slug: "la-vainilla-de-papantla-historia-ciencia-y-polinizacion",
     title: "La vainilla de Papantla: polinizacion manual",
     palette: "deep emerald green, cream vanilla flower, golden pod brown, jungle shadow black, sky blue, totonac white, ochre soil",
