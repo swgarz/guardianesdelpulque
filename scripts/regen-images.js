@@ -146,6 +146,12 @@ const images = [
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
   {
+    slug: "etnobotanica-un-viaje-por-las-plantas-usadas-por-pueblos-originarios-de-mexico",
+    title: "Etnobotanica: plantas usadas por pueblos originarios",
+    palette: "leaf green, herb sage, flower pink, copal amber, earth brown, indigo blue, golden ochre",
+    subjects: "indigenous Mexican curandera in traditional embroidered huipil and rebozo sitting on a woven petate, carefully sorting bundles of fresh medicinal herbs, a stone molcajete with crushed leaves and roots beside her, sprigs of epazote, ruda, santa maria, romero and copal resin spread on a cotton cloth, a young apprentice taking notes by drawing the plants in a folded amate-paper booklet, hanging strings of drying flowers and chiles, a clay pot with infusion steaming, a marigold and a peyote button in a small dish, milpa plants and a maguey visible through the open doorway of an adobe house, Sierra Madre highland landscape outside",
+  },
+  {
     slug: "teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad",
     title: "Teotihuacan: urbanismo planificado",
     palette: "deep volcanic black, ochre stone, terracotta red, jade green, turquoise sky, sun gold",
