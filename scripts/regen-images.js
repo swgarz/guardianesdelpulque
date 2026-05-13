@@ -146,6 +146,12 @@ const images = [
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
   {
+    slug: "el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios",
+    title: "Chicxulub: impacto cosmico y fin de los dinosaurios",
+    palette: "deep cosmic black, fireball orange, asteroid grey, jungle green, cenote turquoise, dinosaur teal, dust ochre, blood red",
+    subjects: "split composition: in the sky a huge fiery asteroid streaks down with a bright tail of fire and dust toward the Yucatan peninsula at the upper right, in the foreground panicked dinosaurs run away from the impact zone — a Tyrannosaurus, a Triceratops, a small feathered raptor and pterosaurs flying in alarm, lush prehistoric Cretaceous jungle of palms and cycads and conifers, a glowing ring of cenotes forming a perfect arc visible across the coastal limestone landscape suggesting the future crater rim, halftone shockwave rings expanding from the impact point, smoke and ash clouds rising, no urban modern elements",
+  },
+  {
     slug: "lo-que-un-chocolate-amargo-puede-hacerle-a-tus-arterias-y-por-que-no-es-magia",
     title: "Chocolate amargo y salud cardiovascular: flavonoides",
     palette: "deep cacao brown, pod yellow, ruby red blood, arterial pink, leaf green, golden ochre, nib black",
