@@ -146,6 +146,12 @@ const images = [
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
   {
+    slug: "por-que-el-mole-sabe-distinto-a-doscientos-metros-del-mercado-de-puebla",
+    title: "Por que el mole sabe distinto a doscientos metros del mercado de Puebla",
+    palette: "deep mole brown, chili red, cacao dark, almond cream, sesame gold, smoky black",
+    subjects: "large clay cazuela of bubbling dark mole on a wood-fire stove, dried chiles ancho, mulato and pasilla scattered alongside, broken chocolate tablets and cacao beans, almonds and sesame seeds toasting on a comal, hands grinding spices on a stone metate, steam rising in halftone swirls, Puebla market stalls glimpsed in the background",
+  },
+  {
     slug: "por-que-tu-hemisferio-derecho-no-es-el-artista-que-te-contaron-y-otras-mentiras-sobre-el-cerebro-bicameral",
     title: "Por qué tu hemisferio derecho no es el artista que te contaron",
     palette: "brain pink, neuron electric yellow, synapse cobalt blue, deep purple, blood red, cream white",
