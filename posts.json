@@ -1,13 +1,43 @@
 [
   {
-    "tag": "Aves",
-    "title": "El día que un cuervo en la UNAM te reconoció la cara y no olvida",
-    "excerpt": "¿Puede un ave recordar tu rostro por una década? En Ciudad Universitaria, los cuervos guardan secretos sobre nosotros.",
-    "date": "11 de mayo de 2026",
-    "url": "articulos/el-dia-que-un-cuervo-en-la-unam-te-reconocio-la-cara-y-no-olvida/el-dia-que-un-cuervo-en-la-unam-te-reconocio-la-cara-y-no-olvida.html",
-    "cover": "articulos/el-dia-que-un-cuervo-en-la-unam-te-reconocio-la-cara-y-no-olvida/el-dia-que-un-cuervo-en-la-unam-te-reconocio-la-cara-y-no-olvida.png",
-    "imageStyle": "tecnica-mixta",
-    "topic": "Cuervos que reconocen caras humanas y recuerdan por anos"
+    "tag": "Evolucion",
+    "title": "Las plantas que salieron del agua: cómo conquistaron el continente seco",
+    "excerpt": "Antes de los dinosaurios, algas verdes tejieron la primera alfombra viva sobre tierra firme. ¿Por qué sobrevivieron ellas y no otras?",
+    "date": "13 de mayo de 2026",
+    "url": "articulos/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco.html",
+    "cover": "articulos/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Origen de las plantas terrestres, salida del agua y conquista del continente"
+  },
+  {
+    "tag": "Evolucion",
+    "title": "Animales que nunca envejecen: la vida circular de las hidras y la medusa inmortal",
+    "excerpt": "En un vaso de agua y bajo la lupa, un ser transparentemente pequeño desafía las reglas del tiempo.",
+    "date": "13 de mayo de 2026",
+    "url": "articulos/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal.html",
+    "cover": "articulos/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Inmortalidad biologica, hidra y medusas que rejuvenecen"
+  },
+  {
+    "tag": "Ciencia",
+    "title": "Cómo predecir el tamaño de una ola con solo una cuerda y un cronómetro en Zihuatanejo",
+    "excerpt": "El mar parece caótico, pero una cuerda y un cronómetro revelan su lógica matemática insólita.",
+    "date": "13 de mayo de 2026",
+    "url": "articulos/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo.html",
+    "cover": "articulos/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Matematicas del oleaje, ondas y fisica del mar"
+  },
+  {
+    "tag": "Medicina",
+    "title": "El dolor que se alivia con cortezas: la ruta de la aspirina desde los sauces del Altiplano",
+    "excerpt": "¿Por qué la corteza amarga del sauce terminó en tu botiquín como pastilla blanca? Hay una historia de cosechas, fiebre y ciencia detrás.",
+    "date": "12 de mayo de 2026",
+    "url": "articulos/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano.html",
+    "cover": "articulos/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Aspirina del sauce, descubrimiento de la salicilina"
   },
   {
     "tag": "Cerebro",

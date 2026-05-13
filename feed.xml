@@ -5,7 +5,7 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 23 Apr 2026 05:39:50 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 18:39:17 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
@@ -14,10 +14,290 @@
     </image>
 
     <item>
+      <title>Las plantas que salieron del agua: cómo conquistaron el continente seco</title>
+      <link>https://guardianesdelpulque.org/articulos/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco.html</guid>
+      <description>Antes de los dinosaurios, algas verdes tejieron la primera alfombra viva sobre tierra firme. ¿Por qué sobrevivieron ellas y no otras?</description>
+      <category>Evolucion</category>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco/las-plantas-que-salieron-del-agua-como-conquistaron-el-continente-seco.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Animales que nunca envejecen: la vida circular de las hidras y la medusa inmortal</title>
+      <link>https://guardianesdelpulque.org/articulos/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal.html</guid>
+      <description>En un vaso de agua y bajo la lupa, un ser transparentemente pequeño desafía las reglas del tiempo.</description>
+      <category>Evolucion</category>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal/animales-que-nunca-envejecen-la-vida-circular-de-las-hidras-y-la-medusa-inmortal.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Cómo predecir el tamaño de una ola con solo una cuerda y un cronómetro en Zihuatanejo</title>
+      <link>https://guardianesdelpulque.org/articulos/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo.html</guid>
+      <description>El mar parece caótico, pero una cuerda y un cronómetro revelan su lógica matemática insólita.</description>
+      <category>Ciencia</category>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo/como-predecir-el-tamano-de-una-ola-con-solo-una-cuerda-y-un-cronometro-en-zihuatanejo.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El dolor que se alivia con cortezas: la ruta de la aspirina desde los sauces del Altiplano</title>
+      <link>https://guardianesdelpulque.org/articulos/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano.html</guid>
+      <description>¿Por qué la corteza amarga del sauce terminó en tu botiquín como pastilla blanca? Hay una historia de cosechas, fiebre y ciencia detrás.</description>
+      <category>Medicina</category>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano/el-dolor-que-se-alivia-con-cortezas-la-ruta-de-la-aspirina-desde-los-sauces-del-altiplano.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Por qué tu hemisferio derecho no es el artista que te contaron (y otras mentiras sobre el cerebro bicameral)</title>
+      <link>https://guardianesdelpulque.org/articulos/por-que-tu-hemisferio-derecho-no-es-el-artista-que-te-contaron-y-otras-mentiras-sobre-el-cerebro-bicameral/por-que-tu-hemisferio-derecho-no-es-el-artista-que-te-contaron-y-otras-mentiras-sobre-el-cerebro-bicameral.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/por-que-tu-hemisferio-derecho-no-es-el-artista-que-te-contaron-y-otras-mentiras-sobre-el-cerebro-bicameral/por-que-tu-hemisferio-derecho-no-es-el-artista-que-te-contaron-y-otras-mentiras-sobre-el-cerebro-bicameral.html</guid>
+      <description>¿Pensabas que tu hemisferio izquierdo es el lógico y el derecho el creativo? Prepárate para una dosis de realidad cerebral.</description>
+      <category>Cerebro</category>
+      <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/por-que-tu-hemisferio-derecho-no-es-el-artista-que-te-contaron-y-otras-mentiras-sobre-el-cerebro-bicameral/por-que-tu-hemisferio-derecho-no-es-el-artista-que-te-contaron-y-otras-mentiras-sobre-el-cerebro-bicameral.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Por qué el mole sabe distinto a doscientos metros del mercado de Puebla</title>
+      <link>https://guardianesdelpulque.org/articulos/por-que-el-mole-sabe-distinto-a-doscientos-metros-del-mercado-de-puebla/por-que-el-mole-sabe-distinto-a-doscientos-metros-del-mercado-de-puebla.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/por-que-el-mole-sabe-distinto-a-doscientos-metros-del-mercado-de-puebla/por-que-el-mole-sabe-distinto-a-doscientos-metros-del-mercado-de-puebla.html</guid>
+      <description>Lo que ocurre cuando el aceite de chile seco chisporrotea con chocolate no se parece a nada: así fusiona la química el mole mexicano.</description>
+      <category>Cacao</category>
+      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/por-que-el-mole-sabe-distinto-a-doscientos-metros-del-mercado-de-puebla/por-que-el-mole-sabe-distinto-a-doscientos-metros-del-mercado-de-puebla.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El día que Taxco huele a cilantro vivo: la invasión de los jumiles comestibles</title>
+      <link>https://guardianesdelpulque.org/articulos/el-dia-que-taxco-huele-a-cilantro-vivo-la-invasion-de-los-jumiles-comestibles/el-dia-que-taxco-huele-a-cilantro-vivo-la-invasion-de-los-jumiles-comestibles.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-dia-que-taxco-huele-a-cilantro-vivo-la-invasion-de-los-jumiles-comestibles/el-dia-que-taxco-huele-a-cilantro-vivo-la-invasion-de-los-jumiles-comestibles.html</guid>
+      <description>¿Por qué decenas comen insectos vivos cubiertos de salsa en un zócalo plateado? Taxco revela el secreto de los jumiles.</description>
+      <category>Insectos</category>
+      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-dia-que-taxco-huele-a-cilantro-vivo-la-invasion-de-los-jumiles-comestibles/el-dia-que-taxco-huele-a-cilantro-vivo-la-invasion-de-los-jumiles-comestibles.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El secreto inflamable de la biznaga: cactus que curan más allá del desierto</title>
+      <link>https://guardianesdelpulque.org/articulos/el-secreto-inflamable-de-la-biznaga-cactus-que-curan-mas-alla-del-desierto/el-secreto-inflamable-de-la-biznaga-cactus-que-curan-mas-alla-del-desierto.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-secreto-inflamable-de-la-biznaga-cactus-que-curan-mas-alla-del-desierto/el-secreto-inflamable-de-la-biznaga-cactus-que-curan-mas-alla-del-desierto.html</guid>
+      <description>Un cactus golpeado en la sierra puede aliviar el dolor articular mejor que muchos fármacos. ¿Por qué la biznaga guarda ese poder?</description>
+      <category>Medicina</category>
+      <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-secreto-inflamable-de-la-biznaga-cactus-que-curan-mas-alla-del-desierto/el-secreto-inflamable-de-la-biznaga-cactus-que-curan-mas-alla-del-desierto.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El químico de la UNAM que olía a laboratorio y salvó el cielo</title>
+      <link>https://guardianesdelpulque.org/articulos/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo.html</guid>
+      <description>¿Cómo un estudiante de la UNAM convirtió aerosoles cotidianos en una alarma global sobre el futuro del aire?</description>
+      <category>Ciencia</category>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo/el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>¿Por qué los curanderos siguen curando el susto en pleno 2024?</title>
+      <link>https://guardianesdelpulque.org/articulos/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024.html</guid>
+      <description>En una clínica de Morelos, una limpia tradicional puede cambiar más que el ánimo: ¿qué hay detrás del mal de ojo?</description>
+      <category>Medicina</category>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024/por-que-los-curanderos-siguen-curando-el-susto-en-pleno-2024.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Lo que un chocolate amargo puede hacerle a tus arterias (y por qué no es magia)</title>
+      <link>https://guardianesdelpulque.org/articulos/lo-que-un-chocolate-amargo-puede-hacerle-a-tus-arterias-y-por-que-no-es-magia/lo-que-un-chocolate-amargo-puede-hacerle-a-tus-arterias-y-por-que-no-es-magia.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/lo-que-un-chocolate-amargo-puede-hacerle-a-tus-arterias-y-por-que-no-es-magia/lo-que-un-chocolate-amargo-puede-hacerle-a-tus-arterias-y-por-que-no-es-magia.html</guid>
+      <description>Un cacao real y amargo en la mesa puede mover tu corazón — literalmente — más de lo que imaginas.</description>
+      <category>Cacao</category>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/lo-que-un-chocolate-amargo-puede-hacerle-a-tus-arterias-y-por-que-no-es-magia/lo-que-un-chocolate-amargo-puede-hacerle-a-tus-arterias-y-por-que-no-es-magia.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La selva que habla: ayahuasca, moléculas y visiones en la Amazonía</title>
+      <link>https://guardianesdelpulque.org/articulos/la-selva-que-habla-ayahuasca-moleculas-y-visiones-en-la-amazonia/la-selva-que-habla-ayahuasca-moleculas-y-visiones-en-la-amazonia.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-selva-que-habla-ayahuasca-moleculas-y-visiones-en-la-amazonia/la-selva-que-habla-ayahuasca-moleculas-y-visiones-en-la-amazonia.html</guid>
+      <description>Un bejuco, un arbusto y una sinapsis imposible: la fórmula química milenaria que reescribe el sentido del yo.</description>
+      <category>Psicodelicos</category>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-selva-que-habla-ayahuasca-moleculas-y-visiones-en-la-amazonia/la-selva-que-habla-ayahuasca-moleculas-y-visiones-en-la-amazonia.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Ocho mil pasos en Zacatlán: el experimento mexicano que desafía tu reloj biológico</title>
+      <link>https://guardianesdelpulque.org/articulos/ocho-mil-pasos-en-zacatlan-el-experimento-mexicano-que-desafia-tu-reloj-biologico/ocho-mil-pasos-en-zacatlan-el-experimento-mexicano-que-desafia-tu-reloj-biologico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/ocho-mil-pasos-en-zacatlan-el-experimento-mexicano-que-desafia-tu-reloj-biologico/ocho-mil-pasos-en-zacatlan-el-experimento-mexicano-que-desafia-tu-reloj-biologico.html</guid>
+      <description>¿Qué tienen en común un mercado en Zacatlán y una célula senescente? Más de lo que imaginas, si sabes moverte.</description>
+      <category>Salud</category>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/ocho-mil-pasos-en-zacatlan-el-experimento-mexicano-que-desafia-tu-reloj-biologico/ocho-mil-pasos-en-zacatlan-el-experimento-mexicano-que-desafia-tu-reloj-biologico.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Las plantas que aprendieron a mantener despierto a medio planeta</title>
+      <link>https://guardianesdelpulque.org/articulos/las-plantas-que-aprendieron-a-mantener-despierto-a-medio-planeta/las-plantas-que-aprendieron-a-mantener-despierto-a-medio-planeta.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/las-plantas-que-aprendieron-a-mantener-despierto-a-medio-planeta/las-plantas-que-aprendieron-a-mantener-despierto-a-medio-planeta.html</guid>
+      <description>La cafeína y la teobromina empezaron como un veneno para insectos; hoy te despiertan y endulzan tu chocolate.</description>
+      <category>Evolucion</category>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/las-plantas-que-aprendieron-a-mantener-despierto-a-medio-planeta/las-plantas-que-aprendieron-a-mantener-despierto-a-medio-planeta.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El lodo bajo las uñas enseña más que una pizarra: infancia rural en México</title>
+      <link>https://guardianesdelpulque.org/articulos/el-lodo-bajo-las-unas-ensena-mas-que-una-pizarra-infancia-rural-en-mexico/el-lodo-bajo-las-unas-ensena-mas-que-una-pizarra-infancia-rural-en-mexico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-lodo-bajo-las-unas-ensena-mas-que-una-pizarra-infancia-rural-en-mexico/el-lodo-bajo-las-unas-ensena-mas-que-una-pizarra-infancia-rural-en-mexico.html</guid>
+      <description>Un trompo hecho a mano dura más que un videojuego. Lo que un niño aprende descalzo en la tierra no cabe en ningún salón.</description>
+      <category>Infancia</category>
+      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-lodo-bajo-las-unas-ensena-mas-que-una-pizarra-infancia-rural-en-mexico/el-lodo-bajo-las-unas-ensena-mas-que-una-pizarra-infancia-rural-en-mexico.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Bajo el agua, arrecifes que respiran historia: Veracruz y Quintana Roo, la otra frontera viva de México</title>
+      <link>https://guardianesdelpulque.org/articulos/bajo-el-agua-arrecifes-que-respiran-historia-veracruz-y-quintana-roo-la-otra-frontera-viva-de-mexico/bajo-el-agua-arrecifes-que-respiran-historia-veracruz-y-quintana-roo-la-otra-frontera-viva-de-mexico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/bajo-el-agua-arrecifes-que-respiran-historia-veracruz-y-quintana-roo-la-otra-frontera-viva-de-mexico/bajo-el-agua-arrecifes-que-respiran-historia-veracruz-y-quintana-roo-la-otra-frontera-viva-de-mexico.html</guid>
+      <description>Un arrecife que se escucha crujir y un pez loro que tritura piedra: los corales de Veracruz y Quintana Roo guardan más secretos de los que imaginas.</description>
+      <category>Naturaleza</category>
+      <pubDate>Sun, 03 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/bajo-el-agua-arrecifes-que-respiran-historia-veracruz-y-quintana-roo-la-otra-frontera-viva-de-mexico/bajo-el-agua-arrecifes-que-respiran-historia-veracruz-y-quintana-roo-la-otra-frontera-viva-de-mexico.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Cuando la selva alimenta: la cosecha oculta de los frutos mayas</title>
+      <link>https://guardianesdelpulque.org/articulos/cuando-la-selva-alimenta-la-cosecha-oculta-de-los-frutos-mayas/cuando-la-selva-alimenta-la-cosecha-oculta-de-los-frutos-mayas.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cuando-la-selva-alimenta-la-cosecha-oculta-de-los-frutos-mayas/cuando-la-selva-alimenta-la-cosecha-oculta-de-los-frutos-mayas.html</guid>
+      <description>En Calakmul, un chico tzeltal recolecta ramón y guaya. Lo que junta vale más que el maíz, pero pocos en la ciudad lo saben.</description>
+      <category>Naturaleza</category>
+      <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/cuando-la-selva-alimenta-la-cosecha-oculta-de-los-frutos-mayas/cuando-la-selva-alimenta-la-cosecha-oculta-de-los-frutos-mayas.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Un colibrí en el maizal y la moneda al aire de tus genes</title>
+      <link>https://guardianesdelpulque.org/articulos/un-colibri-en-el-maizal-y-la-moneda-al-aire-de-tus-genes/un-colibri-en-el-maizal-y-la-moneda-al-aire-de-tus-genes.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/un-colibri-en-el-maizal-y-la-moneda-al-aire-de-tus-genes/un-colibri-en-el-maizal-y-la-moneda-al-aire-de-tus-genes.html</guid>
+      <description>¿Por qué un jaguar y un campesino comparten más que el territorio? Aquí, la deriva genética puede más que la voluntad.</description>
+      <category>Evolucion</category>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/un-colibri-en-el-maizal-y-la-moneda-al-aire-de-tus-genes/un-colibri-en-el-maizal-y-la-moneda-al-aire-de-tus-genes.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El trueno, la canela y los 30 milagros: la alquimia secreta del mole poblano</title>
+      <link>https://guardianesdelpulque.org/articulos/el-trueno-la-canela-y-los-30-milagros-la-alquimia-secreta-del-mole-poblano/el-trueno-la-canela-y-los-30-milagros-la-alquimia-secreta-del-mole-poblano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-trueno-la-canela-y-los-30-milagros-la-alquimia-secreta-del-mole-poblano/el-trueno-la-canela-y-los-30-milagros-la-alquimia-secreta-del-mole-poblano.html</guid>
+      <description>Un chile mulato humeante puede tener más ciencia que una fábrica entera. Aquí está el verdadero misterio del mole poblano.</description>
+      <category>Cocina</category>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-trueno-la-canela-y-los-30-milagros-la-alquimia-secreta-del-mole-poblano/el-trueno-la-canela-y-los-30-milagros-la-alquimia-secreta-del-mole-poblano.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El barro negro de los ácidos húmicos: lo que esconde el suelo bajo tus pies</title>
+      <link>https://guardianesdelpulque.org/articulos/el-barro-negro-de-los-acidos-humicos-lo-que-esconde-el-suelo-bajo-tus-pies/el-barro-negro-de-los-acidos-humicos-lo-que-esconde-el-suelo-bajo-tus-pies.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-barro-negro-de-los-acidos-humicos-lo-que-esconde-el-suelo-bajo-tus-pies/el-barro-negro-de-los-acidos-humicos-lo-que-esconde-el-suelo-bajo-tus-pies.html</guid>
+      <description>Un puño de tierra negra en Oaxaca tiene más química que el laboratorio de una universidad. ¿Qué ocurre ahí abajo?</description>
+      <category>Suelo</category>
+      <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-barro-negro-de-los-acidos-humicos-lo-que-esconde-el-suelo-bajo-tus-pies/el-barro-negro-de-los-acidos-humicos-lo-que-esconde-el-suelo-bajo-tus-pies.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La cosecha invisible: dentro de la raíz donde nacen los escamoles</title>
+      <link>https://guardianesdelpulque.org/articulos/la-cosecha-invisible-dentro-de-la-raiz-donde-nacen-los-escamoles/la-cosecha-invisible-dentro-de-la-raiz-donde-nacen-los-escamoles.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-cosecha-invisible-dentro-de-la-raiz-donde-nacen-los-escamoles/la-cosecha-invisible-dentro-de-la-raiz-donde-nacen-los-escamoles.html</guid>
+      <description>¿Por qué una hormiga prefiere el mezquite al maguey? Un manjar de 800 años que sólo sale cuando el sol está en cierto ángulo.</description>
+      <category>Insectos</category>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-cosecha-invisible-dentro-de-la-raiz-donde-nacen-los-escamoles/la-cosecha-invisible-dentro-de-la-raiz-donde-nacen-los-escamoles.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Don Ezequiel, la sequía y el secreto guardado en voz baja</title>
+      <link>https://guardianesdelpulque.org/articulos/don-ezequiel-la-sequia-y-el-secreto-guardado-en-voz-baja/don-ezequiel-la-sequia-y-el-secreto-guardado-en-voz-baja.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/don-ezequiel-la-sequia-y-el-secreto-guardado-en-voz-baja/don-ezequiel-la-sequia-y-el-secreto-guardado-en-voz-baja.html</guid>
+      <description>El día que un abuelo perdió la memoria, su nieto supo que la historia del pueblo podía desaparecer en silencio.</description>
+      <category>Sabiduria</category>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/don-ezequiel-la-sequia-y-el-secreto-guardado-en-voz-baja/don-ezequiel-la-sequia-y-el-secreto-guardado-en-voz-baja.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Etnobotánica: Un Viaje por las Plantas Usadas por Pueblos Originarios de México</title>
+      <link>https://guardianesdelpulque.org/articulos/etnobotanica-un-viaje-por-las-plantas-usadas-por-pueblos-originarios-de-mexico/etnobotanica-un-viaje-por-las-plantas-usadas-por-pueblos-originarios-de-mexico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/etnobotanica-un-viaje-por-las-plantas-usadas-por-pueblos-originarios-de-mexico/etnobotanica-un-viaje-por-las-plantas-usadas-por-pueblos-originarios-de-mexico.html</guid>
+      <description>Explora la rica etnobotánica de México y su impacto en la cultura y ciencia.</description>
+      <category>Sabiduria</category>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/etnobotanica-un-viaje-por-las-plantas-usadas-por-pueblos-originarios-de-mexico/etnobotanica-un-viaje-por-las-plantas-usadas-por-pueblos-originarios-de-mexico.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El Fascinante Origen de los Alebrijes: Un Viaje Onírico y Artístico</title>
+      <link>https://guardianesdelpulque.org/articulos/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico.html</guid>
+      <description>Un burro con alas de dragón y lengua de serpiente: ¿realmente soñó esto Pedro Linares en la colonia Merced Balbuena?</description>
+      <category>Arte</category>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico/el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Teotihuacan: Un Ejemplo Magistral de Urbanismo Planificado en la Antigüedad</title>
+      <link>https://guardianesdelpulque.org/articulos/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad.html</guid>
+      <description>Teotihuacan midió sus avenidas con la precisión de un cuaderno de ingeniero: ¿para qué orientaron la Pirámide del Sol así de exacto?</description>
+      <category>Territorio</category>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad/teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La Vainilla de Papantla: Historia, Ciencia y Polinización</title>
+      <link>https://guardianesdelpulque.org/articulos/la-vainilla-de-papantla-historia-ciencia-y-polinizacion/la-vainilla-de-papantla-historia-ciencia-y-polinizacion.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-vainilla-de-papantla-historia-ciencia-y-polinizacion/la-vainilla-de-papantla-historia-ciencia-y-polinizacion.html</guid>
+      <description>En las veredas húmedas de Papantla, un gesto diminuto decide si habrá vainilla: el toque de un palillo sobre una flor muda.</description>
+      <category>Polinizacion</category>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-vainilla-de-papantla-historia-ciencia-y-polinizacion/la-vainilla-de-papantla-historia-ciencia-y-polinizacion.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Xoloitzcuintle: Compañero Prehispánico y Guardián del Mictlán</title>
+      <link>https://guardianesdelpulque.org/articulos/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan.html</guid>
+      <description>Un perro sin pelo cruzando el umbral entre vivos y muertos: lo que no te contaron del xoloitzcuintle.</description>
+      <category>Mamiferos</category>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan/xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El impacto cósmico de Chicxulub: Fin de los dinosaurios</title>
+      <link>https://guardianesdelpulque.org/articulos/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios.html</guid>
+      <description>El único cenote que puedes recorrer en línea recta por kilómetros: por qué existe en Yucatán pero sería imposible en Chihuahua.</description>
+      <category>Evolucion</category>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios/el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
       <title>El Intrincado mundo de la 'Wood Wide Web': Comunicaciones Subterráneas de los Bosques</title>
       <link>https://guardianesdelpulque.org/articulos/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques.html</guid>
-      <description>Explora las asombrosas redes miceliales que conectan los árboles en los bosques.</description>
+      <description>Bajo tus pies, los árboles susurran mensajes que ni el viento sospecha. ¿Quién escucha su red oculta en el suelo?</description>
       <category>Hongos</category>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques/el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques.png" type="image/png" length="0"/>
@@ -27,7 +307,7 @@
       <title>La Danza de la Vida: Coevolución entre la Yuca y la Polilla Yucca</title>
       <link>https://guardianesdelpulque.org/articulos/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca.html</guid>
-      <description>El sutil y complejo mutualismo obligado entre la yuca y la polilla yucca revela los misterios de la coevolución.</description>
+      <description>En el desierto, una polilla apuesta su linaje a una sola flor. ¿Quién depende más de quién?</description>
       <category>Polinizacion</category>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca/la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca.png" type="image/png" length="0"/>
@@ -37,7 +317,7 @@
       <title>La magia de la nixtamalización: un legado mesoamericano de 3500 años</title>
       <link>https://guardianesdelpulque.org/articulos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos.html</guid>
-      <description>Descubre cómo la nixtamalización revolucionó la nutrición y la cultura mesoamericana.</description>
+      <description>Un grano de maíz hervido en cal esconde el secreto que salvó a millones de la pelagra. El detalle químico que cambió la historia.</description>
       <category>Sabiduria</category>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos/la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos.png" type="image/png" length="0"/>
@@ -47,7 +327,7 @@
       <title>La Endosimbiosis: Puerta a la Complejidad de la Vida Eucariota</title>
       <link>https://guardianesdelpulque.org/articulos/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota.html</guid>
-      <description>Explora el fascinante origen bacteriano de mitocondrias y cloroplastos.</description>
+      <description>Un órgano esencial de tus células fue una bacteria libre: la evidencia está en tu aliento y en la clorofila de un jitomate.</description>
       <category>Evolucion</category>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota/la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota.png" type="image/png" length="0"/>
@@ -57,7 +337,7 @@
       <title>El Ajolote de Xochimilco: Un Tesoro Biológico y Medicina Regenerativa</title>
       <link>https://guardianesdelpulque.org/articulos/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa.html</guid>
-      <description>El ajolote, símbolo de la regeneración, enfrenta un crítico peligro de extinción.</description>
+      <description>El animal que puede regenerar todo menos su canto: ¿qué oculta el lodo bajo Xochimilco cuando nadie mira?</description>
       <category>Ciencia</category>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa/el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa.png" type="image/png" length="0"/>
@@ -67,7 +347,7 @@
       <title>Patrones de Turing en Pieles: La Magia de las Manchas del Jaguar y Rayas de Cebra</title>
       <link>https://guardianesdelpulque.org/articulos/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra.html</guid>
-      <description>Explora cómo los patrones de Turing dan forma a la belleza animal.</description>
+      <description>En la selva de Quintana Roo, las manchas de un jaguar cuentan ecuaciones que ni los viejos cazadores logran descifrar.</description>
       <category>Biologia</category>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra/patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra.png" type="image/png" length="0"/>
@@ -77,7 +357,7 @@
       <title>La Polinización del Maguey por Murciélagos Magueyeros: Un Ejemplo de Coevolución</title>
       <link>https://guardianesdelpulque.org/articulos/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion.html</guid>
-      <description>Explora la fascinante relación entre magueyes y murciélagos en México.</description>
+      <description>Un vuelo nocturno por la sierra revela cómo un murciélago y un maguey dependen el uno del otro más de lo que imaginas.</description>
       <category>Polinizacion</category>
       <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion/la-polinizacion-del-maguey-por-murcielagos-magueyeros-un-ejemplo-de-coevolucion.png" type="image/png" length="0"/>
@@ -87,7 +367,7 @@
       <title>Migración Rural: Retornos y Renovaciones en Comunidades en Diáspora</title>
       <link>https://guardianesdelpulque.org/articulos/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora.html</guid>
-      <description>Exploramos la migración rural y su impacto en la identidad comunitaria y las remesas culturales.</description>
+      <description>En Tenejapa, los nombres y los sabores cruzan fronteras. ¿Por qué algunos pueblos crecen en la distancia?</description>
       <category>Migracion</category>
       <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora/migracion-rural-retornos-y-renovaciones-en-comunidades-en-diaspora.png" type="image/png" length="0"/>
@@ -97,7 +377,7 @@
       <title>Psicodélicos Sagrados: Conexiones Ancestrales y Espirituales</title>
       <link>https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales.html</guid>
-      <description>Explora el poder de los psicodélicos sagrados en la cultura mexicana.</description>
+      <description>Un hongo diminuto puede cambiar la historia de una comunidad entera. ¿Cuántos secretos caben en un solo temazcal encendido?</description>
       <category>Psicodelicos</category>
       <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales/psicodelicos-sagrados-conexiones-ancestrales-y-espirituales.png" type="image/png" length="0"/>
@@ -107,7 +387,7 @@
       <title>Pozol — El Fermento Sagrado de los Mayas</title>
       <link>https://guardianesdelpulque.org/articulos/pozol-el-fermento-sagrado-de-los-mayas/pozol-el-fermento-sagrado-de-los-mayas.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/pozol-el-fermento-sagrado-de-los-mayas/pozol-el-fermento-sagrado-de-los-mayas.html</guid>
-      <description>Descubre el pozol, la ancestral bebida fermentada de cacao y maíz que los mayas preparaban como alimento sagrado y sustento en los largos viajes por la selva.</description>
+      <description>En Bochil, el aliento de una masa blanca revive un secreto que desafía a las fábricas: el pozol nunca se repite igual dos veces.</description>
       <category>Fermentos</category>
       <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/pozol-el-fermento-sagrado-de-los-mayas/pozol-el-fermento-sagrado-de-los-mayas.png" type="image/png" length="0"/>
@@ -117,7 +397,7 @@
       <title>Tejuino — La Bebida Fermentada de Masa de Maíz</title>
       <link>https://guardianesdelpulque.org/articulos/tejuino-bebida-fermentada-de-masa-de-maiz/tejuino-bebida-fermentada-de-masa-de-maiz.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/tejuino-bebida-fermentada-de-masa-de-maiz/tejuino-bebida-fermentada-de-masa-de-maiz.html</guid>
-      <description>Conoce el tejuino, la refrescante bebida fermentada de masa de maíz nixtamalizado que los pueblos del occidente de México han preparado por siglos para hidratarse y nutrirse.</description>
+      <description>El tejuino huele a lodo fresco y a nixtamal dulce. ¿Por qué su fermento sobrevive a los calores de Nayarit y la modernidad?</description>
       <category>Fermentos</category>
       <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/tejuino-bebida-fermentada-de-masa-de-maiz/tejuino-bebida-fermentada-de-masa-de-maiz.png" type="image/png" length="0"/>
@@ -127,7 +407,7 @@
       <title>Fermentos de Nopal y Xoconostle: Probióticos Nativos de México</title>
       <link>https://guardianesdelpulque.org/articulos/fermentos-de-nopal-y-xoconostle/fermentos-de-nopal-y-xoconostle.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/fermentos-de-nopal-y-xoconostle/fermentos-de-nopal-y-xoconostle.html</guid>
-      <description>Descubre cómo fermentar nopal y xoconostle en casa: probióticos nativos mexicanos con siglos de tradición y enormes beneficios para la salud intestinal.</description>
+      <description>Un nopal en fermentación puede contener más bacterias vivas que un litro de yogurt industrial. ¿Para qué sirve eso aquí?</description>
       <category>Fermentos</category>
       <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/fermentos-de-nopal-y-xoconostle/fermentos-de-nopal-y-xoconostle.png" type="image/png" length="0"/>
@@ -137,7 +417,7 @@
       <title>Ecología Profunda y Ecopsicología: Sanar la Tierra desde Adentro</title>
       <link>https://guardianesdelpulque.org/articulos/ecologia-profunda-y-ecopsicologia/ecologia-profunda-y-ecopsicologia.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/ecologia-profunda-y-ecopsicologia/ecologia-profunda-y-ecopsicologia.html</guid>
-      <description>Explora la ecología profunda y la ecopsicología como caminos para reconectarnos con la naturaleza y sanar nuestra relación con el planeta.</description>
+      <description>Un bosque de pinos en Zacualpan guarda una medicina invisible: el silencio y el asombro pueden curar el dolor moderno.</description>
       <category>Naturaleza</category>
       <pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/ecologia-profunda-y-ecopsicologia/ecologia-profunda-y-ecopsicologia.png" type="image/png" length="0"/>
@@ -147,7 +427,7 @@
       <title>Manejo del Fuego en el Campo: Fogones de Leña y Cocina Tradicional</title>
       <link>https://guardianesdelpulque.org/articulos/manejo-del-fuego-en-el-campo-fogones-de-lena-y-cocina-tradicional/manejo-del-fuego-en-el-campo-fogones-de-lena-y-cocina-tradicional.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/manejo-del-fuego-en-el-campo-fogones-de-lena-y-cocina-tradicional/manejo-del-fuego-en-el-campo-fogones-de-lena-y-cocina-tradicional.html</guid>
-      <description>Explora el arte del fuego, su manejo y su importancia en la cocina tradicional.</description>
+      <description>En la sierra, el trueno del ocote al prender marca la hora de la comida — y algo que pocos imaginan sobre el humo.</description>
       <category>Fuego</category>
       <pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/manejo-del-fuego-en-el-campo-fogones-de-lena-y-cocina-tradicional/manejo-del-fuego-en-el-campo-fogones-de-lena-y-cocina-tradicional.png" type="image/png" length="0"/>
@@ -157,7 +437,7 @@
       <title>Banco de Semillas de Svalbard y su Relevancia para México</title>
       <link>https://guardianesdelpulque.org/articulos/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico.html</guid>
-      <description>Explora la conexión entre el Banco de Svalbard y la biodiversidad agrícola en México.</description>
+      <description>En una bóveda helada bajo el mar Ártico, laten semillas de maíz criollo que nunca han sentido el frío.</description>
       <category>Semillas</category>
       <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico/banco-de-semillas-de-svalbard-y-su-relevancia-para-mexico.png" type="image/png" length="0"/>
@@ -167,7 +447,7 @@
       <title>El Valor de las Semillas Criollas en la Conservación del Territorio Mexicano</title>
       <link>https://guardianesdelpulque.org/articulos/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano.html</guid>
-      <description>Explora la importancia de las semillas criollas y su conservación en comunidades rurales.</description>
+      <description>Una semilla negra en la palma decide el sabor de la tierra, y también el futuro de cientos de pueblos.</description>
       <category>Semillas</category>
       <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano/el-valor-de-las-semillas-criollas-en-la-conservacion-del-territorio-mexicano.png" type="image/png" length="0"/>
@@ -177,7 +457,7 @@
       <title>Composta y Lombricomposta: Transformando Residuos en Suelo Fértil</title>
       <link>https://guardianesdelpulque.org/articulos/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil.html</guid>
-      <description>Aprende a manejar tus residuos orgánicos y crear abono casero de calidad.</description>
+      <description>No es magia: el lodo negro que sale de tu basura puede valer más que un costal de fertilizante industrial.</description>
       <category>Suelo</category>
       <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil/composta-y-lombricomposta-transformando-residuos-en-suelo-fertil.png" type="image/png" length="0"/>
@@ -187,7 +467,7 @@
       <title>El Abrazo Verde: Agroforestería y sus Beneficios en el Territorio Mexicano</title>
       <link>https://guardianesdelpulque.org/articulos/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano.html</guid>
-      <description>Explora el impacto de la agroforestería en la sostenibilidad y el desarrollo rural.</description>
+      <description>Por qué cinco árboles plantados dentro de una milpa pueden producir más que la misma milpa sola.</description>
       <category>Agroforesteria</category>
       <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano/el-abrazo-verde-agroforesteria-y-sus-beneficios-en-el-territorio-mexicano.png" type="image/png" length="0"/>
@@ -197,7 +477,7 @@
       <title>Diego Rivera: técnicas, pigmentos y la voz de un pueblo que habla desde la cal</title>
       <link>https://guardianesdelpulque.org/articulos/diego-rivera-maestro-del-muralismo-mexicano/diego-rivera-maestro-del-muralismo-mexicano.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/diego-rivera-maestro-del-muralismo-mexicano/diego-rivera-maestro-del-muralismo-mexicano.html</guid>
-      <description>Explora la vida, técnica y legado de Diego Rivera, un ícono del muralismo mexicano.</description>
+      <description>La cal viva, el azul maya y el sudor de los albañiles: lo que realmente sostiene los murales de Diego Rivera.</description>
       <category>Arte</category>
       <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/diego-rivera-maestro-del-muralismo-mexicano/diego-rivera-maestro-del-muralismo-mexicano.png" type="image/png" length="0"/>
@@ -207,7 +487,7 @@
       <title>Las Fibras Naturales en México: Henequén, Palma, Mimbre y Hempcrete</title>
       <link>https://guardianesdelpulque.org/articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.html</guid>
-      <description>Explora las fibras naturales mexicanas y su impacto en la cultura y economía.</description>
+      <description>Un sillar de hempcrete resiste más humedad que el ladrillo y huele a campo recién llovido. ¿Por qué nadie lo usa en la ciudad?</description>
       <category>Fibras</category>
       <pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre/las-fibras-naturales-en-mexico-henequen-palma-y-mimbre.png" type="image/png" length="0"/>
@@ -217,7 +497,7 @@
       <title>Rarámuri: Cultura y Resistencia en la Sierra Tarahumara</title>
       <link>https://guardianesdelpulque.org/articulos/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara.html</guid>
-      <description>Explora la riqueza cultural y la autonomía del pueblo Rarámuri.</description>
+      <description>¿Por qué los niños rarámuri de 6 años ya corren maratones en Chihuahua sin zapatos ni GPS, y qué sostiene esa libertad?</description>
       <category>Territorio</category>
       <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara/raramuri-cultura-y-resistencia-en-la-sierra-tarahumara.png" type="image/png" length="0"/>
@@ -227,7 +507,7 @@
       <title>La Cultura Otomí: Saberes y Tradiciones de un Pueblo Ancestral</title>
       <link>https://guardianesdelpulque.org/articulos/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral.html</guid>
-      <description>Explora la rica cultura y tradiciones del pueblo otomí en México.</description>
+      <description>¿Qué esconde el reverso de un bordado otomí bajo la luz de una cocina de Otomiapan? Hay historias que ningún museo ha contado.</description>
       <category>Comunidad</category>
       <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral/la-cultura-otomi-saberes-y-tradiciones-de-un-pueblo-ancestral.png" type="image/png" length="0"/>
@@ -237,7 +517,7 @@
       <title>El Arte del Pan: De la Masa Madre al Pan de Muerto</title>
       <link>https://guardianesdelpulque.org/articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.html</guid>
-      <description>Conoce la tradición del pan mexicano desde su elaboración hasta su significado.</description>
+      <description>¿Por qué la costra de un pan bien horneado guarda el secreto de una comunidad entera?</description>
       <category>Pan</category>
       <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto/el-arte-del-pan-de-la-masa-madre-al-pan-de-muerto.png" type="image/png" length="0"/>
@@ -247,7 +527,7 @@
       <title>El Arte del Barro: Tradición y Futuro de la Alfarería Mexicana</title>
       <link>https://guardianesdelpulque.org/articulos/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana.html</guid>
-      <description>Descubre la riqueza cultural y técnica de la alfarería en México.</description>
+      <description>¿Por qué una vasija cocida en un horno de Zacatecas suena distinto al golpearla que una hecha en Oaxaca?</description>
       <category>Arte</category>
       <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana/el-arte-del-barro-tradicion-y-futuro-de-la-alfareria-mexicana.png" type="image/png" length="0"/>
@@ -257,7 +537,7 @@
       <title>La Pesca Artesanal y Sustentable en Ríos y Lagos de México</title>
       <link>https://guardianesdelpulque.org/articulos/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico.html</guid>
-      <description>Explora la rica tradición de la pesca artesanal en México y su impacto sustentable.</description>
+      <description>Un anzuelo de carrizo en la ribera puede sacar más vida (y menos daño) que una red de kilómetros.</description>
       <category>Pesca</category>
       <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico/la-pesca-artesanal-y-sustentable-en-rios-y-lagos-de-mexico.png" type="image/png" length="0"/>
@@ -267,7 +547,7 @@
       <title>La Sal: Un Tesoro del Territorio Mexicano</title>
       <link>https://guardianesdelpulque.org/articulos/la-sal-un-tesoro-del-territorio-mexicano/la-sal-un-tesoro-del-territorio-mexicano.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-sal-un-tesoro-del-territorio-mexicano/la-sal-un-tesoro-del-territorio-mexicano.html</guid>
-      <description>Explora la tradición y el valor de la sal en la cultura mexicana.</description>
+      <description>Un grano de sal puede guardar la memoria de un mar extinto y el sudor de una frontera viva.</description>
       <category>Sal</category>
       <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-sal-un-tesoro-del-territorio-mexicano/la-sal-un-tesoro-del-territorio-mexicano.png" type="image/png" length="0"/>
@@ -277,7 +557,7 @@
       <title>Fermento de Col Morada: el poder ancestral para tu salud</title>
       <link>https://guardianesdelpulque.org/articulos/fermentos-de-col-morada-un-tesoro-probiotico-de-mexico/fermentos-de-col-morada-un-tesoro-probiotico-de-mexico.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/fermentos-de-col-morada-un-tesoro-probiotico-de-mexico/fermentos-de-col-morada-un-tesoro-probiotico-de-mexico.html</guid>
-      <description>Descubre los beneficios y la receta del fermento de col morada.</description>
+      <description>Lo que comenzó como un truco de abuelas en la Sierra Norte hoy fascina a microbiólogos de la UNAM. El secreto: gas, color y vida.</description>
       <category>Fermentos</category>
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/fermentos-de-col-morada-un-tesoro-probiotico-de-mexico/fermentos-de-col-morada-un-tesoro-probiotico-de-mexico.png" type="image/png" length="0"/>
@@ -287,7 +567,7 @@
       <title>El Arte de los Colorantes Naturales en México</title>
       <link>https://guardianesdelpulque.org/articulos/el-arte-de-los-colorantes-naturales-en-mexico/el-arte-de-los-colorantes-naturales-en-mexico.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-arte-de-los-colorantes-naturales-en-mexico/el-arte-de-los-colorantes-naturales-en-mexico.html</guid>
-      <description>Descubre la rica tradición de los colorantes naturales en la cultura mexicana.</description>
+      <description>Hay un azul que no nace del cielo ni del mar, sino de una hoja que tiñe las manos en Oaxaca.</description>
       <category>Colorantes</category>
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-arte-de-los-colorantes-naturales-en-mexico/el-arte-de-los-colorantes-naturales-en-mexico.png" type="image/png" length="0"/>
@@ -297,7 +577,7 @@
       <title>Psicodélicos Sagrados en la Medicina Ancestral</title>
       <link>https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-en-la-medicina-ancestral/psicodelicos-sagrados-en-la-medicina-ancestral.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-en-la-medicina-ancestral/psicodelicos-sagrados-en-la-medicina-ancestral.html</guid>
-      <description>Explora el uso de psicodélicos sagrados en tradiciones mexicanas.</description>
+      <description>Un venado que canta, un hongo azul eléctrico y el vapor de un temazcal: lo que la ciencia aún no sabe del viaje visionario.</description>
       <category>Psicodelicos</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/psicodelicos-sagrados-en-la-medicina-ancestral/psicodelicos-sagrados-en-la-medicina-ancestral.png" type="image/png" length="0"/>
@@ -307,7 +587,7 @@
       <title>Voces de la Tierra: La Música Tradicional Mexicana</title>
       <link>https://guardianesdelpulque.org/articulos/voces-de-la-tierra-la-musica-tradicional-mexicana/voces-de-la-tierra-la-musica-tradicional-mexicana.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/voces-de-la-tierra-la-musica-tradicional-mexicana/voces-de-la-tierra-la-musica-tradicional-mexicana.html</guid>
-      <description>Explora los ritmos y melodías que dan vida a la cultura mexicana.</description>
+      <description>¿Por qué los pies descalzos sobre tierra de Oaxaca pueden marcar el compás de una fiesta y de una plegaria al mismo tiempo?</description>
       <category>Musica</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/voces-de-la-tierra-la-musica-tradicional-mexicana/voces-de-la-tierra-la-musica-tradicional-mexicana.png" type="image/png" length="0"/>
@@ -317,7 +597,7 @@
       <title>Mujeres en el Campo: Guardianas de Saberes y Vida</title>
       <link>https://guardianesdelpulque.org/articulos/mujeres-en-el-campo-guardianas-de-saberes-y-vida/mujeres-en-el-campo-guardianas-de-saberes-y-vida.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/mujeres-en-el-campo-guardianas-de-saberes-y-vida/mujeres-en-el-campo-guardianas-de-saberes-y-vida.html</guid>
-      <description>Explorando el invaluable papel de las mujeres en el campo mexicano.</description>
+      <description>¿Por qué las parteras de la Sierra cultivan plantas que ni los botánicos de la UNAM reconocen a simple vista?</description>
       <category>Mujeres</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/mujeres-en-el-campo-guardianas-de-saberes-y-vida/mujeres-en-el-campo-guardianas-de-saberes-y-vida.png" type="image/png" length="0"/>
@@ -327,7 +607,7 @@
       <title>Tepache: La Bebida Fermentada Tradicional de México</title>
       <link>https://guardianesdelpulque.org/articulos/tepache-bebida-fermentada-tradicional-de-mexico/tepache-bebida-fermentada-tradicional-de-mexico.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/tepache-bebida-fermentada-tradicional-de-mexico/tepache-bebida-fermentada-tradicional-de-mexico.html</guid>
-      <description>Aprende a preparar tepache en casa: la bebida fermentada de piña con raíces prehispánicas, llena de probióticos y sabor mexicano.</description>
+      <description>Un líquido de piña, piloncillo y microbios que burbujea desde las canículas prehispánicas hasta tu intestino — y no como imaginas.</description>
       <category>Fermentos</category>
       <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/tepache-bebida-fermentada-tradicional-de-mexico/tepache-bebida-fermentada-tradicional-de-mexico.png" type="image/png" length="0"/>
@@ -337,7 +617,7 @@
       <title>Revitalización de las Lenguas Indígenas en México</title>
       <link>https://guardianesdelpulque.org/articulos/revitalizacion-de-las-lenguas-indigenas-en-mexico/revitalizacion-de-las-lenguas-indigenas-en-mexico.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/revitalizacion-de-las-lenguas-indigenas-en-mexico/revitalizacion-de-las-lenguas-indigenas-en-mexico.html</guid>
-      <description>Explora la importancia y el proceso de revitalización de lenguas indígenas.</description>
+      <description>En un pueblo de Puebla, a las seis, el olor a copal es la única alarma que anuncia una clase de náhuatl fuera del aula.</description>
       <category>Lenguas</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/revitalizacion-de-las-lenguas-indigenas-en-mexico/revitalizacion-de-las-lenguas-indigenas-en-mexico.png" type="image/png" length="0"/>
@@ -347,7 +627,7 @@
       <title>Energías Alternativas: Caminos hacia la Autonomía Energética en Comunidades Rurales</title>
       <link>https://guardianesdelpulque.org/articulos/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales.html</guid>
-      <description>Explora energías alternativas que transforman comunidades rurales hacia la autonomía energética.</description>
+      <description>Bajar al sótano de una casa purépecha para oler el biogás: ahí empieza la otra historia de la electricidad.</description>
       <category>Energia</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales/energias-alternativas-caminos-hacia-la-autonomia-energetica-en-comunidades-rurales.png" type="image/png" length="0"/>
@@ -357,7 +637,7 @@
       <title>La Sabiduría de los Insectos Comestibles en la Cultura Mexicana</title>
       <link>https://guardianesdelpulque.org/articulos/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana.html</guid>
-      <description>Exploramos la riqueza nutricional y cultural de los insectos comestibles en México.</description>
+      <description>Un kilo de chapulines puede costar más que el mejor corte de res. ¿Por qué? No tiene nada que ver con rareza.</description>
       <category>Insectos</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana/la-sabiduria-de-los-insectos-comestibles-en-la-cultura-mexicana.png" type="image/png" length="0"/>
@@ -367,7 +647,7 @@
       <title>La Madera en la Tradición Mexicana: Construcción y Sabiduría</title>
       <link>https://guardianesdelpulque.org/articulos/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria.html</guid>
-      <description>Explorando el uso de maderas locales en carpintería tradicional.</description>
+      <description>Un tronco de oyamel cruje en el altiplano: ¿cómo sabe el carpintero dónde cortar para que una viga dure cien años?</description>
       <category>Madera</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria/la-madera-en-la-tradicion-mexicana-construccion-y-sabiduria.png" type="image/png" length="0"/>
@@ -377,7 +657,7 @@
       <title>La Diversidad de Aves en Nuestros Territorios</title>
       <link>https://guardianesdelpulque.org/articulos/la-diversidad-de-aves-en-nuestros-territorios/la-diversidad-de-aves-en-nuestros-territorios.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-diversidad-de-aves-en-nuestros-territorios/la-diversidad-de-aves-en-nuestros-territorios.html</guid>
-      <description>Explora la interconexión de aves silvestres y de corral en México.</description>
+      <description>¿Por qué un gallo criollo puede salvar más especies silvestres que una reserva ecológica entera?</description>
       <category>Aves</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/la-diversidad-de-aves-en-nuestros-territorios/la-diversidad-de-aves-en-nuestros-territorios.png" type="image/png" length="0"/>
@@ -387,7 +667,7 @@
       <title>El Fascinante Mundo de los Hongos y su Cultivo</title>
       <link>https://guardianesdelpulque.org/articulos/el-fascinante-mundo-de-los-hongos-y-su-cultivo/el-fascinante-mundo-de-los-hongos-y-su-cultivo.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-fascinante-mundo-de-los-hongos-y-su-cultivo/el-fascinante-mundo-de-los-hongos-y-su-cultivo.html</guid>
-      <description>Descubre el cultivo de setas, micorrizas y hongos medicinales.</description>
+      <description>El olor a tierra tras la lluvia puede anunciar un tesoro oculto bajo las copas de pino: el reino secreto de los hongos.</description>
       <category>Hongos</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-fascinante-mundo-de-los-hongos-y-su-cultivo/el-fascinante-mundo-de-los-hongos-y-su-cultivo.png" type="image/png" length="0"/>
@@ -397,7 +677,7 @@
       <title>Cosmología Indígena y su Relevancia en la Espiritualidad Nahua</title>
       <link>https://guardianesdelpulque.org/articulos/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua.html</guid>
-      <description>Explora la conexión entre la cosmología indígena y la espiritualidad nahua.</description>
+      <description>Un día del tonalpohualli puede definir el nombre, el oficio y hasta el destino de un recién nacido en Milpa Alta.</description>
       <category>Cosmologia</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua/cosmologia-indigena-y-su-relevancia-en-la-espiritualidad-nahua.png" type="image/png" length="0"/>
@@ -407,7 +687,7 @@
       <title>Economía Solidaria y el Poder del Trueque en Comunidades Rurales</title>
       <link>https://guardianesdelpulque.org/articulos/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales.html</guid>
-      <description>Explora cómo la economía solidaria y el trueque transforman comunidades.</description>
+      <description>En los tianguis de la Sierra Norte, un kilo de frijol puede valer más que cien pesos—pero nadie lo paga con dinero.</description>
       <category>Economia</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales/economia-solidaria-y-el-poder-del-trueque-en-comunidades-rurales.png" type="image/png" length="0"/>
@@ -417,7 +697,7 @@
       <title>El Arte Tradicional Mexicano: Un Legado Cultural Vivo</title>
       <link>https://guardianesdelpulque.org/articulos/el-arte-tradicional-mexicano-un-legado-cultural-vivo/el-arte-tradicional-mexicano-un-legado-cultural-vivo.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-arte-tradicional-mexicano-un-legado-cultural-vivo/el-arte-tradicional-mexicano-un-legado-cultural-vivo.html</guid>
-      <description>Explora el rico patrimonio del arte tradicional mexicano y su diversidad.</description>
+      <description>¿Por qué una jarra de barro negro hecha en San Bartolo resiste el fuego mejor que algunos metales modernos?</description>
       <category>Arte</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-arte-tradicional-mexicano-un-legado-cultural-vivo/el-arte-tradicional-mexicano-un-legado-cultural-vivo.png" type="image/png" length="0"/>
@@ -427,7 +707,7 @@
       <title>El Fuego en la Cocina Tradicional Mexicana</title>
       <link>https://guardianesdelpulque.org/articulos/el-fuego-en-la-cocina-tradicional-mexicana/el-fuego-en-la-cocina-tradicional-mexicana.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-fuego-en-la-cocina-tradicional-mexicana/el-fuego-en-la-cocina-tradicional-mexicana.html</guid>
-      <description>Explorando la importancia del fuego y los fogones en la cocina mexicana.</description>
+      <description>El humo azul del fogón define más recetas mexicanas que cualquier sazón: sin leña, los sabores cambian incluso antes de probar.</description>
       <category>Fuego</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-fuego-en-la-cocina-tradicional-mexicana/el-fuego-en-la-cocina-tradicional-mexicana.png" type="image/png" length="0"/>
@@ -437,7 +717,7 @@
       <title>Defensa del Territorio: Estrategias Comunitarias Frente al Despojo</title>
       <link>https://guardianesdelpulque.org/articulos/defensa-del-territorio-estrategias-y-derechos/defensa-del-territorio-estrategias-y-derechos.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/defensa-del-territorio-estrategias-y-derechos/defensa-del-territorio-estrategias-y-derechos.html</guid>
-      <description>Herramientas legales, organizativas y culturales para que las comunidades defiendan su tierra, agua y autonomía frente al extractivismo.</description>
+      <description>En la Mixteca, una hilera de piedras decide quién bebe agua y quién camina horas bajo el sol.</description>
       <category>Territorio</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/defensa-del-territorio-estrategias-y-derechos/defensa-del-territorio-estrategias-y-derechos.png" type="image/png" length="0"/>
@@ -447,7 +727,7 @@
       <title>El Maravilloso Mundo de las Abejas y la Apicultura Tradicional en México</title>
       <link>https://guardianesdelpulque.org/articulos/el-maravilloso-mundo-de-las-abejas-y-la-apicultura-tradicional-en-mexico/el-maravilloso-mundo-de-las-abejas-y-la-apicultura-tradicional-en-mexico.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-maravilloso-mundo-de-las-abejas-y-la-apicultura-tradicional-en-mexico/el-maravilloso-mundo-de-las-abejas-y-la-apicultura-tradicional-en-mexico.html</guid>
-      <description>Explora la importancia de las abejas y la apicultura tradicional en México.</description>
+      <description>¿Por qué una colmena en una olla de barro puede sobrevivir donde una caja Langstroth fracasa? El secreto está en los zumbidos.</description>
       <category>Naturaleza</category>
       <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-maravilloso-mundo-de-las-abejas-y-la-apicultura-tradicional-en-mexico/el-maravilloso-mundo-de-las-abejas-y-la-apicultura-tradicional-en-mexico.png" type="image/png" length="0"/>
@@ -457,7 +737,7 @@
       <title>Fermentos Tradicionales Mexicanos: Sabores que Sanan</title>
       <link>https://guardianesdelpulque.org/articulos/fermentos-tradicionales-mexicanos-sabores-que-sanan/fermentos-tradicionales-mexicanos-sabores-que-sanan.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/fermentos-tradicionales-mexicanos-sabores-que-sanan/fermentos-tradicionales-mexicanos-sabores-que-sanan.html</guid>
-      <description>Explora la riqueza de los fermentos mexicanos y sus beneficios probióticos.</description>
+      <description>¿Por qué un atole agrio puede tener más bacterias benéficas que un yogur griego importado?</description>
       <category>Fermentos</category>
       <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/fermentos-tradicionales-mexicanos-sabores-que-sanan/fermentos-tradicionales-mexicanos-sabores-que-sanan.png" type="image/png" length="0"/>
@@ -467,7 +747,7 @@
       <title>Aprovechamiento del Agua: Captación Pluvial y Humedales Artificiales</title>
       <link>https://guardianesdelpulque.org/articulos/aprovechamiento-del-agua-captacion-pluvial-y-humedales-artificiales/aprovechamiento-del-agua-captacion-pluvial-y-humedales-artificiales.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/aprovechamiento-del-agua-captacion-pluvial-y-humedales-artificiales/aprovechamiento-del-agua-captacion-pluvial-y-humedales-artificiales.html</guid>
-      <description>Explora métodos para gestionar el agua en zonas rurales de México.</description>
+      <description>Un techo de lámina puede volverse río: la lluvia, atrapada a tiempo, vale más que mil pipas compradas en seco.</description>
       <category>Agua</category>
       <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/aprovechamiento-del-agua-captacion-pluvial-y-humedales-artificiales/aprovechamiento-del-agua-captacion-pluvial-y-humedales-artificiales.png" type="image/png" length="0"/>
@@ -477,7 +757,7 @@
       <title>Bioconstrucción: Técnicas Sostenibles con Tierra</title>
       <link>https://guardianesdelpulque.org/articulos/bioconstruccion-tecnicas-sostenibles-con-tierra/bioconstruccion-tecnicas-sostenibles-con-tierra.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/bioconstruccion-tecnicas-sostenibles-con-tierra/bioconstruccion-tecnicas-sostenibles-con-tierra.html</guid>
-      <description>Explora técnicas de bioconstrucción con tierra y materiales naturales.</description>
+      <description>¿Por qué las paredes de tierra apisonada en Tlaxcala resisten terremotos mejor que muchos tabiques industriales?</description>
       <category>Bioconstruccion</category>
       <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/bioconstruccion-tecnicas-sostenibles-con-tierra/bioconstruccion-tecnicas-sostenibles-con-tierra.png" type="image/png" length="0"/>
@@ -487,7 +767,7 @@
       <title>El Renacer de la Tierra: Polinizadores y Humedales en la Restauración Ecológica</title>
       <link>https://guardianesdelpulque.org/articulos/el-renacer-de-la-tierra-polinizadores-y-humedales-en-la-restauracion-ecologica/el-renacer-de-la-tierra-polinizadores-y-humedales-en-la-restauracion-ecologica.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-renacer-de-la-tierra-polinizadores-y-humedales-en-la-restauracion-ecologica/el-renacer-de-la-tierra-polinizadores-y-humedales-en-la-restauracion-ecologica.html</guid>
-      <description>Exploremos la relación entre suelos vivos, polinizadores y humedales en la naturaleza.</description>
+      <description>Un colibrí y una rana pueden cambiar más tierra que una retroexcavadora. La ciencia lo está midiendo.</description>
       <category>Naturaleza</category>
       <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-renacer-de-la-tierra-polinizadores-y-humedales-en-la-restauracion-ecologica/el-renacer-de-la-tierra-polinizadores-y-humedales-en-la-restauracion-ecologica.png" type="image/png" length="0"/>
@@ -497,7 +777,7 @@
       <title>El Pulque: Tradición y Sabor del Maguey</title>
       <link>https://guardianesdelpulque.org/articulos/el-pulque-tradicion-y-sabor-del-maguey/el-pulque-tradicion-y-sabor-del-maguey.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-pulque-tradicion-y-sabor-del-maguey/el-pulque-tradicion-y-sabor-del-maguey.html</guid>
-      <description>Explora el mundo del pulque y su fermentación tradicional.</description>
+      <description>Un maguey puede esperar 14 años por su primer corte; la transformación ocurre en una noche. ¿Por qué sigue resistiendo el pulque?</description>
       <category>Pulque</category>
       <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/el-pulque-tradicion-y-sabor-del-maguey/el-pulque-tradicion-y-sabor-del-maguey.png" type="image/png" length="0"/>
@@ -507,7 +787,7 @@
       <title>De la penca al jarro: el proceso vivo</title>
       <link>https://guardianesdelpulque.org/articulos/delapencaaljarro/de-la-penca-al-jarro.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/delapencaaljarro/de-la-penca-al-jarro.html</guid>
-      <description>Fermentos, microbiota y tradición del maguey paso a paso.</description>
+      <description>Un litro de aguamiel puede fermentar más rápido que un mezcal joven. Lo que ocurre en ese lapso es pura alquimia mexicana.</description>
       <category>Pulque</category>
       <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/delapencaaljarro/de_la_penca_al_jarro.png" type="image/png" length="0"/>
@@ -517,7 +797,7 @@
       <title>Guía práctica de adobe</title>
       <link>https://guardianesdelpulque.org/articulos/guiadeadobe/guiadeadobe.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/guiadeadobe/guiadeadobe.html</guid>
-      <description>Mezcla, moldes, curado y desempeño térmico.</description>
+      <description>Cuánto pesa un adobe bien hecho y por qué hue huele a tierra mojada en las casas más frescas de Tepeyahualco.</description>
       <category>Bioconstrucción</category>
       <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/guiadeadobe/guiadeadobe.png" type="image/png" length="0"/>
@@ -527,7 +807,7 @@
       <title>Microbiota del pulque: quién es quién</title>
       <link>https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.html</guid>
-      <description>Levaduras y bacterias lácticas clave en el sabor y la textura.</description>
+      <description>Algunas bacterias del pulque sobreviven a 60 °C y otras nunca pisan la penca. ¿Quiénes hacen la magia en esa espuma blanca?</description>
       <category>Pulque</category>
       <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/microbiotadelpulque/microbiotadelpulque.png" type="image/png" length="0"/>
@@ -537,7 +817,7 @@
       <title>Noticias verdes: restauración y polinizadores</title>
       <link>https://guardianesdelpulque.org/articulos/noticias-verdes-restauracion-y-polinizadores/noticias-verdes-restauracion-y-polinizadores.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/noticias-verdes-restauracion-y-polinizadores/noticias-verdes-restauracion-y-polinizadores.html</guid>
-      <description>Iniciativas locales para humedales y corredores biológicos.</description>
+      <description>En Tepexi, una flor más puede cambiar el sabor de la miel y la suerte de una milpa entera. ¿Por qué nadie lo contó antes?</description>
       <category>Naturaleza</category>
       <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/noticias-verdes-restauracion-y-polinizadores/noticias-verdes-restauracion-y-polinizadores.png" type="image/png" length="0"/>
@@ -547,7 +827,7 @@
       <title>Humedales urbanos: manual de bolsillo</title>
       <link>https://guardianesdelpulque.org/articulos/humedales-urbanos-manual-de-bolsillo/humedales-urbanos-manual-de-bolsillo.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/humedales-urbanos-manual-de-bolsillo/humedales-urbanos-manual-de-bolsillo.html</guid>
-      <description>Captación, filtración y biodiversidad en pequeñas escalas.</description>
+      <description>Un lirio que crece entre concreto puede filtrar más metales pesados que una planta en el campo. ¿Por qué sucede esto en la ciudad?</description>
       <category>Agua</category>
       <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/humedales-urbanos-manual-de-bolsillo/humedales-urbanos-manual-de-bolsillo.png" type="image/png" length="0"/>
@@ -557,7 +837,7 @@
       <title>Bambú estructural</title>
       <link>https://guardianesdelpulque.org/articulos/bambu-estructural/bambu-estructural.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/bambu-estructural/bambu-estructural.html</guid>
-      <description>Selección, uniones y tratamientos para larga vida útil.</description>
+      <description>La lluvia no suena igual bajo un techo de bambú: ¿qué tienen en común una casita en la Sierra Norte y un edificio en Bogotá?</description>
       <category>Bioconstruccion</category>
       <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/bambu-estructural/bambu-estructural.png" type="image/png" length="0"/>
@@ -567,7 +847,7 @@
       <title>La polinización del maíz</title>
       <link>https://guardianesdelpulque.org/articulos/polinizacion-del-maiz/polinizacion-del-maiz.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/polinizacion-del-maiz/polinizacion-del-maiz.html</guid>
-      <description>Cómo el viento, las variedades criollas y la milpa sostienen la reproducción del maíz mexicano.</description>
+      <description>El viento en la sierra de Tochimilco no solo mueve las hojas del maíz: decide qué semillas comerás el próximo año.</description>
       <category>Semillas</category>
       <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/polinizacion-del-maiz/polinizacion-del-maiz.png" type="image/png" length="0"/>
@@ -577,7 +857,7 @@
       <title>Suelos vivos</title>
       <link>https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.html</guid>
-      <description>Compost, micorrizas y cobertura para resiliencia hídrica.</description>
+      <description>Cómo una cucharada de tierra puede contener más seres vivos que toda la población humana junta.</description>
       <category>Suelo</category>
       <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/suelos-vivos/suelos-vivos.png" type="image/png" length="0"/>
@@ -587,7 +867,7 @@
       <title>Tierra compactada (BTC / Rammed Earth)</title>
       <link>https://guardianesdelpulque.org/articulos/tierra-compactada-btc-rammed-earth/tierra-compactada-btc-rammed-earth.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/tierra-compactada-btc-rammed-earth/tierra-compactada-btc-rammed-earth.html</guid>
-      <description>Densidades, encofrados y acabado fino.</description>
+      <description>Un muro hecho con lodo, sal y grava puede resistir sismos mejor que uno moderno de bloques.</description>
       <category>Bioconstruccion</category>
       <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/tierra-compactada-btc-rammed-earth/tierra-compactada-btc-rammed-earth.png" type="image/png" length="0"/>
@@ -597,7 +877,7 @@
       <title>Cadena de valor del maguey</title>
       <link>https://guardianesdelpulque.org/articulos/cadena-de-valor-del-maguey/cadena-de-valor-del-maguey.html</link>
       <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cadena-de-valor-del-maguey/cadena-de-valor-del-maguey.html</guid>
-      <description>Del campo a la pulquería: actores, riesgos y oportunidades.</description>
+      <description>Un solo maguey da fibra, sombra, mezcal y hasta alimento. Pero, ¿quién realmente se queda con la riqueza que produce?</description>
       <category>Pulque</category>
       <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/cadena-de-valor-del-maguey/cadena-de-valor-del-maguey.png" type="image/png" length="0"/>
