@@ -146,6 +146,12 @@ const images = [
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
   {
+    slug: "el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico",
+    title: "El origen de los alebrijes: el sueno de Pedro Linares",
+    palette: "vivid fuchsia, electric turquoise, lemon yellow, hot orange, deep violet, jade green, bone white, midnight blue",
+    subjects: "fantastical chimeric alebrije creature at the center — a donkey body with butterfly-dragon wings spread wide, a serpent tongue, rooster legs and a feathered tail — painted in bright clashing colors with bold geometric patterns and dots all over its skin, an older Mexican artisan in white cotton shirt (Pedro Linares) lying feverish on a petate in the background, sketching the creature in a small notebook, papier-mache and cartoneria materials (newspaper strips, wheat-paste bowl, wire armatures) on a worktable, smaller alebrijes around — a winged iguana, a fish-bat, a horned rabbit — Mexico City Merced Balbuena neighborhood doorway visible behind, swirling dreamlike colored mist filling the air",
+  },
+  {
     slug: "etnobotanica-un-viaje-por-las-plantas-usadas-por-pueblos-originarios-de-mexico",
     title: "Etnobotanica: plantas usadas por pueblos originarios",
     palette: "leaf green, herb sage, flower pink, copal amber, earth brown, indigo blue, golden ochre",
