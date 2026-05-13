@@ -146,6 +146,12 @@ const images = [
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
   {
+    slug: "la-vainilla-de-papantla-historia-ciencia-y-polinizacion",
+    title: "La vainilla de Papantla: polinizacion manual",
+    palette: "deep emerald green, cream vanilla flower, golden pod brown, jungle shadow black, sky blue, totonac white, ochre soil",
+    subjects: "close-up of Totonac woman hands in white embroidered blouse carefully holding a single pale yellow-cream Vanilla planifolia orchid flower open, the other hand using a slim wooden bamboo toothpick to lift the rostellum membrane and press the anther onto the stigma — the exact gesture of hand-pollination, long thick green vanilla vine climbing up a host tree trunk in the background, clusters of long ripening green vanilla pods hanging nearby, a few darker cured brown pods on a woven palm mat, lush humid jungle of Papantla Veracruz with broad tropical leaves and morning mist, a small wooden basket and a Totonac voladores pole faintly visible far behind",
+  },
+  {
     slug: "el-fascinante-origen-de-los-alebrijes-un-viaje-onirico-y-artistico",
     title: "El origen de los alebrijes: el sueno de Pedro Linares",
     palette: "vivid fuchsia, electric turquoise, lemon yellow, hot orange, deep violet, jade green, bone white, midnight blue",
