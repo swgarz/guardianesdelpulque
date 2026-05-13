@@ -146,6 +146,12 @@ const images = [
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
   {
+    slug: "teotihuacan-un-ejemplo-magistral-de-urbanismo-planificado-en-la-antiguedad",
+    title: "Teotihuacan: urbanismo planificado",
+    palette: "deep volcanic black, ochre stone, terracotta red, jade green, turquoise sky, sun gold",
+    subjects: "bird's-eye view of the ceremonial city of Teotihuacan with the wide Avenue of the Dead running straight through the center, the monumental stepped Pyramid of the Sun on the right and the Pyramid of the Moon at the far end, the Temple of Quetzalcoatl with its carved serpent heads, perfectly aligned residential compounds arranged in a regular geometric grid on both sides of the avenue, surveyor cords and astronomical sight-lines marked over the layout, small priestly figures walking the avenue, volcanic mountains and a clear highland sky in the background",
+  },
+  {
     slug: "por-que-el-mole-sabe-distinto-a-doscientos-metros-del-mercado-de-puebla",
     title: "Por que el mole sabe distinto a doscientos metros del mercado de Puebla",
     palette: "deep mole brown, chili red, cacao dark, almond cream, sesame gold, smoky black",
