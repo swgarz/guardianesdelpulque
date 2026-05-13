@@ -146,6 +146,12 @@ const images = [
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
   {
+    slug: "el-trueno-la-canela-y-los-30-milagros-la-alquimia-secreta-del-mole-poblano",
+    title: "El mole poblano: alquimia de 30 ingredientes",
+    palette: "deep mole brown, chili red, cacao dark, cinnamon ochre, almond cream, sesame gold, clove black, raisin purple, plantain yellow",
+    subjects: "huge dark glossy mole poblano simmering in a wide cazuela of clay over a wood fire, a Mexican cook in white apron stirring with a tall wooden molinillo, scattered around on a wooden table the 30 alchemical ingredients laid out like a constellation — dried chiles ancho, mulato, pasilla and chipotle bundled together, a stick of cinnamon, cloves, anise stars, peppercorns, almonds, peanuts, sesame seeds toasting on a comal, raisins, slices of ripe plantain, broken tablets of dark chocolate and cacao beans, a small heap of stale bread, tortilla and tomato, a stone metate with ground spices, halftone steam swirling upward, traditional Poblano kitchen with talavera tiles glimpsed in the background",
+  },
+  {
     slug: "xoloitzcuintle-companero-prehispanico-y-guardian-del-mictlan",
     title: "Xoloitzcuintle: guardian del Mictlan",
     palette: "deep obsidian black, ash grey skin, ember orange, cempasuchil marigold yellow, jade green, blood red, moonlight cream, indigo night blue",
