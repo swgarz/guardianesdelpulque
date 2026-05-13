@@ -148,6 +148,18 @@ const images = [
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
   {
+    slug: "el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo",
+    title: "Mario Molina: el quimico que salvo la capa de ozono",
+    palette: "stratospheric deep blue, ozone violet, chlorine green, aerosol grey, sun gold, Earth ocean blue, UNAM gold-and-blue, lab-coat white",
+    subjects: "Mexican chemist with dark wavy hair, glasses and a white lab coat standing at the center beside a wooden bench with glass beakers and Erlenmeyer flasks, holding up a small aerosol spray can and pointing at it, behind him a huge cross-section view of the Earth's atmosphere rising up the canvas — surface clouds at the bottom and the stratosphere at the top with a visible thinning hole in the ozone layer over the South Pole rendered in violet halftone, stylized molecular hexagons of CFCs and chlorine atoms drifting upward, the sun shining at the upper corner with rays of ultraviolet light, the UNAM building entrance with its iconic mosaic mural at the lower left, a few birds in flight",
+  },
+  {
+    slug: "el-secreto-inflamable-de-la-biznaga-cactus-que-curan-mas-alla-del-desierto",
+    title: "La biznaga: cactus medicinal del altiplano",
+    palette: "cactus deep green, spine red-yellow, blossom pink, sierra dust ochre, sky cobalt blue, adobe white, distant mountain violet",
+    subjects: "large round-to-cylindrical biznaga barrel cacti (Ferocactus and Echinocactus) with prominent vertical ribs and clusters of long curved yellow-and-red spines along the ridges, some crowned with a circle of small pink and yellow flowers on top, an elderly Mexican curandero in white cotton clothes, huaraches and a wide straw hat kneels beside a biznaga carefully slicing off a piece with a small knife to reveal the pale translucent gelatinous pulp inside, on a nearby stone he has a clay molcajete, a bundle of medicinal herbs and a folded cotton cloth ready to use the pulp as an anti-inflammatory poultice, arid highland sierra of central Mexico with rolling rocky hills, scattered magueys and nopales, dry yellow grass, distant blue-violet mountain ranges, a few birds circling in the sky",
+  },
+  {
     slug: "el-impacto-cosmico-de-chicxulub-fin-de-los-dinosaurios",
     title: "Chicxulub: impacto cosmico y fin de los dinosaurios",
     palette: "deep cosmic black, fireball orange, asteroid grey, jungle green, cenote turquoise, dinosaur teal, dust ochre, blood red",
