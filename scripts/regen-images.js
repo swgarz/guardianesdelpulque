@@ -145,6 +145,12 @@ const images = [
     palette: "moss green, mushroom cream, deep purple, earth brown, amber glow, root white",
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
   },
+  {
+    slug: "por-que-tu-hemisferio-derecho-no-es-el-artista-que-te-contaron-y-otras-mentiras-sobre-el-cerebro-bicameral",
+    title: "Por qué tu hemisferio derecho no es el artista que te contaron",
+    palette: "brain pink, neuron electric yellow, synapse cobalt blue, deep purple, blood red, cream white",
+    subjects: "giant anatomical cross-section of a human brain at the center filling the canvas, both hemispheres rendered symmetrically with the thick corpus callosum bridge of nerve fibers crossing the midline, vivid neurons firing in yellow lightning bolts that travel freely between both sides simultaneously, dense network of dendrites and axons weaving across the entire cortex from edge to edge, halftone Ben-Day dot patterns rippling over the brain surface, a pair of hands at the bottom each holding both a paintbrush and a geometric ruler together symbolizing that both hemispheres do both creative and logical tasks, no labels, no diagrams, no anatomical text, no Mexican cultural elements",
+  },
 ];
 
 async function generateImage(img) {
@@ -153,14 +159,12 @@ async function generateImage(img) {
   console.log("Generando:", img.slug);
   try {
     const res = await openai.images.generate({
-      model: "dall-e-3",
+      model: "gpt-image-1",
       prompt,
       n: 1,
       size: "1024x1024",
     });
-    const raw = Buffer.from(
-      await fetch(res.data[0].url).then((r) => r.arrayBuffer())
-    );
+    const raw = Buffer.from(res.data[0].b64_json, "base64");
     const buf = await sharp(raw).trim({ threshold: 80 }).resize(912).png().toBuffer();
     const dest = path.join(__dirname, "..", "articulos", img.slug, img.slug + ".png");
     fs.writeFileSync(dest, buf);

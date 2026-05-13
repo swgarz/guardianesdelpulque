@@ -211,15 +211,12 @@ async function regenerateImage(post, index, total) {
     try {
       console.log(`  Generando${i === 1 ? " (fallback)" : ""}...`);
       const imageResponse = await openai.images.generate({
-        model: "dall-e-3",
+        model: "gpt-image-1",
         prompt,
         n: 1,
-        size: "1792x1024",
+        size: "1536x1024",
       });
-      const imageUrl = imageResponse.data[0].url;
-      imageBuffer = Buffer.from(
-        await fetch(imageUrl).then((r) => r.arrayBuffer())
-      );
+      imageBuffer = Buffer.from(imageResponse.data[0].b64_json, "base64");
       let buf = await sharp(imageBuffer).trim({ threshold: 30 }).toBuffer();
       buf = await cropFlatBorders(buf);
       imageBuffer = await sharp(buf).resize(IMAGE_WIDTH).toBuffer();

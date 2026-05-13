@@ -470,12 +470,12 @@ async function generateGuide(){
 
   let imageBuffer;
   try {
-    const imageResponse = await openai.images.generate({ model:"dall-e-3", prompt:imagePrompt, n:1, size:"1792x1024" });
-    imageBuffer = Buffer.from(await fetch(imageResponse.data[0].url).then(r=>r.arrayBuffer()));
+    const imageResponse = await openai.images.generate({ model:"gpt-image-1", prompt:imagePrompt, n:1, size:"1536x1024" });
+    imageBuffer = Buffer.from(imageResponse.data[0].b64_json, "base64");
   } catch {
-    const fallback = `Pop art illustration in Mexican rural style. Topic: "${guide.title}". Color palette: ${palette}. Ben-Day dots, flat vivid colors, comic aesthetic. SINGLE illustration, no text, no letters.`;
-    const imageResponse = await openai.images.generate({ model:"dall-e-3", prompt:fallback, n:1, size:"1792x1024" });
-    imageBuffer = Buffer.from(await fetch(imageResponse.data[0].url).then(r=>r.arrayBuffer()));
+    const fallback = `Pop art illustration. Topic: "${guide.title}". Color palette: ${palette}. Ben-Day dots, flat vivid colors, comic aesthetic. SINGLE illustration, no text, no letters.`;
+    const imageResponse = await openai.images.generate({ model:"gpt-image-1", prompt:fallback, n:1, size:"1536x1024" });
+    imageBuffer = Buffer.from(imageResponse.data[0].b64_json, "base64");
   }
   imageBuffer = await sharp(imageBuffer).trim({ threshold:30 }).resize(IMAGE_WIDTH).jpeg({ quality:82, mozjpeg:true }).toBuffer();
 

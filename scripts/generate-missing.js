@@ -555,15 +555,12 @@ async function generateOne(postInfo, index) {
   for (const prompt of prompts) {
     try {
       const imageResponse = await openai.images.generate({
-        model: "dall-e-3",
+        model: "gpt-image-1",
         prompt,
         n: 1,
-        size: "1792x1024",
+        size: "1536x1024",
       });
-      const imageUrl = imageResponse.data[0].url;
-      imageBuffer = Buffer.from(
-        await fetch(imageUrl).then((r) => r.arrayBuffer())
-      );
+      imageBuffer = Buffer.from(imageResponse.data[0].b64_json, "base64");
       break;
     } catch (e) {
       console.log(`  Prompt rechazado, intentando alternativo...`);

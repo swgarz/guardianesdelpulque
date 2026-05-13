@@ -1248,13 +1248,23 @@ function buildUserPrompt({ topic, sectionCount, forceTitle }) {
     ``,
     `Escribe el artículo siguiendo TODAS las reglas del system prompt. Responde SOLO con JSON válido (sin markdown, sin backticks) con esta estructura exacta:`,
     ``,
-    `{"title":"...", "excerpt":"...", "tag":"...", "body":"<h2>...</h2><p>...</p>..."}`,
+    `{"title":"...", "excerpt":"...", "tag":"...", "imageSubjects":"...", "body":"<h2>...</h2><p>...</p>..."}`,
     ``,
     titleRule,
     ``,
     `EXCERPT: es GANCHO, no resumen descriptivo. Máximo 140 caracteres. Debe dar curiosidad, no anunciar el tema.`,
     `  MAL: "Explora el impacto de la agroforestería en la sostenibilidad y el desarrollo rural."`,
     `  BIEN: "Por qué cinco árboles plantados dentro de una milpa pueden producir más que la misma milpa sola."`,
+    ``,
+    `IMAGE_SUBJECTS: lista en INGLÉS de 4-6 elementos visuales concretos separados por comas, que ilustren LITERALMENTE el tema del artículo. Esto se usa como prompt visual para DALL-E.`,
+    `- Describe el CONTENIDO REAL del tema. Si es neurociencia → cerebros, neuronas, sinapsis; si es química → moléculas, reacciones, instrumentos; si es astronomía → planetas, telescopios, constelaciones; si es biología celular → células, organelos, microscopio; si es física → partículas, ondas, experimentos.`,
+    `- NO agregues catrinas, sombreros, mariachis, calaveras de azúcar, ni "escenas del campo mexicano" si el tema NO lo pide. Esos clichés contaminan la imagen.`,
+    `- Si el tema SÍ es del campo o cultura mexicana (milpa, maguey, fermentos tradicionales, oficios rurales, comunidades indígenas, fauna mexicana), entonces sí incluye esos elementos literalmente — pero solo si el tema lo justifica.`,
+    `- Sin texto, sin etiquetas, sin palabras en la imagen.`,
+    `- Ejemplos:`,
+    `   Tema "Cerebros bicamerales": "giant human brain cross-section, both hemispheres symmetric, corpus callosum bridge, neurons firing across midline, dendrites weaving, halftone cortex texture"`,
+    `   Tema "Nixtamalización del maíz": "hands grinding nixtamal on metate, comal with tortillas, lime water in clay pot, masa being patted, corn kernels turning gold"`,
+    `   Tema "Patrones de Turing en pieles": "majestic jaguar with rosette spots, zebra with bold stripes, reaction-diffusion waves rippling across their fur, mathematical spiral patterns emerging organically"`,
     ``,
     `BODY (HTML, sin <style> ni <script>, sin incluir el título principal):`,
     `- Exactamente ${sectionCount} secciones con <h2>. Los h2 deben ser específicos y cargados, no genéricos ("La importancia de…").`,
@@ -1475,17 +1485,24 @@ async function generateArticle() {
   const useFresco = false;
   console.log(`Estilo imagen: pop-art`);
 
+  // Sujetos visuales: vienen de GPT (article.imageSubjects). Si por alguna razón
+  // no llegaron, usamos el título como último recurso — pero sin imponer
+  // "escena mexicana rural", porque contaminaba temas abstractos con clichés
+  // (catrinas, sombreros) cuando el contenido era neurociencia, química, etc.
+  const subjects = (article.imageSubjects || article.title || "").toString().trim();
+
   // ESTILO FRESCO MONUMENTAL (temas serios: territorio, cultura, saberes...):
   const frescoBasePrompt =
     `Monumental fresco in the style of Mexican muralism, continuous composition without panels or divisions. ` +
-    `Subject: "${article.title}" — epic scene of Mexican rural life related to this topic.${pulqueNote} ` +
+    `Subject: "${article.title}". Depicted elements: ${subjects}.${pulqueNote} ` +
     `Color palette: ${palette}. ` +
     `Broad brushstrokes, monumental volumes, natural mineral pigments visible in texture, dramatic light, ` +
-    `depth and movement in the composition, figures with weight and dignity, landscape and people intertwined. ` +
+    `depth and movement in the composition, figures with weight and dignity. ` +
     `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no panels, no grids, no borders. ` +
     `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind.`;
   const frescoFallbackPrompt =
-    `Monumental fresco in the style of Mexican muralism, wide continuous scene of Mexican rural landscape. ` +
+    `Monumental fresco painting style, wide continuous scene. ` +
+    `Depicted elements: ${subjects}. ` +
     `Color palette: ${palette}. ` +
     `Broad brushstrokes, monumental volumes, dramatic light, no panels, no divisions. ` +
     `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins. ` +
@@ -1493,15 +1510,16 @@ async function generateArticle() {
 
   // ESTILO POP ART (temas ligeros: recetas, música, insectos, arte, cocina...):
   const popArtBasePrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${article.title}" — Mexican scene related to this topic.${pulqueNote} ` +
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${article.title}". Depicted elements: ${subjects}.${pulqueNote} ` +
     `Use these color families in the illustration: ${palette}. ` +
     `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. ` +
-    `The ENTIRE 1792x1024 canvas must be a SINGLE continuous illustrated scene from edge to edge. The scene itself fills 100% of the canvas. No portion of the canvas may be blank, empty, or occupied by abstract color fields. ` +
+    `The ENTIRE 1536x1024 canvas must be a SINGLE continuous illustrated scene from edge to edge. The scene itself fills 100% of the canvas. No portion of the canvas may be blank, empty, or occupied by abstract color fields. ` +
     `ABSOLUTELY FORBIDDEN elements (these must NOT appear anywhere in the image): color palette strips, color swatches, color sample bars, vertical color columns, horizontal color bands, reference color charts, side panels showing colors, isolated rectangles of solid color, color chips, Pantone-style blocks, any design-reference element showing the palette. ` +
     `Also forbidden: divisions, panels, grids, borders, frames, vignettes, margins, white space, empty bands, comic panel separators, before/after splits, diptychs, triptychs. ` +
     `Forbidden content: photography, 3D render, text, letters, words, labels, typography, writing, signatures, watermarks, urban buildings, cityscape skyline.`;
   const popArtFallbackPrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide Mexican rural scene filling the entire canvas. ` +
+    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide continuous scene filling the entire canvas. ` +
+    `Depicted elements: ${subjects}. ` +
     `Use these color families within the illustration: ${palette}. ` +
     `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, high contrast, screen-print look. ` +
     `SINGLE continuous illustrated scene from edge to edge filling 100% of the canvas. ` +
@@ -1514,15 +1532,12 @@ async function generateArticle() {
   for (const prompt of [basePrompt, fallbackPrompt]) {
     try {
       const imageResponse = await openai.images.generate({
-        model: "dall-e-3",
+        model: "gpt-image-1",
         prompt,
         n: 1,
-        size: "1792x1024",
+        size: "1536x1024",
       });
-      const imageUrl = imageResponse.data[0].url;
-      imageBuffer = Buffer.from(
-        await fetch(imageUrl).then((r) => r.arrayBuffer())
-      );
+      imageBuffer = Buffer.from(imageResponse.data[0].b64_json, "base64");
       break;
     } catch (e) {
       console.log("Prompt rechazado, intentando alternativo...");
