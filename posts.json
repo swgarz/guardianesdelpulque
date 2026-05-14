@@ -1,5 +1,55 @@
 [
   {
+    "tag": "Ciencia",
+    "title": "El misterio hexagonal: cómo los panales, las escamas y los reptiles resolvieron la geometría mejor que Euclides",
+    "excerpt": "¿Por qué las abejas, los peces y las serpientes repiten la misma figura? Un patrón que ni los matemáticos más astutos previeron.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-misterio-hexagonal-como-los-panales-las-escamas-y-los-reptiles-resolvieron-la-geometria-mejor-que-euclides/el-misterio-hexagonal-como-los-panales-las-escamas-y-los-reptiles-resolvieron-la-geometria-mejor-que-euclides.html",
+    "cover": "articulos/el-misterio-hexagonal-como-los-panales-las-escamas-y-los-reptiles-resolvieron-la-geometria-mejor-que-euclides/el-misterio-hexagonal-como-los-panales-las-escamas-y-los-reptiles-resolvieron-la-geometria-mejor-que-euclides.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Teselaciones en panal, escamas de pez y pieles de reptil"
+  },
+  {
+    "tag": "Salud",
+    "title": "El nopal que frena el azúcar: la planta silvestre que compite con los fármacos",
+    "excerpt": "Un pedazo de nopal crudo puede cambiar el pico de glucosa en tu sangre en menos de una hora. ¿Por qué nadie te lo contó así?",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-nopal-que-frena-el-azucar-la-planta-silvestre-que-compite-con-los-farmacos/el-nopal-que-frena-el-azucar-la-planta-silvestre-que-compite-con-los-farmacos.html",
+    "cover": "articulos/el-nopal-que-frena-el-azucar-la-planta-silvestre-que-compite-con-los-farmacos/el-nopal-que-frena-el-azucar-la-planta-silvestre-que-compite-con-los-farmacos.png",
+    "imageStyle": "litografia-color",
+    "topic": "Nopal, control de glucosa y diabetes"
+  },
+  {
+    "tag": "Pan",
+    "title": "El misterio dorado del pan y la tortilla: cómo la reacción de Maillard esculpe el sabor",
+    "excerpt": "Por qué el aroma a pan y el color de la tortilla esconden una reacción química tan compleja como impredecible.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-misterio-dorado-del-pan-y-la-tortilla-como-la-reaccion-de-maillard-esculpe-el-sabor/el-misterio-dorado-del-pan-y-la-tortilla-como-la-reaccion-de-maillard-esculpe-el-sabor.html",
+    "cover": "articulos/el-misterio-dorado-del-pan-y-la-tortilla-como-la-reaccion-de-maillard-esculpe-el-sabor/el-misterio-dorado-del-pan-y-la-tortilla-como-la-reaccion-de-maillard-esculpe-el-sabor.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Reaccion de Maillard, dorado del pan y la tortilla, quimica del sabor"
+  },
+  {
+    "tag": "Aves",
+    "title": "El pájaro lira que imita motosierras y cámaras: cómo un ave australiana hackea el sonido",
+    "excerpt": "¿Puede un pájaro aprender a cantar como una motosierra? Así hackean el aire los lira en los bosques de Australia.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-pajaro-lira-que-imita-motosierras-y-camaras-como-un-ave-australiana-hackea-el-sonido/el-pajaro-lira-que-imita-motosierras-y-camaras-como-un-ave-australiana-hackea-el-sonido.html",
+    "cover": "articulos/el-pajaro-lira-que-imita-motosierras-y-camaras-como-un-ave-australiana-hackea-el-sonido/el-pajaro-lira-que-imita-motosierras-y-camaras-como-un-ave-australiana-hackea-el-sonido.png",
+    "imageStyle": "litografia-color",
+    "topic": "Pajaros lira que imitan sonidos, plasticidad vocal"
+  },
+  {
+    "tag": "Evolucion",
+    "title": "Una gripe que viaja en metro: cómo los virus mutan ante nuestros ojos",
+    "excerpt": "El virus que hoy nos tumba no es el mismo de hace un mes. ¿Por qué nadie te lo dijo antes?",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/una-gripe-que-viaja-en-metro-como-los-virus-mutan-ante-nuestros-ojos/una-gripe-que-viaja-en-metro-como-los-virus-mutan-ante-nuestros-ojos.html",
+    "cover": "articulos/una-gripe-que-viaja-en-metro-como-los-virus-mutan-ante-nuestros-ojos/una-gripe-que-viaja-en-metro-como-los-virus-mutan-ante-nuestros-ojos.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Virus y evolucion, pandemia, mutacion y seleccion natural"
+  },
+  {
     "tag": "Semillas",
     "title": "La calabaza que domó a los humanos: el origen mesoamericano de la Cucurbita",
     "excerpt": "Una calabaza domesticada hace 10,000 años cambió para siempre el sabor y el destino de América.",
