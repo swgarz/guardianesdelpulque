@@ -1,5 +1,95 @@
 [
   {
+    "tag": "Mamiferos",
+    "title": "Los coyotes que cruzan avenidas: cómo el depredador más elástico de México conquista el asfalto",
+    "excerpt": "¿Por qué hay más coyotes hoy en las ciudades mexicanas que hace 50 años? Una pista está en lo que comen a medianoche.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/los-coyotes-que-cruzan-avenidas-como-el-depredador-mas-elastico-de-mexico-conquista-el-asfalto/los-coyotes-que-cruzan-avenidas-como-el-depredador-mas-elastico-de-mexico-conquista-el-asfalto.html",
+    "cover": "articulos/los-coyotes-que-cruzan-avenidas-como-el-depredador-mas-elastico-de-mexico-conquista-el-asfalto/los-coyotes-que-cruzan-avenidas-como-el-depredador-mas-elastico-de-mexico-conquista-el-asfalto.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Coyote como mesodepredador adaptable, ecologia urbana y rural"
+  },
+  {
+    "tag": "Territorio",
+    "title": "Monte Albán: el día que una montaña se volvió ciudad y nunca bajó la guardia",
+    "excerpt": "Una ciudad entera tallada sobre una cima a 1,900 metros, entre zapotecos y relámpagos. ¿Por qué nadie la conquistó del todo?",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/monte-alban-el-dia-que-una-montana-se-volvio-ciudad-y-nunca-bajo-la-guardia/monte-alban-el-dia-que-una-montana-se-volvio-ciudad-y-nunca-bajo-la-guardia.html",
+    "cover": "articulos/monte-alban-el-dia-que-una-montana-se-volvio-ciudad-y-nunca-bajo-la-guardia/monte-alban-el-dia-que-una-montana-se-volvio-ciudad-y-nunca-bajo-la-guardia.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Monte Alban, 1500 anos de una ciudad sobre la montana zapoteca"
+  },
+  {
+    "tag": "Biologia",
+    "title": "El aguijón que arde: por qué el veneno de abeja no es igual al de avispa",
+    "excerpt": "¿Por qué una picadura de abeja puede salvar vidas y otra de avispa casi mata? La respuesta está en la melitina y algo más inesperado.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-aguijon-que-arde-por-que-el-veneno-de-abeja-no-es-igual-al-de-avispa/el-aguijon-que-arde-por-que-el-veneno-de-abeja-no-es-igual-al-de-avispa.html",
+    "cover": "articulos/el-aguijon-que-arde-por-que-el-veneno-de-abeja-no-es-igual-al-de-avispa/el-aguijon-que-arde-por-que-el-veneno-de-abeja-no-es-igual-al-de-avispa.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Veneno de abejas y avispas, melitina y reaccion alergica"
+  },
+  {
+    "tag": "Ciencia",
+    "title": "En la lengua y el cerebro: el picante mexicano, medido en escalas y descifrado por neuronas",
+    "excerpt": "¿Por qué el chile tiene el poder de hacerte sudar, reír y llorar? La respuesta está en tu sistema nervioso y la escala Scoville.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/en-la-lengua-y-el-cerebro-el-picante-mexicano-medido-en-escalas-y-descifrado-por-neuronas/en-la-lengua-y-el-cerebro-el-picante-mexicano-medido-en-escalas-y-descifrado-por-neuronas.html",
+    "cover": "articulos/en-la-lengua-y-el-cerebro-el-picante-mexicano-medido-en-escalas-y-descifrado-por-neuronas/en-la-lengua-y-el-cerebro-el-picante-mexicano-medido-en-escalas-y-descifrado-por-neuronas.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Escala Scoville y neurobiologia del picante en chiles mexicanos"
+  },
+  {
+    "tag": "Agua",
+    "title": "El ascenso imposible: cómo un árbol mexicano sube agua hasta 100 metros sin una sola bomba",
+    "excerpt": "Un árbol puede levantar toneladas de agua a la copa sin motores ni mangueras. El secreto está en los tubos de madera… y la física improbable.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-ascenso-imposible-como-un-arbol-mexicano-sube-agua-hasta-100-metros-sin-una-sola-bomba/el-ascenso-imposible-como-un-arbol-mexicano-sube-agua-hasta-100-metros-sin-una-sola-bomba.html",
+    "cover": "articulos/el-ascenso-imposible-como-un-arbol-mexicano-sube-agua-hasta-100-metros-sin-una-sola-bomba/el-ascenso-imposible-como-un-arbol-mexicano-sube-agua-hasta-100-metros-sin-una-sola-bomba.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "Hidraulica de los arboles, transpiracion y capilaridad, columna de agua de 100 metros"
+  },
+  {
+    "tag": "Migracion",
+    "title": "El mapa invisible: cómo las tortugas marinas mexicanas leen el campo magnético para volver a casa",
+    "excerpt": "¿Cómo encuentra una tortuga marina su playa natal tras cruzar un océano? La respuesta está bajo sus caparazones.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-mapa-invisible-como-las-tortugas-marinas-mexicanas-leen-el-campo-magnetico-para-volver-a-casa/el-mapa-invisible-como-las-tortugas-marinas-mexicanas-leen-el-campo-magnetico-para-volver-a-casa.html",
+    "cover": "articulos/el-mapa-invisible-como-las-tortugas-marinas-mexicanas-leen-el-campo-magnetico-para-volver-a-casa/el-mapa-invisible-como-las-tortugas-marinas-mexicanas-leen-el-campo-magnetico-para-volver-a-casa.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Tortugas marinas que regresan a su playa natal por campo magnetico"
+  },
+  {
+    "tag": "Salud",
+    "title": "Por qué veinte minutos bajo un amate pueden calmar la ansiedad más que un ansiolítico",
+    "excerpt": "Hay una razón medible por la que el olor a tierra mojada y las hojas frescas alivian la mente mejor que un cuarto cerrado.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/por-que-veinte-minutos-bajo-un-amate-pueden-calmar-la-ansiedad-mas-que-un-ansiolitico/por-que-veinte-minutos-bajo-un-amate-pueden-calmar-la-ansiedad-mas-que-un-ansiolitico.html",
+    "cover": "articulos/por-que-veinte-minutos-bajo-un-amate-pueden-calmar-la-ansiedad-mas-que-un-ansiolitico/por-que-veinte-minutos-bajo-un-amate-pueden-calmar-la-ansiedad-mas-que-un-ansiolitico.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "Naturaleza y salud mental, biofilia y reduccion de estres"
+  },
+  {
+    "tag": "Fermentos",
+    "title": "Moronga: el arte oscuro de fermentar sangre y tripas en México",
+    "excerpt": "Un intestino sangrante, sal y un puñado de especias: así empieza la alquimia de un embutido vivo que desafía al asco y a la ciencia.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/moronga-el-arte-oscuro-de-fermentar-sangre-y-tripas-en-mexico/moronga-el-arte-oscuro-de-fermentar-sangre-y-tripas-en-mexico.html",
+    "cover": "articulos/moronga-el-arte-oscuro-de-fermentar-sangre-y-tripas-en-mexico/moronga-el-arte-oscuro-de-fermentar-sangre-y-tripas-en-mexico.png",
+    "imageStyle": "encaustica",
+    "topic": "Moronga y embutidos mexicanos, fermentacion del intestino animal"
+  },
+  {
+    "tag": "Mamiferos",
+    "title": "Gritos y ramas: por qué los monos mexicanos están desapareciendo del dosel",
+    "excerpt": "En Nanciyaga, la selva calla donde antes aullaban monos: una historia de aromas dulces, machetes y mapas genéticos.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/gritos-y-ramas-por-que-los-monos-mexicanos-estan-desapareciendo-del-dosel/gritos-y-ramas-por-que-los-monos-mexicanos-estan-desapareciendo-del-dosel.html",
+    "cover": "articulos/gritos-y-ramas-por-que-los-monos-mexicanos-estan-desapareciendo-del-dosel/gritos-y-ramas-por-que-los-monos-mexicanos-estan-desapareciendo-del-dosel.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Mono arana, mono aullador y primates mexicanos en peligro"
+  },
+  {
     "tag": "Ciencia",
     "title": "El misterio hexagonal: cómo los panales, las escamas y los reptiles resolvieron la geometría mejor que Euclides",
     "excerpt": "¿Por qué las abejas, los peces y las serpientes repiten la misma figura? Un patrón que ni los matemáticos más astutos previeron.",
