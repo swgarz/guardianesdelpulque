@@ -5,13 +5,33 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 14 May 2026 20:30:01 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2026 23:10:11 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El día que un bañista desnudo gritó ¡Eureka! y cambió la física sin querer</title>
+      <link>https://guardianesdelpulque.org/articulos/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer.html</guid>
+      <description>Cómo una tina rebosando en Siracusa hace 2,200 años sigue flotando en cada barco y palanca moderna.</description>
+      <category>Agua</category>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La noche en que el aire chisporroteó: la bobina de Tesla y la corriente que cambió el mundo</title>
+      <link>https://guardianesdelpulque.org/articulos/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo.html</guid>
+      <description>Una chispa azul recorrió Guadalajara en 1893. Lo que siguió transformó hasta la forma en que hervimos el café.</description>
+      <category>Energia</category>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El humo, la sal y el chile: secretos para guardar el maíz más allá de la cosecha</title>

@@ -1,5 +1,25 @@
 [
   {
+    "tag": "Agua",
+    "title": "El día que un bañista desnudo gritó ¡Eureka! y cambió la física sin querer",
+    "excerpt": "Cómo una tina rebosando en Siracusa hace 2,200 años sigue flotando en cada barco y palanca moderna.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer.html",
+    "cover": "articulos/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer/el-dia-que-un-banista-desnudo-grito-eureka-y-cambio-la-fisica-sin-querer.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "Arquimedes de Siracusa, principio de flotabilidad, palancas y tornillo hidraulico, padre de la fisica"
+  },
+  {
+    "tag": "Energia",
+    "title": "La noche en que el aire chisporroteó: la bobina de Tesla y la corriente que cambió el mundo",
+    "excerpt": "Una chispa azul recorrió Guadalajara en 1893. Lo que siguió transformó hasta la forma en que hervimos el café.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo.html",
+    "cover": "articulos/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo/la-noche-en-que-el-aire-chisporroteo-la-bobina-de-tesla-y-la-corriente-que-cambio-el-mundo.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Nikola Tesla, corriente alterna, bobina de Tesla y la electrificacion del mundo"
+  },
+  {
     "tag": "Sal",
     "title": "El humo, la sal y el chile: secretos para guardar el maíz más allá de la cosecha",
     "excerpt": "En San Pedro Tlachichilco, un pescado dura semanas sin nevera gracias a una nube de humo y un costal de chile seco.",
