@@ -5,13 +5,63 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Wed, 13 May 2026 20:39:47 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2026 17:33:38 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>La calabaza que domó a los humanos: el origen mesoamericano de la Cucurbita</title>
+      <link>https://guardianesdelpulque.org/articulos/la-calabaza-que-domo-a-los-humanos-el-origen-mesoamericano-de-la-cucurbita/la-calabaza-que-domo-a-los-humanos-el-origen-mesoamericano-de-la-cucurbita.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-calabaza-que-domo-a-los-humanos-el-origen-mesoamericano-de-la-cucurbita/la-calabaza-que-domo-a-los-humanos-el-origen-mesoamericano-de-la-cucurbita.html</guid>
+      <description>Una calabaza domesticada hace 10,000 años cambió para siempre el sabor y el destino de América.</description>
+      <category>Semillas</category>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-calabaza-que-domo-a-los-humanos-el-origen-mesoamericano-de-la-cucurbita/la-calabaza-que-domo-a-los-humanos-el-origen-mesoamericano-de-la-cucurbita.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El ajolote que perdió una pata y la volvió a crecer: el prodigio de Xochimilco acechado por la extinción</title>
+      <link>https://guardianesdelpulque.org/articulos/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion.html</guid>
+      <description>Un animal que renueva brazos y corazón, mientras Xochimilco se seca bajo el concreto. ¿Por qué sólo aquí sobrevive lo imposible?</description>
+      <category>Biologia</category>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Por qué el tonalpohualli sigue marcando días en el México de Google Calendar</title>
+      <link>https://guardianesdelpulque.org/articulos/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar.html</guid>
+      <description>Un calendario de 260 días guía partos, siembras y sueños; ni la UNAM sabe con certeza de dónde salió.</description>
+      <category>Cosmologia</category>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El deshielo invisible del Pico de Orizaba: cómo el volcán más alto de México pierde su corona de hielo</title>
+      <link>https://guardianesdelpulque.org/articulos/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo.html</guid>
+      <description>En la cima del Citlaltépetl, la nieve retrocede y deja al descubierto un volcán que respira distinto. ¿Qué ocurre en el último glaciar del país?</description>
+      <category>Naturaleza</category>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El país donde el atole nunca sabe igual dos veces: crónica sensorial de más de 50 recetas en cada estado</title>
+      <link>https://guardianesdelpulque.org/articulos/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado.html</guid>
+      <description>¿Qué tienen en común el aroma de la guayaba en Colima y el maíz azul de Zinacantán? Un atole tan diverso que ni los ancianos logran contarlo.</description>
+      <category>Fermentos</category>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Las plantas que salieron del agua: cómo conquistaron el continente seco</title>

@@ -10,6 +10,46 @@
     "topic": "Domesticacion de la calabaza, cucurbita y origen mesoamericano"
   },
   {
+    "tag": "Biologia",
+    "title": "El ajolote que perdió una pata y la volvió a crecer: el prodigio de Xochimilco acechado por la extinción",
+    "excerpt": "Un animal que renueva brazos y corazón, mientras Xochimilco se seca bajo el concreto. ¿Por qué sólo aquí sobrevive lo imposible?",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion.html",
+    "cover": "articulos/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion/el-ajolote-que-perdio-una-pata-y-la-volvio-a-crecer-el-prodigio-de-xochimilco-acechado-por-la-extincion.png",
+    "imageStyle": "encaustica",
+    "topic": "Ajolote de Xochimilco, regeneracion de extremidades, especie en peligro critico"
+  },
+  {
+    "tag": "Cosmologia",
+    "title": "Por qué el tonalpohualli sigue marcando días en el México de Google Calendar",
+    "excerpt": "Un calendario de 260 días guía partos, siembras y sueños; ni la UNAM sabe con certeza de dónde salió.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar.html",
+    "cover": "articulos/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar/por-que-el-tonalpohualli-sigue-marcando-dias-en-el-mexico-de-google-calendar.png",
+    "imageStyle": "expresionismo-terroso",
+    "topic": "Tonalpohualli, calendario sagrado de 260 dias"
+  },
+  {
+    "tag": "Naturaleza",
+    "title": "El deshielo invisible del Pico de Orizaba: cómo el volcán más alto de México pierde su corona de hielo",
+    "excerpt": "En la cima del Citlaltépetl, la nieve retrocede y deja al descubierto un volcán que respira distinto. ¿Qué ocurre en el último glaciar del país?",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo.html",
+    "cover": "articulos/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo/el-deshielo-invisible-del-pico-de-orizaba-como-el-volcan-mas-alto-de-mexico-pierde-su-corona-de-hielo.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Pico de Orizaba, volcan mas alto de Mexico y su deshielo"
+  },
+  {
+    "tag": "Fermentos",
+    "title": "El país donde el atole nunca sabe igual dos veces: crónica sensorial de más de 50 recetas en cada estado",
+    "excerpt": "¿Qué tienen en común el aroma de la guayaba en Colima y el maíz azul de Zinacantán? Un atole tan diverso que ni los ancianos logran contarlo.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado.html",
+    "cover": "articulos/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado/el-pais-donde-el-atole-nunca-sabe-igual-dos-veces-cronica-sensorial-de-mas-de-50-recetas-en-cada-estado.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Atoles regionales de Mexico, mas de 50 variedades por estado"
+  },
+  {
     "tag": "Evolucion",
     "title": "Las plantas que salieron del agua: cómo conquistaron el continente seco",
     "excerpt": "Antes de los dinosaurios, algas verdes tejieron la primera alfombra viva sobre tierra firme. ¿Por qué sobrevivieron ellas y no otras?",
