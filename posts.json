@@ -1,5 +1,95 @@
 [
   {
+    "tag": "Sal",
+    "title": "El humo, la sal y el chile: secretos para guardar el maíz más allá de la cosecha",
+    "excerpt": "En San Pedro Tlachichilco, un pescado dura semanas sin nevera gracias a una nube de humo y un costal de chile seco.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-humo-la-sal-y-el-chile-secretos-para-guardar-el-maiz-mas-alla-de-la-cosecha/el-humo-la-sal-y-el-chile-secretos-para-guardar-el-maiz-mas-alla-de-la-cosecha.html",
+    "cover": "articulos/el-humo-la-sal-y-el-chile-secretos-para-guardar-el-maiz-mas-alla-de-la-cosecha/el-humo-la-sal-y-el-chile-secretos-para-guardar-el-maiz-mas-alla-de-la-cosecha.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Conservacion ancestral, salar, secar, ahumar y enchilar"
+  },
+  {
+    "tag": "Agua",
+    "title": "El anillo subterráneo que el meteorito dibujó bajo Yucatán",
+    "excerpt": "Bajo la selva yucateca, el agua se esconde en túneles y ojos azules trazados por un asteroide hace 66 millones de años.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-anillo-subterraneo-que-el-meteorito-dibujo-bajo-yucatan/el-anillo-subterraneo-que-el-meteorito-dibujo-bajo-yucatan.html",
+    "cover": "articulos/el-anillo-subterraneo-que-el-meteorito-dibujo-bajo-yucatan/el-anillo-subterraneo-que-el-meteorito-dibujo-bajo-yucatan.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Cenotes de Yucatan, hidrologia karstica y ruta del meteorito"
+  },
+  {
+    "tag": "Semillas",
+    "title": "Cuando el amaranto fue semilla prohibida: la proteína que sobrevivió a la conquista y ahora nutre a México",
+    "excerpt": "En las laderas de Tulyehualco, un puñado de semillas rojizas desafió la extinción. Hoy, la ciencia revela su secreto proteico.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/cuando-el-amaranto-fue-semilla-prohibida-la-proteina-que-sobrevivio-a-la-conquista-y-ahora-nutre-a-mexico/cuando-el-amaranto-fue-semilla-prohibida-la-proteina-que-sobrevivio-a-la-conquista-y-ahora-nutre-a-mexico.html",
+    "cover": "articulos/cuando-el-amaranto-fue-semilla-prohibida-la-proteina-que-sobrevivio-a-la-conquista-y-ahora-nutre-a-mexico/cuando-el-amaranto-fue-semilla-prohibida-la-proteina-que-sobrevivio-a-la-conquista-y-ahora-nutre-a-mexico.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "Amaranto, proteina completa y superalimento prehispanico"
+  },
+  {
+    "tag": "Biologia",
+    "title": "De una célula a cien billones: el asombroso viaje oculto dentro de todos nosotros",
+    "excerpt": "Un solo huevo, 38 grados y nueve meses: lo que ocurre ahí adentro parece ciencia ficción. Así empieza el milagro más cotidiano.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/de-una-celula-a-cien-billones-el-asombroso-viaje-oculto-dentro-de-todos-nosotros/de-una-celula-a-cien-billones-el-asombroso-viaje-oculto-dentro-de-todos-nosotros.html",
+    "cover": "articulos/de-una-celula-a-cien-billones-el-asombroso-viaje-oculto-dentro-de-todos-nosotros/de-una-celula-a-cien-billones-el-asombroso-viaje-oculto-dentro-de-todos-nosotros.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Embriologia, desarrollo desde una celula hasta organismo"
+  },
+  {
+    "tag": "Naturaleza",
+    "title": "Por qué los fractales se esconden en los helechos y el brócoli que llevas al mercado",
+    "excerpt": "¿Por qué la orilla de Oaxaca mide más de lo que imaginaste y un brócoli romano parece diseñado por un matemático distraído?",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/por-que-los-fractales-se-esconden-en-los-helechos-y-el-brocoli-que-llevas-al-mercado/por-que-los-fractales-se-esconden-en-los-helechos-y-el-brocoli-que-llevas-al-mercado.html",
+    "cover": "articulos/por-que-los-fractales-se-esconden-en-los-helechos-y-el-brocoli-que-llevas-al-mercado/por-que-los-fractales-se-esconden-en-los-helechos-y-el-brocoli-que-llevas-al-mercado.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Fractales en helechos, brocoli romanesco, costas y ramificaciones"
+  },
+  {
+    "tag": "Evolucion",
+    "title": "Cuando los armadillos cruzaron el Istmo: la migración secreta que cambió las Américas",
+    "excerpt": "Tres millones de años atrás, un puente de tierra aquí mismo fue más radical que cualquier muro actual.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/cuando-los-armadillos-cruzaron-el-istmo-la-migracion-secreta-que-cambio-las-americas/cuando-los-armadillos-cruzaron-el-istmo-la-migracion-secreta-que-cambio-las-americas.html",
+    "cover": "articulos/cuando-los-armadillos-cruzaron-el-istmo-la-migracion-secreta-que-cambio-las-americas/cuando-los-armadillos-cruzaron-el-istmo-la-migracion-secreta-que-cambio-las-americas.png",
+    "imageStyle": "claroscuro-social",
+    "topic": "Gran Intercambio Biotico, la conexion de las Americas hace 3 millones de anos"
+  },
+  {
+    "tag": "Medicina",
+    "title": "El olor que espanta lombrices: epazote, parásitos y ciencia en las tierras altas",
+    "excerpt": "¿Por qué el epazote, ese aroma de caldo y milpa, sigue desafiando a los parásitos en laboratorios y cocinas rurales?",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/el-olor-que-espanta-lombrices-epazote-parasitos-y-ciencia-en-las-tierras-altas/el-olor-que-espanta-lombrices-epazote-parasitos-y-ciencia-en-las-tierras-altas.html",
+    "cover": "articulos/el-olor-que-espanta-lombrices-epazote-parasitos-y-ciencia-en-las-tierras-altas/el-olor-que-espanta-lombrices-epazote-parasitos-y-ciencia-en-las-tierras-altas.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "Epazote, antiparasitario tradicional y compuestos activos"
+  },
+  {
+    "tag": "Mamiferos",
+    "title": "La red invisible que asfixia al mar: la vida y muerte de la vaquita marina en el Alto Golfo",
+    "excerpt": "Un animal del tamaño de un niño pequeño podría desaparecer este año. Su historia cabe en una red de pesca y una noche oscura.",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/la-red-invisible-que-asfixia-al-mar-la-vida-y-muerte-de-la-vaquita-marina-en-el-alto-golfo/la-red-invisible-que-asfixia-al-mar-la-vida-y-muerte-de-la-vaquita-marina-en-el-alto-golfo.html",
+    "cover": "articulos/la-red-invisible-que-asfixia-al-mar-la-vida-y-muerte-de-la-vaquita-marina-en-el-alto-golfo/la-red-invisible-que-asfixia-al-mar-la-vida-y-muerte-de-la-vaquita-marina-en-el-alto-golfo.png",
+    "imageStyle": "encaustica",
+    "topic": "Vaquita marina, el mamifero mas pequeno y su extincion por redes pesqueras"
+  },
+  {
+    "tag": "Musica",
+    "title": "Un compás en el lóbulo temporal: lo que pasa en tu cerebro cuando una canción te eriza la piel",
+    "excerpt": "Un acorde y la piel chinita: ¿por qué tu cerebro libera dopamina justo cuando la música rompe la calma?",
+    "date": "14 de mayo de 2026",
+    "url": "articulos/un-compas-en-el-lobulo-temporal-lo-que-pasa-en-tu-cerebro-cuando-una-cancion-te-eriza-la-piel/un-compas-en-el-lobulo-temporal-lo-que-pasa-en-tu-cerebro-cuando-una-cancion-te-eriza-la-piel.html",
+    "cover": "articulos/un-compas-en-el-lobulo-temporal-lo-que-pasa-en-tu-cerebro-cuando-una-cancion-te-eriza-la-piel/un-compas-en-el-lobulo-temporal-lo-que-pasa-en-tu-cerebro-cuando-una-cancion-te-eriza-la-piel.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Musica y cerebro, dopamina y emocion auditiva"
+  },
+  {
     "tag": "Mamiferos",
     "title": "Los coyotes que cruzan avenidas: cómo el depredador más elástico de México conquista el asfalto",
     "excerpt": "¿Por qué hay más coyotes hoy en las ciudades mexicanas que hace 50 años? Una pista está en lo que comen a medianoche.",

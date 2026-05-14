@@ -847,8 +847,11 @@
         return el;
       }
 
+      const WINDOW = 10;
+      const windowStart = Math.floor((page - 1) / WINDOW) * WINDOW + 1;
+      const windowEnd = Math.min(windowStart + WINDOW - 1, pages);
       pager.appendChild(page > 1 ? btn(page-1,'‹') : btn(0,'‹','disabled'));
-      for(let i=1;i<=pages;i++){
+      for(let i=windowStart;i<=windowEnd;i++){
         pager.appendChild(btn(i, String(i), i===page ? 'active' : ''));
       }
       pager.appendChild(page < pages ? btn(page+1,'›') : btn(0,'›','disabled'));
