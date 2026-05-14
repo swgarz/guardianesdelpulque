@@ -112,12 +112,6 @@ const images = [
     subjects: "campesino family walking with bundled belongings along a dirt road, rural Mexican village with adobe houses in the distance, milpa with corn in the foreground, elderly grandparents waving welcome at a doorway, hands exchanging a photograph, suitcase beside a bus stop, cross-generational embrace",
   },
   {
-    slug: "psicodelicos-sagrados-conexiones-ancestrales-y-espirituales",
-    title: "Psicodélicos Sagrados: Conexiones Ancestrales y Espirituales",
-    palette: "visionary purple, deep cobalt blue, sacred green, ritual gold, night black",
-    subjects: "indigenous wixárika shaman sitting in ceremony beside peyote cacti, hongos sagrados growing from forest floor, temazcal steaming under a starry sky, circle of candles and copal smoke, visionary geometric patterns emerging from the background, sacred plants of power, eyes closed in meditation, Mexican night landscape",
-  },
-  {
     slug: "patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra",
     title: "Patrones de Turing en Pieles: La Magia de las Manchas del Jaguar y Rayas de Cebra",
     palette: "cellular green, water blue, pollen yellow, nucleus violet, jaguar gold and deep black",
@@ -146,6 +140,18 @@ const images = [
     title: "El Intrincado mundo de la Wood Wide Web: Comunicaciones Subterráneas de los Bosques",
     palette: "moss green, mushroom cream, deep purple, earth brown, amber glow, root white",
     subjects: "giant vertical cross-section of a Mexican forest showing tall oyamel and oak trees reaching the sky above and their enormous interconnected root systems below ground, a vast network of bright white mycelium threads glowing and weaving between all the root tips like a living web, tiny pulses of amber light flowing along the fungal filaments representing nutrients and alarm signals being shared between trees, cluster of mushrooms fruiting at the forest floor, dark soil layers revealing worms and fungi, the entire composition is one continuous cross-section filling the canvas edge to edge",
+  },
+  {
+    slug: "el-dia-que-taxco-huele-a-cilantro-vivo-la-invasion-de-los-jumiles-comestibles",
+    title: "Jumiles de Taxco: el insecto que se come vivo",
+    palette: "Taxco silver white, adobe pink, salsa red, tortilla golden, cilantro green, jumile grey-brown, mountain blue, festival magenta",
+    subjects: "lively zocalo of Taxco at midday with white-and-pink colonial houses climbing the steep hillside and the silver-domed church of Santa Prisca in the background, a Mexican woman in embroidered blouse and apron at the foreground holding a clay molcajete full of tiny live grey-brown jumiles (Atizies taxcoensis stink bugs) crawling, scooping them into a warm corn tortilla with salsa verde and a sprig of fresh cilantro, smiling people gathered around eating tacos of live jumiles, a basket of more bugs on the cobbled ground, halftone wavy lines suggesting the cilantro-like smell rising into the air, blue mountain ranges of Guerrero behind, birds flying over the church",
+  },
+  {
+    slug: "psicodelicos-sagrados-conexiones-ancestrales-y-espirituales",
+    title: "Psicodelicos sagrados: ceremonia ancestral",
+    palette: "ritual gold, copal smoke cream, sacred green, deep night indigo, candle orange, marigold yellow, ceremonial purple, earth brown",
+    subjects: "indigenous Mexican Wixarika elder in a beaded headdress, embroidered tunic and feathered crown sitting cross-legged in a sacred ceremony at night, hands raised offering thanks toward a small fire in the center, a circle of cempasuchil marigolds and copal incense burning in clay pots around him, peyote cacti and sacred mushroom motifs growing softly at the edges of the circle, swirling geometric Wixarika yarn-art patterns and concentric mandala motifs in the night sky behind him as decorative halftone backdrop, a temazcal steam hut visible in the distance under a starry sky, mountains of central Mexico, no urban modern elements",
   },
   {
     slug: "el-quimico-de-la-unam-que-olia-a-laboratorio-y-salvo-el-cielo",
