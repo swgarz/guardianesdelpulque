@@ -114,26 +114,26 @@ const images = [
   {
     slug: "patrones-de-turing-en-pieles-la-magia-de-las-manchas-del-jaguar-y-rayas-de-cebra",
     title: "Patrones de Turing en Pieles: La Magia de las Manchas del Jaguar y Rayas de Cebra",
-    palette: "cellular green, water blue, pollen yellow, nucleus violet, jaguar gold and deep black",
-    subjects: "majestic Mexican jaguar with rosette spot patterns stepping through jungle, zebra beside with bold black-and-white stripes, overlapping waves of reaction-diffusion patterns emerging across both animal skins, spiral and dotted halftone patterns rippling in the background, Turing morphogenesis patterns forming organically on the fur, tropical Mexican foliage, harmony between pure mathematics and living biology",
+    palette: "jaguar gold, rosette black, zebra white, ink black, jungle green, blueprint blue",
+    subjects: "extreme close-up of the flank of a Mexican jaguar filling the LEFT half of the canvas with its black rosette ring-spots large and detailed, and the flank of a zebra filling the RIGHT half with sharp parallel vertical black-and-white stripes — the two skin textures meeting at the vertical center line as a transition zone where spots gradually morph into stripes, faint mathematical reaction-diffusion equations and curved arrows sketched like chalkboard notes in the background, a small silhouette of Alan Turing pondering at the bottom corner, the SKIN PATTERN ITSELF is the protagonist, no jungle scenery",
   },
   {
     slug: "la-endosimbiosis-puerta-a-la-complejidad-de-la-vida-eucariota",
     title: "La Endosimbiosis: Puerta a la Complejidad de la Vida Eucariota",
-    palette: "cellular green, water blue, pollen yellow, nucleus violet, bacterial red, bone white",
-    subjects: "giant cross-section of a eukaryotic cell filling the entire scene with a huge purple nucleus in the center, elongated magenta mitochondria shaped like ancient bacteria pulsing inside the cytoplasm, emerald-green chloroplasts floating nearby with visible thylakoid stacks, tiny bacterial ancestors merging into larger primitive cells in the background, curved membrane outlines everywhere, depictions of Lynn Margulis's endosymbiosis theory happening across one unified illustration, organic flowing composition edge to edge, absolutely no color swatches or side palette bars",
+    palette: "cellular emerald green, mitochondria magenta, nucleus deep violet, cytoplasm cyan, bacterial red, membrane gold",
+    subjects: "huge anatomical cross-section of a single living plant-like eukaryotic cell filling 90% of the canvas, curved cell membrane outlined in thick black at the edges, large round violet nucleus dominant in the center with visible chromatin strands inside, several elongated magenta-red mitochondria scattered across the cytoplasm — each one shown with its own inner double membrane and tiny ribosomes hinting at ancient microbial ancestry, emerald-green chloroplasts with neatly stacked thylakoid discs nearby, small vacuoles and golgi structures in supporting positions, in the corners small thumbnail vignettes showing the gradual integration of ancestral microbes into early eukaryotic cells over evolutionary time as smooth diagrams, the image must unmistakably read as A LIVING CELL DIAGRAM not an abstract sun, calm scientific illustration not violent",
   },
   {
     slug: "la-danza-de-la-vida-coevolucion-entre-la-yuca-y-la-polilla-yucca",
     title: "La Danza de la Vida: Coevolución entre la Yuca y la Polilla Yucca",
-    palette: "pollen yellow, flower pink, stem green, bee gold, deep night blue, desert cream",
-    subjects: "giant blooming yucca plant with tall stalk of cream-white bell-shaped flowers at the center of the composition, a small Tegeticula moth hovering inside one open flower collecting pollen on her proboscis, another moth laying eggs inside a developing seed pod, sharp spiky leaves radiating outward, moonlit Mexican desert landscape with saguaros and organ pipe cacti, night sky with stars above, the entire scene is one continuous painting with no empty areas",
+    palette: "yucca cream white, desert ochre, moth silver, dusk indigo, stem green, pollen gold",
+    subjects: "extreme close-up of ONE open bell-shaped Yucca cream-white flower filling the left half of the canvas, petals spread like a chalice, a small white Tegeticula moth inside the flower's center clearly visible with detailed silver wings and proboscis actively pressing a ball of pollen onto the stigma — the mutualistic gesture is the focal point, below it a second moth depositing tiny eggs inside a swelling green seed pod, the tall yucca flowering stalk rising into a dusk Mexican desert sky with first stars, small saguaros silhouetted, intimacy of moth-flower exchange centered",
   },
   {
     slug: "el-ajolote-de-xochimilco-un-tesoro-biologico-y-medicina-regenerativa",
     title: "El Ajolote de Xochimilco: Un Tesoro Biológico y Medicina Regenerativa",
-    palette: "water turquoise, salamander pink, chinampa green, axolotl cream, deep lake blue, pollen yellow",
-    subjects: "majestic pink axolotl (Ambystoma mexicanum) smiling in the foreground with external feathery pink gills spread wide, swimming underwater through the canals of Xochimilco, one of its legs actively regenerating with tiny new cells emerging visibly, water lilies and lirios floating above, chinampa agricultural islands with corn and vegetables at the top edge, a trajinera boat silhouetted above the water line, small fish and dragonflies, continuous flowing scene from dark lake depths to bright surface",
+    palette: "axolotl pink, gill coral, water turquoise, chinampa green, blastema cream, blood red",
+    subjects: "huge smiling pink axolotl (Ambystoma mexicanum) head filling 60% of the foreground, iconic external feathery coral-pink gills spread like a crown, mouth in the gentle characteristic smile, ONE front leg in the lower foreground actively regenerating — a stump with a visible translucent blastema bud and tiny new fingers half-grown emerging, a small inset diagram showing four silhouettes of limb regrowth stages, dark Xochimilco canal water and a faint trajinera silhouette behind, no other competing animals",
   },
   {
     slug: "el-intrincado-mundo-de-la-wood-wide-web-comunicaciones-subterraneas-de-los-bosques",
@@ -284,6 +284,24 @@ const images = [
     title: "Por qué tu hemisferio derecho no es el artista que te contaron",
     palette: "brain pink, neuron electric yellow, synapse cobalt blue, deep purple, blood red, cream white",
     subjects: "giant anatomical cross-section of a human brain at the center filling the canvas, both hemispheres rendered symmetrically with the thick corpus callosum bridge of nerve fibers crossing the midline, vivid neurons firing in yellow lightning bolts that travel freely between both sides simultaneously, dense network of dendrites and axons weaving across the entire cortex from edge to edge, halftone Ben-Day dot patterns rippling over the brain surface, a pair of hands at the bottom each holding both a paintbrush and a geometric ruler together symbolizing that both hemispheres do both creative and logical tasks, no labels, no diagrams, no anatomical text, no Mexican cultural elements",
+  },
+  {
+    slug: "la-magia-de-la-nixtamalizacion-un-legado-mesoamericano-de-3500-anos",
+    title: "La magia de la nixtamalización: un legado mesoamericano de 3500 años",
+    palette: "corn kernel gold, lime cal white, comal black, ash grey, ember orange, masa cream",
+    subjects: "wide clay olla of dried corn kernels submerged in milky lime-water (cal nixtamal) bubbling over a wood fire — the kernels swelling and turning yellow, a campesina in rebozo stirring slowly with a wooden spoon, in the foreground a stone metate with already-ground white masa being kneaded by hand, fresh corn tortillas warming on a clay comal at the right, a small chemistry diagram in the corner showing the niacin (vitamin B3) molecule being liberated by the alkali reaction, ABSOLUTELY no pyramids no temples, the CHEMICAL transformation is the focus",
+  },
+  {
+    slug: "manejo-del-fuego-en-el-campo-fogones-de-lena-y-cocina-tradicional",
+    title: "Manejo del Fuego en el Campo: Fogones de Leña y Cocina Tradicional",
+    palette: "ember orange, flame red, soot black, smoke grey, terracotta, corn yellow, ash white",
+    subjects: "traditional Mexican wood-fire stove (fogón de leña) at the center with a roaring fire of dry split logs burning under a wide round clay comal, an older woman in rebozo crouching to feed thick mesquite logs into the flames, on the comal corn tortillas puffing up and turning brown, a clay pot of frijoles simmering at the side, around the floor split firewood stacks, a leather bellows, charcoal pieces, a metate; volcanic stones forming the U-shape of the fogón, smoke spiraling up in halftone curls into the rafters of an adobe kitchen, strings of dried chiles hanging overhead",
+  },
+  {
+    slug: "ecologia-profunda-y-ecopsicologia",
+    title: "Ecología Profunda y Ecopsicología: Sanar la Tierra desde Adentro",
+    palette: "forest deep green, oak brown, sky cyan, healing gold, river silver, blossom pink, root umber",
+    subjects: "a barefoot Mexican person sitting cross-legged in quiet meditation at the base of an enormous old encino (Mexican oak) tree in a misty highland forest, the tree's wide root system extending downward and continuing as a transparent overlay into the meditator's body — roots and human nervous system mirroring each other in shape, the broad canopy above sheltering diverse butterflies, hummingbirds and dragonflies, a small clear stream flowing through the foreground reflecting both tree and person as one image, distant pine-clad mountains and soft clouds, a gentle halftone aura radiating outward from the meditator dissolving the boundary between self and forest (the ecological self of Arne Naess), no urban or modern elements",
   },
 ];
 
