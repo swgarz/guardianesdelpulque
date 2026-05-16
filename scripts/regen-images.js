@@ -429,6 +429,72 @@ const images = [
     palette: "huitlacoche dark purple, oyster mushroom cream, amanita scarlet, soil brown, mycelium white, forest moss green, chanterelle gold",
     subjects: "a Mexican micocultivator in apron and hairnet harvesting a large cluster of fresh oyster mushrooms (setas) blooming from a vertical column of substrate hanging in a humid growing room, on the side a clay olla cooking dark-purple huitlacoche (corn-smut fungus) on the cob, a wicker basket of foraged wild mushrooms — chanterelles, boletes, and red-and-white amanitas, a microscope on a table showing branching mycelium threads in halftone, in the background a humid forest of encinos with mushrooms emerging from the leaf-litter floor, no text labels",
   },
+  {
+    slug: "bioconstruccion-tecnicas-sostenibles-con-tierra",
+    title: "Bioconstrucción: Técnicas Sostenibles con Tierra",
+    palette: "adobe red-ochre, cob earth brown, lime cal white, hay straw gold, sky cyan, water blue, stone grey",
+    subjects: "an outdoor Mexican earth-construction site at midday — a campesino kneading wet cob (mud and straw) in a wide shallow pit with his bare feet, beside him an apprentice pressing fresh adobe bricks from a wooden mould and laying them out to sun-dry in a neat grid pattern, a half-finished adobe wall rising in the background with window openings roughed-in, bunches of dry golden straw and a wheelbarrow of moist red earth nearby, the gentle slope of a hill behind, distant pine-clad mountains, one continuous scene from edge to edge",
+  },
+  {
+    slug: "el-renacer-de-la-tierra-polinizadores-y-humedales-en-la-restauracion-ecologica",
+    title: "El Renacer de la Tierra: Polinizadores y Humedales",
+    palette: "monarca orange, lily yellow, pond blue, reed green, sky cyan, leaf jade, lily pink",
+    subjects: "a peaceful small wetland in a Mexican meadow at sunrise — a calm pond with floating pink water lilies and broad lily pads, tall green reeds growing along the edges, a colorful butterfly resting on a yellow daisy on the bank, a tiny hummingbird hovering at a red flower, a dragonfly skimming over the water, native flowers blooming everywhere, fresh green plants growing densely across the banks, gentle morning light, mountains far in the background, one continuous beautiful nature illustration from edge to edge",
+  },
+  {
+    slug: "el-pulque-tradicion-y-sabor-del-maguey",
+    title: "El Pulque: Tradición y Sabor del Maguey",
+    palette: "maguey jade green, aguamiel honey gold, pulque cream white, terracotta clay red, sky cyan, agave silver-blue, sunset orange",
+    subjects: "a huge mature maguey pulquero (Agave salmiana) at the foreground center with thick blue-green pencas reaching outward, a tlachiquero in white shirt and straw hat kneeling at its base extracting aguamiel from the hollowed-out heart of the plant with a long curved acocote gourd, a clay olla of milky-white fresh pulque beside him with foam at the top, another campesina in rebozo pouring pulque into a tall jícara cup, the agave plateau of Hidalgo stretching to the horizon with rows of more magueyes, no urban elements",
+  },
+  {
+    slug: "delapencaaljarro",
+    title: "De la penca al jarro: el proceso vivo",
+    palette: "maguey blue-green, aguamiel gold, pulque cream, clay terracotta, cinta red, jícara brown, sky cyan",
+    subjects: "a continuous step-by-step pulque-making scene from left to right (NOT panels) — at the left a tlachiquero hollowing the heart of a mature maguey with his small knife revealing the cavity that collects sweet aguamiel, in the center the same tlachiquero sucking aguamiel up through a long acocote gourd and emptying it into a wide clay olla, at the right a campesina in rebozo pouring milky pulque from a smaller olla into a tall painted jícara cup at a small wooden table, foreground maguey leaves and a curl of pulque foam; ONE continuous landscape with NO internal frames, NO panels, NO division lines, NO grid",
+  },
+  {
+    slug: "guiadeadobe",
+    title: "Guía práctica de adobe",
+    palette: "adobe red-ochre, cob earth brown, hay straw gold, lime cal white, sky cyan, stone grey, mountain blue",
+    subjects: "a Mexican rural adobe-making workshop in full sun — at the center two campesinos working together pressing wet earth-and-straw mix into a long wooden mould (adobera) with four bricks per pour, hands smoothing the tops with a flat wooden trowel, in the foreground a row of freshly demolded adobe bricks drying on the ground in neat rows, a wheelbarrow of red-brown moist earth and a bundle of golden straw beside them, an apprentice mixing more cob in a shallow pit with his bare feet, a half-built adobe wall at the right rising course by course, distant mountains, ABSOLUTELY NO color palette strips, NO color swatches, NO color sample bars, NO Pantone chips, NO color reference bars at the bottom or sides of the image",
+  },
+  {
+    slug: "microbiotadelpulque",
+    title: "Microbiota del pulque: quién es quién",
+    palette: "pulque cream white, yeast pale yellow, lactobacilli rose pink, zymomonas blue, agave green, sugar gold, microscope cyan, foam highlight",
+    subjects: "a generous cross-section illustration of a clay olla full of foaming milky pulque with a magnifying-glass 'zoom-in' to the right showing the rich microbiome inside the liquid — clusters of cream-pale-yellow oval yeast cells (Saccharomyces and Kloeckera) floating, chains of rose-pink lactic acid bacilli (Lactobacillus), comma-shaped blue Zymomonas mobilis bacteria, and small round bubbles of carbon dioxide rising; each microbe gently haloed in a different color (no readable text), at the left a maguey plant pouring its golden aguamiel into the olla like a stream, the fermentation made visible, NO abstract landscape, NO empty desert"
+  },
+  {
+    slug: "noticias-verdes-restauracion-y-polinizadores",
+    title: "Noticias verdes: restauración y polinizadores",
+    palette: "monarca orange, native bee yellow-black, salvia magenta, leaf green, sky cyan, restored soil ochre, water blue, hummingbird red",
+    subjects: "one continuous Mexican meadow scene at midday filled with active pollinators and a small restored stream running through — a monarch butterfly nectar-feeding on a salvia flower at the center, two native bees crawling on a yellow flor de cempasuchil, a small hummingbird hovering at a red bottle-brush flower above, a campesina at the right gently transplanting native flowers into restored soil with a wooden trowel, a vermicomposting bin nearby and a tiny constructed wetland with totoras and water lilies at the side, ONE continuous edge-to-edge scene, NO grid, NO panels, NO comic strip layout, NO multi-frame composition",
+  },
+  {
+    slug: "humedales-urbanos-manual-de-bolsillo",
+    title: "Humedales urbanos: manual de bolsillo",
+    palette: "city silhouette grey-red, wetland reed green, pond blue, lily pad green, sky cyan, frog jade, water lily pink, paving stone grey",
+    subjects: "a small urban Mexican humedal at the edge of a city park — the cityscape skyline rises in the distance as a low silhouette of mid-rise buildings, but in the foreground a healthy constructed wetland filled with floating lily pads, pink water lilies, tall green totoras and reeds filtering rainwater from the city's storm drains, a small frog perched on a stone, a dragonfly hovering, a child crouching at the edge watching a clear stream of filtered water flow back toward the city, one continuous scene",
+  },
+  {
+    slug: "suelos-vivos",
+    title: "Suelos vivos",
+    palette: "humus dark brown, mycelium white, root cream, worm pink, leaf green, soil black, water droplet blue, fungal cap red",
+    subjects: "a vertical cross-section illustration of a healthy Mexican forest soil profile filling the entire canvas top to bottom as ONE continuous slice — at the top a layer of fallen oak leaves and pine needles being broken down by tiny insects, below that the rich dark humus layer with white mycelium threads weaving everywhere, plant roots extending downward like a network, a fat pink earthworm tunneling diagonally, beetles and springtails and rolled-up cochinillas active in the dark, droplets of water and small bubbles of air between particles, a tiny red mushroom emerging on the surface, the deep mineral soil and bedrock at the bottom; ONE continuous cross-section, NO grid, NO panels, NO multi-frame layout",
+  },
+  {
+    slug: "tierra-compactada-btc-rammed-earth",
+    title: "Tierra compactada (BTC / Rammed Earth)",
+    palette: "rammed earth ochre, compacted brown, rebar grey, wood form red, dust beige, sky cyan, mountain blue, machine blue",
+    subjects: "a Mexican rural construction site at midday with two workers operating a manual ram (pisón) to compact moist earth inside a tall wooden formwork (encofrado) for a rammed-earth wall — the worker on top is bringing down the heavy ram, the other is adding a measured scoop of red-brown moist earth from a bucket, in the foreground a finished section of stratified rammed-earth wall showing horizontal layers in different earth tones, a stack of BTC (bloques de tierra compactada) blocks nearby, a small electric block-press machine at the side, distant adobe houses and pine-clad mountains behind, one continuous scene",
+  },
+  {
+    slug: "cadena-de-valor-del-maguey",
+    title: "Cadena de valor del maguey",
+    palette: "maguey jade, aguamiel honey, pulque cream, mezcal copper amber, ixtle fiber gold, miel agave amber, terracotta clay red, sky cyan",
+    subjects: "one continuous Mexican rural still-life scene showing all the products from a single maguey plant — at the center a huge agave with thick pencas, around it arranged in a half-circle: a clay olla of milky pulque, a glass bottle of clear mezcal, a small bowl of golden miel de agave syrup, bundles of cream-white ixtle fiber rope, a small dish of escamoles ant larvae, a roasted maguey heart cut open showing its fibrous interior, a piece of mixiote leaf wrapping; a campesino tlachiquero at one side overseeing it all with his acocote gourd in hand, no urban elements, NO labels, NO text",
+  },
 ];
 
 async function generateImage(img) {
