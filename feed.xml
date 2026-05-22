@@ -5,13 +5,33 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 15 May 2026 18:11:04 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 16:19:08 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cuando el lince acecha: Cómo los felinos mexicanos moldean el bosque en silencio</title>
+      <link>https://guardianesdelpulque.org/articulos/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio.html</guid>
+      <description>Un venado puede cambiar un bosque. Un puma y un lince lo saben. ¿Cómo cuidan estos felinos la salud de los árboles sin que nadie los vea?</description>
+      <category>Mamiferos</category>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Lo que ocurre en tu cerebro a los 28 minutos de tomar café en la sierra de Zongolica</title>
+      <link>https://guardianesdelpulque.org/articulos/lo-que-ocurre-en-tu-cerebro-a-los-28-minutos-de-tomar-cafe-en-la-sierra-de-zongolica/lo-que-ocurre-en-tu-cerebro-a-los-28-minutos-de-tomar-cafe-en-la-sierra-de-zongolica.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/lo-que-ocurre-en-tu-cerebro-a-los-28-minutos-de-tomar-cafe-en-la-sierra-de-zongolica/lo-que-ocurre-en-tu-cerebro-a-los-28-minutos-de-tomar-cafe-en-la-sierra-de-zongolica.html</guid>
+      <description>Hay un instante exacto en que la cafeína cambia tu atención. ¿Puedes sentirlo? Un campesino veracruzano sí.</description>
+      <category>Cerebro</category>
+      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/lo-que-ocurre-en-tu-cerebro-a-los-28-minutos-de-tomar-cafe-en-la-sierra-de-zongolica/lo-que-ocurre-en-tu-cerebro-a-los-28-minutos-de-tomar-cafe-en-la-sierra-de-zongolica.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El susurro invisible del quelite: cómo las plantas envían alarmas por olor en México</title>
