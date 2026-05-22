@@ -839,6 +839,19 @@ function fechaMx(date) {
   return `${date.getDate()} de ${meses[date.getMonth()]} de ${date.getFullYear()}`;
 }
 
+// Inversa: "21 de mayo de 2026" → "2026-05-21". Usado en modo regen para conservar
+// la fecha original del artículo en el HTML.
+function parseFechaMxToIso(str) {
+  if (!str) return null;
+  const meses = { enero:"01", febrero:"02", marzo:"03", abril:"04", mayo:"05", junio:"06",
+    julio:"07", agosto:"08", septiembre:"09", octubre:"10", noviembre:"11", diciembre:"12" };
+  const m = str.match(/(\d{1,2})\s+de\s+(\w+)\s+de\s+(\d{4})/i);
+  if (!m) return null;
+  const mes = meses[m[2].toLowerCase()];
+  if (!mes) return null;
+  return `${m[3]}-${mes}-${m[1].padStart(2,"0")}`;
+}
+
 function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -1316,15 +1329,35 @@ async function generateArticle() {
   const postsPath = path.join(__dirname, "..", "posts.json");
   const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
 
-  // Leer --tag y --topic opcionales desde CLI
+  // Leer --tag, --topic y --regen opcionales desde CLI
   const tagArg = process.argv.find((a) => a.startsWith("--tag="))?.split("=")[1]
     || process.argv[process.argv.indexOf("--tag") + 1];
   const topicArg = process.argv.find((a) => a.startsWith("--topic="))?.split("=")[1]
     || (process.argv.includes("--topic") ? process.argv[process.argv.indexOf("--topic") + 1] : null);
+  const regenArg = process.argv.find((a) => a.startsWith("--regen="))?.split("=")[1]
+    || (process.argv.includes("--regen") ? process.argv[process.argv.indexOf("--regen") + 1] : null);
 
-  // Si se especificó --topic, usarlo directamente
+  // Modo regeneración: reusar topic/tag/slug/cover existente, regenerar solo HTML
+  let regenEntry = null;
+  let regenIdx = -1;
+  if (regenArg) {
+    regenIdx = posts.findIndex((p) => p.url && p.url.includes(`/${regenArg}/`));
+    if (regenIdx === -1) throw new Error(`No se encontró el slug "${regenArg}" en posts.json`);
+    regenEntry = posts[regenIdx];
+    console.log(`Modo REGEN: ${regenArg}`);
+    // Los artículos antiguos no tienen `topic` guardado — usar title como fallback.
+    if (!regenEntry.topic && regenEntry.title) {
+      console.log(`Topic ausente; usando title como tema: "${regenEntry.title}"`);
+    } else {
+      console.log(`Topic original: ${regenEntry.topic}`);
+    }
+  }
+
+  // Si se especificó --topic o estamos en modo regen, usarlo directamente
   let topic;
-  if (topicArg) {
+  if (regenEntry) {
+    topic = regenEntry.topic || regenEntry.title;
+  } else if (topicArg) {
     topic = topicArg;
   } else {
     // Evitar temas ya usados (por topic exacto O por keywords de títulos existentes)
@@ -1478,109 +1511,113 @@ async function generateArticle() {
       <div class="highlight">💡 ${diyData.tip}</div>`;
   }
 
-  // 3. Validar tag (si se pasó --tag, forzarlo)
-  const tag = tagArg && VALID_TAGS.includes(tagArg) ? tagArg : validateTag(article.tag);
+  // 3. Validar tag (si se pasó --tag, forzarlo; en modo regen, conservar el tag original)
+  const tag = regenEntry
+    ? regenEntry.tag
+    : (tagArg && VALID_TAGS.includes(tagArg) ? tagArg : validateTag(article.tag));
   const emoji = TAG_EMOJI[tag] || "📝";
 
-  // 3. Generar slug unico
-  const baseSlug = slugify(article.title);
-  const slug = uniqueSlug(baseSlug);
+  // 3. Generar slug unico (en modo regen, conservar el slug original)
+  const slug = regenEntry
+    ? regenEntry.url.split("/")[1]
+    : uniqueSlug(slugify(article.title));
 
   // 4. Generar imagen con DALL-E (muralismo mexicano + sub-estilo único)
-  console.log("Generando imagen DALL-E...");
-
-  // Leer estilos ya usados para evitar repetir
-  const usedStyles = new Set(posts.map((p) => p.imageStyle).filter(Boolean));
-  const availableStyles = IMAGE_SUBSTYLES.filter((s) => !usedStyles.has(s.name));
-  const chosenStyle = pick(availableStyles.length > 0 ? availableStyles : IMAGE_SUBSTYLES);
+  // En modo regen: usar el imageStyle existente como chosenStyle y saltar la generación.
   const palette = TAG_PALETTES[tag] || DEFAULT_PALETTE;
-
-  console.log(`Estilo imagen: ${chosenStyle.name}`);
-
-  const TAG_NOTES = {
-    Pulque:    " Pulque is a traditional Mexican fermented drink, milky white and opaque — depict it white and cloudy. The maguey pulquero is Agave salmiana: a massive plant with long, wide, fleshy, blue-grey-green leaves with spines along the edges.",
-    Naturaleza:" The maguey pulquero (Agave salmiana) has long, wide, fleshy, blue-grey-green leaves — use it if maguey appears.",
-    Territorio:" The maguey pulquero (Agave salmiana) has long, wide, fleshy, blue-grey-green leaves — use it if maguey appears.",
-  };
-  const pulqueNote = TAG_NOTES[tag] || "";
-
-  // ── Estilo de imagen: pop-art por defecto para todos los artículos ────────
-  const useFresco = false;
-  console.log(`Estilo imagen: pop-art`);
-
-  // Sujetos visuales: vienen de GPT (article.imageSubjects). Si por alguna razón
-  // no llegaron, usamos el título como último recurso — pero sin imponer
-  // "escena mexicana rural", porque contaminaba temas abstractos con clichés
-  // (catrinas, sombreros) cuando el contenido era neurociencia, química, etc.
-  const subjects = (article.imageSubjects || article.title || "").toString().trim();
-
-  // ESTILO FRESCO MONUMENTAL (temas serios: territorio, cultura, saberes...):
-  const frescoBasePrompt =
-    `Monumental fresco in the style of Mexican muralism, continuous composition without panels or divisions. ` +
-    `Subject: "${article.title}". Depicted elements: ${subjects}.${pulqueNote} ` +
-    `Color palette: ${palette}. ` +
-    `Broad brushstrokes, monumental volumes, natural mineral pigments visible in texture, dramatic light, ` +
-    `depth and movement in the composition, figures with weight and dignity. ` +
-    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no panels, no grids, no borders. ` +
-    `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind.`;
-  const frescoFallbackPrompt =
-    `Monumental fresco painting style, wide continuous scene. ` +
-    `Depicted elements: ${subjects}. ` +
-    `Color palette: ${palette}. ` +
-    `Broad brushstrokes, monumental volumes, dramatic light, no panels, no divisions. ` +
-    `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins. ` +
-    `NO text, NO letters, NO words, NO typography, NO writing of any kind.`;
-
-  // ESTILO POP ART (temas ligeros: recetas, música, insectos, arte, cocina...):
-  const popArtBasePrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${article.title}". Depicted elements: ${subjects}.${pulqueNote} ` +
-    `Use these color families in the illustration: ${palette}. ` +
-    `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. ` +
-    `The ENTIRE 1536x1024 canvas must be a SINGLE continuous illustrated scene from edge to edge. The scene itself fills 100% of the canvas. No portion of the canvas may be blank, empty, or occupied by abstract color fields. ` +
-    `ABSOLUTELY FORBIDDEN elements (these must NOT appear anywhere in the image): color palette strips, color swatches, color sample bars, vertical color columns, horizontal color bands, reference color charts, side panels showing colors, isolated rectangles of solid color, color chips, Pantone-style blocks, any design-reference element showing the palette. ` +
-    `Also forbidden: divisions, panels, grids, borders, frames, vignettes, margins, white space, empty bands, comic panel separators, before/after splits, diptychs, triptychs. ` +
-    `Forbidden content: photography, 3D render, text, letters, words, labels, typography, writing, signatures, watermarks, urban buildings, cityscape skyline.`;
-  const popArtFallbackPrompt =
-    `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide continuous scene filling the entire canvas. ` +
-    `Depicted elements: ${subjects}. ` +
-    `Use these color families within the illustration: ${palette}. ` +
-    `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, high contrast, screen-print look. ` +
-    `SINGLE continuous illustrated scene from edge to edge filling 100% of the canvas. ` +
-    `ABSOLUTELY FORBIDDEN: color palette strips, color swatches, color bars, vertical color columns, side panels with color samples, reference color charts, isolated color blocks, divisions, grids, panels, borders, frames, margins, text, letters, typography.`;
-
-  const basePrompt    = useFresco ? frescoBasePrompt    : popArtBasePrompt;
-  const fallbackPrompt = useFresco ? frescoFallbackPrompt : popArtFallbackPrompt;
-
-  let imageBuffer;
-  for (const prompt of [basePrompt, fallbackPrompt]) {
-    try {
-      const imageResponse = await openai.images.generate({
-        model: "gpt-image-1",
-        prompt,
-        n: 1,
-        size: "1536x1024",
-      });
-      imageBuffer = Buffer.from(imageResponse.data[0].b64_json, "base64");
-      break;
-    } catch (e) {
-      console.log("Prompt rechazado, intentando alternativo...");
-    }
+  let chosenStyle;
+  if (regenEntry) {
+    chosenStyle = IMAGE_SUBSTYLES.find((s) => s.name === regenEntry.imageStyle) || IMAGE_SUBSTYLES[0];
+    console.log(`Saltando imagen (modo regen). Estilo conservado: ${chosenStyle.name}`);
+  } else {
+    console.log("Generando imagen DALL-E...");
+    const usedStyles = new Set(posts.map((p) => p.imageStyle).filter(Boolean));
+    const availableStyles = IMAGE_SUBSTYLES.filter((s) => !usedStyles.has(s.name));
+    chosenStyle = pick(availableStyles.length > 0 ? availableStyles : IMAGE_SUBSTYLES);
+    console.log(`Estilo imagen: ${chosenStyle.name}`);
   }
-  if (!imageBuffer) throw new Error("No se pudo generar imagen");
 
-  // Recortar márgenes blancos, recortar franjas planas (paletas/marcos) y redimensionar a 912px
-  let _trimmed = await sharp(imageBuffer).trim({ threshold: 80 }).toBuffer();
-  _trimmed = await cropFlatBorders(_trimmed);
-  imageBuffer = await sharp(_trimmed).resize(IMAGE_WIDTH).toBuffer();
-
-  // 5. Guardar imagen
   const artDir = path.join(__dirname, "..", "articulos", slug);
   fs.mkdirSync(artDir, { recursive: true });
-  fs.writeFileSync(path.join(artDir, `${slug}.png`), imageBuffer);
 
-  // 6. Generar y guardar HTML
+  if (!regenEntry) {
+    const TAG_NOTES = {
+      Pulque:    " Pulque is a traditional Mexican fermented drink, milky white and opaque — depict it white and cloudy. The maguey pulquero is Agave salmiana: a massive plant with long, wide, fleshy, blue-grey-green leaves with spines along the edges.",
+      Naturaleza:" The maguey pulquero (Agave salmiana) has long, wide, fleshy, blue-grey-green leaves — use it if maguey appears.",
+      Territorio:" The maguey pulquero (Agave salmiana) has long, wide, fleshy, blue-grey-green leaves — use it if maguey appears.",
+    };
+    const pulqueNote = TAG_NOTES[tag] || "";
+
+    const useFresco = false;
+    console.log(`Estilo imagen: pop-art`);
+
+    const subjects = (article.imageSubjects || article.title || "").toString().trim();
+
+    const frescoBasePrompt =
+      `Monumental fresco in the style of Mexican muralism, continuous composition without panels or divisions. ` +
+      `Subject: "${article.title}". Depicted elements: ${subjects}.${pulqueNote} ` +
+      `Color palette: ${palette}. ` +
+      `Broad brushstrokes, monumental volumes, natural mineral pigments visible in texture, dramatic light, ` +
+      `depth and movement in the composition, figures with weight and dignity. ` +
+      `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins, no panels, no grids, no borders. ` +
+      `NO photography, NO 3D render, NO text, NO letters, NO words, NO labels, NO typography, NO writing of any kind.`;
+    const frescoFallbackPrompt =
+      `Monumental fresco painting style, wide continuous scene. ` +
+      `Depicted elements: ${subjects}. ` +
+      `Color palette: ${palette}. ` +
+      `Broad brushstrokes, monumental volumes, dramatic light, no panels, no divisions. ` +
+      `SINGLE continuous illustration filling the entire frame edge to edge, no empty spaces, no white margins. ` +
+      `NO text, NO letters, NO words, NO typography, NO writing of any kind.`;
+
+    const popArtBasePrompt =
+      `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Subject: "${article.title}". Depicted elements: ${subjects}.${pulqueNote} ` +
+      `Use these color families in the illustration: ${palette}. ` +
+      `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, comic-book aesthetic, high contrast, screen-print look, vibrant and expressive composition. ` +
+      `The ENTIRE 1536x1024 canvas must be a SINGLE continuous illustrated scene from edge to edge. The scene itself fills 100% of the canvas. No portion of the canvas may be blank, empty, or occupied by abstract color fields. ` +
+      `ABSOLUTELY FORBIDDEN elements (these must NOT appear anywhere in the image): color palette strips, color swatches, color sample bars, vertical color columns, horizontal color bands, reference color charts, side panels showing colors, isolated rectangles of solid color, color chips, Pantone-style blocks, any design-reference element showing the palette. ` +
+      `Also forbidden: divisions, panels, grids, borders, frames, vignettes, margins, white space, empty bands, comic panel separators, before/after splits, diptychs, triptychs. ` +
+      `Forbidden content: photography, 3D render, text, letters, words, labels, typography, writing, signatures, watermarks, urban buildings, cityscape skyline.`;
+    const popArtFallbackPrompt =
+      `Pop art illustration in the style of Roy Lichtenstein and Andy Warhol. Wide continuous scene filling the entire canvas. ` +
+      `Depicted elements: ${subjects}. ` +
+      `Use these color families within the illustration: ${palette}. ` +
+      `Heavy Ben-Day dots, solid black outlines, flat vivid colors, halftone patterns, high contrast, screen-print look. ` +
+      `SINGLE continuous illustrated scene from edge to edge filling 100% of the canvas. ` +
+      `ABSOLUTELY FORBIDDEN: color palette strips, color swatches, color bars, vertical color columns, side panels with color samples, reference color charts, isolated color blocks, divisions, grids, panels, borders, frames, margins, text, letters, typography.`;
+
+    const basePrompt    = useFresco ? frescoBasePrompt    : popArtBasePrompt;
+    const fallbackPrompt = useFresco ? frescoFallbackPrompt : popArtFallbackPrompt;
+
+    let imageBuffer;
+    for (const prompt of [basePrompt, fallbackPrompt]) {
+      try {
+        const imageResponse = await openai.images.generate({
+          model: "gpt-image-1",
+          prompt,
+          n: 1,
+          size: "1536x1024",
+        });
+        imageBuffer = Buffer.from(imageResponse.data[0].b64_json, "base64");
+        break;
+      } catch (e) {
+        console.log("Prompt rechazado, intentando alternativo...");
+      }
+    }
+    if (!imageBuffer) throw new Error("No se pudo generar imagen");
+
+    let _trimmed = await sharp(imageBuffer).trim({ threshold: 80 }).toBuffer();
+    _trimmed = await cropFlatBorders(_trimmed);
+    imageBuffer = await sharp(_trimmed).resize(IMAGE_WIDTH).toBuffer();
+
+    fs.writeFileSync(path.join(artDir, `${slug}.png`), imageBuffer);
+  }
+
+  // 6. Generar y guardar HTML (en modo regen, conservar la fecha original)
   const now = new Date();
-  const dateStr = fechaMx(now);
+  const dateStr = regenEntry ? regenEntry.date : fechaMx(now);
+  const isoDate = regenEntry
+    ? parseFechaMxToIso(regenEntry.date) || now.toISOString().split("T")[0]
+    : now.toISOString().split("T")[0];
   const html = buildHTML({
     title: article.title,
     excerpt: article.excerpt,
@@ -1590,21 +1627,32 @@ async function generateArticle() {
     emoji,
     slug,
     dateStr,
-    isoDate: now.toISOString().split("T")[0],
+    isoDate,
   });
   fs.writeFileSync(path.join(artDir, `${slug}.html`), html);
 
   // 7. Actualizar posts.json
-  posts.unshift({
-    tag,
-    title: article.title,
-    excerpt: article.excerpt,
-    date: dateStr,
-    url: `articulos/${slug}/${slug}.html`,
-    cover: `articulos/${slug}/${slug}.png`,
-    imageStyle: chosenStyle.name,
-    topic,
-  });
+  if (regenEntry) {
+    // Modo regen: actualizar la entrada en su lugar (mantener date/url/cover/imageStyle/topic, refrescar title/excerpt)
+    posts[regenIdx] = {
+      ...regenEntry,
+      tag,
+      title: article.title,
+      excerpt: article.excerpt,
+      topic: regenEntry.topic || topic,
+    };
+  } else {
+    posts.unshift({
+      tag,
+      title: article.title,
+      excerpt: article.excerpt,
+      date: dateStr,
+      url: `articulos/${slug}/${slug}.html`,
+      cover: `articulos/${slug}/${slug}.png`,
+      imageStyle: chosenStyle.name,
+      topic,
+    });
+  }
   fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + "\n");
 
   console.log(`\nCreado: articulos/${slug}/${slug}.html`);
