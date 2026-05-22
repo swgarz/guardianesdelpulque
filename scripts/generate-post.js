@@ -1596,8 +1596,17 @@ async function generateArticle() {
     const basePrompt    = useFresco ? frescoBasePrompt    : popArtBasePrompt;
     const fallbackPrompt = useFresco ? frescoFallbackPrompt : popArtFallbackPrompt;
 
+    // Ultimo recurso: prompt sin tema, solo estilo + paleta. DALL-E rara vez rechaza esto.
+    const ultraGenericPrompt =
+      `Abstract pop art illustration in the style of Roy Lichtenstein and Andy Warhol. ` +
+      `Wide continuous scene filling the entire 1536x1024 canvas. ` +
+      `Bright vivid colors, Ben-Day dots, halftone patterns, solid black outlines, screen-print look. ` +
+      `Use these color families: ${palette}. ` +
+      `Composition of organic shapes, plants, and natural forms. ` +
+      `NO text, NO letters, NO words, NO panels, NO grids, NO borders.`;
+
     let imageBuffer;
-    for (const prompt of [basePrompt, fallbackPrompt]) {
+    for (const prompt of [basePrompt, fallbackPrompt, ultraGenericPrompt]) {
       try {
         const imageResponse = await openai.images.generate({
           model: "gpt-image-1",
@@ -1611,13 +1620,27 @@ async function generateArticle() {
         console.log("Prompt rechazado, intentando alternativo...");
       }
     }
-    if (!imageBuffer) throw new Error("No se pudo generar imagen");
 
-    let _trimmed = await sharp(imageBuffer).trim({ threshold: 80 }).toBuffer();
-    _trimmed = await cropFlatBorders(_trimmed);
-    imageBuffer = await sharp(_trimmed).resize(IMAGE_WIDTH).toBuffer();
-
-    fs.writeFileSync(path.join(artDir, `${slug}.png`), imageBuffer);
+    if (imageBuffer) {
+      let _trimmed = await sharp(imageBuffer).trim({ threshold: 80 }).toBuffer();
+      _trimmed = await cropFlatBorders(_trimmed);
+      imageBuffer = await sharp(_trimmed).resize(IMAGE_WIDTH).toBuffer();
+      fs.writeFileSync(path.join(artDir, `${slug}.png`), imageBuffer);
+    } else {
+      // Si los 3 prompts fueron rechazados, escribir un placeholder con la paleta del tag.
+      // El articulo NO se pierde — se puede regenerar la imagen luego con regen-images.js.
+      console.log("ADVERTENCIA: DALL-E rechazo los 3 prompts. Escribiendo placeholder; regenerar imagen despues con `node scripts/regen-images.js " + slug + "`.");
+      // Color del tag o verde por defecto, formato hex sin '#'
+      const tagColor = (TAG_PALETTES[tag] || DEFAULT_PALETTE).match(/#?([0-9a-fA-F]{6})/);
+      const hex = tagColor ? tagColor[1] : "065f46";
+      const r = parseInt(hex.slice(0,2), 16);
+      const g = parseInt(hex.slice(2,4), 16);
+      const b = parseInt(hex.slice(4,6), 16);
+      const placeholder = await sharp({
+        create: { width: IMAGE_WIDTH, height: Math.round(IMAGE_WIDTH * 2 / 3), channels: 3, background: { r, g, b } }
+      }).png().toBuffer();
+      fs.writeFileSync(path.join(artDir, `${slug}.png`), placeholder);
+    }
   }
 
   // 6. Generar y guardar HTML (en modo regen, conservar la fecha original)
