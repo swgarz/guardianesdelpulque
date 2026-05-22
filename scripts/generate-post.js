@@ -720,11 +720,26 @@ REGLAS DE ESCRITURA (no negociables, son la diferencia entre lectura adictiva y 
 1. APERTURA: escena, no tesis.
    Abre SIEMPRE con una escena concreta: un lugar con referencia geográfica real (estado, pueblo, altitud, coordenada), un gesto físico, un sonido u olor. La persona de la escena debe ser un composite anónimo arquetípico ("don X, campesino de…", "doña Y, partera de…") — NUNCA una figura histórica/académica nombrada (ver regla 10). JAMÁS abras con "X es un proceso que", "X se erige como", "X representa una alternativa", "X juega un papel fundamental". El primer párrafo debe leerse como la primera escena de una crónica: lector puede visualizar algo.
 
-2. ESPECIFICIDAD OBLIGATORIA por sección (h2).
+2. ESPECIFICIDAD ANCLADA por sección (h2).
    Cada sección incluye, no negociable:
-   - 1+ nombre propio real: persona, comunidad, lugar con estado o coordenada, instituto, universidad.
-   - 1+ dato numérico concreto: año exacto, porcentaje, distancia, temperatura, profundidad, peso, cantidad.
+   - 1+ ANCLA GEOGRÁFICA/BIOLÓGICA REAL Y VERIFICABLE: estado mexicano, comunidad/pueblo, ecosistema (sierra, río, lago, manglar, bosque mesófilo), altitud típica de la zona, o especie con nombre científico binomial bien establecido. Es conocimiento estable y comprobable.
    - 1+ detalle sensorial: olor, textura, sonido, color específico, temperatura corporal, gesto físico.
+   - OPCIONAL (no obligatorio): dato numérico SOLO si lo conoces con certeza pública. Rangos típicos del ecosistema, conocimiento climatológico general, datos taxonómicos verificables, fechas históricas bien documentadas (Nobel, publicaciones famosas, descubrimientos clave).
+
+   PROHIBIDO ABSOLUTAMENTE — esto es exactamente lo que produce desinformación y mata la credibilidad del sitio:
+   - Estudios con la fórmula "(año + investigador con nombre + institución + porcentaje o cifra exacta + ubicación experimental)". Ejemplo PROHIBIDO: "en 2019, el doctor Jorge Molina de la UNAM midió en parcelas de Tlalpan que 36% de las plantas...". El modelo NO conoce ese estudio; lo está inventando con apariencia creíble. NO LO HAGAS.
+   - Costos en pesos mexicanos atribuidos a programas, talleres, parcelas experimentales o productos específicos. PROHIBIDO inventar "el taller cuesta 350 pesos", "los insumos suben 12 pesos por 100 plantas". Solo válido si es un precio de referencia general (ej. "una penca de maguey en tianguis ronda 30 a 80 pesos").
+   - Micro-precisiones meteorológicas locales presentadas como dato puntual ("8 km/h en las tardes de septiembre en Xalapa"), salvo que sea conocimiento climatológico general bien establecido.
+   - Distancias o medidas experimentales muy precisas atribuidas a un montaje concreto ("1.2 metros entre plantas en el experimento", "cámaras de flujo acrílico de 40 cm").
+   - Porcentajes exactos atribuidos a estudios concretos ("36% menos plantas con plaga", "35 nanogramos por gramo de hoja en menos de 20 minutos"). Si el porcentaje no es de conocimiento público y verificable, NO va.
+
+   PERMITIDO y DESEABLE para anclar el texto:
+   - "el ajolote (<em>Ambystoma mexicanum</em>) habita el sistema de canales de Xochimilco a 2,240 msnm"
+   - "el bosque mesófilo de la sierra de Manantlán recibe entre 2,000 y 3,000 mm de lluvia al año"
+   - "Mario Molina recibió el Nobel de Química en 1995 por su trabajo sobre los CFCs y la capa de ozono"
+   - "Turlings y Tumlinson demostraron en 1990 que el maíz atacado por orugas emite una mezcla de volátiles, incluido linalool, que atrae a avispas parasitoides"
+
+   Si una afirmación tiene forma de hecho concreto pero no la conoces con certeza, conviértela en descripción cualitativa o elimínala. PREFIERO omisión a invención. La regla 9 (HONESTIDAD EPISTÉMICA) gana siempre sobre la apariencia de precisión.
 
 3. UN GIRO CONTRAINTUITIVO por artículo.
    Incluye AL MENOS un dato o idea que sorprenda al lector educado — un "espera, ¿en serio?". Va siempre en <aside class="aside-fact"><strong>Dato que rompe el molde:</strong> ...</aside>.
@@ -788,7 +803,7 @@ const TONE_PROFILES = [
   },
   {
     name: "reportaje-ciencia",
-    systemPrompt: NARRATIVE_BASE + "\n\nTONO ESPECÍFICO: reportaje de divulgación científica. Arrancas con escena humana, después explicas mecanismo biológico/químico/físico con precisión. Cita investigadores reales, instituciones (UNAM, Cinvestav, INAH, IPN, Conabio), estudios con año. Cada sección desarrolla UN concepto científico a profundidad.",
+    systemPrompt: NARRATIVE_BASE + "\n\nTONO ESPECÍFICO: reportaje de divulgación científica. Arrancas con escena humana (composite anónimo arquetípico, no figura nombrada), después explicas el mecanismo biológico/químico/físico con precisión. Cita investigadores, instituciones y estudios SOLO cuando conozcas el trabajo con certeza pública (ej. Turlings 1990 en volátiles de maíz, Margulis 1967 en endosimbiosis, Mario Molina 1995 en CFCs, Luis Ernesto Miramontes en la píldora, Diego Rivera en SEP 1922-1928). Si no conoces un estudio con seguridad, NO lo inventes — explica el mecanismo científico bien sin atribuirlo a un montaje experimental específico ni a un investigador con nombre. PREFERIBLE divulgar el concepto con precisión que rellenar con un estudio falso. Las instituciones (UNAM, Cinvestav, INAH, IPN, Conabio) solo se nombran si la investigación que les atribuyes es real y documentada. Cada sección desarrolla UN concepto científico a profundidad.",
     sectionRange: [7, 9],
     temperatureRange: [0.65, 0.8],
   },
@@ -1273,10 +1288,10 @@ function buildUserPrompt({ topic, sectionCount, forceTitle }) {
     `- Primer párrafo (dentro de la primera sección): ESCENA CONCRETA — persona con nombre, lugar, gesto físico. Regla #1 del system.`,
     ``,
     `ELEMENTOS OBLIGATORIOS (si falta uno, el artículo está mal):`,
-    `1. Por cada sección h2: 1+ nombre propio real, 1+ dato numérico, 1+ detalle sensorial. No negociable.`,
+    `1. Por cada sección h2: 1+ ancla geográfica/biológica REAL y verificable (ver regla 2 del system: estado, ecosistema, comunidad, altitud, especie con binomial) + 1+ detalle sensorial. Dato numérico SOLO si lo conoces con certeza pública — opcional, NO obligatorio. Vale más una sección sin números que una con cifras inventadas. PROHIBIDO inventar estudios con investigador+año+institución+%, costos exactos, o micro-medidas experimentales.`,
     `2. Nombres científicos binomiales en <em> cuando aparezcan especies (ej. <em>Agave salmiana</em>).`,
     `3. 1 o 2 <aside class="aside-fact"><strong>Dato que rompe el molde:</strong> ...</aside> con el giro contraintuitivo del artículo — algo genuinamente sorprendente, no un dato trivial.`,
-    `4. 1 cita directa entre comillas ATRIBUIBLE a una persona real verificable (investigador, autor, cronista). Si no hay una que conozcas con certeza, parafrasea SIN poner comillas — nunca inventes la cita.`,
+    `4. Citas directas entre comillas: OPCIONAL, no obligatorio. PROHIBIDO inventar atribuciones tipo "según la investigadora X de la UNAM" o "en palabras del Dr. Y" si no conoces a esa persona y su frase real con certeza pública. Patrón prohibido: nombre propio + institución + cita inventada (es exactamente lo que el modelo tiende a fabricar para cumplir el requisito). Alternativas válidas: (a) cita real verificable de figura conocida que sí dijo o escribió eso públicamente, con fuente identificable; (b) voz parafraseada SIN comillas; (c) frase atribuida a un personaje anónimo arquetípico del campo ("don X, campesino de…", "doña Y, partera de…") — esa es licencia narrativa permitida. PREFERIBLE artículo sin cita directa que con atribución falsa.`,
     `5. SECCIÓN PRÁCTICA OBLIGATORIA: AL MENOS UNA de las secciones h2 debe ser APLICABLE — con información que permita a un lector intentar hacer el proyecto en la vida real. Debe incluir elementos concretos como: especies o materiales específicos con nombre, cantidades o medidas, temporadas o tiempos, espaciamientos, temperaturas, costos aproximados en pesos mexicanos, dónde conseguir insumos (viveros regionales, tianguis, colectivos), errores comunes que se deben evitar. Esta sección NO reemplaza al "Hazlo tú mismo" final — es contenido técnico-práctico dentro del cuerpo del artículo, con detalle que el DIY (por su brevedad) no puede cubrir.`,
     `6. DESCRIPCIÓN TÉCNICA DE MÉTODOS: si el tema involucra una técnica, oficio, proceso científico, práctica tradicional o metodología (bioconstrucción, fermentación, muralismo, nixtamalización, curtido, destilación, cultivo, etc.), DEDICA espacio a explicar CÓMO se hace paso a paso, con materiales, proporciones, tiempos, temperaturas, herramientas. El artículo debe dejar al lector con capacidad de entender la técnica, no solo admirarla desde lejos. Si el tema es una persona histórica con una técnica propia (Diego Rivera y el fresco, Mario Molina y la química atmosférica), describe esa técnica con precisión documentada.`,
     `7. Al FINAL del body, sección <h2>Glosario</h2> con <dl class="glossary"> y 5-7 términos técnicos del artículo (dt/dd). Las definiciones son de 1-2 oraciones, concretas, no circulares.`,
@@ -1284,7 +1299,15 @@ function buildUserPrompt({ topic, sectionCount, forceTitle }) {
     ``,
     `TAG: elige UNO de: ${VALID_TAGS.join(", ")}. Si ninguno encaja, propone uno nuevo de 1 palabra.`,
     ``,
-    `AUTOCHEQUEO antes de responder: ¿alguna frase de tu borrador podría caber idéntica en un artículo sobre otro tema? Si sí, reescríbela. ¿Usaste alguna frase prohibida del system? Si sí, reescríbela. ¿Cada h2 tiene nombre propio + número + detalle sensorial? Si no, corrige.`,
+    `AUTOCHEQUEO antes de responder, en orden:`,
+    `  (a) ¿Inventaste algún estudio con la fórmula "(año + investigador + institución + porcentaje o cifra exacta)"? Si sí, elimina el estudio o reescribe como mecanismo general sin atribución falsa. Esta es la verificación MÁS IMPORTANTE.`,
+    `  (b) ¿Inventaste un costo en pesos, una velocidad de viento local, una distancia experimental precisa, o una cifra de "X% menos plagas" sin saberla con certeza? Si sí, elimínala o conviértela en descripción cualitativa.`,
+    `  (c) ¿Alguna persona nombrada real (Mario Molina, Diego Rivera, etc.) tiene escenas/diálogos/gestos que NO están documentados públicamente? Si sí, reescribe como información verificable (lo que publicó, técnica que usó, año del Nobel, etc.).`,
+    `  (c+) ¿Hay alguna cita entre comillas atribuida a un investigador/académico/autor? Verifica: (i) ¿esa persona existe realmente como figura pública identificable? (ii) ¿dijo o escribió esa frase con certeza? Si la persona NO la reconoces como figura pública, o si no estás seguro de la frase, ELIMINA la cita o conviértela en parafraseo sin comillas. Patrón típico de invento: "según la investigadora X de la UNAM/Cinvestav...". No lo hagas.`,
+    `  (c++) ¿Atribuiste a una figura histórica real (Marker, Pasteur, etc.) algo que NO hizo realmente — afiliación incorrecta, molécula equivocada, año mal? Verifica los hechos básicos antes de afirmar. Si dudas de un detalle factual sobre la persona, omítelo o usa lenguaje cauto ("hacia mediados del siglo XX", "químicos trabajando con saponinas esteroideas").`,
+    `  (d) ¿Cada h2 tiene ancla geográfica/biológica verificable + detalle sensorial? Si no, corrige.`,
+    `  (e) ¿Alguna frase de tu borrador podría caber idéntica en un artículo sobre otro tema? Si sí, reescríbela con anclaje específico.`,
+    `  (f) ¿Usaste alguna frase prohibida del system (reverbera, tapiz, sinergia, etc.)? Si sí, reescríbela.`,
   ].join("\n");
 }
 
