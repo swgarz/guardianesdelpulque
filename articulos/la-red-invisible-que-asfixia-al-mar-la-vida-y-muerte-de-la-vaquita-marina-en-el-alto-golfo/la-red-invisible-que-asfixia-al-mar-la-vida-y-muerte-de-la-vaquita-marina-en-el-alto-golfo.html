@@ -345,7 +345,7 @@
   })();
   </script>
   <script>
-  // COMPARTIR COMO HISTORIA
+  // COMPARTIR COMO HISTORIA (layout v2: branding arriba como header, no pie)
   (function(){
     const btn=document.getElementById('btnStory');
     if(!btn)return;
@@ -353,7 +353,7 @@
       const words=text.split(' ');let line='',lines=[];
       for(const w of words){const t=line?line+' '+w:w;if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w;}else line=t;}
       if(line)lines.push(line);
-      if(maxLines&&lines.length>maxLines){lines=lines.slice(0,maxLines);let last=lines[maxLines-1];while(last.length&&ctx.measureText(last+'…').width>maxW)last=last.slice(0,-1);lines[maxLines-1]=last.replace(/[\s,;:.]+$/,'')+'…';}
+      if(maxLines&&lines.length>maxLines){lines=lines.slice(0,maxLines);let last=lines[maxLines-1];while(last.length&&ctx.measureText(last+'…').width>maxW)last=last.slice(0,-1);lines[maxLines-1]=last.replace(/[\\s,;:.]+$/,'')+'…';}
       let yy=topY;
       for(const l of lines){ctx.fillText(l,x,yy);yy+=lineH;}
       return yy;
@@ -363,41 +363,49 @@
       try{
         const slug=location.pathname.split('/').slice(-2,-1)[0]||'';
         const coverUrl=slug?(slug+'.png'):(document.querySelector('meta[property="og:image"]')?.content||'');
-        const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/\s*[—\-]\s*Guardianes del Pulque/,'');
+        const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/\\s*[—\\-]\\s*Guardianes del Pulque/,'');
         const excerpt=(document.querySelector('meta[property="og:description"]')?.content||document.querySelector('meta[name="description"]')?.content||'').trim();
-        const W=1080,H=1920,IMGSLICE=1150;
+        const W=1080,H=1920,HEADER_H=180,IMG_TOP=180,IMG_H=1100,IMG_BOTTOM=IMG_TOP+IMG_H;
         const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;
         const ctx=canvas.getContext('2d');
         const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#011a10');bg.addColorStop(1,'#000c06');
         ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+        // Branding ARRIBA como header
+        ctx.fillStyle='#34d399';ctx.font='bold 58px system-ui,ui-sans-serif,sans-serif';
+        ctx.textAlign='center';ctx.textBaseline='middle';
+        ctx.fillText('Guardianes del Pulque',W/2,HEADER_H/2);
+        // Imagen del articulo debajo del header
         try{
           const img=new Image();
           await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src=coverUrl;});
-          const ir=img.naturalWidth/img.naturalHeight,tr=W/IMGSLICE;
+          const ir=img.naturalWidth/img.naturalHeight,tr=W/IMG_H;
           let sx=0,sy=0,sw=img.naturalWidth,sh=img.naturalHeight;
           if(ir>tr){sw=sh*tr;sx=(img.naturalWidth-sw)/2;}else{sh=sw/tr;sy=(img.naturalHeight-sh)/2;}
-          ctx.drawImage(img,sx,sy,sw,sh,0,0,W,IMGSLICE);
+          ctx.drawImage(img,sx,sy,sw,sh,0,IMG_TOP,W,IMG_H);
         }catch{}
-        const fade=ctx.createLinearGradient(0,IMGSLICE-350,0,IMGSLICE+50);
+        // Fade en la base de la imagen
+        const fade=ctx.createLinearGradient(0,IMG_BOTTOM-300,0,IMG_BOTTOM+50);
         fade.addColorStop(0,'rgba(1,26,16,0)');fade.addColorStop(1,'rgba(1,26,16,1)');
-        ctx.fillStyle=fade;ctx.fillRect(0,IMGSLICE-350,W,400);
+        ctx.fillStyle=fade;ctx.fillRect(0,IMG_BOTTOM-300,W,350);
+        // Linea separadora bajo la imagen
         ctx.strokeStyle='rgba(52,211,153,.35)';ctx.lineWidth=2;
-        ctx.beginPath();ctx.moveTo(100,IMGSLICE+30);ctx.lineTo(W-100,IMGSLICE+30);ctx.stroke();
+        ctx.beginPath();ctx.moveTo(100,IMG_BOTTOM+30);ctx.lineTo(W-100,IMG_BOTTOM+30);ctx.stroke();
+        // Titulo + excerpt
         ctx.textBaseline='top';
         ctx.fillStyle='#ffffff';ctx.textAlign='center';
-        ctx.font='bold 70px system-ui,ui-sans-serif,sans-serif';
-        let ny=wrapText(ctx,title,W/2,IMGSLICE+90,W-160,86,4);
+        ctx.font='bold 60px system-ui,ui-sans-serif,sans-serif';
+        let ny=wrapText(ctx,title,W/2,IMG_BOTTOM+70,W-160,76,4);
         if(excerpt){
-          ny+=30;
+          ny+=24;
           ctx.fillStyle='rgba(255,255,255,.82)';
-          ctx.font='400 38px system-ui,ui-sans-serif,sans-serif';
-          wrapText(ctx,excerpt,W/2,ny,W-200,52,4);
+          ctx.font='400 34px system-ui,ui-sans-serif,sans-serif';
+          wrapText(ctx,excerpt,W/2,ny,W-200,46,3);
         }
+        // URL al pie (sin repetir el branding)
         ctx.textBaseline='alphabetic';
-        ctx.fillStyle='#34d399';ctx.font='bold 50px system-ui,ui-sans-serif,sans-serif';
-        ctx.fillText('Guardianes del Pulque',W/2,1760);
-        ctx.fillStyle='rgba(255,255,255,.45)';ctx.font='38px system-ui,ui-sans-serif,sans-serif';
-        ctx.fillText('guardianesdelpulque.org',W/2,1828);
+        ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='36px system-ui,ui-sans-serif,sans-serif';
+        ctx.textAlign='center';
+        ctx.fillText('guardianesdelpulque.org',W/2,1870);
         const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));
         const file=new File([blob],'historia-guardianesdelpulque.png',{type:'image/png'});
         if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title});}

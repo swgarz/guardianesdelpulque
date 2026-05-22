@@ -1,5 +1,35 @@
 [
   {
+    "tag": "Naturaleza",
+    "title": "Sombra y raíz: siete árboles que sostienen la vida en México",
+    "excerpt": "Un ahuehuete puede vivir mil años y aún así no es el único testigo de los secretos arbóreos del país.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/sombra-y-raiz-siete-arboles-que-sostienen-la-vida-en-mexico/sombra-y-raiz-siete-arboles-que-sostienen-la-vida-en-mexico.html",
+    "cover": "articulos/sombra-y-raiz-siete-arboles-que-sostienen-la-vida-en-mexico/sombra-y-raiz-siete-arboles-que-sostienen-la-vida-en-mexico.png",
+    "imageStyle": "claroscuro-social",
+    "topic": "Arboles emblematicos de Mexico, ahuehuete ceiba mezquite encino ocote cedro capulin, biodiversidad arborea y especies clave del territorio"
+  },
+  {
+    "tag": "Cacao",
+    "title": "El amargo secreto del cacao mexicano: abejas, sombra y el ritual que enciende el chocolate",
+    "excerpt": "El chocolate nació en la selva húmeda del Grijalva, pero su sabor depende de insectos invisibles entre ceibas y chichón.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-amargo-secreto-del-cacao-mexicano-abejas-sombra-y-el-ritual-que-enciende-el-chocolate/el-amargo-secreto-del-cacao-mexicano-abejas-sombra-y-el-ritual-que-enciende-el-chocolate.html",
+    "cover": "articulos/el-amargo-secreto-del-cacao-mexicano-abejas-sombra-y-el-ritual-que-enciende-el-chocolate/el-amargo-secreto-del-cacao-mexicano-abejas-sombra-y-el-ritual-que-enciende-el-chocolate.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Cacao mexicano, Theobroma cacao, ceremonial prehispanico y produccion en Chiapas y Tabasco, agroforesteria y quimica del chocolate"
+  },
+  {
+    "tag": "Semillas",
+    "title": "Por qué una semilla criolla puede valer más que una hectárea: historias vivas de la milpa y la diversidad genética",
+    "excerpt": "El secreto mejor guardado de las milpas no es el maíz: es lo que brota cuando nadie mira.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/por-que-una-semilla-criolla-puede-valer-mas-que-una-hectarea-historias-vivas-de-la-milpa-y-la-diversidad-genetica/por-que-una-semilla-criolla-puede-valer-mas-que-una-hectarea-historias-vivas-de-la-milpa-y-la-diversidad-genetica.html",
+    "cover": "articulos/por-que-una-semilla-criolla-puede-valer-mas-que-una-hectarea-historias-vivas-de-la-milpa-y-la-diversidad-genetica/por-que-una-semilla-criolla-puede-valer-mas-que-una-hectarea-historias-vivas-de-la-milpa-y-la-diversidad-genetica.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Semillas criollas mexicanas, biodiversidad de cultivos, conservacion in situ, milpa y diversidad genetica, bancos comunitarios"
+  },
+  {
     "tag": "Mamiferos",
     "title": "El tepezcuintle: el jardinero secreto de la selva maya",
     "excerpt": "Una criatura de orejas pequeñas y patas sigilosas moldea el futuro de la selva sin que casi nadie lo vea.",
