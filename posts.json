@@ -1,5 +1,155 @@
 [
   {
+    "tag": "Ciencia",
+    "title": "Cuando el aleteo de una mariposa en Oaxaca cambia la lluvia en Yucatán: el caos que no es azar",
+    "excerpt": "Un campesino en la Mixteca mueve tierra y, sin saberlo, traza el destino de una tormenta lejana.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/cuando-el-aleteo-de-una-mariposa-en-oaxaca-cambia-la-lluvia-en-yucatan-el-caos-que-no-es-azar/cuando-el-aleteo-de-una-mariposa-en-oaxaca-cambia-la-lluvia-en-yucatan-el-caos-que-no-es-azar.html",
+    "cover": "articulos/cuando-el-aleteo-de-una-mariposa-en-oaxaca-cambia-la-lluvia-en-yucatan-el-caos-que-no-es-azar/cuando-el-aleteo-de-una-mariposa-en-oaxaca-cambia-la-lluvia-en-yucatan-el-caos-que-no-es-azar.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Efecto mariposa, Lorenz y teoria del caos determinista"
+  },
+  {
+    "tag": "Fermentos",
+    "title": "De la leche tibia al probiótico vivo: el viaje invisible del yogur y el kéfir en la cocina mexicana",
+    "excerpt": "¿Por qué el yogur casero nunca sabe igual al industrial? El secreto no está en la leche, sino en microbios que fermentan en tu propia mesa.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/de-la-leche-tibia-al-probiotico-vivo-el-viaje-invisible-del-yogur-y-el-kefir-en-la-cocina-mexicana/de-la-leche-tibia-al-probiotico-vivo-el-viaje-invisible-del-yogur-y-el-kefir-en-la-cocina-mexicana.html",
+    "cover": "articulos/de-la-leche-tibia-al-probiotico-vivo-el-viaje-invisible-del-yogur-y-el-kefir-en-la-cocina-mexicana/de-la-leche-tibia-al-probiotico-vivo-el-viaje-invisible-del-yogur-y-el-kefir-en-la-cocina-mexicana.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Yogurt y kefir, fermentacion lactica casera y probioticos"
+  },
+  {
+    "tag": "Aves",
+    "title": "Cómo las aves mexicanas surfean el aire: secretos del vuelo que desafía la gravedad",
+    "excerpt": "Un zopilote en la Sierra Gorda puede volar cientos de kilómetros sin batir las alas. ¿Qué sabe del viento que no vemos?",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/como-las-aves-mexicanas-surfean-el-aire-secretos-del-vuelo-que-desafia-la-gravedad/como-las-aves-mexicanas-surfean-el-aire-secretos-del-vuelo-que-desafia-la-gravedad.html",
+    "cover": "articulos/como-las-aves-mexicanas-surfean-el-aire-secretos-del-vuelo-que-desafia-la-gravedad/como-las-aves-mexicanas-surfean-el-aire-secretos-del-vuelo-que-desafia-la-gravedad.png",
+    "imageStyle": "litografia-color",
+    "topic": "Vuelo de aves planeadoras, termales y aerodinamica de gran escala"
+  },
+  {
+    "tag": "Cerebro",
+    "title": "Cuando los pulpos sueñan: el misterio de los REM submarinos",
+    "excerpt": "Un pulpo en Oaxaca cambia de color mientras duerme. ¿Está soñando? Lo que la ciencia empieza a escuchar bajo el agua.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/cuando-los-pulpos-suenan-el-misterio-de-los-rem-submarinos/cuando-los-pulpos-suenan-el-misterio-de-los-rem-submarinos.html",
+    "cover": "articulos/cuando-los-pulpos-suenan-el-misterio-de-los-rem-submarinos/cuando-los-pulpos-suenan-el-misterio-de-los-rem-submarinos.png",
+    "imageStyle": "expresionismo-terroso",
+    "topic": "Pulpos que suenan, actividad cerebral REM en invertebrados"
+  },
+  {
+    "tag": "Biologia",
+    "title": "Serpientes al sol: cómo los reptiles mexicanos doman el calor de la sierra",
+    "excerpt": "¿Por qué una iguana puede congelarse en la sombra pero moverse como relámpago bajo el sol de Morelos? La clave está en su sangre fría.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/serpientes-al-sol-como-los-reptiles-mexicanos-doman-el-calor-de-la-sierra/serpientes-al-sol-como-los-reptiles-mexicanos-doman-el-calor-de-la-sierra.html",
+    "cover": "articulos/serpientes-al-sol-como-los-reptiles-mexicanos-doman-el-calor-de-la-sierra/serpientes-al-sol-como-los-reptiles-mexicanos-doman-el-calor-de-la-sierra.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Termorregulacion en serpientes y reptiles, ectotermia y calor"
+  },
+  {
+    "tag": "Psicodelicos",
+    "title": "El día en que un hongo de Oaxaca mostró una salida para la depresión",
+    "excerpt": "¿Por qué un hongo diminuto de la Sierra Mazateca podría cambiar cómo tratamos la tristeza profunda?",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-dia-en-que-un-hongo-de-oaxaca-mostro-una-salida-para-la-depresion/el-dia-en-que-un-hongo-de-oaxaca-mostro-una-salida-para-la-depresion.html",
+    "cover": "articulos/el-dia-en-que-un-hongo-de-oaxaca-mostro-una-salida-para-la-depresion/el-dia-en-que-un-hongo-de-oaxaca-mostro-una-salida-para-la-depresion.png",
+    "imageStyle": "encaustica",
+    "topic": "Psicodelicos terapeuticos, psilocibina y depresion"
+  },
+  {
+    "tag": "Cosmologia",
+    "title": "El inframundo mexica en un altar: lo que no ves del Día de Muertos",
+    "excerpt": "El olor a copal en Oaxaca esconde una ruta al Mictlán. ¿Qué significa realmente cruzar nueve niveles para los nahuas?",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-inframundo-mexica-en-un-altar-lo-que-no-ves-del-dia-de-muertos/el-inframundo-mexica-en-un-altar-lo-que-no-ves-del-dia-de-muertos.html",
+    "cover": "articulos/el-inframundo-mexica-en-un-altar-lo-que-no-ves-del-dia-de-muertos/el-inframundo-mexica-en-un-altar-lo-que-no-ves-del-dia-de-muertos.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "Dia de Muertos UNESCO, cosmogonia nahua del inframundo"
+  },
+  {
+    "tag": "Salud",
+    "title": "Por qué la dieta antiinflamatoria mexicana comienza en la milpa y no en la farmacia",
+    "excerpt": "Lo que doña Chabela cosecha entre quelites y maíz combate más inflamación que cualquier cápsula de moda.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/por-que-la-dieta-antiinflamatoria-mexicana-comienza-en-la-milpa-y-no-en-la-farmacia/por-que-la-dieta-antiinflamatoria-mexicana-comienza-en-la-milpa-y-no-en-la-farmacia.html",
+    "cover": "articulos/por-que-la-dieta-antiinflamatoria-mexicana-comienza-en-la-milpa-y-no-en-la-farmacia/por-que-la-dieta-antiinflamatoria-mexicana-comienza-en-la-milpa-y-no-en-la-farmacia.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Inflamacion cronica y dieta antiinflamatoria mexicana"
+  },
+  {
+    "tag": "Fuego",
+    "title": "Por qué el horno maya conserva el secreto de la cochinita más jugosa",
+    "excerpt": "El vapor del pib puede transformar carne dura en mantequilla—y el secreto no está en la receta, sino bajo tierra.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/por-que-el-horno-maya-conserva-el-secreto-de-la-cochinita-mas-jugosa/por-que-el-horno-maya-conserva-el-secreto-de-la-cochinita-mas-jugosa.html",
+    "cover": "articulos/por-que-el-horno-maya-conserva-el-secreto-de-la-cochinita-mas-jugosa/por-que-el-horno-maya-conserva-el-secreto-de-la-cochinita-mas-jugosa.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Cochinita pibil y fisica del horno de piedra, tecnica maya del pib"
+  },
+  {
+    "tag": "Cerebro",
+    "title": "Cuando el estrés desgasta la memoria: el cerebro bajo asedio y el precio del cortisol",
+    "excerpt": "Un campesino en la Sierra Gorda olvida la cosecha: lo que el estrés crónico le hace al cerebro va mucho más allá de sentirse cansado.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/cuando-el-estres-desgasta-la-memoria-el-cerebro-bajo-asedio-y-el-precio-del-cortisol/cuando-el-estres-desgasta-la-memoria-el-cerebro-bajo-asedio-y-el-precio-del-cortisol.html",
+    "cover": "articulos/cuando-el-estres-desgasta-la-memoria-el-cerebro-bajo-asedio-y-el-precio-del-cortisol/cuando-el-estres-desgasta-la-memoria-el-cerebro-bajo-asedio-y-el-precio-del-cortisol.png",
+    "imageStyle": "expresionismo-terroso",
+    "topic": "Estres cronico y cerebro, cortisol y atrofia"
+  },
+  {
+    "tag": "Colorantes",
+    "title": "El caracol que tiñe de púrpura la costa mixteca: secretos y resistencia bajo el sol del Pacífico",
+    "excerpt": "Un molusco, una hebra y el Pacífico: cómo un caracol silvestre coloreó mantos y rutas comerciales del México antiguo.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-caracol-que-tine-de-purpura-la-costa-mixteca-secretos-y-resistencia-bajo-el-sol-del-pacifico/el-caracol-que-tine-de-purpura-la-costa-mixteca-secretos-y-resistencia-bajo-el-sol-del-pacifico.html",
+    "cover": "articulos/el-caracol-que-tine-de-purpura-la-costa-mixteca-secretos-y-resistencia-bajo-el-sol-del-pacifico/el-caracol-que-tine-de-purpura-la-costa-mixteca-secretos-y-resistencia-bajo-el-sol-del-pacifico.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Caracol purpura Plicopurpura pansa, tintura tradicional mixteca de Pinotepa de Don Luis, comercio prehispanico y conservacion del molusco"
+  },
+  {
+    "tag": "Fermentos",
+    "title": "El maguey que no vuelve: mezcal y el dilema de los agaves silvestres en Oaxaca",
+    "excerpt": "Un horno de piedra, humo azul y la carrera contrarreloj para salvar al agave que da el mezcal más raro.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-maguey-que-no-vuelve-mezcal-y-el-dilema-de-los-agaves-silvestres-en-oaxaca/el-maguey-que-no-vuelve-mezcal-y-el-dilema-de-los-agaves-silvestres-en-oaxaca.html",
+    "cover": "articulos/el-maguey-que-no-vuelve-mezcal-y-el-dilema-de-los-agaves-silvestres-en-oaxaca/el-maguey-que-no-vuelve-mezcal-y-el-dilema-de-los-agaves-silvestres-en-oaxaca.png",
+    "imageStyle": "litografia-color",
+    "topic": "Mezcal y agaves silvestres, especies de agave Angustifolia Karwinskii Tobala, horno conico de piedra, palenques y comunidades mezcaleras de Oaxaca"
+  },
+  {
+    "tag": "Agroforesteria",
+    "title": "Un café que respira bosque: la ciencia detrás del café de sombra mexicano",
+    "excerpt": "La mejor taza de café de Chiapas depende de árboles que nunca verás en la etiqueta.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/un-cafe-que-respira-bosque-la-ciencia-detras-del-cafe-de-sombra-mexicano/un-cafe-que-respira-bosque-la-ciencia-detras-del-cafe-de-sombra-mexicano.html",
+    "cover": "articulos/un-cafe-que-respira-bosque-la-ciencia-detras-del-cafe-de-sombra-mexicano/un-cafe-que-respira-bosque-la-ciencia-detras-del-cafe-de-sombra-mexicano.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Cafe mexicano de sombra, regiones cafetaleras Chiapas Veracruz Oaxaca, agroforesteria con cafetales bajo dosel, ciencia del tueste"
+  },
+  {
+    "tag": "Agua",
+    "title": "El abismo líquido bajo la selva: los secretos invisibles de los cenotes de Yucatán",
+    "excerpt": "Bajo la selva yucateca, el agua no corre en ríos: desaparece en puertas de piedra y reaparece convertida en espejo sagrado.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-abismo-liquido-bajo-la-selva-los-secretos-invisibles-de-los-cenotes-de-yucatan/el-abismo-liquido-bajo-la-selva-los-secretos-invisibles-de-los-cenotes-de-yucatan.html",
+    "cover": "articulos/el-abismo-liquido-bajo-la-selva-los-secretos-invisibles-de-los-cenotes-de-yucatan/el-abismo-liquido-bajo-la-selva-los-secretos-invisibles-de-los-cenotes-de-yucatan.png",
+    "imageStyle": "expresionismo-terroso",
+    "topic": "Cenotes y agua subterranea de Yucatan, geologia karstica, ciclo hidrico de la peninsula, biodiversidad acuatica y cosmovision maya"
+  },
+  {
+    "tag": "Migracion",
+    "title": "Las alas que cruzan tres países: el secreto migratorio de la monarca mexicana",
+    "excerpt": "Una mariposa que pesa menos que una hoja puede volar 4,000 kilómetros y recordar un bosque al que jamás ha ido.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/las-alas-que-cruzan-tres-paises-el-secreto-migratorio-de-la-monarca-mexicana/las-alas-que-cruzan-tres-paises-el-secreto-migratorio-de-la-monarca-mexicana.html",
+    "cover": "articulos/las-alas-que-cruzan-tres-paises-el-secreto-migratorio-de-la-monarca-mexicana/las-alas-que-cruzan-tres-paises-el-secreto-migratorio-de-la-monarca-mexicana.png",
+    "imageStyle": "litografia-color",
+    "topic": "Mariposa monarca Danaus plexippus, migracion entre Canada y Mexico, santuarios de oyamel en Michoacan y Estado de Mexico, conservacion del bosque"
+  },
+  {
     "tag": "Naturaleza",
     "title": "Sombra y raíz: siete árboles que sostienen la vida en México",
     "excerpt": "Un ahuehuete puede vivir mil años y aún así no es el único testigo de los secretos arbóreos del país.",
