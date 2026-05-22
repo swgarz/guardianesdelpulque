@@ -5,13 +5,33 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 22 May 2026 16:19:08 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 16:22:44 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El animal que siembra árboles sin quererlo: vida secreta del tepezcuintle en la selva maya</title>
+      <link>https://guardianesdelpulque.org/articulos/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya.html</guid>
+      <description>Una criatura de seis kilos es clave para que la selva se regenere tras las lluvias. ¿Por qué el bosque depende de este roedor nocturno?</description>
+      <category>Mamiferos</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Pirul: el árbol andino que llegó a México disfrazado de pimiento</title>
+      <link>https://guardianesdelpulque.org/articulos/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento.html</guid>
+      <description>¿Por qué el dulce aroma del pirul llena plazas mexicanas si no es originario de aquí? Una historia de migraciones insospechadas.</description>
+      <category>Naturaleza</category>
+      <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cuando el lince acecha: Cómo los felinos mexicanos moldean el bosque en silencio</title>
@@ -21,6 +41,26 @@
       <category>Mamiferos</category>
       <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
       <enclosure url="https://guardianesdelpulque.org/articulos/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Colores que respiran: el asombroso viaje de la clorofila al carmín en la naturaleza mexicana</title>
+      <link>https://guardianesdelpulque.org/articulos/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana.html</guid>
+      <description>¿Por qué una hoja puede volverse roja, naranja o morada en vez de secarse en gris? La respuesta está debajo de tus uñas.</description>
+      <category>Colorantes</category>
+      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>¿Por qué la Luna dicta el ritmo de la milpa en Oaxaca? Lo que la ciencia sabe (y lo que no)</title>
+      <link>https://guardianesdelpulque.org/articulos/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no.html</guid>
+      <description>En Ejutla, la siembra lunar no es superstición: la ciencia empieza a explicar por qué algunos calendarios dan mejores cosechas.</description>
+      <category>Semillas</category>
+      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no.png" type="image/png" length="0"/>
     </item>
 
     <item>

@@ -1,6 +1,26 @@
 [
   {
     "tag": "Mamiferos",
+    "title": "El animal que siembra árboles sin quererlo: vida secreta del tepezcuintle en la selva maya",
+    "excerpt": "Una criatura de seis kilos es clave para que la selva se regenere tras las lluvias. ¿Por qué el bosque depende de este roedor nocturno?",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya.html",
+    "cover": "articulos/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya/el-animal-que-siembra-arboles-sin-quererlo-vida-secreta-del-tepezcuintle-en-la-selva-maya.png",
+    "imageStyle": "litografia-color",
+    "topic": "Tepezcuintle, mamifero dispersor de semillas en la selva maya"
+  },
+  {
+    "tag": "Naturaleza",
+    "title": "Pirul: el árbol andino que llegó a México disfrazado de pimiento",
+    "excerpt": "¿Por qué el dulce aroma del pirul llena plazas mexicanas si no es originario de aquí? Una historia de migraciones insospechadas.",
+    "date": "21 de mayo de 2026",
+    "url": "articulos/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento.html",
+    "cover": "articulos/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento/pirul-el-arbol-andino-que-llego-a-mexico-disfrazado-de-pimiento.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Pirul, el falso pimentero que llego de los Andes"
+  },
+  {
+    "tag": "Mamiferos",
     "title": "Cuando el lince acecha: Cómo los felinos mexicanos moldean el bosque en silencio",
     "excerpt": "Un venado puede cambiar un bosque. Un puma y un lince lo saben. ¿Cómo cuidan estos felinos la salud de los árboles sin que nadie los vea?",
     "date": "21 de mayo de 2026",
@@ -8,6 +28,26 @@
     "cover": "articulos/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio/cuando-el-lince-acecha-como-los-felinos-mexicanos-moldean-el-bosque-en-silencio.png",
     "imageStyle": "fresco-cal",
     "topic": "Linces y pumas, control de herbivoros y salud de bosques"
+  },
+  {
+    "tag": "Colorantes",
+    "title": "Colores que respiran: el asombroso viaje de la clorofila al carmín en la naturaleza mexicana",
+    "excerpt": "¿Por qué una hoja puede volverse roja, naranja o morada en vez de secarse en gris? La respuesta está debajo de tus uñas.",
+    "date": "18 de mayo de 2026",
+    "url": "articulos/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana.html",
+    "cover": "articulos/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana/colores-que-respiran-el-asombroso-viaje-de-la-clorofila-al-carmin-en-la-naturaleza-mexicana.png",
+    "imageStyle": "claroscuro-social",
+    "topic": "Pigmentos naturales, clorofila, antocianinas, carotenoides, betalainas"
+  },
+  {
+    "tag": "Semillas",
+    "title": "¿Por qué la Luna dicta el ritmo de la milpa en Oaxaca? Lo que la ciencia sabe (y lo que no)",
+    "excerpt": "En Ejutla, la siembra lunar no es superstición: la ciencia empieza a explicar por qué algunos calendarios dan mejores cosechas.",
+    "date": "17 de mayo de 2026",
+    "url": "articulos/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no.html",
+    "cover": "articulos/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no/por-que-la-luna-dicta-el-ritmo-de-la-milpa-en-oaxaca-lo-que-la-ciencia-sabe-y-lo-que-no.png",
+    "imageStyle": "encaustica",
+    "topic": "Calendario agricola lunar, siembra segun fases y ciencia detras"
   },
   {
     "tag": "Cerebro",
