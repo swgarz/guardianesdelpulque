@@ -5,13 +5,93 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 22 May 2026 18:50:14 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 19:25:23 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Donde el aire duele: el pino Hartwegii y el refugio secreto de la monarca</title>
+      <link>https://guardianesdelpulque.org/articulos/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca.html</guid>
+      <description>Un árbol que crece donde el oxígeno escasea guarda el secreto del ritual migratorio más asombroso de México.</description>
+      <category>Naturaleza</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El secreto de la barbacoa bajo tierra: cómo el vapor del maguey cocina el alma del Valle del Mezquital</title>
+      <link>https://guardianesdelpulque.org/articulos/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital.html</guid>
+      <description>¿Por qué la carne cocida en hoyo de Hidalgo queda tan tierna? La termodinámica del maguey tiene la respuesta.</description>
+      <category>Fuego</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Raíces conectadas: el trueque invisible entre hongos y plantas bajo el suelo mexicano</title>
+      <link>https://guardianesdelpulque.org/articulos/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano.html</guid>
+      <description>¿Por qué un árbol solitario en Oaxaca puede sobrevivir sequías mejor que una milpa entera? La respuesta está bajo tierra.</description>
+      <category>Hongos</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El depredador invisible: cómo el cocodrilo del río Coatzacoalcos acecha bajo el lodo</title>
+      <link>https://guardianesdelpulque.org/articulos/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo.html</guid>
+      <description>Un cráneo asoma en la ribera: cómo el cocodrilo de pantano se convirtió en el gran cazador oculto de los ríos mexicanos.</description>
+      <category>Biologia</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Flores que apestan a muerto: así seducen las moscas mexicanas</title>
+      <link>https://guardianesdelpulque.org/articulos/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas.html</guid>
+      <description>¿Por qué plantas que huelen a cadáver atraen enjambres de vida? El misterio viscoso de la polinización con moscas.</description>
+      <category>Polinizacion</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El secreto del aguacate: la grasa que tu corazón sí quiere</title>
+      <link>https://guardianesdelpulque.org/articulos/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere.html</guid>
+      <description>Por qué una tortilla con aguacate puede darle un respiro a tus arterias, incluso si la comes en la sierra.</description>
+      <category>Salud</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El pez que fue madre: los cambios de sexo más asombrosos del arrecife mexicano</title>
+      <link>https://guardianesdelpulque.org/articulos/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano.html</guid>
+      <description>Hay peces que nacen macho y mueren hembra, y otros que hacen justo al revés. ¿Por qué lo hacen? La respuesta está en el Caribe.</description>
+      <category>Biologia</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Los genes al alcance de la mano: CRISPR en la vida cotidiana y sus dilemas</title>
+      <link>https://guardianesdelpulque.org/articulos/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas.html</guid>
+      <description>¿Qué harías si pudieras editar tu propio ADN con la precisión de una tijera? El dilema empieza en la parcela.</description>
+      <category>Ciencia</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cuando el aleteo de una mariposa en Oaxaca cambia la lluvia en Yucatán: el caos que no es azar</title>

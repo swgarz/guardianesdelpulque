@@ -1,5 +1,85 @@
 [
   {
+    "tag": "Naturaleza",
+    "title": "Donde el aire duele: el pino Hartwegii y el refugio secreto de la monarca",
+    "excerpt": "Un árbol que crece donde el oxígeno escasea guarda el secreto del ritual migratorio más asombroso de México.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca.html",
+    "cover": "articulos/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca/donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca.png",
+    "imageStyle": "expresionismo-terroso",
+    "topic": "Pino Hartwegii, bosques de altura y monarca como refugio"
+  },
+  {
+    "tag": "Fuego",
+    "title": "El secreto de la barbacoa bajo tierra: cómo el vapor del maguey cocina el alma del Valle del Mezquital",
+    "excerpt": "¿Por qué la carne cocida en hoyo de Hidalgo queda tan tierna? La termodinámica del maguey tiene la respuesta.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital.html",
+    "cover": "articulos/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital/el-secreto-de-la-barbacoa-bajo-tierra-como-el-vapor-del-maguey-cocina-el-alma-del-valle-del-mezquital.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Barbacoa de hoyo, termodinamica del vapor en penca de maguey"
+  },
+  {
+    "tag": "Hongos",
+    "title": "Raíces conectadas: el trueque invisible entre hongos y plantas bajo el suelo mexicano",
+    "excerpt": "¿Por qué un árbol solitario en Oaxaca puede sobrevivir sequías mejor que una milpa entera? La respuesta está bajo tierra.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano.html",
+    "cover": "articulos/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano/raices-conectadas-el-trueque-invisible-entre-hongos-y-plantas-bajo-el-suelo-mexicano.png",
+    "imageStyle": "litografia-color",
+    "topic": "Micorrizas en raices, simbiosis de hongos y plantas, intercambio de nutrientes"
+  },
+  {
+    "tag": "Biologia",
+    "title": "El depredador invisible: cómo el cocodrilo del río Coatzacoalcos acecha bajo el lodo",
+    "excerpt": "Un cráneo asoma en la ribera: cómo el cocodrilo de pantano se convirtió en el gran cazador oculto de los ríos mexicanos.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo.html",
+    "cover": "articulos/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo/el-depredador-invisible-como-el-cocodrilo-del-rio-coatzacoalcos-acecha-bajo-el-lodo.png",
+    "imageStyle": "litografia-color",
+    "topic": "Cocodrilo de pantano y rio, biologia de un superdepredador acuatico"
+  },
+  {
+    "tag": "Polinizacion",
+    "title": "Flores que apestan a muerto: así seducen las moscas mexicanas",
+    "excerpt": "¿Por qué plantas que huelen a cadáver atraen enjambres de vida? El misterio viscoso de la polinización con moscas.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas.html",
+    "cover": "articulos/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas/flores-que-apestan-a-muerto-asi-seducen-las-moscas-mexicanas.png",
+    "imageStyle": "temple-antiguo",
+    "topic": "Polinizacion por moscas en aros y plantas que huelen a carrona"
+  },
+  {
+    "tag": "Salud",
+    "title": "El secreto del aguacate: la grasa que tu corazón sí quiere",
+    "excerpt": "Por qué una tortilla con aguacate puede darle un respiro a tus arterias, incluso si la comes en la sierra.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere.html",
+    "cover": "articulos/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere/el-secreto-del-aguacate-la-grasa-que-tu-corazon-si-quiere.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Aguacate y grasas saludables, omega 9 y salud cardiovascular"
+  },
+  {
+    "tag": "Biologia",
+    "title": "El pez que fue madre: los cambios de sexo más asombrosos del arrecife mexicano",
+    "excerpt": "Hay peces que nacen macho y mueren hembra, y otros que hacen justo al revés. ¿Por qué lo hacen? La respuesta está en el Caribe.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano.html",
+    "cover": "articulos/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano/el-pez-que-fue-madre-los-cambios-de-sexo-mas-asombrosos-del-arrecife-mexicano.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Cambio de sexo en peces, payaso y mero"
+  },
+  {
+    "tag": "Ciencia",
+    "title": "Los genes al alcance de la mano: CRISPR en la vida cotidiana y sus dilemas",
+    "excerpt": "¿Qué harías si pudieras editar tu propio ADN con la precisión de una tijera? El dilema empieza en la parcela.",
+    "date": "22 de mayo de 2026",
+    "url": "articulos/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas.html",
+    "cover": "articulos/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas/los-genes-al-alcance-de-la-mano-crispr-en-la-vida-cotidiana-y-sus-dilemas.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "CRISPR y edicion genetica, riesgos y debate etico"
+  },
+  {
     "tag": "Ciencia",
     "title": "Cuando el aleteo de una mariposa en Oaxaca cambia la lluvia en Yucatán: el caos que no es azar",
     "excerpt": "Un campesino en la Mixteca mueve tierra y, sin saberlo, traza el destino de una tormenta lejana.",
