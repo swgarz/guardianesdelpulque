@@ -495,6 +495,12 @@ const images = [
     palette: "maguey jade, aguamiel honey, pulque cream, mezcal copper amber, ixtle fiber gold, miel agave amber, terracotta clay red, sky cyan",
     subjects: "one continuous Mexican rural still-life scene showing all the products from a single maguey plant — at the center a huge agave with thick pencas, around it arranged in a half-circle: a clay olla of milky pulque, a glass bottle of clear mezcal, a small bowl of golden miel de agave syrup, bundles of cream-white ixtle fiber rope, a small dish of escamoles ant larvae, a roasted maguey heart cut open showing its fibrous interior, a piece of mixiote leaf wrapping; a campesino tlachiquero at one side overseeing it all with his acocote gourd in hand, no urban elements, NO labels, NO text",
   },
+  {
+    slug: "donde-el-aire-duele-el-pino-hartwegii-y-el-refugio-secreto-de-la-monarca",
+    title: "Donde el aire duele: el pino Hartwegii y el refugio secreto de la monarca",
+    palette: "pine deep green, frost white, bark charcoal black, monarca orange, cold cyan sky, resin amber, volcanic ash grey, dawn pink",
+    subjects: "a high-altitude Mexican timberline forest of Pinus hartwegii pines clinging to a volcanic slope above the clouds at dawn — tall gnarled trees with thick cracked dark bark and long rigid blue-green needles dusted with white frost, an elderly campesino in a wool sarape and straw hat standing among the trunks touching sticky amber resin oozing from a fresh cut on a trunk, his frozen breath rising as halftone vapor in the bitter air, the ground covered in a thick layer of black fallen pine needles and patches of ice and frost, and high in the treetops dense clusters of orange-and-black monarch butterflies (Danaus plexippus) blanketing the upper branches — a few taking flight against the cold cyan sky, the snow-capped cone of a volcano (Iztaccíhuatl) rising in the background above a sea of clouds, one continuous edge-to-edge scene, no urban elements, no text",
+  },
 ];
 
 async function generateImage(img) {
