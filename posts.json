@@ -1,13 +1,13 @@
 [
   {
-    "tag": "Cacao",
-    "title": "El cacao que engaña al cerebro: secretos químicos bajo la selva de Tabasco",
-    "excerpt": "Lo que el cacao suelta en tu lengua es solo el principio: así juega con tu cerebro desde el México húmedo.",
+    "tag": "Ciencia",
+    "title": "El día que dos agujeros negros sacudieron la Tierra: la onda que confirmó a Einstein",
+    "excerpt": "En un rincón de Luisiana, un susurro más corto que un parpadeo confirmó una predicción que parecía ciencia ficción.",
     "date": "1 de junio de 2026",
-    "url": "articulos/el-cacao-que-engana-al-cerebro-secretos-quimicos-bajo-la-selva-de-tabasco/el-cacao-que-engana-al-cerebro-secretos-quimicos-bajo-la-selva-de-tabasco.html",
-    "cover": "articulos/el-cacao-que-engana-al-cerebro-secretos-quimicos-bajo-la-selva-de-tabasco/el-cacao-que-engana-al-cerebro-secretos-quimicos-bajo-la-selva-de-tabasco.png",
-    "imageStyle": "fresco-cal",
-    "topic": "Quimica del cacao, teobromina, feniletilamina, anandamida y neurotransmisores"
+    "url": "articulos/el-dia-que-dos-agujeros-negros-sacudieron-la-tierra-la-onda-que-confirmo-a-einstein/el-dia-que-dos-agujeros-negros-sacudieron-la-tierra-la-onda-que-confirmo-a-einstein.html",
+    "cover": "articulos/el-dia-que-dos-agujeros-negros-sacudieron-la-tierra-la-onda-que-confirmo-a-einstein/el-dia-que-dos-agujeros-negros-sacudieron-la-tierra-la-onda-que-confirmo-a-einstein.png",
+    "imageStyle": "pastel-costumbrista",
+    "topic": "Ondas gravitacionales de LIGO, Einstein confirmado en 2015"
   },
   {
     "tag": "Semillas",

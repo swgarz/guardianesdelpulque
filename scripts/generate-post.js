@@ -1371,6 +1371,17 @@ async function generateArticle() {
     // Evitar temas ya usados (por topic exacto O por keywords de títulos existentes)
     const STOPWORDS = new Set(["el","la","los","las","de","del","en","y","a","un","una","por","con","su","sus","al","que","se","es","son","como","para","más","un","o","e","i","u","lo","le","les","hay","sin","no","si","fue"]);
     const usedTopics = new Set(posts.map((p) => p.topic).filter(Boolean));
+    // Helper: palabras clave (>3 letras, sin acentos ni stopwords)
+    const kw = (s) => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"")
+      .replace(/[^a-z0-9\s]/g," ").split(/\s+/).filter((w) => w.length > 3 && !STOPWORDS.has(w));
+    // Bloqueo por VENTANA RECIENTE: no repetir el mismo asunto que los ultimos articulos.
+    // posts.json va de mas reciente a mas antiguo, asi que los primeros N son los recientes.
+    // Evita rachas como cacao->cacao->cacao: si un tema comparte cualquier palabra de asunto
+    // (cacao, cerebro, etc.) con el titulo o topic de los ultimos N, se descarta.
+    const RECENT_WINDOW = 12;
+    const recentKeywords = new Set(
+      posts.slice(0, RECENT_WINDOW).flatMap((p) => [...kw(p.title), ...kw(p.topic)])
+    );
     // Extraer palabras clave de todos los títulos existentes
     const titleKeywords = new Set(
       posts.flatMap((p) =>
@@ -1384,6 +1395,8 @@ async function generateArticle() {
       const topicWords = t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
         .replace(/[^a-z0-9\s]/g," ").split(/\s+/).filter((w) => w.length > 3 && !STOPWORDS.has(w));
       if (topicWords.length === 0) return true;
+      // Descartar si toca el asunto de un articulo reciente (ventana movil)
+      if (topicWords.some((w) => recentKeywords.has(w))) return false;
       const overlap = topicWords.filter((w) => titleKeywords.has(w)).length;
       return overlap / topicWords.length < 0.5;
     });
