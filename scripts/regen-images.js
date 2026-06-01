@@ -501,6 +501,12 @@ const images = [
     palette: "pine deep green, frost white, bark charcoal black, monarca orange, cold cyan sky, resin amber, volcanic ash grey, dawn pink",
     subjects: "a high-altitude Mexican timberline forest of Pinus hartwegii pines clinging to a volcanic slope above the clouds at dawn — tall gnarled trees with thick cracked dark bark and long rigid blue-green needles dusted with white frost, an elderly campesino in a wool sarape and straw hat standing among the trunks touching sticky amber resin oozing from a fresh cut on a trunk, his frozen breath rising as halftone vapor in the bitter air, the ground covered in a thick layer of black fallen pine needles and patches of ice and frost, and high in the treetops dense clusters of orange-and-black monarch butterflies (Danaus plexippus) blanketing the upper branches — a few taking flight against the cold cyan sky, the snow-capped cone of a volcano (Iztaccíhuatl) rising in the background above a sea of clouds, one continuous edge-to-edge scene, no urban elements, no text",
   },
+  {
+    slug: "los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes",
+    title: "Los quelites que salvan la milpa: hierbas pequeñas, nutrientes gigantes",
+    palette: "quelite leaf green, quintonil red-purple, verdolaga jade, milpa corn gold, dew silver, soil brown, sky cyan, basket ochre",
+    subjects: "a lush Mexican milpa on a Oaxacan hillside at early morning — a Zapotec campesina in apron and rebozo kneeling among the rows of young corn and climbing beans, harvesting wild edible quelites that grow freely between the stalks: leafy green quintonil (amaranth greens) with reddish-purple stems, sprawling fleshy-leaved verdolaga (purslane), fragrant sprigs of pápalo and epazote, gathering them by the handful into a woven palm basket already overflowing with greens, a small clay bowl of washed quelites and a stone metate beside her, squash leaves and yellow flowers spreading across the dark soil, dew drops sparkling in halftone morning light, terraced green hills and morning mist in the background, one continuous edge-to-edge scene, no urban elements, no text",
+  },
 ];
 
 async function generateImage(img) {

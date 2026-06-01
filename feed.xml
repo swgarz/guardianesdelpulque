@@ -5,13 +5,63 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 22 May 2026 19:25:23 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 15:24:50 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El cacao que se derrite en la boca y en el cerebro: por qué el chocolate enciende placeres inesperados</title>
+      <link>https://guardianesdelpulque.org/articulos/el-cacao-que-se-derrite-en-la-boca-y-en-el-cerebro-por-que-el-chocolate-enciende-placeres-inesperados/el-cacao-que-se-derrite-en-la-boca-y-en-el-cerebro-por-que-el-chocolate-enciende-placeres-inesperados.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-cacao-que-se-derrite-en-la-boca-y-en-el-cerebro-por-que-el-chocolate-enciende-placeres-inesperados/el-cacao-que-se-derrite-en-la-boca-y-en-el-cerebro-por-que-el-chocolate-enciende-placeres-inesperados.html</guid>
+      <description>¿Por qué un trozo de chocolate puede imitar al enamoramiento y al subidón? La respuesta está en moléculas que tu cuerpo ya fabrica.</description>
+      <category>Cacao</category>
+      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-cacao-que-se-derrite-en-la-boca-y-en-el-cerebro-por-que-el-chocolate-enciende-placeres-inesperados/el-cacao-que-se-derrite-en-la-boca-y-en-el-cerebro-por-que-el-chocolate-enciende-placeres-inesperados.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El secreto molecular detrás del cerebro que corre: así crecen nuevas neuronas en México</title>
+      <link>https://guardianesdelpulque.org/articulos/el-secreto-molecular-detras-del-cerebro-que-corre-asi-crecen-nuevas-neuronas-en-mexico/el-secreto-molecular-detras-del-cerebro-que-corre-asi-crecen-nuevas-neuronas-en-mexico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-secreto-molecular-detras-del-cerebro-que-corre-asi-crecen-nuevas-neuronas-en-mexico/el-secreto-molecular-detras-del-cerebro-que-corre-asi-crecen-nuevas-neuronas-en-mexico.html</guid>
+      <description>¿Por qué el ejercicio puede cambiar tu memoria? Lo que pasa en el hipocampo de un corredor te va a dejar pensando.</description>
+      <category>Cerebro</category>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-secreto-molecular-detras-del-cerebro-que-corre-asi-crecen-nuevas-neuronas-en-mexico/el-secreto-molecular-detras-del-cerebro-que-corre-asi-crecen-nuevas-neuronas-en-mexico.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Los quelites que salvan la milpa: hierbas pequeñas, nutrientes gigantes</title>
+      <link>https://guardianesdelpulque.org/articulos/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes.html</guid>
+      <description>En la milpa de Oaxaca, una hierba tan frágil como la pápalo podría valer más para tu salud que la propia mazorca.</description>
+      <category>Naturaleza</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El corte que despierta: la química secreta entre la mostaza y el ajo</title>
+      <link>https://guardianesdelpulque.org/articulos/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo.html</guid>
+      <description>¿Por qué lloran los ojos y arde la lengua cuando partes un ajo o muerdes un grano de mostaza? La respuesta huele a azufre.</description>
+      <category>Ciencia</category>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Cuando el lobo se volvió xolo: la domesticación mexicana que cambió la historia</title>
+      <link>https://guardianesdelpulque.org/articulos/cuando-el-lobo-se-volvio-xolo-la-domesticacion-mexicana-que-cambio-la-historia/cuando-el-lobo-se-volvio-xolo-la-domesticacion-mexicana-que-cambio-la-historia.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cuando-el-lobo-se-volvio-xolo-la-domesticacion-mexicana-que-cambio-la-historia/cuando-el-lobo-se-volvio-xolo-la-domesticacion-mexicana-que-cambio-la-historia.html</guid>
+      <description>En la cuenca de México, un perro sin pelo sobrevivió mientras los lobos huían. ¿Qué sabe el xoloitzcuintle que el lobo olvidó?</description>
+      <category>Evolucion</category>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/cuando-el-lobo-se-volvio-xolo-la-domesticacion-mexicana-que-cambio-la-historia/cuando-el-lobo-se-volvio-xolo-la-domesticacion-mexicana-que-cambio-la-historia.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Donde el aire duele: el pino Hartwegii y el refugio secreto de la monarca</title>

@@ -20,6 +20,26 @@
     "topic": "Ejercicio y cerebro, neurogenesis y BDNF"
   },
   {
+    "tag": "Naturaleza",
+    "title": "Los quelites que salvan la milpa: hierbas pequeñas, nutrientes gigantes",
+    "excerpt": "En la milpa de Oaxaca, una hierba tan frágil como la pápalo podría valer más para tu salud que la propia mazorca.",
+    "date": "1 de junio de 2026",
+    "url": "articulos/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes.html",
+    "cover": "articulos/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes/los-quelites-que-salvan-la-milpa-hierbas-pequenas-nutrientes-gigantes.png",
+    "imageStyle": "claroscuro-social",
+    "topic": "Quelites de la milpa, hierbas comestibles y micronutrientes esenciales"
+  },
+  {
+    "tag": "Ciencia",
+    "title": "El corte que despierta: la química secreta entre la mostaza y el ajo",
+    "excerpt": "¿Por qué lloran los ojos y arde la lengua cuando partes un ajo o muerdes un grano de mostaza? La respuesta huele a azufre.",
+    "date": "30 de mayo de 2026",
+    "url": "articulos/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo.html",
+    "cover": "articulos/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo/el-corte-que-despierta-la-quimica-secreta-entre-la-mostaza-y-el-ajo.png",
+    "imageStyle": "expresionismo-terroso",
+    "topic": "Quimica de la mostaza y el ajo, aliinasa y compuestos sulfurados"
+  },
+  {
     "tag": "Evolucion",
     "title": "Cuando el lobo se volvió xolo: la domesticación mexicana que cambió la historia",
     "excerpt": "En la cuenca de México, un perro sin pelo sobrevivió mientras los lobos huían. ¿Qué sabe el xoloitzcuintle que el lobo olvidó?",
