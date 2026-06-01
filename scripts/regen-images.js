@@ -18,6 +18,12 @@ const PANEL_STYLE =
 
 const images = [
   {
+    slug: "los-mapas-que-caminan-como-los-pueblos-indigenas-dibujan-el-territorio-con-memoria",
+    title: "Los mapas que caminan: cartografía indígena",
+    palette: "amate bark brown, ochre earth red, codex river blue, jade green hills, charcoal ink black, maize yellow, sky cyan",
+    subjects: "an Oaxacan highland scene where an elder in rebozo and a young campesino lean together over a large sheet of amate bark paper spread on a wooden table, reading a hand-painted indigenous map-codex covered in pictographic glyphs — mountains drawn with little faces, rivers painted as winding blue serpents, paths marked with rows of human footprints, a spiral symbol for a spring, a big mother-tree drawn larger than the rest; small clay bowls of colored earth pigments (red ochre, black, blue) and a reed brush beside them, the elder pointing at a glyph; behind them terraced milpa fields, pine-clad sierra and morning mist — ONE continuous edge-to-edge scene, ABSOLUTELY NO cacao, NO beans, NO grid, NO panels, NO text or letters",
+  },
+  {
     slug: "manual-de-siembra-de-la-milpa-de-temporal-maiz-frijol-y-calabaza-paso-a-paso",
     title: "Manual de siembra de la milpa de temporal",
     palette: "rain-cloud grey, fresh furrow brown, young corn green, bean leaf green, squash blossom orange, seed gold, sky cyan",
