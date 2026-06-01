@@ -1699,6 +1699,29 @@ async function generateArticle() {
   }
   fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + "\n");
 
+  // 8. Actualizar sitemap.xml (solo artículos nuevos) y regenerar feed.xml
+  try {
+    const sitemapPath = path.join(__dirname, "..", "sitemap.xml");
+    if (!regenEntry && fs.existsSync(sitemapPath)) {
+      let sitemap = fs.readFileSync(sitemapPath, "utf-8");
+      const loc = `https://guardianesdelpulque.org/articulos/${slug}/${slug}.html`;
+      if (!sitemap.includes(loc)) {
+        const entry = `  <url><loc>${loc}</loc><lastmod>${isoDate}</lastmod></url>\n`;
+        // Insertar como primer artículo, justo después de la última página estática
+        const anchor = sitemap.match(/[^\n]*aviso-privacidad\.html<\/loc>[^\n]*\n/);
+        if (anchor) sitemap = sitemap.replace(anchor[0], anchor[0] + entry);
+        else sitemap = sitemap.replace("</urlset>", entry + "</urlset>");
+        fs.writeFileSync(sitemapPath, sitemap);
+        console.log("Sitemap: entrada agregada");
+      }
+    }
+    // Regenerar feed.xml desde posts.json (refleja el estado actual del registro)
+    require("child_process").execSync(`node "${path.join(__dirname, "generate-rss.js")}"`, { stdio: "ignore" });
+    console.log("Feed:   feed.xml regenerado");
+  } catch (e) {
+    console.error("Aviso: no se pudo actualizar sitemap/feed:", e.message);
+  }
+
   console.log(`\nCreado: articulos/${slug}/${slug}.html`);
   console.log(`Cover:  articulos/${slug}/${slug}.png`);
   console.log(`Tag:    ${emoji} ${tag}`);
