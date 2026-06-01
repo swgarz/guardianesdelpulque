@@ -18,6 +18,12 @@ const PANEL_STYLE =
 
 const images = [
   {
+    slug: "manual-de-siembra-de-la-milpa-de-temporal-maiz-frijol-y-calabaza-paso-a-paso",
+    title: "Manual de siembra de la milpa de temporal",
+    palette: "rain-cloud grey, fresh furrow brown, young corn green, bean leaf green, squash blossom orange, seed gold, sky cyan",
+    subjects: "a freshly sown rainy-season milpa on a Mexican hillside just after the first temporal rains — at the center a campesino in straw hat and rebozo driving a long wooden coa (planting stick) into the dark moist soil to open a hole, his other open hand dropping golden maize kernels and a bean seed into the furrow, a woven palm basket of mixed seeds (yellow corn, speckled beans, flat squash seeds) at his feet, neat contour furrows running across the slope holding pools of rainwater, a few young green corn seedlings already sprouting in the foreground rows with a climbing bean curling up a stalk and a broad squash leaf with an orange blossom spreading over the soil, dark rain clouds with halftone raindrops gathering over distant pine-clad mountains, dew and morning light — ONE continuous edge-to-edge scene, ABSOLUTELY NO grid, NO panels, NO divided layouts, NO text",
+  },
+  {
     slug: "el-fuego-en-la-cocina-tradicional-mexicana",
     title: "El Fuego en la Cocina Tradicional Mexicana",
     palette: "ember orange, flame red, soot black, comal terracotta, masa cream, chile dark red, smoke grey",

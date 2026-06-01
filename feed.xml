@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Mon, 01 Jun 2026 15:50:58 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 16:29:14 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Manual de siembra de la milpa de temporal: maíz, frijol y calabaza paso a paso</title>
+      <link>https://guardianesdelpulque.org/articulos/manual-de-siembra-de-la-milpa-de-temporal-maiz-frijol-y-calabaza-paso-a-paso/manual-de-siembra-de-la-milpa-de-temporal-maiz-frijol-y-calabaza-paso-a-paso.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/manual-de-siembra-de-la-milpa-de-temporal-maiz-frijol-y-calabaza-paso-a-paso/manual-de-siembra-de-la-milpa-de-temporal-maiz-frijol-y-calabaza-paso-a-paso.html</guid>
+      <description>Guía completa para estudiar antes de tomar la coa: cuándo sembrar de temporal, a qué profundidad y distancia, cómo cuidar el agua de lluvia y cómo defender la milpa de las plagas sin un solo químico.</description>
+      <category>Semillas</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/manual-de-siembra-de-la-milpa-de-temporal-maiz-frijol-y-calabaza-paso-a-paso/manual-de-siembra-de-la-milpa-de-temporal-maiz-frijol-y-calabaza-paso-a-paso.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Lo que una coa sabe: secretos de la siembra a mano en la milpa mexicana</title>
