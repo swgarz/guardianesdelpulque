@@ -1,5 +1,15 @@
 [
   {
+    "tag": "Evolucion",
+    "title": "Conejos y abejas en la sierra: cómo la serie de Fibonacci se esconde en el ciclo de la vida",
+    "excerpt": "Un magueyal en Hidalgo y una colmena en Michoacán guardan el mismo secreto numérico: ¿por qué los animales siguen la cuenta de Fibonacci?",
+    "date": "4 de junio de 2026",
+    "url": "articulos/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida.html",
+    "cover": "articulos/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida.png",
+    "imageStyle": "tecnica-mixta",
+    "topic": "Series de Fibonacci en reproduccion de conejos y abejas"
+  },
+  {
     "tag": "Territorio",
     "title": "Los mapas que caminan: cómo los pueblos indígenas dibujan el territorio con memoria",
     "excerpt": "Un códice no solo cuenta historias: puede guiarte al manantial, señalar el árbol torcido y narrar pleitos de linderos en la sierra.",
