@@ -811,6 +811,11 @@
             <div class="pill">🍃 <strong>Guardianes del pulque</strong></div>
             <p class="hero-card-text">Artículos y guías sobre pulque, maguey, bioconstrucción, naturaleza y defensa del territorio — compartidos con código abierto y acceso libre.</p>
             <div class="hero-mini-cards" id="hero-tag-pills"></div>
+            <div class="hero-mini-cards">
+              <a class="mini" href="recursos.html?type=guia">🛠️ Guías técnicas</a>
+              <a class="mini" href="recursos.html?type=recetario">🍳 Recetarios</a>
+              <a class="mini" href="recursos.html?type=documento">📄 Documentos legales</a>
+            </div>
           </div>
         </div>
       </div>
@@ -843,42 +848,35 @@
 
   <!-- TALLERES Y CURSOS -->
   <section id="talleres" class="container" style="margin-bottom:64px">
-    <div class="stack-2" style="grid-auto-flow:column;justify-content:space-between;align-items:end;margin-bottom:12px">
-      <h2 style="margin:0">🛠️ Talleres y cursos</h2>
-      <a class="chip chip-donar" href="recursos.html">Ver todos los recursos</a>
-    </div>
-    <p style="color:#64748b;margin:0 0 16px">Guías técnicas, recetarios y documentos que hemos preparado para la comunidad.</p>
+    <h2 style="margin:0 0 6px">🛠️ Talleres y cursos que hemos dado</h2>
+    <p style="color:#64748b;margin:0 0 16px">Algunos de los talleres, cursos y eventos comunitarios que hemos impartido.</p>
     <div class="posts-grid" id="talleresGrid"></div>
-    <div style="text-align:center;margin-top:24px">
-      <a class="btn btn-brand" href="recursos.html">Ver todos los recursos →</a>
-    </div>
   </section>
   <script>
   (function(){
     const grid = document.getElementById('talleresGrid');
     if(!grid) return;
-    const TYPE_LABELS = {
-      guia:      {l:'🛠️ Guía técnica', bg:'rgba(245,158,11,.12)', c:'#b45309', b:'rgba(245,158,11,.3)'},
-      recetario: {l:'🍳 Recetario',     bg:'rgba(239,68,68,.1)',   c:'#b91c1c', b:'rgba(239,68,68,.25)'},
-      documento: {l:'📄 Documento',      bg:'rgba(99,102,241,.1)',  c:'#4338ca', b:'rgba(99,102,241,.25)'},
+    const CAT = {
+      taller:  {label:'Taller',   grad:'linear-gradient(135deg,#059669,#0d9488)'},
+      curso:   {label:'Curso',    grad:'linear-gradient(135deg,#8b5cf6,#6366f1)'},
+      evento:  {label:'Evento',   grad:'linear-gradient(135deg,#f59e0b,#eab308)'},
+      reunion: {label:'Reunión',  grad:'linear-gradient(135deg,#6366f1,#3b82f6)'},
     };
     function esc(s){ return String(s||'').replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m])); }
-    fetch('recursos.json').then(r => r.ok ? r.json() : []).then(items => {
-      if(!items.length){ grid.innerHTML = ''; return; }
-      const ordered = items.slice().reverse();
-      grid.innerHTML = ordered.map(p => {
-        const t = TYPE_LABELS[p.type] || TYPE_LABELS.guia;
-        const cover = p.cover ? `<img src="${esc(p.cover)}" loading="lazy" alt="${esc(p.title)}" style="width:100%;height:100%;object-fit:cover;display:block">` : '';
+    fetch('talleres.json').then(r => r.ok ? r.json() : []).then(items => {
+      if(!items.length){ grid.innerHTML = '<p style="color:#94a3b8">Pronto compartiremos los talleres y cursos que hemos dado.</p>'; return; }
+      grid.innerHTML = items.map(t => {
+        const c = CAT[t.cat] || CAT.taller;
+        const lugar = t.lugar ? ` · 📍 ${esc(t.lugar)}` : '';
+        const aport = t.aportacion ? `<span class="chip" style="cursor:default">💲 ${esc(t.aportacion)}</span>` : '';
         return `<article class="card">
-          <a href="${esc(p.url)}" aria-label="${esc(p.title)}"><div class="post-cover">${cover}</div></a>
+          <div class="post-cover" style="background:${c.grad};display:flex;align-items:center;justify-content:center;font-size:3.4rem" aria-hidden="true">${esc(t.icon || '🛠️')}</div>
           <div style="padding:16px">
-            <div style="display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin-bottom:.4rem">
-              <span style="font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;background:${t.bg};color:${t.c};border:1px solid ${t.b}">${t.l}</span>
-              <span style="font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(5,150,105,.1);color:#059669;border:1px solid rgba(5,150,105,.28)">${esc(p.tag)}</span>
-            </div>
-            <h3 style="margin:0 0 .3rem;font-size:1rem">${esc(p.title)}</h3>
-            <p style="color:#64748b;margin:0 0 .6rem;font-size:.9rem">${esc(p.excerpt)}</p>
-            <a class="chip" href="${esc(p.url)}">Ver →</a>
+            <div style="margin-bottom:.4rem"><span style="font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;background:rgba(5,150,105,.1);color:#059669;border:1px solid rgba(5,150,105,.28)">${esc(c.label)}</span></div>
+            <h3 style="margin:0 0 .3rem;font-size:1rem">${esc(t.title)}</h3>
+            <p style="color:#94a3b8;margin:0 0 .5rem;font-size:.82rem">📅 ${esc(t.fecha)}${lugar}</p>
+            <p style="color:#64748b;margin:0 0 .6rem;font-size:.9rem">${esc(t.desc)}</p>
+            ${aport}
           </div>
         </article>`;
       }).join('');

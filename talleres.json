@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Taller de creación de alebrijes",
+    "cat": "taller",
+    "icon": "🎨",
+    "fecha": "Abril–mayo de 2026 · 4 sesiones",
+    "lugar": "",
+    "aportacion": "$150 por clase",
+    "desc": "Taller de cartonería para crear alebrijes, en varias sesiones de fin de semana."
+  },
+  {
+    "title": "Reunión de productores locales",
+    "cat": "reunion",
+    "icon": "🤝",
+    "fecha": "11 de abril de 2026",
+    "lugar": "",
+    "desc": "Encuentro de productores de la comunidad para organizarse y compartir saberes."
+  },
+  {
+    "title": "Taller de fermentos: col morada",
+    "cat": "taller",
+    "icon": "🫙",
+    "fecha": "22 de marzo de 2026",
+    "lugar": "Pulquería",
+    "desc": "Taller práctico para fermentar col morada y otros vegetales, paso a paso."
+  },
+  {
+    "title": "2da Feria del Maíz, Milpa, Saberes y Cultura 2026",
+    "cat": "evento",
+    "icon": "🌽",
+    "fecha": "21 de marzo de 2026",
+    "lugar": "San Juan Yutepec",
+    "desc": "Feria comunitaria en torno al maíz nativo, la milpa y los saberes tradicionales."
+  }
+]
