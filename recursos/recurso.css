@@ -40,6 +40,9 @@ main{padding:28px 0 48px}
 .meta-item{display:inline-flex;align-items:center;gap:.3rem;}
 .guide-intro{font-size:.97rem;color:#374151;margin:0 0 24px;line-height:1.65;}
 
+/* COVER */
+.guide-cover{width:100%;max-width:860px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);margin:0 auto 32px;display:block;aspect-ratio:16/9;object-fit:cover;}
+
 /* CARDS / SECTIONS */
 .section-card{background:#fff;border-radius:16px;padding:20px 24px;margin:0 0 24px;border:1px solid rgba(15,23,42,.07);box-shadow:0 4px 14px rgba(0,0,0,.06);}
 .section-title{font-size:1.1rem;font-weight:800;color:#065f46;margin:0 0 14px;display:flex;align-items:center;gap:.4rem;}

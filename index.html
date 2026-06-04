@@ -727,9 +727,6 @@
           </div>
         </div>
 
-        <!-- Calendario -->
-        <a class="chip" href="calendario.html">📅 Calendario</a>
-
         <!-- Donar (CTA principal) -->
         <a class="chip chip-donar" href="#donar">💚 Donar</a>
 
@@ -772,7 +769,6 @@
       <div class="nav-panel-section">Navegar</div>
       <a class="nav-panel-link" href="posts.html">📰 Artículos</a>
       <a class="nav-panel-link" href="recursos.html">🛠️ Recursos</a>
-      <a class="nav-panel-link" href="calendario.html">📅 Calendario</a>
       <a class="nav-panel-link" href="#donar">💚 Donar</a>
       <hr class="nav-panel-divider">
       <div class="nav-panel-section">Aliados</div>
@@ -844,6 +840,51 @@
       <ol class="recom-list" id="recomList" aria-label="Artículos recomendados"></ol>
     </div>
   </section>
+
+  <!-- TALLERES Y CURSOS -->
+  <section id="talleres" class="container" style="margin-bottom:64px">
+    <div class="stack-2" style="grid-auto-flow:column;justify-content:space-between;align-items:end;margin-bottom:12px">
+      <h2 style="margin:0">🛠️ Talleres y cursos</h2>
+      <a class="chip chip-donar" href="recursos.html">Ver todos los recursos</a>
+    </div>
+    <p style="color:#64748b;margin:0 0 16px">Guías técnicas, recetarios y documentos que hemos preparado para la comunidad.</p>
+    <div class="posts-grid" id="talleresGrid"></div>
+    <div style="text-align:center;margin-top:24px">
+      <a class="btn btn-brand" href="recursos.html">Ver todos los recursos →</a>
+    </div>
+  </section>
+  <script>
+  (function(){
+    const grid = document.getElementById('talleresGrid');
+    if(!grid) return;
+    const TYPE_LABELS = {
+      guia:      {l:'🛠️ Guía técnica', bg:'rgba(245,158,11,.12)', c:'#b45309', b:'rgba(245,158,11,.3)'},
+      recetario: {l:'🍳 Recetario',     bg:'rgba(239,68,68,.1)',   c:'#b91c1c', b:'rgba(239,68,68,.25)'},
+      documento: {l:'📄 Documento',      bg:'rgba(99,102,241,.1)',  c:'#4338ca', b:'rgba(99,102,241,.25)'},
+    };
+    function esc(s){ return String(s||'').replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m])); }
+    fetch('recursos.json').then(r => r.ok ? r.json() : []).then(items => {
+      if(!items.length){ grid.innerHTML = ''; return; }
+      const ordered = items.slice().reverse();
+      grid.innerHTML = ordered.map(p => {
+        const t = TYPE_LABELS[p.type] || TYPE_LABELS.guia;
+        const cover = p.cover ? `<img src="${esc(p.cover)}" loading="lazy" alt="${esc(p.title)}" style="width:100%;height:100%;object-fit:cover;display:block">` : '';
+        return `<article class="card">
+          <a href="${esc(p.url)}" aria-label="${esc(p.title)}"><div class="post-cover">${cover}</div></a>
+          <div style="padding:16px">
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin-bottom:.4rem">
+              <span style="font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;background:${t.bg};color:${t.c};border:1px solid ${t.b}">${t.l}</span>
+              <span style="font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(5,150,105,.1);color:#059669;border:1px solid rgba(5,150,105,.28)">${esc(p.tag)}</span>
+            </div>
+            <h3 style="margin:0 0 .3rem;font-size:1rem">${esc(p.title)}</h3>
+            <p style="color:#64748b;margin:0 0 .6rem;font-size:.9rem">${esc(p.excerpt)}</p>
+            <a class="chip" href="${esc(p.url)}">Ver →</a>
+          </div>
+        </article>`;
+      }).join('');
+    }).catch(() => { grid.innerHTML = ''; });
+  })();
+  </script>
 
   <!-- DONAR -->
   <section id="donar" class="container" style="margin-bottom:64px">

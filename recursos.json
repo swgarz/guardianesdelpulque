@@ -94,7 +94,8 @@
     "excerpt": "Chucrut, verduras en escabeche lacto-fermentadas y salsa de chile fermentada.",
     "steps": 3,
     "date": "4 de junio de 2026",
-    "url": "recursos/recetarios/recetario-de-fermentos-vivos/recetario-de-fermentos-vivos.html"
+    "url": "recursos/recetarios/recetario-de-fermentos-vivos/recetario-de-fermentos-vivos.html",
+    "cover": "recursos/recetarios/recetario-de-fermentos-vivos/recetario-de-fermentos-vivos.png"
   },
   {
     "type": "recetario",
@@ -103,7 +104,8 @@
     "excerpt": "Las tres hermanas en el plato: esquites, frijoles de olla y calabacitas con elote.",
     "steps": 3,
     "date": "4 de junio de 2026",
-    "url": "recursos/recetarios/recetario-de-la-milpa/recetario-de-la-milpa.html"
+    "url": "recursos/recetarios/recetario-de-la-milpa/recetario-de-la-milpa.html",
+    "cover": "recursos/recetarios/recetario-de-la-milpa/recetario-de-la-milpa.png"
   },
   {
     "type": "recetario",
@@ -112,7 +114,8 @@
     "excerpt": "Salsa verde cruda, roja tatemada y de chile de árbol, molidas en piedra.",
     "steps": 3,
     "date": "4 de junio de 2026",
-    "url": "recursos/recetarios/recetario-de-salsas-de-molcajete/recetario-de-salsas-de-molcajete.html"
+    "url": "recursos/recetarios/recetario-de-salsas-de-molcajete/recetario-de-salsas-de-molcajete.html",
+    "cover": "recursos/recetarios/recetario-de-salsas-de-molcajete/recetario-de-salsas-de-molcajete.png"
   },
   {
     "type": "recetario",
@@ -121,7 +124,8 @@
     "excerpt": "Cómo criar tu masa madre y hornear pan rústico y pan dulce con fermento natural.",
     "steps": 3,
     "date": "4 de junio de 2026",
-    "url": "recursos/recetarios/recetario-de-panes-y-masa-madre/recetario-de-panes-y-masa-madre.html"
+    "url": "recursos/recetarios/recetario-de-panes-y-masa-madre/recetario-de-panes-y-masa-madre.html",
+    "cover": "recursos/recetarios/recetario-de-panes-y-masa-madre/recetario-de-panes-y-masa-madre.png"
   },
   {
     "type": "recetario",
@@ -130,7 +134,8 @@
     "excerpt": "Cocina con maguey: curado de fruta, salsa borracha y pan de pulque.",
     "steps": 3,
     "date": "4 de junio de 2026",
-    "url": "recursos/recetarios/recetario-del-maguey-y-el-pulque/recetario-del-maguey-y-el-pulque.html"
+    "url": "recursos/recetarios/recetario-del-maguey-y-el-pulque/recetario-del-maguey-y-el-pulque.html",
+    "cover": "recursos/recetarios/recetario-del-maguey-y-el-pulque/recetario-del-maguey-y-el-pulque.png"
   },
   {
     "type": "documento",
@@ -140,7 +145,8 @@
     "steps": 3,
     "readTime": "6 min de lectura",
     "date": "4 de junio de 2026",
-    "url": "recursos/documentos/modelo-de-acta-de-asamblea-comunitaria/modelo-de-acta-de-asamblea-comunitaria.html"
+    "url": "recursos/documentos/modelo-de-acta-de-asamblea-comunitaria/modelo-de-acta-de-asamblea-comunitaria.html",
+    "cover": "recursos/documentos/modelo-de-acta-de-asamblea-comunitaria/modelo-de-acta-de-asamblea-comunitaria.png"
   },
   {
     "type": "documento",
@@ -150,7 +156,8 @@
     "steps": 3,
     "readTime": "7 min de lectura",
     "date": "4 de junio de 2026",
-    "url": "recursos/documentos/modelo-de-reglamento-interno-para-grupos-y-cooperativas/modelo-de-reglamento-interno-para-grupos-y-cooperativas.html"
+    "url": "recursos/documentos/modelo-de-reglamento-interno-para-grupos-y-cooperativas/modelo-de-reglamento-interno-para-grupos-y-cooperativas.html",
+    "cover": "recursos/documentos/modelo-de-reglamento-interno-para-grupos-y-cooperativas/modelo-de-reglamento-interno-para-grupos-y-cooperativas.png"
   },
   {
     "type": "documento",
@@ -160,7 +167,8 @@
     "steps": 3,
     "readTime": "8 min de lectura",
     "date": "4 de junio de 2026",
-    "url": "recursos/documentos/guia-de-derechos-territoriales-y-consulta-indigena/guia-de-derechos-territoriales-y-consulta-indigena.html"
+    "url": "recursos/documentos/guia-de-derechos-territoriales-y-consulta-indigena/guia-de-derechos-territoriales-y-consulta-indigena.html",
+    "cover": "recursos/documentos/guia-de-derechos-territoriales-y-consulta-indigena/guia-de-derechos-territoriales-y-consulta-indigena.png"
   },
   {
     "type": "documento",
@@ -170,7 +178,8 @@
     "steps": 3,
     "readTime": "6 min de lectura",
     "date": "4 de junio de 2026",
-    "url": "recursos/documentos/modelo-de-convenio-de-colaboracion/modelo-de-convenio-de-colaboracion.html"
+    "url": "recursos/documentos/modelo-de-convenio-de-colaboracion/modelo-de-convenio-de-colaboracion.html",
+    "cover": "recursos/documentos/modelo-de-convenio-de-colaboracion/modelo-de-convenio-de-colaboracion.png"
   },
   {
     "type": "documento",
@@ -180,6 +189,7 @@
     "steps": 4,
     "readTime": "8 min de lectura",
     "date": "4 de junio de 2026",
-    "url": "recursos/documentos/guia-para-constituir-una-asociacion-civil-o-cooperativa/guia-para-constituir-una-asociacion-civil-o-cooperativa.html"
+    "url": "recursos/documentos/guia-para-constituir-una-asociacion-civil-o-cooperativa/guia-para-constituir-una-asociacion-civil-o-cooperativa.html",
+    "cover": "recursos/documentos/guia-para-constituir-una-asociacion-civil-o-cooperativa/guia-para-constituir-una-asociacion-civil-o-cooperativa.png"
   }
 ]
