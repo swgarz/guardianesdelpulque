@@ -34,17 +34,6 @@
   },
   {
     "type": "guia",
-    "tag": "Bioconstruccion",
-    "title": "Cómo hacer adobe con tierra de tu parcela",
-    "excerpt": "Aprende a hacer adobe con tierra local para construir.",
-    "steps": 7,
-    "date": "10 de abril de 2026",
-    "url": "recursos/guias/como-hacer-adobe-con-tierra-de-tu-parcela/como-hacer-adobe-con-tierra-de-tu-parcela.html",
-    "cover": "recursos/guias/como-hacer-adobe-con-tierra-de-tu-parcela/como-hacer-adobe-con-tierra-de-tu-parcela.png",
-    "topic": "Cómo hacer adobe con tierra de tu parcela paso a paso"
-  },
-  {
-    "type": "guia",
     "tag": "Pulque",
     "title": "Cómo raspar un maguey y obtener aguamiel para hacer pulque",
     "excerpt": "Guía práctica para extraer aguamiel del maguey y hacer pulque.",
@@ -97,5 +86,100 @@
     "url": "recursos/guias/como-hacer-tepache-casero-de-pina/como-hacer-tepache-casero-de-pina.html",
     "cover": "recursos/guias/como-hacer-tepache-casero-de-pina/como-hacer-tepache-casero-de-pina.png",
     "topic": "Cómo hacer tepache casero de piña o frutas de temporada"
+  },
+  {
+    "type": "recetario",
+    "tag": "Fermentos",
+    "title": "Recetario de fermentos vivos",
+    "excerpt": "Chucrut, verduras en escabeche lacto-fermentadas y salsa de chile fermentada.",
+    "steps": 3,
+    "date": "4 de junio de 2026",
+    "url": "recursos/recetarios/recetario-de-fermentos-vivos/recetario-de-fermentos-vivos.html"
+  },
+  {
+    "type": "recetario",
+    "tag": "Semillas",
+    "title": "Recetario de la milpa",
+    "excerpt": "Las tres hermanas en el plato: esquites, frijoles de olla y calabacitas con elote.",
+    "steps": 3,
+    "date": "4 de junio de 2026",
+    "url": "recursos/recetarios/recetario-de-la-milpa/recetario-de-la-milpa.html"
+  },
+  {
+    "type": "recetario",
+    "tag": "Comunidad",
+    "title": "Recetario de salsas de molcajete",
+    "excerpt": "Salsa verde cruda, roja tatemada y de chile de árbol, molidas en piedra.",
+    "steps": 3,
+    "date": "4 de junio de 2026",
+    "url": "recursos/recetarios/recetario-de-salsas-de-molcajete/recetario-de-salsas-de-molcajete.html"
+  },
+  {
+    "type": "recetario",
+    "tag": "Pan",
+    "title": "Recetario de panes y masa madre",
+    "excerpt": "Cómo criar tu masa madre y hornear pan rústico y pan dulce con fermento natural.",
+    "steps": 3,
+    "date": "4 de junio de 2026",
+    "url": "recursos/recetarios/recetario-de-panes-y-masa-madre/recetario-de-panes-y-masa-madre.html"
+  },
+  {
+    "type": "recetario",
+    "tag": "Pulque",
+    "title": "Recetario del maguey y el pulque",
+    "excerpt": "Cocina con maguey: curado de fruta, salsa borracha y pan de pulque.",
+    "steps": 3,
+    "date": "4 de junio de 2026",
+    "url": "recursos/recetarios/recetario-del-maguey-y-el-pulque/recetario-del-maguey-y-el-pulque.html"
+  },
+  {
+    "type": "documento",
+    "tag": "Comunidad",
+    "title": "Modelo de acta de asamblea comunitaria",
+    "excerpt": "Modelo editable para dejar constancia de las decisiones de tu comunidad.",
+    "steps": 3,
+    "readTime": "6 min de lectura",
+    "date": "4 de junio de 2026",
+    "url": "recursos/documentos/modelo-de-acta-de-asamblea-comunitaria/modelo-de-acta-de-asamblea-comunitaria.html"
+  },
+  {
+    "type": "documento",
+    "tag": "Comunidad",
+    "title": "Modelo de reglamento interno para grupos y cooperativas",
+    "excerpt": "Reglas claras de membresía, cuotas, decisiones y sanciones para tu grupo.",
+    "steps": 3,
+    "readTime": "7 min de lectura",
+    "date": "4 de junio de 2026",
+    "url": "recursos/documentos/modelo-de-reglamento-interno-para-grupos-y-cooperativas/modelo-de-reglamento-interno-para-grupos-y-cooperativas.html"
+  },
+  {
+    "type": "documento",
+    "tag": "Territorio",
+    "title": "Guía de derechos territoriales y consulta indígena",
+    "excerpt": "El derecho al territorio y la consulta previa, libre e informada, en lenguaje claro.",
+    "steps": 3,
+    "readTime": "8 min de lectura",
+    "date": "4 de junio de 2026",
+    "url": "recursos/documentos/guia-de-derechos-territoriales-y-consulta-indigena/guia-de-derechos-territoriales-y-consulta-indigena.html"
+  },
+  {
+    "type": "documento",
+    "tag": "Comunidad",
+    "title": "Modelo de convenio de colaboración",
+    "excerpt": "Modelo para acordar por escrito objetivos y compromisos con un aliado.",
+    "steps": 3,
+    "readTime": "6 min de lectura",
+    "date": "4 de junio de 2026",
+    "url": "recursos/documentos/modelo-de-convenio-de-colaboracion/modelo-de-convenio-de-colaboracion.html"
+  },
+  {
+    "type": "documento",
+    "tag": "Territorio",
+    "title": "Guía para constituir una asociación civil o cooperativa",
+    "excerpt": "Diferencias entre A.C. y cooperativa y los pasos para constituir tu figura legal.",
+    "steps": 4,
+    "readTime": "8 min de lectura",
+    "date": "4 de junio de 2026",
+    "url": "recursos/documentos/guia-para-constituir-una-asociacion-civil-o-cooperativa/guia-para-constituir-una-asociacion-civil-o-cooperativa.html"
   }
 ]

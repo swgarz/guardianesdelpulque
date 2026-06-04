@@ -203,6 +203,12 @@
           </div>
         </div>
 
+        <!-- Calendario -->
+        <a class="chip" href="calendario.html">📅 Calendario</a>
+
+        <!-- Donar (CTA principal) -->
+        <a class="chip chip-donar" href="index.html#donar">💚 Donar</a>
+
         <!-- Aliados -->
         <div class="nav-item">
           <button class="nav-trigger" type="button" aria-expanded="false" aria-haspopup="true">
@@ -214,12 +220,6 @@
             <a class="nav-link" href="https://www.google.com/maps/place/Casa+del+Consejo+Otom%C3%AD+Nghu+Lludadha+%C3%91hanjhu,+Santiago+Yanhuitlalpan/@19.3852977,-99.3044762,69m/data=!3m1!1e3!4m6!3m5!1s0x85d20786d4392b05:0x767fb0f08a813efb!8m2!3d19.3852814!4d-99.304469!16s%2Fg%2F11khqxqkbg!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Casa del Consejo Otomí Nghuy</a>
           </div>
         </div>
-
-        <!-- Calendario -->
-        <a class="chip" href="calendario.html">📅 Calendario</a>
-
-        <!-- Donar (CTA principal) -->
-        <a class="chip chip-donar" href="index.html#donar">💚 Donar</a>
 
         <!-- Modo -->
         <div class="nav-item">
@@ -424,7 +424,8 @@
       const coverAttr = p.cover ? `data-bg="${p.cover}"` : '';
       const tagUrl = `recursos.html?tag=${encodeURIComponent(p.tag || '')}`;
       const typeInfo = TYPE_LABELS[p.type] || { label: p.type, cls: 'guia' };
-      const stepsLabel = p.steps ? `<span class="post-date">· ${p.steps} pasos</span>` : '';
+      const countWord = p.type === 'recetario' ? 'recetas' : (p.type === 'documento' ? 'secciones' : 'pasos');
+      const stepsLabel = p.steps ? `<span class="post-date">· ${p.steps} ${countWord}</span>` : '';
       const readTime = p.readTime ? `<span class="post-date">· ${escapeHtml(p.readTime)}</span>` : '';
       const date = p.date ? `<span class="post-date">${escapeHtml(p.date)}</span>` : '';
       const newBadge = isNew(p.date) ? `<span class="new-badge">✨ Nuevo</span>` : '';

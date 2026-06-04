@@ -1,0 +1,94 @@
+/* Estilos compartidos para páginas de recursos (guías, recetarios y documentos) */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial;line-height:1.6;color:#0f172a;background:#f6f8fb;}
+:root{--brand:#059669;--ink:#0f172a;}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.container{max-width:860px;margin-inline:auto;padding:0 16px}
+@media (min-width:640px){.container{padding:0 24px}}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:40;background:transparent;border-bottom:1px solid transparent;backdrop-filter:saturate(180%) blur(14px);transition:background .25s,border-color .25s,box-shadow .25s;}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:1rem;}
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+.brand-logo{height:40px;width:auto;}
+@media (min-width:768px){.brand-logo{height:52px}}
+.brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+.links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
+.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .85rem;border-radius:999px;border:2px solid var(--brand);color:var(--brand);background:rgba(255,255,255,.98);font-weight:700;font-size:.75rem;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+.nav.scrolled{background:#020817;border-bottom-color:rgba(148,163,253,.2);box-shadow:0 14px 40px rgba(0,0,0,.55);}
+.nav.scrolled .brand-text{color:#f9fafb}
+.nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+.nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
+
+/* LAYOUT */
+main{padding:28px 0 48px}
+.breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:12px;}
+.breadcrumbs a{color:#6b7280;}
+.breadcrumbs a:hover{color:var(--brand);}
+
+/* HEADER */
+.guide-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem;}
+.type-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(245,158,11,.12);color:#b45309;border:1px solid rgba(245,158,11,.3);}
+.type-badge.recetario{background:rgba(239,68,68,.1);color:#b91c1c;border-color:rgba(239,68,68,.28);}
+.type-badge.documento{background:rgba(99,102,241,.1);color:#4338ca;border-color:rgba(99,102,241,.28);}
+.tag-pill{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;background:rgba(5,150,105,.1);color:var(--brand);border:1px solid rgba(5,150,105,.28);text-decoration:none;}
+.guide-title{font-size:clamp(22px,5vw,34px);font-weight:800;margin:.2rem 0 .5rem;line-height:1.15;letter-spacing:-.01em;color:#0f172a;}
+.guide-meta{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;font-size:.78rem;color:#6b7280;margin-bottom:.8rem;}
+.meta-item{display:inline-flex;align-items:center;gap:.3rem;}
+.guide-intro{font-size:.97rem;color:#374151;margin:0 0 24px;line-height:1.65;}
+
+/* CARDS / SECTIONS */
+.section-card{background:#fff;border-radius:16px;padding:20px 24px;margin:0 0 24px;border:1px solid rgba(15,23,42,.07);box-shadow:0 4px 14px rgba(0,0,0,.06);}
+.section-title{font-size:1.1rem;font-weight:800;color:#065f46;margin:0 0 14px;display:flex;align-items:center;gap:.4rem;}
+.recipe-card .section-title{color:#b91c1c;}
+.doc-card .section-title{color:#3730a3;}
+
+.materials-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:8px;}
+@media (min-width:500px){.materials-list{grid-template-columns:repeat(2,1fr)}}
+.materials-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.92rem;color:#374151;}
+.check-box{font-size:1.1rem;line-height:1;flex-shrink:0;margin-top:1px;}
+
+.steps-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;}
+.step-item{display:flex;gap:16px;align-items:flex-start;}
+.step-num{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(5,150,105,.3);}
+.recipe-card .step-num{background:#dc2626;box-shadow:0 4px 10px rgba(220,38,38,.3);}
+.step-body{flex:1;padding-top:5px;}
+.step-title{display:block;font-size:.97rem;font-weight:700;color:#0f172a;margin-bottom:4px;}
+.step-desc{margin:0;font-size:.92rem;color:#374151;line-height:1.6;}
+
+.doc-prose{font-size:.93rem;color:#374151;line-height:1.7;}
+.doc-prose p{margin:0 0 .8rem;}
+.doc-prose ul{margin:.2rem 0 .9rem;padding-left:1.2rem;}
+.doc-prose li{margin-bottom:.35rem;}
+.doc-prose h3{font-size:.96rem;color:#1e293b;margin:1rem 0 .4rem;}
+
+/* TEMPLATE / MODELO */
+.model-box{background:#f8fafc;border:1px dashed rgba(99,102,241,.4);border-radius:12px;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;color:#1e293b;line-height:1.7;white-space:pre-wrap;}
+
+.tips-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
+.tips-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.92rem;color:#374151;}
+.tips-list li::before{content:"💡";flex-shrink:0;}
+
+.warning-box{padding:12px 16px;border-left:3px solid #f59e0b;background:rgba(245,158,11,.06);border-radius:10px;font-size:.88rem;color:#92400e;margin:0 0 24px;}
+.doc-card .warning-box{border-left-color:#6366f1;background:rgba(99,102,241,.06);color:#3730a3;}
+
+/* CTA */
+.cta-section{margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);text-align:center;}
+.cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+.cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+
+button.chip{font-family:inherit;}
+.back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
+
+/* PRINT */
+@media print{
+  .nav,.back-links,.cta-section,footer{display:none!important}
+  body{background:#fff;color:#000;}
+  .section-card{box-shadow:none;border:1px solid #ccc;}
+  .step-num{background:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
