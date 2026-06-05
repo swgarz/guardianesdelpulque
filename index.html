@@ -965,16 +965,6 @@
         const n = Math.min(count, all.length);
         function windowItems(){ const w = []; for(let i=0;i<n;i++) w.push(all[(offset+i)%all.length]); return w; }
         el.innerHTML = windowItems().map(resCard).join('');
-        if(all.length > count){
-          // Rotación escalonada para que no parpadeen las tres hileras a la vez
-          setTimeout(() => {
-            setInterval(() => {
-              offset = (offset + 1) % all.length;
-              el.style.opacity = '0';
-              setTimeout(() => { el.innerHTML = windowItems().map(resCard).join(''); el.style.opacity = '1'; }, 350);
-            }, 5000);
-          }, idx * 1700);
-        }
       });
     }).catch(() => {});
   })();
