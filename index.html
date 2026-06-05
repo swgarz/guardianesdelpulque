@@ -477,14 +477,19 @@
       transform:translateY(-1px);
     }
     /* Filtros de recursos: se ven distintos a los tags (son navegación) */
-    .hero-filters{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:flex-end;margin-top:.85rem}
+    .hero-filters{display:flex;flex-wrap:nowrap;gap:.5rem;justify-content:flex-end;margin-top:.85rem;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none}
+    .hero-filters::-webkit-scrollbar{display:none}
     .filter-pill{
-      display:inline-flex;align-items:center;gap:.35rem;
+      display:inline-flex;align-items:center;gap:.35rem;flex:0 0 auto;white-space:nowrap;
       padding:.5rem 1rem;border-radius:999px;
       background:#ffffff;border:1.5px solid #059669;color:#047857;
       font-size:.8rem;font-weight:800;letter-spacing:.01em;
       box-shadow:0 4px 12px rgba(5,150,105,.16);
       transition:background .15s ease,color .15s ease,transform .12s ease,box-shadow .15s ease;
+    }
+    @media (max-width:520px){
+      .hero-filters{justify-content:flex-start}
+      .filter-pill{padding:.42rem .72rem;font-size:.72rem}
     }
     .filter-pill:hover{background:#059669;color:#fff;transform:translateY(-1px);box-shadow:0 8px 20px rgba(5,150,105,.32)}
     body.mode-community .filter-pill{background:rgba(3,33,24,.92);border-color:#22c55e;color:#bbf7d0;box-shadow:0 6px 18px rgba(0,0,0,.5)}
