@@ -157,6 +157,64 @@ const resources = [
     palette: "document cream, official blue, seal red, cooperative green, coin gold, wood brown, sky cyan, corn yellow",
     subjects: "the founding moment of a cooperative in one continuous scene — a group of campesinos and artisans gathered around a wooden table signing a constitutive act, a notary figure pressing an official round seal onto the document, a shared clay money-jar and a few gold coins as the common treasury on the table, a small hanging wooden shop sign with a painted symbol of corn and a balance scale (no readable text), baskets of products to sell behind them, an adobe storefront, hopeful bright sky, no readable text",
   },
+
+  // ── GUÍAS TÉCNICAS (regeneración de portadas existentes) ──────────────────
+  {
+    dir: "recursos/guias/como-hacer-adobe-con-tierra-de-tu-parcela",
+    slug: "como-hacer-adobe-con-tierra-de-tu-parcela",
+    title: "Cómo hacer adobe con tierra de tu parcela",
+    palette: "adobe red-ochre, cob earth brown, hay straw gold, lime cal white, sky cyan, stone grey, mountain blue",
+    subjects: "a sunny Mexican adobe-making workshop in one continuous scene — two people pressing wet earth-and-straw mix into a long wooden brick mould (adobera), hands smoothing the tops with a flat wooden trowel, rows of freshly demolded adobe bricks drying in the sun in neat rows, a wheelbarrow of red-brown moist earth and a bundle of golden straw beside them, a person mixing cob in a shallow pit with bare feet, a half-built adobe wall rising at the side, distant hills",
+  },
+  {
+    dir: "recursos/guias/construccion-de-captacion-de-agua-pluvial",
+    slug: "construccion-de-captacion-de-agua-pluvial",
+    title: "Construcción de captación de agua pluvial",
+    palette: "rain blue, cistern grey, gravel ochre, pipe white, tile terracotta, milpa green, sky cyan, cloud violet",
+    subjects: "a Mexican homestead rainwater-harvesting scene in one continuous illustration — a sloped clay-tile roof with gutters channeling rainwater into a large cylindrical concrete cistern, a person connecting the downspout and a first-flush filter, a tap at the bottom filling a clay jar, dark rain clouds with halftone raindrops falling, a green milpa of corn nourished by the stored water at the back, buckets and pipes on the ground",
+  },
+  {
+    dir: "recursos/guias/como-construir-un-fogon-eficiente-de-lena-con-adobe-y-barro",
+    slug: "como-construir-un-fogon-eficiente-de-lena-con-adobe-y-barro",
+    title: "Cómo construir un fogón eficiente de leña con adobe y barro",
+    palette: "ember orange, flame red, soot black, comal terracotta, adobe ochre, smoke grey, masa cream",
+    subjects: "a Mexican adobe kitchen scene building an efficient wood-burning clay stove in one continuous illustration — a U-shaped fogón of volcanic stones and adobe with a wide round clay comal on top, dry split logs burning underneath with tall orange flames, a person in apron crouching to feed wood and shape the adobe-and-clay body of the stove with their hands, smoke spiraling up in halftone curls, a clay pot of beans warming, an adobe wall and strings of dried red chiles hanging behind",
+  },
+  {
+    dir: "recursos/guias/como-raspar-un-maguey-y-obtener-aguamiel-para-hacer-pulque",
+    slug: "como-raspar-un-maguey-y-obtener-aguamiel-para-hacer-pulque",
+    title: "Cómo raspar un maguey y obtener aguamiel para hacer pulque",
+    palette: "maguey blue-green, aguamiel honey gold, acocote brown, terracotta clay red, sky cyan, agave silver, sunset orange",
+    subjects: "a tlachiquero scraping a mature maguey to extract aguamiel in one continuous scene — a person in white shirt and straw hat kneeling at a huge blue-green Agave salmiana maguey pulquero with thick pencas, scraping the hollowed-out heart cavity with a curved metal scraper, then sucking the sweet aguamiel up through a long acocote gourd, a clay pot collecting the milky-white sap beside them, the agave plateau of Hidalgo with rows of more magueyes stretching to the horizon",
+  },
+  {
+    dir: "recursos/guias/como-preparar-lombricomposta-en-casa-con-lombriz-roja-californiana",
+    slug: "como-preparar-lombricomposta-en-casa-con-lombriz-roja-californiana",
+    title: "Cómo preparar lombricomposta en casa con lombriz roja californiana",
+    palette: "humus black, dark earth brown, worm red, scrap green, paper cream, leaf green, soil ochre, sky cyan",
+    subjects: "a Mexican home vermicomposting scene in one continuous illustration — an open wooden worm bin with layers of dark moist compost full of red California worms, a pair of hands lifting a handful of rich black humus crawling with worms, kitchen scraps (vegetable peels) and shredded paper being added on top, a healthy potted plant fed by the finished dark compost at the side, a watering can and a small trowel nearby, an adobe patio",
+  },
+  {
+    dir: "recursos/guias/como-hacer-biofertilizante-de-estiercol-fermentado-para-la-milpa",
+    slug: "como-hacer-biofertilizante-de-estiercol-fermentado-para-la-milpa",
+    title: "Cómo hacer biofertilizante de estiércol fermentado para la milpa",
+    palette: "manure brown, molasses amber, drum blue, milpa green, water teal, soil black, sky cyan, leaf green",
+    subjects: "a rural Mexican scene making organic liquid fertilizer for the milpa in one continuous illustration — a large sealed blue plastic drum with a tube leading to a bottle airlock bubbling, a farmer in gloves stirring a rich dark-brown organic brew with a wooden stick and pouring amber molasses from a jar, halftone bubbles of fermentation rising, a green cornfield milpa in the background being watered with the dark liquid fertilizer from a watering can, buckets and a funnel nearby, golden sunlight",
+  },
+  {
+    dir: "recursos/guias/como-hacer-pinole-y-sus-usos-tradicionales-en-la-cocina-mexicana",
+    slug: "como-hacer-pinole-y-sus-usos-tradicionales-en-la-cocina-mexicana",
+    title: "Cómo hacer pinole y sus usos tradicionales en la cocina mexicana",
+    palette: "toasted corn gold, cinnamon brown, comal black, metate grey, masa cream, ember orange, piloncillo amber",
+    subjects: "a Mexican kitchen making pinole in one continuous illustration — golden maize kernels toasting on a round clay comal over a wood fire, a stone metate where a person in rebozo grinds the toasted corn with a cinnamon stick into fine golden flour, a clay bowl of finished pinole powder and a steaming cup of pinole atole nearby, brown piloncillo cones and cinnamon sticks on the table, an adobe kitchen wall behind",
+  },
+  {
+    dir: "recursos/guias/como-hacer-tepache-casero-de-pina",
+    slug: "como-hacer-tepache-casero-de-pina",
+    title: "Cómo hacer tepache casero de piña",
+    palette: "pineapple gold, piloncillo amber, cinnamon red, clove brown, foam cream, jar glass blue, peel ochre",
+    subjects: "a Mexican kitchen making pineapple tepache in one continuous illustration — a tall glass jar of golden tepache with pineapple peels, brown piloncillo cones and cinnamon sticks floating on the foamy surface, halftone fermentation bubbles rising from the jar, a clay cup of tepache poured with ice, a whole fresh pineapple and a few slices on a wooden board, a cinnamon stick and a mound of piloncillo on the table, an adobe kitchen behind",
+  },
 ];
 
 async function generateImage(r) {
