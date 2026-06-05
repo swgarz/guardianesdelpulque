@@ -476,6 +476,21 @@
       background:rgba(5,150,105,.2);
       transform:translateY(-1px);
     }
+    /* Filtros de recursos: se ven distintos a los tags (son navegación) */
+    .hero-filters{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:flex-end;margin-top:.85rem}
+    .filter-pill{
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.5rem 1rem;border-radius:999px;
+      background:#ffffff;border:1.5px solid #059669;color:#047857;
+      font-size:.8rem;font-weight:800;letter-spacing:.01em;
+      box-shadow:0 4px 12px rgba(5,150,105,.16);
+      transition:background .15s ease,color .15s ease,transform .12s ease,box-shadow .15s ease;
+    }
+    .filter-pill:hover{background:#059669;color:#fff;transform:translateY(-1px);box-shadow:0 8px 20px rgba(5,150,105,.32)}
+    body.mode-community .filter-pill{background:rgba(3,33,24,.92);border-color:#22c55e;color:#bbf7d0;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+    body.mode-community .filter-pill:hover{background:#22c55e;color:#022c22}
+    body.mode-reading .filter-pill{background:#0b1220;border-color:#22c55e;color:#bbf7d0}
+    body.mode-reading .filter-pill:hover{background:#22c55e;color:#020817}
 
     /* Backdrop blobs */
     .backdrop{position:absolute;inset:0;overflow:hidden;z-index:-1}
@@ -811,12 +826,12 @@
             <div class="pill">🍃 <strong>Guardianes del pulque</strong></div>
             <p class="hero-card-text">Artículos y guías sobre pulque, maguey, bioconstrucción, naturaleza y defensa del territorio — compartidos con código abierto y acceso libre.</p>
             <div class="hero-mini-cards" id="hero-tag-pills"></div>
-            <div class="hero-mini-cards">
-              <a class="mini" href="recursos.html?type=guia">🛠️ Guías técnicas</a>
-              <a class="mini" href="recursos.html?type=recetario">🍳 Recetarios</a>
-              <a class="mini" href="recursos.html?type=documento">📄 Documentos legales</a>
-            </div>
           </div>
+        </div>
+        <div class="hero-filters">
+          <a class="filter-pill" href="recursos.html?type=guia">🛠️ Guías técnicas</a>
+          <a class="filter-pill" href="recursos.html?type=recetario">🍳 Recetarios</a>
+          <a class="filter-pill" href="recursos.html?type=documento">📄 Documentos legales</a>
         </div>
       </div>
     </div>
