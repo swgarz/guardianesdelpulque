@@ -5,13 +5,73 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Mon, 01 Jun 2026 23:28:49 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2026 16:49:52 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El pan, el yogur y la farmacia invisible: cómo tu comida entrena a las bacterias del intestino</title>
+      <link>https://guardianesdelpulque.org/articulos/el-pan-el-yogur-y-la-farmacia-invisible-como-tu-comida-entrena-a-las-bacterias-del-intestino/el-pan-el-yogur-y-la-farmacia-invisible-como-tu-comida-entrena-a-las-bacterias-del-intestino.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-pan-el-yogur-y-la-farmacia-invisible-como-tu-comida-entrena-a-las-bacterias-del-intestino/el-pan-el-yogur-y-la-farmacia-invisible-como-tu-comida-entrena-a-las-bacterias-del-intestino.html</guid>
+      <description>¿Por qué el ajo y el pulque pueden influir en la resistencia a antibióticos — y qué tiene que ver la selva Lacandona con tu microbioma?</description>
+      <category>Salud</category>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-pan-el-yogur-y-la-farmacia-invisible-como-tu-comida-entrena-a-las-bacterias-del-intestino/el-pan-el-yogur-y-la-farmacia-invisible-como-tu-comida-entrena-a-las-bacterias-del-intestino.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>La tortuga que siembra el bosque: cómo los caparazones dispersan semillas imposibles</title>
+      <link>https://guardianesdelpulque.org/articulos/la-tortuga-que-siembra-el-bosque-como-los-caparazones-dispersan-semillas-imposibles/la-tortuga-que-siembra-el-bosque-como-los-caparazones-dispersan-semillas-imposibles.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-tortuga-que-siembra-el-bosque-como-los-caparazones-dispersan-semillas-imposibles/la-tortuga-que-siembra-el-bosque-como-los-caparazones-dispersan-semillas-imposibles.html</guid>
+      <description>En las selvas bajas de México, algunas semillas más duras solo viajan gracias a la lentitud de una tortuga.</description>
+      <category>Semillas</category>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-tortuga-que-siembra-el-bosque-como-los-caparazones-dispersan-semillas-imposibles/la-tortuga-que-siembra-el-bosque-como-los-caparazones-dispersan-semillas-imposibles.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El vapor que calma el estómago: manzanilla en los Altos de Puebla</title>
+      <link>https://guardianesdelpulque.org/articulos/el-vapor-que-calma-el-estomago-manzanilla-en-los-altos-de-puebla/el-vapor-que-calma-el-estomago-manzanilla-en-los-altos-de-puebla.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-vapor-que-calma-el-estomago-manzanilla-en-los-altos-de-puebla/el-vapor-que-calma-el-estomago-manzanilla-en-los-altos-de-puebla.html</guid>
+      <description>¿Por qué la infusión dorada de un campo silvestre puede aliviar tormentas digestivas? La manzanilla guarda más secretos de los que imaginas.</description>
+      <category>Medicina</category>
+      <pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-vapor-que-calma-el-estomago-manzanilla-en-los-altos-de-puebla/el-vapor-que-calma-el-estomago-manzanilla-en-los-altos-de-puebla.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Por qué un pulpo recuerda rutas y un cuervo reconoce caras en la CDMX</title>
+      <link>https://guardianesdelpulque.org/articulos/por-que-un-pulpo-recuerda-rutas-y-un-cuervo-reconoce-caras-en-la-cdmx/por-que-un-pulpo-recuerda-rutas-y-un-cuervo-reconoce-caras-en-la-cdmx.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/por-que-un-pulpo-recuerda-rutas-y-un-cuervo-reconoce-caras-en-la-cdmx/por-que-un-pulpo-recuerda-rutas-y-un-cuervo-reconoce-caras-en-la-cdmx.html</guid>
+      <description>Un pulpo escapa de su pecera, un cuervo acecha en Chapultepec. ¿Quién entiende a quién?</description>
+      <category>Cerebro</category>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/por-que-un-pulpo-recuerda-rutas-y-un-cuervo-reconoce-caras-en-la-cdmx/por-que-un-pulpo-recuerda-rutas-y-un-cuervo-reconoce-caras-en-la-cdmx.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>El hongo que come petróleo: cómo un puñado de esporas está limpiando tierras envenenadas en Veracruz</title>
+      <link>https://guardianesdelpulque.org/articulos/el-hongo-que-come-petroleo-como-un-punado-de-esporas-esta-limpiando-tierras-envenenadas-en-veracruz/el-hongo-que-come-petroleo-como-un-punado-de-esporas-esta-limpiando-tierras-envenenadas-en-veracruz.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-hongo-que-come-petroleo-como-un-punado-de-esporas-esta-limpiando-tierras-envenenadas-en-veracruz/el-hongo-que-come-petroleo-como-un-punado-de-esporas-esta-limpiando-tierras-envenenadas-en-veracruz.html</guid>
+      <description>Un costal de aserrín y un puñado de esporas pueden devolverle vida a un suelo que olía a gasolina.</description>
+      <category>Hongos</category>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-hongo-que-come-petroleo-como-un-punado-de-esporas-esta-limpiando-tierras-envenenadas-en-veracruz/el-hongo-que-come-petroleo-como-un-punado-de-esporas-esta-limpiando-tierras-envenenadas-en-veracruz.png" type="image/png" length="0"/>
+    </item>
+
+    <item>
+      <title>Conejos y abejas en la sierra: cómo la serie de Fibonacci se esconde en el ciclo de la vida</title>
+      <link>https://guardianesdelpulque.org/articulos/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida.html</guid>
+      <description>Un magueyal en Hidalgo y una colmena en Michoacán guardan el mismo secreto numérico: ¿por qué los animales siguen la cuenta de Fibonacci?</description>
+      <category>Evolucion</category>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida/conejos-y-abejas-en-la-sierra-como-la-serie-de-fibonacci-se-esconde-en-el-ciclo-de-la-vida.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Los mapas que caminan: cómo los pueblos indígenas dibujan el territorio con memoria</title>
