@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Mon, 15 Jun 2026 17:34:27 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2026 17:51:55 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Por qué los chapulines de Oaxaca alimentan mejor que un bistec</title>
+      <link>https://guardianesdelpulque.org/articulos/por-que-los-chapulines-de-oaxaca-alimentan-mejor-que-un-bistec/por-que-los-chapulines-de-oaxaca-alimentan-mejor-que-un-bistec.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/por-que-los-chapulines-de-oaxaca-alimentan-mejor-que-un-bistec/por-que-los-chapulines-de-oaxaca-alimentan-mejor-que-un-bistec.html</guid>
+      <description>¿Sabías que los saltamontes pueden tener más proteína que la carne? Así se crían, preparan y cazan a mano los chapulines de Oaxaca.</description>
+      <category>Insectos</category>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/por-que-los-chapulines-de-oaxaca-alimentan-mejor-que-un-bistec/por-que-los-chapulines-de-oaxaca-alimentan-mejor-que-un-bistec.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El pan, el yogur y la farmacia invisible: cómo tu comida entrena a las bacterias del intestino</title>
