@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Mon, 15 Jun 2026 17:51:55 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2026 16:22:36 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Bocas abiertas en Holbox: el tiburón ballena que traga mares y turistas</title>
+      <link>https://guardianesdelpulque.org/articulos/bocas-abiertas-en-holbox-el-tiburon-ballena-que-traga-mares-y-turistas/bocas-abiertas-en-holbox-el-tiburon-ballena-que-traga-mares-y-turistas.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/bocas-abiertas-en-holbox-el-tiburon-ballena-que-traga-mares-y-turistas/bocas-abiertas-en-holbox-el-tiburon-ballena-que-traga-mares-y-turistas.html</guid>
+      <description>La piel del tiburón ballena puede ser más gruesa que un ladrillo. ¿Por qué nadie te lo cuenta mientras saltas a verlo en Holbox?</description>
+      <category>Mamiferos</category>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/bocas-abiertas-en-holbox-el-tiburon-ballena-que-traga-mares-y-turistas/bocas-abiertas-en-holbox-el-tiburon-ballena-que-traga-mares-y-turistas.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Por qué los chapulines de Oaxaca alimentan mejor que un bistec</title>
