@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sat, 20 Jun 2026 15:07:36 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2026 15:09:13 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cómo un pez payaso convierte veneno en refugio: la extraña sociedad del arrecife</title>
+      <link>https://guardianesdelpulque.org/articulos/como-un-pez-payaso-convierte-veneno-en-refugio-la-extrana-sociedad-del-arrecife/como-un-pez-payaso-convierte-veneno-en-refugio-la-extrana-sociedad-del-arrecife.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/como-un-pez-payaso-convierte-veneno-en-refugio-la-extrana-sociedad-del-arrecife/como-un-pez-payaso-convierte-veneno-en-refugio-la-extrana-sociedad-del-arrecife.html</guid>
+      <description>¿Por qué el pez payaso no muere al rozar los tentáculos de la anémona que a otros peces fulmina en segundos?</description>
+      <category>Biologia</category>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/como-un-pez-payaso-convierte-veneno-en-refugio-la-extrana-sociedad-del-arrecife/como-un-pez-payaso-convierte-veneno-en-refugio-la-extrana-sociedad-del-arrecife.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Saguaro y biznaga: los secretos que guardan agua en el horno del desierto sonorense</title>
