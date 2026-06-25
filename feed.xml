@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Mon, 22 Jun 2026 17:27:58 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 15:39:00 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cómo un pulgón salta más lejos que un saltamontes: el secreto del resorte diminuto</title>
+      <link>https://guardianesdelpulque.org/articulos/como-un-pulgon-salta-mas-lejos-que-un-saltamontes-el-secreto-del-resorte-diminuto/como-un-pulgon-salta-mas-lejos-que-un-saltamontes-el-secreto-del-resorte-diminuto.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/como-un-pulgon-salta-mas-lejos-que-un-saltamontes-el-secreto-del-resorte-diminuto/como-un-pulgon-salta-mas-lejos-que-un-saltamontes-el-secreto-del-resorte-diminuto.html</guid>
+      <description>Un insecto de menos de tres milímetros lanza su cuerpo como catapulta. Lo increíble es lo que sucede en sus patas traseras.</description>
+      <category>Insectos</category>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/como-un-pulgon-salta-mas-lejos-que-un-saltamontes-el-secreto-del-resorte-diminuto/como-un-pulgon-salta-mas-lejos-que-un-saltamontes-el-secreto-del-resorte-diminuto.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Lo que pasa en el cerebro cuando tomas té de pasiflora: más allá del “relájate”</title>
