@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 25 Jun 2026 15:39:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2026 15:29:09 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cuando los castores reescriben el río: la revancha de un mamífero ingeniero</title>
+      <link>https://guardianesdelpulque.org/articulos/cuando-los-castores-reescriben-el-rio-la-revancha-de-un-mamifero-ingeniero/cuando-los-castores-reescriben-el-rio-la-revancha-de-un-mamifero-ingeniero.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cuando-los-castores-reescriben-el-rio-la-revancha-de-un-mamifero-ingeniero/cuando-los-castores-reescriben-el-rio-la-revancha-de-un-mamifero-ingeniero.html</guid>
+      <description>Un roedor que no es mexicano, pero que sabe hacer presas y humedales mejor que cualquier máquina. Así restauran el agua donde ya nadie la espera.</description>
+      <category>Naturaleza</category>
+      <pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/cuando-los-castores-reescriben-el-rio-la-revancha-de-un-mamifero-ingeniero/cuando-los-castores-reescriben-el-rio-la-revancha-de-un-mamifero-ingeniero.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cómo un pulgón salta más lejos que un saltamontes: el secreto del resorte diminuto</title>
