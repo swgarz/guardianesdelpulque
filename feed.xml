@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 26 Jun 2026 15:29:09 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2026 14:49:00 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cómo una estrella de mar y un ajolote se reconstruyen a sí mismos — y lo que eso dice sobre la vida y la muerte</title>
+      <link>https://guardianesdelpulque.org/articulos/como-una-estrella-de-mar-y-un-ajolote-se-reconstruyen-a-si-mismos-y-lo-que-eso-dice-sobre-la-vida-y-la-muerte/como-una-estrella-de-mar-y-un-ajolote-se-reconstruyen-a-si-mismos-y-lo-que-eso-dice-sobre-la-vida-y-la-muerte.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/como-una-estrella-de-mar-y-un-ajolote-se-reconstruyen-a-si-mismos-y-lo-que-eso-dice-sobre-la-vida-y-la-muerte/como-una-estrella-de-mar-y-un-ajolote-se-reconstruyen-a-si-mismos-y-lo-que-eso-dice-sobre-la-vida-y-la-muerte.html</guid>
+      <description>Un brazo cortado, una pierna entera perdida: para algunos animales, el cuerpo no es un límite, es un borrador siempre reescribible.</description>
+      <category>Biologia</category>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/como-una-estrella-de-mar-y-un-ajolote-se-reconstruyen-a-si-mismos-y-lo-que-eso-dice-sobre-la-vida-y-la-muerte/como-una-estrella-de-mar-y-un-ajolote-se-reconstruyen-a-si-mismos-y-lo-que-eso-dice-sobre-la-vida-y-la-muerte.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cuando los castores reescriben el río: la revancha de un mamífero ingeniero</title>
