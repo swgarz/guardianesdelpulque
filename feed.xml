@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sat, 27 Jun 2026 14:49:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2026 14:45:16 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cuando la Tierra late: lo que revela la frecuencia Schumann sobre nuestro planeta</title>
+      <link>https://guardianesdelpulque.org/articulos/cuando-la-tierra-late-lo-que-revela-la-frecuencia-schumann-sobre-nuestro-planeta/cuando-la-tierra-late-lo-que-revela-la-frecuencia-schumann-sobre-nuestro-planeta.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cuando-la-tierra-late-lo-que-revela-la-frecuencia-schumann-sobre-nuestro-planeta/cuando-la-tierra-late-lo-que-revela-la-frecuencia-schumann-sobre-nuestro-planeta.html</guid>
+      <description>¿Sabías que la Tierra emite un pulso casi imperceptible que viaja entre tormentas y encinas? Así suena el planeta cuando nadie escucha.</description>
+      <category>Ciencia</category>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/cuando-la-tierra-late-lo-que-revela-la-frecuencia-schumann-sobre-nuestro-planeta/cuando-la-tierra-late-lo-que-revela-la-frecuencia-schumann-sobre-nuestro-planeta.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cómo una estrella de mar y un ajolote se reconstruyen a sí mismos — y lo que eso dice sobre la vida y la muerte</title>
