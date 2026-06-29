@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sun, 28 Jun 2026 14:45:16 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 16:37:29 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Iguanas entre cardones y flamboyanes: secretos y peligros de los reptiles más famosos del trópico mexicano</title>
+      <link>https://guardianesdelpulque.org/articulos/iguanas-entre-cardones-y-flamboyanes-secretos-y-peligros-de-los-reptiles-mas-famosos-del-tropico-mexicano/iguanas-entre-cardones-y-flamboyanes-secretos-y-peligros-de-los-reptiles-mas-famosos-del-tropico-mexicano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/iguanas-entre-cardones-y-flamboyanes-secretos-y-peligros-de-los-reptiles-mas-famosos-del-tropico-mexicano/iguanas-entre-cardones-y-flamboyanes-secretos-y-peligros-de-los-reptiles-mas-famosos-del-tropico-mexicano.html</guid>
+      <description>¿Por qué la iguana verde y la espinosa sobreviven a depredadores, cazadores y sequías, mientras otras especies desaparecen?</description>
+      <category>Naturaleza</category>
+      <pubDate>Mon, 29 Jun 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/iguanas-entre-cardones-y-flamboyanes-secretos-y-peligros-de-los-reptiles-mas-famosos-del-tropico-mexicano/iguanas-entre-cardones-y-flamboyanes-secretos-y-peligros-de-los-reptiles-mas-famosos-del-tropico-mexicano.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cuando la Tierra late: lo que revela la frecuencia Schumann sobre nuestro planeta</title>
