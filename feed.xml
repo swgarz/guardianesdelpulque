@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 03 Jul 2026 15:16:47 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 14:42:54 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>¿Por qué los girasoles de Tlaxcala saben contar mejor que muchos humanos?</title>
+      <link>https://guardianesdelpulque.org/articulos/por-que-los-girasoles-de-tlaxcala-saben-contar-mejor-que-muchos-humanos/por-que-los-girasoles-de-tlaxcala-saben-contar-mejor-que-muchos-humanos.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/por-que-los-girasoles-de-tlaxcala-saben-contar-mejor-que-muchos-humanos/por-que-los-girasoles-de-tlaxcala-saben-contar-mejor-que-muchos-humanos.html</guid>
+      <description>Un número escondido en piñas, caracoles y girasoles podría estar detrás de la perfección que ves y nunca nombras.</description>
+      <category>Ciencia</category>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/por-que-los-girasoles-de-tlaxcala-saben-contar-mejor-que-muchos-humanos/por-que-los-girasoles-de-tlaxcala-saben-contar-mejor-que-muchos-humanos.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El zopilote rey: el ave que manda en la carroña de la selva sin mancharse una pluma</title>
