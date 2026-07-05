@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sat, 04 Jul 2026 14:42:54 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 14:27:30 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Las hormigas que defienden árboles armados: el pacto secreto de las acacias mexicanas</title>
+      <link>https://guardianesdelpulque.org/articulos/las-hormigas-que-defienden-arboles-armados-el-pacto-secreto-de-las-acacias-mexicanas/las-hormigas-que-defienden-arboles-armados-el-pacto-secreto-de-las-acacias-mexicanas.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/las-hormigas-que-defienden-arboles-armados-el-pacto-secreto-de-las-acacias-mexicanas/las-hormigas-que-defienden-arboles-armados-el-pacto-secreto-de-las-acacias-mexicanas.html</guid>
+      <description>Un ejército de mandíbulas protege a punta de ácido fórmico los espinos de la acacia en la selva baja de Jalisco.</description>
+      <category>Naturaleza</category>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/las-hormigas-que-defienden-arboles-armados-el-pacto-secreto-de-las-acacias-mexicanas/las-hormigas-que-defienden-arboles-armados-el-pacto-secreto-de-las-acacias-mexicanas.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>¿Por qué los girasoles de Tlaxcala saben contar mejor que muchos humanos?</title>
