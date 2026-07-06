@@ -1,5 +1,15 @@
 [
   {
+    "tag": "Biologia",
+    "title": "El pulpo que desaparece: secretos de camuflaje en el fondo de Oaxaca",
+    "excerpt": "Un pulpo puede volverse roca, alga o arena en menos de un segundo. ¿Cómo lo hace? El secreto está en su piel y en sus nervios.",
+    "date": "6 de julio de 2026",
+    "url": "articulos/el-pulpo-que-desaparece-secretos-de-camuflaje-en-el-fondo-de-oaxaca/el-pulpo-que-desaparece-secretos-de-camuflaje-en-el-fondo-de-oaxaca.html",
+    "cover": "articulos/el-pulpo-que-desaparece-secretos-de-camuflaje-en-el-fondo-de-oaxaca/el-pulpo-que-desaparece-secretos-de-camuflaje-en-el-fondo-de-oaxaca.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Camuflaje y optica de pulpos, cromatoforos y mimetismo activo"
+  },
+  {
     "tag": "Naturaleza",
     "title": "Las hormigas que defienden árboles armados: el pacto secreto de las acacias mexicanas",
     "excerpt": "Un ejército de mandíbulas protege a punta de ácido fórmico los espinos de la acacia en la selva baja de Jalisco.",
