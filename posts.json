@@ -1,5 +1,15 @@
 [
   {
+    "tag": "Mamiferos",
+    "title": "El silbido del perro llanero y la sombra del bisonte: ecos de una pradera mexicana",
+    "excerpt": "Un roedor que silba como centinela, bisontes que regresan y un pastizal donde el tiempo se esconde en el viento de Janos.",
+    "date": "10 de julio de 2026",
+    "url": "articulos/el-silbido-del-perro-llanero-y-la-sombra-del-bisonte-ecos-de-una-pradera-mexicana/el-silbido-del-perro-llanero-y-la-sombra-del-bisonte-ecos-de-una-pradera-mexicana.html",
+    "cover": "articulos/el-silbido-del-perro-llanero-y-la-sombra-del-bisonte-ecos-de-una-pradera-mexicana/el-silbido-del-perro-llanero-y-la-sombra-del-bisonte-ecos-de-una-pradera-mexicana.png",
+    "imageStyle": "oleo-empaste",
+    "topic": "Pradera de pastos altos en Janos, perro llanero y bisonte"
+  },
+  {
     "tag": "Ciencia",
     "title": "La simetría imposible de un copo de nieve que nunca verás igual",
     "excerpt": "El secreto hexagonal de los copos que caen en Amanalco: por qué dos jamás repiten su diseño bajo el microscopio.",
