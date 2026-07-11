@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 10 Jul 2026 15:36:24 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2026 14:25:51 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El Caracol de Chichén Itzá: el edificio que escuchó a Venus</title>
+      <link>https://guardianesdelpulque.org/articulos/el-caracol-de-chichen-itza-el-edificio-que-escucho-a-venus/el-caracol-de-chichen-itza-el-edificio-que-escucho-a-venus.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-caracol-de-chichen-itza-el-edificio-que-escucho-a-venus/el-caracol-de-chichen-itza-el-edificio-que-escucho-a-venus.html</guid>
+      <description>Una escalera en espiral, un hueco en la piedra y una obsesión maya: ¿por qué Venus dictaba guerras y cosechas en Yucatán?</description>
+      <category>Cosmologia</category>
+      <pubDate>Sat, 11 Jul 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-caracol-de-chichen-itza-el-edificio-que-escucho-a-venus/el-caracol-de-chichen-itza-el-edificio-que-escucho-a-venus.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El silbido del perro llanero y la sombra del bisonte: ecos de una pradera mexicana</title>
