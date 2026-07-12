@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sat, 11 Jul 2026 14:25:51 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 14:25:05 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Setas en la cocina: cómo un cuarto oscuro se convierte en bosque bajo tierra</title>
+      <link>https://guardianesdelpulque.org/articulos/setas-en-la-cocina-como-un-cuarto-oscuro-se-convierte-en-bosque-bajo-tierra/setas-en-la-cocina-como-un-cuarto-oscuro-se-convierte-en-bosque-bajo-tierra.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/setas-en-la-cocina-como-un-cuarto-oscuro-se-convierte-en-bosque-bajo-tierra/setas-en-la-cocina-como-un-cuarto-oscuro-se-convierte-en-bosque-bajo-tierra.html</guid>
+      <description>El secreto de los hongos no está en el bosque: está en la humedad del baño y el aroma terroso de la composta.</description>
+      <category>Hongos</category>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/setas-en-la-cocina-como-un-cuarto-oscuro-se-convierte-en-bosque-bajo-tierra/setas-en-la-cocina-como-un-cuarto-oscuro-se-convierte-en-bosque-bajo-tierra.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El Caracol de Chichén Itzá: el edificio que escuchó a Venus</title>
