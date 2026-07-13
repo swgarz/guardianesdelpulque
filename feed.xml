@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sun, 12 Jul 2026 14:25:05 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 15:40:24 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cómo sobreviven los osos sin comer, beber ni orinar durante meses</title>
+      <link>https://guardianesdelpulque.org/articulos/como-sobreviven-los-osos-sin-comer-beber-ni-orinar-durante-meses/como-sobreviven-los-osos-sin-comer-beber-ni-orinar-durante-meses.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/como-sobreviven-los-osos-sin-comer-beber-ni-orinar-durante-meses/como-sobreviven-los-osos-sin-comer-beber-ni-orinar-durante-meses.html</guid>
+      <description>¿Por qué los osos no se mueren de hambre ni se llenan de toxinas al dormir todo el invierno bajo la nieve?</description>
+      <category>Mamiferos</category>
+      <pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/como-sobreviven-los-osos-sin-comer-beber-ni-orinar-durante-meses/como-sobreviven-los-osos-sin-comer-beber-ni-orinar-durante-meses.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Setas en la cocina: cómo un cuarto oscuro se convierte en bosque bajo tierra</title>
