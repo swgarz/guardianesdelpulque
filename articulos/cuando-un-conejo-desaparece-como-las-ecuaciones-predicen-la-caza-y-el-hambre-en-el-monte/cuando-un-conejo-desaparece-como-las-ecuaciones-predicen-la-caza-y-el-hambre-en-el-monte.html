@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../../images/logo_transparente.png">
+  <title>Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte — Guardianes del Pulque</title>
+  <meta name="description" content="¿Puede una fórmula matemática anticipar cuándo un zorro tendrá que migrar por falta de presas? Aquí, los números también acechan." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte" />
+  <meta property="og:description" content="¿Puede una fórmula matemática anticipar cuándo un zorro tendrá que migrar por falta de presas? Aquí, los números también acechan." />
+  <meta property="og:image" content="https://guardianesdelpulque.org/articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.png" />
+  <meta property="og:url" content="https://guardianesdelpulque.org/articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.html" />
+  <meta property="og:site_name" content="Guardianes del Pulque" />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte" />
+  <meta name="twitter:description" content="¿Puede una fórmula matemática anticipar cuándo un zorro tendrá que migrar por falta de presas? Aquí, los números también acechan." />
+  <meta name="twitter:image" content="https://guardianesdelpulque.org/articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.png" />
+  <link rel="canonical" href="https://guardianesdelpulque.org/articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.html" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte",
+    "description": "¿Puede una fórmula matemática anticipar cuándo un zorro tendrá que migrar por falta de presas? Aquí, los números también acechan.",
+    "image": "https://guardianesdelpulque.org/articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.png",
+    "datePublished": "2026-07-18",
+    "author": {
+      "@type": "Organization",
+      "name": "Guardianes del Pulque",
+      "url": "https://guardianesdelpulque.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Guardianes del Pulque",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://guardianesdelpulque.org/images/logo_transparente.png"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji';
+      line-height:1.6;
+      color:#0f172a;
+      background:#f6f8fb;
+    }
+    :root{
+      --brand:#059669;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --card:#ffffff;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{max-width:960px;margin-inline:auto;padding:0 16px}
+    @media (min-width:640px){.container{padding:0 24px}}
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:40;
+      background:transparent;
+      border-bottom:1px solid transparent;
+      backdrop-filter:saturate(180%) blur(14px);
+      transition:background .25s ease,border-color .25s ease,box-shadow .25s ease;
+    }
+    .nav-row{
+      display:flex;align-items:center;
+      justify-content:space-between;
+      padding:10px 0;gap:1rem;
+    }
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700;}
+    .brand-logo{height:40px;width:auto;}
+    @media (min-width:768px){.brand-logo{height:52px}}
+    .brand-text{font-size:1rem;color:#111827;letter-spacing:.02em;}
+    .links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;align-items:center;}
+    .chip{
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.4rem .85rem;border-radius:999px;
+      border:2px solid var(--brand);color:var(--brand);
+      background:rgba(255,255,255,.98);font-weight:700;
+      font-size:.75rem;cursor:pointer;
+      transition:all .18s ease;white-space:nowrap;
+    }
+    .chip .emoji{font-size:.95rem}
+    .chip:hover{background:var(--brand);color:#020817;transform:translateY(-1px);}
+    .nav.scrolled{
+      background:#020817;
+      border-bottom-color:rgba(148,163,253,.2);
+      box-shadow:0 14px 40px rgba(0,0,0,.55);
+    }
+    .nav.scrolled .brand-text{color:#f9fafb}
+    .nav.scrolled .chip{background:transparent;border-color:#22c55e;color:#bbf7d0;}
+    .nav.scrolled .chip:hover{background:#22c55e;color:#020817;}
+
+    /* LAYOUT */
+    main{padding:32px 0 40px}
+    .breadcrumbs{font-size:.78rem;color:#9ca3af;margin-bottom:8px;}
+    .breadcrumbs a{color:#6b7280}
+    .breadcrumbs a:hover{color:var(--brand)}
+    .article-header{margin-bottom:18px;}
+    .article-title{
+      margin:0 0 6px;
+      font-size:clamp(26px,5.5vw,38px);
+      line-height:1.15;letter-spacing:-.01em;color:#0f172a;
+    }
+    .article-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.78rem;color:#6b7280;}
+    .meta-pill{display:inline-flex;align-items:center;gap:.3rem;}
+    .meta-pill span{font-size:.82rem}
+    .meta-pill-views{padding:.2rem .55rem;border-radius:999px;background:rgba(5,150,105,.09);color:#065f46;font-weight:600;transition:opacity .3s;}
+    .meta-pill-views[data-state="loading"]{opacity:.55}
+    .article-lead{margin:14px 0 18px;font-size:.98rem;color:#4b5563;}
+    .hero-img{margin:14px auto 24px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,.16);width:100%;max-width:912px;height:500px;display:block;} .hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    /* DIY SECTION */
+    .diy-section{
+      margin:2rem 0;padding:1.4rem 1.6rem;border-radius:16px;
+      background:rgba(5,150,105,.06);border:2px solid rgba(5,150,105,.25);
+    }
+    .diy-section h2{margin:0 0 .8rem;font-size:1.15rem;color:#065f46;}
+    .diy-section h3{margin:.8rem 0 .4rem;font-size:.95rem;color:#0f172a;font-weight:700;}
+    .diy-section p{margin:0 0 .7rem;font-size:.92rem;color:#374151;}
+    .diy-section ul,.diy-section ol{margin:0 0 .8rem 1.2rem;font-size:.92rem;color:#374151;}
+    .diy-section li{margin-bottom:.3rem;}
+
+    /* CUERPO */
+    .article-body{font-size:.97rem;color:#111827;}
+    .article-body h2{margin:36px 0 10px;font-size:1.35rem;color:#065f46;font-weight:800;letter-spacing:-.01em;border-bottom:2px solid rgba(5,150,105,.18);padding-bottom:6px;}
+    .article-body h3{margin:22px 0 8px;font-size:1.05rem;color:#0d9488;font-weight:700;}
+    .article-body p{margin:0 0 12px}
+    .article-body ul,.article-body ol{margin:0 0 14px 1.1rem;padding:0;color:#374151;}
+    .highlight{
+      padding:10px 12px;border-left:3px solid var(--brand);
+      background:rgba(5,150,105,.04);border-radius:10px;
+      margin:14px 0;font-size:.86rem;color:#374151;
+    }
+    .aside-fact{
+      display:block;margin:20px 0;padding:16px 20px;
+      background:linear-gradient(135deg,rgba(5,150,105,.08),rgba(13,148,136,.06));
+      border-left:4px solid var(--brand);border-radius:14px;
+      font-size:.95rem;color:#0f172a;
+    }
+    .aside-fact strong{display:block;color:#065f46;margin-bottom:.35rem;font-size:.95rem;letter-spacing:.01em;}
+    .glossary{margin:16px 0 0;padding:18px 22px;background:rgba(15,23,42,.03);border-radius:14px;}
+    .glossary dt{font-weight:800;color:#065f46;margin-top:10px;font-size:.98rem;}
+    .glossary dt:first-child{margin-top:0}
+    .glossary dd{margin:4px 0 0 0;color:#374151;font-size:.92rem;line-height:1.55;}
+    .article-body em{font-style:italic;color:#065f46;}
+
+    /* CTA */
+    .cta-section{
+      margin:2rem 0 1rem;padding:1.4rem;border-radius:16px;
+      background:rgba(5,150,105,.04);border:1px dashed rgba(5,150,105,.3);
+      text-align:center;
+    }
+    .cta-section h3{font-size:1rem;margin:0 0 .5rem;color:#065f46;}
+    .cta-section p{font-size:.84rem;color:#4b5563;margin:0 0 .9rem;}
+    .cta-form{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem;}
+    .cta-form label{font-size:.8rem;color:#4b5563;margin-bottom:.25rem;display:block;text-align:center;}
+    .cta-form input[type="email"]{
+      padding:.45rem .8rem;border:1.5px solid #d1d5db;
+      border-radius:999px;font-size:.82rem;width:220px;max-width:100%;
+    }
+    .cta-form input[type="email"]:focus{border-color:var(--brand);outline:2px solid var(--brand);outline-offset:2px;}
+    .cta-form button{
+      padding:.45rem 1.1rem;border:none;border-radius:999px;
+      background:var(--brand);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;
+    }
+    .cta-form button:hover{background:#047857;}
+
+    .skip-link{position:absolute;top:-44px;left:6px;z-index:9999;background:#059669;color:#fff;padding:8px 16px;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:600;text-decoration:none;transition:top .15s ease;}
+    .skip-link:focus{top:0;}
+    .back-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:.6rem;font-size:.8rem;}
+    button.chip{font-family:inherit;}
+    footer{border-top:1px solid rgba(15,23,42,.08);padding:18px 0 22px;font-size:.78rem;color:#9ca3af;}
+    footer .row{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;}
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+  <!-- NAV -->
+  <header class="nav" id="mainNav">
+    <div class="container nav-row">
+      <a class="brand" href="../../index.html">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" class="brand-logo" />
+        <span class="brand-text">Guardianes del Pulque</span>
+      </a>
+      <nav class="links">
+        <a class="chip" href="../../posts.html">📰 Artículos</a>
+        <a class="chip" href="../../recursos.html">🛠️ Recursos</a>
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main-content">
+    <div class="breadcrumbs">
+      <a href="../../index.html">Inicio</a> ·
+      <a href="../../posts.html">Artículos</a> ·
+      Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte
+    </div>
+
+    <header class="article-header">
+      <h1 class="article-title">Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte</h1>
+      <div class="article-meta">
+        <div class="meta-pill">🔬 <span>Ciencia</span></div>
+        <div class="meta-pill">🕒 <span>Lectura: 12–14 min</span></div>
+        <div class="meta-pill">📅 <span>18 de julio de 2026</span></div>
+        <div class="meta-pill meta-pill-views" id="viewCounter" aria-label="Visitas"><span aria-hidden="true">👁️</span> <span id="viewCount">—</span></div>
+      </div>
+      <p class="article-lead">¿Puede una fórmula matemática anticipar cuándo un zorro tendrá que migrar por falta de presas? Aquí, los números también acechan.</p>
+    </header>
+
+    <figure class="hero-img">
+      <img src="cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.png" alt="Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte" />
+    </figure>
+
+    <article class="article-body">
+      <h2>En la sierra alta de Durango, un conejo salta y un zorro acecha</h2><p>A tres mil metros sobre el nivel del mar, la madrugada huele a cedro y a tierra recién mojada en la ladera de la Sierra Madre Occidental. Don Aurelio, pastor de la comunidad de Otinapa, se agacha junto a un sendero cubierto de agujas de pino. Señala unas huellas frescas en el lodo: primero, dos pequeños arcos separados —conejo—; después, una línea zigzagueante mucho más grande: el zorro colorado (<em>Vulpes vulpes</em>) anda cerca. Don Aurelio no lo sabe, pero el vaivén entre conejos y zorros que lee en el fango es uno de los bailes más antiguos de la biología. Y, sorprendentemente, uno que también se puede escribir con números.</p><p>Mientras le silba a sus cabras, el aire frío muerde sus dedos. Sabe que este año hay menos conejos. Hace apenas dos inviernos, los forrajes sobraban y los zorros aullaban en las noches. Ahora, el silencio es más espeso. Cuando le preguntas, responde sin dudar: “donde hay mucho conejo, pronto habrá más zorro… pero luego, puro silencio otra vez”. Su frase encapsula un ciclo que ha fascinado a biólogos y matemáticos desde hace un siglo.</p><p>La escena suena simple, pero en estos claros dispersos por el altiplano de Durango, los altibajos entre cazador y presa generan patrones que los humanos apenas hemos aprendido a leer. Las pistas no están solo en los rastros, sino en la danza matemática que conecta la supervivencia de ambos.</p><p>Cada generación de zorros y conejos deja un eco en los cuerpos, en la abundancia de pastos, en el lomo de los cerros. Pero, ¿cómo transformar esas señales en predicciones? La respuesta viene de una ecuación nacida en pizarras lejanas.</p><h2>Matemáticas en el monte: ¿para qué sirven las ecuaciones de población?</h2><p>En los bordes del bosque templado de la Reserva de la Biosfera La Michilía, a 2,800 metros de altitud, los habitantes cuentan historias de años de bonanza y años de escasez. Las variaciones de temperatura —entre los 5 y 25 grados durante el año—, la sequedad del aire y los brotes súbitos de pastos marcan el ritmo de los nacimientos y las desapariciones. Pero debajo de la anécdota, hay un patrón más profundo.</p><p>Las ecuaciones de población nacen con la obsesión de entender estos ciclos. ¿Por qué a veces parecen abundar las presas y, al poco tiempo, los depredadores? ¿Y cómo es que nunca hay equilibrio estable, sino ondas, subidas y bajadas? Los primeros intentos matemáticos usaban cuentas de animales, pero pronto aparecieron fórmulas que podían anticipar altibajos aún sin contar uno por uno.</p><p>Las ecuaciones de cambio poblacional —como la diferencial de Malthus y Verhulst— permiten estimar cómo crecen o disminuyen los números de animales en función del tiempo y de las condiciones. Un ejemplo clásico: cuando hay mucha comida y pocos depredadores, las presas crecen rápido. Cuando los depredadores abundan, la población de presas cae.</p><p>No todos los años traen la misma abundancia. El olor a pastos secos o el crujido de las ramas bajo la helada avisan cuándo el ciclo va a cambiar. Pero estas señales también pueden traducirse, con cautela, en ecuaciones.</p><h2>El modelo Lotka-Volterra: la fórmula que imita el hambre y la caza</h2><p>En 1925, Alfred Lotka y, al año siguiente, Vito Volterra, crearon una pareja de ecuaciones diferenciales que, como los rastros en el lodo, revelan el destino compartido de depredadores y presas. El modelo Lotka-Volterra describe dos poblaciones: una presa (como el conejo <em>Lepus californicus</em>) y un depredador (el zorro <em>Vulpes vulpes</em>), y predice cómo cambian con el tiempo.</p><p>Las fórmulas, aunque abstractas, tienen raíces en el comportamiento real: la presa crece si no hay depredador, pero disminuye cuando aparece el cazador. El depredador necesita de la presa para sobrevivir: si hay poco alimento, su número cae. Así, ambas poblaciones suben y bajan de manera cíclica, como olas que nunca se detienen.</p><ul><li>El crecimiento de la presa depende de su propia abundancia y de la presión del depredador.</li><li>El depredador solo prospera cuando la presa abunda, pero está condenado a declinar si la agota.</li><li>El modelo no incorpora límites ambientales fijos, sino solo la interacción básica entre los dos.</li></ul><p>En bosques templados como los de la Sierra de Arteaga, Coahuila, el crujido de ramas secas al pasar un zorro recuerda que cada caza es una variable más en la ecuación. Pero, ¿qué ocurre cuando el modelo falla ante la realidad?</p><aside class="aside-fact"><strong>Dato que rompe el molde:</strong> El modelo Lotka-Volterra predice que ni el depredador ni la presa desaparecen del todo, pero la vida real sí ve extinciones — la matemática, a veces, es más optimista que la naturaleza.</aside><h2>Cómo funciona la ecuación: desmenuzando los términos reales</h2><p>En la zona semidesértica alrededor del Valle del Mezquital, Hidalgo, los conejos se refugian bajo matorrales de mezquite y huizache, esquivando al calor de la superficie y el acecho de culebras y zopilotes. Si uno pudiera escribir la historia de cuántos sobreviven cada estación, la ecuación de Lotka-Volterra se vería así:</p><ul><li>dN/dt = rN - aNP (N: número de presas, P: depredadores, r: tasa de crecimiento de la presa, a: tasa de caza)</li><li>dP/dt = faNP - qP (f: eficiencia del depredador, q: tasa de mortalidad del depredador)</li></ul><p>Traducido: la presa crece de manera exponencial hasta que llegan los depredadores (como el chillido de una liebre al escapar bajo la luna). Cada término representa un factor del entorno: la abundancia de pasto, la facilidad para esconderse, lo hábil que es el depredador para cazar.</p><p>Por ejemplo, en la zona boscosa del Parque Nacional Cumbres de Monterrey, los coyotes (<em>Canis latrans</em>) ajustan su dieta dependiendo de la estación y la disponibilidad de roedores. La ecuación, aunque simple, permite prever cuándo la presión de caza será tan fuerte que la población de presa bajará drásticamente.</p><p>Pero, ¿qué pasa cuando hay muchos depredadores y pocas presas? Las ecuaciones anticipan una caída y, si hay suerte, el ciclo comienza de nuevo. La textura áspera de la corteza del encino y el eco distante de aullidos acompañan cada oscilación.</p><h2>Más allá del pizarrón: ejemplos tangibles en ecosistemas mexicanos</h2><p>En los manglares de la Laguna de Términos, Campeche, el cangrejo azul (<em>Callinectes sapidus</em>) y el mapache (<em>Procyon lotor</em>) mantienen una relación parecida, aunque el agua salobre y la densidad de raíces complican el conteo. Cada captura nocturna, acompañada del chasquido de pinzas y el chapoteo suave, marca una minúscula variación en las curvas de población.</p><p>En el altiplano de Zacatecas, la liebre <em>Lepus californicus</em> y sus depredadores, como el halcón de Harris (<em>Parabuteo unicinctus</em>), juegan a diario este juego silencioso. La sensación de plumas rozando el viento seco y el zumbido de insectos al atardecer anclan los ciclos a algo más que fórmulas.</p><p>Los defensores de la milpa en Oaxaca han notado que, en años de plaga de ratones, los búhos (<em>Tyto alba</em>) ayudan a evitar que el grano desaparezca. El ulular al anochecer avisa que la población de presas puede estar en auge y que, pronto, los depredadores aumentarán en respuesta.</p><p>Estos casos no son meros ejemplos: muestran que el modelo Lotka-Volterra puede aproximarse a la realidad, pero cada ecosistema agrega una capa de complejidad — la humedad del manglar, la altitud del altiplano, la textura de la milpa recién cultivada.</p><h2>Errores comunes: cómo se tuerce la predicción y por qué importa el detalle</h2><p>En los pastizales de la Reserva de Janos, Chihuahua, los perritos de la pradera (<em>Cynomys ludovicianus</em>) han sufrido verdaderos colapsos poblacionales por plagas nuevas o cambios de uso del suelo. El error más común de quienes aplican el modelo Lotka-Volterra es suponer que solo existen dos especies en juego. Pero el ecosistema real es una telaraña con muchos hilos.</p><p>Por ejemplo, un año seco puede reducir el pasto, lo que debilita a los conejos y, en consecuencia, a los zorros: el modelo no contempla el efecto del clima. Tampoco considera enfermedades, competencia entre varios depredadores o la migración forzada cuando los recursos escasean.</p><p>Otro error frecuente es creer que las tasas de nacimiento y muerte son constantes. En la región de Los Tuxtlas, Veracruz, las lluvias monzónicas pueden disparar explosiones de roedores, seguidas por aumentos de serpientes depredadoras. La ecuación, sin ajustes, no predice estos picos extraordinarios.</p><p>Imaginar que la matemática puede reemplazar la observación de campo sería como ignorar el olor a tierra mojada después de un aguacero: la realidad es más rica y más impredecible que cualquier fórmula.</p><h2>Cómo probar el modelo Lotka-Volterra en la vida real: práctica sencilla para curiosos</h2><p>Si tienes acceso a un terreno —o incluso un jardín amplio en una zona rural de Puebla, a unos 2,100 metros sobre el mar— puedes intentar observar en pequeño el ciclo depredador-presa. Elige dos especies fáciles de identificar, como mariquitas (<em>Coccinella septempunctata</em>) y pulgones (<em>Aphis craccivora</em>), que suelen encontrarse en plantas de haba o frijol.</p><ol><li>Planta varias matas de haba en macetas o en un bancal a mitad de primavera, cuando la temperatura ronda los 18°C.</li><li>Deja que se instalen los pulgones (suaves, de color verde oscuro o negro, amantes de los brotes tiernos).</li><li>Introduce algunas mariquitas adultas, ya sea recolectándolas manualmente o comprando ejemplares en viveros especializados.</li><li>Durante varias semanas, cuenta el número de pulgones y mariquitas cada dos o tres días. Anota el clima, la humedad y cualquier plaga inesperada.</li></ol><p>No esperes curvas perfectas, pero verás que una explosión de pulgones es seguida, días después, por más mariquitas. Luego, ambos decaen. El ciclo se siente en la textura pegajosa de las hojas y el zumbido de insectos al mediodía.</p><p>Evita introducir nuevos insectos a mitad del experimento y mantén las plantas en la sombra parcial, como ocurriría a la orilla de un bosque mesófilo, para evitar excesos de calor que alteren la dinámica.</p><h2>Más allá del zorro y el conejo: otros usos del modelo en la actualidad</h2><p>En la ribera del Lago de Chapala, Jalisco, las variaciones anuales del nivel del agua afectan tanto al pez charal (<em>Chirostoma estor</em>) como a sus depredadores, como la garza blanca (<em>Ardea alba</em>). Pero el modelo Lotka-Volterra no solo se utiliza para describir animales salvajes. Ha inspirado el manejo de plagas agrícolas, el control biológico y hasta la gestión de epidemias bacterianas.</p><p>En invernaderos de Sinaloa, los productores de jitomate han usado formulaciones inspiradas en Lotka-Volterra para anticipar cuándo liberar enemigos naturales de plagas, como crisopas (<em>Chrysoperla carnea</em>) contra áfidos. El olor a tomate maduro y la humedad constante dentro del invernadero recuerdan que aquí también los ciclos dictan el éxito.</p><p>La ecuación, adaptada, ayuda a prever brotes de especies invasoras en los humedales de la Laguna de Alchichica, Puebla. Incluso, algunos epidemiólogos han usado versiones modificadas para entender el avance de virus y bacterias donde “presa” y “depredador” son células y microbios.</p><p>El modelo sigue siendo una brújula imperfecta: funciona mejor cuando el sistema es simple. Pero en cuanto entran más especies, nutrientes, o humanos —con sus pesticidas y fertilizantes—, la realidad se retuerce y exige más variables.</p><aside class="aside-fact"><strong>Dato que rompe el molde:</strong> Algunos matemáticos han usado versiones de Lotka-Volterra para predecir interacciones entre empresas rivales, simulando competencia económica como si fueran depredador y presa.</aside><h2>La intuición campesina y la matemática: dos formas de leer la vida</h2><p>En el ejido El Pino, en San Luis Potosí, las historias orales recuerdan el paso de las “plagas negras” —ratones que arrasaban con las mazorcas y forzaban a los granjeros a prender fogatas toda la noche. El olor a humo y maíz quemado es un recordatorio de que antes de las ecuaciones, la supervivencia dependía de leer el monte con otros sentidos.</p><p>Don Aurelio nunca vio una ecuación, pero sabe cuándo los conejos escasean porque el silencio se vuelve denso y los zorros buscan más cerca de los corrales. Para él, la predicción no es una gráfica, sino la suma de rastros, sonidos y ausencias.</p><p>Las matemáticas pueden afinar la intuición, pero nunca la reemplazan del todo. En los campos de Milpa Alta, Ciudad de México, los agricultores combinan el conteo de insectos con rezos al inicio de la siembra, esperando que ni los números ni los dioses fallen ese año.</p><p>La sabiduría matemática y la popular se cruzan en los claros del bosque, donde la humedad en el aire y la sombra de un ave dan tanta información como cualquier ecuación.</p><h2>Una última vuelta por el monte: lo que queda cuando se apaga el zorro</h2><p>El cielo de la Sierra de Durango se tiñe de rojo cuando el sol cae tras los cerros. Don Aurelio, envuelto en su sarape, mira hacia los pinos y espera el aullido que avise que aún quedan zorros. Si el silencio dura demasiado, sabe que vendrán tiempos duros: menos conejos, menos vida. El ciclo sigue, aunque nadie lo escriba.</p><p>La próxima vez que cruces un claro en la sierra y veas solo huellas viejas, pregunta si la ecuación sigue latiendo ahí, invisible, o si algo —sequía, veneno, migración humana— la rompió del todo. A veces, la ausencia es la señal más clara de que el modelo necesita volver a empezar.</p><h2>Glosario</h2><dl class="glossary"><dt>Depredador</dt><dd>Animal que caza y se alimenta de otro, llamado presa, en un ecosistema natural.</dd><dt>Presa</dt><dd>Organismo que sirve de alimento a un depredador; su abundancia influye en la población de su cazador.</dd><dt>Lotka-Volterra</dt><dd>Modelo matemático con dos ecuaciones diferenciales que describe las oscilaciones entre dos especies: depredador y presa.</dd><dt>Tasa de crecimiento</dt><dd>Velocidad a la que crece la población de una especie bajo ciertas condiciones ambientales.</dd><dt>Ecuación diferencial</dt><dd>Fórmula matemática que relaciona una función con sus derivadas, útil para modelar cambios en el tiempo.</dd><dt>Eficiencia del depredador</dt><dd>Capacidad de un depredador para convertir presas cazadas en descendencia exitosa.</dd><dt>Oscilación poblacional</dt><dd>Subidas y bajadas periódicas en el número de individuos de una especie en respuesta a factores ecológicos.</dd></dl>
+    </article>
+
+    <!-- DIY SECTION -->
+    <section class="diy-section" id="hazlo-tu-mismo">
+      <h2>🛠️ Hazlo tú mismo</h2>
+      <h3>Construye una Trampa de Lazo para Conejos</h3>
+      <p>Aprenderás a construir una trampa de lazo simple para conejos usando materiales básicos. Esta actividad te tomará aproximadamente 30 minutos y te ayudará a entender cómo se predicen patrones de caza en el monte.</p>
+      <h3>Materiales</h3>
+      <ul>
+        <li>1 metro de alambre galvanizado de 2 mm de grosor</li>
+        <li>1 palo de madera de 50 cm de largo</li>
+        <li>1 palo de madera de 20 cm de largo</li>
+        <li>1 cuerda de 1 metro de longitud</li>
+        <li>1 navaja</li>
+        <li>1 par de guantes de trabajo</li>
+        <li>1 pinza de corte</li>
+      </ul>
+      <h3>Paso a paso</h3>
+      <ol>
+        <li>Corta el alambre en un segmento de 50 cm usando la pinza de corte.</li>
+        <li>Forma un lazo al final del alambre, asegurándolo con un nudo simple.</li>
+        <li>Ata el otro extremo del alambre al palo de 50 cm, dejando el lazo libre.</li>
+        <li>Clava el palo de 50 cm en el suelo, asegurándote de que esté firme.</li>
+        <li>Coloca el palo de 20 cm en el suelo formando una horqueta que sostenga el lazo a 10 cm del suelo.</li>
+        <li>Ata un extremo de la cuerda al palo de 20 cm y el otro extremo al lazo para que se cierre cuando se tense.</li>
+      </ol>
+      <div class="highlight">💡 Asegúrate de que el lazo esté bien camuflado con hojas o tierra para que sea menos visible para el conejo.</div>
+    </section>
+
+    <!-- CTA SUSCRIPCIÓN -->
+    <div class="cta-section">
+      <h3>Recibe más artículos como este</h3>
+      <p>Suscríbete al boletín de Guardianes del Pulque y recibe contenido sobre pulque, bioconstrucción y defensa del territorio directamente en tu correo.</p>
+      <form class="cta-form" action="#suscribirse" method="post">
+        <div>
+          <label for="ctaEmail">Tu correo electrónico</label>
+          <input id="ctaEmail" type="email" placeholder="tu@correo.com" required />
+        </div>
+        <button type="submit">Suscribirme</button>
+      </form>
+      <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar a Guardianes del Pulque</a>
+    </div>
+
+    <div class="back-links">
+      <a href="../../posts.html" class="chip">← Todos los artículos</a>
+      <span class="chip">🔬 Ciencia</span>
+      <button class="chip" id="btnStory" type="button">📲 Historia</button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container row">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <img src="../../images/logo_transparente.png" alt="Guardianes del Pulque" style="height:22px;width:auto">
+        <span>Guardianes del Pulque</span>
+      </div>
+      <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+        <a class="chip" href="../../index.html#donar"><span class="emoji">💚</span> Donar</a>
+        <a class="chip" href="../../posts.html">Más artículos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById("mainNav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }, { passive: true });
+  </script>
+  <script>
+  // CONTADOR DE VISITAS (abacus.jasoncameron.dev — sin DB propia)
+  // Usa hash SHA-256 del slug porque abacus limita keys a 64 chars y varios slugs son mas largos.
+  (async function(){
+    const el=document.getElementById('viewCount');
+    const wrap=document.getElementById('viewCounter');
+    if(!el||!wrap)return;
+    wrap.setAttribute('data-state','loading');
+    const slug=location.pathname.split('/').filter(Boolean).slice(-2,-1)[0]||'home';
+    let key='gdp-'+slug.slice(0,55);
+    try{
+      const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(slug));
+      key='gdp-'+Array.from(new Uint8Array(buf)).slice(0,12).map(b=>b.toString(16).padStart(2,'0')).join('');
+    }catch{}
+    try{
+      const r=await fetch('https://abacus.jasoncameron.dev/hit/guardianesdelpulque/'+key);
+      if(!r.ok)throw new Error(r.status);
+      const d=await r.json();
+      const n=typeof d.value==='number'?d.value:0;
+      el.textContent=n.toLocaleString('es-MX');
+      wrap.removeAttribute('data-state');
+    }catch{wrap.style.display='none';}
+  })();
+  </script>
+  <script>
+  // COMPARTIR COMO HISTORIA (layout v2: branding arriba como header, no pie)
+  (function(){
+    const btn=document.getElementById('btnStory');
+    if(!btn)return;
+    function wrapText(ctx,text,x,topY,maxW,lineH,maxLines){
+      const words=text.split(' ');let line='',lines=[];
+      for(const w of words){const t=line?line+' '+w:w;if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w;}else line=t;}
+      if(line)lines.push(line);
+      if(maxLines&&lines.length>maxLines){lines=lines.slice(0,maxLines);let last=lines[maxLines-1];while(last.length&&ctx.measureText(last+'…').width>maxW)last=last.slice(0,-1);lines[maxLines-1]=last.replace(/[\s,;:.]+$/,'')+'…';}
+      let yy=topY;
+      for(const l of lines){ctx.fillText(l,x,yy);yy+=lineH;}
+      return yy;
+    }
+    btn.addEventListener('click',async()=>{
+      const orig=btn.textContent;btn.textContent='⏳';btn.disabled=true;
+      try{
+        const slug=location.pathname.split('/').slice(-2,-1)[0]||'';
+        const coverUrl=slug?(slug+'.png'):(document.querySelector('meta[property="og:image"]')?.content||'');
+        const title=(document.querySelector('meta[property="og:title"]')?.content||document.title).replace(/\s*[—\-]\s*Guardianes del Pulque/,'');
+        const excerpt=(document.querySelector('meta[property="og:description"]')?.content||document.querySelector('meta[name="description"]')?.content||'').trim();
+        const W=1080,H=1920,HEADER_H=180,IMG_TOP=180,IMG_H=1100,IMG_BOTTOM=IMG_TOP+IMG_H;
+        const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;
+        const ctx=canvas.getContext('2d');
+        const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#011a10');bg.addColorStop(1,'#000c06');
+        ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+        // Branding ARRIBA como header
+        ctx.fillStyle='#34d399';ctx.font='bold 58px system-ui,ui-sans-serif,sans-serif';
+        ctx.textAlign='center';ctx.textBaseline='middle';
+        ctx.fillText('Guardianes del Pulque',W/2,HEADER_H/2);
+        // Imagen del articulo debajo del header
+        try{
+          const img=new Image();
+          await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src=coverUrl;});
+          const ir=img.naturalWidth/img.naturalHeight,tr=W/IMG_H;
+          let sx=0,sy=0,sw=img.naturalWidth,sh=img.naturalHeight;
+          if(ir>tr){sw=sh*tr;sx=(img.naturalWidth-sw)/2;}else{sh=sw/tr;sy=(img.naturalHeight-sh)/2;}
+          ctx.drawImage(img,sx,sy,sw,sh,0,IMG_TOP,W,IMG_H);
+        }catch{}
+        // Fade en la base de la imagen
+        const fade=ctx.createLinearGradient(0,IMG_BOTTOM-300,0,IMG_BOTTOM+50);
+        fade.addColorStop(0,'rgba(1,26,16,0)');fade.addColorStop(1,'rgba(1,26,16,1)');
+        ctx.fillStyle=fade;ctx.fillRect(0,IMG_BOTTOM-300,W,350);
+        // Linea separadora bajo la imagen
+        ctx.strokeStyle='rgba(52,211,153,.35)';ctx.lineWidth=2;
+        ctx.beginPath();ctx.moveTo(100,IMG_BOTTOM+30);ctx.lineTo(W-100,IMG_BOTTOM+30);ctx.stroke();
+        // Titulo + excerpt
+        ctx.textBaseline='top';
+        ctx.fillStyle='#ffffff';ctx.textAlign='center';
+        ctx.font='bold 60px system-ui,ui-sans-serif,sans-serif';
+        let ny=wrapText(ctx,title,W/2,IMG_BOTTOM+70,W-160,76,4);
+        if(excerpt){
+          ny+=24;
+          ctx.fillStyle='rgba(255,255,255,.82)';
+          ctx.font='400 34px system-ui,ui-sans-serif,sans-serif';
+          wrapText(ctx,excerpt,W/2,ny,W-200,46,3);
+        }
+        // URL al pie (sin repetir el branding)
+        ctx.textBaseline='alphabetic';
+        ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='36px system-ui,ui-sans-serif,sans-serif';
+        ctx.textAlign='center';
+        ctx.fillText('guardianesdelpulque.org',W/2,1870);
+        const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));
+        const file=new File([blob],'historia-guardianesdelpulque.png',{type:'image/png'});
+        if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title});}
+        else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='historia-guardianesdelpulque.png';document.body.appendChild(a);a.click();document.body.removeChild(a);}
+      }catch(e){console.error(e);}
+      finally{btn.textContent=orig;btn.disabled=false;}
+    });
+  })();
+  </script>
+</body>
+</html>

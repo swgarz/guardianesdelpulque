@@ -1,5 +1,15 @@
 [
   {
+    "tag": "Ciencia",
+    "title": "Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte",
+    "excerpt": "¿Puede una fórmula matemática anticipar cuándo un zorro tendrá que migrar por falta de presas? Aquí, los números también acechan.",
+    "date": "18 de julio de 2026",
+    "url": "articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.html",
+    "cover": "articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.png",
+    "imageStyle": "expresionismo-terroso",
+    "topic": "Ecuaciones de poblacion, depredador-presa, modelo Lotka-Volterra en ecologia"
+  },
+  {
     "tag": "Biologia",
     "title": "El sexto sentido en la milpa: animales que sienten lo invisible",
     "excerpt": "¿Cómo sabe una tortuga marina dónde está el mar sin verlo ni olerlo? Hay sentidos ocultos bajo la piel.",

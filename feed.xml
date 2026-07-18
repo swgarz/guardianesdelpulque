@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 17 Jul 2026 14:50:17 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 14:23:34 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte</title>
+      <link>https://guardianesdelpulque.org/articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.html</guid>
+      <description>¿Puede una fórmula matemática anticipar cuándo un zorro tendrá que migrar por falta de presas? Aquí, los números también acechan.</description>
+      <category>Ciencia</category>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte/cuando-un-conejo-desaparece-como-las-ecuaciones-predicen-la-caza-y-el-hambre-en-el-monte.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El sexto sentido en la milpa: animales que sienten lo invisible</title>
