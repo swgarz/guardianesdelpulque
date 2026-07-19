@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sat, 18 Jul 2026 14:23:34 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 14:22:42 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Toloache: la flor que baila entre la brujería y el veneno en los Altos de Oaxaca</title>
+      <link>https://guardianesdelpulque.org/articulos/toloache-la-flor-que-baila-entre-la-brujeria-y-el-veneno-en-los-altos-de-oaxaca/toloache-la-flor-que-baila-entre-la-brujeria-y-el-veneno-en-los-altos-de-oaxaca.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/toloache-la-flor-que-baila-entre-la-brujeria-y-el-veneno-en-los-altos-de-oaxaca/toloache-la-flor-que-baila-entre-la-brujeria-y-el-veneno-en-los-altos-de-oaxaca.html</guid>
+      <description>El aroma dulce del toloache es traicionero: basta un pétalo mal usado para perderse en la neblina. ¿Por qué nadie lo cultiva a la vista?</description>
+      <category>Medicina</category>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/toloache-la-flor-que-baila-entre-la-brujeria-y-el-veneno-en-los-altos-de-oaxaca/toloache-la-flor-que-baila-entre-la-brujeria-y-el-veneno-en-los-altos-de-oaxaca.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cuando un conejo desaparece: cómo las ecuaciones predicen la caza y el hambre en el monte</title>
