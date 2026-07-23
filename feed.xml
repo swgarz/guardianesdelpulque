@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Mon, 20 Jul 2026 15:05:11 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 15:03:51 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El ahuehuete de Tule: el coloso que ni la ciencia ha logrado medir completo</title>
+      <link>https://guardianesdelpulque.org/articulos/el-ahuehuete-de-tule-el-coloso-que-ni-la-ciencia-ha-logrado-medir-completo/el-ahuehuete-de-tule-el-coloso-que-ni-la-ciencia-ha-logrado-medir-completo.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-ahuehuete-de-tule-el-coloso-que-ni-la-ciencia-ha-logrado-medir-completo/el-ahuehuete-de-tule-el-coloso-que-ni-la-ciencia-ha-logrado-medir-completo.html</guid>
+      <description>En Oaxaca crece un árbol tan ancho que desafía cualquier cinta de geómetra. Esto ocurre todos los días.</description>
+      <category>Naturaleza</category>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-ahuehuete-de-tule-el-coloso-que-ni-la-ciencia-ha-logrado-medir-completo/el-ahuehuete-de-tule-el-coloso-que-ni-la-ciencia-ha-logrado-medir-completo.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El cacao crudo y los secretos de una mente más despierta</title>
