@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 23 Jul 2026 15:03:51 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 15:02:42 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El día que una polilla se volvió líquido y cambió todo: lo que no te han contado sobre metamorfosis</title>
+      <link>https://guardianesdelpulque.org/articulos/el-dia-que-una-polilla-se-volvio-liquido-y-cambio-todo-lo-que-no-te-han-contado-sobre-metamorfosis/el-dia-que-una-polilla-se-volvio-liquido-y-cambio-todo-lo-que-no-te-han-contado-sobre-metamorfosis.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-dia-que-una-polilla-se-volvio-liquido-y-cambio-todo-lo-que-no-te-han-contado-sobre-metamorfosis/el-dia-que-una-polilla-se-volvio-liquido-y-cambio-todo-lo-que-no-te-han-contado-sobre-metamorfosis.html</guid>
+      <description>¿Sabías que las mariposas se digieren a sí mismas y renacen otras? Lo más raro está dentro del capullo.</description>
+      <category>Biologia</category>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-dia-que-una-polilla-se-volvio-liquido-y-cambio-todo-lo-que-no-te-han-contado-sobre-metamorfosis/el-dia-que-una-polilla-se-volvio-liquido-y-cambio-todo-lo-que-no-te-han-contado-sobre-metamorfosis.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El ahuehuete de Tule: el coloso que ni la ciencia ha logrado medir completo</title>
