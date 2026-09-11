@@ -105,6 +105,14 @@ Cada artículo vive en `articulos/{slug}/` con:
 - **Sin márgenes**: siempre aplicar `.trim({ threshold: 30 })` antes del `.resize(912)` con sharp para eliminar bordes blancos/beige que DALL-E agrega
 - Ambos scripts (`generate-post.js` y `regen-images.js`) ya incluyen trim automático
 - Si una imagen existente tiene márgenes: `sharp(file).trim({ threshold: 30 }).resize(912).toBuffer()` y sobreescribir
+- **Formato**: JPEG calidad 82 guardado con extensión `.png` (~150KB en vez de ~1.6MB). `compress-images.js` convierte las que sigan siendo PNG real y salta las que ya son JPEG
+
+## SEO (`scripts/build-seo.js`)
+
+- Idempotente; `generate-post.js` lo corre al final. Correr a mano tras editar `posts.json`: `node scripts/build-seo.js`
+- `<title>` sale de `seoTitle` en posts.json (≤60 caracteres, con palabras clave de búsqueda); si falta usa `title`. El `<h1>` conserva el título largo
+- Reescribe el JSON-LD (Article + BreadcrumbList), el bloque "Sigue leyendo" entre `<!-- RELATED:START/END -->` y el archivo estático de `posts.html` entre `<!-- ARCHIVE:START/END -->` — no editar esos bloques a mano
+- `index.html` tiene JSON-LD `WebSite` (nombre del sitio en Google) + `Organization`
 
 ## Notas
 

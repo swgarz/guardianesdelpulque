@@ -1284,9 +1284,12 @@ function buildUserPrompt({ topic, sectionCount, forceTitle }) {
     ``,
     `Escribe el artículo siguiendo TODAS las reglas del system prompt. Responde SOLO con JSON válido (sin markdown, sin backticks) con esta estructura exacta:`,
     ``,
-    `{"title":"...", "excerpt":"...", "tag":"...", "imageSubjects":"...", "body":"<h2>...</h2><p>...</p>..."}`,
+    `{"title":"...", "seoTitle":"...", "excerpt":"...", "tag":"...", "imageSubjects":"...", "body":"<h2>...</h2><p>...</p>..."}`,
     ``,
     titleRule,
+    ``,
+    `SEO_TITLE: versión corta del título para el <title> que muestra Google. MÁXIMO 60 caracteres, sin el nombre del sitio. Conserva el gancho y las palabras que alguien escribiría en el buscador (especie, lugar, fenómeno).`,
+    `  Ej: título "Donde gira el Nautilus: lo que une a caracoles, galaxias y huracanes en el territorio mexicano" → seoTitle "Donde gira el Nautilus: la espiral de caracoles y galaxias".`,
     ``,
     `EXCERPT: es GANCHO, no resumen descriptivo. Máximo 140 caracteres. Debe dar curiosidad, no anunciar el tema.`,
     `  MAL: "Explora el impacto de la agroforestería en la sostenibilidad y el desarrollo rural."`,
@@ -1637,7 +1640,8 @@ async function generateArticle() {
     if (imageBuffer) {
       let _trimmed = await sharp(imageBuffer).trim({ threshold: 80 }).toBuffer();
       _trimmed = await cropFlatBorders(_trimmed);
-      imageBuffer = await sharp(_trimmed).resize(IMAGE_WIDTH).toBuffer();
+      // JPEG con extensión .png (misma convención que compress-images.js): ~150KB en vez de ~1.6MB
+      imageBuffer = await sharp(_trimmed).resize(IMAGE_WIDTH).jpeg({ quality: 82, mozjpeg: true }).toBuffer();
       fs.writeFileSync(path.join(artDir, `${slug}.png`), imageBuffer);
     } else {
       // Si los 3 prompts fueron rechazados, escribir un placeholder con la paleta del tag.
@@ -1676,12 +1680,18 @@ async function generateArticle() {
   fs.writeFileSync(path.join(artDir, `${slug}.html`), html);
 
   // 7. Actualizar posts.json
+  // seoTitle es opcional: si GPT no lo da o se pasa de largo, build-seo.js usa el título
+  const seoTitle =
+    typeof article.seoTitle === "string" && article.seoTitle.trim().length <= 62
+      ? article.seoTitle.trim()
+      : undefined;
   if (regenEntry) {
     // Modo regen: actualizar la entrada en su lugar (mantener date/url/cover/imageStyle/topic, refrescar title/excerpt)
     posts[regenIdx] = {
       ...regenEntry,
       tag,
       title: article.title,
+      seoTitle: seoTitle || regenEntry.seoTitle,
       excerpt: article.excerpt,
       topic: regenEntry.topic || topic,
     };
@@ -1689,6 +1699,7 @@ async function generateArticle() {
     posts.unshift({
       tag,
       title: article.title,
+      seoTitle,
       excerpt: article.excerpt,
       date: dateStr,
       url: `articulos/${slug}/${slug}.html`,
@@ -1720,6 +1731,14 @@ async function generateArticle() {
     console.log("Feed:   feed.xml regenerado");
   } catch (e) {
     console.error("Aviso: no se pudo actualizar sitemap/feed:", e.message);
+  }
+
+  // 9. SEO: <title> corto, JSON-LD, artículos relacionados y archivo estático en posts.html
+  try {
+    require("./build-seo").buildAll();
+    console.log("SEO:    build-seo aplicado");
+  } catch (e) {
+    console.error("Aviso: no se pudo aplicar build-seo:", e.message);
   }
 
   console.log(`\nCreado: articulos/${slug}/${slug}.html`);

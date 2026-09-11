@@ -533,7 +533,8 @@ async function generateImage(img) {
       size: "1024x1024",
     });
     const raw = Buffer.from(res.data[0].b64_json, "base64");
-    const buf = await sharp(raw).trim({ threshold: 80 }).resize(912).png().toBuffer();
+    // JPEG con extensión .png (misma convención que compress-images.js)
+    const buf = await sharp(raw).trim({ threshold: 80 }).resize(912).jpeg({ quality: 82, mozjpeg: true }).toBuffer();
     const dest = path.join(__dirname, "..", "articulos", img.slug, img.slug + ".png");
     fs.writeFileSync(dest, buf);
     console.log("OK:", img.slug);

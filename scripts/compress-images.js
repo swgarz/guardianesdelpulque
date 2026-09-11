@@ -50,6 +50,12 @@ async function main() {
       console.log(`  ✗ No encontrada: ${post.cover}`);
       continue;
     }
+    // Ya es JPEG (bytes FF D8): recomprimir solo le quitaría calidad
+    const magic = Buffer.alloc(2);
+    const fd = fs.openSync(imgPath, "r");
+    fs.readSync(fd, magic, 0, 2, 0);
+    fs.closeSync(fd);
+    if (magic[0] === 0xff && magic[1] === 0xd8) continue;
 
     try {
       const { beforeKB, afterKB, saved } = await compressImage(imgPath);

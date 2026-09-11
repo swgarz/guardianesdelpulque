@@ -36,6 +36,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add articulos/ posts.json sitemap.xml feed.xml
+          git add articulos/ posts.json posts.html sitemap.xml feed.xml
           git commit -m "feat: auto-publish weekly article $(date +%Y-%m-%d)"
           git push

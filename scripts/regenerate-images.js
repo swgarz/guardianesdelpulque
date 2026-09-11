@@ -219,7 +219,8 @@ async function regenerateImage(post, index, total) {
       imageBuffer = Buffer.from(imageResponse.data[0].b64_json, "base64");
       let buf = await sharp(imageBuffer).trim({ threshold: 30 }).toBuffer();
       buf = await cropFlatBorders(buf);
-      imageBuffer = await sharp(buf).resize(IMAGE_WIDTH).toBuffer();
+      // JPEG con extensión .png (misma convención que compress-images.js)
+      imageBuffer = await sharp(buf).resize(IMAGE_WIDTH).jpeg({ quality: 82, mozjpeg: true }).toBuffer();
       break;
     } catch (e) {
       console.log(`  Prompt rechazado: ${e.message?.slice(0, 80)}`);
