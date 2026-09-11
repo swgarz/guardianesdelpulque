@@ -15,11 +15,11 @@ const JPEG_QUALITY = 82; // JPEG ~200-350KB vs PNG ~1.8MB
 async function compressImage(imgPath) {
   const before = fs.statSync(imgPath).size;
 
-  // Usar path relativo para evitar límite de 260 chars en Windows
-  const relPath = path.relative(process.cwd(), imgPath);
+  // Leer con fs y pasarle el buffer a sharp: libvips falla con rutas de más de
+  // 260 chars en Windows (slugs largos), Node no.
   // Guardar como JPEG con extensión .png — los navegadores y WhatsApp
   // leen el formato real del archivo, no la extensión.
-  const buffer = await sharp(relPath)
+  const buffer = await sharp(fs.readFileSync(imgPath))
     .resize(MAX_WIDTH, null, {
       withoutEnlargement: true,
     })
