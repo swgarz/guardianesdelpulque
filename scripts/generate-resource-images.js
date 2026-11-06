@@ -223,7 +223,7 @@ async function generateImage(r) {
   console.log("Generando:", r.slug);
   try {
     const res = await openai.images.generate({
-      model: "gpt-image-1",
+      model: process.env.OPENAI_IMAGE_MODEL || "gpt-image-2",
       prompt,
       n: 1,
       size: "1536x1024",

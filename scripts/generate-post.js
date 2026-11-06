@@ -1625,7 +1625,7 @@ async function generateArticle() {
     for (const prompt of [basePrompt, fallbackPrompt, ultraGenericPrompt]) {
       try {
         const imageResponse = await openai.images.generate({
-          model: "gpt-image-1",
+          model: process.env.OPENAI_IMAGE_MODEL || "gpt-image-2",
           prompt,
           n: 1,
           size: "1536x1024",
@@ -1633,7 +1633,7 @@ async function generateArticle() {
         imageBuffer = Buffer.from(imageResponse.data[0].b64_json, "base64");
         break;
       } catch (e) {
-        console.log("Prompt rechazado, intentando alternativo...");
+        console.log(`Prompt rechazado (${e.status || ""} ${e.code || ""}): ${String(e.message).slice(0, 200)}`);
       }
     }
 
