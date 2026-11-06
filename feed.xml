@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sat, 25 Jul 2026 14:42:17 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 21:20:14 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Por qué las abejas no construyen círculos y cómo un matemático lo demostró</title>
+      <link>https://guardianesdelpulque.org/articulos/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro.html</guid>
+      <description>El secreto geométrico de los panales: ni círculo, ni triángulo, solo hexágono. ¿Por qué la naturaleza insiste en seis lados?</description>
+      <category>Ciencia</category>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Donde gira el Nautilus: lo que une a caracoles, galaxias y huracanes en el territorio mexicano</title>

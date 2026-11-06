@@ -1,6 +1,17 @@
 [
   {
     "tag": "Ciencia",
+    "title": "Por qué las abejas no construyen círculos y cómo un matemático lo demostró",
+    "seoTitle": "Por qué las abejas eligen hexágonos y un matemático lo probó",
+    "excerpt": "El secreto geométrico de los panales: ni círculo, ni triángulo, solo hexágono. ¿Por qué la naturaleza insiste en seis lados?",
+    "date": "6 de noviembre de 2026",
+    "url": "articulos/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro.html",
+    "cover": "articulos/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro/por-que-las-abejas-no-construyen-circulos-y-como-un-matematico-lo-demostro.png",
+    "imageStyle": "fresco-cal",
+    "topic": "Geometria de panal, problema del empaquetamiento eficiente, teorema de Hales"
+  },
+  {
+    "tag": "Ciencia",
     "title": "Donde gira el Nautilus: lo que une a caracoles, galaxias y huracanes en el territorio mexicano",
     "seoTitle": "Donde gira el Nautilus: la espiral de caracoles y galaxias",
     "excerpt": "Un caracol de la selva y una galaxia comparten más que la forma: la misma ecuación los une. Todo empieza en el lodo de una laguna.",
