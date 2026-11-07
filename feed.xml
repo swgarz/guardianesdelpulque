@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Fri, 06 Nov 2026 21:30:05 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 17:59:27 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Los aromas invisibles que definen al tequila: química, terroir y el secreto detrás del buen trago</title>
+      <link>https://guardianesdelpulque.org/articulos/los-aromas-invisibles-que-definen-al-tequila-quimica-terroir-y-el-secreto-detras-del-buen-trago/los-aromas-invisibles-que-definen-al-tequila-quimica-terroir-y-el-secreto-detras-del-buen-trago.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/los-aromas-invisibles-que-definen-al-tequila-quimica-terroir-y-el-secreto-detras-del-buen-trago/los-aromas-invisibles-que-definen-al-tequila-quimica-terroir-y-el-secreto-detras-del-buen-trago.html</guid>
+      <description>La diferencia entre un tequila que quema y uno que canta está en moléculas invisibles: ¿puedes oler el cobre, la piña asada o el mango?</description>
+      <category>Fermentos</category>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/los-aromas-invisibles-que-definen-al-tequila-quimica-terroir-y-el-secreto-detras-del-buen-trago/los-aromas-invisibles-que-definen-al-tequila-quimica-terroir-y-el-secreto-detras-del-buen-trago.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>La amapola que sangra en Guerrero: ciencia, historia y el precio de un látex blanco</title>
