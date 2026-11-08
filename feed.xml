@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sat, 07 Nov 2026 17:59:27 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 18:10:18 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>La punzada que seduce: chiles, capsaicina y el placer doloroso</title>
+      <link>https://guardianesdelpulque.org/articulos/la-punzada-que-seduce-chiles-capsaicina-y-el-placer-doloroso/la-punzada-que-seduce-chiles-capsaicina-y-el-placer-doloroso.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/la-punzada-que-seduce-chiles-capsaicina-y-el-placer-doloroso/la-punzada-que-seduce-chiles-capsaicina-y-el-placer-doloroso.html</guid>
+      <description>La lengua arde, el cerebro responde: por qué el chile mexicano dispara tanto dolor como felicidad.</description>
+      <category>Salud</category>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/la-punzada-que-seduce-chiles-capsaicina-y-el-placer-doloroso/la-punzada-que-seduce-chiles-capsaicina-y-el-placer-doloroso.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Los aromas invisibles que definen al tequila: química, terroir y el secreto detrás del buen trago</title>
