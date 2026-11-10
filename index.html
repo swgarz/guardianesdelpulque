@@ -406,14 +406,32 @@
       .hero-wrap{grid-template-columns:1.1fr .9fr;align-items:center}
     }
     .hero-title{
+      --hero-grad:linear-gradient(135deg,#059669,#65a30d,#065f46);
       margin:0;
       font-size:clamp(30px,7vw,64px);
       line-height:1.06;
       letter-spacing:-.5px;
-      background:linear-gradient(135deg,#059669,#65a30d,#065f46);
+    }
+    /* Carrusel de texto del hero */
+    .hero-rotate{
+      display:inline-block;
+      transition:opacity .42s ease,transform .42s ease,filter .42s ease;
+    }
+    .hero-rotate--title{
+      background-image:var(--hero-grad);
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
+      padding-bottom:.06em;
+    }
+    .hero-rotate.is-out{
+      opacity:0;
+      transform:translateY(-.3em);
+      filter:blur(7px);
+    }
+    @media (prefers-reduced-motion:reduce){
+      .hero-rotate{transition:none}
+      .hero-rotate.is-out{opacity:1;transform:none;filter:none}
     }
     .hero-subtitle{
       margin:.35rem 0 0;
@@ -638,10 +656,7 @@
     }
     body.mode-reading .brand-text{color:#e5e7eb;}
     body.mode-reading .hero-title{
-      background:linear-gradient(120deg,#22c55e,#a855f7,#22d3ee);
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
+      --hero-grad:linear-gradient(120deg,#22c55e,#a855f7,#22d3ee);
     }
     body.mode-reading .hero-subtitle{color:#cbd5e1;}
     body.mode-reading .card{
@@ -698,10 +713,7 @@
       color:#022c22;
     }
     body.mode-community .hero-title{
-      background:linear-gradient(135deg,#bbf7d0,#22c55e,#bbf7d0);
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
+      --hero-grad:linear-gradient(135deg,#bbf7d0,#22c55e,#bbf7d0);
     }
     body.mode-community .hero-subtitle{
       color:#d1fae5;
@@ -835,8 +847,8 @@
     </div>
     <div class="hero-wrap">
       <div class="stack-4 reveal">
-        <h1 class="hero-title">Memoria viva del territorio.</h1>
-        <p class="hero-subtitle">Saberes, guías y proyectos para cultivar, construir y cuidar la tierra.</p>
+        <h1 class="hero-title"><span class="hero-rotate hero-rotate--title" id="heroRotateTitle">Memoria viva del territorio.</span></h1>
+        <p class="hero-subtitle"><span class="hero-rotate" id="heroRotateSub">Saberes, guías y proyectos para cultivar, construir y cuidar la tierra.</span></p>
         <div class="cta-group">
           <a class="btn btn-brand btn-block" href="posts.html">Explorar artículos →</a>
         </div>
@@ -1428,6 +1440,43 @@
         a.textContent = label;
         container.appendChild(a);
       });
+    })();
+  </script>
+  <script>
+    /* Carrusel de frases del hero */
+    (function(){
+      var titles=[
+        "Memoria viva del territorio.",
+        "Saberes que no se olvidan.",
+        "Raíces que siguen creciendo.",
+        "La tierra nos sigue enseñando.",
+        "Pulque, maguey y comunidad.",
+        "Guardianes del saber campesino."
+      ];
+      var subs=[
+        "Saberes, guías y proyectos para cultivar, construir y cuidar la tierra.",
+        "Artículos, recetarios y manuales para hacerlo con tus propias manos.",
+        "Pulque, maguey, bioconstrucción y defensa del territorio, en acceso libre.",
+        "Técnicas, oficios y memoria para sembrar, fermentar y construir.",
+        "Conocimiento abierto para quien trabaja la tierra y la cuida."
+      ];
+      var t=document.getElementById("heroRotateTitle");
+      var s=document.getElementById("heroRotateSub");
+      if(!t||!s) return;
+      if(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var i=0;
+      setInterval(function(){
+        if(document.hidden) return;
+        i++;
+        t.classList.add("is-out");
+        s.classList.add("is-out");
+        setTimeout(function(){
+          t.textContent=titles[i%titles.length];
+          s.textContent=subs[i%subs.length];
+          t.classList.remove("is-out");
+          s.classList.remove("is-out");
+        },430);
+      },4600);
     })();
   </script>
 </body>
