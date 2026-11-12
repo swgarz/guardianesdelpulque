@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Mon, 09 Nov 2026 22:48:15 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 20:32:43 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El maíz que nació dos veces: cómo una mutación domesticó a México</title>
+      <link>https://guardianesdelpulque.org/articulos/el-maiz-que-nacio-dos-veces-como-una-mutacion-domestico-a-mexico/el-maiz-que-nacio-dos-veces-como-una-mutacion-domestico-a-mexico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-maiz-que-nacio-dos-veces-como-una-mutacion-domestico-a-mexico/el-maiz-que-nacio-dos-veces-como-una-mutacion-domestico-a-mexico.html</guid>
+      <description>¿Qué ocurrió en los valles de Oaxaca para que una hierba silvestre se volviera maíz? La mutación que partió la historia.</description>
+      <category>Evolucion</category>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-maiz-que-nacio-dos-veces-como-una-mutacion-domestico-a-mexico/el-maiz-que-nacio-dos-veces-como-una-mutacion-domestico-a-mexico.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El jardín que flota: secretos vivos de las chinampas de Xochimilco</title>
