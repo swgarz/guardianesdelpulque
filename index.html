@@ -534,14 +534,6 @@
     body.mode-reading .filter-pill{background:#059669;border-color:#059669;color:#fff}
     body.mode-reading .filter-pill:hover{background:#7c3aed;border-color:#7c3aed;color:#fff}
 
-    /* Backdrop blobs */
-    .backdrop{position:absolute;inset:0;overflow:hidden;z-index:-1}
-    .blob{position:absolute;border-radius:999px;filter:blur(40px);opacity:.35;animation:float 18s ease-in-out infinite}
-    .b1{width:580px;height:580px;left:-120px;top:-120px;background:radial-gradient(closest-side,#34d399,transparent)}
-    .b2{width:480px;height:480px;right:-120px;top:120px;background:radial-gradient(closest-side,#22d3ee,transparent);animation-delay:2s}
-    .b3{width:360px;height:360px;left:40%;bottom:-120px;background:radial-gradient(closest-side,#a3e635,transparent);animation-delay:4s}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
-
     /* POSTS GRID */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1rem}
     @media (min-width:640px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
@@ -842,9 +834,6 @@
 
   <!-- HERO -->
   <header class="hero hero--compact container" id="main-content">
-    <div class="backdrop" aria-hidden="true">
-      <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-    </div>
     <div class="hero-wrap">
       <div class="stack-4 reveal">
         <h1 class="hero-title"><span class="hero-rotate hero-rotate--title" id="heroRotateTitle">Memoria viva del territorio.</span></h1>
