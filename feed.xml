@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 12 Nov 2026 20:32:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 20:25:41 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cuando el tepezcuintle mastica la selva: los jardineros ocultos del trópico mexicano</title>
+      <link>https://guardianesdelpulque.org/articulos/cuando-el-tepezcuintle-mastica-la-selva-los-jardineros-ocultos-del-tropico-mexicano/cuando-el-tepezcuintle-mastica-la-selva-los-jardineros-ocultos-del-tropico-mexicano.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cuando-el-tepezcuintle-mastica-la-selva-los-jardineros-ocultos-del-tropico-mexicano/cuando-el-tepezcuintle-mastica-la-selva-los-jardineros-ocultos-del-tropico-mexicano.html</guid>
+      <description>Ningún árbol del trópico crece solo. El tepezcuintle lleva semillas donde los humanos ni se asoman.</description>
+      <category>Mamiferos</category>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/cuando-el-tepezcuintle-mastica-la-selva-los-jardineros-ocultos-del-tropico-mexicano/cuando-el-tepezcuintle-mastica-la-selva-los-jardineros-ocultos-del-tropico-mexicano.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El maíz que nació dos veces: cómo una mutación domesticó a México</title>
