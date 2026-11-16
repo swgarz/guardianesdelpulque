@@ -1,5 +1,15 @@
 [
   {
+    "tag": "Ciencia",
+    "title": "Cuando las hormigas se vuelven código: lo que el bosque enseña a los algoritmos",
+    "excerpt": "¿Por qué una colonia de hormigas en la Sierra Madre sabe más que cualquier hormiga sola? Un algoritmo inspirado en tierra y feromonas.",
+    "date": "16 de noviembre de 2026",
+    "url": "articulos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos.html",
+    "cover": "articulos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos.png",
+    "imageStyle": "litografia-color",
+    "topic": "Algoritmos de hormigas y enjambre, inteligencia colectiva en la naturaleza"
+  },
+  {
     "tag": "Cosmologia",
     "title": "El cerro y el manto: la Virgen de Guadalupe y el secreto que guardan los volcanes",
     "excerpt": "Un cerro, un manto y un nombre cambiaron todo: lo que ocultan los volcanes de Tepeyac.",

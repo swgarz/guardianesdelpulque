@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Sun, 15 Nov 2026 19:12:18 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 22:40:40 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cuando las hormigas se vuelven código: lo que el bosque enseña a los algoritmos</title>
+      <link>https://guardianesdelpulque.org/articulos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos.html</guid>
+      <description>¿Por qué una colonia de hormigas en la Sierra Madre sabe más que cualquier hormiga sola? Un algoritmo inspirado en tierra y feromonas.</description>
+      <category>Ciencia</category>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos/cuando-las-hormigas-se-vuelven-codigo-lo-que-el-bosque-ensena-a-los-algoritmos.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El cerro y el manto: la Virgen de Guadalupe y el secreto que guardan los volcanes</title>
