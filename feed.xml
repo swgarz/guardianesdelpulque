@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Mon, 16 Nov 2026 22:40:40 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 21:04:24 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cómo el maguey reinventó la química: la historia secreta de sus esteroides</title>
+      <link>https://guardianesdelpulque.org/articulos/como-el-maguey-reinvento-la-quimica-la-historia-secreta-de-sus-esteroides/como-el-maguey-reinvento-la-quimica-la-historia-secreta-de-sus-esteroides.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/como-el-maguey-reinvento-la-quimica-la-historia-secreta-de-sus-esteroides/como-el-maguey-reinvento-la-quimica-la-historia-secreta-de-sus-esteroides.html</guid>
+      <description>Los esteroides de laboratorio comenzaron en los cerros secos del maguey. Nadie lo vio venir.</description>
+      <category>Ciencia</category>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/como-el-maguey-reinvento-la-quimica-la-historia-secreta-de-sus-esteroides/como-el-maguey-reinvento-la-quimica-la-historia-secreta-de-sus-esteroides.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cuando las hormigas se vuelven código: lo que el bosque enseña a los algoritmos</title>
