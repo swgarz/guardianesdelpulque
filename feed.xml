@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 19 Nov 2026 21:04:24 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 20:59:15 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cuando la niebla separa: cómo nacen nuevas especies en las sierras mexicanas</title>
+      <link>https://guardianesdelpulque.org/articulos/cuando-la-niebla-separa-como-nacen-nuevas-especies-en-las-sierras-mexicanas/cuando-la-niebla-separa-como-nacen-nuevas-especies-en-las-sierras-mexicanas.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/cuando-la-niebla-separa-como-nacen-nuevas-especies-en-las-sierras-mexicanas/cuando-la-niebla-separa-como-nacen-nuevas-especies-en-las-sierras-mexicanas.html</guid>
+      <description>Un colibrí aislado entre la neblina puede, sin quererlo, poner en marcha el nacimiento de una especie.</description>
+      <category>Evolucion</category>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/cuando-la-niebla-separa-como-nacen-nuevas-especies-en-las-sierras-mexicanas/cuando-la-niebla-separa-como-nacen-nuevas-especies-en-las-sierras-mexicanas.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cómo el maguey reinventó la química: la historia secreta de sus esteroides</title>
