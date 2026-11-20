@@ -21,6 +21,7 @@ scripts/generate-missing.js  — Script batch para generar artículos faltantes
 scripts/regen-images.js      — Regenerar imágenes existentes
 scripts/generate-rss.js      — Generar feed.xml desde posts.json
 scripts/compress-images.js   — Comprimir imágenes con sharp
+js/estadisticas.js           — Indicador de visitas en el footer (GoatCounter)
 .env                         — OPENAI_API_KEY
 ```
 
@@ -113,6 +114,17 @@ Cada artículo vive en `articulos/{slug}/` con:
 - `<title>` sale de `seoTitle` en posts.json (≤60 caracteres, con palabras clave de búsqueda); si falta usa `title`. El `<h1>` conserva el título largo
 - Reescribe el JSON-LD (Article + BreadcrumbList), el bloque "Sigue leyendo" entre `<!-- RELATED:START/END -->` y el archivo estático de `posts.html` entre `<!-- ARCHIVE:START/END -->` — no editar esos bloques a mano
 - `index.html` tiene JSON-LD `WebSite` (nombre del sitio en Google) + `Organization`
+
+## Analítica de visitas (GoatCounter)
+
+- **Medición**: tag `data-goatcounter` antes de `</head>` en *todas* las páginas. Sin cookies, sin IPs, sin banner de consentimiento. `count.js` ignora `localhost`, así que el desarrollo local no ensucia las cifras
+- **Indicador**: `js/estadisticas.js`, un único archivo incluido antes de `</body>`. La ruta cambia con la profundidad: `js/` en la raíz, `../../js/` en artículos, y absoluta `/js/` en `404.html` (GitHub Pages lo sirve desde cualquier nivel)
+- Pinta en el footer «N visitas esta semana» y un panel (`popover` nativo) con el desglose por mes y por semana desde `INICIO`, que vale `2026-11-20` (el contador arranca el dia que se activa: GoatCounter no recupera datos hacia atras)
+- **Requiere activar una vez** en GoatCounter: Settings → *Allow adding visitor counts on your website*. Sin eso `/counter/` responde 403 y el indicador no se monta
+- El parámetro `end` del endpoint es **exclusivo**: por eso `pedirRango()` manda el día siguiente al último día que se muestra. Comprobado contra una instancia real
+- Las semanas suman ~0,5 % más que su mes: se cuentan **personas** únicas por periodo, y quien vuelve en dos semanas cuenta en las dos pero una sola vez en el mes. No es un error; el panel lo explica en una nota
+- Añadir `?stats` a la URL monta el panel aunque la consulta falle, para depurar la configuración
+- `generate-post.js` ya inserta ambos scripts en los artículos nuevos
 
 ## Notas
 
