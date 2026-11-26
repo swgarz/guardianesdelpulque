@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Tue, 24 Nov 2026 00:30:22 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 22:01:25 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>Cómo un hongo puede transformar el sabor de tu cocina sin una pizca de carne</title>
+      <link>https://guardianesdelpulque.org/articulos/como-un-hongo-puede-transformar-el-sabor-de-tu-cocina-sin-una-pizca-de-carne/como-un-hongo-puede-transformar-el-sabor-de-tu-cocina-sin-una-pizca-de-carne.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/como-un-hongo-puede-transformar-el-sabor-de-tu-cocina-sin-una-pizca-de-carne/como-un-hongo-puede-transformar-el-sabor-de-tu-cocina-sin-una-pizca-de-carne.html</guid>
+      <description>El aroma terroso de un hongo recién cortado puede intensificar un caldo más que cualquier cubito industrial.</description>
+      <category>Hongos</category>
+      <pubDate>Thu, 26 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/como-un-hongo-puede-transformar-el-sabor-de-tu-cocina-sin-una-pizca-de-carne/como-un-hongo-puede-transformar-el-sabor-de-tu-cocina-sin-una-pizca-de-carne.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>El reactor que quiere encender el sol en la Tierra: dentro de ITER y el sueño de la energía inagotable</title>
