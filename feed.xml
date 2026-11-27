@@ -5,13 +5,23 @@
     <link>https://guardianesdelpulque.org</link>
     <description>Pulque, tierra y maguey: artículos, guías y proyectos.</description>
     <language>es-mx</language>
-    <lastBuildDate>Thu, 26 Nov 2026 22:01:25 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 21:53:10 GMT</lastBuildDate>
     <atom:link href="https://guardianesdelpulque.org/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://guardianesdelpulque.org/images/logo_transparente.png</url>
       <title>Guardianes del Pulque</title>
       <link>https://guardianesdelpulque.org</link>
     </image>
+
+    <item>
+      <title>El aroma oculto del tiempo: cómo la ceniza volcánica y el carbono 14 deciden la edad de los huesos en México</title>
+      <link>https://guardianesdelpulque.org/articulos/el-aroma-oculto-del-tiempo-como-la-ceniza-volcanica-y-el-carbono-14-deciden-la-edad-de-los-huesos-en-mexico/el-aroma-oculto-del-tiempo-como-la-ceniza-volcanica-y-el-carbono-14-deciden-la-edad-de-los-huesos-en-mexico.html</link>
+      <guid isPermaLink="true">https://guardianesdelpulque.org/articulos/el-aroma-oculto-del-tiempo-como-la-ceniza-volcanica-y-el-carbono-14-deciden-la-edad-de-los-huesos-en-mexico/el-aroma-oculto-del-tiempo-como-la-ceniza-volcanica-y-el-carbono-14-deciden-la-edad-de-los-huesos-en-mexico.html</guid>
+      <description>La edad de un fósil depende de cenizas, carbono y hasta manglares: la técnica que lee el tiempo bajo el suelo mexicano.</description>
+      <category>Ciencia</category>
+      <pubDate>Fri, 27 Nov 2026 00:00:00 GMT</pubDate>
+      <enclosure url="https://guardianesdelpulque.org/articulos/el-aroma-oculto-del-tiempo-como-la-ceniza-volcanica-y-el-carbono-14-deciden-la-edad-de-los-huesos-en-mexico/el-aroma-oculto-del-tiempo-como-la-ceniza-volcanica-y-el-carbono-14-deciden-la-edad-de-los-huesos-en-mexico.png" type="image/png" length="0"/>
+    </item>
 
     <item>
       <title>Cómo un hongo puede transformar el sabor de tu cocina sin una pizca de carne</title>
